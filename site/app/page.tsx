@@ -43,50 +43,50 @@ export default function Home() {
       }}
     >
       <div style={{ maxWidth: "1160px", margin: "0 auto" }}>
-   <header
-  style={{
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "14px 0 28px",
-    borderBottom: "1px solid rgba(255,255,255,0.08)",
-    marginBottom: "72px",
-    flexWrap: "wrap",
-    gap: "16px",
-  }}
->
-  <a
-    href="/"
-    style={{
-      fontSize: "22px",
-      fontWeight: 600,
-      letterSpacing: "0.03em",
-      color: "#f3eee7",
-      textDecoration: "none",
-    }}
-  >
-    Parallax Hearts
-  </a>
+        <header
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            padding: "14px 0 28px",
+            borderBottom: "1px solid rgba(255,255,255,0.08)",
+            marginBottom: "72px",
+            flexWrap: "wrap",
+            gap: "16px",
+          }}
+        >
+          <a
+            href="/"
+            style={{
+              fontSize: "22px",
+              fontWeight: 600,
+              letterSpacing: "0.03em",
+              color: "#f3eee7",
+              textDecoration: "none",
+            }}
+          >
+            Parallax Hearts
+          </a>
 
-  <nav
-    style={{
-      display: "flex",
-      gap: "24px",
-      fontSize: "15px",
-      flexWrap: "wrap",
-    }}
-  >
-    <a href="/about" style={{ color: "#f3eee7", textDecoration: "none" }}>
-      About
-    </a>
-    <a href="/project" style={{ color: "#f3eee7", textDecoration: "none" }}>
-      Project
-    </a>
-    <a href="/contact" style={{ color: "#f3eee7", textDecoration: "none" }}>
-      Contact
-    </a>
-  </nav>
-</header>
+          <nav
+            style={{
+              display: "flex",
+              gap: "24px",
+              fontSize: "15px",
+              flexWrap: "wrap",
+            }}
+          >
+            <a href="/about" style={{ color: "#f3eee7", textDecoration: "none" }}>
+              About
+            </a>
+            <a href="/project" style={{ color: "#f3eee7", textDecoration: "none" }}>
+              Project
+            </a>
+            <a href="/contact" style={{ color: "#f3eee7", textDecoration: "none" }}>
+              Contact
+            </a>
+          </nav>
+        </header>
 
         <section
           style={{
@@ -138,7 +138,7 @@ export default function Home() {
 
             <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
               <a
-                href="#project"
+                href="/project"
                 style={{
                   background: "#f3eee7",
                   color: "#0b0b10",
@@ -152,7 +152,7 @@ export default function Home() {
               </a>
 
               <a
-                href="#signals"
+                href="/contact"
                 style={{
                   border: "1px solid rgba(255,255,255,0.18)",
                   color: "#f3eee7",
@@ -161,7 +161,7 @@ export default function Home() {
                   textDecoration: "none",
                 }}
               >
-                Follow the Signals
+                Stay in the Signal
               </a>
             </div>
           </div>
@@ -170,35 +170,22 @@ export default function Home() {
             style={{
               minHeight: "520px",
               borderRadius: "28px",
-              background:
-                "linear-gradient(145deg, rgba(176,78,103,0.18), rgba(255,255,255,0.02) 40%, rgba(111,116,170,0.05) 100%)",
               border: "1px solid rgba(255,255,255,0.08)",
               boxShadow: "0 20px 70px rgba(0,0,0,0.28)",
               position: "relative",
               overflow: "hidden",
+              backgroundImage:
+                "linear-gradient(to bottom, rgba(8,9,13,0.18), rgba(8,9,13,0.52)), url('/images/hero.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
             }}
           >
             <div
               style={{
                 position: "absolute",
-                inset: "12% auto auto 10%",
-                width: "180px",
-                height: "180px",
-                borderRadius: "999px",
-                background: "rgba(176,78,103,0.18)",
-                filter: "blur(40px)",
-              }}
-            />
-            <div
-              style={{
-                position: "absolute",
-                right: "10%",
-                top: "18%",
-                width: "140px",
-                height: "140px",
-                borderRadius: "999px",
-                background: "rgba(255,255,255,0.05)",
-                filter: "blur(26px)",
+                inset: 0,
+                background:
+                  "radial-gradient(circle at top left, rgba(176,78,103,0.18), transparent 30%)",
               }}
             />
             <div
@@ -219,7 +206,7 @@ export default function Home() {
                 display: "flex",
                 justifyContent: "space-between",
                 fontSize: "14px",
-                color: "#cfc7be",
+                color: "#f3eee7",
               }}
             >
               <span>weather</span>
@@ -255,7 +242,7 @@ export default function Home() {
               fontSize: "20px",
               lineHeight: 1.8,
               color: "#bfb6ad",
-              margin: 0,
+              margin: "0 0 32px",
             }}
           >
             Parallax Hearts moves through the charged space between intimacy and
@@ -264,6 +251,20 @@ export default function Home() {
             thresholds, crossings, silence, and the emotional architecture that
             remains after love changes a life.
           </p>
+
+          <div
+            style={{
+              minHeight: "380px",
+              borderRadius: "28px",
+              overflow: "hidden",
+              border: "1px solid rgba(255,255,255,0.08)",
+              boxShadow: "0 20px 70px rgba(0,0,0,0.24)",
+              backgroundImage:
+                "linear-gradient(to bottom, rgba(8,9,13,0.2), rgba(8,9,13,0.5)), url('/images/world.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
         </section>
 
         <section id="project" style={{ padding: "16px 0 96px" }}>
@@ -271,13 +272,40 @@ export default function Home() {
           <h2
             style={{
               fontSize: "clamp(34px, 5vw, 48px)",
-              margin: "0 0 28px",
+              margin: "0 0 20px",
               fontFamily: 'Georgia, "Times New Roman", serif',
               fontWeight: 500,
             }}
           >
             What the Town Keeps
           </h2>
+
+          <p
+            style={{
+              ...bodyTextStyle,
+              maxWidth: "820px",
+              marginBottom: "28px",
+            }}
+          >
+            A love story shaped by the aftermath of a mutual, transformative,
+            unsustainable relationship. The town is not a mystery to solve. It is
+            the emotional map of what remains.
+          </p>
+
+          <div
+            style={{
+              minHeight: "420px",
+              borderRadius: "28px",
+              overflow: "hidden",
+              border: "1px solid rgba(255,255,255,0.08)",
+              boxShadow: "0 20px 70px rgba(0,0,0,0.28)",
+              backgroundImage:
+                "linear-gradient(to bottom, rgba(8,9,13,0.2), rgba(8,9,13,0.55)), url('/images/project.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              marginBottom: "32px",
+            }}
+          />
 
           <div
             style={{
@@ -355,8 +383,10 @@ export default function Home() {
             style={{
               minHeight: "440px",
               borderRadius: "26px",
-              background:
-                "linear-gradient(135deg, rgba(176,78,103,0.24), rgba(255,255,255,0.03) 40%, rgba(0,0,0,0.12) 100%)",
+              backgroundImage:
+                "linear-gradient(to bottom, rgba(8,9,13,0.18), rgba(8,9,13,0.48)), url('/images/world.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
               border: "1px solid rgba(255,255,255,0.08)",
               position: "relative",
               overflow: "hidden",
@@ -365,45 +395,9 @@ export default function Home() {
             <div
               style={{
                 position: "absolute",
-                left: "12%",
-                top: "18%",
-                width: "76%",
-                height: "1px",
-                background: "rgba(255,255,255,0.16)",
-              }}
-            />
-            <div
-              style={{
-                position: "absolute",
-                left: "20%",
-                top: "38%",
-                width: "60%",
-                height: "1px",
-                background: "rgba(255,255,255,0.1)",
-              }}
-            />
-            <div
-              style={{
-                position: "absolute",
-                left: "16%",
-                bottom: "20%",
-                width: "16px",
-                height: "16px",
-                borderRadius: "999px",
-                background: "rgba(176,78,103,0.75)",
-                boxShadow: "0 0 20px rgba(176,78,103,0.55)",
-              }}
-            />
-            <div
-              style={{
-                position: "absolute",
-                right: "18%",
-                bottom: "32%",
-                width: "10px",
-                height: "10px",
-                borderRadius: "999px",
-                background: "rgba(243,238,231,0.7)",
-                boxShadow: "0 0 18px rgba(243,238,231,0.28)",
+                inset: 0,
+                background:
+                  "linear-gradient(135deg, rgba(176,78,103,0.18), rgba(255,255,255,0.02) 40%, rgba(0,0,0,0.12) 100%)",
               }}
             />
           </div>
