@@ -42,7 +42,6 @@ export default function MusicPage() {
             <Link href="/about" style={{ textDecoration: "none" }}>About</Link>
             <Link href="/project" style={{ textDecoration: "none" }}>Project</Link>
             <Link href="/music" style={{ textDecoration: "none" }}>Music</Link>
-            <Link href="/shop" style={{ textDecoration: "none" }}>Store</Link>
             <Link href="/contact" style={{ textDecoration: "none" }}>Contact</Link>
           </nav>
         </header>
@@ -70,12 +69,13 @@ export default function MusicPage() {
             </div>
 
             <h1 style={{ fontSize: "clamp(36px, 7vw, 68px)", lineHeight: 0.98, marginTop: 0 }}>
-              Sound as portal
+              What the Town Keeps
             </h1>
 
             <p style={{ fontSize: "18px", lineHeight: 1.8, color: "#c9c1b8" }}>
-              Listen to the current release, explore the world of Parallax Hearts,
-              and support the music through Bandcamp and direct purchase.
+              The current Parallax Hearts release, available now on Bandcamp.
+              This site points listeners directly to the music and the place where they
+              can support the project most directly.
             </p>
 
             <div style={{ display: "grid", gap: "18px", marginTop: "24px" }}>
@@ -88,11 +88,11 @@ export default function MusicPage() {
                 }}
               >
                 <strong style={{ display: "block", marginBottom: "10px", color: "#e6cfb0" }}>
-                  What the Town Keeps
+                  Listen on Bandcamp
                 </strong>
 
                 <p style={{ margin: "0 0 16px", color: "#c9c1b8", lineHeight: 1.75 }}>
-                  The current Parallax Hearts release, available now on Bandcamp.
+                  Explore the release, stream the tracks, and support Parallax Hearts directly.
                 </p>
 
                 <div
@@ -105,9 +105,7 @@ export default function MusicPage() {
                     color: "#c9c1b8",
                   }}
                 >
-                  Bandcamp embed goes here next. On your Bandcamp album page, click
-                  <strong> Share / Embed </strong>
-                  and copy the iframe src link into this section.
+                  Bandcamp embed can go here later using the Share / Embed code from the album page.
                 </div>
 
                 <div style={{ marginTop: "14px" }}>
@@ -125,7 +123,7 @@ export default function MusicPage() {
                       fontWeight: 700,
                     }}
                   >
-                    Listen on Bandcamp
+                    Open Bandcamp
                   </a>
                 </div>
               </div>
@@ -139,10 +137,10 @@ export default function MusicPage() {
                 }}
               >
                 <strong style={{ display: "block", marginBottom: "8px", color: "#e6cfb0" }}>
-                  Direct support
+                  Support the release
                 </strong>
                 <p style={{ margin: 0, color: "#c9c1b8", lineHeight: 1.75 }}>
-                  Visit the store for paid albums, artwork, and future exclusive releases.
+                  The main support path is now Bandcamp — simple, direct, and centered on the music.
                 </p>
               </div>
             </div>

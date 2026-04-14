@@ -42,7 +42,6 @@ export default function Home() {
             <Link href="/about" style={{ textDecoration: "none" }}>About</Link>
             <Link href="/project" style={{ textDecoration: "none" }}>Project</Link>
             <Link href="/music" style={{ textDecoration: "none" }}>Music</Link>
-            <Link href="/shop" style={{ textDecoration: "none" }}>Store</Link>
             <Link href="/contact" style={{ textDecoration: "none" }}>Contact</Link>
           </nav>
         </header>
@@ -66,7 +65,7 @@ export default function Home() {
                 marginBottom: "18px",
               }}
             >
-              Cosmic · Spiritual · Musical · Visual
+              Cosmic · Spiritual · Musical
             </div>
 
             <h1
@@ -89,10 +88,9 @@ export default function Home() {
                 margin: 0,
               }}
             >
-              A living music and art project shaped by atmosphere, inner vision,
-              mythic feeling, and the unseen currents beneath ordinary life.
-              Parallax Hearts is a home for songs, artwork, project worlds, and
-              the deeper spirit moving through them.
+              A living music project shaped by atmosphere, inner vision, mythic feeling,
+              and the unseen currents beneath ordinary life. Parallax Hearts is a home
+              for songs, resonance, and the deeper spirit moving through them.
             </p>
 
             <div style={{ display: "flex", gap: "14px", flexWrap: "wrap", marginTop: "28px" }}>
@@ -111,8 +109,10 @@ export default function Home() {
                 Enter the Music
               </Link>
 
-              <Link
-                href="/shop"
+              <a
+                href="https://parallaxhearts.bandcamp.com/album/what-the-town-keeps"
+                target="_blank"
+                rel="noreferrer"
                 style={{
                   display: "inline-block",
                   padding: "12px 20px",
@@ -122,8 +122,8 @@ export default function Home() {
                   textDecoration: "none",
                 }}
               >
-                View Albums + Artwork
-              </Link>
+                Support on Bandcamp
+              </a>
             </div>
           </div>
 
@@ -174,7 +174,7 @@ export default function Home() {
             >
               <h3 style={{ marginTop: 0 }}>Music</h3>
               <p style={{ color: "#c9c1b8", lineHeight: 1.75 }}>
-                Songs, releases, embedded players, and direct paths to listen or support.
+                Songs, releases, listening links, and the current world of the project.
               </p>
             </div>
 
@@ -186,9 +186,9 @@ export default function Home() {
                 padding: "22px",
               }}
             >
-              <h3 style={{ marginTop: 0 }}>Artwork</h3>
+              <h3 style={{ marginTop: 0 }}>Project</h3>
               <p style={{ color: "#c9c1b8", lineHeight: 1.75 }}>
-                Project visuals, artwork collections, and private or paid releases.
+                Visual atmosphere, themes, mythology, and the deeper frame around the music.
               </p>
             </div>
 
@@ -200,9 +200,9 @@ export default function Home() {
                 padding: "22px",
               }}
             >
-              <h3 style={{ marginTop: 0 }}>The Project</h3>
+              <h3 style={{ marginTop: 0 }}>Bandcamp</h3>
               <p style={{ color: "#c9c1b8", lineHeight: 1.75 }}>
-                A world of story, meaning, spiritual atmosphere, and evolving vision.
+                The main place to listen, support the release, and stay connected to new music.
               </p>
             </div>
           </div>
@@ -224,6 +224,14 @@ export default function Home() {
           <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
             <a href="https://parallaxhearts.org" style={{ textDecoration: "none" }}>
               parallaxhearts.org
+            </a>
+            <a
+              href="https://parallaxhearts.bandcamp.com/album/what-the-town-keeps"
+              target="_blank"
+              rel="noreferrer"
+              style={{ textDecoration: "none" }}
+            >
+              Bandcamp
             </a>
             <a href="mailto:chad@parallaxhearts.org" style={{ textDecoration: "none" }}>
               chad@parallaxhearts.org

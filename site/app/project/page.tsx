@@ -42,7 +42,6 @@ export default function ProjectPage() {
             <Link href="/about" style={{ textDecoration: "none" }}>About</Link>
             <Link href="/project" style={{ textDecoration: "none" }}>Project</Link>
             <Link href="/music" style={{ textDecoration: "none" }}>Music</Link>
-            <Link href="/shop" style={{ textDecoration: "none" }}>Store</Link>
             <Link href="/contact" style={{ textDecoration: "none" }}>Contact</Link>
           </nav>
         </header>
@@ -147,7 +146,7 @@ export default function ProjectPage() {
               <h3 style={{ marginTop: 0 }}>Current era</h3>
               <p style={{ color: "#c9c1b8", lineHeight: 1.75 }}>
                 Use this block for your active release cycle, visual chapter, or featured
-                project statement tied to the latest album or body of artwork.
+                project statement tied to the latest release.
               </p>
             </div>
           </div>

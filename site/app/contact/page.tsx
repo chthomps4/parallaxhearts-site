@@ -42,7 +42,6 @@ export default function ContactPage() {
             <Link href="/about" style={{ textDecoration: "none" }}>About</Link>
             <Link href="/project" style={{ textDecoration: "none" }}>Project</Link>
             <Link href="/music" style={{ textDecoration: "none" }}>Music</Link>
-            <Link href="/shop" style={{ textDecoration: "none" }}>Store</Link>
             <Link href="/contact" style={{ textDecoration: "none" }}>Contact</Link>
           </nav>
         </header>
@@ -104,10 +103,15 @@ export default function ContactPage() {
                 }}
               >
                 <strong style={{ display: "block", marginBottom: "8px", color: "#e6cfb0" }}>
-                  Website
+                  Bandcamp
                 </strong>
-                <a href="https://parallaxhearts.org" style={{ color: "#f3eee7", textDecoration: "none" }}>
-                  parallaxhearts.org
+                <a
+                  href="https://parallaxhearts.bandcamp.com/album/what-the-town-keeps"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ color: "#f3eee7", textDecoration: "none" }}
+                >
+                  parallaxhearts.bandcamp.com
                 </a>
               </div>
 

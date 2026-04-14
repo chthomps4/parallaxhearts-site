@@ -42,7 +42,6 @@ export default function AboutPage() {
             <Link href="/about" style={{ textDecoration: "none" }}>About</Link>
             <Link href="/project" style={{ textDecoration: "none" }}>Project</Link>
             <Link href="/music" style={{ textDecoration: "none" }}>Music</Link>
-            <Link href="/shop" style={{ textDecoration: "none" }}>Store</Link>
             <Link href="/contact" style={{ textDecoration: "none" }}>Contact</Link>
           </nav>
         </header>
