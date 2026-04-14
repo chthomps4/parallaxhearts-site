@@ -88,9 +88,10 @@ export default function Home() {
                 margin: 0,
               }}
             >
-              A living music project shaped by atmosphere, inner vision, mythic feeling,
-              and the unseen currents beneath ordinary life. Parallax Hearts is a home
-              for songs, resonance, and the deeper spirit moving through them.
+              Parallax Hearts is a music project shaped by atmosphere, memory, longing,
+              inner vision, and the quiet forces that move beneath the surface of ordinary life.
+              The work lives where song becomes landscape, where feeling becomes image, and where
+              spiritual searching leaves a trace in sound.
             </p>
 
             <div style={{ display: "flex", gap: "14px", flexWrap: "wrap", marginTop: "28px" }}>
@@ -147,18 +148,20 @@ export default function Home() {
           </div>
         </section>
 
-        <section style={{ padding: "12px 0 72px" }}>
+        <section style={{ padding: "12px 0 36px" }}>
           <h2 style={{ fontSize: "30px", marginBottom: "12px" }}>A signal from somewhere deeper</h2>
-          <p style={{ color: "#c9c1b8", lineHeight: 1.8, maxWidth: "800px" }}>
-            Parallax Hearts moves between music, image, memory, symbol, longing,
-            and revelation. The work carries a reflective and visionary tone —
-            rooted in emotional truth, spiritual atmosphere, and the sense that
-            art can become a portal.
+          <p style={{ color: "#c9c1b8", lineHeight: 1.85, maxWidth: "860px" }}>
+            The work of Parallax Hearts moves between devotion and distance, intimacy and myth,
+            town and threshold, body and spirit. It is interested in the places where memory
+            becomes haunted, where beauty is mixed with ache, and where music can open a door
+            into what words alone cannot fully hold. The songs are not just meant to be heard —
+            they are meant to be inhabited.
           </p>
+        </section>
 
+        <section style={{ padding: "0 0 72px" }}>
           <div
             style={{
-              marginTop: "28px",
               display: "grid",
               gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
               gap: "22px",
@@ -173,8 +176,9 @@ export default function Home() {
               }}
             >
               <h3 style={{ marginTop: 0 }}>Music</h3>
-              <p style={{ color: "#c9c1b8", lineHeight: 1.75 }}>
-                Songs, releases, listening links, and the current world of the project.
+              <p style={{ color: "#c9c1b8", lineHeight: 1.8 }}>
+                Songs, releases, and evolving bodies of work that carry emotional weight,
+                spiritual tension, and a sense of atmosphere that lingers after the last note.
               </p>
             </div>
 
@@ -186,9 +190,10 @@ export default function Home() {
                 padding: "22px",
               }}
             >
-              <h3 style={{ marginTop: 0 }}>Project</h3>
-              <p style={{ color: "#c9c1b8", lineHeight: 1.75 }}>
-                Visual atmosphere, themes, mythology, and the deeper frame around the music.
+              <h3 style={{ marginTop: 0 }}>Project World</h3>
+              <p style={{ color: "#c9c1b8", lineHeight: 1.8 }}>
+                A larger field of imagery, ideas, symbols, and emotional landscapes surrounding
+                the music — a place where the visual and the unseen meet.
               </p>
             </div>
 
@@ -201,9 +206,48 @@ export default function Home() {
               }}
             >
               <h3 style={{ marginTop: 0 }}>Bandcamp</h3>
-              <p style={{ color: "#c9c1b8", lineHeight: 1.75 }}>
-                The main place to listen, support the release, and stay connected to new music.
+              <p style={{ color: "#c9c1b8", lineHeight: 1.8 }}>
+                The clearest place to hear the current release, follow the project, and directly
+                support what Parallax Hearts is building.
               </p>
+            </div>
+          </div>
+        </section>
+
+        <section style={{ padding: "0 0 72px" }}>
+          <div
+            style={{
+              background: "rgba(255,255,255,0.04)",
+              border: "1px solid rgba(255,255,255,0.09)",
+              borderRadius: "24px",
+              padding: "28px",
+            }}
+          >
+            <h2 style={{ marginTop: 0, fontSize: "28px" }}>Current Release</h2>
+            <p style={{ color: "#c9c1b8", lineHeight: 1.85, maxWidth: "860px" }}>
+              <em>What the Town Keeps</em> gathers the emotional and atmospheric spirit of the
+              project into a release shaped by memory, place, silence, and the unseen pressure
+              of what remains. It carries the feeling of things buried but still speaking,
+              familiar streets touched by mystery, and the sense that what is hidden often
+              leaves the deepest imprint.
+            </p>
+            <div style={{ marginTop: "18px" }}>
+              <a
+                href="https://parallaxhearts.bandcamp.com/album/what-the-town-keeps"
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  display: "inline-block",
+                  padding: "12px 20px",
+                  borderRadius: "999px",
+                  background: "linear-gradient(135deg, #d6a86b, #b98953)",
+                  color: "#17120f",
+                  textDecoration: "none",
+                  fontWeight: 700,
+                }}
+              >
+                Visit the Release on Bandcamp
+              </a>
             </div>
           </div>
         </section>

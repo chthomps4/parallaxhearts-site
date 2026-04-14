@@ -72,10 +72,18 @@ export default function AboutPage() {
               The atmosphere behind the work
             </h1>
 
-            <p style={{ fontSize: "18px", lineHeight: 1.8, color: "#c9c1b8" }}>
-              Parallax Hearts is built around a cinematic and spiritual approach
-              to music and image. It lives where emotion, memory, symbolism,
-              beauty, mystery, and inner searching overlap.
+            <p style={{ fontSize: "18px", lineHeight: 1.85, color: "#c9c1b8" }}>
+              Parallax Hearts is a music project rooted in emotional depth, spiritual tension,
+              beauty, memory, and a sense of the unseen. It is drawn to the edges between
+              the intimate and the cosmic — to the quiet places where longing, devotion,
+              and mystery begin to sound like one thing.
+            </p>
+
+            <p style={{ fontSize: "18px", lineHeight: 1.85, color: "#c9c1b8" }}>
+              Rather than separating music from image, concept, or feeling, the project treats
+              them as part of one field. Songs emerge with visual atmosphere, inner mythology,
+              and the emotional afterlife of place. The goal is not only to create tracks,
+              but to create a world listeners can enter.
             </p>
 
             <div style={{ display: "grid", gap: "18px", marginTop: "24px" }}>
@@ -90,8 +98,8 @@ export default function AboutPage() {
                 <strong style={{ display: "block", marginBottom: "8px", color: "#e6cfb0" }}>
                   Core feeling
                 </strong>
-                <p style={{ margin: 0, color: "#c9c1b8", lineHeight: 1.75 }}>
-                  Reflective, intimate, cosmic, devotional, mythic, and searching.
+                <p style={{ margin: 0, color: "#c9c1b8", lineHeight: 1.8 }}>
+                  Reflective, intimate, haunted, devotional, cinematic, mythic, and searching.
                 </p>
               </div>
 
@@ -106,8 +114,26 @@ export default function AboutPage() {
                 <strong style={{ display: "block", marginBottom: "8px", color: "#e6cfb0" }}>
                   Creative direction
                 </strong>
-                <p style={{ margin: 0, color: "#c9c1b8", lineHeight: 1.75 }}>
-                  Music, text, imagery, and visual worldbuilding arranged as one unified experience.
+                <p style={{ margin: 0, color: "#c9c1b8", lineHeight: 1.8 }}>
+                  Music, language, visual atmosphere, and inner symbolism arranged as one
+                  unified experience rather than separate pieces.
+                </p>
+              </div>
+
+              <div
+                style={{
+                  background: "rgba(255,255,255,0.05)",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  borderRadius: "20px",
+                  padding: "22px",
+                }}
+              >
+                <strong style={{ display: "block", marginBottom: "8px", color: "#e6cfb0" }}>
+                  Intention
+                </strong>
+                <p style={{ margin: 0, color: "#c9c1b8", lineHeight: 1.8 }}>
+                  To make work that lingers — work that opens inward, holds emotional truth,
+                  and leaves room for mystery instead of explaining everything away.
                 </p>
               </div>
             </div>

@@ -63,10 +63,19 @@ export default function ProjectPage() {
             A world built through sound and image
           </h1>
 
-          <p style={{ fontSize: "18px", lineHeight: 1.8, color: "#c9c1b8", maxWidth: "820px" }}>
-            This section can hold the evolving story of the project, album-era
-            concepts, visual motifs, lyrics fragments, statements of intent, and
-            deeper thematic threads.
+          <p style={{ fontSize: "18px", lineHeight: 1.85, color: "#c9c1b8", maxWidth: "900px" }}>
+            Parallax Hearts is more than a collection of songs. It is an unfolding atmosphere —
+            a project world shaped by memory, symbolic weight, spiritual tension, and the
+            emotional geography of place. Each release extends that world, carrying new shades
+            of meaning while remaining connected to the same deeper current.
+          </p>
+
+          <p style={{ fontSize: "18px", lineHeight: 1.85, color: "#c9c1b8", maxWidth: "900px" }}>
+            The project is drawn to thresholds: between town and wilderness, silence and revelation,
+            grief and beauty, the visible and the hidden. The visual language, the titles,
+            the textures of the songs, and the surrounding ideas all point toward a world that
+            feels familiar, but charged — as if something sacred or unresolved is moving just
+            behind what can be seen.
           </p>
 
           <div
@@ -129,9 +138,10 @@ export default function ProjectPage() {
               }}
             >
               <h3 style={{ marginTop: 0 }}>Creative mythos</h3>
-              <p style={{ color: "#c9c1b8", lineHeight: 1.75 }}>
-                Use this area for the deeper language of the project — the spiritual,
-                cosmic, poetic, and emotional frame around the music.
+              <p style={{ color: "#c9c1b8", lineHeight: 1.8 }}>
+                The project lives in the tension between what is held and what is hidden —
+                between memory and haunting, tenderness and distance, home and estrangement.
+                Its mythology is not fixed lore so much as a recurring spiritual weather.
               </p>
             </div>
 
@@ -144,11 +154,29 @@ export default function ProjectPage() {
               }}
             >
               <h3 style={{ marginTop: 0 }}>Current era</h3>
-              <p style={{ color: "#c9c1b8", lineHeight: 1.75 }}>
-                Use this block for your active release cycle, visual chapter, or featured
-                project statement tied to the latest release.
+              <p style={{ color: "#c9c1b8", lineHeight: 1.8 }}>
+                <em>What the Town Keeps</em> centers the emotional and symbolic terrain of place:
+                what settles into the walls, what lingers in a name, what a town carries long after
+                the visible story appears to move on.
               </p>
             </div>
+          </div>
+
+          <div
+            style={{
+              marginTop: "22px",
+              background: "rgba(255,255,255,0.04)",
+              border: "1px solid rgba(255,255,255,0.09)",
+              borderRadius: "24px",
+              padding: "28px",
+            }}
+          >
+            <h2 style={{ marginTop: 0, fontSize: "28px" }}>Themes moving through the work</h2>
+            <p style={{ color: "#c9c1b8", lineHeight: 1.85, marginBottom: 0 }}>
+              Place as spirit. Memory as residue. Beauty touched by ache. The sacred hidden
+              inside the ordinary. Emotional inheritance. Silence as testimony. Music as a way
+              of approaching what cannot be fully named, but can still be felt.
+            </p>
           </div>
         </section>
       </div>

@@ -72,10 +72,17 @@ export default function MusicPage() {
               What the Town Keeps
             </h1>
 
-            <p style={{ fontSize: "18px", lineHeight: 1.8, color: "#c9c1b8" }}>
-              The current Parallax Hearts release, available now on Bandcamp.
-              This site points listeners directly to the music and the place where they
-              can support the project most directly.
+            <p style={{ fontSize: "18px", lineHeight: 1.85, color: "#c9c1b8" }}>
+              The current Parallax Hearts release gathers atmosphere, place, memory,
+              and hidden emotional weight into a body of work that feels both intimate
+              and haunted. It leans into the mystery of what remains — what a town holds,
+              what silence protects, and what continues to echo after the visible moment passes.
+            </p>
+
+            <p style={{ fontSize: "18px", lineHeight: 1.85, color: "#c9c1b8" }}>
+              This release is part of a wider creative world, but it also stands on its own:
+              a listening experience shaped by mood, inwardness, and the tension between
+              closeness and distance. It asks to be sat with, returned to, and allowed to unfold.
             </p>
 
             <div style={{ display: "grid", gap: "18px", marginTop: "24px" }}>
@@ -91,8 +98,8 @@ export default function MusicPage() {
                   Listen on Bandcamp
                 </strong>
 
-                <p style={{ margin: "0 0 16px", color: "#c9c1b8", lineHeight: 1.75 }}>
-                  Explore the release, stream the tracks, and support Parallax Hearts directly.
+                <p style={{ margin: "0 0 16px", color: "#c9c1b8", lineHeight: 1.8 }}>
+                  Explore the release, follow the project, and support the music directly through Bandcamp.
                 </p>
 
                 <div
@@ -103,9 +110,11 @@ export default function MusicPage() {
                     background: "#111",
                     padding: "18px",
                     color: "#c9c1b8",
+                    lineHeight: 1.7,
                   }}
                 >
                   Bandcamp embed can go here later using the Share / Embed code from the album page.
+                  For now, the button below takes listeners directly to the release.
                 </div>
 
                 <div style={{ marginTop: "14px" }}>
@@ -139,8 +148,27 @@ export default function MusicPage() {
                 <strong style={{ display: "block", marginBottom: "8px", color: "#e6cfb0" }}>
                   Support the release
                 </strong>
-                <p style={{ margin: 0, color: "#c9c1b8", lineHeight: 1.75 }}>
-                  The main support path is now Bandcamp — simple, direct, and centered on the music.
+                <p style={{ margin: 0, color: "#c9c1b8", lineHeight: 1.8 }}>
+                  Bandcamp is the central support path for this release — direct, simple,
+                  and focused on the music itself.
+                </p>
+              </div>
+
+              <div
+                style={{
+                  background: "rgba(255,255,255,0.05)",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  borderRadius: "20px",
+                  padding: "22px",
+                }}
+              >
+                <strong style={{ display: "block", marginBottom: "8px", color: "#e6cfb0" }}>
+                  Listening note
+                </strong>
+                <p style={{ margin: 0, color: "#c9c1b8", lineHeight: 1.8 }}>
+                  Some records ask for immediate reaction. Others reveal themselves gradually.
+                  <em> What the Town Keeps </em> belongs to the second kind — a release that
+                  opens deeper with time, repetition, and quiet attention.
                 </p>
               </div>
             </div>

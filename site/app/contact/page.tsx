@@ -72,9 +72,15 @@ export default function ContactPage() {
               Reach out
             </h1>
 
-            <p style={{ fontSize: "18px", lineHeight: 1.8, color: "#c9c1b8" }}>
-              For inquiries, collaboration, artwork interest, press, or direct contact,
-              use the details below.
+            <p style={{ fontSize: "18px", lineHeight: 1.85, color: "#c9c1b8" }}>
+              For collaboration, press, questions, creative conversation, or anything related
+              to the music and the wider project, reach out through the contact points below.
+            </p>
+
+            <p style={{ fontSize: "18px", lineHeight: 1.85, color: "#c9c1b8" }}>
+              Parallax Hearts is still growing, and direct connection matters.
+              Whether you are reaching out about the release, the visual world of the project,
+              or simply because the work resonated with you, it is welcomed.
             </p>
 
             <div style={{ display: "grid", gap: "18px", marginTop: "24px" }}>
