@@ -43,53 +43,50 @@ export default function Home() {
       }}
     >
       <div style={{ maxWidth: "1160px", margin: "0 auto" }}>
-        <header
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            padding: "14px 0 28px",
-            borderBottom: "1px solid rgba(255,255,255,0.08)",
-            marginBottom: "72px",
-            flexWrap: "wrap",
-            gap: "16px",
-          }}
-        >
-          <a
-            href="https://parallaxhearts.org"
-            style={{
-              fontSize: "22px",
-              fontWeight: 600,
-              letterSpacing: "0.03em",
-              color: "#f3eee7",
-              textDecoration: "none",
-            }}
-          >
-            Parallax Hearts
-          </a>
+   <header
+  style={{
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: "14px 0 28px",
+    borderBottom: "1px solid rgba(255,255,255,0.08)",
+    marginBottom: "72px",
+    flexWrap: "wrap",
+    gap: "16px",
+  }}
+>
+  <a
+    href="/"
+    style={{
+      fontSize: "22px",
+      fontWeight: 600,
+      letterSpacing: "0.03em",
+      color: "#f3eee7",
+      textDecoration: "none",
+    }}
+  >
+    Parallax Hearts
+  </a>
 
-          <nav
-            style={{
-              display: "flex",
-              gap: "24px",
-              fontSize: "15px",
-              flexWrap: "wrap",
-            }}
-          >
-            <a href="#world" style={{ color: "#f3eee7", textDecoration: "none" }}>
-              World
-            </a>
-            <a href="#project" style={{ color: "#f3eee7", textDecoration: "none" }}>
-              Project
-            </a>
-            <a href="#signals" style={{ color: "#f3eee7", textDecoration: "none" }}>
-              Signals
-            </a>
-            <a href="#contact" style={{ color: "#f3eee7", textDecoration: "none" }}>
-              Contact
-            </a>
-          </nav>
-        </header>
+  <nav
+    style={{
+      display: "flex",
+      gap: "24px",
+      fontSize: "15px",
+      flexWrap: "wrap",
+    }}
+  >
+    <a href="/about" style={{ color: "#f3eee7", textDecoration: "none" }}>
+      About
+    </a>
+    <a href="/project" style={{ color: "#f3eee7", textDecoration: "none" }}>
+      Project
+    </a>
+    <a href="/contact" style={{ color: "#f3eee7", textDecoration: "none" }}>
+      Contact
+    </a>
+  </nav>
+</header>
 
         <section
           style={{
