@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function AboutPage() {
+export default function ShopPage() {
   return (
     <main
       style={{
@@ -66,17 +66,16 @@ export default function AboutPage() {
                 marginBottom: "18px",
               }}
             >
-              About
+              Store
             </div>
 
             <h1 style={{ fontSize: "clamp(36px, 7vw, 68px)", lineHeight: 0.98, marginTop: 0 }}>
-              The atmosphere behind the work
+              Albums, artwork, and premium releases
             </h1>
 
             <p style={{ fontSize: "18px", lineHeight: 1.8, color: "#c9c1b8" }}>
-              Parallax Hearts is built around a cinematic and spiritual approach
-              to music and image. It lives where emotion, memory, symbolism,
-              beauty, mystery, and inner searching overlap.
+              This page is ready for paid albums, artwork, exclusive downloads,
+              and future member-only or private release links.
             </p>
 
             <div style={{ display: "grid", gap: "18px", marginTop: "24px" }}>
@@ -89,11 +88,25 @@ export default function AboutPage() {
                 }}
               >
                 <strong style={{ display: "block", marginBottom: "8px", color: "#e6cfb0" }}>
-                  Core feeling
+                  Album paywall
                 </strong>
-                <p style={{ margin: 0, color: "#c9c1b8", lineHeight: 1.75 }}>
-                  Reflective, intimate, cosmic, devotional, mythic, and searching.
+                <p style={{ margin: "0 0 14px", color: "#c9c1b8", lineHeight: 1.75 }}>
+                  Add your digital album description, edition details, and payment link here.
                 </p>
+                <a
+                  href="#"
+                  style={{
+                    display: "inline-block",
+                    padding: "12px 20px",
+                    borderRadius: "999px",
+                    background: "linear-gradient(135deg, #d6a86b, #b98953)",
+                    color: "#17120f",
+                    textDecoration: "none",
+                    fontWeight: 700,
+                  }}
+                >
+                  Add album payment link
+                </a>
               </div>
 
               <div
@@ -105,10 +118,40 @@ export default function AboutPage() {
                 }}
               >
                 <strong style={{ display: "block", marginBottom: "8px", color: "#e6cfb0" }}>
-                  Creative direction
+                  Artwork paywall
+                </strong>
+                <p style={{ margin: "0 0 14px", color: "#c9c1b8", lineHeight: 1.75 }}>
+                  Add collectible artwork, prints, private visual releases, or download bundles here.
+                </p>
+                <a
+                  href="#"
+                  style={{
+                    display: "inline-block",
+                    padding: "12px 20px",
+                    borderRadius: "999px",
+                    border: "1px solid rgba(255,255,255,0.14)",
+                    color: "#f3eee7",
+                    textDecoration: "none",
+                  }}
+                >
+                  Add artwork payment link
+                </a>
+              </div>
+
+              <div
+                style={{
+                  background: "rgba(255,255,255,0.05)",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  borderRadius: "20px",
+                  padding: "22px",
+                }}
+              >
+                <strong style={{ display: "block", marginBottom: "8px", color: "#e6cfb0" }}>
+                  Exclusive / private release page
                 </strong>
                 <p style={{ margin: 0, color: "#c9c1b8", lineHeight: 1.75 }}>
-                  Music, text, imagery, and visual worldbuilding arranged as one unified experience.
+                  You can later add secret links, limited drops, supporter-only music,
+                  or special visual bundles here.
                 </p>
               </div>
             </div>
@@ -124,8 +167,8 @@ export default function AboutPage() {
             }}
           >
             <Image
-              src="/images/portrait.jpg"
-              alt="Parallax Hearts portrait"
+              src="/images/project.jpg"
+              alt="Parallax Hearts store page image"
               width={1200}
               height={1400}
               style={{ width: "100%", height: "100%", objectFit: "cover", minHeight: "420px" }}

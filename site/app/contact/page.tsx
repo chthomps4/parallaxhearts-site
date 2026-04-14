@@ -1,31 +1,5 @@
-import type { CSSProperties } from "react";
-
-const containerStyle: CSSProperties = {
-  maxWidth: "1160px",
-  margin: "0 auto",
-};
-
-const labelStyle: CSSProperties = {
-  color: "#b04e67",
-  textTransform: "uppercase",
-  letterSpacing: "0.18em",
-  fontSize: "12px",
-  marginBottom: "14px",
-};
-
-const bodyStyle: CSSProperties = {
-  fontSize: "19px",
-  lineHeight: 1.8,
-  color: "#bfb6ad",
-  margin: 0,
-};
-
-const cardStyle: CSSProperties = {
-  background: "rgba(255,255,255,0.03)",
-  border: "1px solid rgba(255,255,255,0.08)",
-  borderRadius: "24px",
-  padding: "28px",
-};
+import Image from "next/image";
+import Link from "next/link";
 
 export default function ContactPage() {
   return (
@@ -33,178 +7,150 @@ export default function ContactPage() {
       style={{
         minHeight: "100vh",
         background:
-          "radial-gradient(circle at top left, rgba(176,78,103,0.18), transparent 28%), radial-gradient(circle at 85% 12%, rgba(112,118,170,0.08), transparent 24%), linear-gradient(180deg, #08090d 0%, #0b0b10 45%, #0a0a0f 100%)",
+          "radial-gradient(circle at top, rgba(110,78,146,0.22), transparent 35%), linear-gradient(180deg, #08080d 0%, #0b0b12 45%, #11111b 100%)",
         color: "#f3eee7",
-        padding: "40px 24px 80px",
-        fontFamily: 'Inter, Arial, Helvetica, sans-serif',
+        fontFamily: "Georgia, serif",
       }}
     >
-      <div style={containerStyle}>
+      <div style={{ width: "min(1160px, calc(100% - 32px))", margin: "0 auto" }}>
         <header
           style={{
+            padding: "24px 0",
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
-            padding: "14px 0 28px",
-            borderBottom: "1px solid rgba(255,255,255,0.08)",
-            marginBottom: "72px",
+            gap: "20px",
             flexWrap: "wrap",
-            gap: "16px",
+            borderBottom: "1px solid rgba(255,255,255,0.08)",
           }}
         >
-          <a
+          <Link
             href="/"
             style={{
               fontSize: "22px",
               fontWeight: 600,
-              letterSpacing: "0.03em",
+              letterSpacing: "0.06em",
               color: "#f3eee7",
               textDecoration: "none",
+              textTransform: "uppercase",
             }}
           >
             Parallax Hearts
-          </a>
+          </Link>
 
-          <nav
-            style={{
-              display: "flex",
-              gap: "24px",
-              fontSize: "15px",
-              flexWrap: "wrap",
-            }}
-          >
-            <a href="/about" style={{ color: "#f3eee7", textDecoration: "none" }}>
-              About
-            </a>
-            <a href="/project" style={{ color: "#f3eee7", textDecoration: "none" }}>
-              Project
-            </a>
-            <a href="/contact" style={{ color: "#f3eee7", textDecoration: "none" }}>
-              Contact
-            </a>
+          <nav style={{ display: "flex", gap: "20px", flexWrap: "wrap", fontSize: "15px" }}>
+            <Link href="/about" style={{ textDecoration: "none" }}>About</Link>
+            <Link href="/project" style={{ textDecoration: "none" }}>Project</Link>
+            <Link href="/music" style={{ textDecoration: "none" }}>Music</Link>
+            <Link href="/shop" style={{ textDecoration: "none" }}>Store</Link>
+            <Link href="/contact" style={{ textDecoration: "none" }}>Contact</Link>
           </nav>
         </header>
 
-        <section style={{ padding: "30px 0 80px" }}>
-          <p style={labelStyle}>Contact</p>
-          <h1
-            style={{
-              fontSize: "clamp(42px, 7vw, 72px)",
-              lineHeight: 1,
-              margin: "0 0 24px",
-              fontFamily: 'Georgia, "Times New Roman", serif',
-              fontWeight: 600,
-            }}
-          >
-            Stay in the signal.
-          </h1>
-          <p style={{ ...bodyStyle, maxWidth: "820px" }}>
-            For music, visuals, story collaboration, features, or direct connection,
-            reach out here.
-          </p>
-        </section>
-
         <section
           style={{
+            padding: "60px 0 80px",
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: "24px",
-            paddingBottom: "80px",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "28px",
+            alignItems: "start",
           }}
         >
-          <article style={cardStyle}>
-            <p style={labelStyle}>Email</p>
-            <h2
+          <div>
+            <div
               style={{
-                fontSize: "30px",
-                margin: "0 0 14px",
-                fontFamily: 'Georgia, "Times New Roman", serif',
-                fontWeight: 500,
+                color: "#e6cfb0",
+                textTransform: "uppercase",
+                letterSpacing: "0.16em",
+                fontSize: "12px",
+                marginBottom: "18px",
               }}
             >
-              Direct Contact
-            </h2>
-            <a
-              href="mailto:chad@parallaxhearts.org"
-              style={{
-                color: "#f3eee7",
-                textDecoration: "none",
-                fontSize: "20px",
-                lineHeight: 1.7,
-              }}
-            >
-              chad@parallaxhearts.org
-            </a>
-          </article>
+              Contact
+            </div>
 
-          <article style={cardStyle}>
-            <p style={labelStyle}>Website</p>
-            <h2
-              style={{
-                fontSize: "30px",
-                margin: "0 0 14px",
-                fontFamily: 'Georgia, "Times New Roman", serif',
-                fontWeight: 500,
-              }}
-            >
-              Home Base
-            </h2>
-            <a
-              href="https://parallaxhearts.org"
-              style={{
-                color: "#f3eee7",
-                textDecoration: "none",
-                fontSize: "20px",
-                lineHeight: 1.7,
-              }}
-            >
-              parallaxhearts.org
-            </a>
-          </article>
+            <h1 style={{ fontSize: "clamp(36px, 7vw, 68px)", lineHeight: 0.98, marginTop: 0 }}>
+              Reach out
+            </h1>
 
-          <article style={cardStyle}>
-            <p style={labelStyle}>Social</p>
-            <h2
-              style={{
-                fontSize: "30px",
-                margin: "0 0 14px",
-                fontFamily: 'Georgia, "Times New Roman", serif',
-                fontWeight: 500,
-              }}
-            >
-              Next Signal
-            </h2>
-            <p style={bodyStyle}>
-              Add your preferred social link here when ready.
+            <p style={{ fontSize: "18px", lineHeight: 1.8, color: "#c9c1b8" }}>
+              For inquiries, collaboration, artwork interest, press, or direct contact,
+              use the details below.
             </p>
-          </article>
-        </section>
 
-        <section
-          style={{
-            border: "1px solid rgba(255,255,255,0.08)",
-            borderRadius: "28px",
-            padding: "40px 32px",
-            background:
-              "linear-gradient(135deg, rgba(255,255,255,0.03), rgba(176,78,103,0.08))",
-          }}
-        >
-          <p style={labelStyle}>Open To</p>
-          <h2
+            <div style={{ display: "grid", gap: "18px", marginTop: "24px" }}>
+              <div
+                style={{
+                  background: "rgba(255,255,255,0.05)",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  borderRadius: "20px",
+                  padding: "22px",
+                }}
+              >
+                <strong style={{ display: "block", marginBottom: "8px", color: "#e6cfb0" }}>
+                  Email
+                </strong>
+                <a href="mailto:chad@parallaxhearts.org" style={{ color: "#f3eee7", textDecoration: "none" }}>
+                  chad@parallaxhearts.org
+                </a>
+              </div>
+
+              <div
+                style={{
+                  background: "rgba(255,255,255,0.05)",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  borderRadius: "20px",
+                  padding: "22px",
+                }}
+              >
+                <strong style={{ display: "block", marginBottom: "8px", color: "#e6cfb0" }}>
+                  Website
+                </strong>
+                <a href="https://parallaxhearts.org" style={{ color: "#f3eee7", textDecoration: "none" }}>
+                  parallaxhearts.org
+                </a>
+              </div>
+
+              <div
+                style={{
+                  background: "rgba(255,255,255,0.05)",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  borderRadius: "20px",
+                  padding: "22px",
+                }}
+              >
+                <strong style={{ display: "block", marginBottom: "8px", color: "#e6cfb0" }}>
+                  Facebook
+                </strong>
+                <a
+                  href="https://www.facebook.com/parallaxhearts"
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ color: "#f3eee7", textDecoration: "none" }}
+                >
+                  @parallaxhearts
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div
             style={{
-              fontSize: "clamp(32px, 5vw, 48px)",
-              lineHeight: 1.1,
-              margin: "0 0 18px",
-              fontFamily: 'Georgia, "Times New Roman", serif',
-              fontWeight: 500,
+              background: "rgba(255,255,255,0.05)",
+              border: "1px solid rgba(255,255,255,0.1)",
+              borderRadius: "24px",
+              overflow: "hidden",
+              boxShadow: "0 18px 60px rgba(0,0,0,0.35)",
             }}
           >
-            Music, visuals, story-led collaboration, and thoughtful conversation.
-          </h2>
-          <p style={{ ...bodyStyle, maxWidth: "840px" }}>
-            Parallax Hearts welcomes inquiries that align with the world, tone, and
-            emotional depth of the project. Reach out by email to begin.
-          </p>
+            <Image
+              src="/images/world.jpg"
+              alt="Parallax Hearts contact page image"
+              width={1200}
+              height={1400}
+              style={{ width: "100%", height: "100%", objectFit: "cover", minHeight: "420px" }}
+            />
+          </div>
         </section>
       </div>
     </main>

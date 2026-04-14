@@ -5,23 +5,15 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://parallaxhearts.org"),
   title: "Parallax Hearts",
   description:
-    "Cinematic music, spiritual atmosphere, and love stories that leave weather behind.",
-  alternates: {
-    canonical: "/",
-  },
+    "Parallax Hearts is a cosmic and spiritual music and visual art project exploring sound, atmosphere, myth, and inner landscapes.",
   openGraph: {
     title: "Parallax Hearts",
     description:
-      "Cinematic music, spiritual atmosphere, and love stories that leave weather behind.",
+      "A cosmic and spiritual music and art project exploring atmosphere, feeling, myth, and resonance.",
     url: "https://parallaxhearts.org",
     siteName: "Parallax Hearts",
+    images: ["/images/hero.jpg"],
     type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Parallax Hearts",
-    description:
-      "Cinematic music, spiritual atmosphere, and love stories that leave weather behind.",
   },
 };
 
