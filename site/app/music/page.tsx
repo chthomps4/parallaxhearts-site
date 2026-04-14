@@ -107,14 +107,20 @@ export default function MusicPage() {
                     borderRadius: "16px",
                     overflow: "hidden",
                     border: "1px solid rgba(255,255,255,0.08)",
-                    background: "#111",
-                    padding: "18px",
-                    color: "#c9c1b8",
-                    lineHeight: 1.7,
+                    background: "#f5f5f5",
+                    padding: "12px",
                   }}
                 >
-                  Bandcamp embed can go here later using the Share / Embed code from the album page.
-                  For now, the button below takes listeners directly to the release.
+                  <iframe
+                    title="What the Town Keeps by Parallax Hearts"
+                    style={{ border: 0, width: "100%", maxWidth: "350px", height: "470px" }}
+                    src="https://bandcamp.com/EmbeddedPlayer/album=1683231520/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
+                    seamless
+                  >
+                    <a href="https://parallaxhearts.bandcamp.com/album/what-the-town-keeps">
+                      What the Town Keeps by Parallax Hearts
+                    </a>
+                  </iframe>
                 </div>
 
                 <div style={{ marginTop: "14px" }}>
