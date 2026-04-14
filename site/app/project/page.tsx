@@ -85,7 +85,7 @@ export default function ProjectPage() {
           </nav>
         </header>
 
-        <section style={{ padding: "30px 0 76px" }}>
+        <section style={{ padding: "30px 0 40px" }}>
           <p style={labelStyle}>Current Project</p>
           <h1
             style={{
@@ -105,6 +105,23 @@ export default function ProjectPage() {
           </p>
         </section>
 
+        <section style={{ paddingBottom: "56px" }}>
+          <div
+            style={{
+              minHeight: "420px",
+              borderRadius: "28px",
+              overflow: "hidden",
+              border: "1px solid rgba(255,255,255,0.08)",
+              backgroundImage:
+                "linear-gradient(to bottom, rgba(8,9,13,0.2), rgba(8,9,13,0.5)), url('/images/project.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundColor: "#15151c",
+              boxShadow: "0 20px 70px rgba(0,0,0,0.28)",
+            }}
+          />
+        </section>
+
         <section
           style={{
             display: "grid",
@@ -114,15 +131,7 @@ export default function ProjectPage() {
           }}
         >
           <article style={cardStyle}>
-            <h2
-              style={{
-                fontSize: "26px",
-                marginTop: 0,
-                marginBottom: "14px",
-                fontFamily: 'Georgia, "Times New Roman", serif',
-                fontWeight: 500,
-              }}
-            >
+            <h2 style={{ fontSize: "26px", marginTop: 0, marginBottom: "14px", fontFamily: 'Georgia, "Times New Roman", serif', fontWeight: 500 }}>
               Core Truth
             </h2>
             <p style={bodyStyle}>
@@ -132,15 +141,7 @@ export default function ProjectPage() {
           </article>
 
           <article style={cardStyle}>
-            <h2
-              style={{
-                fontSize: "26px",
-                marginTop: 0,
-                marginBottom: "14px",
-                fontFamily: 'Georgia, "Times New Roman", serif',
-                fontWeight: 500,
-              }}
-            >
+            <h2 style={{ fontSize: "26px", marginTop: 0, marginBottom: "14px", fontFamily: 'Georgia, "Times New Roman", serif', fontWeight: 500 }}>
               Story World
             </h2>
             <p style={bodyStyle}>
@@ -150,15 +151,7 @@ export default function ProjectPage() {
           </article>
 
           <article style={cardStyle}>
-            <h2
-              style={{
-                fontSize: "26px",
-                marginTop: 0,
-                marginBottom: "14px",
-                fontFamily: 'Georgia, "Times New Roman", serif',
-                fontWeight: 500,
-              }}
-            >
+            <h2 style={{ fontSize: "26px", marginTop: 0, marginBottom: "14px", fontFamily: 'Georgia, "Times New Roman", serif', fontWeight: 500 }}>
               Emotional Range
             </h2>
             <p style={bodyStyle}>
@@ -178,14 +171,7 @@ export default function ProjectPage() {
         >
           <article style={cardStyle}>
             <p style={labelStyle}>Motif</p>
-            <h3
-              style={{
-                fontSize: "28px",
-                margin: "0 0 12px",
-                fontFamily: 'Georgia, "Times New Roman", serif',
-                fontWeight: 500,
-              }}
-            >
+            <h3 style={{ fontSize: "28px", margin: "0 0 12px", fontFamily: 'Georgia, "Times New Roman", serif', fontWeight: 500 }}>
               Weather
             </h3>
             <p style={bodyStyle}>
@@ -196,14 +182,7 @@ export default function ProjectPage() {
 
           <article style={cardStyle}>
             <p style={labelStyle}>Motif</p>
-            <h3
-              style={{
-                fontSize: "28px",
-                margin: "0 0 12px",
-                fontFamily: 'Georgia, "Times New Roman", serif',
-                fontWeight: 500,
-              }}
-            >
+            <h3 style={{ fontSize: "28px", margin: "0 0 12px", fontFamily: 'Georgia, "Times New Roman", serif', fontWeight: 500 }}>
               Rail & Crossing
             </h3>
             <p style={bodyStyle}>
@@ -214,14 +193,7 @@ export default function ProjectPage() {
 
           <article style={cardStyle}>
             <p style={labelStyle}>Motif</p>
-            <h3
-              style={{
-                fontSize: "28px",
-                margin: "0 0 12px",
-                fontFamily: 'Georgia, "Times New Roman", serif',
-                fontWeight: 500,
-              }}
-            >
+            <h3 style={{ fontSize: "28px", margin: "0 0 12px", fontFamily: 'Georgia, "Times New Roman", serif', fontWeight: 500 }}>
               Thresholds
             </h3>
             <p style={bodyStyle}>

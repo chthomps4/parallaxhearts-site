@@ -178,6 +178,7 @@ export default function Home() {
                 "linear-gradient(to bottom, rgba(8,9,13,0.18), rgba(8,9,13,0.52)), url('/images/hero.jpg')",
               backgroundSize: "cover",
               backgroundPosition: "center",
+              backgroundColor: "#15151c",
             }}
           >
             <div
@@ -263,6 +264,7 @@ export default function Home() {
                 "linear-gradient(to bottom, rgba(8,9,13,0.2), rgba(8,9,13,0.5)), url('/images/world.jpg')",
               backgroundSize: "cover",
               backgroundPosition: "center",
+              backgroundColor: "#15151c",
             }}
           />
         </section>
@@ -303,6 +305,7 @@ export default function Home() {
                 "linear-gradient(to bottom, rgba(8,9,13,0.2), rgba(8,9,13,0.55)), url('/images/project.jpg')",
               backgroundSize: "cover",
               backgroundPosition: "center",
+              backgroundColor: "#15151c",
               marginBottom: "32px",
             }}
           />
@@ -315,14 +318,7 @@ export default function Home() {
             }}
           >
             <article style={cardStyle}>
-              <h3
-                style={{
-                  fontSize: "24px",
-                  marginTop: 0,
-                  marginBottom: "14px",
-                  color: "#f3eee7",
-                }}
-              >
+              <h3 style={{ fontSize: "24px", marginTop: 0, marginBottom: "14px", color: "#f3eee7" }}>
                 The Heart of It
               </h3>
               <p style={bodyTextStyle}>
@@ -333,14 +329,7 @@ export default function Home() {
             </article>
 
             <article style={cardStyle}>
-              <h3
-                style={{
-                  fontSize: "24px",
-                  marginTop: 0,
-                  marginBottom: "14px",
-                  color: "#f3eee7",
-                }}
-              >
+              <h3 style={{ fontSize: "24px", marginTop: 0, marginBottom: "14px", color: "#f3eee7" }}>
                 The Atmosphere
               </h3>
               <p style={bodyTextStyle}>
@@ -351,14 +340,7 @@ export default function Home() {
             </article>
 
             <article style={cardStyle}>
-              <h3
-                style={{
-                  fontSize: "24px",
-                  marginTop: 0,
-                  marginBottom: "14px",
-                  color: "#f3eee7",
-                }}
-              >
+              <h3 style={{ fontSize: "24px", marginTop: 0, marginBottom: "14px", color: "#f3eee7" }}>
                 The Theme
               </h3>
               <p style={bodyTextStyle}>
@@ -387,6 +369,7 @@ export default function Home() {
                 "linear-gradient(to bottom, rgba(8,9,13,0.18), rgba(8,9,13,0.48)), url('/images/world.jpg')",
               backgroundSize: "cover",
               backgroundPosition: "center",
+              backgroundColor: "#15151c",
               border: "1px solid rgba(255,255,255,0.08)",
               position: "relative",
               overflow: "hidden",
@@ -441,42 +424,30 @@ export default function Home() {
             }}
           >
             <article style={cardStyle}>
-              <h3 style={{ fontSize: "22px", marginTop: 0, color: "#f3eee7" }}>
-                Weather
-              </h3>
+              <h3 style={{ fontSize: "22px", marginTop: 0, color: "#f3eee7" }}>Weather</h3>
               <p style={bodyTextStyle}>
-                Pressure systems, clear aftermath, charged air, drift, and
-                seasonal movement.
+                Pressure systems, clear aftermath, charged air, drift, and seasonal movement.
               </p>
             </article>
 
             <article style={cardStyle}>
-              <h3 style={{ fontSize: "22px", marginTop: 0, color: "#f3eee7" }}>
-                Rail & Crossing
-              </h3>
+              <h3 style={{ fontSize: "22px", marginTop: 0, color: "#f3eee7" }}>Rail & Crossing</h3>
               <p style={bodyTextStyle}>
-                Ballast, warning lights, halted motion, timing, and the hidden
-                structure beneath movement.
+                Ballast, warning lights, halted motion, timing, and the hidden structure beneath movement.
               </p>
             </article>
 
             <article style={cardStyle}>
-              <h3 style={{ fontSize: "22px", marginTop: 0, color: "#f3eee7" }}>
-                Thresholds
-              </h3>
+              <h3 style={{ fontSize: "22px", marginTop: 0, color: "#f3eee7" }}>Thresholds</h3>
               <p style={bodyTextStyle}>
-                Porches, windows, rooms, platform edges, and the changed meaning
-                of ordinary places.
+                Porches, windows, rooms, platform edges, and the changed meaning of ordinary places.
               </p>
             </article>
 
             <article style={cardStyle}>
-              <h3 style={{ fontSize: "22px", marginTop: 0, color: "#f3eee7" }}>
-                Signal Drift
-              </h3>
+              <h3 style={{ fontSize: "22px", marginTop: 0, color: "#f3eee7" }}>Signal Drift</h3>
               <p style={bodyTextStyle}>
-                Static, bells, horns, warnings, and memory shifting from event
-                into atmosphere.
+                Static, bells, horns, warnings, and memory shifting from event into atmosphere.
               </p>
             </article>
           </div>
@@ -491,67 +462,31 @@ export default function Home() {
           }}
         >
           <article>
-            <h3
-              style={{
-                fontSize: "24px",
-                marginBottom: "12px",
-                fontFamily: 'Georgia, "Times New Roman", serif',
-                fontWeight: 500,
-              }}
-            >
+            <h3 style={{ fontSize: "24px", marginBottom: "12px", fontFamily: 'Georgia, "Times New Roman", serif', fontWeight: 500 }}>
               Emotion First
             </h3>
-            <p style={bodyTextStyle}>
-              Every release begins with feeling before explanation.
-            </p>
+            <p style={bodyTextStyle}>Every release begins with feeling before explanation.</p>
           </article>
 
           <article>
-            <h3
-              style={{
-                fontSize: "24px",
-                marginBottom: "12px",
-                fontFamily: 'Georgia, "Times New Roman", serif',
-                fontWeight: 500,
-              }}
-            >
+            <h3 style={{ fontSize: "24px", marginBottom: "12px", fontFamily: 'Georgia, "Times New Roman", serif', fontWeight: 500 }}>
               Cinematic Worldbuilding
             </h3>
-            <p style={bodyTextStyle}>
-              Songs, story, and image belong to a larger atmosphere.
-            </p>
+            <p style={bodyTextStyle}>Songs, story, and image belong to a larger atmosphere.</p>
           </article>
 
           <article>
-            <h3
-              style={{
-                fontSize: "24px",
-                marginBottom: "12px",
-                fontFamily: 'Georgia, "Times New Roman", serif',
-                fontWeight: 500,
-              }}
-            >
+            <h3 style={{ fontSize: "24px", marginBottom: "12px", fontFamily: 'Georgia, "Times New Roman", serif', fontWeight: 500 }}>
               Spiritual Gravity
             </h3>
-            <p style={bodyTextStyle}>
-              Cosmic resonance held inside ordinary places and human truth.
-            </p>
+            <p style={bodyTextStyle}>Cosmic resonance held inside ordinary places and human truth.</p>
           </article>
 
           <article>
-            <h3
-              style={{
-                fontSize: "24px",
-                marginBottom: "12px",
-                fontFamily: 'Georgia, "Times New Roman", serif',
-                fontWeight: 500,
-              }}
-            >
+            <h3 style={{ fontSize: "24px", marginBottom: "12px", fontFamily: 'Georgia, "Times New Roman", serif', fontWeight: 500 }}>
               Honest Restraint
             </h3>
-            <p style={bodyTextStyle}>
-              Intimate, haunted, and exact without melodrama or spectacle.
-            </p>
+            <p style={bodyTextStyle}>Intimate, haunted, and exact without melodrama or spectacle.</p>
           </article>
         </section>
 
@@ -578,13 +513,7 @@ export default function Home() {
           >
             Enter the atmosphere.
           </h2>
-          <p
-            style={{
-              ...bodyTextStyle,
-              maxWidth: "760px",
-              marginBottom: "28px",
-            }}
-          >
+          <p style={{ ...bodyTextStyle, maxWidth: "760px", marginBottom: "28px" }}>
             For music, visuals, story collaborations, features, or thoughtful
             connection, reach out and stay in the signal.
           </p>

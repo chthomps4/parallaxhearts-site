@@ -95,7 +95,9 @@ export default function AboutPage() {
 
         <section style={{ padding: "30px 0 80px" }}>
           <p style={labelStyle}>About</p>
-          <h1 style={titleStyle}>A cinematic world built through feeling, memory, and signal.</h1>
+          <h1 style={titleStyle}>
+            A cinematic world built through feeling, memory, and signal.
+          </h1>
           <p style={{ ...bodyStyle, maxWidth: "840px" }}>
             Parallax Hearts is a music and story world shaped by atmosphere, emotional
             architecture, and the spiritual charge that lingers after real connection.
@@ -114,15 +116,7 @@ export default function AboutPage() {
           }}
         >
           <article style={cardStyle}>
-            <h2
-              style={{
-                fontSize: "28px",
-                marginTop: 0,
-                marginBottom: "14px",
-                fontFamily: 'Georgia, "Times New Roman", serif',
-                fontWeight: 500,
-              }}
-            >
+            <h2 style={{ fontSize: "28px", marginTop: 0, marginBottom: "14px", fontFamily: 'Georgia, "Times New Roman", serif', fontWeight: 500 }}>
               The Tone
             </h2>
             <p style={bodyStyle}>
@@ -132,15 +126,7 @@ export default function AboutPage() {
           </article>
 
           <article style={cardStyle}>
-            <h2
-              style={{
-                fontSize: "28px",
-                marginTop: 0,
-                marginBottom: "14px",
-                fontFamily: 'Georgia, "Times New Roman", serif',
-                fontWeight: 500,
-              }}
-            >
+            <h2 style={{ fontSize: "28px", marginTop: 0, marginBottom: "14px", fontFamily: 'Georgia, "Times New Roman", serif', fontWeight: 500 }}>
               The Language
             </h2>
             <p style={bodyStyle}>
@@ -151,15 +137,7 @@ export default function AboutPage() {
           </article>
 
           <article style={cardStyle}>
-            <h2
-              style={{
-                fontSize: "28px",
-                marginTop: 0,
-                marginBottom: "14px",
-                fontFamily: 'Georgia, "Times New Roman", serif',
-                fontWeight: 500,
-              }}
-            >
+            <h2 style={{ fontSize: "28px", marginTop: 0, marginBottom: "14px", fontFamily: 'Georgia, "Times New Roman", serif', fontWeight: 500 }}>
               The Aim
             </h2>
             <p style={bodyStyle}>
@@ -182,8 +160,11 @@ export default function AboutPage() {
             style={{
               minHeight: "420px",
               borderRadius: "26px",
-              background:
-                "linear-gradient(135deg, rgba(176,78,103,0.24), rgba(255,255,255,0.03) 40%, rgba(0,0,0,0.12) 100%)",
+              backgroundImage:
+                "linear-gradient(to bottom, rgba(8,9,13,0.15), rgba(8,9,13,0.45)), url('/images/portrait.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundColor: "#15151c",
               border: "1px solid rgba(255,255,255,0.08)",
             }}
           />
