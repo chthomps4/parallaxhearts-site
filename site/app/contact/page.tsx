@@ -83,6 +83,11 @@ export default function ContactPage() {
               or simply because the work resonated with you, it is welcomed.
             </p>
 
+            <p style={{ fontSize: "18px", lineHeight: 1.85, color: "#c9c1b8" }}>
+              The project is still unfolding, and every thoughtful connection helps strengthen what comes next.
+              Messages from listeners, collaborators, and kindred spirits are part of that unfolding.
+            </p>
+
             <div style={{ display: "grid", gap: "18px", marginTop: "24px" }}>
               <div
                 style={{

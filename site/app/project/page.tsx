@@ -78,6 +78,12 @@ export default function ProjectPage() {
             behind what can be seen.
           </p>
 
+          <p style={{ fontSize: "18px", lineHeight: 1.85, color: "#c9c1b8", maxWidth: "900px" }}>
+            Parallax Hearts returns again and again to the question of what remains: what a place keeps,
+            what a life buries, what silence protects, and what art can reveal without fully explaining.
+            That tension is part of the project’s pulse.
+          </p>
+
           <div
             style={{
               marginTop: "28px",

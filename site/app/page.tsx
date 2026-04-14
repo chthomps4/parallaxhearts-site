@@ -155,7 +155,7 @@ export default function Home() {
             town and threshold, body and spirit. It is interested in the places where memory
             becomes haunted, where beauty is mixed with ache, and where music can open a door
             into what words alone cannot fully hold. The songs are not just meant to be heard —
-            they are meant to be inhabited.
+            they are meant to be inhabited, revisited, and felt more deeply over time.
           </p>
         </section>
 

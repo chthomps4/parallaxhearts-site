@@ -86,6 +86,12 @@ export default function AboutPage() {
               but to create a world listeners can enter.
             </p>
 
+            <p style={{ fontSize: "18px", lineHeight: 1.85, color: "#c9c1b8" }}>
+              At its center, the project is an attempt to translate inward experience into something
+              shareable: sound that carries emotional residue, imagery that suggests unseen meaning,
+              and songs that feel like they have passed through weather, distance, and memory before arriving.
+            </p>
+
             <div style={{ display: "grid", gap: "18px", marginTop: "24px" }}>
               <div
                 style={{

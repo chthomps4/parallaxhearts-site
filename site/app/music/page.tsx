@@ -174,7 +174,8 @@ export default function MusicPage() {
                 <p style={{ margin: 0, color: "#c9c1b8", lineHeight: 1.8 }}>
                   Some records ask for immediate reaction. Others reveal themselves gradually.
                   <em> What the Town Keeps </em> belongs to the second kind — a release that
-                  opens deeper with time, repetition, and quiet attention.
+                  opens deeper with time, repetition, and quiet attention, offering more of its
+                  emotional world each time you return.
                 </p>
               </div>
             </div>
