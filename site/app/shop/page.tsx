@@ -74,8 +74,7 @@ export default function ShopPage() {
             </h1>
 
             <p style={{ fontSize: "18px", lineHeight: 1.8, color: "#c9c1b8" }}>
-              This page is ready for paid albums, artwork, exclusive downloads,
-              and future member-only or private release links.
+              Support Parallax Hearts through direct purchase links for music and visual work.
             </p>
 
             <div style={{ display: "grid", gap: "18px", marginTop: "24px" }}>
@@ -88,13 +87,16 @@ export default function ShopPage() {
                 }}
               >
                 <strong style={{ display: "block", marginBottom: "8px", color: "#e6cfb0" }}>
-                  Album paywall
+                  Album purchase
                 </strong>
                 <p style={{ margin: "0 0 14px", color: "#c9c1b8", lineHeight: 1.75 }}>
-                  Add your digital album description, edition details, and payment link here.
+                  Purchase the current album directly through PayPal.
                 </p>
+
                 <a
-                  href="#"
+                  href="PASTE_YOUR_LIVE_PAYPAL_ALBUM_BUTTON_OR_PAYMENT_LINK_HERE"
+                  target="_blank"
+                  rel="noreferrer"
                   style={{
                     display: "inline-block",
                     padding: "12px 20px",
@@ -105,7 +107,7 @@ export default function ShopPage() {
                     fontWeight: 700,
                   }}
                 >
-                  Add album payment link
+                  Buy Album with PayPal
                 </a>
               </div>
 
@@ -118,13 +120,16 @@ export default function ShopPage() {
                 }}
               >
                 <strong style={{ display: "block", marginBottom: "8px", color: "#e6cfb0" }}>
-                  Artwork paywall
+                  Artwork purchase
                 </strong>
                 <p style={{ margin: "0 0 14px", color: "#c9c1b8", lineHeight: 1.75 }}>
-                  Add collectible artwork, prints, private visual releases, or download bundles here.
+                  Buy artwork, prints, or exclusive visual offerings through PayPal.
                 </p>
+
                 <a
-                  href="#"
+                  href="PASTE_YOUR_LIVE_PAYPAL_ARTWORK_BUTTON_OR_PAYMENT_LINK_HERE"
+                  target="_blank"
+                  rel="noreferrer"
                   style={{
                     display: "inline-block",
                     padding: "12px 20px",
@@ -134,7 +139,7 @@ export default function ShopPage() {
                     textDecoration: "none",
                   }}
                 >
-                  Add artwork payment link
+                  Buy Artwork with PayPal
                 </a>
               </div>
 
@@ -147,11 +152,10 @@ export default function ShopPage() {
                 }}
               >
                 <strong style={{ display: "block", marginBottom: "8px", color: "#e6cfb0" }}>
-                  Exclusive / private release page
+                  Note
                 </strong>
                 <p style={{ margin: 0, color: "#c9c1b8", lineHeight: 1.75 }}>
-                  You can later add secret links, limited drops, supporter-only music,
-                  or special visual bundles here.
+                  Use live PayPal hosted links here. Do not place sandbox keys or secret credentials in the page code.
                 </p>
               </div>
             </div>

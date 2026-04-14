@@ -74,8 +74,8 @@ export default function MusicPage() {
             </h1>
 
             <p style={{ fontSize: "18px", lineHeight: 1.8, color: "#c9c1b8" }}>
-              This page is ready for releases, featured tracks, embedded players,
-              streaming links, and direct support.
+              Listen to the current release, explore the world of Parallax Hearts,
+              and support the music through Bandcamp and direct purchase.
             </p>
 
             <div style={{ display: "grid", gap: "18px", marginTop: "24px" }}>
@@ -87,28 +87,47 @@ export default function MusicPage() {
                   padding: "22px",
                 }}
               >
-                <strong style={{ display: "block", marginBottom: "8px", color: "#e6cfb0" }}>
-                  Featured release
+                <strong style={{ display: "block", marginBottom: "10px", color: "#e6cfb0" }}>
+                  What the Town Keeps
                 </strong>
-                <p style={{ margin: 0, color: "#c9c1b8", lineHeight: 1.75 }}>
-                  Replace this area with your current album, EP, or single and its full description.
-                </p>
-              </div>
 
-              <div
-                style={{
-                  background: "rgba(255,255,255,0.05)",
-                  border: "1px solid rgba(255,255,255,0.1)",
-                  borderRadius: "20px",
-                  padding: "22px",
-                }}
-              >
-                <strong style={{ display: "block", marginBottom: "8px", color: "#e6cfb0" }}>
-                  Embed your music here
-                </strong>
-                <p style={{ margin: 0, color: "#c9c1b8", lineHeight: 1.75 }}>
-                  You can paste Bandcamp, Spotify, SoundCloud, or YouTube embeds into this page later.
+                <p style={{ margin: "0 0 16px", color: "#c9c1b8", lineHeight: 1.75 }}>
+                  The current Parallax Hearts release, available now on Bandcamp.
                 </p>
+
+                <div
+                  style={{
+                    borderRadius: "16px",
+                    overflow: "hidden",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    background: "#111",
+                    padding: "18px",
+                    color: "#c9c1b8",
+                  }}
+                >
+                  Bandcamp embed goes here next. On your Bandcamp album page, click
+                  <strong> Share / Embed </strong>
+                  and copy the iframe src link into this section.
+                </div>
+
+                <div style={{ marginTop: "14px" }}>
+                  <a
+                    href="https://parallaxhearts.bandcamp.com/album/what-the-town-keeps"
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{
+                      display: "inline-block",
+                      padding: "12px 20px",
+                      borderRadius: "999px",
+                      background: "linear-gradient(135deg, #d6a86b, #b98953)",
+                      color: "#17120f",
+                      textDecoration: "none",
+                      fontWeight: 700,
+                    }}
+                  >
+                    Listen on Bandcamp
+                  </a>
+                </div>
               </div>
 
               <div
@@ -123,7 +142,7 @@ export default function MusicPage() {
                   Direct support
                 </strong>
                 <p style={{ margin: 0, color: "#c9c1b8", lineHeight: 1.75 }}>
-                  Link listeners to paid albums, exclusive tracks, or supporter offerings from the store page.
+                  Visit the store for paid albums, artwork, and future exclusive releases.
                 </p>
               </div>
             </div>
