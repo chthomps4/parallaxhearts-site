@@ -39,10 +39,18 @@ export default function Home() {
           </Link>
 
           <nav style={{ display: "flex", gap: "20px", flexWrap: "wrap", fontSize: "15px" }}>
-            <Link href="/about" style={{ textDecoration: "none" }}>About</Link>
-            <Link href="/project" style={{ textDecoration: "none" }}>Project</Link>
-            <Link href="/music" style={{ textDecoration: "none" }}>Music</Link>
-            <Link href="/contact" style={{ textDecoration: "none" }}>Contact</Link>
+            <Link href="/about" style={{ textDecoration: "none", color: "#f3eee7" }}>
+              About
+            </Link>
+            <Link href="/project" style={{ textDecoration: "none", color: "#f3eee7" }}>
+              Project
+            </Link>
+            <Link href="/music" style={{ textDecoration: "none", color: "#f3eee7" }}>
+              Music
+            </Link>
+            <Link href="/contact" style={{ textDecoration: "none", color: "#f3eee7" }}>
+              Contact
+            </Link>
           </nav>
         </header>
 
@@ -111,7 +119,7 @@ export default function Home() {
               </Link>
 
               <a
-                href="https://parallaxhearts.bandcamp.com/album/what-the-town-keeps"
+                href="https://parallaxhearts.sellfy.store"
                 target="_blank"
                 rel="noreferrer"
                 style={{
@@ -123,7 +131,7 @@ export default function Home() {
                   textDecoration: "none",
                 }}
               >
-                Support on Bandcamp
+                Visit the Store
               </a>
             </div>
           </div>
@@ -205,10 +213,10 @@ export default function Home() {
                 padding: "22px",
               }}
             >
-              <h3 style={{ marginTop: 0 }}>Bandcamp</h3>
+              <h3 style={{ marginTop: 0 }}>Store</h3>
               <p style={{ color: "#c9c1b8", lineHeight: 1.8 }}>
-                The clearest place to hear the current release, follow the project, and directly
-                support what Parallax Hearts is building.
+                The best place to hear the current release, support the project directly,
+                and explore official Parallax Hearts music and related offerings.
               </p>
             </div>
           </div>
@@ -233,7 +241,7 @@ export default function Home() {
             </p>
             <div style={{ marginTop: "18px" }}>
               <a
-                href="https://parallaxhearts.bandcamp.com/album/what-the-town-keeps"
+                href="https://parallaxhearts.sellfy.store/p/parallax-hearts-what-the-town-keepsalbum/"
                 target="_blank"
                 rel="noreferrer"
                 style={{
@@ -246,7 +254,7 @@ export default function Home() {
                   fontWeight: 700,
                 }}
               >
-                Visit the Release on Bandcamp
+                Buy the Album
               </a>
             </div>
           </div>
@@ -266,18 +274,18 @@ export default function Home() {
         >
           <div>© Parallax Hearts</div>
           <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
-            <a href="https://parallaxhearts.org" style={{ textDecoration: "none" }}>
+            <a href="https://parallaxhearts.org" style={{ textDecoration: "none", color: "#a79d93" }}>
               parallaxhearts.org
             </a>
             <a
-              href="https://parallaxhearts.bandcamp.com/album/what-the-town-keeps"
+              href="https://parallaxhearts.sellfy.store"
               target="_blank"
               rel="noreferrer"
-              style={{ textDecoration: "none" }}
+              style={{ textDecoration: "none", color: "#a79d93" }}
             >
-              Bandcamp
+              Sellfy Store
             </a>
-            <a href="mailto:chad@parallaxhearts.org" style={{ textDecoration: "none" }}>
+            <a href="mailto:chad@parallaxhearts.org" style={{ textDecoration: "none", color: "#a79d93" }}>
               chad@parallaxhearts.org
             </a>
           </div>
