@@ -119,7 +119,7 @@ export default function Home() {
               </Link>
 
               <a
-                href="https://parallaxhearts.sellfy.store"
+                href="https://ko-fi.com/parallaxhearts"
                 target="_blank"
                 rel="noreferrer"
                 style={{
@@ -131,7 +131,7 @@ export default function Home() {
                   textDecoration: "none",
                 }}
               >
-                Visit the Store
+                Support on Ko-fi
               </a>
             </div>
           </div>
@@ -213,10 +213,10 @@ export default function Home() {
                 padding: "22px",
               }}
             >
-              <h3 style={{ marginTop: 0 }}>Store</h3>
+              <h3 style={{ marginTop: 0 }}>Ko-fi</h3>
               <p style={{ color: "#c9c1b8", lineHeight: 1.8 }}>
-                The best place to hear the current release, support the project directly,
-                and explore official Parallax Hearts music and related offerings.
+                The place to directly support Parallax Hearts, pick up releases,
+                and help fund future music, visuals, and new work.
               </p>
             </div>
           </div>
@@ -241,7 +241,7 @@ export default function Home() {
             </p>
             <div style={{ marginTop: "18px" }}>
               <a
-                href="https://parallaxhearts.sellfy.store/p/parallax-hearts-what-the-town-keepsalbum/"
+                href="https://ko-fi.com/parallaxhearts"
                 target="_blank"
                 rel="noreferrer"
                 style={{
@@ -254,7 +254,7 @@ export default function Home() {
                   fontWeight: 700,
                 }}
               >
-                Buy the Album
+                Get it on Ko-fi
               </a>
             </div>
           </div>
@@ -278,12 +278,12 @@ export default function Home() {
               parallaxhearts.org
             </a>
             <a
-              href="https://parallaxhearts.sellfy.store"
+              href="https://ko-fi.com/parallaxhearts"
               target="_blank"
               rel="noreferrer"
               style={{ textDecoration: "none", color: "#a79d93" }}
             >
-              Sellfy Store
+              Ko-fi
             </a>
             <a href="mailto:chad@parallaxhearts.org" style={{ textDecoration: "none", color: "#a79d93" }}>
               chad@parallaxhearts.org
