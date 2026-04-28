@@ -23,3 +23,22 @@ img {
   height: auto;
   display: block;
 }
+/* PHYLAX responsive layout fixes */
+@media (max-width: 860px) {
+  .phylax-reverse {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .phylax-reverse > *:first-child {
+    order: 0 !important;
+  }
+
+  article > div[style*="grid-template-columns: minmax(260px, 380px) 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  div[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+}
