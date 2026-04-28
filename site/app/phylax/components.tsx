@@ -86,23 +86,35 @@ export function LinkCard({
 export function NaturalPortrait({ character }: { character: Character }) {
   if (!character.image) {
     return (
-      <div className="flex aspect-[4/5] items-center justify-center rounded-2xl border border-stone-800 bg-[radial-gradient(circle_at_50%_20%,rgba(251,146,60,0.18),transparent_32%),linear-gradient(180deg,#1c1917,#020617)] p-6 text-center text-sm text-stone-500">
+      <div className="mx-auto flex aspect-[4/5] w-full max-w-[420px] items-center justify-center rounded-2xl border border-stone-800 bg-[radial-gradient(circle_at_50%_20%,rgba(251,146,60,0.18),transparent_32%),linear-gradient(180deg,#1c1917,#020617)] p-6 text-center text-sm text-stone-500">
         Image pending
       </div>
     );
   }
 
   return (
-    <div className="rounded-2xl border border-stone-800 bg-black p-3 shadow-2xl shadow-black/40">
-      <Image
-        src={character.image}
-        alt={`${character.name} — ${character.title}`}
-        width={1638}
-        height={2048}
-        sizes="(min-width: 1024px) 38vw, 94vw"
-        className="h-auto w-full rounded-xl"
-        priority={character.name === "Veyr"}
-      />
+    <div className="mx-auto w-full max-w-[420px]">
+      <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-stone-800 bg-black shadow-2xl shadow-black/40">
+        <Image
+          src={character.image}
+          alt={`${character.name} — ${character.title}`}
+          fill
+          sizes="(min-width: 1024px) 420px, 92vw"
+          className="object-cover object-top"
+          priority={character.name === "Veyr"}
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
+
+        <div className="absolute bottom-0 left-0 right-0 p-5">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-orange-200/80">
+            {character.title}
+          </p>
+          <p className="mt-2 text-3xl font-semibold tracking-tight text-stone-100">
+            {character.name}
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
@@ -110,7 +122,7 @@ export function NaturalPortrait({ character }: { character: Character }) {
 export function CharacterFeature({ character, reverse = false }: { character: Character; reverse?: boolean }) {
   return (
     <article className="border-b border-stone-800 py-14">
-      <div className={`grid gap-8 lg:grid-cols-[0.75fr_1fr] lg:items-start ${reverse ? "lg:[&>*:first-child]:order-2" : ""}`}>
+      <div className={`grid gap-8 lg:grid-cols-[minmax(260px,420px)_1fr] lg:items-start ${reverse ? "lg:[&>*:first-child]:order-2" : ""}`}>
         <NaturalPortrait character={character} />
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-orange-200/70">
