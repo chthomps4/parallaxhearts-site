@@ -2,46 +2,79 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import type { Character } from "./phylax-data";
 
+const siteFont = "Georgia, 'Times New Roman', Times, serif";
+
+const shellBackground =
+  "radial-gradient(circle at 20% 0%, rgba(71,103,124,0.18), transparent 34%), radial-gradient(circle at 90% 12%, rgba(197,76,28,0.11), transparent 26%), linear-gradient(180deg, #020407 0%, #05070b 38%, #0b090a 100%)";
+
+const panelBackground =
+  "linear-gradient(180deg, rgba(164,183,196,0.055), rgba(255,255,255,0.018))";
+
+const borderSoft = "1px solid rgba(190,210,224,0.13)";
+const textMain = "#e8edf0";
+const textMuted = "rgba(232,237,240,0.70)";
+const textDim = "rgba(232,237,240,0.54)";
+const ember = "#c66a32";
+const paleGold = "#d8c3a0";
+
 export function PhylaxShell({ children }: { children: ReactNode }) {
   return (
-    <main className="min-h-screen bg-[#050506] text-stone-100">
-      <header className="sticky top-0 z-50 border-b border-stone-800/80 bg-black/85 backdrop-blur">
-        <nav className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-4 sm:px-8">
+    <main
+      style={{
+        minHeight: "100vh",
+        background: shellBackground,
+        color: textMain,
+        fontFamily: siteFont,
+      }}
+    >
+      <div className="mx-auto w-[min(1160px,calc(100%-32px))]">
+        <header
+          className="flex flex-wrap items-center justify-between gap-5 py-6"
+          style={{
+            borderBottom: "1px solid rgba(190,210,224,0.10)",
+          }}
+        >
           <Link
             href="/"
-            className="text-xs font-semibold uppercase tracking-[0.3em] text-stone-100"
+            style={{
+              color: textMain,
+              textDecoration: "none",
+              textTransform: "uppercase",
+              letterSpacing: "0.08em",
+              fontSize: "21px",
+              fontWeight: 400,
+            }}
           >
             Parallax Hearts
           </Link>
 
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-stone-300">
-            <Link href="/" className="transition hover:text-orange-200">
-              Home
-            </Link>
-            <Link href="/music" className="transition hover:text-orange-200">
-              Music
-            </Link>
-            <Link href="/phylax" className="font-semibold text-orange-200">
-              PHYLAX
-            </Link>
-            <Link href="/phylax/story" className="transition hover:text-orange-200">
-              Story
-            </Link>
-            <Link href="/phylax/characters" className="transition hover:text-orange-200">
-              Characters
-            </Link>
-            <Link href="/phylax/descent" className="transition hover:text-orange-200">
-              Descent
-            </Link>
-            <Link href="/phylax/lore" className="transition hover:text-orange-200">
-              Lore
-            </Link>
-            <Link href="/contact" className="transition hover:text-orange-200">
-              Contact
-            </Link>
-          </div>
-        </nav>
-      </header>
+          <nav className="flex flex-wrap gap-x-5 gap-y-2 text-[15px]">
+            {[
+              ["Home", "/"],
+              ["Project", "/project"],
+              ["Music", "/music"],
+              ["PHYLAX", "/phylax"],
+              ["Story", "/phylax/story"],
+              ["Characters", "/phylax/characters"],
+              ["Descent", "/phylax/descent"],
+              ["Lore", "/phylax/lore"],
+              ["Contact", "/contact"],
+            ].map(([label, href]) => (
+              <Link
+                key={href}
+                href={href}
+                style={{
+                  color: label === "PHYLAX" ? paleGold : textMain,
+                  textDecoration: "none",
+                  opacity: label === "PHYLAX" ? 1 : 0.78,
+                }}
+              >
+                {label}
+              </Link>
+            ))}
+          </nav>
+        </header>
+      </div>
 
       {children}
     </main>
@@ -50,7 +83,15 @@ export function PhylaxShell({ children }: { children: ReactNode }) {
 
 export function Eyebrow({ children }: { children: ReactNode }) {
   return (
-    <p className="mb-3 text-xs font-semibold uppercase tracking-[0.35em] text-orange-300/70">
+    <p
+      style={{
+        margin: "0 0 18px",
+        color: paleGold,
+        textTransform: "uppercase",
+        letterSpacing: "0.18em",
+        fontSize: "12px",
+      }}
+    >
       {children}
     </p>
   );
@@ -61,28 +102,74 @@ export function PageHero({
   title,
   subtitle,
   children,
+  image = "/images/phylax/atmosphere/upper-watch-hero.png",
 }: {
   eyebrow: string;
   title: string;
   subtitle: string;
   children?: ReactNode;
+  image?: string;
 }) {
   return (
-    <section className="relative isolate overflow-hidden border-b border-stone-800">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,rgba(251,146,60,0.18),transparent_32%),radial-gradient(circle_at_20%_40%,rgba(30,64,175,0.18),transparent_35%),linear-gradient(180deg,#050506,#0c0a09_55%,#050506)]" />
+    <section
+      className="relative overflow-hidden"
+      style={{
+        minHeight: "78vh",
+        borderBottom: "1px solid rgba(190,210,224,0.11)",
+      }}
+    >
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `linear-gradient(90deg, rgba(2,4,7,0.96) 0%, rgba(2,4,7,0.80) 36%, rgba(2,4,7,0.45) 68%, rgba(2,4,7,0.82) 100%), linear-gradient(180deg, rgba(2,4,7,0.18) 0%, rgba(2,4,7,0.42) 58%, rgba(2,4,7,0.95) 100%), url(${image})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          filter: "saturate(0.92) contrast(1.08)",
+        }}
+      />
 
-      <div className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:py-28">
-        <Eyebrow>{eyebrow}</Eyebrow>
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(circle at 18% 10%, rgba(216,195,160,0.12), transparent 26%), radial-gradient(circle at 80% 60%, rgba(198,106,50,0.10), transparent 28%)",
+        }}
+      />
 
-        <h1 className="max-w-5xl text-5xl font-semibold tracking-tight text-stone-50 sm:text-7xl">
-          {title}
-        </h1>
+      <div className="relative mx-auto flex min-h-[78vh] w-[min(1160px,calc(100%-32px))] items-center py-20 lg:py-28">
+        <div>
+          <Eyebrow>{eyebrow}</Eyebrow>
 
-        <p className="mt-6 max-w-3xl text-xl leading-8 text-stone-300">
-          {subtitle}
-        </p>
+          <h1
+            style={{
+              maxWidth: "980px",
+              margin: 0,
+              color: textMain,
+              fontSize: "clamp(46px, 8vw, 92px)",
+              lineHeight: 0.92,
+              fontWeight: 400,
+              letterSpacing: "-0.055em",
+              textShadow: "0 8px 42px rgba(0,0,0,0.72)",
+            }}
+          >
+            {title}
+          </h1>
 
-        {children}
+          <p
+            style={{
+              maxWidth: "760px",
+              margin: "28px 0 0",
+              color: "rgba(232,237,240,0.78)",
+              fontSize: "21px",
+              lineHeight: 1.75,
+              textShadow: "0 6px 28px rgba(0,0,0,0.7)",
+            }}
+          >
+            {subtitle}
+          </p>
+
+          {children}
+        </div>
       </div>
     </section>
   );
@@ -100,10 +187,41 @@ export function LinkCard({
   return (
     <Link
       href={href}
-      className="rounded-2xl border border-stone-800 bg-stone-950/80 p-6 transition hover:border-orange-300/50 hover:bg-stone-900"
+      style={{
+        display: "block",
+        height: "100%",
+        color: textMain,
+        textDecoration: "none",
+        border: borderSoft,
+        borderRadius: "24px",
+        padding: "26px",
+        background: panelBackground,
+        boxShadow: "0 22px 70px rgba(0,0,0,0.34)",
+      }}
     >
-      <h3 className="text-2xl font-semibold text-stone-100">{title}</h3>
-      <p className="mt-3 text-sm leading-6 text-stone-400">{text}</p>
+      <h3
+        style={{
+          margin: 0,
+          color: textMain,
+          fontSize: "29px",
+          lineHeight: 1.08,
+          fontWeight: 400,
+          letterSpacing: "-0.03em",
+        }}
+      >
+        {title}
+      </h3>
+
+      <p
+        style={{
+          margin: "14px 0 0",
+          color: textMuted,
+          fontSize: "16px",
+          lineHeight: 1.75,
+        }}
+      >
+        {text}
+      </p>
     </Link>
   );
 }
@@ -111,30 +229,71 @@ export function LinkCard({
 export function NaturalPortrait({ character }: { character: Character }) {
   if (!character.image) {
     return (
-      <div className="mx-auto flex h-[520px] w-full max-w-[360px] items-center justify-center rounded-2xl border border-stone-800 bg-[radial-gradient(circle_at_50%_20%,rgba(251,146,60,0.18),transparent_32%),linear-gradient(180deg,#1c1917,#020617)] p-6 text-center text-sm text-stone-500">
+      <div
+        className="mx-auto grid h-[520px] w-full max-w-[360px] place-items-center"
+        style={{
+          borderRadius: "24px",
+          border: borderSoft,
+          background:
+            "radial-gradient(circle at top, rgba(216,195,160,0.10), transparent 34%), linear-gradient(180deg, #0b1014, #030406)",
+          color: textDim,
+          fontSize: "15px",
+        }}
+      >
         Image pending
       </div>
     );
   }
 
   return (
-    <figure className="mx-auto w-full max-w-[360px]">
-      <div className="relative h-[520px] w-full overflow-hidden rounded-2xl border border-stone-800 bg-black shadow-2xl shadow-black/40">
+    <figure className="mx-auto w-full max-w-[360px]" style={{ margin: "0 auto" }}>
+      <div
+        className="relative h-[520px] w-full overflow-hidden"
+        style={{
+          borderRadius: "24px",
+          border: "1px solid rgba(190,210,224,0.14)",
+          background: "#030406",
+          boxShadow: "0 26px 80px rgba(0,0,0,0.48)",
+        }}
+      >
         <img
           src={character.image}
           alt={`${character.name} — ${character.title}`}
           className="block h-full w-full object-cover object-top"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.08) 45%, rgba(0,0,0,0.94) 100%)",
+          }}
+        />
 
         <figcaption className="absolute bottom-0 left-0 right-0 p-5">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-orange-200/80">
+          <div
+            style={{
+              color: paleGold,
+              textTransform: "uppercase",
+              letterSpacing: "0.17em",
+              fontSize: "11px",
+              marginBottom: "9px",
+            }}
+          >
             {character.title}
-          </p>
-          <p className="mt-2 text-3xl font-semibold tracking-tight text-stone-100">
+          </div>
+
+          <div
+            style={{
+              color: textMain,
+              fontSize: "34px",
+              lineHeight: 1,
+              fontWeight: 400,
+              letterSpacing: "-0.035em",
+            }}
+          >
             {character.name}
-          </p>
+          </div>
         </figcaption>
       </div>
     </figure>
@@ -149,57 +308,140 @@ export function CharacterFeature({
   reverse?: boolean;
 }) {
   return (
-    <article className="border-b border-stone-800 py-14">
+    <article
+      style={{
+        borderBottom: "1px solid rgba(190,210,224,0.09)",
+        padding: "58px 0",
+      }}
+    >
       <div
-        className={`mx-auto grid max-w-6xl gap-8 lg:grid-cols-[380px_1fr] lg:items-start ${
+        className={`mx-auto grid max-w-6xl gap-9 lg:grid-cols-[380px_1fr] lg:items-start ${
           reverse ? "lg:[&>*:first-child]:order-2" : ""
         }`}
       >
         <NaturalPortrait character={character} />
 
         <div className="max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-orange-200/70">
+          <div
+            style={{
+              color: paleGold,
+              textTransform: "uppercase",
+              letterSpacing: "0.17em",
+              fontSize: "12px",
+              marginBottom: "15px",
+            }}
+          >
             {character.faction}
-          </p>
+          </div>
 
-          <h2 className="mt-3 text-4xl font-semibold tracking-tight text-stone-100">
+          <h2
+            style={{
+              margin: 0,
+              color: textMain,
+              fontSize: "clamp(36px, 5vw, 58px)",
+              lineHeight: 0.98,
+              fontWeight: 400,
+              letterSpacing: "-0.045em",
+            }}
+          >
             {character.name}
           </h2>
 
-          <p className="mt-2 text-xl text-orange-100/80">
+          <p
+            style={{
+              margin: "11px 0 0",
+              color: paleGold,
+              fontSize: "24px",
+              lineHeight: 1.2,
+            }}
+          >
             {character.title}
           </p>
 
-          <p className="mt-5 text-base font-medium leading-7 text-stone-300">
+          <p
+            style={{
+              margin: "26px 0 0",
+              color: "rgba(232,237,240,0.73)",
+              fontSize: "18px",
+              lineHeight: 1.85,
+            }}
+          >
             {character.role}
           </p>
 
-          <p className="mt-5 text-base leading-8 text-stone-400">
+          <p
+            style={{
+              margin: "18px 0 0",
+              color: textMuted,
+              fontSize: "18px",
+              lineHeight: 1.9,
+            }}
+          >
             {character.summary}
           </p>
 
           <div className="mt-7 grid gap-4 md:grid-cols-2">
-            <div className="rounded-2xl border border-stone-800 bg-stone-950/70 p-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-stone-500">
+            <div
+              style={{
+                background: "rgba(164,183,196,0.055)",
+                border: borderSoft,
+                borderRadius: "20px",
+                padding: "22px",
+              }}
+            >
+              <strong
+                style={{
+                  display: "block",
+                  marginBottom: "8px",
+                  color: paleGold,
+                  fontWeight: 400,
+                }}
+              >
                 Symbol
-              </p>
-              <p className="mt-3 text-sm leading-6 text-stone-300">
+              </strong>
+
+              <p style={{ margin: 0, color: textMuted, lineHeight: 1.8 }}>
                 {character.symbol}
               </p>
             </div>
 
-            <div className="rounded-2xl border border-stone-800 bg-stone-950/70 p-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-stone-500">
+            <div
+              style={{
+                background: "rgba(164,183,196,0.055)",
+                border: borderSoft,
+                borderRadius: "20px",
+                padding: "22px",
+              }}
+            >
+              <strong
+                style={{
+                  display: "block",
+                  marginBottom: "8px",
+                  color: paleGold,
+                  fontWeight: 400,
+                }}
+              >
                 Arc
-              </p>
-              <p className="mt-3 text-sm leading-6 text-stone-300">
+              </strong>
+
+              <p style={{ margin: 0, color: textMuted, lineHeight: 1.8 }}>
                 {character.arc ?? "Arc notes pending."}
               </p>
             </div>
           </div>
 
           {character.keyLine && (
-            <blockquote className="mt-7 border-l border-orange-300/50 pl-5 text-lg italic leading-8 text-stone-200">
+            <blockquote
+              style={{
+                margin: "30px 0 0",
+                paddingLeft: "22px",
+                borderLeft: "1px solid rgba(216,195,160,0.50)",
+                color: textMain,
+                fontSize: "21px",
+                lineHeight: 1.7,
+                fontStyle: "italic",
+              }}
+            >
               “{character.keyLine}”
             </blockquote>
           )}
@@ -215,10 +457,37 @@ export function LoreList({ items }: { items: string[][] }) {
       {items.map(([title, text]) => (
         <article
           key={title}
-          className="rounded-2xl border border-stone-800 bg-stone-950/70 p-5"
+          style={{
+            background: "rgba(164,183,196,0.055)",
+            border: borderSoft,
+            borderRadius: "24px",
+            padding: "24px",
+            boxShadow: "0 20px 60px rgba(0,0,0,0.22)",
+          }}
         >
-          <h3 className="text-xl font-semibold text-stone-100">{title}</h3>
-          <p className="mt-3 text-sm leading-6 text-stone-400">{text}</p>
+          <h3
+            style={{
+              margin: 0,
+              color: textMain,
+              fontSize: "25px",
+              lineHeight: 1.15,
+              fontWeight: 400,
+              letterSpacing: "-0.025em",
+            }}
+          >
+            {title}
+          </h3>
+
+          <p
+            style={{
+              margin: "14px 0 0",
+              color: textMuted,
+              fontSize: "16px",
+              lineHeight: 1.85,
+            }}
+          >
+            {text}
+          </p>
         </article>
       ))}
     </div>
