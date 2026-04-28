@@ -1,4 +1,5 @@
 import Link from "next/link";
+import PhylaxEasterEggs from "./PhylaxEasterEggs";
 
 type Character = {
   name: string;
@@ -1024,6 +1025,7 @@ export default function PhylaxPage() {
   return (
     <Shell>
       <TopNav />
+      <PhylaxEasterEggs />
       <Hero />
       <FeatureGrid />
       <ThesisSection />
