@@ -1,4 +1,6 @@
+import Image from "next/image";
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
   title: "PHYLAX: The First Breach | Parallax Hearts",
@@ -18,6 +20,7 @@ type CharacterCard = {
   role: string;
   symbol: string;
   summary: string;
+  image?: string;
   arc?: string;
   keyLine?: string;
 };
@@ -26,6 +29,7 @@ const breachCourt: CharacterCard[] = [
   {
     name: "Veyr",
     title: "The Binding Voice",
+    image: "/images/phylax/characters/veyr.png",
     role: "Leader of the oath; emotional center of the breach.",
     symbol: "Ember-lit hands over a broken oath circle.",
     summary:
@@ -36,6 +40,7 @@ const breachCourt: CharacterCard[] = [
   {
     name: "Korr Vane",
     title: "The Cinderwright",
+    image: "/images/phylax/characters/Korr.png",
     role: "Corrupting craftsman; giver of firecraft, metal, and instrument.",
     symbol: "Blackened hands over molten cracks.",
     summary:
@@ -46,6 +51,7 @@ const breachCourt: CharacterCard[] = [
   {
     name: "Nadir Quen",
     title: "The First Whisper",
+    image: "/images/phylax/characters/Nadir.png",
     role: "First descent impulse; watcher of thresholds.",
     symbol: "A hand hovering over a descending stair.",
     summary:
@@ -56,6 +62,7 @@ const breachCourt: CharacterCard[] = [
   {
     name: "Sevrin Ash",
     title: "The Gray Counsel",
+    image: "/images/phylax/characters/sevren.png",
     role: "Strategist of betrayal; interpreter turned rationalizer.",
     symbol: "Cracked council table, pale hands on broken maps.",
     summary:
@@ -66,6 +73,7 @@ const breachCourt: CharacterCard[] = [
   {
     name: "Dren Voss",
     title: "The Iron Tutor",
+    image: "/images/phylax/characters/Dren.png",
     role: "Weapon-maker and death teacher; guardian of force corrupted.",
     symbol: "A spear planted in black stone; battlefield without bodies.",
     summary:
@@ -76,6 +84,7 @@ const breachCourt: CharacterCard[] = [
   {
     name: "Kovren",
     title: "The Star Divider",
+    image: "/images/phylax/characters/Kovren.png",
     role: "Star-map teacher; preserver of celestial order corrupted into divider.",
     symbol: "A shattered armillary sphere.",
     summary:
@@ -314,7 +323,7 @@ const songSpine = [
   ["Return", "Reckoning, re-entry, transfiguration."],
 ];
 
-function SectionEyebrow({ children }: { children: React.ReactNode }) {
+function SectionEyebrow({ children }: { children: ReactNode }) {
   return (
     <p className="mb-3 text-xs font-semibold uppercase tracking-[0.35em] text-orange-300/70">
       {children}
@@ -345,48 +354,66 @@ function CharacterGrid({
         {characters.map((character) => (
           <article
             key={character.name}
-            className="group rounded-2xl border border-stone-700/70 bg-stone-950/70 p-5 shadow-2xl shadow-black/30 transition hover:border-orange-300/40 hover:bg-stone-900/80"
+            className="group overflow-hidden rounded-2xl border border-stone-700/70 bg-stone-950/70 shadow-2xl shadow-black/30 transition hover:border-orange-300/40 hover:bg-stone-900/80"
           >
-            <div className="mb-5 h-36 rounded-xl border border-stone-800 bg-[radial-gradient(circle_at_50%_20%,rgba(251,146,60,0.22),transparent_30%),linear-gradient(135deg,rgba(28,25,23,1),rgba(3,7,18,1))]" />
-
-            <p className="text-xs uppercase tracking-[0.25em] text-orange-200/70">
-              {character.title}
-            </p>
-            <h3 className="mt-2 text-2xl font-semibold text-stone-100">
-              {character.name}
-            </h3>
-            <p className="mt-3 text-sm font-medium text-stone-300">
-              {character.role}
-            </p>
-            <p className="mt-4 text-sm leading-6 text-stone-400">
-              {character.summary}
-            </p>
-
-            <div className="mt-5 rounded-xl border border-stone-800 bg-black/25 p-4">
-              <p className="text-xs uppercase tracking-[0.2em] text-stone-500">
-                Visual symbol
-              </p>
-              <p className="mt-2 text-sm text-stone-300">{character.symbol}</p>
+            <div className="relative aspect-[4/5] overflow-hidden border-b border-stone-800 bg-stone-950">
+              {character.image ? (
+                <Image
+                  src={character.image}
+                  alt={`${character.name} — ${character.title}`}
+                  fill
+                  sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition duration-700 group-hover:scale-105"
+                  priority={character.name === "Veyr"}
+                />
+              ) : (
+                <div className="h-full w-full bg-[radial-gradient(circle_at_50%_20%,rgba(251,146,60,0.22),transparent_30%),linear-gradient(135deg,rgba(28,25,23,1),rgba(3,7,18,1))]" />
+              )}
+              <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-transparent to-transparent opacity-70" />
             </div>
 
-            {(character.arc || character.keyLine) && (
-              <details className="mt-4 rounded-xl border border-stone-800 bg-stone-950/80 p-4">
-                <summary className="cursor-pointer text-sm font-semibold text-orange-200">
-                  Character notes
-                </summary>
-                {character.arc && (
-                  <p className="mt-3 text-sm leading-6 text-stone-400">
-                    <span className="text-stone-200">Arc:</span>{" "}
-                    {character.arc}
-                  </p>
-                )}
-                {character.keyLine && (
-                  <blockquote className="mt-3 border-l border-orange-300/40 pl-4 text-sm italic leading-6 text-stone-300">
-                    “{character.keyLine}”
-                  </blockquote>
-                )}
-              </details>
-            )}
+            <div className="p-5">
+              <p className="text-xs uppercase tracking-[0.25em] text-orange-200/70">
+                {character.title}
+              </p>
+              <h3 className="mt-2 text-2xl font-semibold text-stone-100">
+                {character.name}
+              </h3>
+              <p className="mt-3 text-sm font-medium text-stone-300">
+                {character.role}
+              </p>
+              <p className="mt-4 text-sm leading-6 text-stone-400">
+                {character.summary}
+              </p>
+
+              <div className="mt-5 rounded-xl border border-stone-800 bg-black/25 p-4">
+                <p className="text-xs uppercase tracking-[0.2em] text-stone-500">
+                  Visual symbol
+                </p>
+                <p className="mt-2 text-sm text-stone-300">
+                  {character.symbol}
+                </p>
+              </div>
+
+              {(character.arc || character.keyLine) && (
+                <details className="mt-4 rounded-xl border border-stone-800 bg-stone-950/80 p-4">
+                  <summary className="cursor-pointer text-sm font-semibold text-orange-200">
+                    Character notes
+                  </summary>
+                  {character.arc && (
+                    <p className="mt-3 text-sm leading-6 text-stone-400">
+                      <span className="text-stone-200">Arc:</span>{" "}
+                      {character.arc}
+                    </p>
+                  )}
+                  {character.keyLine && (
+                    <blockquote className="mt-3 border-l border-orange-300/40 pl-4 text-sm italic leading-6 text-stone-300">
+                      “{character.keyLine}”
+                    </blockquote>
+                  )}
+                </details>
+              )}
+            </div>
           </article>
         ))}
       </div>
@@ -575,11 +602,26 @@ export default function PhylaxPage() {
             </div>
             <div className="grid gap-4">
               {[
-                ["The Upper Watch", "The sky is correct. Black observatories stand above storm and earth."],
-                ["The Glass Below", "A black reflective pool reveals fire, hands, water, breath, and human nearness."],
-                ["The Human Vow", "Two fragile people choose each other under weather. Veyr watches. The wound opens."],
-                ["Nadir at the Threshold", "A descending stair appears where no path should exist."],
-                ["The Internal Breach", "Nothing has happened yet. Something has already been lost."],
+                [
+                  "The Upper Watch",
+                  "The sky is correct. Black observatories stand above storm and earth.",
+                ],
+                [
+                  "The Glass Below",
+                  "A black reflective pool reveals fire, hands, water, breath, and human nearness.",
+                ],
+                [
+                  "The Human Vow",
+                  "Two fragile people choose each other under weather. Veyr watches. The wound opens.",
+                ],
+                [
+                  "Nadir at the Threshold",
+                  "A descending stair appears where no path should exist.",
+                ],
+                [
+                  "The Internal Breach",
+                  "Nothing has happened yet. Something has already been lost.",
+                ],
               ].map(([title, copy]) => (
                 <article
                   key={title}
@@ -640,8 +682,8 @@ export default function PhylaxPage() {
               blue-black shadows, ruined celestial architecture, cracked star
               diagrams, oath circles, hidden tablets, shattered armillary
               spheres, threshold stairs, seals, cords, mirror pools, and volcanic
-              horizons. Avoid obvious wings, demons, modern objects, shiny sci-fi,
-              and fantasy game styling.
+              horizons. Avoid obvious wings, demons, modern objects, shiny
+              sci-fi, and fantasy game styling.
             </p>
           </div>
         </div>
