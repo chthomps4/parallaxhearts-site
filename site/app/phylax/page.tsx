@@ -424,6 +424,23 @@ function CharacterGrid({
 export default function PhylaxPage() {
   return (
     <main className="min-h-screen bg-[#050506] text-stone-100">
+      {/* PHYLAX SITE NAV */}
+      <header className="sticky top-0 z-50 border-b border-stone-800/80 bg-black/80 backdrop-blur">
+        <nav className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-4 sm:px-8">
+          <a href="/" className="text-sm font-semibold uppercase tracking-[0.3em] text-stone-100">
+            Parallax Hearts
+          </a>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-stone-300">
+            <a href="/" className="transition hover:text-orange-200">Home</a>
+            <a href="/about" className="transition hover:text-orange-200">About</a>
+            <a href="/project" className="transition hover:text-orange-200">Project</a>
+            <a href="/music" className="transition hover:text-orange-200">Music</a>
+            <a href="/phylax" className="font-semibold text-orange-200">PHYLAX</a>
+            <a href="/shop" className="transition hover:text-orange-200">Store</a>
+            <a href="/contact" className="transition hover:text-orange-200">Contact</a>
+          </div>
+        </nav>
+      </header>
       <section className="relative isolate overflow-hidden border-b border-stone-800">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,rgba(251,146,60,0.18),transparent_32%),radial-gradient(circle_at_20%_40%,rgba(30,64,175,0.18),transparent_35%),linear-gradient(180deg,#050506,#0c0a09_55%,#050506)]" />
         <div className="absolute inset-x-0 bottom-0 -z-10 h-36 bg-gradient-to-t from-[#050506] to-transparent" />

@@ -48,6 +48,7 @@ export default function Home() {
             <Link href="/music" style={{ textDecoration: "none", color: "#f3eee7" }}>
               Music
             </Link>
+            <Link href="/phylax" style={{ textDecoration: "none", color: "#f3eee7" }}>PHYLAX</Link>
             <Link href="/contact" style={{ textDecoration: "none", color: "#f3eee7" }}>
               Contact
             </Link>
