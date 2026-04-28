@@ -354,65 +354,73 @@ function CharacterGrid({
         {characters.map((character) => (
           <article
             key={character.name}
-            className="group overflow-hidden rounded-2xl border border-stone-700/70 bg-stone-950/70 shadow-2xl shadow-black/30 transition hover:border-orange-300/40 hover:bg-stone-900/80"
+            className="group flex h-full flex-col overflow-hidden rounded-2xl border border-stone-700/70 bg-stone-950/70 shadow-2xl shadow-black/30 transition hover:border-orange-300/40 hover:bg-stone-900/80"
           >
-            <div className="relative aspect-[4/5] overflow-hidden border-b border-stone-800 bg-stone-950">
-              {character.image ? (
-                <Image
-                  src={character.image}
-                  alt={`${character.name} — ${character.title}`}
-                  fill
-                  sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
-                  className="object-cover transition duration-700 group-hover:scale-105"
-                  priority={character.name === "Veyr"}
-                />
-              ) : (
-                <div className="h-full w-full bg-[radial-gradient(circle_at_50%_20%,rgba(251,146,60,0.22),transparent_30%),linear-gradient(135deg,rgba(28,25,23,1),rgba(3,7,18,1))]" />
-              )}
-              <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-transparent to-transparent opacity-70" />
+            <div className="relative border-b border-stone-800 bg-black">
+              <div className="relative mx-auto aspect-[3/4] w-full max-w-[420px] overflow-hidden bg-[radial-gradient(circle_at_50%_20%,rgba(251,146,60,0.16),transparent_34%),linear-gradient(180deg,#120f0c,#020617)]">
+                {character.image ? (
+                  <Image
+                    src={character.image}
+                    alt={`${character.name} — ${character.title}`}
+                    fill
+                    sizes="(min-width: 1280px) 30vw, (min-width: 768px) 48vw, 94vw"
+                    className="object-contain p-2 transition duration-700 group-hover:scale-[1.02]"
+                    priority={character.name === "Veyr"}
+                  />
+                ) : (
+                  <div className="h-full w-full bg-[radial-gradient(circle_at_50%_20%,rgba(251,146,60,0.22),transparent_30%),linear-gradient(135deg,rgba(28,25,23,1),rgba(3,7,18,1))]" />
+                )}
+              </div>
             </div>
 
-            <div className="p-5">
-              <p className="text-xs uppercase tracking-[0.25em] text-orange-200/70">
+            <div className="flex flex-1 flex-col p-5">
+              <p className="min-h-[2rem] text-xs font-semibold uppercase tracking-[0.22em] text-orange-200/70">
                 {character.title}
               </p>
-              <h3 className="mt-2 text-2xl font-semibold text-stone-100">
+
+              <h3 className="mt-2 text-2xl font-semibold leading-tight text-stone-100">
                 {character.name}
               </h3>
-              <p className="mt-3 text-sm font-medium text-stone-300">
+
+              <p className="mt-3 min-h-[3.5rem] text-sm font-medium leading-6 text-stone-300">
                 {character.role}
               </p>
+
               <p className="mt-4 text-sm leading-6 text-stone-400">
                 {character.summary}
               </p>
 
               <div className="mt-5 rounded-xl border border-stone-800 bg-black/25 p-4">
-                <p className="text-xs uppercase tracking-[0.2em] text-stone-500">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-stone-500">
                   Visual symbol
                 </p>
-                <p className="mt-2 text-sm text-stone-300">
+                <p className="mt-2 text-sm leading-6 text-stone-300">
                   {character.symbol}
                 </p>
               </div>
 
-              {(character.arc || character.keyLine) && (
-                <details className="mt-4 rounded-xl border border-stone-800 bg-stone-950/80 p-4">
-                  <summary className="cursor-pointer text-sm font-semibold text-orange-200">
-                    Character notes
-                  </summary>
-                  {character.arc && (
-                    <p className="mt-3 text-sm leading-6 text-stone-400">
-                      <span className="text-stone-200">Arc:</span>{" "}
-                      {character.arc}
-                    </p>
-                  )}
-                  {character.keyLine && (
-                    <blockquote className="mt-3 border-l border-orange-300/40 pl-4 text-sm italic leading-6 text-stone-300">
-                      “{character.keyLine}”
-                    </blockquote>
-                  )}
-                </details>
-              )}
+              <details className="mt-4 rounded-xl border border-stone-800 bg-stone-950/80 p-4">
+                <summary className="cursor-pointer text-sm font-semibold text-orange-200">
+                  Character notes
+                </summary>
+
+                {character.arc ? (
+                  <p className="mt-3 text-sm leading-6 text-stone-400">
+                    <span className="text-stone-200">Arc:</span>{" "}
+                    {character.arc}
+                  </p>
+                ) : (
+                  <p className="mt-3 text-sm leading-6 text-stone-500">
+                    Deeper arc notes will be added as this section expands.
+                  </p>
+                )}
+
+                {character.keyLine && (
+                  <blockquote className="mt-3 border-l border-orange-300/40 pl-4 text-sm italic leading-6 text-stone-300">
+                    “{character.keyLine}”
+                  </blockquote>
+                )}
+              </details>
             </div>
           </article>
         ))}
