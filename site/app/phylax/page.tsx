@@ -1,5 +1,4 @@
 import Link from "next/link";
-import PhylaxEasterEggs from "./PhylaxEasterEggs";
 
 type Character = {
   name: string;
@@ -1000,7 +999,7 @@ function FooterCTA() {
               fontWeight: 400,
             }}
           >
-            Build the deeper archive next.
+            Enter the story archive.
           </h2>
           <p
             style={{
@@ -1025,7 +1024,6 @@ export default function PhylaxPage() {
   return (
     <Shell>
       <TopNav />
-      <PhylaxEasterEggs />
       <Hero />
       <FeatureGrid />
       <ThesisSection />
