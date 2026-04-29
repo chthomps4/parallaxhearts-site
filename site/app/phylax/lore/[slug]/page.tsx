@@ -2,10 +2,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import {
-  getAdjacentChapters,
-  getStoryChapter,
+  getAdjacentLoreChapters,
+  getLoreChapter,
   glyphImages,
-  storyChapters,
+  loreChapters,
 } from "../lore-data";
 
 const siteFont = `Georgia, "Times New Roman", Times, serif`;
@@ -23,14 +23,14 @@ type PageProps = {
 };
 
 export function generateStaticParams() {
-  return storyChapters.map((chapter) => ({
+  return loreChapters.map((chapter) => ({
     slug: chapter.slug,
   }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const chapter = getStoryChapter(slug);
+  const chapter = getLoreChapter(slug);
 
   if (!chapter) {
     return {
@@ -85,8 +85,7 @@ function TopNav() {
     ["Music", "/music"],
     ["PHYLAX", "/phylax"],
     ["Lore", "/phylax/lore"],
-    ["Characters", "/phylax#characters"],
-    ["World", "/phylax#world"],
+    ["Characters", "/phylax/characters"],
     ["Contact", "/contact"],
   ];
 
@@ -147,15 +146,129 @@ function TopNav() {
   );
 }
 
-export default async function StoryChapterPage({ params }: PageProps) {
+function Eyebrow({ children }: { children: React.ReactNode }) {
+  return (
+    <p
+      style={{
+        margin: "0 0 14px",
+        color: colors.gold,
+        textTransform: "uppercase",
+        letterSpacing: "0.2em",
+        fontSize: "12px",
+      }}
+    >
+      {children}
+    </p>
+  );
+}
+
+function InfoPanel({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <article
+      style={{
+        position: "relative",
+        overflow: "hidden",
+        border: `1px solid ${colors.border}`,
+        borderRadius: "26px",
+        padding: "28px",
+        background:
+          "linear-gradient(180deg, rgba(14,18,22,0.78), rgba(7,8,10,0.94))",
+        boxShadow: "0 22px 70px rgba(0,0,0,0.22)",
+      }}
+    >
+      <h2
+        style={{
+          margin: 0,
+          color: colors.gold,
+          fontSize: "28px",
+          lineHeight: 1.05,
+          fontWeight: 400,
+        }}
+      >
+        {title}
+      </h2>
+
+      <div
+        style={{
+          marginTop: "16px",
+          color: colors.textSoft,
+          fontSize: "17px",
+          lineHeight: 1.9,
+        }}
+      >
+        {children}
+      </div>
+    </article>
+  );
+}
+
+function ListPanel({
+  title,
+  items,
+}: {
+  title: string;
+  items: string[];
+}) {
+  return (
+    <InfoPanel title={title}>
+      <ul style={{ margin: 0, paddingLeft: "20px" }}>
+        {items.map((item) => (
+          <li key={item} style={{ marginBottom: "10px" }}>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </InfoPanel>
+  );
+}
+
+function LinkPanel({
+  title,
+  links,
+}: {
+  title: string;
+  links: { label: string; href: string }[];
+}) {
+  return (
+    <InfoPanel title={title}>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+        {links.map((link) => (
+          <Link
+            key={`${link.label}-${link.href}`}
+            href={link.href}
+            style={{
+              color: colors.text,
+              textDecoration: "none",
+              border: `1px solid ${colors.border}`,
+              borderRadius: "999px",
+              padding: "10px 14px",
+              background: "rgba(9,12,15,0.62)",
+              fontSize: "14px",
+            }}
+          >
+            {link.label}
+          </Link>
+        ))}
+      </div>
+    </InfoPanel>
+  );
+}
+
+export default async function LoreChapterPage({ params }: PageProps) {
   const { slug } = await params;
-  const chapter = getStoryChapter(slug);
+  const chapter = getLoreChapter(slug);
 
   if (!chapter) {
     notFound();
   }
 
-  const { previous, next } = getAdjacentChapters(chapter.slug);
+  const { previous, next } = getAdjacentLoreChapters(chapter.slug);
 
   return (
     <main
@@ -172,7 +285,7 @@ export default async function StoryChapterPage({ params }: PageProps) {
       <section
         style={{
           position: "relative",
-          minHeight: "78vh",
+          minHeight: "80vh",
           display: "flex",
           alignItems: "center",
           overflow: "hidden",
@@ -184,13 +297,13 @@ export default async function StoryChapterPage({ params }: PageProps) {
             position: "absolute",
             inset: 0,
             backgroundImage: `
-              linear-gradient(90deg, rgba(2,4,6,0.97) 0%, rgba(2,4,6,0.86) 36%, rgba(2,4,6,0.58) 68%, rgba(2,4,6,0.88) 100%),
+              linear-gradient(90deg, rgba(2,4,6,0.98) 0%, rgba(2,4,6,0.88) 34%, rgba(2,4,6,0.60) 66%, rgba(2,4,6,0.90) 100%),
               linear-gradient(180deg, rgba(2,4,6,0.10) 0%, rgba(2,4,6,0.48) 66%, rgba(2,4,6,0.98) 100%),
               url('${chapter.image}')
             `,
             backgroundSize: "cover",
             backgroundPosition: "center",
-            filter: "saturate(0.9) contrast(1.07)",
+            filter: "saturate(0.88) contrast(1.08)",
           }}
         />
 
@@ -199,25 +312,22 @@ export default async function StoryChapterPage({ params }: PageProps) {
         </div>
 
         <Container>
-          <div style={{ position: "relative", zIndex: 2, padding: "86px 0 96px", maxWidth: "940px" }}>
-            <p
-              style={{
-                margin: "0 0 16px",
-                color: colors.gold,
-                textTransform: "uppercase",
-                letterSpacing: "0.22em",
-                fontSize: "12px",
-              }}
-            >
-              PHYLAX lore archive / {chapter.number}
-            </p>
+          <div
+            style={{
+              position: "relative",
+              zIndex: 2,
+              padding: "88px 0 98px",
+              maxWidth: "940px",
+            }}
+          >
+            <Eyebrow>PHYLAX lore archive / {chapter.number}</Eyebrow>
 
             <h1
               style={{
                 margin: 0,
-                fontSize: "clamp(52px, 8vw, 104px)",
-                lineHeight: 0.92,
-                letterSpacing: "-0.06em",
+                fontSize: "clamp(54px, 8vw, 108px)",
+                lineHeight: 0.91,
+                letterSpacing: "-0.065em",
                 fontWeight: 400,
                 textShadow: "0 14px 44px rgba(0,0,0,0.62)",
               }}
@@ -229,8 +339,8 @@ export default async function StoryChapterPage({ params }: PageProps) {
               style={{
                 margin: "18px 0 0",
                 color: colors.gold,
-                fontSize: "26px",
-                lineHeight: 1.35,
+                fontSize: "28px",
+                lineHeight: 1.3,
               }}
             >
               {chapter.subtitle}
@@ -239,7 +349,7 @@ export default async function StoryChapterPage({ params }: PageProps) {
             <p
               style={{
                 margin: "26px 0 0",
-                maxWidth: "780px",
+                maxWidth: "820px",
                 color: colors.textSoft,
                 fontSize: "22px",
                 lineHeight: 1.75,
@@ -247,6 +357,20 @@ export default async function StoryChapterPage({ params }: PageProps) {
             >
               {chapter.summary}
             </p>
+
+            <blockquote
+              style={{
+                margin: "30px 0 0",
+                paddingLeft: "22px",
+                borderLeft: "1px solid rgba(210,181,139,0.5)",
+                color: colors.text,
+                fontSize: "24px",
+                lineHeight: 1.55,
+                fontStyle: "italic",
+              }}
+            >
+              “{chapter.keyLine}”
+            </blockquote>
           </div>
         </Container>
       </section>
@@ -254,7 +378,7 @@ export default async function StoryChapterPage({ params }: PageProps) {
       <section style={{ padding: "72px 0 32px" }}>
         <Container>
           <div
-            className="chapter-grid"
+            className="lore-grid"
             style={{
               display: "grid",
               gridTemplateColumns: "1fr 0.72fr",
@@ -279,17 +403,7 @@ export default async function StoryChapterPage({ params }: PageProps) {
               </div>
 
               <div style={{ position: "relative", zIndex: 2 }}>
-                <p
-                  style={{
-                    margin: "0 0 14px",
-                    color: colors.gold,
-                    textTransform: "uppercase",
-                    letterSpacing: "0.20em",
-                    fontSize: "12px",
-                  }}
-                >
-                  Chapter thesis
-                </p>
+                <Eyebrow>Chapter thesis</Eyebrow>
 
                 <h2
                   style={{
@@ -303,19 +417,16 @@ export default async function StoryChapterPage({ params }: PageProps) {
                   {chapter.thesis}
                 </h2>
 
-                <blockquote
+                <p
                   style={{
-                    margin: "28px 0 0",
-                    paddingLeft: "22px",
-                    borderLeft: "1px solid rgba(210,181,139,0.5)",
-                    color: colors.text,
-                    fontSize: "24px",
-                    lineHeight: 1.55,
-                    fontStyle: "italic",
+                    margin: "24px 0 0",
+                    color: colors.textSoft,
+                    fontSize: "18px",
+                    lineHeight: 1.9,
                   }}
                 >
-                  “{chapter.keyLine}”
-                </blockquote>
+                  {chapter.coreMeaning}
+                </p>
               </div>
             </article>
 
@@ -327,20 +438,10 @@ export default async function StoryChapterPage({ params }: PageProps) {
                 background: "rgba(14,17,21,0.72)",
               }}
             >
-              <p
-                style={{
-                  margin: "0 0 14px",
-                  color: colors.gold,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.18em",
-                  fontSize: "12px",
-                }}
-              >
-                Symbol system
-              </p>
+              <Eyebrow>Primary mark</Eyebrow>
 
               <div style={{ display: "flex", justifyContent: "center", marginBottom: "18px" }}>
-                <Glyph src={glyphImages[chapter.glyph]} size={170} opacity={0.28} />
+                <Glyph src={glyphImages[chapter.glyph]} size={180} opacity={0.3} />
               </div>
 
               {chapter.symbols.map((symbol) => (
@@ -357,6 +458,35 @@ export default async function StoryChapterPage({ params }: PageProps) {
                 </p>
               ))}
             </aside>
+          </div>
+        </Container>
+      </section>
+
+      <section style={{ padding: "34px 0" }}>
+        <Container>
+          <div
+            className="lore-grid"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+              gap: "18px",
+            }}
+          >
+            <InfoPanel title="Narrative Function">
+              <p>{chapter.narrativeFunction}</p>
+            </InfoPanel>
+
+            <InfoPanel title="Emotional Pressure">
+              <p>{chapter.emotionalPressure}</p>
+            </InfoPanel>
+
+            <InfoPanel title="World Change">
+              <p>{chapter.worldChange}</p>
+            </InfoPanel>
+
+            <InfoPanel title="Hidden Archive Fragment">
+              <p style={{ fontStyle: "italic" }}>{chapter.hiddenArchiveFragment}</p>
+            </InfoPanel>
           </div>
         </Container>
       </section>
@@ -408,56 +538,94 @@ export default async function StoryChapterPage({ params }: PageProps) {
 
       <section style={{ padding: "34px 0" }}>
         <Container>
-          <p
-            style={{
-              margin: "0 0 16px",
-              color: colors.gold,
-              textTransform: "uppercase",
-              letterSpacing: "0.22em",
-              fontSize: "12px",
-            }}
-          >
-            Source resonance
-          </p>
+          <Eyebrow>Character Impact</Eyebrow>
 
           <div
+            className="lore-grid-three"
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-              gap: "16px",
+              gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+              gap: "18px",
             }}
           >
-            {chapter.sourceResonance.map((source) => (
+            {chapter.characterImpact.map((item) => (
+              <InfoPanel key={item.name} title={item.name}>
+                <p>{item.impact}</p>
+                {item.href && (
+                  <Link
+                    href={item.href}
+                    style={{
+                      display: "inline-flex",
+                      marginTop: "14px",
+                      color: colors.gold,
+                      textDecoration: "none",
+                      borderBottom: "1px solid rgba(210,181,139,0.38)",
+                    }}
+                  >
+                    Open character file
+                  </Link>
+                )}
+              </InfoPanel>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section style={{ padding: "34px 0" }}>
+        <Container>
+          <Eyebrow>Source Reservoir</Eyebrow>
+
+          <div
+            className="lore-grid-three"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+              gap: "18px",
+            }}
+          >
+            {chapter.sourceReservoir.map((source) => (
               <article
-                key={source.title}
+                key={source.source}
                 style={{
                   border: `1px solid ${colors.border}`,
-                  borderRadius: "24px",
-                  padding: "24px",
-                  background: "rgba(14,17,21,0.72)",
+                  borderRadius: "26px",
+                  padding: "28px",
+                  background:
+                    "linear-gradient(180deg, rgba(14,18,22,0.78), rgba(7,8,10,0.94))",
                 }}
               >
-                <h3
+                <h2
                   style={{
                     margin: 0,
                     color: colors.gold,
-                    fontSize: "24px",
-                    lineHeight: 1.1,
+                    fontSize: "26px",
+                    lineHeight: 1.05,
                     fontWeight: 400,
                   }}
                 >
-                  {source.title}
-                </h3>
+                  {source.source}
+                </h2>
 
                 <p
                   style={{
-                    margin: "12px 0 0",
+                    margin: "16px 0 0",
                     color: colors.textSoft,
+                    fontSize: "16px",
+                    lineHeight: 1.85,
+                  }}
+                >
+                  {source.resonance}
+                </p>
+
+                <p
+                  style={{
+                    margin: "14px 0 0",
+                    color: colors.textDim,
                     fontSize: "15px",
                     lineHeight: 1.8,
                   }}
                 >
-                  {source.text}
+                  PHYLAX use: {source.phylaxUse}
                 </p>
               </article>
             ))}
@@ -465,53 +633,66 @@ export default async function StoryChapterPage({ params }: PageProps) {
         </Container>
       </section>
 
-      <section style={{ padding: "34px 0 100px" }}>
+      <section style={{ padding: "34px 0" }}>
         <Container>
           <div
-            className="chapter-grid"
+            className="lore-grid"
             style={{
               display: "grid",
-              gridTemplateColumns: "1fr 1fr",
+              gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
               gap: "18px",
             }}
           >
-            <article
-              style={{
-                border: `1px solid ${colors.border}`,
-                borderRadius: "26px",
-                padding: "28px",
-                background: "rgba(14,17,21,0.72)",
-              }}
-            >
-              <h2 style={{ margin: 0, color: colors.gold, fontSize: "28px", fontWeight: 400 }}>
-                Visual language
-              </h2>
-
-              <ul style={{ margin: "18px 0 0", paddingLeft: "20px", color: colors.textSoft, lineHeight: 1.9 }}>
-                {chapter.visualLanguage.map((item) => (
-                  <li key={item}>{item}</li>
+            <InfoPanel title="Symbol Meaning">
+              <div style={{ display: "grid", gap: "14px" }}>
+                {chapter.symbolMeaning.map((item) => (
+                  <div key={item.symbol}>
+                    <strong style={{ color: colors.gold, fontWeight: 400 }}>
+                      {item.symbol}
+                    </strong>
+                    <p style={{ margin: "6px 0 0" }}>{item.meaning}</p>
+                  </div>
                 ))}
-              </ul>
-            </article>
+              </div>
+            </InfoPanel>
 
-            <article
-              style={{
-                border: `1px solid ${colors.border}`,
-                borderRadius: "26px",
-                padding: "28px",
-                background: "rgba(14,17,21,0.72)",
-              }}
-            >
-              <h2 style={{ margin: 0, color: colors.gold, fontSize: "28px", fontWeight: 400 }}>
-                Sonic direction
-              </h2>
+            <InfoPanel title="Website Easter Egg">
+              <p>{chapter.easterEggIdea}</p>
+            </InfoPanel>
+          </div>
+        </Container>
+      </section>
 
-              <ul style={{ margin: "18px 0 0", paddingLeft: "20px", color: colors.textSoft, lineHeight: 1.9 }}>
-                {chapter.musicNotes.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </article>
+      <section style={{ padding: "34px 0" }}>
+        <Container>
+          <div
+            className="lore-grid"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+              gap: "18px",
+            }}
+          >
+            <ListPanel title="Visual Language" items={chapter.visualLanguage} />
+            <ListPanel title="Video Direction" items={chapter.videoDirection} />
+            <ListPanel title="Sonic Direction" items={chapter.musicNotes} />
+            <ListPanel title="Public Symbol Notes" items={chapter.symbols} />
+          </div>
+        </Container>
+      </section>
+
+      <section style={{ padding: "34px 0 104px" }}>
+        <Container>
+          <div
+            className="lore-grid"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+              gap: "18px",
+            }}
+          >
+            <LinkPanel title="Connected Characters" links={chapter.connectedCharacters} />
+            <LinkPanel title="Connected Songs / Lore Threads" links={chapter.connectedSongs} />
           </div>
 
           <nav
@@ -577,8 +758,9 @@ export default async function StoryChapterPage({ params }: PageProps) {
       </section>
 
       <style>{`
-        @media (max-width: 900px) {
-          .chapter-grid {
+        @media (max-width: 980px) {
+          .lore-grid,
+          .lore-grid-three {
             grid-template-columns: 1fr !important;
           }
         }
