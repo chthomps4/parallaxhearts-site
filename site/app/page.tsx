@@ -1,297 +1,458 @@
-import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "Parallax Hearts | What the Town Keeps + PHYLAX",
+  description:
+    "Parallax Hearts is the creative home for What the Town Keeps and PHYLAX: The First Breach — cinematic music, story worlds, lore, visuals, and album archives.",
+};
+
+const siteFont = `Georgia, "Times New Roman", Times, serif`;
+
+const colors = {
+  text: "#f3eee7",
+  textSoft: "rgba(243, 238, 231, 0.78)",
+  textDim: "rgba(243, 238, 231, 0.58)",
+  gold: "#d2b58b",
+  border: "rgba(243, 238, 231, 0.14)",
+  phylaxBlue: "#8da0b2",
+  ember: "#b65d31",
+};
+
+function Container({ children }: { children: React.ReactNode }) {
   return (
-    <main
+    <div style={{ width: "min(1180px, calc(100% - 32px))", margin: "0 auto" }}>
+      {children}
+    </div>
+  );
+}
+
+function TopNav() {
+  const navItems = [
+    ["Home", "/"],
+    ["Music", "/music"],
+    ["What the Town Keeps", "/project"],
+    ["PHYLAX", "/phylax"],
+    ["Lore", "/phylax/lore"],
+    ["Characters", "/phylax/characters"],
+    ["Contact", "/contact"],
+  ];
+
+  return (
+    <div
       style={{
-        minHeight: "100vh",
-        background:
-          "radial-gradient(circle at top, rgba(110,78,146,0.22), transparent 35%), radial-gradient(circle at right, rgba(214,168,107,0.12), transparent 28%), linear-gradient(180deg, #08080d 0%, #0b0b12 45%, #11111b 100%)",
-        color: "#f3eee7",
-        fontFamily: "Georgia, serif",
+        position: "sticky",
+        top: 0,
+        zIndex: 40,
+        backdropFilter: "blur(12px)",
+        background: "rgba(5,5,7,0.76)",
+        borderBottom: `1px solid ${colors.border}`,
       }}
     >
-      <div style={{ width: "min(1160px, calc(100% - 32px))", margin: "0 auto" }}>
+      <Container>
         <header
           style={{
-            padding: "24px 0",
+            minHeight: "72px",
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
             gap: "20px",
             flexWrap: "wrap",
-            borderBottom: "1px solid rgba(255,255,255,0.08)",
+            padding: "16px 0",
           }}
         >
           <Link
             href="/"
             style={{
-              fontSize: "22px",
-              fontWeight: 600,
-              letterSpacing: "0.06em",
-              color: "#f3eee7",
+              color: colors.text,
               textDecoration: "none",
+              fontSize: "clamp(24px, 4vw, 34px)",
+              letterSpacing: "0.08em",
               textTransform: "uppercase",
+              lineHeight: 1,
             }}
           >
             Parallax Hearts
           </Link>
 
-          <nav style={{ display: "flex", gap: "20px", flexWrap: "wrap", fontSize: "15px" }}>
-            <Link href="/about" style={{ textDecoration: "none", color: "#f3eee7" }}>
-              About
-            </Link>
-            <Link href="/project" style={{ textDecoration: "none", color: "#f3eee7" }}>
-              Project
-            </Link>
-            <Link href="/music" style={{ textDecoration: "none", color: "#f3eee7" }}>
-              Music
-            </Link>
-            <Link href="/phylax" style={{ textDecoration: "none", color: "#f3eee7" }}>PHYLAX</Link>
-            <Link href="/contact" style={{ textDecoration: "none", color: "#f3eee7" }}>
-              Contact
-            </Link>
+          <nav
+            style={{
+              display: "flex",
+              gap: "16px",
+              flexWrap: "wrap",
+              alignItems: "center",
+            }}
+          >
+            {navItems.map(([label, href]) => (
+              <Link
+                key={label}
+                href={href}
+                style={{
+                  color: label === "PHYLAX" ? colors.gold : colors.textSoft,
+                  textDecoration: "none",
+                  fontSize: "15px",
+                }}
+              >
+                {label}
+              </Link>
+            ))}
           </nav>
         </header>
+      </Container>
+    </div>
+  );
+}
 
-        <section
+function ProjectPanel({
+  eyebrow,
+  title,
+  subtitle,
+  body,
+  image,
+  primaryHref,
+  primaryLabel,
+  secondaryHref,
+  secondaryLabel,
+  accent = "warm",
+}: {
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  body: string;
+  image: string;
+  primaryHref: string;
+  primaryLabel: string;
+  secondaryHref: string;
+  secondaryLabel: string;
+  accent?: "warm" | "cold";
+}) {
+  const isCold = accent === "cold";
+
+  return (
+    <section
+      className="home-project-panel"
+      style={{
+        position: "relative",
+        minHeight: "78vh",
+        overflow: "hidden",
+        display: "flex",
+        alignItems: "flex-end",
+        border: `1px solid ${colors.border}`,
+        borderRadius: "34px",
+        background: "#050607",
+        boxShadow: "0 30px 90px rgba(0,0,0,0.38)",
+      }}
+    >
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: `
+            linear-gradient(180deg, rgba(3,5,7,0.02), rgba(3,5,7,0.28) 42%, rgba(3,5,7,0.94) 100%),
+            linear-gradient(90deg, rgba(3,5,7,0.76), rgba(3,5,7,0.22), rgba(3,5,7,0.70)),
+            url('${image}')
+          `,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          filter: isCold
+            ? "saturate(0.88) contrast(1.08)"
+            : "saturate(0.82) contrast(1.04)",
+        }}
+      />
+
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background: isCold
+            ? "radial-gradient(circle at 78% 18%, rgba(141,160,178,0.18), transparent 28%), radial-gradient(circle at 42% 82%, rgba(182,93,49,0.12), transparent 32%)"
+            : "radial-gradient(circle at 28% 20%, rgba(210,181,139,0.16), transparent 30%), radial-gradient(circle at 78% 80%, rgba(83,94,116,0.16), transparent 32%)",
+        }}
+      />
+
+      <div
+        style={{
+          position: "relative",
+          zIndex: 2,
+          padding: "clamp(26px, 5vw, 46px)",
+        }}
+      >
+        <p
           style={{
-            padding: "72px 0 48px",
-            display: "grid",
-            gridTemplateColumns: "1.15fr 0.85fr",
-            gap: "28px",
-            alignItems: "center",
+            margin: "0 0 14px",
+            color: isCold ? colors.phylaxBlue : colors.gold,
+            textTransform: "uppercase",
+            letterSpacing: "0.22em",
+            fontSize: "12px",
           }}
         >
-          <div>
-            <div
+          {eyebrow}
+        </p>
+
+        <h2
+          style={{
+            margin: 0,
+            color: colors.text,
+            fontSize: "clamp(42px, 7vw, 78px)",
+            lineHeight: 0.92,
+            letterSpacing: "-0.06em",
+            fontWeight: 400,
+            textShadow: "0 14px 44px rgba(0,0,0,0.58)",
+          }}
+        >
+          {title}
+        </h2>
+
+        <p
+          style={{
+            margin: "20px 0 0",
+            color: isCold ? colors.gold : colors.text,
+            fontSize: "23px",
+            lineHeight: 1.35,
+          }}
+        >
+          {subtitle}
+        </p>
+
+        <p
+          style={{
+            margin: "18px 0 0",
+            maxWidth: "620px",
+            color: colors.textSoft,
+            fontSize: "17px",
+            lineHeight: 1.85,
+          }}
+        >
+          {body}
+        </p>
+
+        <div
+          style={{
+            marginTop: "28px",
+            display: "flex",
+            gap: "12px",
+            flexWrap: "wrap",
+          }}
+        >
+          <Link
+            href={primaryHref}
+            style={{
+              color: "#08090b",
+              background: isCold ? colors.gold : colors.text,
+              border: `1px solid ${isCold ? colors.gold : colors.text}`,
+              borderRadius: "999px",
+              padding: "13px 18px",
+              textDecoration: "none",
+              fontSize: "15px",
+              letterSpacing: "0.04em",
+            }}
+          >
+            {primaryLabel}
+          </Link>
+
+          <Link
+            href={secondaryHref}
+            style={{
+              color: colors.text,
+              background: "rgba(5,7,10,0.58)",
+              border: `1px solid ${colors.border}`,
+              borderRadius: "999px",
+              padding: "13px 18px",
+              textDecoration: "none",
+              fontSize: "15px",
+              letterSpacing: "0.04em",
+            }}
+          >
+            {secondaryLabel}
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default function HomePage() {
+  return (
+    <main
+      style={{
+        minHeight: "100vh",
+        background:
+          "radial-gradient(circle at 18% 0%, rgba(110,78,146,0.15), transparent 32%), radial-gradient(circle at 82% 10%, rgba(70,95,120,0.18), transparent 30%), linear-gradient(180deg, #050507 0%, #09090f 42%, #0b090a 100%)",
+        color: colors.text,
+        fontFamily: siteFont,
+      }}
+    >
+      <TopNav />
+
+      <section style={{ padding: "54px 0 28px" }}>
+        <Container>
+          <div
+            style={{
+              textAlign: "center",
+              maxWidth: "900px",
+              margin: "0 auto 34px",
+            }}
+          >
+            <p
               style={{
-                color: "#e6cfb0",
+                margin: "0 0 14px",
+                color: colors.gold,
                 textTransform: "uppercase",
-                letterSpacing: "0.16em",
+                letterSpacing: "0.22em",
                 fontSize: "12px",
-                marginBottom: "18px",
               }}
             >
-              Cosmic · Spiritual · Musical
-            </div>
+              Cinematic music / story worlds / visual archives
+            </p>
 
             <h1
               style={{
-                fontSize: "clamp(42px, 8vw, 82px)",
-                lineHeight: 0.95,
-                margin: "0 0 18px",
-                fontWeight: 600,
+                margin: 0,
+                fontSize: "clamp(46px, 8vw, 92px)",
+                lineHeight: 0.92,
+                letterSpacing: "-0.06em",
+                fontWeight: 400,
               }}
             >
-              Parallax Hearts
+              Two worlds under one signal.
             </h1>
 
             <p
               style={{
-                fontSize: "18px",
-                lineHeight: 1.8,
-                color: "#c9c1b8",
-                maxWidth: "720px",
-                margin: 0,
+                margin: "22px auto 0",
+                maxWidth: "760px",
+                color: colors.textSoft,
+                fontSize: "20px",
+                lineHeight: 1.75,
               }}
             >
-              Parallax Hearts is a music project shaped by atmosphere, memory, longing,
-              inner vision, and the quiet forces that move beneath the surface of ordinary life.
-              The work lives where song becomes landscape, where feeling becomes image, and where
-              spiritual searching leaves a trace in sound.
+              Parallax Hearts is the creative home for intimate small-town
+              mystery, heavy cosmic lore, cinematic visuals, and album worlds
+              that unfold like recovered archives.
             </p>
-
-            <div style={{ display: "flex", gap: "14px", flexWrap: "wrap", marginTop: "28px" }}>
-              <Link
-                href="/music"
-                style={{
-                  display: "inline-block",
-                  padding: "12px 20px",
-                  borderRadius: "999px",
-                  background: "linear-gradient(135deg, #d6a86b, #b98953)",
-                  color: "#17120f",
-                  textDecoration: "none",
-                  fontWeight: 700,
-                }}
-              >
-                Enter the Music
-              </Link>
-
-              <a
-                href="https://ko-fi.com/parallaxhearts"
-                target="_blank"
-                rel="noreferrer"
-                style={{
-                  display: "inline-block",
-                  padding: "12px 20px",
-                  borderRadius: "999px",
-                  border: "1px solid rgba(255,255,255,0.14)",
-                  color: "#f3eee7",
-                  textDecoration: "none",
-                }}
-              >
-                Support on Ko-fi
-              </a>
-            </div>
           </div>
 
           <div
-            style={{
-              background: "rgba(255,255,255,0.05)",
-              border: "1px solid rgba(255,255,255,0.1)",
-              borderRadius: "24px",
-              overflow: "hidden",
-              boxShadow: "0 18px 60px rgba(0,0,0,0.35)",
-            }}
-          >
-            <Image
-              src="/images/hero.jpg"
-              alt="Parallax Hearts hero image"
-              width={1200}
-              height={1400}
-              style={{ width: "100%", height: "100%", objectFit: "cover", minHeight: "520px" }}
-              priority
-            />
-          </div>
-        </section>
-
-        <section style={{ padding: "12px 0 36px" }}>
-          <h2 style={{ fontSize: "30px", marginBottom: "12px" }}>A signal from somewhere deeper</h2>
-          <p style={{ color: "#c9c1b8", lineHeight: 1.85, maxWidth: "860px" }}>
-            The work of Parallax Hearts moves between devotion and distance, intimacy and myth,
-            town and threshold, body and spirit. It is interested in the places where memory
-            becomes haunted, where beauty is mixed with ache, and where music can open a door
-            into what words alone cannot fully hold. The songs are not just meant to be heard —
-            they are meant to be inhabited, revisited, and felt more deeply over time.
-          </p>
-        </section>
-
-        <section style={{ padding: "0 0 72px" }}>
-          <div
+            className="home-split-hero"
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+              gridTemplateColumns: "1fr 1fr",
               gap: "22px",
             }}
           >
-            <div
-              style={{
-                background: "rgba(255,255,255,0.05)",
-                border: "1px solid rgba(255,255,255,0.1)",
-                borderRadius: "24px",
-                padding: "22px",
-              }}
-            >
-              <h3 style={{ marginTop: 0 }}>Music</h3>
-              <p style={{ color: "#c9c1b8", lineHeight: 1.8 }}>
-                Songs, releases, and evolving bodies of work that carry emotional weight,
-                spiritual tension, and a sense of atmosphere that lingers after the last note.
-              </p>
-            </div>
+            <ProjectPanel
+              eyebrow="Album world one"
+              title="What the Town Keeps"
+              subtitle="Rain. Rails. Memory. Silence."
+              body="A grounded, literary, emotionally restrained album and visual story world built around a small town, hidden weight, human distance, and the things people leave unsaid."
+              image="/images/hero.jpg"
+              primaryHref="/project"
+              primaryLabel="Enter the town"
+              secondaryHref="/music"
+              secondaryLabel="Listen / music"
+              accent="warm"
+            />
 
-            <div
-              style={{
-                background: "rgba(255,255,255,0.05)",
-                border: "1px solid rgba(255,255,255,0.1)",
-                borderRadius: "24px",
-                padding: "22px",
-              }}
-            >
-              <h3 style={{ marginTop: 0 }}>Project World</h3>
-              <p style={{ color: "#c9c1b8", lineHeight: 1.8 }}>
-                A larger field of imagery, ideas, symbols, and emotional landscapes surrounding
-                the music — a place where the visual and the unseen meet.
-              </p>
-            </div>
-
-            <div
-              style={{
-                background: "rgba(255,255,255,0.05)",
-                border: "1px solid rgba(255,255,255,0.1)",
-                borderRadius: "24px",
-                padding: "22px",
-              }}
-            >
-              <h3 style={{ marginTop: 0 }}>Ko-fi</h3>
-              <p style={{ color: "#c9c1b8", lineHeight: 1.8 }}>
-                The place to directly support Parallax Hearts, pick up releases,
-                and help fund future music, visuals, and new work.
-              </p>
-            </div>
+            <ProjectPanel
+              eyebrow="Album world two"
+              title="PHYLAX: The First Breach"
+              subtitle="Watchers. Oath. Descent. Consequence."
+              body="A darker heavy shoegaze/darkgaze album world built from black stone, storm light, forbidden knowledge, symbolic lore, hidden marks, and the first collapse of sacred distance."
+              image="/images/phylax/atmosphere/upper-watch-hero.png"
+              primaryHref="/phylax"
+              primaryLabel="Enter PHYLAX"
+              secondaryHref="/phylax/lore"
+              secondaryLabel="Open the lore"
+              accent="cold"
+            />
           </div>
-        </section>
+        </Container>
+      </section>
 
-        <section style={{ padding: "0 0 72px" }}>
+      <section style={{ padding: "38px 0 86px" }}>
+        <Container>
           <div
             style={{
-              background: "rgba(255,255,255,0.04)",
-              border: "1px solid rgba(255,255,255,0.09)",
-              borderRadius: "24px",
-              padding: "28px",
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+              gap: "16px",
             }}
           >
-            <h2 style={{ marginTop: 0, fontSize: "28px" }}>Current Release</h2>
-            <p style={{ color: "#c9c1b8", lineHeight: 1.85, maxWidth: "860px" }}>
-              <em>What the Town Keeps</em> gathers the emotional and atmospheric spirit of the
-              project into a release shaped by memory, place, silence, and the unseen pressure
-              of what remains. It carries the feeling of things buried but still speaking,
-              familiar streets touched by mystery, and the sense that what is hidden often
-              leaves the deepest imprint.
-            </p>
-            <div style={{ marginTop: "18px" }}>
-              <a
-                href="https://ko-fi.com/parallaxhearts"
-                target="_blank"
-                rel="noreferrer"
+            {[
+              {
+                title: "Music",
+                text: "Songs, album links, project notes, and listening paths.",
+                href: "/music",
+              },
+              {
+                title: "PHYLAX Lore",
+                text: "The archive of breach, oath, descent, gifts, binding, and return.",
+                href: "/phylax/lore",
+              },
+              {
+                title: "Characters",
+                text: "The Breach Court and the figures carrying the album-world mythology.",
+                href: "/phylax/characters",
+              },
+              {
+                title: "Support",
+                text: "Support the project directly through Ko-fi.",
+                href: "https://ko-fi.com/parallaxhearts",
+              },
+            ].map((card) => (
+              <Link
+                key={card.title}
+                href={card.href}
                 style={{
-                  display: "inline-block",
-                  padding: "12px 20px",
-                  borderRadius: "999px",
-                  background: "linear-gradient(135deg, #d6a86b, #b98953)",
-                  color: "#17120f",
                   textDecoration: "none",
-                  fontWeight: 700,
+                  color: colors.text,
+                  border: `1px solid ${colors.border}`,
+                  borderRadius: "24px",
+                  padding: "24px",
+                  background:
+                    "linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.018))",
+                  boxShadow: "0 20px 60px rgba(0,0,0,0.24)",
                 }}
               >
-                Get it on Ko-fi
-              </a>
-            </div>
-          </div>
-        </section>
+                <h3
+                  style={{
+                    margin: 0,
+                    fontSize: "30px",
+                    lineHeight: 1,
+                    fontWeight: 400,
+                    letterSpacing: "-0.035em",
+                  }}
+                >
+                  {card.title}
+                </h3>
 
-        <footer
-          style={{
-            padding: "12px 0 36px",
-            borderTop: "1px solid rgba(255,255,255,0.08)",
-            display: "flex",
-            justifyContent: "space-between",
-            gap: "18px",
-            flexWrap: "wrap",
-            color: "#a79d93",
-            fontSize: "14px",
-          }}
-        >
-          <div>© Parallax Hearts</div>
-          <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
-            <a href="https://parallaxhearts.org" style={{ textDecoration: "none", color: "#a79d93" }}>
-              parallaxhearts.org
-            </a>
-            <a
-              href="https://ko-fi.com/parallaxhearts"
-              target="_blank"
-              rel="noreferrer"
-              style={{ textDecoration: "none", color: "#a79d93" }}
-            >
-              Ko-fi
-            </a>
-            <a href="mailto:chad@parallaxhearts.org" style={{ textDecoration: "none", color: "#a79d93" }}>
-              chad@parallaxhearts.org
-            </a>
+                <p
+                  style={{
+                    margin: "12px 0 0",
+                    color: colors.textSoft,
+                    fontSize: "15px",
+                    lineHeight: 1.75,
+                  }}
+                >
+                  {card.text}
+                </p>
+              </Link>
+            ))}
           </div>
-        </footer>
-      </div>
+        </Container>
+      </section>
+
+      <style>{`
+        @media (max-width: 980px) {
+          .home-split-hero {
+            grid-template-columns: 1fr !important;
+          }
+
+          .home-project-panel {
+            min-height: 68vh !important;
+          }
+        }
+      `}</style>
     </main>
   );
 }

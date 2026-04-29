@@ -104,7 +104,7 @@ const characters: Character[] = [
 
 const featureCards = [
   {
-    title: "The Story",
+    title: "The Lore",
     text: "A cinematic descent from sacred distance into longing, oath, knowledge, corruption, consequence, and return.",
     href: "#story",
   },
@@ -174,7 +174,7 @@ function TopNav() {
     { label: "Project", href: "/project" },
     { label: "Music", href: "/music" },
     { label: "PHYLAX", href: "/phylax" },
-    { label: "Story", href: "#story" },
+    { label: "Lore", href: "#story" },
     { label: "Characters", href: "#characters" },
     { label: "World", href: "#world" },
     { label: "Contact", href: "/contact" },
@@ -362,7 +362,7 @@ function Hero() {
             }}
           >
             <Link
-              href="#story"
+              href="/phylax/lore"
               style={{
                 textDecoration: "none",
                 color: "#091015",
@@ -373,11 +373,11 @@ function Hero() {
                 letterSpacing: "0.05em",
               }}
             >
-              Read the story
+              Enter the story archive
             </Link>
 
             <Link
-              href="#characters"
+              href="/phylax#characters"
               style={{
                 textDecoration: "none",
                 color: colors.text,
@@ -1011,7 +1011,7 @@ function FooterCTA() {
             }}
           >
             Once this landing page feels right, the next clean expansion is a
-            dedicated Story page, Characters page, Lore page, and Descent page
+            dedicated Lore page, Characters page, Lore page, and Descent page
             using this same visual language.
           </p>
         </div>
