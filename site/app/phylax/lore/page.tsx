@@ -432,7 +432,7 @@ function Hero() {
                 letterSpacing: "0.05em",
               }}
             >
-              View source reservoir
+              View archive
             </Link>
           </div>
         </div>

@@ -573,68 +573,6 @@ export default async function LoreChapterPage({ params }: PageProps) {
 
       <section style={{ padding: "34px 0" }}>
         <Container>
-          <Eyebrow>Source Reservoir</Eyebrow>
-
-          <div
-            className="lore-grid-three"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
-              gap: "18px",
-            }}
-          >
-            {chapter.sourceReservoir.map((source) => (
-              <article
-                key={source.source}
-                style={{
-                  border: `1px solid ${colors.border}`,
-                  borderRadius: "26px",
-                  padding: "28px",
-                  background:
-                    "linear-gradient(180deg, rgba(14,18,22,0.78), rgba(7,8,10,0.94))",
-                }}
-              >
-                <h2
-                  style={{
-                    margin: 0,
-                    color: colors.gold,
-                    fontSize: "26px",
-                    lineHeight: 1.05,
-                    fontWeight: 400,
-                  }}
-                >
-                  {source.source}
-                </h2>
-
-                <p
-                  style={{
-                    margin: "16px 0 0",
-                    color: colors.textSoft,
-                    fontSize: "16px",
-                    lineHeight: 1.85,
-                  }}
-                >
-                  {source.resonance}
-                </p>
-
-                <p
-                  style={{
-                    margin: "14px 0 0",
-                    color: colors.textDim,
-                    fontSize: "15px",
-                    lineHeight: 1.8,
-                  }}
-                >
-                  PHYLAX use: {source.phylaxUse}
-                </p>
-              </article>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section style={{ padding: "34px 0" }}>
-        <Container>
           <div
             className="lore-grid"
             style={{
