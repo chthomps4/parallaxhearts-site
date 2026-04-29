@@ -999,7 +999,7 @@ function FooterCTA() {
               fontWeight: 400,
             }}
           >
-            Enter the story archive.
+            Enter the lore archive.
           </h2>
           <p
             style={{
