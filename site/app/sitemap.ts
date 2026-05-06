@@ -17,11 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: "/phylax", priority: 0.75, changeFrequency: "monthly" as const },
     { route: "/phylax/lore", priority: 0.7, changeFrequency: "monthly" as const },
     { route: "/phylax/story", priority: 0.65, changeFrequency: "monthly" as const },
-    {
-      route: "/phylax/characters",
-      priority: 0.65,
-      changeFrequency: "monthly" as const,
-    },
+    { route: "/phylax/characters", priority: 0.65, changeFrequency: "monthly" as const },
   ];
 
   const corePages = coreRoutes.map((item) => ({
