@@ -1,55 +1,34 @@
+cat > site/app/page.tsx <<'EOF'
 import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Parallax Hearts | What the Town Keeps + PHYLAX",
+  title: "Parallax Hearts | What the Town Keeps",
   description:
-    "Parallax Hearts is the creative home for What the Town Keeps and PHYLAX: The First Breach — cinematic music, story worlds, lore, visuals, and album archives.",
+    "Parallax Hearts is the music project behind What the Town Keeps — a cinematic album, story world, and graphic novel universe set in the rainy small town of Vallen.",
 };
 
-const siteFont = `Georgia, "Times New Roman", Times, serif`;
-
-const colors = {
-  text: "#f3eee7",
-  textSoft: "rgba(243, 238, 231, 0.78)",
-  textDim: "rgba(243, 238, 231, 0.58)",
-  gold: "#d2b58b",
-  border: "rgba(243, 238, 231, 0.14)",
-  phylaxBlue: "#8da0b2",
-  ember: "#b65d31",
-};
-
-function Container({ children }: { children: React.ReactNode }) {
-  return (
-    <div style={{ width: "min(1180px, calc(100% - 32px))", margin: "0 auto" }}>
-      {children}
-    </div>
-  );
-}
+const navItems = [
+  ["Home", "/"],
+  ["Music", "/music"],
+  ["Story", "/project"],
+  ["Support", "/support"],
+  ["Contact", "/contact"],
+];
 
 function TopNav() {
-  const navItems = [
-    ["Home", "/"],
-    ["Music", "/music"],
-    ["What the Town Keeps", "/project"],
-    ["PHYLAX", "/phylax"],
-    ["Lore", "/phylax/lore"],
-    ["Characters", "/phylax/characters"],
-    ["Contact", "/contact"],
-  ];
-
   return (
     <div
       style={{
         position: "sticky",
         top: 0,
         zIndex: 40,
-        backdropFilter: "blur(12px)",
-        background: "rgba(5,5,7,0.76)",
-        borderBottom: `1px solid ${colors.border}`,
+        backdropFilter: "blur(14px)",
+        background: "rgba(5,5,7,0.78)",
+        borderBottom: "1px solid rgba(243,238,231,0.12)",
       }}
     >
-      <Container>
+      <div className="site-container">
         <header
           style={{
             minHeight: "72px",
@@ -64,9 +43,9 @@ function TopNav() {
           <Link
             href="/"
             style={{
-              color: colors.text,
+              color: "var(--paper)",
               textDecoration: "none",
-              fontSize: "clamp(24px, 4vw, 34px)",
+              fontSize: "clamp(22px, 4vw, 32px)",
               letterSpacing: "0.08em",
               textTransform: "uppercase",
               lineHeight: 1,
@@ -88,7 +67,7 @@ function TopNav() {
                 key={label}
                 href={href}
                 style={{
-                  color: label === "PHYLAX" ? colors.gold : colors.textSoft,
+                  color: "var(--paper-soft)",
                   textDecoration: "none",
                   fontSize: "15px",
                 }}
@@ -98,361 +77,323 @@ function TopNav() {
             ))}
           </nav>
         </header>
-      </Container>
+      </div>
     </div>
   );
 }
 
-function ProjectPanel({
-  eyebrow,
+function FeatureCard({
   title,
-  subtitle,
-  body,
-  image,
-  primaryHref,
-  primaryLabel,
-  secondaryHref,
-  secondaryLabel,
-  accent = "warm",
+  text,
+  href,
 }: {
-  eyebrow: string;
   title: string;
-  subtitle: string;
-  body: string;
-  image: string;
-  primaryHref: string;
-  primaryLabel: string;
-  secondaryHref: string;
-  secondaryLabel: string;
-  accent?: "warm" | "cold";
+  text: string;
+  href: string;
 }) {
-  const isCold = accent === "cold";
-
   return (
-    <section
-      className="home-project-panel"
+    <Link
+      href={href}
+      className="glass-panel"
       style={{
-        position: "relative",
-        minHeight: "78vh",
-        overflow: "hidden",
-        display: "flex",
-        alignItems: "flex-end",
-        border: `1px solid ${colors.border}`,
-        borderRadius: "34px",
-        background: "#050607",
-        boxShadow: "0 30px 90px rgba(0,0,0,0.38)",
+        textDecoration: "none",
+        color: "var(--paper)",
+        padding: "26px",
+        borderRadius: "24px",
       }}
     >
-      <div
+      <h3
         style={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage: `
-            linear-gradient(180deg, rgba(3,5,7,0.02), rgba(3,5,7,0.28) 42%, rgba(3,5,7,0.94) 100%),
-            linear-gradient(90deg, rgba(3,5,7,0.76), rgba(3,5,7,0.22), rgba(3,5,7,0.70)),
-            url('${image}')
-          `,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          filter: isCold
-            ? "saturate(0.88) contrast(1.08)"
-            : "saturate(0.82) contrast(1.04)",
-        }}
-      />
-
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          background: isCold
-            ? "radial-gradient(circle at 78% 18%, rgba(141,160,178,0.18), transparent 28%), radial-gradient(circle at 42% 82%, rgba(182,93,49,0.12), transparent 32%)"
-            : "radial-gradient(circle at 28% 20%, rgba(210,181,139,0.16), transparent 30%), radial-gradient(circle at 78% 80%, rgba(83,94,116,0.16), transparent 32%)",
-        }}
-      />
-
-      <div
-        style={{
-          position: "relative",
-          zIndex: 2,
-          padding: "clamp(26px, 5vw, 46px)",
+          margin: 0,
+          fontSize: "30px",
+          lineHeight: 1,
+          fontWeight: 400,
+          letterSpacing: "-0.04em",
         }}
       >
-        <p
-          style={{
-            margin: "0 0 14px",
-            color: isCold ? colors.phylaxBlue : colors.gold,
-            textTransform: "uppercase",
-            letterSpacing: "0.22em",
-            fontSize: "12px",
-          }}
-        >
-          {eyebrow}
-        </p>
+        {title}
+      </h3>
 
-        <h2
-          style={{
-            margin: 0,
-            color: colors.text,
-            fontSize: "clamp(42px, 7vw, 78px)",
-            lineHeight: 0.92,
-            letterSpacing: "-0.06em",
-            fontWeight: 400,
-            textShadow: "0 14px 44px rgba(0,0,0,0.58)",
-          }}
-        >
-          {title}
-        </h2>
-
-        <p
-          style={{
-            margin: "20px 0 0",
-            color: isCold ? colors.gold : colors.text,
-            fontSize: "23px",
-            lineHeight: 1.35,
-          }}
-        >
-          {subtitle}
-        </p>
-
-        <p
-          style={{
-            margin: "18px 0 0",
-            maxWidth: "620px",
-            color: colors.textSoft,
-            fontSize: "17px",
-            lineHeight: 1.85,
-          }}
-        >
-          {body}
-        </p>
-
-        <div
-          style={{
-            marginTop: "28px",
-            display: "flex",
-            gap: "12px",
-            flexWrap: "wrap",
-          }}
-        >
-          <Link
-            href={primaryHref}
-            style={{
-              color: "#08090b",
-              background: isCold ? colors.gold : colors.text,
-              border: `1px solid ${isCold ? colors.gold : colors.text}`,
-              borderRadius: "999px",
-              padding: "13px 18px",
-              textDecoration: "none",
-              fontSize: "15px",
-              letterSpacing: "0.04em",
-            }}
-          >
-            {primaryLabel}
-          </Link>
-
-          <Link
-            href={secondaryHref}
-            style={{
-              color: colors.text,
-              background: "rgba(5,7,10,0.58)",
-              border: `1px solid ${colors.border}`,
-              borderRadius: "999px",
-              padding: "13px 18px",
-              textDecoration: "none",
-              fontSize: "15px",
-              letterSpacing: "0.04em",
-            }}
-          >
-            {secondaryLabel}
-          </Link>
-        </div>
-      </div>
-    </section>
+      <p className="soft-copy" style={{ margin: "14px 0 0" }}>
+        {text}
+      </p>
+    </Link>
   );
 }
 
 export default function HomePage() {
   return (
-    <main
-      style={{
-        minHeight: "100vh",
-        background:
-          "radial-gradient(circle at 18% 0%, rgba(110,78,146,0.15), transparent 32%), radial-gradient(circle at 82% 10%, rgba(70,95,120,0.18), transparent 30%), linear-gradient(180deg, #050507 0%, #09090f 42%, #0b090a 100%)",
-        color: colors.text,
-        fontFamily: siteFont,
-      }}
-    >
+    <main className="site-shell">
       <TopNav />
 
-      <section style={{ padding: "54px 0 28px" }}>
-        <Container>
+      <section style={{ padding: "64px 0 36px" }}>
+        <div className="site-container">
           <div
+            className="glass-panel"
             style={{
-              textAlign: "center",
-              maxWidth: "900px",
-              margin: "0 auto 34px",
+              position: "relative",
+              overflow: "hidden",
+              minHeight: "76vh",
+              display: "flex",
+              alignItems: "flex-end",
+              borderRadius: "38px",
+              background: "#050607",
             }}
           >
-            <p
+            <div
               style={{
-                margin: "0 0 14px",
-                color: colors.gold,
-                textTransform: "uppercase",
-                letterSpacing: "0.22em",
-                fontSize: "12px",
+                position: "absolute",
+                inset: 0,
+                backgroundImage: `
+                  linear-gradient(180deg, rgba(4,5,6,0.04), rgba(4,5,6,0.38) 42%, rgba(4,5,6,0.96) 100%),
+                  linear-gradient(90deg, rgba(4,5,6,0.82), rgba(4,5,6,0.28), rgba(4,5,6,0.72)),
+                  url('/images/hero.jpg')
+                `,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                filter: "saturate(0.84) contrast(1.06)",
               }}
-            >
-              Cinematic music / story worlds / visual archives
-            </p>
-
-            <h1
-              style={{
-                margin: 0,
-                fontSize: "clamp(46px, 8vw, 92px)",
-                lineHeight: 0.92,
-                letterSpacing: "-0.06em",
-                fontWeight: 400,
-              }}
-            >
-              Two worlds under one signal.
-            </h1>
-
-            <p
-              style={{
-                margin: "22px auto 0",
-                maxWidth: "760px",
-                color: colors.textSoft,
-                fontSize: "20px",
-                lineHeight: 1.75,
-              }}
-            >
-              Parallax Hearts is the creative home for intimate small-town
-              mystery, heavy cosmic lore, cinematic visuals, and album worlds
-              that unfold like recovered archives.
-            </p>
-          </div>
-
-          <div
-            className="home-split-hero"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "22px",
-            }}
-          >
-            <ProjectPanel
-              eyebrow="Album world one"
-              title="What the Town Keeps"
-              subtitle="Rain. Rails. Memory. Silence."
-              body="A grounded, literary, emotionally restrained album and visual story world built around a small town, hidden weight, human distance, and the things people leave unsaid."
-              image="/images/hero.jpg"
-              primaryHref="/project"
-              primaryLabel="Enter the town"
-              secondaryHref="/music"
-              secondaryLabel="Listen / music"
-              accent="warm"
             />
 
-            <ProjectPanel
-              eyebrow="Album world two"
-              title="PHYLAX: The First Breach"
-              subtitle="Watchers. Oath. Descent. Consequence."
-              body="A darker heavy shoegaze/darkgaze album world built from black stone, storm light, forbidden knowledge, symbolic lore, hidden marks, and the first collapse of sacred distance."
-              image="/images/phylax/atmosphere/upper-watch-hero.png"
-              primaryHref="/phylax"
-              primaryLabel="Enter PHYLAX"
-              secondaryHref="/phylax/lore"
-              secondaryLabel="Open the lore"
-              accent="cold"
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                background:
+                  "radial-gradient(circle at 24% 18%, rgba(210,181,139,0.18), transparent 30%), radial-gradient(circle at 76% 78%, rgba(127,141,155,0.18), transparent 36%)",
+              }}
             />
+
+            <div
+              style={{
+                position: "relative",
+                zIndex: 2,
+                padding: "clamp(28px, 6vw, 58px)",
+                maxWidth: "920px",
+              }}
+            >
+              <p className="kicker">Cinematic album / story world / graphic novel</p>
+
+              <h1
+                style={{
+                  margin: 0,
+                  color: "var(--paper)",
+                  fontSize: "clamp(50px, 9vw, 106px)",
+                  lineHeight: 0.88,
+                  letterSpacing: "-0.075em",
+                  fontWeight: 400,
+                  textShadow: "0 18px 54px rgba(0,0,0,0.68)",
+                }}
+              >
+                What the Town Keeps
+              </h1>
+
+              <p
+                style={{
+                  margin: "24px 0 0",
+                  maxWidth: "760px",
+                  color: "var(--paper)",
+                  fontSize: "clamp(20px, 3vw, 30px)",
+                  lineHeight: 1.34,
+                }}
+              >
+                A cinematic album and story world about memory, absence,
+                distance, and the things a town learns to carry.
+              </p>
+
+              <p
+                className="body-copy"
+                style={{
+                  margin: "20px 0 0",
+                  maxWidth: "700px",
+                }}
+              >
+                Parallax Hearts is the music. Vallen is the town. The songs,
+                visuals, story fragments, and graphic novel pages all move
+                through the same rainy streets, old houses, rail lines, and
+                rooms that remember more than they say.
+              </p>
+
+              <div
+                style={{
+                  marginTop: "30px",
+                  display: "flex",
+                  gap: "12px",
+                  flexWrap: "wrap",
+                }}
+              >
+                <Link href="/music" className="primary-button">
+                  Listen / Music
+                </Link>
+                <Link href="/project" className="secondary-button">
+                  Enter the Story
+                </Link>
+                <Link href="/support" className="secondary-button">
+                  Support / Ko-fi
+                </Link>
+              </div>
+            </div>
           </div>
-        </Container>
+        </div>
       </section>
 
-      <section style={{ padding: "38px 0 86px" }}>
-        <Container>
+      <section style={{ padding: "34px 0 18px" }}>
+        <div className="site-container">
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
               gap: "16px",
             }}
           >
-            {[
-              {
-                title: "Music",
-                text: "Songs, album links, project notes, and listening paths.",
-                href: "/music",
-              },
-              {
-                title: "PHYLAX Lore",
-                text: "The archive of breach, oath, descent, gifts, binding, and return.",
-                href: "/phylax/lore",
-              },
-              {
-                title: "Characters",
-                text: "The Breach Court and the figures carrying the album-world mythology.",
-                href: "/phylax/characters",
-              },
-              {
-                title: "Support",
-                text: "Support the project directly through Ko-fi.",
-                href: "https://ko-fi.com/parallaxhearts",
-              },
-            ].map((card) => (
-              <Link
-                key={card.title}
-                href={card.href}
+            <FeatureCard
+              title="The Album"
+              text="Songs from Parallax Hearts shaped by acoustic weight, quiet tension, restrained vocals, memory, and emotional aftermath."
+              href="/music"
+            />
+
+            <FeatureCard
+              title="The Town"
+              text="Vallen is a fictional small town of rail lines, wet pavement, old houses, dim windows, and things people do not name out loud."
+              href="/project"
+            />
+
+            <FeatureCard
+              title="The Archive"
+              text="Lyrics, stories, concept art, album visuals, videos, and graphic novel material collected as the world grows."
+              href="/support"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section style={{ padding: "34px 0" }}>
+        <div className="site-container">
+          <div
+            className="glass-panel"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "minmax(0, 1.1fr) minmax(280px, 0.9fr)",
+              gap: "30px",
+              padding: "clamp(26px, 5vw, 44px)",
+              alignItems: "center",
+            }}
+          >
+            <div>
+              <p className="kicker">Support the world behind the album</p>
+
+              <h2 className="section-title">Music, story, and visual archive.</h2>
+
+              <p className="body-copy" style={{ margin: "20px 0 0", maxWidth: "720px" }}>
+                What the Town Keeps is more than a record. It is a world built
+                through songs, lyrics, videos, album art, story fragments,
+                concept art, and a graphic novel adaptation. Ko-fi is where the
+                deeper archive can live without overcrowding the main site.
+              </p>
+
+              <div
                 style={{
-                  textDecoration: "none",
-                  color: colors.text,
-                  border: `1px solid ${colors.border}`,
-                  borderRadius: "24px",
-                  padding: "24px",
-                  background:
-                    "linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.018))",
-                  boxShadow: "0 20px 60px rgba(0,0,0,0.24)",
+                  marginTop: "26px",
+                  display: "flex",
+                  gap: "12px",
+                  flexWrap: "wrap",
                 }}
               >
-                <h3
-                  style={{
-                    margin: 0,
-                    fontSize: "30px",
-                    lineHeight: 1,
-                    fontWeight: 400,
-                    letterSpacing: "-0.035em",
-                  }}
+                <a
+                  href="https://ko-fi.com/parallaxhearts"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="primary-button"
                 >
-                  {card.title}
-                </h3>
+                  Support on Ko-fi
+                </a>
 
-                <p
-                  style={{
-                    margin: "12px 0 0",
-                    color: colors.textSoft,
-                    fontSize: "15px",
-                    lineHeight: 1.75,
-                  }}
-                >
-                  {card.text}
-                </p>
-              </Link>
-            ))}
+                <Link href="/support" className="secondary-button">
+                  View Support Options
+                </Link>
+              </div>
+            </div>
+
+            <div
+              style={{
+                border: "1px solid var(--line)",
+                borderRadius: "26px",
+                padding: "24px",
+                background:
+                  "linear-gradient(180deg, rgba(210,181,139,0.10), rgba(255,255,255,0.025))",
+              }}
+            >
+              <p className="kicker" style={{ marginBottom: "18px" }}>
+                Suggested archive lanes
+              </p>
+
+              <div style={{ display: "grid", gap: "14px" }}>
+                {[
+                  "Digital album and direct support",
+                  "Lyric sheets and song notes",
+                  "Concept art and album art packs",
+                  "Story fragments from Vallen",
+                  "Graphic novel previews",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    style={{
+                      padding: "14px 0",
+                      borderTop: "1px solid var(--line)",
+                      color: "var(--paper-soft)",
+                      fontSize: "15px",
+                    }}
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        </Container>
+        </div>
+      </section>
+
+      <section style={{ padding: "34px 0 88px" }}>
+        <div className="site-container">
+          <div
+            className="glass-panel"
+            style={{
+              padding: "clamp(24px, 4vw, 34px)",
+              borderRadius: "26px",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              gap: "20px",
+              flexWrap: "wrap",
+            }}
+          >
+            <div>
+              <p className="kicker" style={{ marginBottom: "10px" }}>
+                Other album worlds
+              </p>
+
+              <p className="soft-copy" style={{ margin: 0, maxWidth: "760px" }}>
+                PHYLAX remains part of the wider Parallax Hearts creative
+                universe, but What the Town Keeps is the central public-facing
+                world for this site pass.
+              </p>
+            </div>
+
+            <Link href="/phylax" className="secondary-button">
+              Enter PHYLAX
+            </Link>
+          </div>
+        </div>
       </section>
 
       <style>{`
-        @media (max-width: 980px) {
-          .home-split-hero {
+        @media (max-width: 900px) {
+          section .glass-panel[style*="grid-template-columns"] {
             grid-template-columns: 1fr !important;
-          }
-
-          .home-project-panel {
-            min-height: 68vh !important;
           }
         }
       `}</style>
     </main>
   );
 }
+EOF
