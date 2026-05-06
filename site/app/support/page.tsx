@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import ArchiveNote from "../components/ArchiveNote";
 
 export const metadata: Metadata = {
   title: "Support | Parallax Hearts",
@@ -162,10 +163,19 @@ export default function SupportPage() {
                   fontSize: "19px",
                 }}
               >
-                What the Town Keeps is an album, a story world, a visual
-                archive, and a graphic novel in progress. Ko-fi is where the
-                deeper material can live: music, lyrics, story fragments,
-                videos, concept art, album art, and early looks at Vallen.
+                What the Town Keeps is an album, a story world, a visual archive
+                <ArchiveNote
+                  title="Archive Note: Archive"
+                  evidence="Well-supported word history / creative use"
+                >
+                  An archive is a place where records are preserved. Here, it
+                  means more than storage: it is the collected music, lyrics,
+                  visuals, story fragments, album art, and graphic novel
+                  material surrounding What the Town Keeps.
+                </ArchiveNote>
+                , and a graphic novel in progress. Ko-fi is where the deeper
+                material can live: music, lyrics, story fragments, videos,
+                concept art, album art, and early looks at Vallen.
               </p>
 
               <div
@@ -337,7 +347,9 @@ export default function SupportPage() {
           >
             <p className="kicker">Direct support</p>
 
-            <h2 className="section-title">Thank you for helping build the town.</h2>
+            <h2 className="section-title">
+              Thank you for helping build the town.
+            </h2>
 
             <p
               className="body-copy"
