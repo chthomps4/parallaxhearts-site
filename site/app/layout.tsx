@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -67,6 +68,170 @@ export const metadata: Metadata = {
   category: "music",
 };
 
+function SiteFooter() {
+  return (
+    <footer
+      style={{
+        borderTop: "1px solid var(--line)",
+        background:
+          "linear-gradient(180deg, rgba(5,5,7,0.72), rgba(5,5,7,0.96))",
+        padding: "42px 0",
+      }}
+    >
+      <div className="site-container">
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "minmax(0, 1.2fr) repeat(3, minmax(160px, 0.55fr))",
+            gap: "28px",
+            alignItems: "start",
+          }}
+        >
+          <div>
+            <Link
+              href="/"
+              style={{
+                color: "var(--paper)",
+                textDecoration: "none",
+                fontSize: "clamp(24px, 4vw, 34px)",
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                lineHeight: 1,
+              }}
+            >
+              Parallax Hearts
+            </Link>
+
+            <p
+              className="soft-copy"
+              style={{
+                margin: "16px 0 0",
+                maxWidth: "520px",
+              }}
+            >
+              Cinematic music, story worlds, visual archives, and the rainy
+              small-town atmosphere of <em>What the Town Keeps</em>.
+            </p>
+
+            <p
+              style={{
+                margin: "18px 0 0",
+                color: "var(--paper-dim)",
+                fontSize: "13px",
+                lineHeight: 1.6,
+              }}
+            >
+              © {new Date().getFullYear()} Parallax Hearts. All rights reserved.
+            </p>
+          </div>
+
+          <div>
+            <p className="kicker" style={{ marginBottom: "12px" }}>
+              Explore
+            </p>
+
+            <FooterLinks
+              links={[
+                ["Home", "/"],
+                ["Music", "/music"],
+                ["Story", "/project"],
+                ["About", "/about"],
+              ]}
+            />
+          </div>
+
+          <div>
+            <p className="kicker" style={{ marginBottom: "12px" }}>
+              Archive
+            </p>
+
+            <FooterLinks
+              links={[
+                ["Shop", "/shop"],
+                ["Support", "/support"],
+                ["PHYLAX", "/phylax"],
+                ["Lore", "/phylax/lore"],
+              ]}
+            />
+          </div>
+
+          <div>
+            <p className="kicker" style={{ marginBottom: "12px" }}>
+              Connect
+            </p>
+
+            <FooterLinks
+              links={[
+                ["Contact", "/contact"],
+                ["Facebook", "https://www.facebook.com/parallaxhearts"],
+                ["Ko-fi", "https://ko-fi.com/parallaxhearts"],
+                [
+                  "Bandcamp",
+                  "https://parallaxhearts.bandcamp.com/album/what-the-town-keeps",
+                ],
+              ]}
+            />
+          </div>
+        </div>
+      </div>
+
+      <style>{`
+        @media (max-width: 900px) {
+          footer div[style*="grid-template-columns"] {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
+    </footer>
+  );
+}
+
+function FooterLinks({
+  links,
+}: {
+  links: [label: string, href: string][];
+}) {
+  return (
+    <div style={{ display: "grid", gap: "10px" }}>
+      {links.map(([label, href]) => {
+        const isExternal = href.startsWith("http");
+
+        if (isExternal) {
+          return (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noreferrer"
+              style={{
+                color: "var(--paper-soft)",
+                textDecoration: "none",
+                fontSize: "15px",
+              }}
+            >
+              {label}
+            </a>
+          );
+        }
+
+        return (
+          <Link
+            key={label}
+            href={href}
+            style={{
+              color: "var(--paper-soft)",
+              textDecoration: "none",
+              fontSize: "15px",
+            }}
+          >
+            {label}
+          </Link>
+        );
+      })}
+    </div>
+  );
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -104,6 +269,7 @@ export default function RootLayout({
           }}
         />
         {children}
+        <SiteFooter />
       </body>
     </html>
   );
