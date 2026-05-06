@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import ArchiveNote from "../components/ArchiveNote";
 
 export const metadata: Metadata = {
   title: "Music | Parallax Hearts",
@@ -319,6 +320,29 @@ export default function MusicPage() {
                     }}
                   >
                     {track}
+                    {track === "Red Signal" ? (
+                      <ArchiveNote
+                        title="Archive Note: Signal"
+                        evidence="Well-supported general concept / creative use"
+                      >
+                        A signal is a sign, indication, or transmitted message.
+                        In the album world, signals often fail, repeat, or
+                        arrive too late — like emotional information moving
+                        through weather, distance, and silence.
+                      </ArchiveNote>
+                    ) : null}
+                    {track === "Ballast" ? (
+                      <ArchiveNote
+                        title="Archive Note: Ballast"
+                        evidence="Well-supported word history / creative use"
+                      >
+                        Ballast is weight used to stabilize a ship, structure,
+                        or rail bed. In What the Town Keeps, it becomes
+                        emotional weight — the unseen pressure that keeps a
+                        life, house, or town from tipping over. The symbolic
+                        meaning belongs to the album world.
+                      </ArchiveNote>
+                    ) : null}
                   </h3>
                 </div>
               ))}
