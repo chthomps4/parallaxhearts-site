@@ -1,186 +1,318 @@
 import Image from "next/image";
 import Link from "next/link";
 
+const shopItems = [
+  {
+    title: "What the Town Keeps — Digital Album",
+    text: "The current Parallax Hearts album, built around Vallen, memory, distance, rain, old rooms, and quiet emotional pressure.",
+  },
+  {
+    title: "Lyric Book PDF",
+    text: "A clean collected lyric document for the album world, ideal for listeners who want to sit with the words outside the songs.",
+  },
+  {
+    title: "The Vallen Archive — Concept Art Pack",
+    text: "Selected visual pieces, album art, story-world images, and atmospheric references from What the Town Keeps.",
+  },
+  {
+    title: "Graphic Novel Preview PDF",
+    text: "Early page previews and visual-story material connected to the developing graphic novel adaptation.",
+  },
+];
+
 export default function ShopPage() {
   return (
-    <main
-      style={{
-        minHeight: "100vh",
-        background:
-          "radial-gradient(circle at top, rgba(110,78,146,0.22), transparent 35%), linear-gradient(180deg, #08080d 0%, #0b0b12 45%, #11111b 100%)",
-        color: "#f3eee7",
-        fontFamily: "Georgia, serif",
-      }}
-    >
-      <div style={{ width: "min(1160px, calc(100% - 32px))", margin: "0 auto" }}>
-        <header
-          style={{
-            padding: "24px 0",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            gap: "20px",
-            flexWrap: "wrap",
-            borderBottom: "1px solid rgba(255,255,255,0.08)",
-          }}
-        >
-          <Link
-            href="/"
+    <main className="site-shell">
+      <section style={{ padding: "34px 0 18px" }}>
+        <div className="site-container">
+          <header
             style={{
-              fontSize: "22px",
-              fontWeight: 600,
-              letterSpacing: "0.06em",
-              color: "#f3eee7",
-              textDecoration: "none",
-              textTransform: "uppercase",
+              minHeight: "72px",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              gap: "20px",
+              flexWrap: "wrap",
+              padding: "16px 0",
+              borderBottom: "1px solid var(--line)",
             }}
           >
-            Parallax Hearts
-          </Link>
-
-          <nav style={{ display: "flex", gap: "20px", flexWrap: "wrap", fontSize: "15px" }}>
-            <Link href="/about" style={{ textDecoration: "none" }}>About</Link>
-            <Link href="/project" style={{ textDecoration: "none" }}>Project</Link>
-            <Link href="/music" style={{ textDecoration: "none" }}>Music</Link>
-            <Link href="/phylax" style={{ textDecoration: "none" }}>PHYLAX</Link>
-            <Link href="/shop" style={{ textDecoration: "none" }}>Store</Link>
-            <Link href="/contact" style={{ textDecoration: "none" }}>Contact</Link>
-          </nav>
-        </header>
-
-        <section
-          style={{
-            padding: "60px 0 80px",
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "28px",
-            alignItems: "start",
-          }}
-        >
-          <div>
-            <div
+            <Link
+              href="/"
               style={{
-                color: "#e6cfb0",
+                color: "var(--paper)",
+                textDecoration: "none",
+                fontSize: "clamp(22px, 4vw, 32px)",
+                letterSpacing: "0.08em",
                 textTransform: "uppercase",
-                letterSpacing: "0.16em",
-                fontSize: "12px",
-                marginBottom: "18px",
+                lineHeight: 1,
               }}
             >
-              Store
-            </div>
+              Parallax Hearts
+            </Link>
 
-            <h1 style={{ fontSize: "clamp(36px, 7vw, 68px)", lineHeight: 0.98, marginTop: 0 }}>
-              Albums, artwork, and premium releases
-            </h1>
-
-            <p style={{ fontSize: "18px", lineHeight: 1.8, color: "#c9c1b8" }}>
-              Support Parallax Hearts through direct purchase links for music and visual work.
-            </p>
-
-            <div style={{ display: "grid", gap: "18px", marginTop: "24px" }}>
-              <div
-                style={{
-                  background: "rgba(255,255,255,0.05)",
-                  border: "1px solid rgba(255,255,255,0.1)",
-                  borderRadius: "20px",
-                  padding: "22px",
-                }}
-              >
-                <strong style={{ display: "block", marginBottom: "8px", color: "#e6cfb0" }}>
-                  Album purchase
-                </strong>
-                <p style={{ margin: "0 0 14px", color: "#c9c1b8", lineHeight: 1.75 }}>
-                  Purchase the current album directly through PayPal.
-                </p>
-
-                <a
-                  href="PASTE_YOUR_LIVE_PAYPAL_ALBUM_BUTTON_OR_PAYMENT_LINK_HERE"
-                  target="_blank"
-                  rel="noreferrer"
+            <nav
+              style={{
+                display: "flex",
+                gap: "16px",
+                flexWrap: "wrap",
+                alignItems: "center",
+              }}
+            >
+              {[
+                ["Home", "/"],
+                ["Music", "/music"],
+                ["Story", "/project"],
+                ["Shop", "/shop"],
+                ["Support", "/support"],
+                ["Contact", "/contact"],
+              ].map(([label, href]) => (
+                <Link
+                  key={label}
+                  href={href}
                   style={{
-                    display: "inline-block",
-                    padding: "12px 20px",
-                    borderRadius: "999px",
-                    background: "linear-gradient(135deg, #d6a86b, #b98953)",
-                    color: "#17120f",
+                    color: "var(--paper-soft)",
                     textDecoration: "none",
-                    fontWeight: 700,
+                    fontSize: "15px",
                   }}
                 >
-                  Buy Album with PayPal
-                </a>
-              </div>
+                  {label}
+                </Link>
+              ))}
+            </nav>
+          </header>
+        </div>
+      </section>
 
-              <div
-                style={{
-                  background: "rgba(255,255,255,0.05)",
-                  border: "1px solid rgba(255,255,255,0.1)",
-                  borderRadius: "20px",
-                  padding: "22px",
-                }}
-              >
-                <strong style={{ display: "block", marginBottom: "8px", color: "#e6cfb0" }}>
-                  Artwork purchase
-                </strong>
-                <p style={{ margin: "0 0 14px", color: "#c9c1b8", lineHeight: 1.75 }}>
-                  Buy artwork, prints, or exclusive visual offerings through PayPal.
-                </p>
-
-                <a
-                  href="PASTE_YOUR_LIVE_PAYPAL_ARTWORK_BUTTON_OR_PAYMENT_LINK_HERE"
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{
-                    display: "inline-block",
-                    padding: "12px 20px",
-                    borderRadius: "999px",
-                    border: "1px solid rgba(255,255,255,0.14)",
-                    color: "#f3eee7",
-                    textDecoration: "none",
-                  }}
-                >
-                  Buy Artwork with PayPal
-                </a>
-              </div>
-
-              <div
-                style={{
-                  background: "rgba(255,255,255,0.05)",
-                  border: "1px solid rgba(255,255,255,0.1)",
-                  borderRadius: "20px",
-                  padding: "22px",
-                }}
-              >
-                <strong style={{ display: "block", marginBottom: "8px", color: "#e6cfb0" }}>
-                  Note
-                </strong>
-                <p style={{ margin: 0, color: "#c9c1b8", lineHeight: 1.75 }}>
-                  Use live PayPal hosted links here. Do not place sandbox keys or secret credentials in the page code.
-                </p>
-              </div>
-            </div>
-          </div>
-
+      <section style={{ padding: "54px 0 34px" }}>
+        <div className="site-container">
           <div
+            className="glass-panel"
             style={{
-              background: "rgba(255,255,255,0.05)",
-              border: "1px solid rgba(255,255,255,0.1)",
-              borderRadius: "24px",
+              padding: "clamp(28px, 6vw, 58px)",
+              position: "relative",
               overflow: "hidden",
-              boxShadow: "0 18px 60px rgba(0,0,0,0.35)",
             }}
           >
-            <Image
-              src="/images/project.jpg"
-              alt="Parallax Hearts store page image"
-              width={1200}
-              height={1400}
-              style={{ width: "100%", height: "100%", objectFit: "cover", minHeight: "420px" }}
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                background:
+                  "radial-gradient(circle at 18% 10%, rgba(210,181,139,0.16), transparent 30%), radial-gradient(circle at 82% 20%, rgba(127,141,155,0.14), transparent 34%)",
+                pointerEvents: "none",
+              }}
             />
+
+            <div style={{ position: "relative", zIndex: 2 }}>
+              <p className="kicker">Shop / Digital archive</p>
+
+              <h1
+                style={{
+                  margin: 0,
+                  fontSize: "clamp(46px, 8vw, 92px)",
+                  lineHeight: 0.9,
+                  letterSpacing: "-0.07em",
+                  fontWeight: 400,
+                  maxWidth: "960px",
+                }}
+              >
+                Music, lyrics, art, and pieces from Vallen.
+              </h1>
+
+              <p
+                className="body-copy"
+                style={{
+                  margin: "24px 0 0",
+                  maxWidth: "780px",
+                  fontSize: "19px",
+                }}
+              >
+                The shop is the one-time purchase side of Parallax Hearts:
+                album downloads, lyric documents, concept art, story previews,
+                and visual archive material connected to{" "}
+                <em>What the Town Keeps</em>.
+              </p>
+
+              <div
+                style={{
+                  marginTop: "30px",
+                  display: "flex",
+                  gap: "12px",
+                  flexWrap: "wrap",
+                }}
+              >
+                <a
+                  href="https://ko-fi.com/parallaxhearts"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="primary-button"
+                >
+                  Visit Ko-fi Shop
+                </a>
+
+                <Link href="/support" className="secondary-button">
+                  View Membership Tiers
+                </Link>
+
+                <Link href="/music" className="secondary-button">
+                  Listen to the Album
+                </Link>
+              </div>
+            </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+
+      <section style={{ padding: "34px 0" }}>
+        <div className="site-container">
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "minmax(0, 1fr) minmax(300px, 0.8fr)",
+              gap: "28px",
+              alignItems: "stretch",
+            }}
+          >
+            <div
+              className="glass-panel"
+              style={{
+                padding: "clamp(26px, 5vw, 44px)",
+              }}
+            >
+              <p className="kicker">Available / planned items</p>
+
+              <div style={{ display: "grid", gap: "16px" }}>
+                {shopItems.map((item) => (
+                  <article
+                    key={item.title}
+                    style={{
+                      border: "1px solid var(--line)",
+                      borderRadius: "22px",
+                      padding: "22px",
+                      background: "rgba(255,255,255,0.035)",
+                    }}
+                  >
+                    <h2
+                      style={{
+                        margin: 0,
+                        fontSize: "28px",
+                        lineHeight: 1.05,
+                        letterSpacing: "-0.04em",
+                        fontWeight: 400,
+                      }}
+                    >
+                      {item.title}
+                    </h2>
+
+                    <p
+                      className="soft-copy"
+                      style={{
+                        margin: "12px 0 0",
+                        color: "var(--paper-soft)",
+                      }}
+                    >
+                      {item.text}
+                    </p>
+                  </article>
+                ))}
+              </div>
+
+              <div style={{ marginTop: "28px" }}>
+                <a
+                  href="https://ko-fi.com/parallaxhearts"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="primary-button"
+                >
+                  Open Ko-fi Shop
+                </a>
+              </div>
+            </div>
+
+            <div
+              className="glass-panel"
+              style={{
+                borderRadius: "28px",
+                overflow: "hidden",
+                minHeight: "460px",
+              }}
+            >
+              <Image
+                src="/images/project.jpg"
+                alt="What the Town Keeps visual archive"
+                width={1200}
+                height={1400}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  minHeight: "460px",
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ padding: "34px 0 88px" }}>
+        <div className="site-container">
+          <div
+            className="glass-panel"
+            style={{
+              padding: "clamp(26px, 5vw, 44px)",
+              textAlign: "center",
+            }}
+          >
+            <p className="kicker">Direct support</p>
+
+            <h2 className="section-title">One-time purchase or monthly support.</h2>
+
+            <p
+              className="body-copy"
+              style={{
+                margin: "20px auto 0",
+                maxWidth: "760px",
+              }}
+            >
+              Use the shop for one-time digital items. Use the support page for
+              monthly archive access, early looks, behind-the-song notes,
+              concept art, and story-world material.
+            </p>
+
+            <div
+              style={{
+                marginTop: "28px",
+                display: "flex",
+                justifyContent: "center",
+                gap: "12px",
+                flexWrap: "wrap",
+              }}
+            >
+              <a
+                href="https://ko-fi.com/parallaxhearts"
+                target="_blank"
+                rel="noreferrer"
+                className="primary-button"
+              >
+                Visit Ko-fi
+              </a>
+
+              <Link href="/support" className="secondary-button">
+                Support Page
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <style>{`
+        @media (max-width: 900px) {
+          section div[style*="grid-template-columns"] {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </main>
   );
 }
