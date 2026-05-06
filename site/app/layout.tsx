@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     "album art",
     "literary music project",
     "Ko-fi music support",
+    "SoundCloud",
   ],
   alternates: {
     canonical: "/",
@@ -82,7 +83,8 @@ function SiteFooter() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "minmax(0, 1.2fr) repeat(3, minmax(160px, 0.55fr))",
+            gridTemplateColumns:
+              "minmax(0, 1.2fr) repeat(3, minmax(160px, 0.55fr))",
             gap: "28px",
             alignItems: "start",
           }}
@@ -121,7 +123,8 @@ function SiteFooter() {
                 lineHeight: 1.6,
               }}
             >
-              © {new Date().getFullYear()} Parallax Hearts. All rights reserved.
+              © {new Date().getFullYear()} Parallax Hearts. All rights
+              reserved.
             </p>
           </div>
 
@@ -165,10 +168,7 @@ function SiteFooter() {
                 ["Contact", "/contact"],
                 ["Facebook", "https://www.facebook.com/parallaxhearts"],
                 ["Ko-fi", "https://ko-fi.com/parallaxhearts"],
-                [
-                  "Bandcamp",
-                  "https://parallaxhearts.bandcamp.com/album/what-the-town-keeps",
-                ],
+                ["SoundCloud", "https://soundcloud.com/parallax-hearts"],
               ]}
             />
           </div>
@@ -246,7 +246,7 @@ export default function RootLayout({
     sameAs: [
       "https://www.facebook.com/parallaxhearts",
       "https://ko-fi.com/parallaxhearts",
-      "https://parallaxhearts.bandcamp.com/album/what-the-town-keeps",
+      "https://soundcloud.com/parallax-hearts",
     ],
     album: {
       "@type": "MusicAlbum",
