@@ -1,5 +1,38 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Contact Parallax Hearts for collaboration, booking, press, listener messages, visual work, or questions about What the Town Keeps.",
+  alternates: {
+    canonical: "/contact",
+  },
+  openGraph: {
+    title: "Contact | Parallax Hearts",
+    description:
+      "Reach Parallax Hearts for collaboration, booking, press, listener messages, and questions about What the Town Keeps.",
+    url: "https://parallaxhearts.org/contact",
+    siteName: "Parallax Hearts",
+    images: [
+      {
+        url: "/images/world.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Contact Parallax Hearts",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact | Parallax Hearts",
+    description:
+      "Reach Parallax Hearts for collaboration, booking, press, listener messages, and questions about What the Town Keeps.",
+    images: ["/images/world.jpg"],
+  },
+};
 
 export default function ContactPage() {
   return (
