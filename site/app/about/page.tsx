@@ -3,168 +3,262 @@ import Link from "next/link";
 
 export default function AboutPage() {
   return (
-    <main
-      style={{
-        minHeight: "100vh",
-        background:
-          "radial-gradient(circle at top, rgba(110,78,146,0.22), transparent 35%), linear-gradient(180deg, #08080d 0%, #0b0b12 45%, #11111b 100%)",
-        color: "#f3eee7",
-        fontFamily: "Georgia, serif",
-      }}
-    >
-      <div style={{ width: "min(1160px, calc(100% - 32px))", margin: "0 auto" }}>
-        <header
-          style={{
-            padding: "24px 0",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            gap: "20px",
-            flexWrap: "wrap",
-            borderBottom: "1px solid rgba(255,255,255,0.08)",
-          }}
-        >
-          <Link
-            href="/"
+    <main className="site-shell">
+      <section style={{ padding: "34px 0 18px" }}>
+        <div className="site-container">
+          <header
             style={{
-              fontSize: "22px",
-              fontWeight: 600,
-              letterSpacing: "0.06em",
-              color: "#f3eee7",
-              textDecoration: "none",
-              textTransform: "uppercase",
+              minHeight: "72px",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              gap: "20px",
+              flexWrap: "wrap",
+              padding: "16px 0",
+              borderBottom: "1px solid var(--line)",
             }}
           >
-            Parallax Hearts
-          </Link>
-
-          <nav style={{ display: "flex", gap: "20px", flexWrap: "wrap", fontSize: "15px" }}>
-            <Link href="/about" style={{ textDecoration: "none" }}>About</Link>
-            <Link href="/project" style={{ textDecoration: "none" }}>Project</Link>
-            <Link href="/music" style={{ textDecoration: "none" }}>Music</Link>
-            <Link href="/phylax" style={{ textDecoration: "none" }}>PHYLAX</Link>
-            <Link href="/contact" style={{ textDecoration: "none" }}>Contact</Link>
-          </nav>
-        </header>
-
-        <section
-          style={{
-            padding: "60px 0 80px",
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "28px",
-            alignItems: "start",
-          }}
-        >
-          <div>
-            <div
+            <Link
+              href="/"
               style={{
-                color: "#e6cfb0",
+                color: "var(--paper)",
+                textDecoration: "none",
+                fontSize: "clamp(22px, 4vw, 32px)",
+                letterSpacing: "0.08em",
                 textTransform: "uppercase",
-                letterSpacing: "0.16em",
-                fontSize: "12px",
-                marginBottom: "18px",
+                lineHeight: 1,
               }}
             >
-              About
-            </div>
+              Parallax Hearts
+            </Link>
 
-            <h1 style={{ fontSize: "clamp(36px, 7vw, 68px)", lineHeight: 0.98, marginTop: 0 }}>
-              The atmosphere behind the work
-            </h1>
+            <nav
+              style={{
+                display: "flex",
+                gap: "16px",
+                flexWrap: "wrap",
+                alignItems: "center",
+              }}
+            >
+              {[
+                ["Home", "/"],
+                ["Music", "/music"],
+                ["Story", "/project"],
+                ["Support", "/support"],
+                ["Contact", "/contact"],
+              ].map(([label, href]) => (
+                <Link
+                  key={label}
+                  href={href}
+                  style={{
+                    color: "var(--paper-soft)",
+                    textDecoration: "none",
+                    fontSize: "15px",
+                  }}
+                >
+                  {label}
+                </Link>
+              ))}
+            </nav>
+          </header>
+        </div>
+      </section>
 
-            <p style={{ fontSize: "18px", lineHeight: 1.85, color: "#c9c1b8" }}>
-              Parallax Hearts is a music project rooted in emotional depth, spiritual tension,
-              beauty, memory, and a sense of the unseen. It is drawn to the edges between
-              the intimate and the cosmic — to the quiet places where longing, devotion,
-              and mystery begin to sound like one thing.
-            </p>
-
-            <p style={{ fontSize: "18px", lineHeight: 1.85, color: "#c9c1b8" }}>
-              Rather than separating music from image, concept, or feeling, the project treats
-              them as part of one field. Songs emerge with visual atmosphere, inner mythology,
-              and the emotional afterlife of place. The goal is not only to create tracks,
-              but to create a world listeners can enter.
-            </p>
-
-            <p style={{ fontSize: "18px", lineHeight: 1.85, color: "#c9c1b8" }}>
-              At its center, the project is an attempt to translate inward experience into something
-              shareable: sound that carries emotional residue, imagery that suggests unseen meaning,
-              and songs that feel like they have passed through weather, distance, and memory before arriving.
-            </p>
-
-            <div style={{ display: "grid", gap: "18px", marginTop: "24px" }}>
-              <div
-                style={{
-                  background: "rgba(255,255,255,0.05)",
-                  border: "1px solid rgba(255,255,255,0.1)",
-                  borderRadius: "20px",
-                  padding: "22px",
-                }}
-              >
-                <strong style={{ display: "block", marginBottom: "8px", color: "#e6cfb0" }}>
-                  Core feeling
-                </strong>
-                <p style={{ margin: 0, color: "#c9c1b8", lineHeight: 1.8 }}>
-                  Reflective, intimate, haunted, devotional, cinematic, mythic, and searching.
-                </p>
-              </div>
-
-              <div
-                style={{
-                  background: "rgba(255,255,255,0.05)",
-                  border: "1px solid rgba(255,255,255,0.1)",
-                  borderRadius: "20px",
-                  padding: "22px",
-                }}
-              >
-                <strong style={{ display: "block", marginBottom: "8px", color: "#e6cfb0" }}>
-                  Creative direction
-                </strong>
-                <p style={{ margin: 0, color: "#c9c1b8", lineHeight: 1.8 }}>
-                  Music, language, visual atmosphere, and inner symbolism arranged as one
-                  unified experience rather than separate pieces.
-                </p>
-              </div>
-
-              <div
-                style={{
-                  background: "rgba(255,255,255,0.05)",
-                  border: "1px solid rgba(255,255,255,0.1)",
-                  borderRadius: "20px",
-                  padding: "22px",
-                }}
-              >
-                <strong style={{ display: "block", marginBottom: "8px", color: "#e6cfb0" }}>
-                  Intention
-                </strong>
-                <p style={{ margin: 0, color: "#c9c1b8", lineHeight: 1.8 }}>
-                  To make work that lingers — work that opens inward, holds emotional truth,
-                  and leaves room for mystery instead of explaining everything away.
-                </p>
-              </div>
-            </div>
-          </div>
-
+      <section style={{ padding: "54px 0 88px" }}>
+        <div className="site-container">
           <div
             style={{
-              background: "rgba(255,255,255,0.05)",
-              border: "1px solid rgba(255,255,255,0.1)",
-              borderRadius: "24px",
-              overflow: "hidden",
-              boxShadow: "0 18px 60px rgba(0,0,0,0.35)",
+              display: "grid",
+              gridTemplateColumns: "minmax(0, 1fr) minmax(300px, 0.8fr)",
+              gap: "28px",
+              alignItems: "stretch",
             }}
           >
-            <Image
-              src="/images/portrait.jpg"
-              alt="Parallax Hearts portrait"
-              width={1200}
-              height={1400}
-              style={{ width: "100%", height: "100%", objectFit: "cover", minHeight: "420px" }}
-            />
+            <div
+              className="glass-panel"
+              style={{
+                padding: "clamp(28px, 6vw, 58px)",
+                position: "relative",
+                overflow: "hidden",
+              }}
+            >
+              <div
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  background:
+                    "radial-gradient(circle at 18% 10%, rgba(210,181,139,0.15), transparent 30%), radial-gradient(circle at 82% 20%, rgba(127,141,155,0.12), transparent 34%)",
+                  pointerEvents: "none",
+                }}
+              />
+
+              <div style={{ position: "relative", zIndex: 2 }}>
+                <p className="kicker">About</p>
+
+                <h1
+                  style={{
+                    margin: 0,
+                    fontSize: "clamp(46px, 8vw, 86px)",
+                    lineHeight: 0.9,
+                    letterSpacing: "-0.07em",
+                    fontWeight: 400,
+                    maxWidth: "800px",
+                  }}
+                >
+                  The music, the town, and what stays behind.
+                </h1>
+
+                <p
+                  className="body-copy"
+                  style={{
+                    margin: "24px 0 0",
+                    maxWidth: "800px",
+                    fontSize: "19px",
+                  }}
+                >
+                  Parallax Hearts is an independent music project built around
+                  cinematic songwriting, emotional restraint, and a visual world
+                  that feels lived-in rather than explained.
+                </p>
+
+                <p
+                  className="body-copy"
+                  style={{
+                    margin: "18px 0 0",
+                    maxWidth: "800px",
+                  }}
+                >
+                  <em>What the Town Keeps</em> is the central album and story
+                  world: a rainy small-town atmosphere of old houses, rail
+                  lines, dim windows, wet pavement, quiet rooms, and the memory
+                  people carry after leaving.
+                </p>
+
+                <p
+                  className="body-copy"
+                  style={{
+                    margin: "18px 0 0",
+                    maxWidth: "800px",
+                  }}
+                >
+                  The project moves through songs, lyrics, visual pieces, story
+                  fragments, videos, and a graphic novel adaptation. It is not
+                  built around spectacle. It is built around mood, honesty,
+                  absence, and the pressure of things left unsaid.
+                </p>
+
+                <div
+                  style={{
+                    display: "grid",
+                    gap: "16px",
+                    marginTop: "30px",
+                    maxWidth: "760px",
+                  }}
+                >
+                  {[
+                    {
+                      title: "Music",
+                      text: "Acoustic-led, cinematic, intimate, and emotionally direct without becoming overly polished or theatrical.",
+                    },
+                    {
+                      title: "Story World",
+                      text: "Vallen is the fictional town behind the album — a place of rain, records, thresholds, houses, and memory.",
+                    },
+                    {
+                      title: "Visual Direction",
+                      text: "Muted blue-gray, charcoal, sepia, warm interior light, wet pavement, rail lines, old rooms, and quiet human tension.",
+                    },
+                  ].map((item) => (
+                    <div
+                      key={item.title}
+                      style={{
+                        border: "1px solid var(--line)",
+                        borderRadius: "20px",
+                        padding: "22px",
+                        background: "rgba(255,255,255,0.035)",
+                      }}
+                    >
+                      <strong
+                        style={{
+                          display: "block",
+                          marginBottom: "8px",
+                          color: "var(--gold)",
+                          textTransform: "uppercase",
+                          letterSpacing: "0.14em",
+                          fontSize: "12px",
+                        }}
+                      >
+                        {item.title}
+                      </strong>
+
+                      <p
+                        className="soft-copy"
+                        style={{
+                          margin: 0,
+                          color: "var(--paper-soft)",
+                        }}
+                      >
+                        {item.text}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                <div
+                  style={{
+                    marginTop: "30px",
+                    display: "flex",
+                    gap: "12px",
+                    flexWrap: "wrap",
+                  }}
+                >
+                  <Link href="/music" className="primary-button">
+                    Listen to the Album
+                  </Link>
+
+                  <Link href="/project" className="secondary-button">
+                    Enter the Story
+                  </Link>
+
+                  <Link href="/support" className="secondary-button">
+                    Support the Project
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            <div
+              className="glass-panel"
+              style={{
+                borderRadius: "28px",
+                overflow: "hidden",
+                minHeight: "460px",
+              }}
+            >
+              <Image
+                src="/images/portrait.jpg"
+                alt="Parallax Hearts portrait"
+                width={1200}
+                height={1400}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  minHeight: "460px",
+                }}
+              />
+            </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+
+      <style>{`
+        @media (max-width: 900px) {
+          section div[style*="grid-template-columns"] {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </main>
   );
 }
