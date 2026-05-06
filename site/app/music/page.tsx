@@ -2,6 +2,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import ArchiveNote from "../components/ArchiveNote";
 
+const soundCloudUrl = "https://soundcloud.com/parallax-hearts";
+const koFiUrl = "https://ko-fi.com/parallaxhearts";
+
 export const metadata: Metadata = {
   title: "Music | Parallax Hearts",
   description:
@@ -65,6 +68,7 @@ export default function MusicPage() {
                 ["Home", "/"],
                 ["Music", "/music"],
                 ["Story", "/project"],
+                ["Shop", "/shop"],
                 ["Support", "/support"],
                 ["Contact", "/contact"],
               ].map(([label, href]) => (
@@ -178,17 +182,22 @@ export default function MusicPage() {
                 }}
               >
                 <a
-                  href="https://ko-fi.com/parallaxhearts"
+                  href={soundCloudUrl}
                   target="_blank"
                   rel="noreferrer"
                   className="primary-button"
                 >
-                  Buy / Support on Ko-fi
+                  Listen on SoundCloud
                 </a>
 
-                <Link href="/support" className="secondary-button">
-                  View Support Options
-                </Link>
+                <a
+                  href={koFiUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="secondary-button"
+                >
+                  Buy / Support on Ko-fi
+                </a>
 
                 <Link href="/project" className="secondary-button">
                   Enter the Story
@@ -219,8 +228,8 @@ export default function MusicPage() {
               </h2>
 
               <p className="body-copy" style={{ margin: "20px 0 0" }}>
-                What the Town Keeps moves through the quiet aftermath of
-                connection, distance, and emotional change. The record is not
+                <em>What the Town Keeps</em> moves through the quiet aftermath
+                of connection, distance, and emotional change. The record is not
                 built as a literal diary. It is a place — a fictional town
                 carrying fragments of memory in its houses, roads, stations,
                 windows, and weather.
@@ -231,6 +240,33 @@ export default function MusicPage() {
                 the graphic novel adaptation, but the album stands on its own:
                 intimate, human, restrained, and cinematic.
               </p>
+
+              <div
+                style={{
+                  marginTop: "26px",
+                  display: "flex",
+                  gap: "12px",
+                  flexWrap: "wrap",
+                }}
+              >
+                <a
+                  href={soundCloudUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="primary-button"
+                >
+                  Stream on SoundCloud
+                </a>
+
+                <a
+                  href={koFiUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="secondary-button"
+                >
+                  Support Directly
+                </a>
+              </div>
             </div>
 
             <aside
@@ -251,6 +287,7 @@ export default function MusicPage() {
                 "Acoustic-led cinematic arrangements",
                 "Memory, distance, absence, and aftermath",
                 "Connected to Vallen and the graphic novel",
+                "Streaming now on SoundCloud",
                 "Direct support through Ko-fi",
               ].map((item) => (
                 <div
@@ -347,6 +384,29 @@ export default function MusicPage() {
                 </div>
               ))}
             </div>
+
+            <div
+              style={{
+                marginTop: "28px",
+                display: "flex",
+                justifyContent: "center",
+                gap: "12px",
+                flexWrap: "wrap",
+              }}
+            >
+              <a
+                href={soundCloudUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="primary-button"
+              >
+                Hear the Songs on SoundCloud
+              </a>
+
+              <Link href="/project" className="secondary-button">
+                Explore the Story World
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -362,7 +422,7 @@ export default function MusicPage() {
           >
             <p className="kicker">Direct support</p>
 
-            <h2 className="section-title">Own the album. Support the archive.</h2>
+            <h2 className="section-title">Listen freely. Support directly.</h2>
 
             <p
               className="body-copy"
@@ -371,9 +431,10 @@ export default function MusicPage() {
                 maxWidth: "720px",
               }}
             >
-              Ko-fi is the direct support path for Parallax Hearts — music,
-              lyric material, visual packs, story fragments, album art, and
-              early pieces from the world of What the Town Keeps.
+              SoundCloud is the main streaming path for Parallax Hearts. Ko-fi
+              is the direct support path for music, lyric material, visual
+              packs, story fragments, album art, and early pieces from the world
+              of <em>What the Town Keeps</em>.
             </p>
 
             <div
@@ -386,12 +447,21 @@ export default function MusicPage() {
               }}
             >
               <a
-                href="https://ko-fi.com/parallaxhearts"
+                href={soundCloudUrl}
                 target="_blank"
                 rel="noreferrer"
                 className="primary-button"
               >
-                Buy / Support on Ko-fi
+                Listen on SoundCloud
+              </a>
+
+              <a
+                href={koFiUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="secondary-button"
+              >
+                Support on Ko-fi
               </a>
 
               <Link href="/support" className="secondary-button">
