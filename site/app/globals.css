@@ -1,4 +1,3 @@
-cat > site/app/globals.css <<'EOF'
 * {
   box-sizing: border-box;
 }
@@ -93,11 +92,6 @@ img {
   letter-spacing: 0.14em;
   font-size: 12px;
   font-weight: 700;
-  transition:
-    transform 180ms ease,
-    border-color 180ms ease,
-    background 180ms ease,
-    color 180ms ease;
 }
 
 .primary-button {
@@ -110,11 +104,6 @@ img {
   background: rgba(7, 8, 10, 0.48);
   color: var(--paper);
   border: 1px solid var(--line-strong);
-}
-
-.primary-button:hover,
-.secondary-button:hover {
-  transform: translateY(-2px);
 }
 
 .section-title {
@@ -137,7 +126,7 @@ img {
   line-height: 1.75;
 }
 
-/* Existing PHYLAX responsive layout fixes */
+/* PHYLAX responsive layout fixes */
 @media (max-width: 860px) {
   .phylax-reverse {
     display: grid !important;
@@ -156,4 +145,3 @@ img {
     grid-template-columns: 1fr !important;
   }
 }
-EOF
