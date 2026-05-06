@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import ArchiveNote from "./components/ArchiveNote";
 
 export const metadata: Metadata = {
   title: "Parallax Hearts | What the Town Keeps + PHYLAX",
@@ -35,6 +36,7 @@ function TopNav() {
     ["PHYLAX", "/phylax"],
     ["Lore", "/phylax/lore"],
     ["Characters", "/phylax/characters"],
+    ["Support", "/support"],
     ["Contact", "/contact"],
   ];
 
@@ -118,7 +120,7 @@ function ProjectPanel({
   eyebrow: string;
   title: string;
   subtitle: string;
-  body: string;
+  body: React.ReactNode;
   image: string;
   primaryHref: string;
   primaryLabel: string;
@@ -344,7 +346,23 @@ export default function HomePage() {
               eyebrow="Album world one"
               title="What the Town Keeps"
               subtitle="Rain. Rails. Memory. Silence."
-              body="A grounded, literary, emotionally restrained album and visual story world built around a small town, hidden weight, human distance, and the things people leave unsaid."
+              body={
+                <>
+                  A grounded, literary, emotionally restrained album and visual
+                  story world built around the small town of Vallen
+                  <ArchiveNote
+                    title="Archive Note: Vallen"
+                    evidence="Creative name / interpretive resonance"
+                  >
+                    Vallen is the fictional town at the center of What the Town
+                    Keeps. The name suggests valley, falling, low ground, and a
+                    place where weather and memory collect. This is a
+                    project-specific name, not a historical place claim.
+                  </ArchiveNote>
+                  , hidden weight, human distance, and the things people leave
+                  unsaid.
+                </>
+              }
               image="/images/hero.jpg"
               primaryHref="/project"
               primaryLabel="Enter the town"
@@ -397,7 +415,7 @@ export default function HomePage() {
               {
                 title: "Support",
                 text: "Support the project directly through Ko-fi.",
-                href: "https://ko-fi.com/parallaxhearts",
+                href: "/support",
               },
             ].map((card) => (
               <Link

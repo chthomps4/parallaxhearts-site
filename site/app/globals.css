@@ -125,7 +125,67 @@ img {
   font-size: 15px;
   line-height: 1.75;
 }
+/* Archive Notes / Hidden Tidbits */
+.archive-note-wrapper {
+  display: inline;
+  position: relative;
+}
 
+.archive-note-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.35em;
+  height: 1.35em;
+  margin-left: 0.28em;
+  border: 1px solid rgba(210, 181, 139, 0.45);
+  border-radius: 999px;
+  background: rgba(210, 181, 139, 0.08);
+  color: #d2b58b;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.68em;
+  line-height: 1;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.archive-note-button:hover {
+  background: rgba(210, 181, 139, 0.18);
+  border-color: rgba(210, 181, 139, 0.75);
+}
+
+.archive-note-panel {
+  display: block;
+  margin-top: 12px;
+  max-width: 620px;
+  padding: 16px 18px;
+  border: 1px solid rgba(243, 238, 231, 0.14);
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.018)),
+    rgba(5, 6, 8, 0.82);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+  color: rgba(243, 238, 231, 0.78);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.archive-note-label {
+  display: block;
+  margin-bottom: 7px;
+  color: #d2b58b;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 11px;
+}
+
+.archive-note-evidence {
+  display: block;
+  margin-bottom: 8px;
+  color: rgba(243, 238, 231, 0.58);
+  font-size: 12px;
+  font-style: italic;
+}
 /* PHYLAX responsive layout fixes */
 @media (max-width: 860px) {
   .phylax-reverse {
