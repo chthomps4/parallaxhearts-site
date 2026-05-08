@@ -1,5 +1,45 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About | Parallax Hearts + Field Notes",
+  description:
+    "About Parallax Hearts, What the Town Keeps, Field Notes, the Forbidden Knowledge archive, and The Forbidden Knowledge Bible / Handbook.",
+};
+
+const identityCards = [
+  {
+    title: "Parallax Hearts",
+    text: "The creative and music home: cinematic songwriting, story worlds, visual archives, and emotionally grounded work.",
+    href: "/music",
+    label: "Music",
+  },
+  {
+    title: "What the Town Keeps",
+    text: "The album and story world set around Vallen: rain, old houses, rail lines, memory, absence, and the things people leave unsaid.",
+    href: "/project",
+    label: "Story world",
+  },
+  {
+    title: "Field Notes",
+    text: "The public research lane for Forbidden Knowledge: ancient knowledge, lost etymology, symbolism, source trails, and evidence labels.",
+    href: "/field-notes",
+    label: "Field Notes",
+  },
+  {
+    title: "The Handbook",
+    text: "The long-form Forbidden Knowledge Bible / codex: a continuity archive for source trails, claim-checking, and durable knowledge.",
+    href: "/field-notes#book",
+    label: "The book",
+  },
+  {
+    title: "PHYLAX Archive",
+    text: "A secondary heavier lore world kept available in the archive while Field Notes moves forward first.",
+    href: "/phylax",
+    label: "Archive",
+  },
+];
 
 export default function AboutPage() {
   return (
@@ -44,6 +84,8 @@ export default function AboutPage() {
                 ["Home", "/"],
                 ["Music", "/music"],
                 ["Story", "/project"],
+                ["Field Notes", "/field-notes"],
+                ["Shop", "/shop"],
                 ["Support", "/support"],
                 ["Contact", "/contact"],
               ].map(([label, href]) => (
@@ -51,7 +93,8 @@ export default function AboutPage() {
                   key={label}
                   href={href}
                   style={{
-                    color: "var(--paper-soft)",
+                    color:
+                      label === "About" ? "var(--gold)" : "var(--paper-soft)",
                     textDecoration: "none",
                     fontSize: "15px",
                   }}
@@ -64,7 +107,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section style={{ padding: "54px 0 88px" }}>
+      <section style={{ padding: "54px 0 44px" }}>
         <div className="site-container">
           <div
             style={{
@@ -102,30 +145,31 @@ export default function AboutPage() {
                     lineHeight: 0.9,
                     letterSpacing: "-0.07em",
                     fontWeight: 400,
-                    maxWidth: "800px",
+                    maxWidth: "860px",
                   }}
                 >
-                  The music, the town, and what stays behind.
+                  The music, the town, and the source trails underneath.
                 </h1>
 
                 <p
                   className="body-copy"
                   style={{
                     margin: "24px 0 0",
-                    maxWidth: "800px",
+                    maxWidth: "820px",
                     fontSize: "19px",
                   }}
                 >
-                  Parallax Hearts is an independent music project built around
-                  cinematic songwriting, emotional restraint, and a visual world
-                  that feels lived-in rather than explained.
+                  Parallax Hearts is an independent creative home for cinematic
+                  songs, story worlds, visual archives, and source-conscious
+                  research. The work moves between music, memory, fiction,
+                  symbolism, and the older questions people keep returning to.
                 </p>
 
                 <p
                   className="body-copy"
                   style={{
                     margin: "18px 0 0",
-                    maxWidth: "800px",
+                    maxWidth: "820px",
                   }}
                 >
                   <em>What the Town Keeps</em> is the central album and story
@@ -138,71 +182,14 @@ export default function AboutPage() {
                   className="body-copy"
                   style={{
                     margin: "18px 0 0",
-                    maxWidth: "800px",
+                    maxWidth: "820px",
                   }}
                 >
-                  The project moves through songs, lyrics, visual pieces, story
-                  fragments, videos, and a graphic novel adaptation. It is not
-                  built around spectacle. It is built around mood, honesty,
-                  absence, and the pressure of things left unsaid.
+                  Field Notes is the research lane: Forbidden Knowledge, ancient
+                  knowledge, lost etymology, symbolism, source trails, evidence
+                  labels, and the method behind <em>The Forbidden Knowledge Bible</em>.
+                  It follows mystery without pretending every mystery is proof.
                 </p>
-
-                <div
-                  style={{
-                    display: "grid",
-                    gap: "16px",
-                    marginTop: "30px",
-                    maxWidth: "760px",
-                  }}
-                >
-                  {[
-                    {
-                      title: "Music",
-                      text: "Acoustic-led, cinematic, intimate, and emotionally direct without becoming overly polished or theatrical.",
-                    },
-                    {
-                      title: "Story World",
-                      text: "Vallen is the fictional town behind the album — a place of rain, records, thresholds, houses, and memory.",
-                    },
-                    {
-                      title: "Visual Direction",
-                      text: "Muted blue-gray, charcoal, sepia, warm interior light, wet pavement, rail lines, old rooms, and quiet human tension.",
-                    },
-                  ].map((item) => (
-                    <div
-                      key={item.title}
-                      style={{
-                        border: "1px solid var(--line)",
-                        borderRadius: "20px",
-                        padding: "22px",
-                        background: "rgba(255,255,255,0.035)",
-                      }}
-                    >
-                      <strong
-                        style={{
-                          display: "block",
-                          marginBottom: "8px",
-                          color: "var(--gold)",
-                          textTransform: "uppercase",
-                          letterSpacing: "0.14em",
-                          fontSize: "12px",
-                        }}
-                      >
-                        {item.title}
-                      </strong>
-
-                      <p
-                        className="soft-copy"
-                        style={{
-                          margin: 0,
-                          color: "var(--paper-soft)",
-                        }}
-                      >
-                        {item.text}
-                      </p>
-                    </div>
-                  ))}
-                </div>
 
                 <div
                   style={{
@@ -212,16 +199,16 @@ export default function AboutPage() {
                     flexWrap: "wrap",
                   }}
                 >
-                  <Link href="/music" className="primary-button">
+                  <Link href="/field-notes" className="primary-button">
+                    Open Field Notes
+                  </Link>
+
+                  <Link href="/music" className="secondary-button">
                     Listen to the Album
                   </Link>
 
-                  <Link href="/project" className="secondary-button">
-                    Enter the Story
-                  </Link>
-
                   <Link href="/support" className="secondary-button">
-                    Support the Project
+                    Support the Archive
                   </Link>
                 </div>
               </div>
@@ -247,6 +234,96 @@ export default function AboutPage() {
                   minHeight: "460px",
                 }}
               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ padding: "0 0 44px" }}>
+        <div className="site-container">
+          <div
+            className="glass-panel"
+            style={{
+              padding: "clamp(26px, 5vw, 44px)",
+            }}
+          >
+            <p className="kicker">Site map in plain language</p>
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))",
+                gap: "14px",
+                marginTop: "18px",
+              }}
+            >
+              {identityCards.map((item) => (
+                <article
+                  key={item.title}
+                  style={{
+                    border: "1px solid var(--line)",
+                    borderRadius: "22px",
+                    padding: "22px",
+                    background: "rgba(255,255,255,0.035)",
+                  }}
+                >
+                  <h2
+                    style={{
+                      margin: 0,
+                      fontSize: "27px",
+                      lineHeight: 1.05,
+                      letterSpacing: "-0.04em",
+                      fontWeight: 400,
+                    }}
+                  >
+                    {item.title}
+                  </h2>
+
+                  <p className="soft-copy" style={{ margin: "12px 0 18px" }}>
+                    {item.text}
+                  </p>
+
+                  <Link href={item.href} className="secondary-button">
+                    {item.label}
+                  </Link>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ padding: "0 0 88px" }}>
+        <div className="site-container">
+          <div
+            className="glass-panel"
+            style={{
+              padding: "clamp(26px, 5vw, 44px)",
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "24px",
+            }}
+          >
+            <div>
+              <p className="kicker">Creative rule</p>
+              <h2 className="section-title">Keep it human.</h2>
+              <p className="body-copy" style={{ margin: "18px 0 0" }}>
+                The music and story work stay grounded, cinematic, restrained,
+                and emotionally honest. Vallen is not built as horror or
+                fantasy. It is built as atmosphere, memory, distance, and the
+                pressure of ordinary lives.
+              </p>
+            </div>
+
+            <div>
+              <p className="kicker">Research rule</p>
+              <h2 className="section-title">Preserve mystery. Protect truth.</h2>
+              <p className="body-copy" style={{ margin: "18px 0 0" }}>
+                Field Notes does not flatten mystery, and it does not sell
+                certainty where there is none. It separates evidence,
+                interpretation, symbolism, speculation, and modern invention so
+                the trail stays readable.
+              </p>
             </div>
           </div>
         </div>
