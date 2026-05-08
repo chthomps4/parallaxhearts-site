@@ -1,6 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import ArchiveNote from "../components/ArchiveNote";
+
+export const metadata: Metadata = {
+  title: "What the Town Keeps | Parallax Hearts",
+  description:
+    "Enter What the Town Keeps by Parallax Hearts — the album, story world, graphic novel direction, and rainy small-town world of Vallen.",
+};
 
 export default function ProjectPage() {
   return (
@@ -9,7 +16,7 @@ export default function ProjectPage() {
       style={{
         minHeight: "100vh",
         background:
-          "radial-gradient(circle at top, rgba(110,78,146,0.18), transparent 35%), linear-gradient(180deg, #08080d 0%, #0b0b12 45%, #11111b 100%)",
+          "radial-gradient(circle at top, rgba(91,111,132,0.18), transparent 35%), radial-gradient(circle at 88% 8%, rgba(157,121,82,0.12), transparent 30%), linear-gradient(180deg, #08080d 0%, #0b0b12 45%, #11111b 100%)",
         color: "#f3eee7",
         fontFamily: "Georgia, serif",
       }}
@@ -103,7 +110,7 @@ export default function ProjectPage() {
                   lineHeight: 0.92,
                   letterSpacing: "-0.07em",
                   fontWeight: 400,
-                  maxWidth: "920px",
+                  maxWidth: "940px",
                 }}
               >
                 A town built from memory, weather, and what no one says out loud.
@@ -157,9 +164,9 @@ export default function ProjectPage() {
                   Listen to the Album
                 </Link>
 
-                <Link href="/field-notes" className="secondary-button">
-                  Open Field Notes
-                </Link>
+                <a href="#graphic-novel" className="secondary-button">
+                  Graphic Novel Direction
+                </a>
 
                 <Link href="/support" className="secondary-button">
                   Support the Archive
@@ -218,6 +225,93 @@ export default function ProjectPage() {
                 }}
               />
             </div>
+          </div>
+        </section>
+
+        <section id="graphic-novel" style={{ padding: "34px 0" }}>
+          <div
+            className="glass-panel"
+            style={{
+              padding: "clamp(26px, 5vw, 44px)",
+              display: "grid",
+              gridTemplateColumns: "minmax(0, 1fr) minmax(260px, 0.78fr)",
+              gap: "30px",
+              alignItems: "start",
+            }}
+          >
+            <div>
+              <p className="kicker">Graphic novel / visual adaptation</p>
+
+              <h2 className="section-title">
+                The album has a visual life now.
+              </h2>
+
+              <p className="body-copy" style={{ margin: "20px 0 0" }}>
+                The graphic novel adaptation translates the album world into
+                restrained cinematic pages: wet streets, old houses, rail
+                crossings, dim rooms, quiet looks, and the pressure of things
+                left unsaid. The goal is not spectacle. The goal is recognition.
+              </p>
+
+              <p className="body-copy" style={{ margin: "18px 0 0" }}>
+                Elias Vale is a home inspector entering Vallen through the
+                practical surfaces of the town: floors that slope, windows that
+                leak, porches that lean, records that almost explain themselves,
+                and rooms that continue holding the shape of someone’s absence.
+              </p>
+
+              <div
+                style={{
+                  marginTop: "26px",
+                  display: "flex",
+                  gap: "12px",
+                  flexWrap: "wrap",
+                }}
+              >
+                <Link href="/music" className="primary-button">
+                  Hear the Album
+                </Link>
+
+                <Link href="/field-notes" className="secondary-button">
+                  Read the Hidden Layer
+                </Link>
+              </div>
+            </div>
+
+            <aside
+              style={{
+                border: "1px solid var(--line)",
+                borderRadius: "24px",
+                padding: "24px",
+                background:
+                  "linear-gradient(180deg, rgba(210,181,139,0.10), rgba(255,255,255,0.025))",
+              }}
+            >
+              <p className="kicker" style={{ marginBottom: "18px" }}>
+                Continuity rules
+              </p>
+
+              {[
+                "Warm, earthy cinematic realism",
+                "Readable graphic-novel composition",
+                "Restrained mature character acting",
+                "No horror, monsters, fantasy, or cheap thriller tone",
+                "Vallen remains grounded, human, rainy, and emotionally real",
+              ].map((item) => (
+                <div
+                  key={item}
+                  style={{
+                    padding: "14px 0",
+                    borderTop: "1px solid var(--line)",
+                    color: "var(--paper-soft)",
+                    fontSize: "15px",
+                    lineHeight: 1.55,
+                  }}
+                >
+                  {item}
+                </div>
+              ))}
+            </aside>
           </div>
         </section>
 
