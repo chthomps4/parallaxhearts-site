@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: "%s | Parallax Hearts",
   },
   description:
-    "Parallax Hearts is the music project behind What the Town Keeps — a cinematic album, story world, and graphic novel universe set in the rainy small town of Vallen.",
+    "Parallax Hearts is the music project behind What the Town Keeps — a cinematic album, story world, Field Notes archive, and graphic novel universe set in the rainy small town of Vallen.",
   applicationName: "Parallax Hearts",
   authors: [{ name: "Parallax Hearts" }],
   creator: "Parallax Hearts",
@@ -27,6 +27,13 @@ export const metadata: Metadata = {
     "literary music project",
     "Ko-fi music support",
     "SoundCloud",
+    "Field Notes",
+    "Forbidden Knowledge Circle",
+    "Forbidden Knowledge Bible",
+    "ancient knowledge",
+    "lost etymology",
+    "source trails",
+    "evidence-aware research",
   ],
   alternates: {
     canonical: "/",
@@ -34,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Parallax Hearts | What the Town Keeps",
     description:
-      "A cinematic album and story world about memory, absence, distance, and what a town learns to carry.",
+      "A cinematic album, story world, and source-conscious Field Notes archive about memory, absence, distance, and what knowledge asks us to carry.",
     url: "https://parallaxhearts.org",
     siteName: "Parallax Hearts",
     images: [
@@ -52,7 +59,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Parallax Hearts | What the Town Keeps",
     description:
-      "A cinematic album and story world about memory, absence, distance, and what a town learns to carry.",
+      "A cinematic album, story world, and source-conscious Field Notes archive about memory, absence, distance, and what knowledge asks us to carry.",
     images: ["/images/hero.jpg"],
   },
   robots: {
@@ -111,8 +118,8 @@ function SiteFooter() {
                 maxWidth: "520px",
               }}
             >
-              Cinematic music, story worlds, visual archives, and the rainy
-              small-town atmosphere of <em>What the Town Keeps</em>.
+              Cinematic music, story worlds, field notes, visual archives, and
+              the rainy small-town atmosphere of <em>What the Town Keeps</em>.
             </p>
 
             <p
@@ -138,6 +145,7 @@ function SiteFooter() {
                 ["Home", "/"],
                 ["Music", "/music"],
                 ["Story", "/project"],
+                ["Field Notes", "/field-notes"],
                 ["About", "/about"],
               ]}
             />
@@ -153,7 +161,7 @@ function SiteFooter() {
                 ["Shop", "/shop"],
                 ["Support", "/support"],
                 ["PHYLAX", "/phylax"],
-                ["Lore", "/phylax/lore"],
+                ["PHYLAX Lore", "/phylax/lore"],
               ]}
             />
           </div>
