@@ -407,8 +407,8 @@ export default function SupportPage() {
               <p className="body-copy" style={{ margin: "20px 0 0" }}>
                 Not everyone wants a monthly membership. The Ko-fi shop can
                 also hold one-time digital items: the album, lyric PDFs, visual
-                packs, story previews, source-trail PDFs, and bundles from the
-                creative archive.
+                packs, story previews, selected Field Notes PDFs, and bundles
+                from the creative archive.
               </p>
 
               <div
@@ -483,10 +483,10 @@ export default function SupportPage() {
                 maxWidth: "760px",
               }}
             >
-              Every purchase, membership, share, listen, and course visit helps
-              keep the work moving forward — the songs, the story world, the
-              visual archive, the Field Notes, and the larger Forbidden
-              Knowledge system being built piece by piece.
+              Every purchase, membership, share, and listen helps keep the work
+              moving forward — the songs, the story world, the visual archive,
+              the graphic novel pages, the Field Notes, and the larger research
+              system being built piece by piece.
             </p>
 
             <div
