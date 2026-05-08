@@ -2,8 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 const koFiUrl = "https://ko-fi.com/parallaxhearts";
-const freeIntroCourseUrl =
-  "https://www.skool.com/forbidden-knowledge-3060/classroom/64b17ccf?md=20063ee25dcf452f98717008a96ff36f";
 
 const shopItems = [
   {
@@ -32,9 +30,9 @@ const shopItems = [
     lane: "Field Notes",
   },
   {
-    title: "Forbidden Knowledge Intro Bundle",
-    text: "A starter set for the Forbidden Knowledge system: the free course path, method overview, evidence labels, and printable research prompts when available.",
-    lane: "Field Notes",
+    title: "Complete Support Bundle",
+    text: "A combined digital bundle for listeners who want the album, lyric material, visual archive pieces, and selected story-world documents in one place.",
+    lane: "Bundle",
   },
 ];
 
@@ -137,7 +135,7 @@ export default function ShopPage() {
                   maxWidth: "960px",
                 }}
               >
-                Music, lyrics, art, and source-trail packets.
+                Music, lyrics, art, and story-world packets.
               </h1>
 
               <p
@@ -148,10 +146,10 @@ export default function ShopPage() {
                   fontSize: "19px",
                 }}
               >
-                The shop is the one-time purchase side of the archive: Parallax
-                Hearts music, lyric documents, concept art, story previews, and
-                future Field Notes packets connected to the Forbidden Knowledge
-                research system.
+                The shop is the one-time purchase side of the Parallax Hearts
+                archive: music, lyric documents, concept art, Vallen story
+                previews, graphic novel material, and selected Field Notes
+                packets when available.
               </p>
 
               <div
@@ -171,14 +169,9 @@ export default function ShopPage() {
                   Visit Ko-fi Shop
                 </a>
 
-                <a
-                  href={freeIntroCourseUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="secondary-button"
-                >
-                  Start Free Course
-                </a>
+                <Link href="/music" className="secondary-button">
+                  Listen First
+                </Link>
 
                 <Link href="/support" className="secondary-button">
                   View Membership Tiers
@@ -272,8 +265,8 @@ export default function ShopPage() {
                   Open Ko-fi Shop
                 </a>
 
-                <Link href="/field-notes" className="secondary-button">
-                  Open Field Notes
+                <Link href="/project" className="secondary-button">
+                  Enter Vallen
                 </Link>
               </div>
             </div>
@@ -288,7 +281,7 @@ export default function ShopPage() {
             >
               <Image
                 src="/images/project.jpg"
-                alt="What the Town Keeps and Field Notes digital archive"
+                alt="What the Town Keeps digital archive"
                 width={1200}
                 height={1400}
                 style={{
@@ -380,14 +373,9 @@ export default function ShopPage() {
                 Visit Ko-fi
               </a>
 
-              <a
-                href={freeIntroCourseUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="secondary-button"
-              >
-                Start Free Course
-              </a>
+              <Link href="/project" className="secondary-button">
+                Enter Vallen
+              </Link>
 
               <Link href="/support" className="secondary-button">
                 Support Page
