@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import ArchiveNote from "./components/ArchiveNote";
 
 export const metadata: Metadata = {
-  title: "Parallax Hearts | What the Town Keeps + PHYLAX",
+  title: "Parallax Hearts | What the Town Keeps + Field Notes",
   description:
-    "Parallax Hearts is the creative home for What the Town Keeps and PHYLAX: The First Breach — cinematic music, story worlds, lore, visuals, and album archives.",
+    "Parallax Hearts is the creative home for What the Town Keeps, Field Notes, and The Forbidden Knowledge Bible — cinematic music, story worlds, source trails, and evidence-aware research.",
 };
 
 const siteFont = `Georgia, "Times New Roman", Times, serif`;
@@ -16,8 +16,7 @@ const colors = {
   textDim: "rgba(243, 238, 231, 0.58)",
   gold: "#d2b58b",
   border: "rgba(243, 238, 231, 0.14)",
-  phylaxBlue: "#8da0b2",
-  ember: "#b65d31",
+  blueGray: "#8da0b2",
 };
 
 function Container({ children }: { children: React.ReactNode }) {
@@ -33,9 +32,8 @@ function TopNav() {
     ["Home", "/"],
     ["Music", "/music"],
     ["What the Town Keeps", "/project"],
-    ["PHYLAX", "/phylax"],
-    ["Lore", "/phylax/lore"],
-    ["Characters", "/phylax/characters"],
+    ["Field Notes", "/field-notes"],
+    ["Shop", "/shop"],
     ["Support", "/support"],
     ["Contact", "/contact"],
   ];
@@ -90,7 +88,7 @@ function TopNav() {
                 key={label}
                 href={href}
                 style={{
-                  color: label === "PHYLAX" ? colors.gold : colors.textSoft,
+                  color: label === "Field Notes" ? colors.gold : colors.textSoft,
                   textDecoration: "none",
                   fontSize: "15px",
                 }}
@@ -115,7 +113,6 @@ function ProjectPanel({
   primaryLabel,
   secondaryHref,
   secondaryLabel,
-  accent = "warm",
 }: {
   eyebrow: string;
   title: string;
@@ -126,16 +123,13 @@ function ProjectPanel({
   primaryLabel: string;
   secondaryHref: string;
   secondaryLabel: string;
-  accent?: "warm" | "cold";
 }) {
-  const isCold = accent === "cold";
-
   return (
     <section
       className="home-project-panel"
       style={{
         position: "relative",
-        minHeight: "78vh",
+        minHeight: "74vh",
         overflow: "hidden",
         display: "flex",
         alignItems: "flex-end",
@@ -150,15 +144,13 @@ function ProjectPanel({
           position: "absolute",
           inset: 0,
           backgroundImage: `
-            linear-gradient(180deg, rgba(3,5,7,0.02), rgba(3,5,7,0.28) 42%, rgba(3,5,7,0.94) 100%),
-            linear-gradient(90deg, rgba(3,5,7,0.76), rgba(3,5,7,0.22), rgba(3,5,7,0.70)),
+            linear-gradient(180deg, rgba(3,5,7,0.02), rgba(3,5,7,0.30) 42%, rgba(3,5,7,0.96) 100%),
+            linear-gradient(90deg, rgba(3,5,7,0.78), rgba(3,5,7,0.28), rgba(3,5,7,0.72)),
             url('${image}')
           `,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          filter: isCold
-            ? "saturate(0.88) contrast(1.08)"
-            : "saturate(0.82) contrast(1.04)",
+          filter: "saturate(0.78) contrast(1.06)",
         }}
       />
 
@@ -166,9 +158,8 @@ function ProjectPanel({
         style={{
           position: "absolute",
           inset: 0,
-          background: isCold
-            ? "radial-gradient(circle at 78% 18%, rgba(141,160,178,0.18), transparent 28%), radial-gradient(circle at 42% 82%, rgba(182,93,49,0.12), transparent 32%)"
-            : "radial-gradient(circle at 28% 20%, rgba(210,181,139,0.16), transparent 30%), radial-gradient(circle at 78% 80%, rgba(83,94,116,0.16), transparent 32%)",
+          background:
+            "radial-gradient(circle at 28% 20%, rgba(210,181,139,0.18), transparent 30%), radial-gradient(circle at 82% 80%, rgba(83,94,116,0.16), transparent 32%)",
         }}
       />
 
@@ -182,7 +173,7 @@ function ProjectPanel({
         <p
           style={{
             margin: "0 0 14px",
-            color: isCold ? colors.phylaxBlue : colors.gold,
+            color: colors.gold,
             textTransform: "uppercase",
             letterSpacing: "0.22em",
             fontSize: "12px",
@@ -208,7 +199,7 @@ function ProjectPanel({
         <p
           style={{
             margin: "20px 0 0",
-            color: isCold ? colors.gold : colors.text,
+            color: colors.text,
             fontSize: "23px",
             lineHeight: 1.35,
           }}
@@ -219,7 +210,7 @@ function ProjectPanel({
         <p
           style={{
             margin: "18px 0 0",
-            maxWidth: "620px",
+            maxWidth: "650px",
             color: colors.textSoft,
             fontSize: "17px",
             lineHeight: 1.85,
@@ -240,8 +231,8 @@ function ProjectPanel({
             href={primaryHref}
             style={{
               color: "#08090b",
-              background: isCold ? colors.gold : colors.text,
-              border: `1px solid ${isCold ? colors.gold : colors.text}`,
+              background: colors.text,
+              border: `1px solid ${colors.text}`,
               borderRadius: "999px",
               padding: "13px 18px",
               textDecoration: "none",
@@ -279,7 +270,7 @@ export default function HomePage() {
       style={{
         minHeight: "100vh",
         background:
-          "radial-gradient(circle at 18% 0%, rgba(110,78,146,0.15), transparent 32%), radial-gradient(circle at 82% 10%, rgba(70,95,120,0.18), transparent 30%), linear-gradient(180deg, #050507 0%, #09090f 42%, #0b090a 100%)",
+          "radial-gradient(circle at 18% 0%, rgba(110,78,146,0.12), transparent 32%), radial-gradient(circle at 82% 10%, rgba(70,95,120,0.16), transparent 30%), linear-gradient(180deg, #050507 0%, #09090f 42%, #0b090a 100%)",
         color: colors.text,
         fontFamily: siteFont,
       }}
@@ -291,7 +282,7 @@ export default function HomePage() {
           <div
             style={{
               textAlign: "center",
-              maxWidth: "900px",
+              maxWidth: "940px",
               margin: "0 auto 34px",
             }}
           >
@@ -304,7 +295,7 @@ export default function HomePage() {
                 fontSize: "12px",
               }}
             >
-              Cinematic music / story worlds / visual archives
+              Music / story worlds / source trails
             </p>
 
             <h1
@@ -316,21 +307,22 @@ export default function HomePage() {
                 fontWeight: 400,
               }}
             >
-              Two worlds under one signal.
+              Songs, stories, and the things knowledge keeps.
             </h1>
 
             <p
               style={{
                 margin: "22px auto 0",
-                maxWidth: "760px",
+                maxWidth: "780px",
                 color: colors.textSoft,
                 fontSize: "20px",
                 lineHeight: 1.75,
               }}
             >
-              Parallax Hearts is the creative home for intimate small-town
-              mystery, heavy cosmic lore, cinematic visuals, and album worlds
-              that unfold like recovered archives.
+              Parallax Hearts is the creative home for <em>What the Town Keeps</em>,
+              Field Notes, and the developing Forbidden Knowledge archive — a
+              place where music, memory, etymology, symbolism, and source trails
+              meet without turning mystery into false certainty.
             </p>
           </div>
 
@@ -343,7 +335,7 @@ export default function HomePage() {
             }}
           >
             <ProjectPanel
-              eyebrow="Album world one"
+              eyebrow="Album / story world"
               title="What the Town Keeps"
               subtitle="Rain. Rails. Memory. Silence."
               body={
@@ -368,20 +360,18 @@ export default function HomePage() {
               primaryLabel="Enter the town"
               secondaryHref="/music"
               secondaryLabel="Listen / music"
-              accent="warm"
             />
 
             <ProjectPanel
-              eyebrow="Album world two"
-              title="PHYLAX: The First Breach"
-              subtitle="Watchers. Oath. Descent. Consequence."
-              body="A darker heavy shoegaze/darkgaze album world built from black stone, storm light, forbidden knowledge, symbolic lore, hidden marks, and the first collapse of sacred distance."
-              image="/images/phylax/atmosphere/upper-watch-hero.png"
-              primaryHref="/phylax"
-              primaryLabel="Enter PHYLAX"
-              secondaryHref="/phylax/lore"
-              secondaryLabel="Open the lore"
-              accent="cold"
+              eyebrow="Research / source trails"
+              title="Field Notes"
+              subtitle="Wonder deserves structure."
+              body="A source-conscious archive for the Forbidden Knowledge work: etymology, symbolism, ancient knowledge, hidden histories, AI-assisted research, evidence labels, and the long-form codex behind The Forbidden Knowledge Bible."
+              image="/images/world.jpg"
+              primaryHref="/field-notes"
+              primaryLabel="Open Field Notes"
+              secondaryHref="/field-notes#method"
+              secondaryLabel="Read the method"
             />
           </div>
         </Container>
@@ -399,23 +389,23 @@ export default function HomePage() {
             {[
               {
                 title: "Music",
-                text: "Songs, album links, project notes, and listening paths.",
+                text: "Songs, album links, SoundCloud streaming, and project notes.",
                 href: "/music",
               },
               {
-                title: "PHYLAX Lore",
-                text: "The archive of breach, oath, descent, gifts, binding, and return.",
-                href: "/phylax/lore",
-              },
-              {
-                title: "Characters",
-                text: "The Breach Court and the figures carrying the album-world mythology.",
-                href: "/phylax/characters",
+                title: "Field Notes",
+                text: "Forbidden Knowledge research, source trails, evidence labels, and the codex method.",
+                href: "/field-notes",
               },
               {
                 title: "Support",
-                text: "Support the project directly through Ko-fi.",
+                text: "Support the music, story, visual archive, and research work directly through Ko-fi.",
                 href: "/support",
+              },
+              {
+                title: "PHYLAX Archive",
+                text: "The heavier lore world remains available as a separate archive while Field Notes moves forward first.",
+                href: "/phylax",
               },
             ].map((card) => (
               <Link
