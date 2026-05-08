@@ -2,11 +2,11 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Field Notes | Parallax Hearts",
+  title: "Field Notes | Forbidden Knowledge + Parallax Hearts",
   description:
-    "Field Notes is the source-conscious research archive connected to Parallax Hearts, exploring etymology, symbolism, ancient knowledge, source trails, the Forbidden Knowledge Circle, and The Forbidden Knowledge Bible.",
+    "Field Notes is the source-conscious research archive connected to Parallax Hearts, exploring ancient knowledge, lost etymology, symbolism, source trails, evidence labels, the Forbidden Knowledge Circle, and The Forbidden Knowledge Bible.",
   keywords: [
-    "Parallax Hearts Field Notes",
+    "Field Notes",
     "Forbidden Knowledge Circle",
     "Forbidden Knowledge Bible",
     "ancient knowledge",
@@ -15,30 +15,60 @@ export const metadata: Metadata = {
     "source trails",
     "evidence-aware research",
     "5-Level Rabbit Hole Method",
+    "AI research prompts",
     "creative knowledge systems",
+    "Parallax Hearts",
   ],
 };
 
 const evidenceLevels = [
   {
     title: "Well-Supported",
-    text: "Grounded in primary sources, established scholarship, or clear historical record.",
+    text: "Grounded in primary sources, established scholarship, archaeological evidence, or clear historical record.",
   },
   {
     title: "Plausible but Uncertain",
-    text: "Reasonable enough to examine, but incomplete or dependent on interpretation.",
+    text: "Reasonable enough to examine, but incomplete, debated, or dependent on interpretation.",
+  },
+  {
+    title: "Symbolic / Interpretive",
+    text: "Useful for reading myth, ritual, image, metaphor, and cultural memory without treating symbolism as proof.",
   },
   {
     title: "Speculative",
-    text: "Useful for creative or philosophical exploration, clearly separated from evidence.",
+    text: "A possible direction for imagination or theory, clearly separated from evidence-based claims.",
   },
   {
     title: "Unsupported / Modern Invention",
     text: "A claim worth identifying, testing, or correcting rather than repeating as fact.",
   },
+];
+
+const rabbitHoleLevels = [
   {
-    title: "Creative Use",
-    text: "Symbolic meaning used inside Parallax Hearts, What the Town Keeps, or related story work.",
+    level: "Level 1",
+    title: "What can be verified?",
+    text: "Names, dates, sources, artifacts, inscriptions, translations, and scholarly consensus.",
+  },
+  {
+    level: "Level 2",
+    title: "What can be reasonably inferred?",
+    text: "Historical context, cultural use, patterns, and careful interpretation.",
+  },
+  {
+    level: "Level 3",
+    title: "What does it symbolize?",
+    text: "Myth, ritual, number, image, architecture, cosmology, and poetic meaning.",
+  },
+  {
+    level: "Level 4",
+    title: "Where does the mystery begin?",
+    text: "Open questions, unresolved theories, and competing explanations.",
+  },
+  {
+    level: "Level 5",
+    title: "Where does speculation begin?",
+    text: "Creative, philosophical, or fringe claims that must be labeled honestly.",
   },
 ];
 
@@ -47,6 +77,9 @@ const researchLanes = [
   "Lost etymology and word history",
   "Source trails and claim verification",
   "Ritual, architecture, astronomy, and memory",
+  "Pre-Egypt and pre-Christian deep antiquity",
+  "Sacred mathematics and knowledge preservation",
+  "Modern cosmic discovery and computation bridges",
   "AI-assisted research prompts and templates",
   "The Forbidden Knowledge Bible / Handbook",
 ];
@@ -102,7 +135,10 @@ export default function FieldNotesPage() {
                   key={label}
                   href={href}
                   style={{
-                    color: "var(--paper-soft)",
+                    color:
+                      label === "Field Notes"
+                        ? "var(--gold)"
+                        : "var(--paper-soft)",
                     textDecoration: "none",
                     fontSize: "15px",
                   }}
@@ -124,7 +160,7 @@ export default function FieldNotesPage() {
               overflow: "hidden",
               borderRadius: "38px",
               padding: "clamp(30px, 6vw, 64px)",
-              minHeight: "62vh",
+              minHeight: "64vh",
               display: "flex",
               alignItems: "flex-end",
             }}
@@ -141,11 +177,11 @@ export default function FieldNotesPage() {
                 `,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                filter: "saturate(0.76) contrast(1.08)",
+                filter: "saturate(0.72) contrast(1.08)",
               }}
             />
 
-            <div style={{ position: "relative", zIndex: 2, maxWidth: "880px" }}>
+            <div style={{ position: "relative", zIndex: 2, maxWidth: "900px" }}>
               <p className="kicker">Forbidden Knowledge / Field Notes</p>
 
               <h1
@@ -164,21 +200,21 @@ export default function FieldNotesPage() {
               <p
                 style={{
                   margin: "24px 0 0",
-                  maxWidth: "760px",
+                  maxWidth: "780px",
                   color: "var(--paper)",
                   fontSize: "clamp(20px, 3vw, 29px)",
                   lineHeight: 1.35,
                 }}
               >
-                Etymology, symbolism, ancient knowledge, hidden histories, and
-                source-conscious research.
+                Ancient knowledge, lost etymology, symbolism, source trails,
+                and the discipline of knowing where evidence ends.
               </p>
 
-              <p className="body-copy" style={{ margin: "20px 0 0", maxWidth: "760px" }}>
-                Field Notes is the research bridge behind the Forbidden
-                Knowledge work: a place for source trails, claim labels,
-                symbolic interpretation, AI-assisted research, and the long-form
+              <p className="body-copy" style={{ margin: "20px 0 0", maxWidth: "780px" }}>
+                Field Notes is the public bridge for the Forbidden Knowledge
+                work: the Skool community, the Inner Archive, and the long-form
                 codex being built as <em>The Forbidden Knowledge Bible</em>.
+                It follows mystery without pretending every mystery is proof.
               </p>
 
               <div
@@ -189,21 +225,16 @@ export default function FieldNotesPage() {
                   flexWrap: "wrap",
                 }}
               >
-                <a
-                  href="https://www.skool.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="primary-button"
-                >
-                  Join the Forbidden Knowledge Circle
-                </a>
+                <Link href="#circle" className="primary-button">
+                  Join the Circle
+                </Link>
 
                 <Link href="#method" className="secondary-button">
                   Read the Method
                 </Link>
 
-                <Link href="/music" className="secondary-button">
-                  Return to the Music
+                <Link href="#book" className="secondary-button">
+                  The Book
                 </Link>
               </div>
             </div>
@@ -228,17 +259,16 @@ export default function FieldNotesPage() {
               <h2 className="section-title">Wonder deserves structure.</h2>
 
               <p className="body-copy" style={{ margin: "20px 0 0" }}>
-                The Field Notes use a simple rule: follow mystery without
-                pretending every mystery is proof. Each subject is treated as a
-                trail. Some trails lead to documents. Some lead to archaeology.
-                Some lead to symbolism. Some end in speculation and should be
-                labeled honestly.
+                The Field Notes use a simple rule: go deep without losing the
+                map. Each subject is treated as a trail. Some trails lead to
+                documents. Some lead to archaeology. Some lead to symbolism.
+                Some end in speculation and should be labeled honestly.
               </p>
 
               <p className="body-copy" style={{ margin: "18px 0 0" }}>
-                The goal is not to flatten wonder. The goal is to go deep
-                without losing the map — to preserve mystery while protecting
-                truth.
+                This is not conspiracy framing, and it is not shallow debunking.
+                It is a way to preserve mystery while protecting truth — to
+                separate source, interpretation, symbol, and invention.
               </p>
             </div>
 
@@ -270,6 +300,57 @@ export default function FieldNotesPage() {
                 </div>
               ))}
             </aside>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ padding: "34px 0" }}>
+        <div className="site-container">
+          <p className="kicker">5-Level Rabbit Hole Method</p>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+              gap: "14px",
+              marginTop: "18px",
+            }}
+          >
+            {rabbitHoleLevels.map((level) => (
+              <div
+                key={level.level}
+                className="glass-panel"
+                style={{ padding: "24px", borderRadius: "24px" }}
+              >
+                <p
+                  style={{
+                    margin: "0 0 10px",
+                    color: "var(--gold)",
+                    fontSize: "12px",
+                    letterSpacing: "0.14em",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  {level.level}
+                </p>
+
+                <h3
+                  style={{
+                    margin: 0,
+                    color: "var(--paper)",
+                    fontSize: "23px",
+                    lineHeight: 1.12,
+                    fontWeight: 400,
+                  }}
+                >
+                  {level.title}
+                </h3>
+
+                <p className="soft-copy" style={{ margin: "14px 0 0" }}>
+                  {level.text}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -313,41 +394,99 @@ export default function FieldNotesPage() {
         </div>
       </section>
 
-      <section style={{ padding: "34px 0 88px" }}>
+      <section id="circle" style={{ padding: "34px 0" }}>
         <div className="site-container">
           <div
             className="glass-panel"
             style={{
               padding: "clamp(26px, 5vw, 46px)",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-              gap: "22px",
+              gridTemplateColumns: "minmax(0, 1fr) minmax(260px, 0.72fr)",
+              gap: "28px",
+              alignItems: "start",
             }}
           >
             <div>
               <p className="kicker">Community</p>
               <h2 className="section-title">Forbidden Knowledge Circle</h2>
+
               <p className="body-copy" style={{ margin: "18px 0 0" }}>
-                A Skool-based learning community for ancient wisdom, symbolism,
-                etymology, AI-assisted research, creative knowledge systems, and
-                evidence-aware rabbit-hole exploration.
+                The Circle is the public community lane for ancient wisdom,
+                symbolism, etymology, AI-assisted research, creative knowledge
+                systems, and evidence-aware rabbit-hole exploration.
               </p>
-              <p className="soft-copy" style={{ margin: "16px 0 0" }}>
-                Go deep without losing the map.
+
+              <p className="body-copy" style={{ margin: "18px 0 0" }}>
+                The Inner Archive is the deeper paid lane for guided research,
+                monthly deep-dives, source-trail templates, AI prompts,
+                claim-check frameworks, and a build-your-own-codex system.
+              </p>
+            </div>
+
+            <aside
+              style={{
+                border: "1px solid var(--line)",
+                borderRadius: "24px",
+                padding: "24px",
+                background: "rgba(255,255,255,0.025)",
+              }}
+            >
+              <p className="kicker" style={{ marginBottom: "16px" }}>
+                Access plan
+              </p>
+
+              <p className="soft-copy" style={{ margin: 0 }}>
+                The Skool link will be added here once the public group is
+                ready. Until then, use the contact page for early access or
+                questions about the Circle.
+              </p>
+
+              <div style={{ marginTop: "22px" }}>
+                <Link href="/contact" className="primary-button">
+                  Ask About Early Access
+                </Link>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section id="book" style={{ padding: "34px 0 88px" }}>
+        <div className="site-container">
+          <div
+            className="glass-panel"
+            style={{
+              padding: "clamp(26px, 5vw, 46px)",
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "24px",
+            }}
+          >
+            <div>
+              <p className="kicker">The book</p>
+              <h2 className="section-title">The Forbidden Knowledge Bible</h2>
+              <p className="body-copy" style={{ margin: "18px 0 0" }}>
+                A long-form codex of ancient knowledge, lost etymology, cosmic
+                systems, forgotten technologies, hidden source trails, sacred
+                mathematics, and modern science bridges.
+              </p>
+              <p className="body-copy" style={{ margin: "18px 0 0" }}>
+                The book is being built as a continuity archive: a way to
+                preserve source trails, evidence methods, symbolic
+                interpretation, and durable knowledge if context gets lost.
               </p>
             </div>
 
             <div>
-              <p className="kicker">Codex</p>
-              <h2 className="section-title">The Forbidden Knowledge Bible</h2>
+              <p className="kicker">Core rule</p>
+              <h2 className="section-title">Preserve mystery. Protect truth.</h2>
               <p className="body-copy" style={{ margin: "18px 0 0" }}>
-                A long-form codex of ancient knowledge, lost etymology, cosmic
-                systems, forgotten technologies, hidden source trails, and
-                modern science bridges — built as a continuity archive, not a
-                claim of final truth.
+                This is not a claim that every mystery has a hidden answer. It
+                is a method for following the trail without losing the
+                difference between evidence, interpretation, and invention.
               </p>
               <p className="soft-copy" style={{ margin: "16px 0 0" }}>
-                Preserve how to think, not just what to know.
+                A map of knowledge, not a claim of final truth.
               </p>
             </div>
           </div>
