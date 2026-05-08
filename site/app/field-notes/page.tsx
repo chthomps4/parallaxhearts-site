@@ -5,9 +5,9 @@ const freeIntroCourseUrl =
   "https://www.skool.com/forbidden-knowledge-3060/classroom/64b17ccf?md=20063ee25dcf452f98717008a96ff36f";
 
 export const metadata: Metadata = {
-  title: "Field Notes | Forbidden Knowledge + Parallax Hearts",
+  title: "Field Notes | Forbidden Knowledge",
   description:
-    "Field Notes is the Forbidden Knowledge research lane connected to Parallax Hearts: ancient knowledge, lost etymology, symbolism, source trails, evidence labels, the free Skool intro course, and The Forbidden Knowledge Bible.",
+    "Field Notes is the separate Forbidden Knowledge research lane on parallaxhearts.org: ancient knowledge, lost etymology, symbolism, source trails, evidence labels, the free Skool intro course, and The Forbidden Knowledge Bible.",
   keywords: [
     "Field Notes",
     "Forbidden Knowledge",
@@ -221,10 +221,10 @@ export default function FieldNotesPage() {
               </p>
 
               <p className="body-copy" style={{ margin: "20px 0 0", maxWidth: "790px" }}>
-                Field Notes is the public research lane. The Forbidden Knowledge
-                landing page is the direct start point for the free course,
-                while this page holds the method, evidence labels, research
-                lanes, and book framework behind the archive.
+                Field Notes is the separate research lane. Parallax Hearts and
+                <em> What the Town Keeps</em> remain the music and story-world
+                path; this page holds the method, evidence labels, research
+                lanes, and book framework behind the Forbidden Knowledge archive.
               </p>
 
               <div
@@ -248,8 +248,12 @@ export default function FieldNotesPage() {
                   Open Free Course
                 </a>
 
-                <Link href="#method" className="secondary-button">
-                  Read the Method
+                <Link href="/music" className="secondary-button">
+                  Parallax Hearts Music
+                </Link>
+
+                <Link href="/project" className="secondary-button">
+                  Enter Vallen
                 </Link>
               </div>
             </div>
