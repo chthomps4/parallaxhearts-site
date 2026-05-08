@@ -5,7 +5,7 @@ import ArchiveNote from "./components/ArchiveNote";
 export const metadata: Metadata = {
   title: "Parallax Hearts | What the Town Keeps + Field Notes",
   description:
-    "Parallax Hearts is the creative home for What the Town Keeps, Field Notes, and The Forbidden Knowledge Bible — cinematic music, story worlds, source trails, and evidence-aware research.",
+    "Parallax Hearts is the creative home for What the Town Keeps, Field Notes, and The Forbidden Knowledge Bible — cinematic music, story worlds, source trails, evidence-aware research, and the free Forbidden Knowledge intro course.",
 };
 
 const siteFont = `Georgia, "Times New Roman", Times, serif`;
@@ -32,6 +32,7 @@ function TopNav() {
     ["Home", "/"],
     ["Music", "/music"],
     ["What the Town Keeps", "/project"],
+    ["Forbidden Knowledge", "/forbidden-knowledge"],
     ["Field Notes", "/field-notes"],
     ["Shop", "/shop"],
     ["Support", "/support"],
@@ -88,7 +89,8 @@ function TopNav() {
                 key={label}
                 href={href}
                 style={{
-                  color: label === "Field Notes" ? colors.gold : colors.textSoft,
+                  color:
+                    label === "Forbidden Knowledge" ? colors.gold : colors.textSoft,
                   textDecoration: "none",
                   fontSize: "15px",
                 }}
@@ -327,6 +329,98 @@ export default function HomePage() {
           </div>
 
           <div
+            style={{
+              marginBottom: "26px",
+              border: `1px solid rgba(210,181,139,0.28)`,
+              borderRadius: "28px",
+              padding: "clamp(24px, 5vw, 40px)",
+              background:
+                "linear-gradient(135deg, rgba(210,181,139,0.12), rgba(255,255,255,0.026)), rgba(5,7,10,0.52)",
+              boxShadow: "0 24px 70px rgba(0,0,0,0.28)",
+            }}
+          >
+            <p
+              style={{
+                margin: "0 0 12px",
+                color: colors.gold,
+                textTransform: "uppercase",
+                letterSpacing: "0.22em",
+                fontSize: "12px",
+              }}
+            >
+              Start here / free course
+            </p>
+
+            <h2
+              style={{
+                margin: 0,
+                fontSize: "clamp(34px, 6vw, 64px)",
+                lineHeight: 0.96,
+                letterSpacing: "-0.055em",
+                fontWeight: 400,
+                maxWidth: "880px",
+              }}
+            >
+              Forbidden Knowledge, without losing the map.
+            </h2>
+
+            <p
+              style={{
+                margin: "18px 0 0",
+                maxWidth: "780px",
+                color: colors.textSoft,
+                fontSize: "18px",
+                lineHeight: 1.75,
+              }}
+            >
+              Begin with the free intro course: source trails, evidence labels,
+              symbolic interpretation, and the 5-Level Rabbit Hole Method.
+              Preserve mystery. Protect truth.
+            </p>
+
+            <div
+              style={{
+                marginTop: "24px",
+                display: "flex",
+                gap: "12px",
+                flexWrap: "wrap",
+              }}
+            >
+              <Link
+                href="/forbidden-knowledge"
+                style={{
+                  color: "#08090b",
+                  background: colors.text,
+                  border: `1px solid ${colors.text}`,
+                  borderRadius: "999px",
+                  padding: "13px 18px",
+                  textDecoration: "none",
+                  fontSize: "15px",
+                  letterSpacing: "0.04em",
+                }}
+              >
+                Start the Free Course
+              </Link>
+
+              <Link
+                href="/field-notes"
+                style={{
+                  color: colors.text,
+                  background: "rgba(5,7,10,0.58)",
+                  border: `1px solid ${colors.border}`,
+                  borderRadius: "999px",
+                  padding: "13px 18px",
+                  textDecoration: "none",
+                  fontSize: "15px",
+                  letterSpacing: "0.04em",
+                }}
+              >
+                Read Field Notes
+              </Link>
+            </div>
+          </div>
+
+          <div
             className="home-split-hero"
             style={{
               display: "grid",
@@ -370,8 +464,8 @@ export default function HomePage() {
               image="/images/world.jpg"
               primaryHref="/field-notes"
               primaryLabel="Open Field Notes"
-              secondaryHref="/field-notes#method"
-              secondaryLabel="Read the method"
+              secondaryHref="/forbidden-knowledge"
+              secondaryLabel="Start the course"
             />
           </div>
         </Container>
@@ -387,6 +481,11 @@ export default function HomePage() {
             }}
           >
             {[
+              {
+                title: "Start Here",
+                text: "The free Forbidden Knowledge intro course and the 5-Level Rabbit Hole Method.",
+                href: "/forbidden-knowledge",
+              },
               {
                 title: "Music",
                 text: "Songs, album links, SoundCloud streaming, and project notes.",
