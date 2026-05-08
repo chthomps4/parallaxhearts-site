@@ -8,7 +8,7 @@ const koFiUrl = "https://ko-fi.com/parallaxhearts";
 export const metadata: Metadata = {
   title: "Music | Parallax Hearts",
   description:
-    "Listen to What the Town Keeps by Parallax Hearts — a cinematic acoustic alternative album tied to the story world of Vallen.",
+    "Listen to What the Town Keeps by Parallax Hearts — a cinematic acoustic alternative album tied to the story world of Vallen, Field Notes, and the wider creative archive.",
 };
 
 const tracks = [
@@ -68,6 +68,7 @@ export default function MusicPage() {
                 ["Home", "/"],
                 ["Music", "/music"],
                 ["Story", "/project"],
+                ["Field Notes", "/field-notes"],
                 ["Shop", "/shop"],
                 ["Support", "/support"],
                 ["Contact", "/contact"],
@@ -76,7 +77,8 @@ export default function MusicPage() {
                   key={label}
                   href={href}
                   style={{
-                    color: "var(--paper-soft)",
+                    color:
+                      label === "Music" ? "var(--gold)" : "var(--paper-soft)",
                     textDecoration: "none",
                     fontSize: "15px",
                   }}
@@ -428,13 +430,13 @@ export default function MusicPage() {
               className="body-copy"
               style={{
                 margin: "20px auto 0",
-                maxWidth: "720px",
+                maxWidth: "760px",
               }}
             >
               SoundCloud is the main streaming path for Parallax Hearts. Ko-fi
               is the direct support path for music, lyric material, visual
-              packs, story fragments, album art, and early pieces from the world
-              of <em>What the Town Keeps</em>.
+              packs, story fragments, album art, Field Notes progress, and
+              source-trail material as the archive grows.
             </p>
 
             <div
@@ -463,6 +465,10 @@ export default function MusicPage() {
               >
                 Support on Ko-fi
               </a>
+
+              <Link href="/field-notes" className="secondary-button">
+                Open Field Notes
+              </Link>
 
               <Link href="/support" className="secondary-button">
                 See Membership Tiers
