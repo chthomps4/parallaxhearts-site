@@ -87,6 +87,7 @@ export default function AboutPage() {
                 ["Field Notes", "/field-notes"],
                 ["Shop", "/shop"],
                 ["Support", "/support"],
+                ["About", "/about"],
                 ["Contact", "/contact"],
               ].map(([label, href]) => (
                 <Link
