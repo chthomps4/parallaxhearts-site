@@ -8,7 +8,7 @@ const koFiUrl = "https://ko-fi.com/parallaxhearts";
 export const metadata: Metadata = {
   title: "Music | Parallax Hearts",
   description:
-    "Listen to What the Town Keeps by Parallax Hearts — a cinematic acoustic alternative album tied to the story world of Vallen, Field Notes, and the wider creative archive.",
+    "Listen to What the Town Keeps by Parallax Hearts — a cinematic acoustic alternative album tied to Vallen, the graphic novel direction, and the wider story world.",
 };
 
 const tracks = [
@@ -23,6 +23,21 @@ const tracks = [
   "Patterns",
   "What Remains",
   "Clarity Through Incompatibility",
+];
+
+const listeningPath = [
+  {
+    title: "Listen first",
+    text: "Start with the album as music: intimate vocals, acoustic-led arrangements, restrained dynamics, and cinematic pressure.",
+  },
+  {
+    title: "Enter Vallen",
+    text: "Then open the story world: rain, rail lines, old houses, rooms after someone has gone, and the silence people inherit.",
+  },
+  {
+    title: "Follow the pages",
+    text: "The graphic novel direction gives the songs a visual life without turning the project into horror, fantasy, or spectacle.",
+  },
 ];
 
 export default function MusicPage() {
@@ -192,6 +207,10 @@ export default function MusicPage() {
                   Listen on SoundCloud
                 </a>
 
+                <Link href="/project" className="secondary-button">
+                  Enter the Story
+                </Link>
+
                 <a
                   href={koFiUrl}
                   target="_blank"
@@ -200,10 +219,6 @@ export default function MusicPage() {
                 >
                   Buy / Support on Ko-fi
                 </a>
-
-                <Link href="/project" className="secondary-button">
-                  Enter the Story
-                </Link>
               </div>
             </div>
           </div>
@@ -260,6 +275,10 @@ export default function MusicPage() {
                   Stream on SoundCloud
                 </a>
 
+                <Link href="/project#graphic-novel" className="secondary-button">
+                  Graphic Novel Direction
+                </Link>
+
                 <a
                   href={koFiUrl}
                   target="_blank"
@@ -306,6 +325,45 @@ export default function MusicPage() {
                 </div>
               ))}
             </aside>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ padding: "34px 0" }}>
+        <div className="site-container">
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+              gap: "16px",
+            }}
+          >
+            {listeningPath.map((item) => (
+              <div
+                key={item.title}
+                className="glass-panel"
+                style={{
+                  borderRadius: "24px",
+                  padding: "24px",
+                }}
+              >
+                <h3
+                  style={{
+                    margin: 0,
+                    fontSize: "30px",
+                    lineHeight: 1,
+                    fontWeight: 400,
+                    letterSpacing: "-0.035em",
+                  }}
+                >
+                  {item.title}
+                </h3>
+
+                <p className="soft-copy" style={{ margin: "14px 0 0" }}>
+                  {item.text}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -466,8 +524,8 @@ export default function MusicPage() {
                 Support on Ko-fi
               </a>
 
-              <Link href="/field-notes" className="secondary-button">
-                Open Field Notes
+              <Link href="/project" className="secondary-button">
+                Enter Vallen
               </Link>
 
               <Link href="/support" className="secondary-button">
