@@ -8,9 +8,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const coreRoutes = [
     { route: "", priority: 1, changeFrequency: "weekly" as const },
-    { route: "/music", priority: 0.95, changeFrequency: "weekly" as const },
-    { route: "/project", priority: 0.95, changeFrequency: "weekly" as const },
-    { route: "/field-notes", priority: 0.9, changeFrequency: "weekly" as const },
+    { route: "/forbidden-knowledge", priority: 0.98, changeFrequency: "weekly" as const },
+    { route: "/field-notes", priority: 0.95, changeFrequency: "weekly" as const },
+    { route: "/music", priority: 0.92, changeFrequency: "weekly" as const },
+    { route: "/project", priority: 0.9, changeFrequency: "weekly" as const },
     { route: "/support", priority: 0.85, changeFrequency: "monthly" as const },
     { route: "/contact", priority: 0.7, changeFrequency: "monthly" as const },
     { route: "/about", priority: 0.65, changeFrequency: "monthly" as const },
