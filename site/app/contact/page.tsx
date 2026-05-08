@@ -2,17 +2,22 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 
+const koFiUrl = "https://ko-fi.com/parallaxhearts";
+const facebookUrl = "https://www.facebook.com/parallaxhearts";
+const freeIntroCourseUrl =
+  "https://www.skool.com/forbidden-knowledge-3060/classroom/64b17ccf?md=20063ee25dcf452f98717008a96ff36f";
+
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact | Parallax Hearts + Field Notes",
   description:
-    "Contact Parallax Hearts for collaboration, booking, press, listener messages, visual work, or questions about What the Town Keeps.",
+    "Contact Parallax Hearts for music, What the Town Keeps, Field Notes, Forbidden Knowledge, Skool course questions, Ko-fi support, collaboration, press, and listener messages.",
   alternates: {
     canonical: "/contact",
   },
   openGraph: {
     title: "Contact | Parallax Hearts",
     description:
-      "Reach Parallax Hearts for collaboration, booking, press, listener messages, and questions about What the Town Keeps.",
+      "Reach Parallax Hearts for music, What the Town Keeps, Field Notes, Forbidden Knowledge, Skool course questions, Ko-fi support, and collaboration.",
     url: "https://parallaxhearts.org/contact",
     siteName: "Parallax Hearts",
     images: [
@@ -29,10 +34,33 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Contact | Parallax Hearts",
     description:
-      "Reach Parallax Hearts for collaboration, booking, press, listener messages, and questions about What the Town Keeps.",
+      "Reach Parallax Hearts for music, What the Town Keeps, Field Notes, Forbidden Knowledge, Skool course questions, Ko-fi support, and collaboration.",
     images: ["/images/world.jpg"],
   },
 };
+
+const inquiryLanes = [
+  {
+    title: "Music / Parallax Hearts",
+    text: "Listening, songs, collaboration, booking, press, or general messages about the band/project.",
+  },
+  {
+    title: "What the Town Keeps",
+    text: "Story world, Vallen, graphic novel material, visual archive, lyrics, album art, or related creative work.",
+  },
+  {
+    title: "Field Notes / Forbidden Knowledge",
+    text: "Source trails, evidence labels, the Handbook, ancient knowledge research, lost etymology, or the 5-Level Rabbit Hole Method.",
+  },
+  {
+    title: "Skool / Course Questions",
+    text: "Free intro course access, Forbidden Knowledge Circle questions, or future Inner Archive interest.",
+  },
+  {
+    title: "Ko-fi / Support",
+    text: "Membership tiers, digital shop items, purchases, bundles, or direct support questions.",
+  },
+];
 
 export default function ContactPage() {
   return (
@@ -77,6 +105,8 @@ export default function ContactPage() {
                 ["Home", "/"],
                 ["Music", "/music"],
                 ["Story", "/project"],
+                ["Field Notes", "/field-notes"],
+                ["Shop", "/shop"],
                 ["Support", "/support"],
                 ["Contact", "/contact"],
               ].map(([label, href]) => (
@@ -84,7 +114,10 @@ export default function ContactPage() {
                   key={label}
                   href={href}
                   style={{
-                    color: "var(--paper-soft)",
+                    color:
+                      label === "Contact"
+                        ? "var(--gold)"
+                        : "var(--paper-soft)",
                     textDecoration: "none",
                     fontSize: "15px",
                   }}
@@ -138,32 +171,21 @@ export default function ContactPage() {
                     maxWidth: "760px",
                   }}
                 >
-                  Reach out.
+                  Reach out through the right door.
                 </h1>
 
                 <p
                   className="body-copy"
                   style={{
                     margin: "24px 0 0",
-                    maxWidth: "760px",
+                    maxWidth: "780px",
                     fontSize: "19px",
                   }}
                 >
-                  For collaboration, booking, press, listener messages, visual
-                  work, or anything connected to Parallax Hearts and{" "}
-                  <em>What the Town Keeps</em>, use the contact points below.
-                </p>
-
-                <p
-                  className="body-copy"
-                  style={{
-                    margin: "18px 0 0",
-                    maxWidth: "760px",
-                  }}
-                >
-                  The project is still growing through songs, story fragments,
-                  images, videos, and the world of Vallen. Thoughtful messages
-                  are welcome.
+                  For Parallax Hearts, <em>What the Town Keeps</em>, Field
+                  Notes, Forbidden Knowledge, Skool course questions, Ko-fi
+                  support, collaboration, press, or listener messages, use the
+                  contact points below.
                 </p>
 
                 <div
@@ -171,7 +193,7 @@ export default function ContactPage() {
                     display: "grid",
                     gap: "16px",
                     marginTop: "30px",
-                    maxWidth: "680px",
+                    maxWidth: "720px",
                   }}
                 >
                   <div
@@ -227,7 +249,7 @@ export default function ContactPage() {
                       Ko-fi
                     </strong>
                     <a
-                      href="https://ko-fi.com/parallaxhearts"
+                      href={koFiUrl}
                       target="_blank"
                       rel="noreferrer"
                       style={{
@@ -258,10 +280,44 @@ export default function ContactPage() {
                         fontSize: "12px",
                       }}
                     >
+                      Free Skool Course
+                    </strong>
+                    <a
+                      href={freeIntroCourseUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      style={{
+                        color: "var(--paper)",
+                        textDecoration: "none",
+                        fontSize: "18px",
+                      }}
+                    >
+                      Start the free intro course
+                    </a>
+                  </div>
+
+                  <div
+                    style={{
+                      border: "1px solid var(--line)",
+                      borderRadius: "20px",
+                      padding: "22px",
+                      background: "rgba(255,255,255,0.035)",
+                    }}
+                  >
+                    <strong
+                      style={{
+                        display: "block",
+                        marginBottom: "8px",
+                        color: "var(--gold)",
+                        textTransform: "uppercase",
+                        letterSpacing: "0.14em",
+                        fontSize: "12px",
+                      }}
+                    >
                       Facebook
                     </strong>
                     <a
-                      href="https://www.facebook.com/parallaxhearts"
+                      href={facebookUrl}
                       target="_blank"
                       rel="noreferrer"
                       style={{
@@ -283,12 +339,16 @@ export default function ContactPage() {
                     flexWrap: "wrap",
                   }}
                 >
-                  <Link href="/music" className="primary-button">
-                    Listen to the Album
+                  <Link href="/field-notes" className="primary-button">
+                    Open Field Notes
                   </Link>
 
                   <Link href="/support" className="secondary-button">
                     Support the Project
+                  </Link>
+
+                  <Link href="/music" className="secondary-button">
+                    Listen to the Album
                   </Link>
                 </div>
               </div>
@@ -304,7 +364,7 @@ export default function ContactPage() {
             >
               <Image
                 src="/images/world.jpg"
-                alt="Parallax Hearts contact page image"
+                alt="Parallax Hearts and Field Notes contact page image"
                 width={1200}
                 height={1400}
                 style={{
@@ -314,6 +374,56 @@ export default function ContactPage() {
                   minHeight: "460px",
                 }}
               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ padding: "0 0 88px" }}>
+        <div className="site-container">
+          <div
+            className="glass-panel"
+            style={{
+              padding: "clamp(26px, 5vw, 44px)",
+            }}
+          >
+            <p className="kicker">Inquiry lanes</p>
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))",
+                gap: "14px",
+                marginTop: "18px",
+              }}
+            >
+              {inquiryLanes.map((lane) => (
+                <article
+                  key={lane.title}
+                  style={{
+                    border: "1px solid var(--line)",
+                    borderRadius: "22px",
+                    padding: "22px",
+                    background: "rgba(255,255,255,0.035)",
+                  }}
+                >
+                  <h2
+                    style={{
+                      margin: 0,
+                      fontSize: "25px",
+                      lineHeight: 1.05,
+                      letterSpacing: "-0.035em",
+                      fontWeight: 400,
+                    }}
+                  >
+                    {lane.title}
+                  </h2>
+
+                  <p className="soft-copy" style={{ margin: "12px 0 0" }}>
+                    {lane.text}
+                  </p>
+                </article>
+              ))}
             </div>
           </div>
         </div>
