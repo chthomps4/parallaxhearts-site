@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import ArchiveNote from "./components/ArchiveNote";
 
 export const metadata: Metadata = {
-  title: "Parallax Hearts | What the Town Keeps + Field Notes",
+  title: "Parallax Hearts | What the Town Keeps",
   description:
-    "Parallax Hearts is the creative home for What the Town Keeps, Field Notes, and The Forbidden Knowledge Bible — cinematic music, story worlds, source trails, evidence-aware research, and the free Forbidden Knowledge intro course.",
+    "Parallax Hearts is the home of What the Town Keeps — a cinematic album, story world, and graphic novel direction set in Vallen, with Field Notes and the Forbidden Knowledge archive as separate research lanes.",
 };
 
 const siteFont = `Georgia, "Times New Roman", Times, serif`;
@@ -90,7 +90,7 @@ function TopNav() {
                 href={href}
                 style={{
                   color:
-                    label === "Forbidden Knowledge" ? colors.gold : colors.textSoft,
+                    label === "What the Town Keeps" ? colors.gold : colors.textSoft,
                   textDecoration: "none",
                   fontSize: "15px",
                 }}
@@ -272,7 +272,7 @@ export default function HomePage() {
       style={{
         minHeight: "100vh",
         background:
-          "radial-gradient(circle at 18% 0%, rgba(110,78,146,0.12), transparent 32%), radial-gradient(circle at 82% 10%, rgba(70,95,120,0.16), transparent 30%), linear-gradient(180deg, #050507 0%, #09090f 42%, #0b090a 100%)",
+          "radial-gradient(circle at 18% 0%, rgba(91,111,132,0.14), transparent 32%), radial-gradient(circle at 82% 10%, rgba(157,121,82,0.12), transparent 30%), linear-gradient(180deg, #050507 0%, #09090f 42%, #0b090a 100%)",
         color: colors.text,
         fontFamily: siteFont,
       }}
@@ -297,7 +297,7 @@ export default function HomePage() {
                 fontSize: "12px",
               }}
             >
-              Music / story worlds / source trails
+              Parallax Hearts / album / story world
             </p>
 
             <h1
@@ -309,7 +309,7 @@ export default function HomePage() {
                 fontWeight: 400,
               }}
             >
-              Songs, stories, and the things knowledge keeps.
+              What the Town Keeps is where the music opens.
             </h1>
 
             <p
@@ -321,22 +321,71 @@ export default function HomePage() {
                 lineHeight: 1.75,
               }}
             >
-              Parallax Hearts is the creative home for <em>What the Town Keeps</em>,
-              Field Notes, and the developing Forbidden Knowledge archive — a
-              place where music, memory, etymology, symbolism, and source trails
-              meet without turning mystery into false certainty.
+              Parallax Hearts is the music project behind <em>What the Town Keeps</em> —
+              a cinematic album, story world, and graphic novel direction set in
+              Vallen, a rainy town of rail lines, old rooms, quiet distance, and
+              the things people learn not to say.
             </p>
           </div>
 
           <div
+            className="home-split-hero"
             style={{
-              marginBottom: "26px",
-              border: `1px solid rgba(210,181,139,0.28)`,
+              display: "grid",
+              gridTemplateColumns: "1.08fr 0.92fr",
+              gap: "22px",
+            }}
+          >
+            <ProjectPanel
+              eyebrow="Main project / album world"
+              title="What the Town Keeps"
+              subtitle="Rain. Rails. Memory. Silence."
+              body={
+                <>
+                  A grounded, literary, emotionally restrained album and visual
+                  story world built around the small town of Vallen
+                  <ArchiveNote
+                    title="Archive Note: Vallen"
+                    evidence="Creative name / interpretive resonance"
+                  >
+                    Vallen is the fictional town at the center of What the Town
+                    Keeps. The name suggests valley, falling, low ground, and a
+                    place where weather and memory collect. This is a
+                    project-specific name, not a historical place claim.
+                  </ArchiveNote>
+                  , hidden weight, human distance, old houses, rail lines, and
+                  the graphic novel adaptation now taking shape.
+                </>
+              }
+              image="/images/hero.jpg"
+              primaryHref="/project"
+              primaryLabel="Enter the town"
+              secondaryHref="/music"
+              secondaryLabel="Listen / music"
+            />
+
+            <ProjectPanel
+              eyebrow="Research lane / separate archive"
+              title="Field Notes"
+              subtitle="Wonder deserves structure."
+              body="A separate research and source-trail lane for the Forbidden Knowledge work: etymology, symbolism, ancient knowledge, evidence labels, and the long-form codex method."
+              image="/images/world.jpg"
+              primaryHref="/field-notes"
+              primaryLabel="Open Field Notes"
+              secondaryHref="/forbidden-knowledge"
+              secondaryLabel="Start the course"
+            />
+          </div>
+
+          <div
+            style={{
+              marginTop: "26px",
+              border: `1px solid rgba(210,181,139,0.22)`,
               borderRadius: "28px",
-              padding: "clamp(24px, 5vw, 40px)",
+              padding: "clamp(24px, 5vw, 38px)",
               background:
-                "linear-gradient(135deg, rgba(210,181,139,0.12), rgba(255,255,255,0.026)), rgba(5,7,10,0.52)",
-              boxShadow: "0 24px 70px rgba(0,0,0,0.28)",
+                "linear-gradient(135deg, rgba(210,181,139,0.09), rgba(255,255,255,0.022)), rgba(5,7,10,0.48)",
+              boxShadow: "0 24px 70px rgba(0,0,0,0.24)",
             }}
           >
             <p
@@ -354,8 +403,8 @@ export default function HomePage() {
             <h2
               style={{
                 margin: 0,
-                fontSize: "clamp(34px, 6vw, 64px)",
-                lineHeight: 0.96,
+                fontSize: "clamp(30px, 5vw, 56px)",
+                lineHeight: 0.98,
                 letterSpacing: "-0.055em",
                 fontWeight: 400,
                 maxWidth: "880px",
@@ -419,55 +468,6 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-
-          <div
-            className="home-split-hero"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "22px",
-            }}
-          >
-            <ProjectPanel
-              eyebrow="Album / story world"
-              title="What the Town Keeps"
-              subtitle="Rain. Rails. Memory. Silence."
-              body={
-                <>
-                  A grounded, literary, emotionally restrained album and visual
-                  story world built around the small town of Vallen
-                  <ArchiveNote
-                    title="Archive Note: Vallen"
-                    evidence="Creative name / interpretive resonance"
-                  >
-                    Vallen is the fictional town at the center of What the Town
-                    Keeps. The name suggests valley, falling, low ground, and a
-                    place where weather and memory collect. This is a
-                    project-specific name, not a historical place claim.
-                  </ArchiveNote>
-                  , hidden weight, human distance, and the things people leave
-                  unsaid.
-                </>
-              }
-              image="/images/hero.jpg"
-              primaryHref="/project"
-              primaryLabel="Enter the town"
-              secondaryHref="/music"
-              secondaryLabel="Listen / music"
-            />
-
-            <ProjectPanel
-              eyebrow="Research / source trails"
-              title="Field Notes"
-              subtitle="Wonder deserves structure."
-              body="A source-conscious archive for the Forbidden Knowledge work: etymology, symbolism, ancient knowledge, hidden histories, AI-assisted research, evidence labels, and the long-form codex behind The Forbidden Knowledge Bible."
-              image="/images/world.jpg"
-              primaryHref="/field-notes"
-              primaryLabel="Open Field Notes"
-              secondaryHref="/forbidden-knowledge"
-              secondaryLabel="Start the course"
-            />
-          </div>
         </Container>
       </section>
 
@@ -482,9 +482,9 @@ export default function HomePage() {
           >
             {[
               {
-                title: "Start Here",
-                text: "The free Forbidden Knowledge intro course and the 5-Level Rabbit Hole Method.",
-                href: "/forbidden-knowledge",
+                title: "What the Town Keeps",
+                text: "The album, Vallen story world, and graphic novel direction.",
+                href: "/project",
               },
               {
                 title: "Music",
@@ -495,6 +495,11 @@ export default function HomePage() {
                 title: "Field Notes",
                 text: "Forbidden Knowledge research, source trails, evidence labels, and the codex method.",
                 href: "/field-notes",
+              },
+              {
+                title: "Free Course",
+                text: "The Forbidden Knowledge intro course and the 5-Level Rabbit Hole Method.",
+                href: "/forbidden-knowledge",
               },
               {
                 title: "Support",
