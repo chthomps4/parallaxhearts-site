@@ -12,6 +12,18 @@ export const metadata: Metadata = {
     "Support Parallax Hearts, What the Town Keeps, Field Notes, and the Forbidden Knowledge research archive through Ko-fi memberships, digital music, visual archives, source trails, and creative research work.",
 };
 
+const navItems = [
+  ["Home", "/"],
+  ["Music", "/music"],
+  ["Story", "/project"],
+  ["Forbidden Knowledge", "/forbidden-knowledge"],
+  ["Field Notes", "/field-notes"],
+  ["Shop", "/shop"],
+  ["Support", "/support"],
+  ["About", "/about"],
+  ["Contact", "/contact"],
+];
+
 const tiers = [
   {
     name: "Porch Light",
@@ -56,23 +68,23 @@ const tiers = [
 
 const supportLanes = [
   {
-    title: "Music + Story",
-    text: "Parallax Hearts, What the Town Keeps, Vallen, lyric material, graphic novel previews, album visuals, and song-world updates.",
-    href: "/music",
-    label: "Listen to the Album",
+    title: "Ko-fi Support",
+    text: "The direct support and shop path for Parallax Hearts, What the Town Keeps, music, visual archive material, PDFs, bundles, and monthly creative updates.",
+    href: koFiUrl,
+    label: "Support on Ko-fi",
+    external: true,
+  },
+  {
+    title: "Forbidden Knowledge",
+    text: "The clean starting page for new visitors who want the free intro course, the 5-Level Rabbit Hole Method, and the research path.",
+    href: "/forbidden-knowledge",
+    label: "Start Here",
   },
   {
     title: "Field Notes",
-    text: "Forbidden Knowledge research, source trails, ancient knowledge, lost etymology, evidence labels, and the Handbook method.",
+    text: "The deeper reference layer for source trails, ancient knowledge, lost etymology, evidence labels, and the Handbook method.",
     href: "/field-notes",
     label: "Open Field Notes",
-  },
-  {
-    title: "Free Intro Course",
-    text: "The starting point for the Forbidden Knowledge Circle and the 5-Level Rabbit Hole Method.",
-    href: freeIntroCourseUrl,
-    label: "Start Free Course",
-    external: true,
   },
 ];
 
@@ -124,14 +136,7 @@ export default function SupportPage() {
                 alignItems: "center",
               }}
             >
-              {[
-                ["Home", "/"],
-                ["Music", "/music"],
-                ["Story", "/project"],
-                ["Field Notes", "/field-notes"],
-                ["Support", "/support"],
-                ["Contact", "/contact"],
-              ].map(([label, href]) => (
+              {navItems.map(([label, href]) => (
                 <Link
                   key={label}
                   href={href}
@@ -192,13 +197,14 @@ export default function SupportPage() {
                 className="body-copy"
                 style={{
                   margin: "24px 0 0",
-                  maxWidth: "790px",
+                  maxWidth: "800px",
                   fontSize: "19px",
                 }}
               >
-                This support page now carries two active lanes: Parallax Hearts
-                and <em>What the Town Keeps</em>, plus Field Notes and the
-                Forbidden Knowledge research archive
+                This page separates the paths clearly: Ko-fi supports the
+                creative archive directly. Skool carries the free course and the
+                learning community. Field Notes holds the public research method
+                and source-trail framework
                 <ArchiveNote
                   title="Archive Note: Archive"
                   evidence="Well-supported word history / creative use"
@@ -208,8 +214,7 @@ export default function SupportPage() {
                   source trails, evidence labels, course notes, and research
                   material surrounding the larger creative system.
                 </ArchiveNote>
-                . Ko-fi supports the creative work directly. Skool carries the
-                free intro course and the learning community.
+                .
               </p>
 
               <div
@@ -229,14 +234,9 @@ export default function SupportPage() {
                   Support on Ko-fi
                 </a>
 
-                <a
-                  href={freeIntroCourseUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="secondary-button"
-                >
+                <Link href="/forbidden-knowledge" className="secondary-button">
                   Start Free Course
-                </a>
+                </Link>
 
                 <Link href="/field-notes" className="secondary-button">
                   Open Field Notes
@@ -249,7 +249,7 @@ export default function SupportPage() {
 
       <section style={{ padding: "34px 0" }}>
         <div className="site-container">
-          <p className="kicker">What your support helps build</p>
+          <p className="kicker">Choose the right path</p>
 
           <div
             style={{
@@ -491,14 +491,9 @@ export default function SupportPage() {
                 Support on Ko-fi
               </a>
 
-              <a
-                href={freeIntroCourseUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="secondary-button"
-              >
+              <Link href="/forbidden-knowledge" className="secondary-button">
                 Start Free Course
-              </a>
+              </Link>
 
               <Link href="/" className="secondary-button">
                 Back Home
