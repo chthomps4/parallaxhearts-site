@@ -4,20 +4,18 @@ import type { Metadata } from "next";
 
 const koFiUrl = "https://ko-fi.com/parallaxhearts";
 const facebookUrl = "https://www.facebook.com/parallaxhearts";
-const freeIntroCourseUrl =
-  "https://www.skool.com/forbidden-knowledge-3060/classroom/64b17ccf?md=20063ee25dcf452f98717008a96ff36f";
 
 export const metadata: Metadata = {
-  title: "Contact | Parallax Hearts + Field Notes",
+  title: "Contact | Parallax Hearts",
   description:
-    "Contact Parallax Hearts for music, What the Town Keeps, Field Notes, Forbidden Knowledge, Skool course questions, Ko-fi support, collaboration, press, and listener messages.",
+    "Contact Parallax Hearts for music, What the Town Keeps, Vallen story-world material, Ko-fi support, collaboration, press, listener messages, Field Notes, and research inquiries.",
   alternates: {
     canonical: "/contact",
   },
   openGraph: {
     title: "Contact | Parallax Hearts",
     description:
-      "Reach Parallax Hearts for music, What the Town Keeps, Field Notes, Forbidden Knowledge, Skool course questions, Ko-fi support, and collaboration.",
+      "Reach Parallax Hearts for music, What the Town Keeps, Vallen story-world material, Ko-fi support, collaboration, press, listener messages, Field Notes, and research inquiries.",
     url: "https://parallaxhearts.org/contact",
     siteName: "Parallax Hearts",
     images: [
@@ -34,7 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Contact | Parallax Hearts",
     description:
-      "Reach Parallax Hearts for music, What the Town Keeps, Field Notes, Forbidden Knowledge, Skool course questions, Ko-fi support, and collaboration.",
+      "Reach Parallax Hearts for music, What the Town Keeps, Vallen story-world material, Ko-fi support, collaboration, press, listener messages, Field Notes, and research inquiries.",
     images: ["/images/world.jpg"],
   },
 };
@@ -49,16 +47,12 @@ const inquiryLanes = [
     text: "Story world, Vallen, graphic novel material, visual archive, lyrics, album art, or related creative work.",
   },
   {
-    title: "Field Notes / Forbidden Knowledge",
-    text: "Source trails, evidence labels, the Handbook, ancient knowledge research, lost etymology, or the 5-Level Rabbit Hole Method.",
-  },
-  {
-    title: "Skool / Course Questions",
-    text: "Free intro course access, Forbidden Knowledge Circle questions, or future Inner Archive interest.",
-  },
-  {
     title: "Ko-fi / Support",
     text: "Membership tiers, digital shop items, purchases, bundles, or direct support questions.",
+  },
+  {
+    title: "Field Notes / Research",
+    text: "Source trails, evidence labels, the Handbook, ancient knowledge research, lost etymology, or the 5-Level Rabbit Hole Method.",
   },
 ];
 
@@ -182,10 +176,9 @@ export default function ContactPage() {
                     fontSize: "19px",
                   }}
                 >
-                  For Parallax Hearts, <em>What the Town Keeps</em>, Field
-                  Notes, Forbidden Knowledge, Skool course questions, Ko-fi
-                  support, collaboration, press, or listener messages, use the
-                  contact points below.
+                  For Parallax Hearts, <em>What the Town Keeps</em>, Vallen,
+                  Ko-fi support, collaboration, press, listener messages, or
+                  Field Notes research inquiries, use the contact points below.
                 </p>
 
                 <div
@@ -280,40 +273,6 @@ export default function ContactPage() {
                         fontSize: "12px",
                       }}
                     >
-                      Free Skool Course
-                    </strong>
-                    <a
-                      href={freeIntroCourseUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      style={{
-                        color: "var(--paper)",
-                        textDecoration: "none",
-                        fontSize: "18px",
-                      }}
-                    >
-                      Start the free intro course
-                    </a>
-                  </div>
-
-                  <div
-                    style={{
-                      border: "1px solid var(--line)",
-                      borderRadius: "20px",
-                      padding: "22px",
-                      background: "rgba(255,255,255,0.035)",
-                    }}
-                  >
-                    <strong
-                      style={{
-                        display: "block",
-                        marginBottom: "8px",
-                        color: "var(--gold)",
-                        textTransform: "uppercase",
-                        letterSpacing: "0.14em",
-                        fontSize: "12px",
-                      }}
-                    >
                       Facebook
                     </strong>
                     <a
@@ -339,16 +298,16 @@ export default function ContactPage() {
                     flexWrap: "wrap",
                   }}
                 >
-                  <Link href="/field-notes" className="primary-button">
-                    Open Field Notes
+                  <Link href="/music" className="primary-button">
+                    Listen to the Album
+                  </Link>
+
+                  <Link href="/project" className="secondary-button">
+                    Enter Vallen
                   </Link>
 
                   <Link href="/support" className="secondary-button">
                     Support the Project
-                  </Link>
-
-                  <Link href="/music" className="secondary-button">
-                    Listen to the Album
                   </Link>
                 </div>
               </div>
@@ -364,7 +323,7 @@ export default function ContactPage() {
             >
               <Image
                 src="/images/world.jpg"
-                alt="Parallax Hearts and Field Notes contact page image"
+                alt="Parallax Hearts contact page image"
                 width={1200}
                 height={1400}
                 style={{
