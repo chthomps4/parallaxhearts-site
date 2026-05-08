@@ -30,6 +30,7 @@ const navItems = [
   ["Home", "/"],
   ["Music", "/music"],
   ["Story", "/project"],
+  ["Forbidden Knowledge", "/forbidden-knowledge"],
   ["Field Notes", "/field-notes"],
   ["Shop", "/shop"],
   ["Support", "/support"],
@@ -220,11 +221,10 @@ export default function FieldNotesPage() {
               </p>
 
               <p className="body-copy" style={{ margin: "20px 0 0", maxWidth: "790px" }}>
-                Field Notes is the public research lane for Forbidden Knowledge:
-                the free Skool intro course, the Circle, the future Inner
-                Archive, and the long-form codex being built as{" "}
-                <em>The Forbidden Knowledge Bible</em>. Mystery is welcome here.
-                Claims still have to carry their weight.
+                Field Notes is the public research lane. The Forbidden Knowledge
+                landing page is the direct start point for the free course,
+                while this page holds the method, evidence labels, research
+                lanes, and book framework behind the archive.
               </p>
 
               <div
@@ -235,21 +235,21 @@ export default function FieldNotesPage() {
                   flexWrap: "wrap",
                 }}
               >
+                <Link href="/forbidden-knowledge" className="primary-button">
+                  Start Here
+                </Link>
+
                 <a
                   href={freeIntroCourseUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="primary-button"
+                  className="secondary-button"
                 >
-                  Start the Free Intro Course
+                  Open Free Course
                 </a>
 
                 <Link href="#method" className="secondary-button">
                   Read the Method
-                </Link>
-
-                <Link href="#book" className="secondary-button">
-                  The Book
                 </Link>
               </div>
             </div>
@@ -281,9 +281,9 @@ export default function FieldNotesPage() {
               </p>
 
               <p className="body-copy" style={{ margin: "18px 0 0" }}>
-                This is the first step before deeper source-trail packets,
-                monthly research material, AI prompts, and the larger Handbook
-                system.
+                The shorter Forbidden Knowledge landing page is best for sharing
+                on social. This page is the deeper reference layer for the
+                research system.
               </p>
             </div>
 
@@ -297,22 +297,33 @@ export default function FieldNotesPage() {
               }}
             >
               <p className="kicker" style={{ marginBottom: "14px" }}>
-                Free access
+                Course path
               </p>
 
               <p className="soft-copy" style={{ margin: 0 }}>
-                The free intro course is live on Skool. Start here to learn the
-                5-Level Rabbit Hole Method before moving into deeper research.
+                Send new visitors to the landing page first. Send returning
+                readers directly to the Skool course.
               </p>
 
-              <div style={{ marginTop: "22px" }}>
+              <div
+                style={{
+                  marginTop: "22px",
+                  display: "flex",
+                  gap: "12px",
+                  flexWrap: "wrap",
+                }}
+              >
+                <Link href="/forbidden-knowledge" className="primary-button">
+                  Landing Page
+                </Link>
+
                 <a
                   href={freeIntroCourseUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="primary-button"
+                  className="secondary-button"
                 >
-                  Open Free Course
+                  Skool Course
                 </a>
               </div>
             </aside>
@@ -523,14 +534,9 @@ export default function FieldNotesPage() {
               </p>
 
               <div style={{ marginTop: "22px" }}>
-                <a
-                  href={freeIntroCourseUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="primary-button"
-                >
-                  Start Free Course
-                </a>
+                <Link href="/forbidden-knowledge" className="primary-button">
+                  Start Here
+                </Link>
               </div>
             </aside>
           </div>
