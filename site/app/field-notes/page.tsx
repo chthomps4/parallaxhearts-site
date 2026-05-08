@@ -1,8 +1,8 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 
-const freeIntroCourseKey =
-  "2e8432ed79734fcd9cf2ad5e3bd6811bb379c72c12954f4e96534f5b3014b784";
+const freeIntroCourseUrl =
+  "https://www.skool.com/forbidden-knowledge-3060/classroom/64b17ccf?md=20063ee25dcf452f98717008a96ff36f";
 
 export const metadata: Metadata = {
   title: "Field Notes | Forbidden Knowledge + Parallax Hearts",
@@ -228,9 +228,14 @@ export default function FieldNotesPage() {
                   flexWrap: "wrap",
                 }}
               >
-                <Link href="#free-intro" className="primary-button">
+                <a
+                  href={freeIntroCourseUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="primary-button"
+                >
                   Start the Free Intro Course
-                </Link>
+                </a>
 
                 <Link href="#method" className="secondary-button">
                   Read the Method
@@ -285,30 +290,24 @@ export default function FieldNotesPage() {
               }}
             >
               <p className="kicker" style={{ marginBottom: "14px" }}>
-                Course key
+                Free access
               </p>
 
-              <p
-                style={{
-                  margin: 0,
-                  padding: "14px",
-                  border: "1px solid var(--line)",
-                  borderRadius: "16px",
-                  background: "rgba(0,0,0,0.22)",
-                  color: "var(--paper)",
-                  fontFamily: "monospace",
-                  fontSize: "13px",
-                  lineHeight: 1.6,
-                  overflowWrap: "anywhere",
-                }}
-              >
-                {freeIntroCourseKey}
+              <p className="soft-copy" style={{ margin: 0 }}>
+                The free intro course is live on Skool. Start there before
+                moving into the deeper Inner Archive material.
               </p>
 
-              <p className="soft-copy" style={{ margin: "16px 0 0" }}>
-                The full Skool course link will replace this key once the public
-                course URL is ready.
-              </p>
+              <div style={{ marginTop: "22px" }}>
+                <a
+                  href={freeIntroCourseUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="primary-button"
+                >
+                  Open Free Course
+                </a>
+              </div>
             </aside>
           </div>
         </div>
@@ -508,15 +507,20 @@ export default function FieldNotesPage() {
               </p>
 
               <p className="soft-copy" style={{ margin: 0 }}>
-                The free intro course is the starting point for the Circle. Once
-                the full Skool URL is live, this section will link directly to
-                the course.
+                The free intro course is the starting point for the Circle.
+                Start there, then move into the deeper research material when
+                you are ready.
               </p>
 
               <div style={{ marginTop: "22px" }}>
-                <Link href="#free-intro" className="primary-button">
-                  View Free Intro Course
-                </Link>
+                <a
+                  href={freeIntroCourseUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="primary-button"
+                >
+                  Start Free Course
+                </a>
               </div>
             </aside>
           </div>
