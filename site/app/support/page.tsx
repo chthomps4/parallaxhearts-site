@@ -26,38 +26,38 @@ const tiers = [
   {
     name: "Porch Light",
     price: "$3 / month",
-    purpose: "A quiet way to support the music, story world, and Field Notes.",
+    purpose: "A quiet way to support Parallax Hearts and the world of What the Town Keeps.",
     includes: [
-      "Members-only monthly updates",
-      "Early poem, lyric, and story fragments",
+      "Early fragments",
       "Behind-the-song notes",
-      "Small previews from the visual world",
-      "Occasional Field Notes and research progress updates",
+      "Small visual previews",
+      "Short updates from the Vallen story world",
+      "Occasional Field Notes progress updates",
     ],
   },
   {
     name: "Station Room",
     price: "$7 / month",
-    purpose: "The main archive tier for music, story, visuals, and research notes.",
+    purpose: "The main archive tier for music, story, and visual material.",
     includes: [
       "Everything in Porch Light",
-      "Early video and reel previews",
-      "Lyric sheets and song notes",
+      "Lyrics and song notes",
+      "Early video previews",
       "Story fragments from Vallen",
-      "Concept art and album art previews",
+      "Concept art and album-art previews",
       "Monthly Town Archive / Field Notes post",
     ],
   },
   {
     name: "Town Archive",
     price: "$15 / month",
-    purpose: "The deeper creative archive for supporters who want the closest look.",
+    purpose: "The deeper creative archive for What the Town Keeps.",
     includes: [
       "Everything in Station Room",
-      "High-resolution concept art packs",
-      "Album artwork variants",
+      "High-resolution art packs",
       "Downloadable lyric, story, and archive PDFs",
-      "Early graphic novel page previews",
+      "Graphic novel previews",
+      "Album artwork variants",
       "Selected unreleased or alternate material when available",
       "Deeper Field Notes / Forbidden Knowledge research previews when available",
     ],
@@ -366,6 +366,23 @@ export default function SupportPage() {
                 </div>
               </article>
             ))}
+          </div>
+
+          <div
+            style={{
+              marginTop: "24px",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <a
+              href={koFiUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="primary-button"
+            >
+              Join on Ko-fi
+            </a>
           </div>
         </div>
       </section>
