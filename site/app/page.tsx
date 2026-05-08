@@ -5,7 +5,7 @@ import ArchiveNote from "./components/ArchiveNote";
 export const metadata: Metadata = {
   title: "Parallax Hearts | What the Town Keeps",
   description:
-    "Parallax Hearts is the home of What the Town Keeps — a cinematic album, story world, and graphic novel direction set in Vallen, with Field Notes and the Forbidden Knowledge archive as separate research lanes.",
+    "Parallax Hearts is the home of What the Town Keeps — a cinematic album, story world, and graphic novel direction set in Vallen, with Field Notes and the Forbidden Knowledge archive as a separate research lane.",
 };
 
 const siteFont = `Georgia, "Times New Roman", Times, serif`;
@@ -373,7 +373,7 @@ export default function HomePage() {
               primaryHref="/field-notes"
               primaryLabel="Open Field Notes"
               secondaryHref="/forbidden-knowledge"
-              secondaryLabel="Start the course"
+              secondaryLabel="Start Free Course"
             />
           </div>
 
@@ -448,7 +448,7 @@ export default function HomePage() {
                   letterSpacing: "0.04em",
                 }}
               >
-                Start the Free Course
+                Start Free Course
               </Link>
 
               <Link
@@ -503,7 +503,7 @@ export default function HomePage() {
               },
               {
                 title: "Support",
-                text: "Support the music, story, visual archive, and research work directly through Ko-fi.",
+                text: "Support the music, story, visual archive, and ongoing creative work directly through Ko-fi.",
                 href: "/support",
               },
               {
