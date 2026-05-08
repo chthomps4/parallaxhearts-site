@@ -2,49 +2,77 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import ArchiveNote from "../components/ArchiveNote";
 
+const koFiUrl = "https://ko-fi.com/parallaxhearts";
+const freeIntroCourseUrl =
+  "https://www.skool.com/forbidden-knowledge-3060/classroom/64b17ccf?md=20063ee25dcf452f98717008a96ff36f";
+
 export const metadata: Metadata = {
-  title: "Support | Parallax Hearts",
+  title: "Support | Parallax Hearts + Field Notes",
   description:
-    "Support Parallax Hearts and the world of What the Town Keeps through Ko-fi memberships, digital music, lyric sheets, concept art, story fragments, and visual archive material.",
+    "Support Parallax Hearts, What the Town Keeps, Field Notes, and the Forbidden Knowledge research archive through Ko-fi memberships, digital music, visual archives, source trails, and creative research work.",
 };
 
 const tiers = [
   {
     name: "Porch Light",
     price: "$3 / month",
-    purpose: "A quiet way to support the project.",
+    purpose: "A quiet way to support the music, story world, and Field Notes.",
     includes: [
       "Members-only monthly updates",
       "Early poem, lyric, and story fragments",
       "Behind-the-song notes",
       "Small previews from the visual world",
+      "Occasional Field Notes and research progress updates",
     ],
   },
   {
     name: "Station Room",
     price: "$7 / month",
-    purpose: "The main archive tier for music, story, and visuals.",
+    purpose: "The main archive tier for music, story, visuals, and research notes.",
     includes: [
       "Everything in Porch Light",
       "Early video and reel previews",
       "Lyric sheets and song notes",
       "Story fragments from Vallen",
       "Concept art and album art previews",
-      "Monthly Town Archive post",
+      "Monthly Town Archive / Field Notes post",
     ],
   },
   {
     name: "Town Archive",
     price: "$15 / month",
-    purpose: "The deeper creative archive.",
+    purpose: "The deeper creative archive for supporters who want the closest look.",
     includes: [
       "Everything in Station Room",
       "High-resolution concept art packs",
       "Album artwork variants",
-      "Downloadable lyric and story PDFs",
+      "Downloadable lyric, story, and archive PDFs",
       "Early graphic novel page previews",
       "Selected unreleased or alternate material when available",
+      "Deeper Field Notes / Forbidden Knowledge research previews when available",
     ],
+  },
+];
+
+const supportLanes = [
+  {
+    title: "Music + Story",
+    text: "Parallax Hearts, What the Town Keeps, Vallen, lyric material, graphic novel previews, album visuals, and song-world updates.",
+    href: "/music",
+    label: "Listen to the Album",
+  },
+  {
+    title: "Field Notes",
+    text: "Forbidden Knowledge research, source trails, ancient knowledge, lost etymology, evidence labels, and the Handbook method.",
+    href: "/field-notes",
+    label: "Open Field Notes",
+  },
+  {
+    title: "Free Intro Course",
+    text: "The starting point for the Forbidden Knowledge Circle and the 5-Level Rabbit Hole Method.",
+    href: freeIntroCourseUrl,
+    label: "Start Free Course",
+    external: true,
   },
 ];
 
@@ -53,6 +81,7 @@ const shopItems = [
   "Lyric Book PDF",
   "The Vallen Archive — Concept Art Pack",
   "Graphic Novel Preview PDF",
+  "Field Notes / Source-Trail PDFs when available",
   "Complete Support Bundle",
 ];
 
@@ -99,6 +128,7 @@ export default function SupportPage() {
                 ["Home", "/"],
                 ["Music", "/music"],
                 ["Story", "/project"],
+                ["Field Notes", "/field-notes"],
                 ["Support", "/support"],
                 ["Contact", "/contact"],
               ].map(([label, href]) => (
@@ -106,7 +136,10 @@ export default function SupportPage() {
                   key={label}
                   href={href}
                   style={{
-                    color: "var(--paper-soft)",
+                    color:
+                      label === "Support"
+                        ? "var(--gold)"
+                        : "var(--paper-soft)",
                     textDecoration: "none",
                     fontSize: "15px",
                   }}
@@ -140,7 +173,7 @@ export default function SupportPage() {
             />
 
             <div style={{ position: "relative", zIndex: 2 }}>
-              <p className="kicker">Support the world behind the album</p>
+              <p className="kicker">Support the archive</p>
 
               <h1
                 style={{
@@ -149,33 +182,34 @@ export default function SupportPage() {
                   lineHeight: 0.9,
                   letterSpacing: "-0.07em",
                   fontWeight: 400,
-                  maxWidth: "900px",
+                  maxWidth: "940px",
                 }}
               >
-                Help keep the archive growing.
+                Help keep the songs, stories, and source trails moving.
               </h1>
 
               <p
                 className="body-copy"
                 style={{
                   margin: "24px 0 0",
-                  maxWidth: "760px",
+                  maxWidth: "790px",
                   fontSize: "19px",
                 }}
               >
-                What the Town Keeps is an album, a story world, a visual archive
+                This support page now carries two active lanes: Parallax Hearts
+                and <em>What the Town Keeps</em>, plus Field Notes and the
+                Forbidden Knowledge research archive
                 <ArchiveNote
                   title="Archive Note: Archive"
                   evidence="Well-supported word history / creative use"
                 >
                   An archive is a place where records are preserved. Here, it
-                  means more than storage: it is the collected music, lyrics,
-                  visuals, story fragments, album art, and graphic novel
-                  material surrounding What the Town Keeps.
+                  means the collected music, lyrics, visuals, story fragments,
+                  source trails, evidence labels, course notes, and research
+                  material surrounding the larger creative system.
                 </ArchiveNote>
-                , and a graphic novel in progress. Ko-fi is where the deeper
-                material can live: music, lyrics, story fragments, videos,
-                concept art, album art, and early looks at Vallen.
+                . Ko-fi supports the creative work directly. Skool carries the
+                free intro course and the learning community.
               </p>
 
               <div
@@ -187,7 +221,7 @@ export default function SupportPage() {
                 }}
               >
                 <a
-                  href="https://ko-fi.com/parallaxhearts"
+                  href={koFiUrl}
                   target="_blank"
                   rel="noreferrer"
                   className="primary-button"
@@ -195,11 +229,74 @@ export default function SupportPage() {
                   Support on Ko-fi
                 </a>
 
-                <Link href="/music" className="secondary-button">
-                  Listen to the Album
+                <a
+                  href={freeIntroCourseUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="secondary-button"
+                >
+                  Start Free Course
+                </a>
+
+                <Link href="/field-notes" className="secondary-button">
+                  Open Field Notes
                 </Link>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ padding: "34px 0" }}>
+        <div className="site-container">
+          <p className="kicker">What your support helps build</p>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+              gap: "16px",
+              marginTop: "18px",
+            }}
+          >
+            {supportLanes.map((lane) => (
+              <article
+                key={lane.title}
+                className="glass-panel"
+                style={{ padding: "26px", borderRadius: "26px" }}
+              >
+                <h2
+                  style={{
+                    margin: 0,
+                    fontSize: "32px",
+                    lineHeight: 1,
+                    letterSpacing: "-0.045em",
+                    fontWeight: 400,
+                  }}
+                >
+                  {lane.title}
+                </h2>
+
+                <p className="soft-copy" style={{ margin: "14px 0 22px" }}>
+                  {lane.text}
+                </p>
+
+                {lane.external ? (
+                  <a
+                    href={lane.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="secondary-button"
+                  >
+                    {lane.label}
+                  </a>
+                ) : (
+                  <Link href={lane.href} className="secondary-button">
+                    {lane.label}
+                  </Link>
+                )}
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -294,18 +391,30 @@ export default function SupportPage() {
               <p className="body-copy" style={{ margin: "20px 0 0" }}>
                 Not everyone wants a monthly membership. The Ko-fi shop can
                 also hold one-time digital items: the album, lyric PDFs, visual
-                packs, story previews, and bundles from the world of Vallen.
+                packs, story previews, source-trail PDFs, and bundles from the
+                creative archive.
               </p>
 
-              <div style={{ marginTop: "26px" }}>
+              <div
+                style={{
+                  marginTop: "26px",
+                  display: "flex",
+                  gap: "12px",
+                  flexWrap: "wrap",
+                }}
+              >
                 <a
-                  href="https://ko-fi.com/parallaxhearts"
+                  href={koFiUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="secondary-button"
+                  className="primary-button"
                 >
                   Visit Ko-fi Shop
                 </a>
+
+                <Link href="/shop" className="secondary-button">
+                  View Shop Page
+                </Link>
               </div>
             </div>
 
@@ -348,19 +457,20 @@ export default function SupportPage() {
             <p className="kicker">Direct support</p>
 
             <h2 className="section-title">
-              Thank you for helping build the town.
+              Thank you for helping keep the archive alive.
             </h2>
 
             <p
               className="body-copy"
               style={{
                 margin: "20px auto 0",
-                maxWidth: "720px",
+                maxWidth: "760px",
               }}
             >
-              Every purchase, membership, share, and listen helps keep Parallax
-              Hearts moving forward — music first, story close behind, and the
-              world of What the Town Keeps growing one piece at a time.
+              Every purchase, membership, share, listen, and course visit helps
+              keep the work moving forward — the songs, the story world, the
+              visual archive, the Field Notes, and the larger Forbidden
+              Knowledge system being built piece by piece.
             </p>
 
             <div
@@ -373,12 +483,21 @@ export default function SupportPage() {
               }}
             >
               <a
-                href="https://ko-fi.com/parallaxhearts"
+                href={koFiUrl}
                 target="_blank"
                 rel="noreferrer"
                 className="primary-button"
               >
                 Support on Ko-fi
+              </a>
+
+              <a
+                href={freeIntroCourseUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="secondary-button"
+              >
+                Start Free Course
               </a>
 
               <Link href="/" className="secondary-button">
