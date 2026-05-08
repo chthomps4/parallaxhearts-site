@@ -3,21 +3,21 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About | Parallax Hearts + Field Notes",
+  title: "About | Parallax Hearts",
   description:
-    "About Parallax Hearts, What the Town Keeps, Field Notes, the Forbidden Knowledge archive, and The Forbidden Knowledge Bible / Handbook.",
+    "About Parallax Hearts, What the Town Keeps, the Vallen story world, Field Notes, and the separate Forbidden Knowledge research archive.",
 };
 
 const identityCards = [
   {
     title: "Parallax Hearts",
-    text: "The creative and music home: cinematic songwriting, story worlds, visual archives, and emotionally grounded work.",
+    text: "The music and creative home: cinematic songwriting, emotionally grounded stories, visual archives, and album-world material.",
     href: "/music",
     label: "Music",
   },
   {
     title: "What the Town Keeps",
-    text: "The album and story world set around Vallen: rain, old houses, rail lines, memory, absence, and the things people leave unsaid.",
+    text: "The central album and story world set around Vallen: rain, old houses, rail lines, memory, absence, and the things people leave unsaid.",
     href: "/project",
     label: "Story world",
   },
@@ -35,7 +35,7 @@ const identityCards = [
   },
   {
     title: "PHYLAX Archive",
-    text: "A secondary heavier lore world kept available in the archive while Field Notes moves forward first.",
+    text: "A secondary heavier lore world kept available as a separate archive while Field Notes and Parallax Hearts remain clearly separated.",
     href: "/phylax",
     label: "Archive",
   },
@@ -149,7 +149,7 @@ export default function AboutPage() {
                     maxWidth: "860px",
                   }}
                 >
-                  The music, the town, and the source trails underneath.
+                  The music, the town, and the research lane underneath.
                 </h1>
 
                 <p
@@ -160,10 +160,10 @@ export default function AboutPage() {
                     fontSize: "19px",
                   }}
                 >
-                  Parallax Hearts is an independent creative home for cinematic
-                  songs, story worlds, visual archives, and source-conscious
-                  research. The work moves between music, memory, fiction,
-                  symbolism, and the older questions people keep returning to.
+                  Parallax Hearts is the independent music and creative home
+                  behind <em>What the Town Keeps</em>: cinematic songs, visual
+                  story material, lyric-driven atmosphere, and a grounded world
+                  built around Vallen.
                 </p>
 
                 <p
@@ -186,10 +186,11 @@ export default function AboutPage() {
                     maxWidth: "820px",
                   }}
                 >
-                  Field Notes is the research lane: Forbidden Knowledge, ancient
-                  knowledge, lost etymology, symbolism, source trails, evidence
-                  labels, and the method behind <em>The Forbidden Knowledge Bible</em>.
-                  It follows mystery without pretending every mystery is proof.
+                  Field Notes is separate but connected: the research lane for
+                  Forbidden Knowledge, ancient knowledge, lost etymology,
+                  symbolism, source trails, evidence labels, and the method
+                  behind <em>The Forbidden Knowledge Bible</em>. It follows
+                  mystery without pretending every mystery is proof.
                 </p>
 
                 <div
@@ -200,16 +201,16 @@ export default function AboutPage() {
                     flexWrap: "wrap",
                   }}
                 >
-                  <Link href="/field-notes" className="primary-button">
-                    Open Field Notes
-                  </Link>
-
-                  <Link href="/music" className="secondary-button">
+                  <Link href="/music" className="primary-button">
                     Listen to the Album
                   </Link>
 
-                  <Link href="/support" className="secondary-button">
-                    Support the Archive
+                  <Link href="/project" className="secondary-button">
+                    Enter Vallen
+                  </Link>
+
+                  <Link href="/field-notes" className="secondary-button">
+                    Open Field Notes
                   </Link>
                 </div>
               </div>
