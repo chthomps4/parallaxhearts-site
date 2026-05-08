@@ -53,6 +53,8 @@ export default function ProjectPage() {
               ["Home", "/"],
               ["Music", "/music"],
               ["Story", "/project"],
+              ["Field Notes", "/field-notes"],
+              ["Shop", "/shop"],
               ["Support", "/support"],
               ["Contact", "/contact"],
             ].map(([label, href]) => (
@@ -60,7 +62,8 @@ export default function ProjectPage() {
                 key={label}
                 href={href}
                 style={{
-                  color: "var(--paper-soft)",
+                  color:
+                    label === "Story" ? "var(--gold)" : "var(--paper-soft)",
                   textDecoration: "none",
                   fontSize: "15px",
                 }}
@@ -152,6 +155,10 @@ export default function ProjectPage() {
               >
                 <Link href="/music" className="primary-button">
                   Listen to the Album
+                </Link>
+
+                <Link href="/field-notes" className="secondary-button">
+                  Open Field Notes
                 </Link>
 
                 <Link href="/support" className="secondary-button">
@@ -383,13 +390,14 @@ export default function ProjectPage() {
               className="body-copy"
               style={{
                 margin: "20px auto 0",
-                maxWidth: "760px",
+                maxWidth: "780px",
               }}
             >
               Some pages contain small Archive Notes — fragments of etymology,
               history, symbolism, and source-conscious research. They are not
               explanations of the whole story. They are traces, placed where a
-              word carries more than one kind of weight.
+              word carries more than one kind of weight. Field Notes is where
+              that research lane opens fully.
             </p>
 
             <div
@@ -403,6 +411,10 @@ export default function ProjectPage() {
             >
               <Link href="/music" className="primary-button">
                 Listen to the Album
+              </Link>
+
+              <Link href="/field-notes" className="secondary-button">
+                Open Field Notes
               </Link>
 
               <Link href="/support" className="secondary-button">
