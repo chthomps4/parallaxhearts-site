@@ -1,6 +1,9 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 
+const freeIntroCourseKey =
+  "2e8432ed79734fcd9cf2ad5e3bd6811bb379c72c12954f4e96534f5b3014b784";
+
 export const metadata: Metadata = {
   title: "Field Notes | Forbidden Knowledge + Parallax Hearts",
   description:
@@ -225,8 +228,8 @@ export default function FieldNotesPage() {
                   flexWrap: "wrap",
                 }}
               >
-                <Link href="#circle" className="primary-button">
-                  Join the Circle
+                <Link href="#free-intro" className="primary-button">
+                  Start the Free Intro Course
                 </Link>
 
                 <Link href="#method" className="secondary-button">
@@ -238,6 +241,75 @@ export default function FieldNotesPage() {
                 </Link>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="free-intro" style={{ padding: "34px 0" }}>
+        <div className="site-container">
+          <div
+            className="glass-panel"
+            style={{
+              padding: "clamp(26px, 5vw, 46px)",
+              display: "grid",
+              gridTemplateColumns: "minmax(0, 1fr) minmax(260px, 0.75fr)",
+              gap: "28px",
+              alignItems: "start",
+              borderColor: "rgba(210,181,139,0.32)",
+            }}
+          >
+            <div>
+              <p className="kicker">Start here</p>
+              <h2 className="section-title">Free Intro Course</h2>
+
+              <p className="body-copy" style={{ margin: "18px 0 0" }}>
+                Begin with the free intro course for the Forbidden Knowledge
+                Circle. It introduces the method, the evidence labels, and the
+                basic rule behind the work: go deep without losing the map.
+              </p>
+
+              <p className="body-copy" style={{ margin: "18px 0 0" }}>
+                This course is the best first step before the Inner Archive,
+                monthly deep-dives, source-trail templates, AI research prompts,
+                and the larger Handbook system.
+              </p>
+            </div>
+
+            <aside
+              style={{
+                border: "1px solid var(--line)",
+                borderRadius: "24px",
+                padding: "24px",
+                background:
+                  "linear-gradient(180deg, rgba(210,181,139,0.10), rgba(255,255,255,0.025))",
+              }}
+            >
+              <p className="kicker" style={{ marginBottom: "14px" }}>
+                Course key
+              </p>
+
+              <p
+                style={{
+                  margin: 0,
+                  padding: "14px",
+                  border: "1px solid var(--line)",
+                  borderRadius: "16px",
+                  background: "rgba(0,0,0,0.22)",
+                  color: "var(--paper)",
+                  fontFamily: "monospace",
+                  fontSize: "13px",
+                  lineHeight: 1.6,
+                  overflowWrap: "anywhere",
+                }}
+              >
+                {freeIntroCourseKey}
+              </p>
+
+              <p className="soft-copy" style={{ margin: "16px 0 0" }}>
+                The full Skool course link will replace this key once the public
+                course URL is ready.
+              </p>
+            </aside>
           </div>
         </div>
       </section>
@@ -436,14 +508,14 @@ export default function FieldNotesPage() {
               </p>
 
               <p className="soft-copy" style={{ margin: 0 }}>
-                The Skool link will be added here once the public group is
-                ready. Until then, use the contact page for early access or
-                questions about the Circle.
+                The free intro course is the starting point for the Circle. Once
+                the full Skool URL is live, this section will link directly to
+                the course.
               </p>
 
               <div style={{ marginTop: "22px" }}>
-                <Link href="/contact" className="primary-button">
-                  Ask About Early Access
+                <Link href="#free-intro" className="primary-button">
+                  View Free Intro Course
                 </Link>
               </div>
             </aside>
