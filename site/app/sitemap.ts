@@ -10,14 +10,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: "", priority: 1, changeFrequency: "weekly" as const },
     { route: "/music", priority: 0.95, changeFrequency: "weekly" as const },
     { route: "/project", priority: 0.95, changeFrequency: "weekly" as const },
+    { route: "/field-notes", priority: 0.9, changeFrequency: "weekly" as const },
     { route: "/support", priority: 0.85, changeFrequency: "monthly" as const },
     { route: "/contact", priority: 0.7, changeFrequency: "monthly" as const },
     { route: "/about", priority: 0.65, changeFrequency: "monthly" as const },
     { route: "/shop", priority: 0.65, changeFrequency: "monthly" as const },
-    { route: "/phylax", priority: 0.75, changeFrequency: "monthly" as const },
-    { route: "/phylax/lore", priority: 0.7, changeFrequency: "monthly" as const },
-    { route: "/phylax/story", priority: 0.65, changeFrequency: "monthly" as const },
-    { route: "/phylax/characters", priority: 0.65, changeFrequency: "monthly" as const },
+    { route: "/phylax", priority: 0.55, changeFrequency: "monthly" as const },
+    { route: "/phylax/lore", priority: 0.5, changeFrequency: "monthly" as const },
+    { route: "/phylax/story", priority: 0.45, changeFrequency: "monthly" as const },
+    { route: "/phylax/characters", priority: 0.45, changeFrequency: "monthly" as const },
   ];
 
   const corePages = coreRoutes.map((item) => ({
@@ -31,14 +32,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}/phylax/lore/${chapter.slug}`,
     lastModified,
     changeFrequency: "monthly" as const,
-    priority: 0.55,
+    priority: 0.4,
   }));
 
   const characterPages = characters.map((character) => ({
     url: `${baseUrl}/phylax/characters/${character.slug}`,
     lastModified,
     changeFrequency: "monthly" as const,
-    priority: 0.55,
+    priority: 0.4,
   }));
 
   return [...corePages, ...lorePages, ...characterPages];
