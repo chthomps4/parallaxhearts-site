@@ -3,6 +3,13 @@ import Link from "next/link";
 import Script from "next/script";
 import "./globals.css";
 
+const facebookUrl = "https://www.facebook.com/share/1C7BVWq3f2/?mibextid=wwXIfr";
+const instagramUrl =
+  "https://www.instagram.com/parallax_hearts?igsh=MW11d2h3c3IxODhzYQ%3D%3D&utm_source=qr";
+const youtubeUrl = "https://youtube.com/@parallaxhearts-u7q?si=VZZQD2j6J1MEY-pk";
+const koFiUrl = "https://ko-fi.com/parallaxhearts";
+const soundCloudUrl = "https://soundcloud.com/parallax-hearts";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://parallaxhearts.org"),
   title: {
@@ -147,6 +154,7 @@ function SiteFooter() {
                 ["Home", "/"],
                 ["Music", "/music"],
                 ["What the Town Keeps", "/project"],
+                ["Graphic Novel", "/graphic-novel"],
                 ["Shop", "/shop"],
                 ["Support", "/support"],
               ]}
@@ -177,9 +185,11 @@ function SiteFooter() {
               links={[
                 ["About", "/about"],
                 ["Contact", "/contact"],
-                ["Facebook", "https://www.facebook.com/parallaxhearts"],
-                ["Ko-fi", "https://ko-fi.com/parallaxhearts"],
-                ["SoundCloud", "https://soundcloud.com/parallax-hearts"],
+                ["Facebook", facebookUrl],
+                ["Instagram", instagramUrl],
+                ["YouTube", youtubeUrl],
+                ["Ko-fi", koFiUrl],
+                ["SoundCloud", soundCloudUrl],
               ]}
             />
           </div>
@@ -254,11 +264,7 @@ export default function RootLayout({
     name: "Parallax Hearts",
     url: "https://parallaxhearts.org",
     image: "https://parallaxhearts.org/images/hero.jpg",
-    sameAs: [
-      "https://www.facebook.com/parallaxhearts",
-      "https://ko-fi.com/parallaxhearts",
-      "https://soundcloud.com/parallax-hearts",
-    ],
+    sameAs: [facebookUrl, instagramUrl, youtubeUrl, koFiUrl, soundCloudUrl],
     album: {
       "@type": "MusicAlbum",
       name: "What the Town Keeps",
