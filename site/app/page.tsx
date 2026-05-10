@@ -33,6 +33,7 @@ function TopNav() {
     ["Music", "/music"],
     ["Story", "/project"],
     ["Graphic Novel", "/graphic-novel"],
+    ["Websites", "/websites"],
     ["Field Notes", "/field-notes"],
     ["Support", "/support"],
     ["Contact", "/contact"],
@@ -417,6 +418,11 @@ export default function HomePage() {
                 title: "Study",
                 text: "Open Field Notes, the separate research lane for source trails and evidence labels.",
                 href: "/field-notes",
+              },
+              {
+                title: "Websites",
+                text: "Custom websites are available separately for artists, creators, and small businesses.",
+                href: "/websites",
               },
               {
                 title: "Support",
