@@ -8,8 +8,18 @@ const koFiUrl = "https://ko-fi.com/parallaxhearts";
 export const metadata: Metadata = {
   title: "Music | Parallax Hearts",
   description:
-    "Listen to What the Town Keeps by Parallax Hearts — a cinematic acoustic alternative album tied to Vallen, the graphic novel direction, and the wider story world.",
+    "Listen to What the Town Keeps by Parallax Hearts — a cinematic acoustic alternative album tied to Vallen and the wider story world.",
 };
+
+const navItems = [
+  ["Home", "/"],
+  ["Music", "/music"],
+  ["Story", "/project"],
+  ["Graphic Novel", "/graphic-novel"],
+  ["Field Notes", "/field-notes"],
+  ["Support", "/support"],
+  ["Contact", "/contact"],
+];
 
 const tracks = [
   "Boundary Weather",
@@ -25,18 +35,24 @@ const tracks = [
   "Clarity Through Incompatibility",
 ];
 
-const listeningPath = [
+const musicPaths = [
   {
-    title: "Listen first",
-    text: "Start with the album as music: intimate vocals, acoustic-led arrangements, restrained dynamics, and cinematic pressure.",
+    title: "Listen",
+    text: "Stream the album on SoundCloud.",
+    href: soundCloudUrl,
+    external: true,
   },
   {
-    title: "Enter Vallen",
-    text: "Then open the story world: rain, rail lines, old houses, rooms after someone has gone, and the silence people inherit.",
+    title: "Support",
+    text: "Buy or support directly through Ko-fi.",
+    href: koFiUrl,
+    external: true,
   },
   {
-    title: "Follow the pages",
-    text: "The graphic novel direction gives the songs a visual life without turning the project into horror, fantasy, or spectacle.",
+    title: "Read",
+    text: "Begin the visual novel with Chapter One — Ballast.",
+    href: "/graphic-novel/chapter-one/page-001",
+    external: false,
   },
 ];
 
@@ -79,15 +95,7 @@ export default function MusicPage() {
                 alignItems: "center",
               }}
             >
-              {[
-                ["Home", "/"],
-                ["Music", "/music"],
-                ["Story", "/project"],
-                ["Field Notes", "/field-notes"],
-                ["Shop", "/shop"],
-                ["Support", "/support"],
-                ["Contact", "/contact"],
-              ].map(([label, href]) => (
+              {navItems.map(([label, href]) => (
                 <Link
                   key={label}
                   href={href}
@@ -185,9 +193,9 @@ export default function MusicPage() {
                   maxWidth: "720px",
                 }}
               >
-                Built around intimate vocals, textured guitars, restrained
-                dynamics, and the emotional pressure of Vallen — a town of rain,
-                rail lines, old rooms, distance, and memory.
+                Intimate vocals, textured guitars, restrained dynamics, and the
+                emotional pressure of Vallen — rain, rail lines, old rooms,
+                distance, and memory.
               </p>
 
               <div
@@ -207,10 +215,6 @@ export default function MusicPage() {
                   Listen on SoundCloud
                 </a>
 
-                <Link href="/project" className="secondary-button">
-                  Enter the Story
-                </Link>
-
                 <a
                   href={koFiUrl}
                   target="_blank"
@@ -219,151 +223,85 @@ export default function MusicPage() {
                 >
                   Buy / Support on Ko-fi
                 </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <section style={{ padding: "34px 0" }}>
-        <div className="site-container">
-          <div
-            className="glass-panel"
-            style={{
-              padding: "clamp(26px, 5vw, 44px)",
-              display: "grid",
-              gridTemplateColumns: "minmax(0, 1fr) minmax(260px, 0.8fr)",
-              gap: "30px",
-              alignItems: "start",
-            }}
-          >
-            <div>
-              <p className="kicker">About the album</p>
-
-              <h2 className="section-title">
-                Songs from a town that remembers.
-              </h2>
-
-              <p className="body-copy" style={{ margin: "20px 0 0" }}>
-                <em>What the Town Keeps</em> moves through the quiet aftermath
-                of connection, distance, and emotional change. The record is not
-                built as a literal diary. It is a place — a fictional town
-                carrying fragments of memory in its houses, roads, stations,
-                windows, and weather.
-              </p>
-
-              <p className="body-copy" style={{ margin: "18px 0 0" }}>
-                The songs are connected to the larger story world of Vallen and
-                the graphic novel adaptation, but the album stands on its own:
-                intimate, human, restrained, and cinematic.
-              </p>
-
-              <div
-                style={{
-                  marginTop: "26px",
-                  display: "flex",
-                  gap: "12px",
-                  flexWrap: "wrap",
-                }}
-              >
-                <a
-                  href={soundCloudUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="primary-button"
-                >
-                  Stream on SoundCloud
-                </a>
-
-                <Link href="/project#graphic-novel" className="secondary-button">
-                  Graphic Novel Direction
+                <Link href="/graphic-novel/chapter-one/page-001" className="secondary-button">
+                  Read the Visual Novel
                 </Link>
-
-                <a
-                  href={koFiUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="secondary-button"
-                >
-                  Support Directly
-                </a>
               </div>
             </div>
-
-            <aside
-              style={{
-                border: "1px solid var(--line)",
-                borderRadius: "24px",
-                padding: "24px",
-                background:
-                  "linear-gradient(180deg, rgba(210,181,139,0.10), rgba(255,255,255,0.025))",
-              }}
-            >
-              <p className="kicker" style={{ marginBottom: "18px" }}>
-                Album world
-              </p>
-
-              {[
-                "Rainy small-town atmosphere",
-                "Acoustic-led cinematic arrangements",
-                "Memory, distance, absence, and aftermath",
-                "Connected to Vallen and the graphic novel",
-                "Streaming now on SoundCloud",
-                "Direct support through Ko-fi",
-              ].map((item) => (
-                <div
-                  key={item}
-                  style={{
-                    padding: "14px 0",
-                    borderTop: "1px solid var(--line)",
-                    color: "var(--paper-soft)",
-                    fontSize: "15px",
-                    lineHeight: 1.55,
-                  }}
-                >
-                  {item}
-                </div>
-              ))}
-            </aside>
           </div>
         </div>
       </section>
 
       <section style={{ padding: "34px 0" }}>
         <div className="site-container">
+          <p className="kicker">Album paths</p>
+
           <div
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
               gap: "16px",
+              marginTop: "18px",
             }}
           >
-            {listeningPath.map((item) => (
-              <div
-                key={item.title}
-                className="glass-panel"
-                style={{
-                  borderRadius: "24px",
-                  padding: "24px",
-                }}
-              >
-                <h3
+            {musicPaths.map((item) => {
+              const content = (
+                <>
+                  <h2
+                    style={{
+                      margin: 0,
+                      fontSize: "31px",
+                      lineHeight: 1.02,
+                      letterSpacing: "-0.045em",
+                      fontWeight: 400,
+                    }}
+                  >
+                    {item.title}
+                  </h2>
+
+                  <p className="soft-copy" style={{ margin: "14px 0 0" }}>
+                    {item.text}
+                  </p>
+                </>
+              );
+
+              if (item.external) {
+                return (
+                  <a
+                    key={item.title}
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="glass-panel"
+                    style={{
+                      padding: "26px",
+                      borderRadius: "26px",
+                      color: "var(--paper)",
+                      textDecoration: "none",
+                    }}
+                  >
+                    {content}
+                  </a>
+                );
+              }
+
+              return (
+                <Link
+                  key={item.title}
+                  href={item.href}
+                  className="glass-panel"
                   style={{
-                    margin: 0,
-                    fontSize: "30px",
-                    lineHeight: 1,
-                    fontWeight: 400,
-                    letterSpacing: "-0.035em",
+                    padding: "26px",
+                    borderRadius: "26px",
+                    color: "var(--paper)",
+                    textDecoration: "none",
                   }}
                 >
-                  {item.title}
-                </h3>
-
-                <p className="soft-copy" style={{ margin: "14px 0 0" }}>
-                  {item.text}
-                </p>
-              </div>
-            ))}
+                  {content}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -435,9 +373,9 @@ export default function MusicPage() {
                       >
                         Ballast is weight used to stabilize a ship, structure,
                         or rail bed. In What the Town Keeps, it becomes
-                        emotional weight — the unseen pressure that keeps a
-                        life, house, or town from tipping over. The symbolic
-                        meaning belongs to the album world.
+                        emotional pressure — the unseen force that keeps a life,
+                        house, or town from tipping over. The symbolic meaning
+                        belongs to the album world.
                       </ArchiveNote>
                     ) : null}
                   </h3>
@@ -466,6 +404,10 @@ export default function MusicPage() {
               <Link href="/project" className="secondary-button">
                 Explore the Story World
               </Link>
+
+              <Link href="/support" className="secondary-button">
+                Support the Project
+              </Link>
             </div>
           </div>
         </div>
@@ -488,13 +430,11 @@ export default function MusicPage() {
               className="body-copy"
               style={{
                 margin: "20px auto 0",
-                maxWidth: "760px",
+                maxWidth: "700px",
               }}
             >
-              SoundCloud is the main streaming path for Parallax Hearts. Ko-fi
-              is the direct support path for music, lyric material, visual
-              packs, story fragments, album art, Field Notes progress, and
-              source-trail material as the archive grows.
+              SoundCloud is the main listening path. Ko-fi is the direct support
+              path for the album, visual story work, and future project material.
             </p>
 
             <div
@@ -524,12 +464,8 @@ export default function MusicPage() {
                 Support on Ko-fi
               </a>
 
-              <Link href="/project" className="secondary-button">
-                Enter Vallen
-              </Link>
-
-              <Link href="/support" className="secondary-button">
-                See Membership Tiers
+              <Link href="/contact" className="secondary-button">
+                Social Links
               </Link>
             </div>
           </div>
