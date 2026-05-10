@@ -158,17 +158,17 @@ export default function ChapterOnePage003() {
                 }}
               >
                 <Image
-                  src="/images/hero.jpg"
-                  alt="The boarding house in Vallen after rain"
-                  width={1400}
-                  height={1900}
+                  src="/images/graphic-novel/chapter-one/page-003-boarding-house.svg"
+                  alt="Elias Vale outside the boarding house in Vallen after rain"
+                  width={1000}
+                  height={1414}
                   priority
+                  unoptimized
                   style={{
                     width: "100%",
                     height: "100%",
                     objectFit: "cover",
                     minHeight: "620px",
-                    filter: "saturate(0.82) contrast(1.04)",
                   }}
                 />
               </div>
