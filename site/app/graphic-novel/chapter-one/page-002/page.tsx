@@ -26,13 +26,6 @@ const navItems = [
   ["Support", "/support"],
 ];
 
-const pageNotes = [
-  "Mercer Street should feel ordinary before it feels meaningful.",
-  "The emotional pressure should come from details: porches, gutters, windows, parked cars, rainwater, old siding.",
-  "No supernatural cues. The town holds memory through environment and human silence.",
-  "This page moves Elias from threshold into the lived-in body of Vallen.",
-];
-
 export default function ChapterOnePage002() {
   return (
     <main className="site-shell">
@@ -228,7 +221,7 @@ export default function ChapterOnePage002() {
                 </div>
 
                 <div>
-                  <p className="kicker">Social excerpt</p>
+                  <p className="kicker">Excerpt</p>
                   <p className="soft-copy" style={{ margin: "14px 0 0" }}>
                     The town looked ordinary in the way old places do when they
                     have learned to keep their mouths shut.
@@ -236,81 +229,6 @@ export default function ChapterOnePage002() {
                 </div>
               </aside>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section style={{ padding: "34px 0" }}>
-        <div className="site-container">
-          <div
-            className="glass-panel"
-            style={{
-              padding: "clamp(24px, 4vw, 36px)",
-              display: "grid",
-              gridTemplateColumns: "minmax(0, 1fr) minmax(260px, 0.78fr)",
-              gap: "24px",
-              alignItems: "start",
-            }}
-          >
-            <div>
-              <p className="kicker">Page function</p>
-              <h2 className="section-title">Ordinary before strange.</h2>
-
-              <p className="body-copy" style={{ margin: "18px 0 0" }}>
-                Page 002 keeps the story grounded. Mercer Street is not a reveal;
-                it is a slow accumulation of small human evidence. The town
-                becomes believable before it becomes emotionally charged.
-              </p>
-
-              <div
-                style={{
-                  marginTop: "26px",
-                  display: "flex",
-                  gap: "12px",
-                  flexWrap: "wrap",
-                }}
-              >
-                <Link href="/graphic-novel/chapter-one" className="secondary-button">
-                  Back to Chapter
-                </Link>
-
-                <Link href="/project" className="secondary-button">
-                  Story World
-                </Link>
-
-                <Link href="/music" className="secondary-button">
-                  Listen to the Album
-                </Link>
-              </div>
-            </div>
-
-            <aside
-              style={{
-                border: "1px solid var(--line)",
-                borderRadius: "24px",
-                padding: "24px",
-                background: "rgba(255,255,255,0.025)",
-              }}
-            >
-              <p className="kicker" style={{ marginBottom: "18px" }}>
-                Continuity notes
-              </p>
-
-              {pageNotes.map((note) => (
-                <div
-                  key={note}
-                  style={{
-                    padding: "14px 0",
-                    borderTop: "1px solid var(--line)",
-                    color: "var(--paper-soft)",
-                    fontSize: "15px",
-                    lineHeight: 1.55,
-                  }}
-                >
-                  {note}
-                </div>
-              ))}
-            </aside>
           </div>
         </div>
       </section>
