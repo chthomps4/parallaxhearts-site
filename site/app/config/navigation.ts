@@ -3,6 +3,7 @@ export const mainNavigation = [
   ["Music", "/music"],
   ["Story", "/project"],
   ["Graphic Novel", "/graphic-novel"],
+  ["Websites", "/websites"],
   ["Field Notes", "/field-notes"],
   ["Support", "/support"],
   ["Contact", "/contact"],
@@ -13,6 +14,7 @@ export const footerMainLinks = [
   ["Listen", "/music"],
   ["Story", "/project"],
   ["Read", "/graphic-novel/chapter-one/page-001"],
+  ["Websites", "/websites"],
   ["Shop", "/shop"],
   ["Support", "/support"],
 ] as const;
