@@ -6,8 +6,44 @@ import ArchiveNote from "../components/ArchiveNote";
 export const metadata: Metadata = {
   title: "What the Town Keeps | Parallax Hearts",
   description:
-    "Enter What the Town Keeps by Parallax Hearts — the album, story world, graphic novel direction, and rainy small-town world of Vallen.",
+    "Enter What the Town Keeps by Parallax Hearts — the album, story world, visual novel archive, and rainy small-town world of Vallen.",
 };
+
+const navItems = [
+  ["Home", "/"],
+  ["Music", "/music"],
+  ["Story", "/project"],
+  ["Graphic Novel", "/graphic-novel"],
+  ["Field Notes", "/field-notes"],
+  ["Support", "/support"],
+  ["Contact", "/contact"],
+];
+
+const worldDetails = [
+  "Rainy small-town America",
+  "Old houses and dim windows",
+  "Rail lines, station rooms, roads, and records",
+  "Muted blue-gray, charcoal, sepia, and warm interior light",
+  "Emotional realism without horror, fantasy, or spectacle",
+];
+
+const storyDoors = [
+  {
+    title: "Read",
+    text: "Begin the built-in visual novel with Chapter One — Ballast.",
+    href: "/graphic-novel/chapter-one/page-001",
+  },
+  {
+    title: "Listen",
+    text: "Hear the album and follow the music side of the project.",
+    href: "/music",
+  },
+  {
+    title: "Study",
+    text: "Open Field Notes for the separate research and source-trail lane.",
+    href: "/field-notes",
+  },
+];
 
 export default function ProjectPage() {
   return (
@@ -56,15 +92,7 @@ export default function ProjectPage() {
               alignItems: "center",
             }}
           >
-            {[
-              ["Home", "/"],
-              ["Music", "/music"],
-              ["Story", "/project"],
-              ["Field Notes", "/field-notes"],
-              ["Shop", "/shop"],
-              ["Support", "/support"],
-              ["Contact", "/contact"],
-            ].map(([label, href]) => (
+            {navItems.map(([label, href]) => (
               <Link
                 key={label}
                 href={href}
@@ -147,9 +175,9 @@ export default function ProjectPage() {
                   fontSize: "18px",
                 }}
               >
-                The town is not horror, fantasy, or supernatural spectacle. It
-                is emotional realism: people trying to keep moving while the
-                places around them continue to hold the shape of what happened.
+                This page holds the world. The graphic novel is where you read
+                it. The music page is where you hear it. Field Notes is the
+                separate research lane.
               </p>
 
               <div
@@ -160,16 +188,16 @@ export default function ProjectPage() {
                   flexWrap: "wrap",
                 }}
               >
-                <Link href="/music" className="primary-button">
+                <Link href="/graphic-novel/chapter-one/page-001" className="primary-button">
+                  Start the Visual Novel
+                </Link>
+
+                <Link href="/music" className="secondary-button">
                   Listen to the Album
                 </Link>
 
-                <a href="#graphic-novel" className="secondary-button">
-                  Graphic Novel Direction
-                </a>
-
-                <Link href="/support" className="secondary-button">
-                  Support the Archive
+                <Link href="/field-notes" className="secondary-button">
+                  Open Field Notes
                 </Link>
               </div>
             </div>
@@ -228,93 +256,6 @@ export default function ProjectPage() {
           </div>
         </section>
 
-        <section id="graphic-novel" style={{ padding: "34px 0" }}>
-          <div
-            className="glass-panel"
-            style={{
-              padding: "clamp(26px, 5vw, 44px)",
-              display: "grid",
-              gridTemplateColumns: "minmax(0, 1fr) minmax(260px, 0.78fr)",
-              gap: "30px",
-              alignItems: "start",
-            }}
-          >
-            <div>
-              <p className="kicker">Graphic novel / visual adaptation</p>
-
-              <h2 className="section-title">
-                The album has a visual life now.
-              </h2>
-
-              <p className="body-copy" style={{ margin: "20px 0 0" }}>
-                The graphic novel adaptation translates the album world into
-                restrained cinematic pages: wet streets, old houses, rail
-                crossings, dim rooms, quiet looks, and the pressure of things
-                left unsaid. The goal is not spectacle. The goal is recognition.
-              </p>
-
-              <p className="body-copy" style={{ margin: "18px 0 0" }}>
-                Elias Vale is a home inspector entering Vallen through the
-                practical surfaces of the town: floors that slope, windows that
-                leak, porches that lean, records that almost explain themselves,
-                and rooms that continue holding the shape of someone’s absence.
-              </p>
-
-              <div
-                style={{
-                  marginTop: "26px",
-                  display: "flex",
-                  gap: "12px",
-                  flexWrap: "wrap",
-                }}
-              >
-                <Link href="/music" className="primary-button">
-                  Hear the Album
-                </Link>
-
-                <Link href="/field-notes" className="secondary-button">
-                  Read the Hidden Layer
-                </Link>
-              </div>
-            </div>
-
-            <aside
-              style={{
-                border: "1px solid var(--line)",
-                borderRadius: "24px",
-                padding: "24px",
-                background:
-                  "linear-gradient(180deg, rgba(210,181,139,0.10), rgba(255,255,255,0.025))",
-              }}
-            >
-              <p className="kicker" style={{ marginBottom: "18px" }}>
-                Continuity rules
-              </p>
-
-              {[
-                "Warm, earthy cinematic realism",
-                "Readable graphic-novel composition",
-                "Restrained mature character acting",
-                "No horror, monsters, fantasy, or cheap thriller tone",
-                "Vallen remains grounded, human, rainy, and emotionally real",
-              ].map((item) => (
-                <div
-                  key={item}
-                  style={{
-                    padding: "14px 0",
-                    borderTop: "1px solid var(--line)",
-                    color: "var(--paper-soft)",
-                    fontSize: "15px",
-                    lineHeight: 1.55,
-                  }}
-                >
-                  {item}
-                </div>
-              ))}
-            </aside>
-          </div>
-        </section>
-
         <section style={{ padding: "34px 0" }}>
           <div
             className="glass-panel"
@@ -332,7 +273,7 @@ export default function ProjectPage() {
               <h2 className="section-title">The town as archive.</h2>
 
               <p className="body-copy" style={{ margin: "20px 0 0" }}>
-                In this world, an archive
+                In Vallen, an archive
                 <ArchiveNote
                   title="Archive Note: Archive"
                   evidence="Well-supported word history / creative use"
@@ -343,8 +284,8 @@ export default function ProjectPage() {
                   people leave behind.
                 </ArchiveNote>{" "}
                 is not only a box of documents. It can be a house, a window, a
-                street after rain, a rail line, a room that still feels arranged
-                around someone who is gone.
+                street after rain, a rail line, or a room still arranged around
+                someone who is gone.
               </p>
 
               <p className="body-copy" style={{ margin: "18px 0 0" }}>
@@ -367,13 +308,7 @@ export default function ProjectPage() {
                 Visual language
               </p>
 
-              {[
-                "Rainy small-town America",
-                "Old houses and dim windows",
-                "Rail lines, stations, roads, and records",
-                "Muted blue-gray, charcoal, sepia, and warm interior light",
-                "Emotional realism without horror or fantasy",
-              ].map((item) => (
+              {worldDetails.map((item) => (
                 <div
                   key={item}
                   style={{
@@ -392,79 +327,45 @@ export default function ProjectPage() {
         </section>
 
         <section style={{ padding: "34px 0" }}>
+          <p className="kicker">Choose a path</p>
+
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "22px",
+              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+              gap: "16px",
+              marginTop: "18px",
             }}
           >
-            <div
-              className="glass-panel"
-              style={{
-                borderRadius: "24px",
-                padding: "28px",
-              }}
-            >
-              <h3
+            {storyDoors.map((door) => (
+              <Link
+                key={door.title}
+                href={door.href}
+                className="glass-panel"
                 style={{
-                  marginTop: 0,
-                  fontSize: "28px",
-                  lineHeight: 1.05,
-                  fontWeight: 400,
+                  padding: "26px",
+                  borderRadius: "26px",
+                  color: "var(--paper)",
+                  textDecoration: "none",
                 }}
               >
-                Thresholds
-                <ArchiveNote
-                  title="Archive Note: Threshold"
-                  evidence="Well-supported word history / symbolic interpretation"
+                <h2
+                  style={{
+                    margin: 0,
+                    fontSize: "31px",
+                    lineHeight: 1.02,
+                    letterSpacing: "-0.045em",
+                    fontWeight: 400,
+                  }}
                 >
-                  A threshold is the piece of a doorway one crosses to enter a
-                  space. Symbolically, it marks the line between outside and
-                  inside, before and after, known and unknown. The symbolic
-                  reading is interpretive, not proof of a hidden tradition.
-                </ArchiveNote>
-              </h3>
+                  {door.title}
+                </h2>
 
-              <p className="body-copy">
-                The story keeps returning to doorways, porches, crossings,
-                windows, rails, and rooms — places where someone is either
-                entering, leaving, or standing between two versions of a life.
-              </p>
-            </div>
-
-            <div
-              className="glass-panel"
-              style={{
-                borderRadius: "24px",
-                padding: "28px",
-              }}
-            >
-              <h3
-                style={{
-                  marginTop: 0,
-                  fontSize: "28px",
-                  lineHeight: 1.05,
-                  fontWeight: 400,
-                }}
-              >
-                Witness
-                <ArchiveNote
-                  title="Archive Note: Witness"
-                  evidence="Well-supported concept / creative use"
-                >
-                  A witness is one who sees, remembers, or gives testimony. In
-                  Vallen, buildings, records, windows, and rooms often act like
-                  witnesses without speaking. This is literary personification.
-                </ArchiveNote>
-              </h3>
-
-              <p className="body-copy">
-                Vallen is full of silent witnesses: houses, records, rail
-                crossings, weathered rooms, and people who learned not to say
-                what they still know.
-              </p>
-            </div>
+                <p className="soft-copy" style={{ margin: "14px 0 0" }}>
+                  {door.text}
+                </p>
+              </Link>
+            ))}
           </div>
         </section>
 
@@ -484,14 +385,13 @@ export default function ProjectPage() {
               className="body-copy"
               style={{
                 margin: "20px auto 0",
-                maxWidth: "780px",
+                maxWidth: "760px",
               }}
             >
               Some pages contain small Archive Notes — fragments of etymology,
               history, symbolism, and source-conscious research. They are not
-              explanations of the whole story. They are traces, placed where a
-              word carries more than one kind of weight. Field Notes is where
-              that research lane opens fully.
+              explanations of the whole story. Field Notes is where that
+              research lane opens fully.
             </p>
 
             <div
@@ -503,8 +403,8 @@ export default function ProjectPage() {
                 flexWrap: "wrap",
               }}
             >
-              <Link href="/music" className="primary-button">
-                Listen to the Album
+              <Link href="/graphic-novel/chapter-one/page-001" className="primary-button">
+                Start the Visual Novel
               </Link>
 
               <Link href="/field-notes" className="secondary-button">
