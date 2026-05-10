@@ -1,52 +1,38 @@
 import type { MetadataRoute } from "next";
-import { characters } from "./phylax/characters/character-data";
-import { loreChapters } from "./phylax/lore/lore-data";
+import { SITE_URL } from "./lib/seo";
+import { chapterOnePages } from "./lib/novel/chapter-one";
+
+const staticRoutes = [
+  { path: "/", priority: 1, changeFrequency: "weekly" as const },
+  { path: "/music", priority: 0.92, changeFrequency: "weekly" as const },
+  { path: "/project", priority: 0.9, changeFrequency: "weekly" as const },
+  { path: "/graphic-novel", priority: 0.94, changeFrequency: "weekly" as const },
+  { path: "/graphic-novel/chapter-one", priority: 0.93, changeFrequency: "weekly" as const },
+  { path: "/field-notes", priority: 0.95, changeFrequency: "weekly" as const },
+  { path: "/forbidden-knowledge", priority: 0.98, changeFrequency: "weekly" as const },
+  { path: "/support", priority: 0.85, changeFrequency: "monthly" as const },
+  { path: "/shop", priority: 0.65, changeFrequency: "monthly" as const },
+  { path: "/about", priority: 0.65, changeFrequency: "monthly" as const },
+  { path: "/contact", priority: 0.7, changeFrequency: "monthly" as const },
+  { path: "/phylax", priority: 0.55, changeFrequency: "monthly" as const },
+  { path: "/phylax/lore", priority: 0.5, changeFrequency: "monthly" as const },
+  { path: "/phylax/story", priority: 0.45, changeFrequency: "monthly" as const },
+  { path: "/phylax/characters", priority: 0.45, changeFrequency: "monthly" as const },
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://parallaxhearts.org";
   const lastModified = new Date();
 
-  const coreRoutes = [
-    { route: "", priority: 1, changeFrequency: "weekly" as const },
-    { route: "/forbidden-knowledge", priority: 0.98, changeFrequency: "weekly" as const },
-    { route: "/field-notes", priority: 0.95, changeFrequency: "weekly" as const },
-    { route: "/graphic-novel", priority: 0.94, changeFrequency: "weekly" as const },
-    { route: "/graphic-novel/chapter-one", priority: 0.93, changeFrequency: "weekly" as const },
-    { route: "/graphic-novel/chapter-one/page-001", priority: 0.92, changeFrequency: "weekly" as const },
-    { route: "/graphic-novel/chapter-one/page-002", priority: 0.91, changeFrequency: "weekly" as const },
-    { route: "/graphic-novel/chapter-one/page-003", priority: 0.9, changeFrequency: "weekly" as const },
-    { route: "/music", priority: 0.92, changeFrequency: "weekly" as const },
-    { route: "/project", priority: 0.9, changeFrequency: "weekly" as const },
-    { route: "/support", priority: 0.85, changeFrequency: "monthly" as const },
-    { route: "/contact", priority: 0.7, changeFrequency: "monthly" as const },
-    { route: "/about", priority: 0.65, changeFrequency: "monthly" as const },
-    { route: "/shop", priority: 0.65, changeFrequency: "monthly" as const },
-    { route: "/phylax", priority: 0.55, changeFrequency: "monthly" as const },
-    { route: "/phylax/lore", priority: 0.5, changeFrequency: "monthly" as const },
-    { route: "/phylax/story", priority: 0.45, changeFrequency: "monthly" as const },
-    { route: "/phylax/characters", priority: 0.45, changeFrequency: "monthly" as const },
-  ];
+  const chapterRoutes = chapterOnePages.map((page, index) => ({
+    path: page.path,
+    priority: 0.92 - index * 0.01,
+    changeFrequency: "weekly" as const,
+  }));
 
-  const corePages = coreRoutes.map((item) => ({
-    url: `${baseUrl}${item.route}`,
+  return [...staticRoutes, ...chapterRoutes].map((item) => ({
+    url: new URL(item.path, SITE_URL).toString(),
     lastModified,
     changeFrequency: item.changeFrequency,
     priority: item.priority,
   }));
-
-  const lorePages = loreChapters.map((chapter) => ({
-    url: `${baseUrl}/phylax/lore/${chapter.slug}`,
-    lastModified,
-    changeFrequency: "monthly" as const,
-    priority: 0.4,
-  }));
-
-  const characterPages = characters.map((character) => ({
-    url: `${baseUrl}/phylax/characters/${character.slug}`,
-    lastModified,
-    changeFrequency: "monthly" as const,
-    priority: 0.4,
-  }));
-
-  return [...corePages, ...lorePages, ...characterPages];
 }
