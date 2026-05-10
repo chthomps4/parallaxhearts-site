@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: "%s | Parallax Hearts",
   },
   description:
-    "Parallax Hearts is the music project behind What the Town Keeps — a cinematic album, story world, and graphic novel direction set in the rainy small town of Vallen, with Field Notes as a separate research lane.",
+    "Parallax Hearts is the music project behind What the Town Keeps — a cinematic album, story world, and visual novel archive set in the rainy small town of Vallen, with Field Notes as a separate research lane.",
   applicationName: "Parallax Hearts",
   authors: [{ name: "Parallax Hearts" }],
   creator: "Parallax Hearts",
@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     "cinematic acoustic alternative",
     "independent music",
     "graphic novel",
+    "visual novel",
     "story world",
     "concept art",
     "album art",
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Parallax Hearts | What the Town Keeps",
     description:
-      "A cinematic album, story world, and graphic novel direction set in Vallen, with a separate Field Notes research archive for source trails and evidence-aware exploration.",
+      "A cinematic album, story world, and visual novel archive set in Vallen, with a separate Field Notes research lane.",
     url: "https://parallaxhearts.org",
     siteName: "Parallax Hearts",
     images: [
@@ -67,7 +68,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Parallax Hearts | What the Town Keeps",
     description:
-      "A cinematic album, story world, and graphic novel direction set in Vallen, with a separate Field Notes research archive.",
+      "A cinematic album, story world, and visual novel archive set in Vallen, with a separate Field Notes research lane.",
     images: ["/images/hero.jpg"],
   },
   robots: {
@@ -126,9 +127,9 @@ function SiteFooter() {
                 maxWidth: "520px",
               }}
             >
-              Cinematic music, Vallen story-world material, graphic novel
-              direction, and the rainy small-town atmosphere of <em>What the Town Keeps</em>.
-              Field Notes remains a separate research lane.
+              Cinematic music, the rainy story world of Vallen, and the
+              visual-novel archive of <em>What the Town Keeps</em>. Field Notes
+              remains a separate research lane.
             </p>
 
             <p
@@ -146,15 +147,15 @@ function SiteFooter() {
 
           <div>
             <p className="kicker" style={{ marginBottom: "12px" }}>
-              Parallax Hearts
+              Main paths
             </p>
 
             <FooterLinks
               links={[
                 ["Home", "/"],
-                ["Music", "/music"],
-                ["What the Town Keeps", "/project"],
-                ["Graphic Novel", "/graphic-novel"],
+                ["Listen", "/music"],
+                ["Story", "/project"],
+                ["Read", "/graphic-novel/chapter-one/page-001"],
                 ["Shop", "/shop"],
                 ["Support", "/support"],
               ]}
@@ -163,15 +164,16 @@ function SiteFooter() {
 
           <div>
             <p className="kicker" style={{ marginBottom: "12px" }}>
-              Research / Archive
+              Archives
             </p>
 
             <FooterLinks
               links={[
+                ["Graphic Novel Hub", "/graphic-novel"],
+                ["Chapter One", "/graphic-novel/chapter-one"],
                 ["Field Notes", "/field-notes"],
                 ["Forbidden Knowledge", "/forbidden-knowledge"],
                 ["PHYLAX", "/phylax"],
-                ["PHYLAX Lore", "/phylax/lore"],
               ]}
             />
           </div>
@@ -183,7 +185,6 @@ function SiteFooter() {
 
             <FooterLinks
               links={[
-                ["About", "/about"],
                 ["Contact", "/contact"],
                 ["Facebook", facebookUrl],
                 ["Instagram", instagramUrl],
