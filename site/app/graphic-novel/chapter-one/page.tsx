@@ -57,6 +57,13 @@ const chapterPages = [
     text: "Elias finds the key, checks the frame, and steps into the boarding house with habit leading and story following.",
     href: "/graphic-novel/chapter-one/page-004",
   },
+  {
+    number: "005",
+    title: "The Hallway",
+    status: "Live",
+    text: "Inside the boarding house, Elias lets the hallway settle before he gives the room a name.",
+    href: "/graphic-novel/chapter-one/page-005",
+  },
 ];
 
 const chapterRules = [
@@ -179,9 +186,9 @@ export default function ChapterOnePage() {
                     fontSize: "19px",
                   }}
                 >
-                  Elias Vale enters Vallen for a house inspection. Four pages
+                  Elias Vale enters Vallen for a house inspection. Five pages
                   are live now: the crossing, Mercer Street, the boarding house,
-                  and the first door.
+                  the first door, and the hallway.
                 </p>
 
                 <div
@@ -196,7 +203,7 @@ export default function ChapterOnePage() {
                     Start Reading
                   </Link>
 
-                  <Link href="/graphic-novel/chapter-one/page-004" className="secondary-button">
+                  <Link href="/graphic-novel/chapter-one/page-005" className="secondary-button">
                     Latest Page
                   </Link>
 
@@ -216,10 +223,11 @@ export default function ChapterOnePage() {
               }}
             >
               <Image
-                src="/images/world.jpg"
-                alt="Chapter One Ballast visual atmosphere"
-                width={1200}
-                height={1400}
+                src="/images/graphic-novel/chapter-one/page-005-hallway.svg"
+                alt="Chapter One Ballast hallway atmosphere"
+                width={1000}
+                height={1414}
+                unoptimized
                 style={{
                   width: "100%",
                   height: "100%",
