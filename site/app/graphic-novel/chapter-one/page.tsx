@@ -50,6 +50,13 @@ const chapterPages = [
     text: "The first inspection site waits under rainwater, old paint, loose gutters, and second-floor windows.",
     href: "/graphic-novel/chapter-one/page-003",
   },
+  {
+    number: "004",
+    title: "The First Door",
+    status: "Live",
+    text: "Elias finds the key, checks the frame, and steps into the boarding house with habit leading and story following.",
+    href: "/graphic-novel/chapter-one/page-004",
+  },
 ];
 
 const chapterRules = [
@@ -172,9 +179,9 @@ export default function ChapterOnePage() {
                     fontSize: "19px",
                   }}
                 >
-                  Elias Vale enters Vallen for a house inspection. Three pages
-                  are live now: the crossing, Mercer Street, and the boarding
-                  house.
+                  Elias Vale enters Vallen for a house inspection. Four pages
+                  are live now: the crossing, Mercer Street, the boarding house,
+                  and the first door.
                 </p>
 
                 <div
@@ -189,12 +196,12 @@ export default function ChapterOnePage() {
                     Start Reading
                   </Link>
 
-                  <Link href="/graphic-novel" className="secondary-button">
-                    Graphic Novel Hub
+                  <Link href="/graphic-novel/chapter-one/page-004" className="secondary-button">
+                    Latest Page
                   </Link>
 
-                  <Link href="/project" className="secondary-button">
-                    Story World
+                  <Link href="/graphic-novel" className="secondary-button">
+                    Graphic Novel Hub
                   </Link>
                 </div>
               </div>
