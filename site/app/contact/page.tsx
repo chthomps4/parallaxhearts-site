@@ -3,19 +3,23 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 const koFiUrl = "https://ko-fi.com/parallaxhearts";
-const facebookUrl = "https://www.facebook.com/parallaxhearts";
+const facebookUrl = "https://www.facebook.com/share/1C7BVWq3f2/?mibextid=wwXIfr";
+const instagramUrl =
+  "https://www.instagram.com/parallax_hearts?igsh=MW11d2h3c3IxODhzYQ%3D%3D&utm_source=qr";
+const youtubeUrl = "https://youtube.com/@parallaxhearts-u7q?si=VZZQD2j6J1MEY-pk";
+const soundCloudUrl = "https://soundcloud.com/parallax-hearts";
 
 export const metadata: Metadata = {
   title: "Contact | Parallax Hearts",
   description:
-    "Contact Parallax Hearts for music, What the Town Keeps, Vallen story-world material, Ko-fi support, collaboration, press, listener messages, Field Notes, and research inquiries.",
+    "Contact Parallax Hearts for music, What the Town Keeps, the graphic novel, Vallen story-world material, Ko-fi support, social links, collaboration, press, Field Notes, and research inquiries.",
   alternates: {
     canonical: "/contact",
   },
   openGraph: {
     title: "Contact | Parallax Hearts",
     description:
-      "Reach Parallax Hearts for music, What the Town Keeps, Vallen story-world material, Ko-fi support, collaboration, press, listener messages, Field Notes, and research inquiries.",
+      "Reach Parallax Hearts for music, What the Town Keeps, the graphic novel, Vallen story-world material, Ko-fi support, social links, collaboration, press, Field Notes, and research inquiries.",
     url: "https://parallaxhearts.org/contact",
     siteName: "Parallax Hearts",
     images: [
@@ -32,10 +36,55 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Contact | Parallax Hearts",
     description:
-      "Reach Parallax Hearts for music, What the Town Keeps, Vallen story-world material, Ko-fi support, collaboration, press, listener messages, Field Notes, and research inquiries.",
+      "Reach Parallax Hearts for music, What the Town Keeps, the graphic novel, Vallen story-world material, Ko-fi support, social links, collaboration, press, Field Notes, and research inquiries.",
     images: ["/images/world.jpg"],
   },
 };
+
+const navItems = [
+  ["Home", "/"],
+  ["Music", "/music"],
+  ["Story", "/project"],
+  ["Graphic Novel", "/graphic-novel"],
+  ["Forbidden Knowledge", "/forbidden-knowledge"],
+  ["Field Notes", "/field-notes"],
+  ["Shop", "/shop"],
+  ["Support", "/support"],
+  ["Contact", "/contact"],
+];
+
+const contactLinks = [
+  {
+    label: "Email",
+    value: "chad@parallaxhearts.org",
+    href: "mailto:chad@parallaxhearts.org",
+  },
+  {
+    label: "Facebook",
+    value: "Parallax Hearts on Facebook",
+    href: facebookUrl,
+  },
+  {
+    label: "Instagram",
+    value: "@parallax_hearts",
+    href: instagramUrl,
+  },
+  {
+    label: "YouTube",
+    value: "@parallaxhearts-u7q",
+    href: youtubeUrl,
+  },
+  {
+    label: "SoundCloud",
+    value: "soundcloud.com/parallax-hearts",
+    href: soundCloudUrl,
+  },
+  {
+    label: "Ko-fi",
+    value: "ko-fi.com/parallaxhearts",
+    href: koFiUrl,
+  },
+];
 
 const inquiryLanes = [
   {
@@ -45,6 +94,10 @@ const inquiryLanes = [
   {
     title: "What the Town Keeps",
     text: "Story world, Vallen, graphic novel material, visual archive, lyrics, album art, or related creative work.",
+  },
+  {
+    title: "Graphic Novel / Visual Archive",
+    text: "Chapter pages, visual novel updates, page art, story adaptation, and built-in website archive questions.",
   },
   {
     title: "Ko-fi / Support",
@@ -95,15 +148,7 @@ export default function ContactPage() {
                 alignItems: "center",
               }}
             >
-              {[
-                ["Home", "/"],
-                ["Music", "/music"],
-                ["Story", "/project"],
-                ["Field Notes", "/field-notes"],
-                ["Shop", "/shop"],
-                ["Support", "/support"],
-                ["Contact", "/contact"],
-              ].map(([label, href]) => (
+              {navItems.map(([label, href]) => (
                 <Link
                   key={label}
                   href={href}
@@ -176,118 +221,58 @@ export default function ContactPage() {
                     fontSize: "19px",
                   }}
                 >
-                  For Parallax Hearts, <em>What the Town Keeps</em>, Vallen,
-                  Ko-fi support, collaboration, press, listener messages, or
-                  Field Notes research inquiries, use the contact points below.
+                  For Parallax Hearts, <em>What the Town Keeps</em>, the
+                  graphic novel, Vallen, Ko-fi support, collaboration, press,
+                  listener messages, social links, or Field Notes research
+                  inquiries, use the contact points below.
                 </p>
 
                 <div
                   style={{
                     display: "grid",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))",
                     gap: "16px",
                     marginTop: "30px",
-                    maxWidth: "720px",
+                    maxWidth: "820px",
                   }}
                 >
-                  <div
-                    style={{
-                      border: "1px solid var(--line)",
-                      borderRadius: "20px",
-                      padding: "22px",
-                      background: "rgba(255,255,255,0.035)",
-                    }}
-                  >
-                    <strong
+                  {contactLinks.map((item) => (
+                    <div
+                      key={item.label}
                       style={{
-                        display: "block",
-                        marginBottom: "8px",
-                        color: "var(--gold)",
-                        textTransform: "uppercase",
-                        letterSpacing: "0.14em",
-                        fontSize: "12px",
+                        border: "1px solid var(--line)",
+                        borderRadius: "20px",
+                        padding: "22px",
+                        background: "rgba(255,255,255,0.035)",
                       }}
                     >
-                      Email
-                    </strong>
-                    <a
-                      href="mailto:chad@parallaxhearts.org"
-                      style={{
-                        color: "var(--paper)",
-                        textDecoration: "none",
-                        fontSize: "18px",
-                      }}
-                    >
-                      chad@parallaxhearts.org
-                    </a>
-                  </div>
-
-                  <div
-                    style={{
-                      border: "1px solid var(--line)",
-                      borderRadius: "20px",
-                      padding: "22px",
-                      background: "rgba(255,255,255,0.035)",
-                    }}
-                  >
-                    <strong
-                      style={{
-                        display: "block",
-                        marginBottom: "8px",
-                        color: "var(--gold)",
-                        textTransform: "uppercase",
-                        letterSpacing: "0.14em",
-                        fontSize: "12px",
-                      }}
-                    >
-                      Ko-fi
-                    </strong>
-                    <a
-                      href={koFiUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      style={{
-                        color: "var(--paper)",
-                        textDecoration: "none",
-                        fontSize: "18px",
-                      }}
-                    >
-                      ko-fi.com/parallaxhearts
-                    </a>
-                  </div>
-
-                  <div
-                    style={{
-                      border: "1px solid var(--line)",
-                      borderRadius: "20px",
-                      padding: "22px",
-                      background: "rgba(255,255,255,0.035)",
-                    }}
-                  >
-                    <strong
-                      style={{
-                        display: "block",
-                        marginBottom: "8px",
-                        color: "var(--gold)",
-                        textTransform: "uppercase",
-                        letterSpacing: "0.14em",
-                        fontSize: "12px",
-                      }}
-                    >
-                      Facebook
-                    </strong>
-                    <a
-                      href={facebookUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      style={{
-                        color: "var(--paper)",
-                        textDecoration: "none",
-                        fontSize: "18px",
-                      }}
-                    >
-                      @parallaxhearts
-                    </a>
-                  </div>
+                      <strong
+                        style={{
+                          display: "block",
+                          marginBottom: "8px",
+                          color: "var(--gold)",
+                          textTransform: "uppercase",
+                          letterSpacing: "0.14em",
+                          fontSize: "12px",
+                        }}
+                      >
+                        {item.label}
+                      </strong>
+                      <a
+                        href={item.href}
+                        target={item.href.startsWith("http") ? "_blank" : undefined}
+                        rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+                        style={{
+                          color: "var(--paper)",
+                          textDecoration: "none",
+                          fontSize: "18px",
+                          lineHeight: 1.35,
+                        }}
+                      >
+                        {item.value}
+                      </a>
+                    </div>
+                  ))}
                 </div>
 
                 <div
@@ -302,8 +287,12 @@ export default function ContactPage() {
                     Listen to the Album
                   </Link>
 
-                  <Link href="/project" className="secondary-button">
-                    Enter Vallen
+                  <Link href="/graphic-novel" className="secondary-button">
+                    Read the Graphic Novel
+                  </Link>
+
+                  <Link href="/forbidden-knowledge" className="secondary-button">
+                    Start the Free Course
                   </Link>
 
                   <Link href="/support" className="secondary-button">
