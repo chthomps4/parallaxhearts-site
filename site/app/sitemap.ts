@@ -13,6 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: "/graphic-novel", priority: 0.94, changeFrequency: "weekly" as const },
     { route: "/graphic-novel/chapter-one", priority: 0.93, changeFrequency: "weekly" as const },
     { route: "/graphic-novel/chapter-one/page-001", priority: 0.92, changeFrequency: "weekly" as const },
+    { route: "/graphic-novel/chapter-one/page-002", priority: 0.91, changeFrequency: "weekly" as const },
+    { route: "/graphic-novel/chapter-one/page-003", priority: 0.9, changeFrequency: "weekly" as const },
     { route: "/music", priority: 0.92, changeFrequency: "weekly" as const },
     { route: "/project", priority: 0.9, changeFrequency: "weekly" as const },
     { route: "/support", priority: 0.85, changeFrequency: "monthly" as const },
