@@ -18,7 +18,7 @@ type BuildMetadataInput = {
   description: string;
   path?: string;
   image?: string;
-  type?: "website" | "article" | "music.album";
+  type?: "website" | "article";
   keywords?: string[];
 };
 
