@@ -1,24 +1,22 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import ArchiveNote from "../components/ArchiveNote";
 
 const koFiUrl = "https://ko-fi.com/parallaxhearts";
 
 export const metadata: Metadata = {
   title: "Support | Parallax Hearts",
   description:
-    "Support Parallax Hearts, What the Town Keeps, the Vallen story world, graphic novel pages, music, visual archive material, Field Notes, and related research work.",
+    "Support Parallax Hearts, What the Town Keeps, the Vallen story world, visual novel pages, music, and related creative work through Ko-fi.",
 };
 
 const navItems = [
   ["Home", "/"],
   ["Music", "/music"],
   ["Story", "/project"],
-  ["Forbidden Knowledge", "/forbidden-knowledge"],
+  ["Graphic Novel", "/graphic-novel"],
   ["Field Notes", "/field-notes"],
   ["Shop", "/shop"],
   ["Support", "/support"],
-  ["About", "/about"],
   ["Contact", "/contact"],
 ];
 
@@ -26,73 +24,70 @@ const tiers = [
   {
     name: "Porch Light",
     price: "$3 / month",
-    purpose: "A quiet way to support Parallax Hearts and the world of What the Town Keeps.",
+    purpose: "A quiet way to support Parallax Hearts and What the Town Keeps.",
     includes: [
       "Early fragments",
       "Behind-the-song notes",
       "Small visual previews",
-      "Short updates from the Vallen story world",
-      "Occasional Field Notes progress updates",
+      "Short updates from Vallen",
     ],
   },
   {
     name: "Station Room",
     price: "$7 / month",
-    purpose: "The main archive tier for music, story, and visual material.",
+    purpose: "The main support tier for music, story, and visual material.",
     includes: [
       "Everything in Porch Light",
       "Lyrics and song notes",
       "Early video previews",
-      "Story fragments from Vallen",
+      "Story fragments",
       "Concept art and album-art previews",
-      "Monthly Town Archive / Field Notes post",
     ],
   },
   {
     name: "Town Archive",
     price: "$15 / month",
-    purpose: "The deeper creative archive for What the Town Keeps.",
+    purpose: "The deeper creative archive for the project.",
     includes: [
       "Everything in Station Room",
       "High-resolution art packs",
-      "Downloadable lyric, story, and archive PDFs",
+      "Downloadable lyric and story PDFs",
       "Graphic novel previews",
       "Album artwork variants",
       "Selected unreleased or alternate material when available",
-      "Deeper Field Notes / Forbidden Knowledge research previews when available",
     ],
   },
 ];
 
-const supportLanes = [
+const supportPaths = [
   {
-    title: "Ko-fi Support",
-    text: "The direct support and shop path for Parallax Hearts, What the Town Keeps, music, visual archive material, PDFs, bundles, and monthly creative updates.",
+    title: "Support on Ko-fi",
+    text: "Memberships, one-time support, and digital project items live here.",
     href: koFiUrl,
-    label: "Support on Ko-fi",
+    label: "Open Ko-fi",
     external: true,
   },
   {
-    title: "Listen + Enter Vallen",
-    text: "Start with the album, then move into the story world and graphic novel direction behind What the Town Keeps.",
+    title: "Listen first",
+    text: "Hear the album before choosing how you want to support it.",
     href: "/music",
     label: "Open Music",
   },
   {
-    title: "Field Notes",
-    text: "The separate research layer for source trails, ancient knowledge, lost etymology, evidence labels, and the Handbook method.",
-    href: "/field-notes",
-    label: "Open Field Notes",
+    title: "Read the story",
+    text: "Begin the visual novel archive with Chapter One — Ballast.",
+    href: "/graphic-novel/chapter-one/page-001",
+    label: "Start Reading",
   },
 ];
 
 const shopItems = [
-  "What the Town Keeps — Digital Album",
-  "Lyric Book PDF",
-  "The Vallen Archive — Concept Art Pack",
-  "Graphic Novel Preview PDF",
-  "Field Notes / Source-Trail PDFs when available",
-  "Complete Support Bundle",
+  "Digital album",
+  "Lyric book PDF",
+  "Concept art pack",
+  "Graphic novel preview PDF",
+  "Story fragments / archive PDFs",
+  "Complete support bundle",
 ];
 
 export default function SupportPage() {
@@ -188,32 +183,20 @@ export default function SupportPage() {
                   maxWidth: "940px",
                 }}
               >
-                Help keep the songs, pages, and archive moving.
+                Help keep the songs and story moving.
               </h1>
 
               <p
                 className="body-copy"
                 style={{
                   margin: "24px 0 0",
-                  maxWidth: "800px",
+                  maxWidth: "760px",
                   fontSize: "19px",
                 }}
               >
                 Direct support helps keep <em>What the Town Keeps</em> alive as
-                music, story, visual archive, and graphic novel direction. Ko-fi
-                is the main support path. Field Notes and Forbidden Knowledge
-                remain connected research lanes, but the heart of this page is
-                the creative work: Parallax Hearts, Vallen, and the archive
-                <ArchiveNote
-                  title="Archive Note: Archive"
-                  evidence="Well-supported word history / creative use"
-                >
-                  An archive is a place where records are preserved. Here, it
-                  means the collected music, lyrics, visuals, story fragments,
-                  source trails, evidence labels, course notes, and research
-                  material surrounding the larger creative system.
-                </ArchiveNote>
-                being built piece by piece.
+                music, story, visual work, and a growing chapter-by-chapter
+                archive. Ko-fi is the main support path.
               </p>
 
               <div
@@ -237,8 +220,8 @@ export default function SupportPage() {
                   Listen First
                 </Link>
 
-                <Link href="/project" className="secondary-button">
-                  Enter Vallen
+                <Link href="/graphic-novel/chapter-one/page-001" className="secondary-button">
+                  Start Reading
                 </Link>
               </div>
             </div>
@@ -248,7 +231,7 @@ export default function SupportPage() {
 
       <section style={{ padding: "34px 0" }}>
         <div className="site-container">
-          <p className="kicker">Choose the right path</p>
+          <p className="kicker">Support paths</p>
 
           <div
             style={{
@@ -258,7 +241,7 @@ export default function SupportPage() {
               marginTop: "18px",
             }}
           >
-            {supportLanes.map((lane) => (
+            {supportPaths.map((lane) => (
               <article
                 key={lane.title}
                 className="glass-panel"
@@ -402,13 +385,11 @@ export default function SupportPage() {
             <div>
               <p className="kicker">One-time support</p>
 
-              <h2 className="section-title">Digital shop ideas.</h2>
+              <h2 className="section-title">Digital items and bundles.</h2>
 
               <p className="body-copy" style={{ margin: "20px 0 0" }}>
-                Not everyone wants a monthly membership. The Ko-fi shop can
-                also hold one-time digital items: the album, lyric PDFs, visual
-                packs, story previews, selected Field Notes PDFs, and bundles
-                from the creative archive.
+                The Ko-fi shop can also hold one-time items for people who want
+                to support without a monthly membership.
               </p>
 
               <div
@@ -470,23 +451,19 @@ export default function SupportPage() {
               textAlign: "center",
             }}
           >
-            <p className="kicker">Direct support</p>
+            <p className="kicker">Thank you</p>
 
-            <h2 className="section-title">
-              Thank you for helping keep the archive alive.
-            </h2>
+            <h2 className="section-title">Every listen and share helps.</h2>
 
             <p
               className="body-copy"
               style={{
                 margin: "20px auto 0",
-                maxWidth: "760px",
+                maxWidth: "700px",
               }}
             >
-              Every purchase, membership, share, and listen helps keep the work
-              moving forward — the songs, the story world, the visual archive,
-              the graphic novel pages, the Field Notes, and the larger research
-              system being built piece by piece.
+              Support can be a membership, a one-time purchase, a share, a
+              listen, or simply following the work as it grows.
             </p>
 
             <div
@@ -507,8 +484,8 @@ export default function SupportPage() {
                 Support on Ko-fi
               </a>
 
-              <Link href="/project" className="secondary-button">
-                Enter Vallen
+              <Link href="/contact" className="secondary-button">
+                Social Links
               </Link>
 
               <Link href="/" className="secondary-button">
