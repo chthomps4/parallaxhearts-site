@@ -291,6 +291,24 @@ export default function RootLayout({
             __html: JSON.stringify(structuredData),
           }}
         />
+        <span
+          aria-hidden="true"
+          title="GnatP"
+          data-muse="GnatP"
+          style={{
+            position: "fixed",
+            right: "7px",
+            bottom: "7px",
+            width: "1px",
+            height: "1px",
+            overflow: "hidden",
+            opacity: 0.01,
+            pointerEvents: "none",
+            userSelect: "none",
+          }}
+        >
+          GnatP
+        </span>
         {children}
         <SiteFooter />
       </body>
