@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "./lib/seo";
 import { chapterOnePages } from "./lib/novel/chapter-one";
+import { characters } from "./phylax/characters/character-data";
+import { loreChapters } from "./phylax/lore/lore-data";
 
 const staticRoutes = [
   { path: "/", priority: 1, changeFrequency: "weekly" as const },
@@ -20,19 +22,58 @@ const staticRoutes = [
   { path: "/phylax/characters", priority: 0.45, changeFrequency: "monthly" as const },
 ];
 
+function routeEntry({
+  path,
+  priority,
+  changeFrequency,
+  lastModified,
+}: {
+  path: string;
+  priority: number;
+  changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"];
+  lastModified: Date;
+}) {
+  return {
+    url: new URL(path, SITE_URL).toString(),
+    lastModified,
+    changeFrequency,
+    priority,
+  };
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
-  const chapterRoutes = chapterOnePages.map((page, index) => ({
-    path: page.path,
-    priority: 0.92 - index * 0.01,
-    changeFrequency: "weekly" as const,
-  }));
+  const corePages = staticRoutes.map((item) =>
+    routeEntry({ ...item, lastModified })
+  );
 
-  return [...staticRoutes, ...chapterRoutes].map((item) => ({
-    url: new URL(item.path, SITE_URL).toString(),
-    lastModified,
-    changeFrequency: item.changeFrequency,
-    priority: item.priority,
-  }));
+  const chapterPages = chapterOnePages.map((page, index) =>
+    routeEntry({
+      path: page.path,
+      priority: 0.92 - index * 0.01,
+      changeFrequency: "weekly" as const,
+      lastModified,
+    })
+  );
+
+  const lorePages = loreChapters.map((chapter) =>
+    routeEntry({
+      path: `/phylax/lore/${chapter.slug}`,
+      priority: 0.4,
+      changeFrequency: "monthly" as const,
+      lastModified,
+    })
+  );
+
+  const characterPages = characters.map((character) =>
+    routeEntry({
+      path: `/phylax/characters/${character.slug}`,
+      priority: 0.4,
+      changeFrequency: "monthly" as const,
+      lastModified,
+    })
+  );
+
+  return [...corePages, ...chapterPages, ...lorePages, ...characterPages];
 }
