@@ -1,61 +1,45 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
+import { footerArchiveLinks, footerMainLinks } from "./config/navigation";
+import {
+  DEFAULT_OG_IMAGE,
+  SITE_NAME,
+  SITE_URL,
+  defaultKeywords,
+  musicGroupSchema,
+  socialLinks,
+  websiteSchema,
+} from "./lib/seo";
 import "./globals.css";
 
-const facebookUrl = "https://www.facebook.com/share/1C7BVWq3f2/?mibextid=wwXIfr";
-const instagramUrl =
-  "https://www.instagram.com/parallax_hearts?igsh=MW11d2h3c3IxODhzYQ%3D%3D&utm_source=qr";
-const youtubeUrl = "https://youtube.com/@parallaxhearts-u7q?si=VZZQD2j6J1MEY-pk";
-const koFiUrl = "https://ko-fi.com/parallaxhearts";
-const soundCloudUrl = "https://soundcloud.com/parallax-hearts";
+const siteDescription =
+  "Parallax Hearts is the music project behind What the Town Keeps — a cinematic album, story world, and visual novel archive set in the rainy small town of Vallen, with Field Notes as a separate research lane.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://parallaxhearts.org"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Parallax Hearts | What the Town Keeps",
-    template: "%s | Parallax Hearts",
+    template: `%s | ${SITE_NAME}`,
   },
-  description:
-    "Parallax Hearts is the music project behind What the Town Keeps — a cinematic album, story world, and visual novel archive set in the rainy small town of Vallen, with Field Notes as a separate research lane.",
-  applicationName: "Parallax Hearts",
-  authors: [{ name: "Parallax Hearts" }],
-  creator: "Parallax Hearts",
-  publisher: "Parallax Hearts",
-  keywords: [
-    "Parallax Hearts",
-    "What the Town Keeps",
-    "Vallen",
-    "cinematic acoustic alternative",
-    "independent music",
-    "graphic novel",
-    "visual novel",
-    "story world",
-    "concept art",
-    "album art",
-    "literary music project",
-    "Ko-fi music support",
-    "SoundCloud",
-    "Field Notes",
-    "Forbidden Knowledge Circle",
-    "Forbidden Knowledge Bible",
-    "ancient knowledge",
-    "lost etymology",
-    "source trails",
-    "evidence-aware research",
-  ],
+  description: siteDescription,
+  applicationName: SITE_NAME,
+  authors: [{ name: SITE_NAME }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  keywords: defaultKeywords,
   alternates: {
-    canonical: "/",
+    canonical: SITE_URL,
   },
   openGraph: {
     title: "Parallax Hearts | What the Town Keeps",
     description:
       "A cinematic album, story world, and visual novel archive set in Vallen, with a separate Field Notes research lane.",
-    url: "https://parallaxhearts.org",
-    siteName: "Parallax Hearts",
+    url: SITE_URL,
+    siteName: SITE_NAME,
     images: [
       {
-        url: "/images/hero.jpg",
+        url: DEFAULT_OG_IMAGE,
         width: 1200,
         height: 630,
         alt: "Parallax Hearts — What the Town Keeps",
@@ -69,7 +53,7 @@ export const metadata: Metadata = {
     title: "Parallax Hearts | What the Town Keeps",
     description:
       "A cinematic album, story world, and visual novel archive set in Vallen, with a separate Field Notes research lane.",
-    images: ["/images/hero.jpg"],
+    images: [DEFAULT_OG_IMAGE],
   },
   robots: {
     index: true,
@@ -150,16 +134,7 @@ function SiteFooter() {
               Main paths
             </p>
 
-            <FooterLinks
-              links={[
-                ["Home", "/"],
-                ["Listen", "/music"],
-                ["Story", "/project"],
-                ["Read", "/graphic-novel/chapter-one/page-001"],
-                ["Shop", "/shop"],
-                ["Support", "/support"],
-              ]}
-            />
+            <FooterLinks links={footerMainLinks} />
           </div>
 
           <div>
@@ -167,15 +142,7 @@ function SiteFooter() {
               Archives
             </p>
 
-            <FooterLinks
-              links={[
-                ["Graphic Novel Hub", "/graphic-novel"],
-                ["Chapter One", "/graphic-novel/chapter-one"],
-                ["Field Notes", "/field-notes"],
-                ["Forbidden Knowledge", "/forbidden-knowledge"],
-                ["PHYLAX", "/phylax"],
-              ]}
-            />
+            <FooterLinks links={footerArchiveLinks} />
           </div>
 
           <div>
@@ -186,11 +153,11 @@ function SiteFooter() {
             <FooterLinks
               links={[
                 ["Contact", "/contact"],
-                ["Facebook", facebookUrl],
-                ["Instagram", instagramUrl],
-                ["YouTube", youtubeUrl],
-                ["Ko-fi", koFiUrl],
-                ["SoundCloud", soundCloudUrl],
+                ["Facebook", socialLinks.facebook],
+                ["Instagram", socialLinks.instagram],
+                ["YouTube", socialLinks.youtube],
+                ["Ko-fi", socialLinks.koFi],
+                ["SoundCloud", socialLinks.soundCloud],
               ]}
             />
           </div>
@@ -211,7 +178,7 @@ function SiteFooter() {
 function FooterLinks({
   links,
 }: {
-  links: [label: string, href: string][];
+  links: readonly (readonly [label: string, href: string])[];
 }) {
   return (
     <div style={{ display: "grid", gap: "10px" }}>
@@ -259,23 +226,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "MusicGroup",
-    name: "Parallax Hearts",
-    url: "https://parallaxhearts.org",
-    image: "https://parallaxhearts.org/images/hero.jpg",
-    sameAs: [facebookUrl, instagramUrl, youtubeUrl, koFiUrl, soundCloudUrl],
-    album: {
-      "@type": "MusicAlbum",
-      name: "What the Town Keeps",
-      url: "https://parallaxhearts.org/music",
-      byArtist: {
-        "@type": "MusicGroup",
-        name: "Parallax Hearts",
-      },
-    },
-  };
+  const structuredData = [musicGroupSchema(), websiteSchema()];
 
   return (
     <html lang="en">
