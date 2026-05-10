@@ -32,22 +32,22 @@ const chapterPages = [
   {
     number: "001",
     title: "The Crossing",
-    status: "Next build",
+    status: "Live",
     text: "Elias arrives at the edge of Vallen, where the rail crossing and station roof make the town feel less like a destination than a threshold.",
     href: "/graphic-novel/chapter-one/page-001",
   },
   {
     number: "002",
     title: "Mercer Street",
-    status: "Planned",
+    status: "Live",
     text: "The road into town narrows into old houses, wet pavement, dim windows, and the first sense that the place is keeping its own account.",
     href: "/graphic-novel/chapter-one/page-002",
   },
   {
     number: "003",
     title: "The Boarding House",
-    status: "Planned",
-    text: "The inspection begins as ordinary work: stairs, rooms, doors, old wood, and the silence of a house that has been waiting for someone to notice it.",
+    status: "Live",
+    text: "The inspection begins as ordinary work: stairs, rooms, doors, old wood, rainwater, and the silence of a house that has been waiting for someone to notice it.",
     href: "/graphic-novel/chapter-one/page-003",
   },
 ];
@@ -307,15 +307,14 @@ export default function ChapterOnePage() {
               <h2 className="section-title">The inspection is the doorway.</h2>
 
               <p className="body-copy" style={{ margin: "18px 0 0" }}>
-                The chapter should read like a slow entry into Vallen: ordinary
-                work first, atmosphere second, memory underneath. The mystery
-                comes from what the town withholds, not from spectacle.
+                The chapter reads like a slow entry into Vallen: ordinary work
+                first, atmosphere second, memory underneath. The mystery comes
+                from what the town withholds, not from spectacle.
               </p>
 
               <p className="body-copy" style={{ margin: "18px 0 0" }}>
-                Each page should be able to stand alone as a visual post, while
-                also moving the chapter forward as part of the larger website
-                archive.
+                Each page is designed to stand alone as a visual post while also
+                moving the chapter forward as part of the larger website archive.
               </p>
             </div>
 
