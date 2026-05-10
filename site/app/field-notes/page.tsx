@@ -7,7 +7,7 @@ const freeIntroCourseUrl =
 export const metadata: Metadata = {
   title: "Field Notes | Forbidden Knowledge",
   description:
-    "Field Notes is the separate Forbidden Knowledge research lane on parallaxhearts.org: ancient knowledge, lost etymology, symbolism, source trails, evidence labels, the free Skool intro course, and The Forbidden Knowledge Bible.",
+    "Field Notes is the deeper research lane on parallaxhearts.org: source trails, evidence labels, lost etymology, ancient knowledge, and The Forbidden Knowledge Bible.",
   keywords: [
     "Field Notes",
     "Forbidden Knowledge",
@@ -20,8 +20,6 @@ export const metadata: Metadata = {
     "source trails",
     "evidence-aware research",
     "5-Level Rabbit Hole Method",
-    "AI research prompts",
-    "creative knowledge systems",
     "Parallax Hearts",
   ],
 };
@@ -30,11 +28,10 @@ const navItems = [
   ["Home", "/"],
   ["Music", "/music"],
   ["Story", "/project"],
+  ["Graphic Novel", "/graphic-novel"],
   ["Forbidden Knowledge", "/forbidden-knowledge"],
   ["Field Notes", "/field-notes"],
-  ["Shop", "/shop"],
   ["Support", "/support"],
-  ["About", "/about"],
   ["Contact", "/contact"],
 ];
 
@@ -170,7 +167,7 @@ export default function FieldNotesPage() {
               overflow: "hidden",
               borderRadius: "38px",
               padding: "clamp(30px, 6vw, 64px)",
-              minHeight: "64vh",
+              minHeight: "62vh",
               display: "flex",
               alignItems: "flex-end",
             }}
@@ -191,8 +188,8 @@ export default function FieldNotesPage() {
               }}
             />
 
-            <div style={{ position: "relative", zIndex: 2, maxWidth: "920px" }}>
-              <p className="kicker">Forbidden Knowledge / Field Notes</p>
+            <div style={{ position: "relative", zIndex: 2, maxWidth: "900px" }}>
+              <p className="kicker">Field Notes</p>
 
               <h1
                 style={{
@@ -216,15 +213,13 @@ export default function FieldNotesPage() {
                   lineHeight: 1.35,
                 }}
               >
-                Ancient knowledge, lost etymology, symbolism, source trails,
-                and the discipline of knowing where evidence ends.
+                Source trails, evidence labels, lost etymology, symbolism, and
+                the discipline of knowing where certainty ends.
               </p>
 
               <p className="body-copy" style={{ margin: "20px 0 0", maxWidth: "790px" }}>
-                Field Notes is the separate research lane. Parallax Hearts and
-                <em> What the Town Keeps</em> remain the music and story-world
-                path; this page holds the method, evidence labels, research
-                lanes, and book framework behind the Forbidden Knowledge archive.
+                Field Notes is the deeper reference layer. The shorter Forbidden
+                Knowledge page is the entry point for the free course.
               </p>
 
               <div
@@ -245,92 +240,14 @@ export default function FieldNotesPage() {
                   rel="noreferrer"
                   className="secondary-button"
                 >
-                  Open Free Course
+                  Free Course
                 </a>
-
-                <Link href="/music" className="secondary-button">
-                  Parallax Hearts Music
-                </Link>
 
                 <Link href="/project" className="secondary-button">
-                  Enter Vallen
+                  Back to Vallen
                 </Link>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="free-intro" style={{ padding: "34px 0" }}>
-        <div className="site-container">
-          <div
-            className="glass-panel"
-            style={{
-              padding: "clamp(26px, 5vw, 46px)",
-              display: "grid",
-              gridTemplateColumns: "minmax(0, 1fr) minmax(260px, 0.75fr)",
-              gap: "28px",
-              alignItems: "start",
-              borderColor: "rgba(210,181,139,0.32)",
-            }}
-          >
-            <div>
-              <p className="kicker">Start here</p>
-              <h2 className="section-title">Free Intro Course</h2>
-
-              <p className="body-copy" style={{ margin: "18px 0 0" }}>
-                Begin with the free intro course for the Forbidden Knowledge
-                Circle. It explains the method, the evidence labels, and the
-                basic rule behind the work: preserve mystery, protect truth.
-              </p>
-
-              <p className="body-copy" style={{ margin: "18px 0 0" }}>
-                The shorter Forbidden Knowledge landing page is best for sharing
-                on social. This page is the deeper reference layer for the
-                research system.
-              </p>
-            </div>
-
-            <aside
-              style={{
-                border: "1px solid var(--line)",
-                borderRadius: "24px",
-                padding: "24px",
-                background:
-                  "linear-gradient(180deg, rgba(210,181,139,0.10), rgba(255,255,255,0.025))",
-              }}
-            >
-              <p className="kicker" style={{ marginBottom: "14px" }}>
-                Course path
-              </p>
-
-              <p className="soft-copy" style={{ margin: 0 }}>
-                Send new visitors to the landing page first. Send returning
-                readers directly to the Skool course.
-              </p>
-
-              <div
-                style={{
-                  marginTop: "22px",
-                  display: "flex",
-                  gap: "12px",
-                  flexWrap: "wrap",
-                }}
-              >
-                <Link href="/forbidden-knowledge" className="primary-button">
-                  Landing Page
-                </Link>
-
-                <a
-                  href={freeIntroCourseUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="secondary-button"
-                >
-                  Skool Course
-                </a>
-              </div>
-            </aside>
           </div>
         </div>
       </section>
@@ -353,10 +270,9 @@ export default function FieldNotesPage() {
 
               <p className="body-copy" style={{ margin: "20px 0 0" }}>
                 Each subject is treated as a trail. Some trails lead to
-                documents. Some lead to archaeology. Some lead to language,
-                symbol, ritual, mathematics, architecture, or astronomy. Some
-                end in speculation and should be marked before they become
-                belief.
+                documents, archaeology, language, ritual, mathematics,
+                architecture, astronomy, or symbolism. Some end in speculation
+                and should be marked before they become belief.
               </p>
 
               <p className="body-copy" style={{ margin: "18px 0 0" }}>
@@ -532,9 +448,8 @@ export default function FieldNotesPage() {
               </p>
 
               <p className="soft-copy" style={{ margin: 0 }}>
-                The free intro course is the starting point. It gives the method
-                before the deeper material asks for more time, attention, or
-                commitment.
+                The free intro course gives the method before the deeper
+                material asks for more time, attention, or commitment.
               </p>
 
               <div style={{ marginTop: "22px" }}>
@@ -563,8 +478,8 @@ export default function FieldNotesPage() {
               <h2 className="section-title">The Forbidden Knowledge Bible</h2>
               <p className="body-copy" style={{ margin: "18px 0 0" }}>
                 A long-form codex of ancient knowledge, lost etymology, cosmic
-                systems, forgotten technologies, hidden source trails, sacred
-                mathematics, and modern science bridges.
+                systems, hidden source trails, sacred mathematics, and modern
+                science bridges.
               </p>
               <p className="body-copy" style={{ margin: "18px 0 0" }}>
                 The book is being built as a continuity archive: a way to
