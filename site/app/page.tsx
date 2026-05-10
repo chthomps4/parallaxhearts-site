@@ -5,7 +5,7 @@ import ArchiveNote from "./components/ArchiveNote";
 export const metadata: Metadata = {
   title: "Parallax Hearts | What the Town Keeps",
   description:
-    "Parallax Hearts is the home of What the Town Keeps — a cinematic album, story world, and graphic novel direction set in Vallen, with Field Notes and the Forbidden Knowledge archive as a separate research lane.",
+    "Parallax Hearts is the home of What the Town Keeps — a cinematic album, story world, and built-in graphic novel archive set in Vallen, with Field Notes and the Forbidden Knowledge archive as a separate research lane.",
 };
 
 const siteFont = `Georgia, "Times New Roman", Times, serif`;
@@ -32,6 +32,7 @@ function TopNav() {
     ["Home", "/"],
     ["Music", "/music"],
     ["What the Town Keeps", "/project"],
+    ["Graphic Novel", "/graphic-novel"],
     ["Forbidden Knowledge", "/forbidden-knowledge"],
     ["Field Notes", "/field-notes"],
     ["Shop", "/shop"],
@@ -322,7 +323,7 @@ export default function HomePage() {
               }}
             >
               Parallax Hearts is the music project behind <em>What the Town Keeps</em> —
-              a cinematic album, story world, and graphic novel direction set in
+              a cinematic album, story world, and graphic novel archive set in
               Vallen, a rainy town of rail lines, old rooms, quiet distance, and
               the things people learn not to say.
             </p>
@@ -360,8 +361,8 @@ export default function HomePage() {
               image="/images/hero.jpg"
               primaryHref="/project"
               primaryLabel="Enter the town"
-              secondaryHref="/music"
-              secondaryLabel="Listen / music"
+              secondaryHref="/graphic-novel"
+              secondaryLabel="Read the graphic novel"
             />
 
             <ProjectPanel
@@ -375,6 +376,98 @@ export default function HomePage() {
               secondaryHref="/forbidden-knowledge"
               secondaryLabel="Start Free Course"
             />
+          </div>
+
+          <div
+            style={{
+              marginTop: "26px",
+              border: `1px solid rgba(210,181,139,0.22)`,
+              borderRadius: "28px",
+              padding: "clamp(24px, 5vw, 38px)",
+              background:
+                "linear-gradient(135deg, rgba(210,181,139,0.09), rgba(255,255,255,0.022)), rgba(5,7,10,0.48)",
+              boxShadow: "0 24px 70px rgba(0,0,0,0.24)",
+            }}
+          >
+            <p
+              style={{
+                margin: "0 0 12px",
+                color: colors.gold,
+                textTransform: "uppercase",
+                letterSpacing: "0.22em",
+                fontSize: "12px",
+              }}
+            >
+              Visual novel / built-in archive
+            </p>
+
+            <h2
+              style={{
+                margin: 0,
+                fontSize: "clamp(30px, 5vw, 56px)",
+                lineHeight: 0.98,
+                letterSpacing: "-0.055em",
+                fontWeight: 400,
+                maxWidth: "880px",
+              }}
+            >
+              Read Chapter One — Ballast on the site.
+            </h2>
+
+            <p
+              style={{
+                margin: "18px 0 0",
+                maxWidth: "780px",
+                color: colors.textSoft,
+                fontSize: "18px",
+                lineHeight: 1.75,
+              }}
+            >
+              The graphic novel archive begins with Elias Vale crossing into
+              Vallen. Page by page, the website becomes the readable story
+              archive for <em>What the Town Keeps</em>.
+            </p>
+
+            <div
+              style={{
+                marginTop: "24px",
+                display: "flex",
+                gap: "12px",
+                flexWrap: "wrap",
+              }}
+            >
+              <Link
+                href="/graphic-novel/chapter-one/page-001"
+                style={{
+                  color: "#08090b",
+                  background: colors.text,
+                  border: `1px solid ${colors.text}`,
+                  borderRadius: "999px",
+                  padding: "13px 18px",
+                  textDecoration: "none",
+                  fontSize: "15px",
+                  letterSpacing: "0.04em",
+                }}
+              >
+                Start Page 001
+              </Link>
+
+              <Link
+                href="/graphic-novel"
+                style={{
+                  color: colors.text,
+                  background: "rgba(5,7,10,0.58)",
+                  border: `1px solid ${colors.border}`,
+                  borderRadius: "999px",
+                  padding: "13px 18px",
+                  textDecoration: "none",
+                  fontSize: "15px",
+                  letterSpacing: "0.04em",
+                }}
+              >
+                Graphic Novel Hub
+              </Link>
+            </div>
           </div>
 
           <div
@@ -483,8 +576,13 @@ export default function HomePage() {
             {[
               {
                 title: "What the Town Keeps",
-                text: "The album, Vallen story world, and graphic novel direction.",
+                text: "The album, Vallen story world, and central creative universe.",
                 href: "/project",
+              },
+              {
+                title: "Graphic Novel",
+                text: "Read the built-in visual novel archive, beginning with Chapter One — Ballast.",
+                href: "/graphic-novel",
               },
               {
                 title: "Music",
