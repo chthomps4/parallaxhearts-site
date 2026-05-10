@@ -2,21 +2,24 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { absoluteUrl, defaultKeywords, socialLinks } from "../lib/seo";
 
-const pageTitle = "Website Design Services | Parallax Hearts";
+const pageTitle = "Custom Website Design for Artists and Small Businesses | Parallax Hearts";
 const pageDescription =
-  "Custom websites for artists, small businesses, creators, and local projects, built with strong visual direction, clear structure, and practical follow-up support.";
+  "Custom websites for artists, creators, small businesses, and local projects, built with clear structure, strong visual direction, mobile-first design, and practical follow-up support.";
 
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
   keywords: [
     ...defaultKeywords,
-    "website design",
+    "custom website design",
+    "website design for artists",
     "small business websites",
-    "artist websites",
     "creator websites",
-    "custom website service",
+    "band websites",
+    "portfolio websites",
+    "landing pages",
     "website updates",
+    "website follow up support",
   ],
   alternates: {
     canonical: absoluteUrl("/websites"),
@@ -31,7 +34,7 @@ export const metadata: Metadata = {
         url: "/images/hero.jpg",
         width: 1200,
         height: 630,
-        alt: "Website design services by Parallax Hearts",
+        alt: "Custom website design services by Parallax Hearts",
       },
     ],
     locale: "en_US",
@@ -52,37 +55,55 @@ const serviceSchema = {
   url: absoluteUrl("/websites"),
   description: pageDescription,
   areaServed: "United States",
-  serviceType: "Custom website design and website update support",
+  serviceType: "Custom website design, landing pages, creator websites, small business websites, and website update support",
   sameAs: [socialLinks.facebook, socialLinks.instagram, socialLinks.koFi],
   offers: {
     "@type": "Offer",
     availability: "https://schema.org/InStock",
     priceCurrency: "USD",
     description:
-      "Custom website builds, visual direction, page structure, launch help, and follow-up update support. Pricing depends on scope.",
+      "Custom website builds, visual direction, mobile-first page structure, launch help, and follow-up update support. Pricing depends on project scope.",
   },
 };
 
 const services = [
   {
-    title: "Starter website",
-    text: "A clean, focused site for an artist, small business, service, portfolio, landing page, or local project.",
+    title: "Artist and creator sites",
+    text: "Music projects, portfolios, story worlds, personal brands, and creator pages that need to look intentional instead of thrown together.",
   },
   {
-    title: "Visual direction",
-    text: "A site that feels intentional instead of generic — color, layout, copy, imagery, and structure working together.",
+    title: "Small business sites",
+    text: "Clear service pages, local business sites, simple landing pages, and contact-focused websites built around what people actually need to do.",
   },
   {
     title: "Follow-up support",
-    text: "Reasonable update help after launch so you are not left with a finished site you cannot change.",
+    text: "After launch, I help with reasonable edits, cleanup, and small changes so the site keeps working after the first version goes live.",
   },
 ];
 
 const process = [
-  "We define what the site needs to do.",
-  "I build the page structure, copy direction, and visual layout.",
-  "You review the site in clear rounds instead of scattered messages.",
-  "We launch it, then handle follow-up updates on a practical schedule.",
+  "We define the real goal of the site: contact, booking, listening, selling, support, or credibility.",
+  "I shape the page structure, visual direction, copy flow, and calls to action.",
+  "You review focused rounds instead of chasing scattered changes across messages.",
+  "We launch the site, then handle follow-up updates on a clear schedule.",
+];
+
+const intakeItems = [
+  "What kind of site you need",
+  "Your business, artist, or project name",
+  "The main action visitors should take",
+  "Any existing links, photos, logos, music, products, or examples",
+  "Pages you know you need, such as Home, About, Services, Music, Shop, or Contact",
+  "A rough deadline, even if it is flexible",
+];
+
+const fitItems = [
+  "Artists and musicians",
+  "Small local businesses",
+  "Creators and personal brands",
+  "Service providers",
+  "Portfolio projects",
+  "Side businesses that need a serious first site",
 ];
 
 export default function WebsitesPage() {
@@ -97,28 +118,28 @@ export default function WebsitesPage() {
         <div className="site-container two-column">
           <div>
             <p className="kicker">Website Design / Build Support</p>
-            <h1 className="page-title">Websites that look finished, feel personal, and stay manageable.</h1>
+            <h1 className="page-title">A better website without the agency fog.</h1>
             <p className="lead-copy">
-              I build custom websites for artists, small businesses, creators, and local projects that need a stronger online home without becoming trapped in a complicated system.
+              I build custom websites for artists, creators, small businesses, and local projects that need a clean, professional online home with strong visual direction and practical follow-up support.
             </p>
             <div className="button-row">
               <Link className="primary-button" href="/contact">
-                Ask about a website
+                Request a website
               </Link>
-              <Link className="ghost-button" href="/">
-                View this site
+              <Link className="ghost-button" href="#intake">
+                See what I need from you
               </Link>
             </div>
           </div>
 
           <aside className="feature-card">
-            <p className="kicker">Example direction</p>
-            <h2>Built from real project work.</h2>
+            <p className="kicker">The offer</p>
+            <h2>Clean build. Clear structure. Real follow-up.</h2>
             <p>
-              This site, parallaxhearts.org, is the main example: music, story, support links, visual direction, and project pages all organized into one clear home.
+              A website should explain who you are, what you offer, and what someone should do next. It should also be easy to update after it launches.
             </p>
             <p>
-              Acoustaland.org can also be used as a second example when discussing possible styles, depending on the client and project need.
+              This is built for people who do not want a bloated process, confusing pricing language, or a site that looks nice but does not lead anywhere.
             </p>
           </aside>
         </div>
@@ -126,7 +147,7 @@ export default function WebsitesPage() {
 
       <section className="section-shell">
         <div className="site-container">
-          <p className="kicker">What I can build</p>
+          <p className="kicker">What I build</p>
           <div className="card-grid three-card-grid">
             {services.map((service) => (
               <article className="feature-card" key={service.title}>
@@ -134,6 +155,51 @@ export default function WebsitesPage() {
                 <p>{service.text}</p>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-shell muted-section">
+        <div className="site-container two-column">
+          <div>
+            <p className="kicker">Who this is for</p>
+            <h2 className="section-title">A focused site for people who need to be taken seriously online.</h2>
+            <p className="soft-copy">
+              This is for projects that need a real web presence: not just a social profile, not just a link page, and not a template that feels disconnected from the work.
+            </p>
+          </div>
+
+          <div className="feature-card">
+            <ul className="clean-list">
+              {fitItems.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-shell">
+        <div className="site-container two-column">
+          <div>
+            <p className="kicker">Examples</p>
+            <h2 className="section-title">Built from real project work.</h2>
+            <p className="soft-copy">
+              Parallaxhearts.org is the main example: music, story, support links, visual direction, SEO structure, and project pages organized into one clear home.
+            </p>
+            <p className="soft-copy">
+              Acoustaland.org can also be used as a second example when discussing style direction, depending on the client and project need.
+            </p>
+          </div>
+
+          <div className="feature-card">
+            <p className="kicker">What matters most</p>
+            <p>
+              The site needs to work on a phone, load clearly, tell people what you do, and make the next step obvious.
+            </p>
+            <p>
+              Visual polish matters, but structure is what keeps people from leaving confused.
+            </p>
           </div>
         </div>
       </section>
@@ -155,22 +221,47 @@ export default function WebsitesPage() {
         </div>
       </section>
 
+      <section className="section-shell" id="intake">
+        <div className="site-container two-column">
+          <div>
+            <p className="kicker">Lead intake</p>
+            <h2 className="section-title">What to send when you reach out.</h2>
+            <p className="soft-copy">
+              You do not need everything perfectly organized. Send what you have. The first job is turning the scattered pieces into a clear site plan.
+            </p>
+            <Link className="primary-button" href="/contact">
+              Send website details
+            </Link>
+          </div>
+
+          <div className="feature-card">
+            <ul className="clean-list">
+              {intakeItems.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <section className="section-shell">
         <div className="site-container two-column">
           <div>
             <p className="kicker">Pricing / Subscribers</p>
-            <h2 className="section-title">Pricing depends on scope.</h2>
+            <h2 className="section-title">Pricing depends on scope, not vague packages.</h2>
             <p className="soft-copy">
-              A simple one-page site, a larger multi-page site, and ongoing update support are different jobs. I keep the breakdown clear before work begins so there are no vague promises or surprise expectations.
+              A one-page site, a multi-page service site, and ongoing update support are different jobs. I keep the breakdown clear before work begins so there are no vague promises or surprise expectations.
             </p>
             <p className="soft-copy">
               Subscriber discounts, update-service perks, and deeper pricing breakdowns can be offered through the main subscribed page when that offer is active.
             </p>
           </div>
+
           <div className="feature-card">
-            <p className="kicker">Best fit</p>
+            <p className="kicker">Next step</p>
+            <h2>Tell me what you need the site to do.</h2>
             <p>
-              Artists, musicians, local services, creators, side businesses, personal brands, small organizations, and projects that need a strong first web presence.
+              The fastest way to start is simple: send the project name, what kind of site you need, and the main action visitors should take.
             </p>
             <Link className="primary-button" href="/contact">
               Start the conversation
