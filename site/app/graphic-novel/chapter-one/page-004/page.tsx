@@ -134,8 +134,8 @@ export default function ChapterOnePage004() {
                   Previous Page
                 </Link>
 
-                <Link href="/graphic-novel/chapter-one" className="primary-button">
-                  Chapter Archive
+                <Link href="/graphic-novel/chapter-one/page-005" className="primary-button">
+                  Next Page
                 </Link>
               </div>
             </div>
@@ -158,17 +158,17 @@ export default function ChapterOnePage004() {
                 }}
               >
                 <Image
-                  src="/images/hero.jpg"
-                  alt="The first door of the boarding house in Vallen after rain"
-                  width={1400}
-                  height={1900}
+                  src="/images/graphic-novel/chapter-one/page-004-first-door.svg"
+                  alt="Elias Vale finding the key beside the first door"
+                  width={1000}
+                  height={1414}
                   priority
+                  unoptimized
                   style={{
                     width: "100%",
                     height: "100%",
                     objectFit: "cover",
                     minHeight: "620px",
-                    filter: "saturate(0.82) contrast(1.04)",
                   }}
                 />
               </div>
@@ -246,8 +246,8 @@ export default function ChapterOnePage004() {
               ← Page 003
             </Link>
 
-            <Link href="/graphic-novel/chapter-one" className="primary-button">
-              Chapter Archive →
+            <Link href="/graphic-novel/chapter-one/page-005" className="primary-button">
+              Page 005 →
             </Link>
           </div>
         </div>
