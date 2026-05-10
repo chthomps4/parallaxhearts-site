@@ -12,14 +12,14 @@ const soundCloudUrl = "https://soundcloud.com/parallax-hearts";
 export const metadata: Metadata = {
   title: "Contact | Parallax Hearts",
   description:
-    "Contact Parallax Hearts for music, What the Town Keeps, the graphic novel, Vallen story-world material, Ko-fi support, social links, collaboration, press, Field Notes, and research inquiries.",
+    "Contact and follow Parallax Hearts for music, What the Town Keeps, the visual novel, social links, Ko-fi support, and listener messages.",
   alternates: {
     canonical: "/contact",
   },
   openGraph: {
     title: "Contact | Parallax Hearts",
     description:
-      "Reach Parallax Hearts for music, What the Town Keeps, the graphic novel, Vallen story-world material, Ko-fi support, social links, collaboration, press, Field Notes, and research inquiries.",
+      "Follow Parallax Hearts, listen on SoundCloud, support on Ko-fi, or send a message about What the Town Keeps.",
     url: "https://parallaxhearts.org/contact",
     siteName: "Parallax Hearts",
     images: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Contact | Parallax Hearts",
     description:
-      "Reach Parallax Hearts for music, What the Town Keeps, the graphic novel, Vallen story-world material, Ko-fi support, social links, collaboration, press, Field Notes, and research inquiries.",
+      "Follow Parallax Hearts, listen on SoundCloud, support on Ko-fi, or send a message about What the Town Keeps.",
     images: ["/images/world.jpg"],
   },
 };
@@ -46,7 +46,6 @@ const navItems = [
   ["Music", "/music"],
   ["Story", "/project"],
   ["Graphic Novel", "/graphic-novel"],
-  ["Forbidden Knowledge", "/forbidden-knowledge"],
   ["Field Notes", "/field-notes"],
   ["Shop", "/shop"],
   ["Support", "/support"],
@@ -86,26 +85,24 @@ const contactLinks = [
   },
 ];
 
-const inquiryLanes = [
+const contactPaths = [
   {
-    title: "Music / Parallax Hearts",
-    text: "Listening, songs, collaboration, booking, press, or general messages about the band/project.",
+    title: "Listen",
+    text: "Stream Parallax Hearts on SoundCloud.",
+    href: soundCloudUrl,
+    external: true,
   },
   {
-    title: "What the Town Keeps",
-    text: "Story world, Vallen, graphic novel material, visual archive, lyrics, album art, or related creative work.",
+    title: "Support",
+    text: "Support the album, story, and visual work on Ko-fi.",
+    href: koFiUrl,
+    external: true,
   },
   {
-    title: "Graphic Novel / Visual Archive",
-    text: "Chapter pages, visual novel updates, page art, story adaptation, and built-in website archive questions.",
-  },
-  {
-    title: "Ko-fi / Support",
-    text: "Membership tiers, digital shop items, purchases, bundles, or direct support questions.",
-  },
-  {
-    title: "Field Notes / Research",
-    text: "Source trails, evidence labels, the Handbook, ancient knowledge research, lost etymology, or the 5-Level Rabbit Hole Method.",
+    title: "Read",
+    text: "Begin the visual novel with Chapter One — Ballast.",
+    href: "/graphic-novel/chapter-one/page-001",
+    external: false,
   },
 ];
 
@@ -174,7 +171,7 @@ export default function ContactPage() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "minmax(0, 1fr) minmax(300px, 0.8fr)",
+              gridTemplateColumns: "minmax(0, 1fr) minmax(300px, 0.76fr)",
               gap: "28px",
               alignItems: "stretch",
             }}
@@ -198,7 +195,7 @@ export default function ContactPage() {
               />
 
               <div style={{ position: "relative", zIndex: 2 }}>
-                <p className="kicker">Contact</p>
+                <p className="kicker">Contact / Follow</p>
 
                 <h1
                   style={{
@@ -210,21 +207,19 @@ export default function ContactPage() {
                     maxWidth: "760px",
                   }}
                 >
-                  Reach out through the right door.
+                  Follow the music. Send a note.
                 </h1>
 
                 <p
                   className="body-copy"
                   style={{
                     margin: "24px 0 0",
-                    maxWidth: "780px",
+                    maxWidth: "740px",
                     fontSize: "19px",
                   }}
                 >
-                  For Parallax Hearts, <em>What the Town Keeps</em>, the
-                  graphic novel, Vallen, Ko-fi support, collaboration, press,
-                  listener messages, social links, or Field Notes research
-                  inquiries, use the contact points below.
+                  Use this page for Parallax Hearts links, listener messages,
+                  music, social platforms, and direct support for <em>What the Town Keeps</em>.
                 </p>
 
                 <div
@@ -274,31 +269,6 @@ export default function ContactPage() {
                     </div>
                   ))}
                 </div>
-
-                <div
-                  style={{
-                    marginTop: "30px",
-                    display: "flex",
-                    gap: "12px",
-                    flexWrap: "wrap",
-                  }}
-                >
-                  <Link href="/music" className="primary-button">
-                    Listen to the Album
-                  </Link>
-
-                  <Link href="/graphic-novel" className="secondary-button">
-                    Read the Graphic Novel
-                  </Link>
-
-                  <Link href="/forbidden-knowledge" className="secondary-button">
-                    Start the Free Course
-                  </Link>
-
-                  <Link href="/support" className="secondary-button">
-                    Support the Project
-                  </Link>
-                </div>
               </div>
             </div>
 
@@ -329,50 +299,73 @@ export default function ContactPage() {
 
       <section style={{ padding: "0 0 88px" }}>
         <div className="site-container">
+          <p className="kicker">Quick paths</p>
+
           <div
-            className="glass-panel"
             style={{
-              padding: "clamp(26px, 5vw, 44px)",
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))",
+              gap: "14px",
+              marginTop: "18px",
             }}
           >
-            <p className="kicker">Inquiry lanes</p>
-
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))",
-                gap: "14px",
-                marginTop: "18px",
-              }}
-            >
-              {inquiryLanes.map((lane) => (
-                <article
-                  key={lane.title}
-                  style={{
-                    border: "1px solid var(--line)",
-                    borderRadius: "22px",
-                    padding: "22px",
-                    background: "rgba(255,255,255,0.035)",
-                  }}
-                >
+            {contactPaths.map((path) => {
+              const content = (
+                <>
                   <h2
                     style={{
                       margin: 0,
-                      fontSize: "25px",
-                      lineHeight: 1.05,
-                      letterSpacing: "-0.035em",
+                      fontSize: "30px",
+                      lineHeight: 1.02,
+                      letterSpacing: "-0.04em",
                       fontWeight: 400,
                     }}
                   >
-                    {lane.title}
+                    {path.title}
                   </h2>
 
                   <p className="soft-copy" style={{ margin: "12px 0 0" }}>
-                    {lane.text}
+                    {path.text}
                   </p>
-                </article>
-              ))}
-            </div>
+                </>
+              );
+
+              if (path.external) {
+                return (
+                  <a
+                    key={path.title}
+                    href={path.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="glass-panel"
+                    style={{
+                      padding: "24px",
+                      borderRadius: "24px",
+                      color: "var(--paper)",
+                      textDecoration: "none",
+                    }}
+                  >
+                    {content}
+                  </a>
+                );
+              }
+
+              return (
+                <Link
+                  key={path.title}
+                  href={path.href}
+                  className="glass-panel"
+                  style={{
+                    padding: "24px",
+                    borderRadius: "24px",
+                    color: "var(--paper)",
+                    textDecoration: "none",
+                  }}
+                >
+                  {content}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
