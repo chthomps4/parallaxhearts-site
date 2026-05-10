@@ -33,21 +33,21 @@ const chapterPages = [
     number: "001",
     title: "The Crossing",
     status: "Live",
-    text: "Elias arrives at the edge of Vallen, where the rail crossing and station roof make the town feel less like a destination than a threshold.",
+    text: "Elias reaches the edge of Vallen, where the rails turn arrival into a threshold.",
     href: "/graphic-novel/chapter-one/page-001",
   },
   {
     number: "002",
     title: "Mercer Street",
     status: "Live",
-    text: "The road into town narrows into old houses, wet pavement, dim windows, and the first sense that the place is keeping its own account.",
+    text: "The road into town narrows through old houses, wet pavement, dim windows, and careful silence.",
     href: "/graphic-novel/chapter-one/page-002",
   },
   {
     number: "003",
     title: "The Boarding House",
     status: "Live",
-    text: "The inspection begins as ordinary work: stairs, rooms, doors, old wood, rainwater, and the silence of a house that has been waiting for someone to notice it.",
+    text: "The first inspection site waits under rainwater, old paint, loose gutters, and second-floor windows.",
     href: "/graphic-novel/chapter-one/page-003",
   },
 ];
@@ -125,7 +125,7 @@ export default function ChapterOnePage() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "minmax(0, 1fr) minmax(300px, 0.78fr)",
+              gridTemplateColumns: "minmax(0, 1fr) minmax(300px, 0.72fr)",
               gap: "28px",
               alignItems: "stretch",
             }}
@@ -168,21 +168,13 @@ export default function ChapterOnePage() {
                   className="body-copy"
                   style={{
                     margin: "24px 0 0",
-                    maxWidth: "820px",
+                    maxWidth: "760px",
                     fontSize: "19px",
                   }}
                 >
-                  Elias Vale comes to Vallen as a home inspector. The job should
-                  be practical: look at the house, name what is wrong, write the
-                  report, and leave. But the town has its own way of holding
-                  pressure.
-                </p>
-
-                <p className="body-copy" style={{ margin: "18px 0 0", maxWidth: "820px" }}>
-                  <em>Ballast</em> begins the visual novel archive with the
-                  crossing into town, Mercer Street, the boarding house, and the
-                  first sense that Vallen remembers more than anyone is willing
-                  to explain.
+                  Elias Vale enters Vallen for a house inspection. Three pages
+                  are live now: the crossing, Mercer Street, and the boarding
+                  house.
                 </p>
 
                 <div
@@ -194,7 +186,7 @@ export default function ChapterOnePage() {
                   }}
                 >
                   <Link href="/graphic-novel/chapter-one/page-001" className="primary-button">
-                    Start Page 001
+                    Start Reading
                   </Link>
 
                   <Link href="/graphic-novel" className="secondary-button">
@@ -213,7 +205,7 @@ export default function ChapterOnePage() {
               style={{
                 borderRadius: "28px",
                 overflow: "hidden",
-                minHeight: "460px",
+                minHeight: "420px",
               }}
             >
               <Image
@@ -225,7 +217,7 @@ export default function ChapterOnePage() {
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
-                  minHeight: "460px",
+                  minHeight: "420px",
                 }}
               />
             </div>
@@ -235,7 +227,7 @@ export default function ChapterOnePage() {
 
       <section style={{ padding: "34px 0" }}>
         <div className="site-container">
-          <p className="kicker">Chapter page archive</p>
+          <p className="kicker">Chapter pages</p>
 
           <div
             style={{
@@ -295,7 +287,7 @@ export default function ChapterOnePage() {
           <div
             className="glass-panel"
             style={{
-              padding: "clamp(26px, 5vw, 46px)",
+              padding: "clamp(24px, 5vw, 40px)",
               display: "grid",
               gridTemplateColumns: "minmax(0, 1fr) minmax(260px, 0.8fr)",
               gap: "28px",
@@ -303,18 +295,13 @@ export default function ChapterOnePage() {
             }}
           >
             <div>
-              <p className="kicker">Chapter function</p>
+              <p className="kicker">Chapter note</p>
               <h2 className="section-title">The inspection is the doorway.</h2>
 
               <p className="body-copy" style={{ margin: "18px 0 0" }}>
-                The chapter reads like a slow entry into Vallen: ordinary work
-                first, atmosphere second, memory underneath. The mystery comes
-                from what the town withholds, not from spectacle.
-              </p>
-
-              <p className="body-copy" style={{ margin: "18px 0 0" }}>
-                Each page is designed to stand alone as a visual post while also
-                moving the chapter forward as part of the larger website archive.
+                Chapter One should stay practical on the surface. The mystery is
+                in the pressure around the work: rain, rooms, old damage, and
+                what the town does not say out loud.
               </p>
             </div>
 
