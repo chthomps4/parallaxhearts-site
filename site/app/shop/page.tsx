@@ -3,35 +3,46 @@ import Link from "next/link";
 
 const koFiUrl = "https://ko-fi.com/parallaxhearts";
 
+const navItems = [
+  ["Home", "/"],
+  ["Music", "/music"],
+  ["Story", "/project"],
+  ["Graphic Novel", "/graphic-novel"],
+  ["Field Notes", "/field-notes"],
+  ["Shop", "/shop"],
+  ["Support", "/support"],
+  ["Contact", "/contact"],
+];
+
 const shopItems = [
   {
     title: "What the Town Keeps — Digital Album",
-    text: "The current Parallax Hearts album, built around Vallen, memory, distance, rain, old rooms, and quiet emotional pressure.",
+    text: "The Parallax Hearts album as the central listening piece.",
     lane: "Music",
   },
   {
     title: "Lyric Book PDF",
-    text: "A clean collected lyric document for the album world, ideal for listeners who want to sit with the words outside the songs.",
-    lane: "Music",
+    text: "Collected lyrics and song notes for the album world.",
+    lane: "Lyrics",
   },
   {
-    title: "The Vallen Archive — Concept Art Pack",
-    text: "Selected visual pieces, album art, story-world images, and atmospheric references from What the Town Keeps.",
-    lane: "Visual archive",
+    title: "Vallen Concept Art Pack",
+    text: "Selected visuals, album art, and atmospheric pieces from the story world.",
+    lane: "Visuals",
   },
   {
     title: "Graphic Novel Preview PDF",
-    text: "Early page previews and visual-story material connected to the developing graphic novel adaptation.",
+    text: "Early page previews and chapter material from the visual novel archive.",
     lane: "Story",
   },
   {
-    title: "Field Notes — Source-Trail Packet",
-    text: "A focused research packet built around one topic, with evidence labels, source trails, key terms, and clear separation between fact, interpretation, and speculation.",
-    lane: "Field Notes",
+    title: "Story Fragment PDF",
+    text: "Short prose, page excerpts, and Vallen archive pieces collected for readers.",
+    lane: "Story",
   },
   {
     title: "Complete Support Bundle",
-    text: "A combined digital bundle for listeners who want the album, lyric material, visual archive pieces, and selected story-world documents in one place.",
+    text: "A combined package for listeners who want music, lyrics, visuals, and story material together.",
     lane: "Bundle",
   },
 ];
@@ -75,15 +86,7 @@ export default function ShopPage() {
                 alignItems: "center",
               }}
             >
-              {[
-                ["Home", "/"],
-                ["Music", "/music"],
-                ["Story", "/project"],
-                ["Field Notes", "/field-notes"],
-                ["Shop", "/shop"],
-                ["Support", "/support"],
-                ["Contact", "/contact"],
-              ].map(([label, href]) => (
+              {navItems.map(([label, href]) => (
                 <Link
                   key={label}
                   href={href}
@@ -123,7 +126,7 @@ export default function ShopPage() {
             />
 
             <div style={{ position: "relative", zIndex: 2 }}>
-              <p className="kicker">Shop / digital archive</p>
+              <p className="kicker">Shop / one-time digital items</p>
 
               <h1
                 style={{
@@ -135,21 +138,20 @@ export default function ShopPage() {
                   maxWidth: "960px",
                 }}
               >
-                Music, lyrics, art, and story-world packets.
+                Music, lyrics, art, and story pieces.
               </h1>
 
               <p
                 className="body-copy"
                 style={{
                   margin: "24px 0 0",
-                  maxWidth: "800px",
+                  maxWidth: "760px",
                   fontSize: "19px",
                 }}
               >
-                The shop is the one-time purchase side of the Parallax Hearts
-                archive: music, lyric documents, concept art, Vallen story
-                previews, graphic novel material, and selected Field Notes
-                packets when available.
+                The shop is for one-time digital items connected to Parallax
+                Hearts and <em>What the Town Keeps</em>. Ko-fi is the checkout
+                path.
               </p>
 
               <div
@@ -169,12 +171,12 @@ export default function ShopPage() {
                   Visit Ko-fi Shop
                 </a>
 
-                <Link href="/music" className="secondary-button">
-                  Listen First
+                <Link href="/support" className="secondary-button">
+                  Monthly Support
                 </Link>
 
-                <Link href="/support" className="secondary-button">
-                  View Membership Tiers
+                <Link href="/music" className="secondary-button">
+                  Listen First
                 </Link>
               </div>
             </div>
@@ -198,7 +200,7 @@ export default function ShopPage() {
                 padding: "clamp(26px, 5vw, 44px)",
               }}
             >
-              <p className="kicker">Available / planned items</p>
+              <p className="kicker">Catalog</p>
 
               <div style={{ display: "grid", gap: "16px" }}>
                 {shopItems.map((item) => (
@@ -265,8 +267,8 @@ export default function ShopPage() {
                   Open Ko-fi Shop
                 </a>
 
-                <Link href="/project" className="secondary-button">
-                  Enter Vallen
+                <Link href="/graphic-novel/chapter-one/page-001" className="secondary-button">
+                  Start Reading
                 </Link>
               </div>
             </div>
@@ -281,7 +283,7 @@ export default function ShopPage() {
             >
               <Image
                 src="/images/project.jpg"
-                alt="What the Town Keeps digital archive"
+                alt="What the Town Keeps digital catalog"
                 width={1200}
                 height={1400}
                 style={{
@@ -296,40 +298,6 @@ export default function ShopPage() {
         </div>
       </section>
 
-      <section style={{ padding: "34px 0" }}>
-        <div className="site-container">
-          <div
-            className="glass-panel"
-            style={{
-              padding: "clamp(26px, 5vw, 44px)",
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-              gap: "22px",
-            }}
-          >
-            <div>
-              <p className="kicker">Music archive</p>
-              <h2 className="section-title">What the Town Keeps</h2>
-              <p className="body-copy" style={{ margin: "18px 0 0" }}>
-                Album downloads, lyrics, visual packs, and story-world pieces
-                remain the foundation of the shop. This is the direct support
-                path for Parallax Hearts listeners.
-              </p>
-            </div>
-
-            <div>
-              <p className="kicker">Research archive</p>
-              <h2 className="section-title">Field Notes</h2>
-              <p className="body-copy" style={{ margin: "18px 0 0" }}>
-                Field Notes products will be built around source trails,
-                evidence labels, printable research prompts, and topic packets
-                connected to the Forbidden Knowledge system.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section style={{ padding: "34px 0 88px" }}>
         <div className="site-container">
           <div
@@ -339,7 +307,7 @@ export default function ShopPage() {
               textAlign: "center",
             }}
           >
-            <p className="kicker">Direct support</p>
+            <p className="kicker">Shop or support</p>
 
             <h2 className="section-title">One-time purchase or monthly support.</h2>
 
@@ -347,12 +315,11 @@ export default function ShopPage() {
               className="body-copy"
               style={{
                 margin: "20px auto 0",
-                maxWidth: "780px",
+                maxWidth: "700px",
               }}
             >
-              Use the shop for one-time digital items. Use the support page for
-              monthly archive access, early looks, behind-the-song notes,
-              concept art, story-world material, and Field Notes progress.
+              Use the shop for individual digital items. Use the support page
+              for memberships, early looks, and ongoing archive access.
             </p>
 
             <div
@@ -373,12 +340,12 @@ export default function ShopPage() {
                 Visit Ko-fi
               </a>
 
-              <Link href="/project" className="secondary-button">
-                Enter Vallen
-              </Link>
-
               <Link href="/support" className="secondary-button">
                 Support Page
+              </Link>
+
+              <Link href="/contact" className="secondary-button">
+                Social Links
               </Link>
             </div>
           </div>
