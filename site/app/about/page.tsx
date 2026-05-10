@@ -5,39 +5,45 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About | Parallax Hearts",
   description:
-    "About Parallax Hearts, What the Town Keeps, the Vallen story world, Field Notes, and the separate Forbidden Knowledge research archive.",
+    "About Parallax Hearts, What the Town Keeps, the Vallen story world, visual novel archive, and Field Notes research lane.",
 };
+
+const navItems = [
+  ["Home", "/"],
+  ["Music", "/music"],
+  ["Story", "/project"],
+  ["Graphic Novel", "/graphic-novel"],
+  ["Field Notes", "/field-notes"],
+  ["Shop", "/shop"],
+  ["Support", "/support"],
+  ["About", "/about"],
+  ["Contact", "/contact"],
+];
 
 const identityCards = [
   {
     title: "Parallax Hearts",
-    text: "The music and creative home: cinematic songwriting, emotionally grounded stories, visual archives, and album-world material.",
+    text: "The music project: cinematic songwriting, intimate vocals, textured guitars, and emotionally grounded atmosphere.",
     href: "/music",
-    label: "Music",
+    label: "Listen",
   },
   {
     title: "What the Town Keeps",
-    text: "The central album and story world set around Vallen: rain, old houses, rail lines, memory, absence, and the things people leave unsaid.",
+    text: "The album and story world set in Vallen: rain, rail lines, old houses, memory, distance, and what people leave unsaid.",
     href: "/project",
-    label: "Story world",
+    label: "Story",
+  },
+  {
+    title: "Visual Novel",
+    text: "The readable story archive, beginning with Chapter One — Ballast and Elias Vale entering Vallen.",
+    href: "/graphic-novel/chapter-one/page-001",
+    label: "Read",
   },
   {
     title: "Field Notes",
-    text: "The public research lane for Forbidden Knowledge: ancient knowledge, lost etymology, symbolism, source trails, and evidence labels.",
+    text: "The separate research lane for source trails, evidence labels, lost etymology, symbolism, and the Handbook method.",
     href: "/field-notes",
-    label: "Field Notes",
-  },
-  {
-    title: "The Handbook",
-    text: "The long-form Forbidden Knowledge Bible / codex: a continuity archive for source trails, claim-checking, and durable knowledge.",
-    href: "/field-notes#book",
-    label: "The book",
-  },
-  {
-    title: "PHYLAX Archive",
-    text: "A secondary heavier lore world kept available as a separate archive while Field Notes and Parallax Hearts remain clearly separated.",
-    href: "/phylax",
-    label: "Archive",
+    label: "Study",
   },
 ];
 
@@ -80,16 +86,7 @@ export default function AboutPage() {
                 alignItems: "center",
               }}
             >
-              {[
-                ["Home", "/"],
-                ["Music", "/music"],
-                ["Story", "/project"],
-                ["Field Notes", "/field-notes"],
-                ["Shop", "/shop"],
-                ["Support", "/support"],
-                ["About", "/about"],
-                ["Contact", "/contact"],
-              ].map(([label, href]) => (
+              {navItems.map(([label, href]) => (
                 <Link
                   key={label}
                   href={href}
@@ -113,7 +110,7 @@ export default function AboutPage() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "minmax(0, 1fr) minmax(300px, 0.8fr)",
+              gridTemplateColumns: "minmax(0, 1fr) minmax(300px, 0.76fr)",
               gap: "28px",
               alignItems: "stretch",
             }}
@@ -149,48 +146,44 @@ export default function AboutPage() {
                     maxWidth: "860px",
                   }}
                 >
-                  The music, the town, and the research lane underneath.
+                  Parallax Hearts is the music. Vallen is the weather around it.
                 </h1>
 
                 <p
                   className="body-copy"
                   style={{
                     margin: "24px 0 0",
-                    maxWidth: "820px",
+                    maxWidth: "800px",
                     fontSize: "19px",
                   }}
                 >
-                  Parallax Hearts is the independent music and creative home
-                  behind <em>What the Town Keeps</em>: cinematic songs, visual
-                  story material, lyric-driven atmosphere, and a grounded world
-                  built around Vallen.
+                  Parallax Hearts is the independent music project behind
+                  <em> What the Town Keeps</em>: a cinematic album, story world,
+                  and visual novel archive built around the rainy town of Vallen.
                 </p>
 
                 <p
                   className="body-copy"
                   style={{
                     margin: "18px 0 0",
-                    maxWidth: "820px",
+                    maxWidth: "800px",
                   }}
                 >
-                  <em>What the Town Keeps</em> is the central album and story
-                  world: a rainy small-town atmosphere of old houses, rail
-                  lines, dim windows, wet pavement, quiet rooms, and the memory
-                  people carry after leaving.
+                  The work stays grounded and human: old houses, rail lines,
+                  quiet rooms, weathered streets, intimate songs, and the
+                  pressure of what people carry after leaving.
                 </p>
 
                 <p
                   className="body-copy"
                   style={{
                     margin: "18px 0 0",
-                    maxWidth: "820px",
+                    maxWidth: "800px",
                   }}
                 >
-                  Field Notes is separate but connected: the research lane for
-                  Forbidden Knowledge, ancient knowledge, lost etymology,
-                  symbolism, source trails, evidence labels, and the method
-                  behind <em>The Forbidden Knowledge Bible</em>. It follows
-                  mystery without pretending every mystery is proof.
+                  Field Notes is the separate research lane. It belongs on the
+                  same site, but it has a different job: source trails, evidence
+                  labels, etymology, symbolism, and the long-form Handbook work.
                 </p>
 
                 <div
@@ -202,15 +195,15 @@ export default function AboutPage() {
                   }}
                 >
                   <Link href="/music" className="primary-button">
-                    Listen to the Album
+                    Listen
+                  </Link>
+
+                  <Link href="/graphic-novel/chapter-one/page-001" className="secondary-button">
+                    Read
                   </Link>
 
                   <Link href="/project" className="secondary-button">
-                    Enter Vallen
-                  </Link>
-
-                  <Link href="/field-notes" className="secondary-button">
-                    Open Field Notes
+                    Story World
                   </Link>
                 </div>
               </div>
@@ -241,7 +234,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section style={{ padding: "0 0 44px" }}>
+      <section style={{ padding: "0 0 88px" }}>
         <div className="site-container">
           <div
             className="glass-panel"
@@ -249,7 +242,7 @@ export default function AboutPage() {
               padding: "clamp(26px, 5vw, 44px)",
             }}
           >
-            <p className="kicker">Site map in plain language</p>
+            <p className="kicker">Plain-language map</p>
 
             <div
               style={{
@@ -290,42 +283,6 @@ export default function AboutPage() {
                   </Link>
                 </article>
               ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section style={{ padding: "0 0 88px" }}>
-        <div className="site-container">
-          <div
-            className="glass-panel"
-            style={{
-              padding: "clamp(26px, 5vw, 44px)",
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-              gap: "24px",
-            }}
-          >
-            <div>
-              <p className="kicker">Creative rule</p>
-              <h2 className="section-title">Keep it human.</h2>
-              <p className="body-copy" style={{ margin: "18px 0 0" }}>
-                The music and story work stay grounded, cinematic, restrained,
-                and emotionally honest. Vallen is not built as horror or
-                fantasy. It is built as atmosphere, memory, distance, and the
-                pressure of ordinary lives.
-              </p>
-            </div>
-
-            <div>
-              <p className="kicker">Research rule</p>
-              <h2 className="section-title">Preserve mystery. Protect truth.</h2>
-              <p className="body-copy" style={{ margin: "18px 0 0" }}>
-                Field Notes does not flatten mystery, and it does not sell
-                certainty where there is none. It separates evidence,
-                interpretation, symbolism, speculation, and modern invention so
-                the trail stays readable.
-              </p>
             </div>
           </div>
         </div>
