@@ -26,13 +26,6 @@ const navItems = [
   ["Support", "/support"],
 ];
 
-const pageNotes = [
-  "Elias Vale enters Vallen as a home inspector, not as a hero.",
-  "The rail crossing should feel like a threshold, not a supernatural gate.",
-  "The town feels watched by memory, weather, and architecture rather than by anything paranormal.",
-  "The page should work as both a story page and a standalone social post.",
-];
-
 export default function ChapterOnePage001() {
   return (
     <main className="site-shell">
@@ -227,88 +220,13 @@ export default function ChapterOnePage001() {
                 </div>
 
                 <div>
-                  <p className="kicker">Social excerpt</p>
+                  <p className="kicker">Excerpt</p>
                   <p className="soft-copy" style={{ margin: "14px 0 0" }}>
                     The first thing Vallen gave Elias Vale was the crossing.
                   </p>
                 </div>
               </aside>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section style={{ padding: "34px 0" }}>
-        <div className="site-container">
-          <div
-            className="glass-panel"
-            style={{
-              padding: "clamp(24px, 4vw, 36px)",
-              display: "grid",
-              gridTemplateColumns: "minmax(0, 1fr) minmax(260px, 0.78fr)",
-              gap: "24px",
-              alignItems: "start",
-            }}
-          >
-            <div>
-              <p className="kicker">Page function</p>
-              <h2 className="section-title">The first threshold.</h2>
-
-              <p className="body-copy" style={{ margin: "18px 0 0" }}>
-                Page 001 establishes the emotional grammar of the chapter:
-                practical work on the surface, weather underneath, and the town
-                as a pressure system before anyone says anything directly.
-              </p>
-
-              <div
-                style={{
-                  marginTop: "26px",
-                  display: "flex",
-                  gap: "12px",
-                  flexWrap: "wrap",
-                }}
-              >
-                <Link href="/graphic-novel/chapter-one" className="secondary-button">
-                  Back to Chapter
-                </Link>
-
-                <Link href="/project" className="secondary-button">
-                  Story World
-                </Link>
-
-                <Link href="/music" className="secondary-button">
-                  Listen to the Album
-                </Link>
-              </div>
-            </div>
-
-            <aside
-              style={{
-                border: "1px solid var(--line)",
-                borderRadius: "24px",
-                padding: "24px",
-                background: "rgba(255,255,255,0.025)",
-              }}
-            >
-              <p className="kicker" style={{ marginBottom: "18px" }}>
-                Continuity notes
-              </p>
-
-              {pageNotes.map((note) => (
-                <div
-                  key={note}
-                  style={{
-                    padding: "14px 0",
-                    borderTop: "1px solid var(--line)",
-                    color: "var(--paper-soft)",
-                    fontSize: "15px",
-                    lineHeight: 1.55,
-                  }}
-                >
-                  {note}
-                </div>
-              ))}
-            </aside>
           </div>
         </div>
       </section>
