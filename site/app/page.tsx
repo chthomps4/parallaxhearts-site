@@ -5,7 +5,7 @@ import ArchiveNote from "./components/ArchiveNote";
 export const metadata: Metadata = {
   title: "Parallax Hearts | What the Town Keeps",
   description:
-    "Parallax Hearts is the home of What the Town Keeps — a cinematic album, story world, and built-in graphic novel archive set in Vallen, with Field Notes and the Forbidden Knowledge archive as a separate research lane.",
+    "Parallax Hearts is the home of What the Town Keeps — a cinematic album, story world, and built-in graphic novel archive set in Vallen, with Field Notes as a separate research lane.",
 };
 
 const siteFont = `Georgia, "Times New Roman", Times, serif`;
@@ -31,11 +31,9 @@ function TopNav() {
   const navItems = [
     ["Home", "/"],
     ["Music", "/music"],
-    ["What the Town Keeps", "/project"],
+    ["Story", "/project"],
     ["Graphic Novel", "/graphic-novel"],
-    ["Forbidden Knowledge", "/forbidden-knowledge"],
     ["Field Notes", "/field-notes"],
-    ["Shop", "/shop"],
     ["Support", "/support"],
     ["Contact", "/contact"],
   ];
@@ -90,8 +88,7 @@ function TopNav() {
                 key={label}
                 href={href}
                 style={{
-                  color:
-                    label === "What the Town Keeps" ? colors.gold : colors.textSoft,
+                  color: label === "Story" ? colors.gold : colors.textSoft,
                   textDecoration: "none",
                   fontSize: "15px",
                 }}
@@ -298,7 +295,7 @@ export default function HomePage() {
                 fontSize: "12px",
               }}
             >
-              Parallax Hearts / album / story world
+              Parallax Hearts / What the Town Keeps
             </p>
 
             <h1
@@ -310,7 +307,7 @@ export default function HomePage() {
                 fontWeight: 400,
               }}
             >
-              What the Town Keeps is where the music opens.
+              Songs, story, and the town that holds them.
             </h1>
 
             <p
@@ -323,9 +320,9 @@ export default function HomePage() {
               }}
             >
               Parallax Hearts is the music project behind <em>What the Town Keeps</em> —
-              a cinematic album, story world, and graphic novel archive set in
+              a cinematic album, story world, and visual novel archive set in
               Vallen, a rainy town of rail lines, old rooms, quiet distance, and
-              the things people learn not to say.
+              things people learn not to say.
             </p>
           </div>
 
@@ -338,13 +335,12 @@ export default function HomePage() {
             }}
           >
             <ProjectPanel
-              eyebrow="Main project / album world"
+              eyebrow="Main world"
               title="What the Town Keeps"
               subtitle="Rain. Rails. Memory. Silence."
               body={
                 <>
-                  A grounded, literary, emotionally restrained album and visual
-                  story world built around the small town of Vallen
+                  The album and story world built around Vallen
                   <ArchiveNote
                     title="Archive Note: Vallen"
                     evidence="Creative name / interpretive resonance"
@@ -354,218 +350,46 @@ export default function HomePage() {
                     place where weather and memory collect. This is a
                     project-specific name, not a historical place claim.
                   </ArchiveNote>
-                  , hidden weight, human distance, old houses, rail lines, and
-                  the graphic novel adaptation now taking shape.
+                  , a small town where the music, prose, and visual novel all
+                  move through the same weather.
                 </>
               }
               image="/images/hero.jpg"
-              primaryHref="/project"
-              primaryLabel="Enter the town"
-              secondaryHref="/graphic-novel"
-              secondaryLabel="Read the graphic novel"
+              primaryHref="/graphic-novel/chapter-one/page-001"
+              primaryLabel="Start the visual novel"
+              secondaryHref="/music"
+              secondaryLabel="Listen to the album"
             />
 
             <ProjectPanel
-              eyebrow="Research lane / separate archive"
+              eyebrow="Research lane"
               title="Field Notes"
               subtitle="Wonder deserves structure."
-              body="A separate research and source-trail lane for the Forbidden Knowledge work: etymology, symbolism, ancient knowledge, evidence labels, and the long-form codex method."
+              body="A separate source-trail lane for the Forbidden Knowledge work: ancient knowledge, lost etymology, evidence labels, and the long-form Handbook method."
               image="/images/world.jpg"
               primaryHref="/field-notes"
               primaryLabel="Open Field Notes"
               secondaryHref="/forbidden-knowledge"
-              secondaryLabel="Start Free Course"
+              secondaryLabel="Free intro course"
             />
-          </div>
-
-          <div
-            style={{
-              marginTop: "26px",
-              border: `1px solid rgba(210,181,139,0.22)`,
-              borderRadius: "28px",
-              padding: "clamp(24px, 5vw, 38px)",
-              background:
-                "linear-gradient(135deg, rgba(210,181,139,0.09), rgba(255,255,255,0.022)), rgba(5,7,10,0.48)",
-              boxShadow: "0 24px 70px rgba(0,0,0,0.24)",
-            }}
-          >
-            <p
-              style={{
-                margin: "0 0 12px",
-                color: colors.gold,
-                textTransform: "uppercase",
-                letterSpacing: "0.22em",
-                fontSize: "12px",
-              }}
-            >
-              Visual novel / built-in archive
-            </p>
-
-            <h2
-              style={{
-                margin: 0,
-                fontSize: "clamp(30px, 5vw, 56px)",
-                lineHeight: 0.98,
-                letterSpacing: "-0.055em",
-                fontWeight: 400,
-                maxWidth: "880px",
-              }}
-            >
-              Read Chapter One — Ballast on the site.
-            </h2>
-
-            <p
-              style={{
-                margin: "18px 0 0",
-                maxWidth: "780px",
-                color: colors.textSoft,
-                fontSize: "18px",
-                lineHeight: 1.75,
-              }}
-            >
-              The graphic novel archive begins with Elias Vale crossing into
-              Vallen. Page by page, the website becomes the readable story
-              archive for <em>What the Town Keeps</em>.
-            </p>
-
-            <div
-              style={{
-                marginTop: "24px",
-                display: "flex",
-                gap: "12px",
-                flexWrap: "wrap",
-              }}
-            >
-              <Link
-                href="/graphic-novel/chapter-one/page-001"
-                style={{
-                  color: "#08090b",
-                  background: colors.text,
-                  border: `1px solid ${colors.text}`,
-                  borderRadius: "999px",
-                  padding: "13px 18px",
-                  textDecoration: "none",
-                  fontSize: "15px",
-                  letterSpacing: "0.04em",
-                }}
-              >
-                Start Page 001
-              </Link>
-
-              <Link
-                href="/graphic-novel"
-                style={{
-                  color: colors.text,
-                  background: "rgba(5,7,10,0.58)",
-                  border: `1px solid ${colors.border}`,
-                  borderRadius: "999px",
-                  padding: "13px 18px",
-                  textDecoration: "none",
-                  fontSize: "15px",
-                  letterSpacing: "0.04em",
-                }}
-              >
-                Graphic Novel Hub
-              </Link>
-            </div>
-          </div>
-
-          <div
-            style={{
-              marginTop: "26px",
-              border: `1px solid rgba(210,181,139,0.22)`,
-              borderRadius: "28px",
-              padding: "clamp(24px, 5vw, 38px)",
-              background:
-                "linear-gradient(135deg, rgba(210,181,139,0.09), rgba(255,255,255,0.022)), rgba(5,7,10,0.48)",
-              boxShadow: "0 24px 70px rgba(0,0,0,0.24)",
-            }}
-          >
-            <p
-              style={{
-                margin: "0 0 12px",
-                color: colors.gold,
-                textTransform: "uppercase",
-                letterSpacing: "0.22em",
-                fontSize: "12px",
-              }}
-            >
-              Start here / free course
-            </p>
-
-            <h2
-              style={{
-                margin: 0,
-                fontSize: "clamp(30px, 5vw, 56px)",
-                lineHeight: 0.98,
-                letterSpacing: "-0.055em",
-                fontWeight: 400,
-                maxWidth: "880px",
-              }}
-            >
-              Forbidden Knowledge, without losing the map.
-            </h2>
-
-            <p
-              style={{
-                margin: "18px 0 0",
-                maxWidth: "780px",
-                color: colors.textSoft,
-                fontSize: "18px",
-                lineHeight: 1.75,
-              }}
-            >
-              Begin with the free intro course: source trails, evidence labels,
-              symbolic interpretation, and the 5-Level Rabbit Hole Method.
-              Preserve mystery. Protect truth.
-            </p>
-
-            <div
-              style={{
-                marginTop: "24px",
-                display: "flex",
-                gap: "12px",
-                flexWrap: "wrap",
-              }}
-            >
-              <Link
-                href="/forbidden-knowledge"
-                style={{
-                  color: "#08090b",
-                  background: colors.text,
-                  border: `1px solid ${colors.text}`,
-                  borderRadius: "999px",
-                  padding: "13px 18px",
-                  textDecoration: "none",
-                  fontSize: "15px",
-                  letterSpacing: "0.04em",
-                }}
-              >
-                Start Free Course
-              </Link>
-
-              <Link
-                href="/field-notes"
-                style={{
-                  color: colors.text,
-                  background: "rgba(5,7,10,0.58)",
-                  border: `1px solid ${colors.border}`,
-                  borderRadius: "999px",
-                  padding: "13px 18px",
-                  textDecoration: "none",
-                  fontSize: "15px",
-                  letterSpacing: "0.04em",
-                }}
-              >
-                Read Field Notes
-              </Link>
-            </div>
           </div>
         </Container>
       </section>
 
       <section style={{ padding: "38px 0 86px" }}>
         <Container>
+          <p
+            style={{
+              margin: "0 0 18px",
+              color: colors.gold,
+              textTransform: "uppercase",
+              letterSpacing: "0.22em",
+              fontSize: "12px",
+            }}
+          >
+            Choose a door
+          </p>
+
           <div
             style={{
               display: "grid",
@@ -575,39 +399,34 @@ export default function HomePage() {
           >
             {[
               {
-                title: "What the Town Keeps",
-                text: "The album, Vallen story world, and central creative universe.",
-                href: "/project",
+                title: "Read",
+                text: "Begin the built-in visual novel archive with Chapter One — Ballast.",
+                href: "/graphic-novel/chapter-one/page-001",
               },
               {
-                title: "Graphic Novel",
-                text: "Read the built-in visual novel archive, beginning with Chapter One — Ballast.",
-                href: "/graphic-novel",
-              },
-              {
-                title: "Music",
-                text: "Songs, album links, SoundCloud streaming, and project notes.",
+                title: "Listen",
+                text: "Hear the album and follow the music side of Parallax Hearts.",
                 href: "/music",
               },
               {
-                title: "Field Notes",
-                text: "Forbidden Knowledge research, source trails, evidence labels, and the codex method.",
+                title: "Explore",
+                text: "Enter the larger story world of Vallen and What the Town Keeps.",
+                href: "/project",
+              },
+              {
+                title: "Study",
+                text: "Open Field Notes, the separate research lane for source trails and evidence labels.",
                 href: "/field-notes",
               },
               {
-                title: "Free Course",
-                text: "The Forbidden Knowledge intro course and the 5-Level Rabbit Hole Method.",
-                href: "/forbidden-knowledge",
-              },
-              {
                 title: "Support",
-                text: "Support the music, story, visual archive, and ongoing creative work directly through Ko-fi.",
+                text: "Support the music, story, visual archive, and ongoing creative work.",
                 href: "/support",
               },
               {
-                title: "PHYLAX Archive",
-                text: "The heavier lore world remains available as a separate archive while Field Notes moves forward first.",
-                href: "/phylax",
+                title: "Connect",
+                text: "Find email, Facebook, Instagram, YouTube, SoundCloud, and Ko-fi links.",
+                href: "/contact",
               },
             ].map((card) => (
               <Link
