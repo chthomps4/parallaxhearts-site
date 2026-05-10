@@ -134,8 +134,8 @@ export default function ChapterOnePage003() {
                   Previous Page
                 </Link>
 
-                <Link href="/graphic-novel/chapter-one" className="primary-button">
-                  Chapter Archive
+                <Link href="/graphic-novel/chapter-one/page-004" className="primary-button">
+                  Next Page
                 </Link>
               </div>
             </div>
@@ -247,8 +247,8 @@ export default function ChapterOnePage003() {
               ← Page 002
             </Link>
 
-            <Link href="/graphic-novel/chapter-one" className="primary-button">
-              Chapter Archive →
+            <Link href="/graphic-novel/chapter-one/page-004" className="primary-button">
+              Page 004 →
             </Link>
           </div>
         </div>
