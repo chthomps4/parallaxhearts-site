@@ -5,7 +5,46 @@ import ArchiveNote from "./components/ArchiveNote";
 export const metadata: Metadata = {
   title: "Parallax Hearts | What the Town Keeps",
   description:
-    "Parallax Hearts is the home of What the Town Keeps — a cinematic album, story world, and built-in graphic novel archive set in Vallen, with Field Notes as a separate research lane.",
+    "Parallax Hearts is the music project behind What the Town Keeps — a cinematic album, visual novel archive, and rainy small-town story world set in Vallen.",
+  keywords: [
+    "Parallax Hearts",
+    "What the Town Keeps",
+    "Vallen",
+    "cinematic music project",
+    "independent music",
+    "visual novel archive",
+    "graphic novel music project",
+    "literary alternative music",
+    "Field Notes",
+    "Forbidden Knowledge",
+  ],
+  alternates: {
+    canonical: "https://www.parallaxhearts.org/",
+  },
+  openGraph: {
+    title: "Parallax Hearts | What the Town Keeps",
+    description:
+      "Songs, story, Field Notes, and the visual novel archive of What the Town Keeps — set in the rainy town of Vallen.",
+    url: "https://www.parallaxhearts.org/",
+    siteName: "Parallax Hearts",
+    images: [
+      {
+        url: "/images/hero.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Parallax Hearts — What the Town Keeps",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Parallax Hearts | What the Town Keeps",
+    description:
+      "A cinematic music and story-world archive set in the rainy town of Vallen.",
+    images: ["/images/hero.jpg"],
+  },
 };
 
 const siteFont = `Georgia, "Times New Roman", Times, serif`;
