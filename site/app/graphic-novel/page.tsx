@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Graphic Novel | What the Town Keeps",
   description:
-    "Read and follow the graphic novel / visual novel adaptation of What the Town Keeps by Parallax Hearts, beginning with Chapter One — Ballast.",
+    "Read the built-in graphic novel / visual novel adaptation of What the Town Keeps by Parallax Hearts, beginning with Chapter One — Ballast.",
   keywords: [
     "What the Town Keeps graphic novel",
     "What the Town Keeps visual novel",
@@ -24,28 +24,27 @@ const navItems = [
   ["Story", "/project"],
   ["Graphic Novel", "/graphic-novel"],
   ["Field Notes", "/field-notes"],
-  ["Shop", "/shop"],
   ["Support", "/support"],
   ["Contact", "/contact"],
 ];
 
 const accessCards = [
   {
-    title: "Chapter One — Ballast",
-    label: "Canonical opening",
-    text: "Elias Vale arrives in Vallen for what should be a simple house inspection. The town greets him with rails, weather, old rooms, and a silence that does not feel empty.",
-    href: "/graphic-novel/chapter-one",
+    title: "Start Reading",
+    label: "Page 001",
+    text: "Begin Chapter One with Elias Vale at the crossing into Vallen.",
+    href: "/graphic-novel/chapter-one/page-001",
   },
   {
-    title: "Page Archive",
-    label: "Coming online",
-    text: "Individual graphic novel pages will live here as a readable website archive, with chapter navigation and future page-by-page updates.",
+    title: "Chapter One — Ballast",
+    label: "Chapter archive",
+    text: "Open the chapter table of contents and follow the live pages in order.",
     href: "/graphic-novel/chapter-one",
   },
   {
     title: "Story World",
-    label: "Vallen context",
-    text: "Use the story page for the larger world: the town, its weather, its rooms, its rail lines, and the emotional pressure behind the album.",
+    label: "Context",
+    text: "Step back into the larger world of Vallen, the album, and What the Town Keeps.",
     href: "/project",
   },
 ];
@@ -159,7 +158,7 @@ export default function GraphicNovelPage() {
                     maxWidth: "920px",
                   }}
                 >
-                  The visual story archive begins here.
+                  Read the story as it is being built.
                 </h1>
 
                 <p
@@ -170,16 +169,9 @@ export default function GraphicNovelPage() {
                     fontSize: "19px",
                   }}
                 >
-                  <em>What the Town Keeps</em> moves through music, prose,
-                  graphic-novel pages, and visual-novel scenes. This section is
-                  where the website becomes the archive for the story side of
-                  Vallen.
-                </p>
-
-                <p className="body-copy" style={{ margin: "18px 0 0", maxWidth: "820px" }}>
-                  Chapter One, <em>Ballast</em>, follows Elias Vale into Vallen
-                  for a house inspection that starts as work and becomes a way
-                  into the town’s memory.
+                  The graphic novel begins with Chapter One, <em>Ballast</em>:
+                  Elias Vale entering Vallen for a house inspection that slowly
+                  becomes something heavier than work.
                 </p>
 
                 <div
@@ -190,12 +182,12 @@ export default function GraphicNovelPage() {
                     flexWrap: "wrap",
                   }}
                 >
-                  <Link href="/graphic-novel/chapter-one" className="primary-button">
-                    Open Chapter One
+                  <Link href="/graphic-novel/chapter-one/page-001" className="primary-button">
+                    Start Page 001
                   </Link>
 
-                  <Link href="/project" className="secondary-button">
-                    Story World
+                  <Link href="/graphic-novel/chapter-one" className="secondary-button">
+                    Chapter One Archive
                   </Link>
 
                   <Link href="/music" className="secondary-button">
@@ -232,7 +224,7 @@ export default function GraphicNovelPage() {
 
       <section style={{ padding: "34px 0" }}>
         <div className="site-container">
-          <p className="kicker">Read / follow / archive</p>
+          <p className="kicker">Reader paths</p>
 
           <div
             style={{
@@ -304,15 +296,14 @@ export default function GraphicNovelPage() {
               <h2 className="section-title">A page should feel lived in.</h2>
 
               <p className="body-copy" style={{ margin: "18px 0 0" }}>
-                The adaptation should feel like warm, earthy cinematic realism:
-                restrained panels, readable text, quiet human faces, rain on
-                windows, rail lines, old houses, and rooms that feel like they
+                The adaptation uses quiet panels, grounded faces, old houses,
+                rain on glass, rail lines, and rooms that feel like they
                 remember who has passed through them.
               </p>
 
               <p className="body-copy" style={{ margin: "18px 0 0" }}>
-                The goal is not horror or spectacle. It is emotional realism —
-                the town as witness, pressure system, and archive.
+                The goal is emotional realism. The town is a witness and a
+                pressure system, not a horror setting.
               </p>
             </div>
 
