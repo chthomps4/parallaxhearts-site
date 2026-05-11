@@ -109,6 +109,25 @@ const services = [
   },
 ];
 
+const offerTypes = [
+  {
+    title: "New site build",
+    text: "For a project, artist, business, or service that needs a clean online home from the ground up.",
+  },
+  {
+    title: "Ad landing page",
+    text: "For Facebook, Instagram, Zeely, Skool, Ko-fi, music, services, or a focused offer that needs one clear page.",
+  },
+  {
+    title: "Site cleanup",
+    text: "For an existing website that looks decent but feels scattered, unclear, outdated, hard to navigate, or weak on mobile.",
+  },
+  {
+    title: "Update support",
+    text: "For small changes after launch: copy edits, new sections, link updates, image swaps, page cleanup, or practical improvements.",
+  },
+];
+
 const adFitPoints = [
   "You have a real project, but the current online home feels scattered or unfinished.",
   "You need people to understand what you do without sending five separate links.",
@@ -227,6 +246,24 @@ export default function WebsitesPage() {
                 <p className="kicker">{service.label}</p>
                 <h2>{service.title}</h2>
                 <p>{service.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-shell muted-section">
+        <div className="site-container">
+          <p className="kicker">What you can ask for</p>
+          <h2 className="section-title">Start with the job you actually need done.</h2>
+          <p className="soft-copy" style={{ maxWidth: "760px" }}>
+            You do not have to know the right technical name for the work. Pick the closest starting point and send the rough version. The scope can be shaped from there.
+          </p>
+          <div className="card-grid two-card-grid" style={{ marginTop: "24px" }}>
+            {offerTypes.map((offer) => (
+              <article className="feature-card" key={offer.title}>
+                <h2>{offer.title}</h2>
+                <p>{offer.text}</p>
               </article>
             ))}
           </div>
