@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { absoluteUrl, defaultKeywords, socialLinks } from "../lib/seo";
+import { absoluteUrl, breadcrumbSchema, defaultKeywords, socialLinks } from "../lib/seo";
 
 const pageTitle = "Custom Websites for Artists, Creators, and Small Businesses | Parallax Hearts";
 const pageDescription =
   "Custom websites for artists, creators, small businesses, and local projects, built with clear structure, strong visual direction, mobile-first pages, and practical follow-up after launch.";
+const pageUrl = absoluteUrl("/websites");
+const previewImage = absoluteUrl("/images/hero.jpg");
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -22,16 +24,16 @@ export const metadata: Metadata = {
     "website follow up support",
   ],
   alternates: {
-    canonical: absoluteUrl("/websites"),
+    canonical: pageUrl,
   },
   openGraph: {
     title: pageTitle,
     description: pageDescription,
-    url: absoluteUrl("/websites"),
+    url: pageUrl,
     siteName: "Parallax Hearts",
     images: [
       {
-        url: "/images/hero.jpg",
+        url: previewImage,
         width: 1200,
         height: 630,
         alt: "Custom website design services by Parallax Hearts",
@@ -44,15 +46,28 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: pageTitle,
     description: pageDescription,
-    images: ["/images/hero.jpg"],
+    images: [previewImage],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": `${pageUrl}#website-services`,
   name: "Parallax Hearts Website Services",
-  url: absoluteUrl("/websites"),
+  url: pageUrl,
+  image: previewImage,
   description: pageDescription,
   areaServed: "United States",
   serviceType:
@@ -66,6 +81,13 @@ const serviceSchema = {
       "Custom website builds, visual direction, mobile-first page structure, launch help, and follow-up update support. Pricing depends on project scope.",
   },
 };
+
+const pageBreadcrumbSchema = breadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "Website Services", path: "/websites" },
+]);
+
+const pageSchemas = [serviceSchema, pageBreadcrumbSchema];
 
 const heroBadges = ["Mobile-first", "Clear structure", "Visual direction", "Follow-up support"];
 
@@ -142,7 +164,7 @@ export default function WebsitesPage() {
     <main>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchemas) }}
       />
 
       <section className="section-shell hero-section">
