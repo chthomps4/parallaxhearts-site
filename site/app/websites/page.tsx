@@ -109,6 +109,12 @@ const services = [
   },
 ];
 
+const adFitPoints = [
+  "You have a real project, but the current online home feels scattered or unfinished.",
+  "You need people to understand what you do without sending five separate links.",
+  "You want a site that looks intentional, works on a phone, and gives visitors one clear next step.",
+];
+
 const reasons = [
   {
     title: "Built around purpose",
@@ -170,13 +176,13 @@ export default function WebsitesPage() {
       <section className="section-shell hero-section">
         <div className="site-container two-column">
           <div>
-            <p className="kicker">Website Design / Build Support</p>
-            <h1 className="page-title">Custom websites for artists, creators, and small businesses.</h1>
+            <p className="kicker">Website Design / Landing Pages / Site Updates</p>
+            <h1 className="page-title">A clear website for the work you are already trying to explain.</h1>
             <p className="lead-copy">
-              I build clean, practical websites with strong visual direction, clear page structure, mobile-first design, and real follow-up after launch.
+              Custom websites for artists, creators, small businesses, and local projects — built with clean structure, strong visual direction, mobile-first pages, and practical follow-up after launch.
             </p>
             <p className="soft-copy">
-              This is for people who need more than a social profile, a generic template, or a link page that does not explain anything.
+              This is for people who need more than a social profile, a generic template, or a link page that sends visitors away confused.
             </p>
 
             <div className="button-row">
@@ -198,14 +204,13 @@ export default function WebsitesPage() {
           </div>
 
           <aside className="feature-card">
-            <p className="kicker">The offer</p>
-            <h2>A site that explains the work and gives people a clear next step.</h2>
-            <p>
-              Good websites do not need to be bloated. They need to be clear, believable, easy to use on a phone, and built around what the visitor should do next.
-            </p>
-            <p>
-              I help shape the copy, structure, and visual direction so the finished site feels like it belongs to you instead of looking like a rented template.
-            </p>
+            <p className="kicker">Good fit if</p>
+            <h2>You need the site to make the project easier to understand.</h2>
+            <ul className="clean-list">
+              {adFitPoints.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
             <Link className="primary-button" href="/contact">
               Send me the rough idea
             </Link>
@@ -265,13 +270,13 @@ export default function WebsitesPage() {
       <section className="section-shell">
         <div className="site-container two-column">
           <div>
-            <p className="kicker">Examples</p>
+            <p className="kicker">Example</p>
             <h2 className="section-title">The proof is this site.</h2>
             <p className="soft-copy">
               Parallaxhearts.org is not just a band page. It connects music, story, visual pages, support links, SEO structure, contact paths, and project archives into one working site.
             </p>
             <p className="soft-copy">
-              Acoustaland.org can also be used as a second example when discussing style direction, depending on the client and project need.
+              That same thinking can be used for simpler projects too: a local business site, a creator page, a music project, a service page, or a focused landing page for an ad.
             </p>
             <div className="button-row">
               <Link className="primary-button" href="/">
@@ -349,9 +354,9 @@ export default function WebsitesPage() {
 
           <div className="feature-card">
             <p className="kicker">Next step</p>
-            <h2>Tell me what the site needs to do.</h2>
+            <h2>Send the rough version. I will help shape it.</h2>
             <p>
-              Send the project name, what kind of site you need, and the main action visitors should take. Rough notes are enough to start.
+              Send the project name, what kind of site you need, the main action visitors should take, and any links or images you already have. Rough notes are enough to start.
             </p>
             <Link className="primary-button" href="/contact">
               Start the conversation
