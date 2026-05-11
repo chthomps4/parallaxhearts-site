@@ -63,7 +63,7 @@ const contactLinks = [
   },
   {
     label: "Website request",
-    value: "Send project details",
+    value: "Start a website request",
     href: websiteMailto,
   },
   {
@@ -114,19 +114,19 @@ const contactPaths = [
   },
   {
     title: "Websites",
-    text: "Ask about a custom website for an artist, creator, small business, or local project.",
+    text: "Custom websites for artists, creators, small businesses, landing pages, and site update work.",
     href: "/websites",
     external: false,
   },
 ];
 
 const websiteIntake = [
-  "Your project, business, or artist name",
-  "What kind of website you need",
+  "Your business, artist, or project name",
+  "What you offer or what the project is",
   "The main action visitors should take",
-  "Any links, photos, logos, music, products, or examples you already have",
+  "Any links, photos, logos, music, products, examples, or rough notes you already have",
   "Pages you think you need, such as Home, About, Services, Music, Shop, or Contact",
-  "Your rough deadline and budget range, even if both are flexible",
+  "A rough deadline and budget range, even if both are flexible",
 ];
 
 export default function ContactPage() {
@@ -242,8 +242,9 @@ export default function ContactPage() {
                   }}
                 >
                   Use this page for Parallax Hearts links, listener messages,
-                  music, support for <em>What the Town Keeps</em>, or custom
-                  website service inquiries.
+                  music, support for <em>What the Town Keeps</em>, or website
+                  requests for custom sites, landing pages, and practical update
+                  work.
                 </p>
 
                 <div
@@ -345,15 +346,16 @@ export default function ContactPage() {
                   fontWeight: 400,
                 }}
               >
-                Need a site built? Send the rough pieces.
+                Need a site built? Send the rough idea.
               </h2>
               <p className="body-copy" style={{ margin: "20px 0 0" }}>
-                You do not need to have everything perfectly organized. Send what
-                you have, and I can help turn it into a clear website plan.
+                You do not need everything perfectly organized. Send what you
+                have, and I can help turn the scattered pieces into a clear site
+                plan with structure, visual direction, and a practical next step.
               </p>
               <div style={{ marginTop: "24px", display: "flex", gap: "12px", flexWrap: "wrap" }}>
                 <a className="primary-button" href={websiteMailto}>
-                  Email website details
+                  Send me your website idea
                 </a>
                 <Link className="secondary-button" href="/websites">
                   View website services
