@@ -67,17 +67,22 @@ const serviceSchema = {
   },
 };
 
+const heroBadges = ["Mobile-first", "Clear structure", "Visual direction", "Follow-up support"];
+
 const services = [
   {
-    title: "Starter websites",
+    title: "Starter website",
+    label: "Good first site",
     text: "A clean one-page or small multi-page site that explains who you are, what you offer, and how people should contact you.",
   },
   {
-    title: "Artist and creator sites",
+    title: "Artist / creator site",
+    label: "For work with identity",
     text: "Websites for musicians, writers, visual projects, personal brands, story worlds, portfolios, and creative work that needs a real home.",
   },
   {
-    title: "Landing pages and updates",
+    title: "Landing page / update pass",
+    label: "Focused conversion page",
     text: "Focused pages for ads, launches, services, subscriptions, or cleanup work on a site that already exists but no longer feels clear.",
   },
 ];
@@ -95,6 +100,15 @@ const reasons = [
     title: "Follow-up is part of the job",
     text: "A site is never fully understood until people start using it. I keep room for practical edits, cleanup, and small improvements after launch.",
   },
+];
+
+const proofPoints = [
+  "music and story pages",
+  "support and contact paths",
+  "SEO structure",
+  "visual archive pages",
+  "project navigation",
+  "mobile-friendly flow",
 ];
 
 const process = [
@@ -142,6 +156,7 @@ export default function WebsitesPage() {
             <p className="soft-copy">
               This is for people who need more than a social profile, a generic template, or a link page that does not explain anything.
             </p>
+
             <div className="button-row">
               <Link className="primary-button" href="/contact">
                 Start a website request
@@ -149,6 +164,14 @@ export default function WebsitesPage() {
               <Link className="ghost-button" href="#intake">
                 What to send me
               </Link>
+            </div>
+
+            <div className="button-row" style={{ marginTop: "18px" }}>
+              {heroBadges.map((badge) => (
+                <span className="ghost-button" key={badge} style={{ cursor: "default" }}>
+                  {badge}
+                </span>
+              ))}
             </div>
           </div>
 
@@ -161,6 +184,9 @@ export default function WebsitesPage() {
             <p>
               I help shape the copy, structure, and visual direction so the finished site feels like it belongs to you instead of looking like a rented template.
             </p>
+            <Link className="primary-button" href="/contact">
+              Send me the rough idea
+            </Link>
           </aside>
         </div>
       </section>
@@ -171,6 +197,7 @@ export default function WebsitesPage() {
           <div className="card-grid three-card-grid">
             {services.map((service) => (
               <article className="feature-card" key={service.title}>
+                <p className="kicker">{service.label}</p>
                 <h2>{service.title}</h2>
                 <p>{service.text}</p>
               </article>
@@ -224,16 +251,23 @@ export default function WebsitesPage() {
             <p className="soft-copy">
               Acoustaland.org can also be used as a second example when discussing style direction, depending on the client and project need.
             </p>
+            <div className="button-row">
+              <Link className="primary-button" href="/">
+                View Parallax Hearts
+              </Link>
+              <Link className="ghost-button" href="/contact">
+                Ask about examples
+              </Link>
+            </div>
           </div>
 
           <div className="feature-card">
-            <p className="kicker">What matters most</p>
-            <p>
-              The site needs to work on a phone, load clearly, tell people what you do, and make the next step obvious.
-            </p>
-            <p>
-              Visual polish matters, but structure is what keeps people from leaving confused.
-            </p>
+            <p className="kicker">This site already includes</p>
+            <ul className="clean-list">
+              {proofPoints.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
