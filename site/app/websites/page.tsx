@@ -184,6 +184,13 @@ const fitItems = [
   "Side businesses that need a serious first site",
 ];
 
+const subscriberPerks = [
+  "early access to pricing breakdowns and process notes when available",
+  "occasional website-service discounts or update credits when an offer is active",
+  "behind-the-scenes explanations of how site scope, timing, and revisions are handled",
+  "clearer ways to compare a small update, landing page, and full site build",
+];
+
 export default function WebsitesPage() {
   return (
     <main>
@@ -380,20 +387,44 @@ export default function WebsitesPage() {
         <div className="site-container two-column">
           <div>
             <p className="kicker">Pricing / Subscribers</p>
-            <h2 className="section-title">Pricing depends on scope, not vague packages.</h2>
+            <h2 className="section-title">Pricing is based on the real scope of the site.</h2>
             <p className="soft-copy">
-              A one-page site, a multi-page service site, a landing page, and ongoing update support are different jobs. I keep the breakdown clear before work begins so there are no vague promises or surprise expectations.
+              A small update, a one-page landing page, a new multi-page site, and ongoing support are different jobs. I keep the scope clear before work begins so the time, revision path, and expectations are understood up front.
             </p>
             <p className="soft-copy">
-              Subscriber discounts, update-service perks, and deeper pricing breakdowns can be offered through the main subscribed page when that offer is active.
+              Subscriber perks may be used for website-service discounts, update credits, or deeper process breakdowns when a specific offer is active. They are not a blank promise of unlimited free work.
             </p>
           </div>
 
           <div className="feature-card">
+            <p className="kicker">Subscriber perks may include</p>
+            <ul className="clean-list">
+              {subscriberPerks.map((perk) => (
+                <li key={perk}>{perk}</li>
+              ))}
+            </ul>
+            <Link className="primary-button" href="/support">
+              View support options
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-shell">
+        <div className="site-container two-column">
+          <div>
             <p className="kicker">Next step</p>
-            <h2>Send the rough version. I will help shape it.</h2>
-            <p>
+            <h2 className="section-title">Send the rough version. I will help shape it.</h2>
+            <p className="soft-copy">
               Send the project name, what kind of site you need, the main action visitors should take, and any links or images you already have. Rough notes are enough to start.
+            </p>
+          </div>
+
+          <div className="feature-card">
+            <p className="kicker">Start here</p>
+            <h2>Tell me what the site needs to do.</h2>
+            <p>
+              The first useful question is simple: what should a visitor understand or do after landing on the site?
             </p>
             <Link className="primary-button" href="/contact">
               Start the conversation
