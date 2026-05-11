@@ -244,6 +244,27 @@ export default function WebsitesPage() {
         </div>
       </section>
 
+      <section className="section-shell muted-section">
+        <div className="site-container two-column">
+          <div>
+            <p className="kicker">Free planning resource</p>
+            <h2 className="section-title">Not ready to ask for a site yet?</h2>
+            <p className="soft-copy" style={{ marginTop: "18px" }}>
+              Start with the website planning checklist. It shows what to gather before starting a new site, landing page, or cleanup pass.
+            </p>
+          </div>
+
+          <div className="feature-card">
+            <p>
+              This checklist is useful for artists, creators, small businesses, service providers, and local projects that need a clearer online home.
+            </p>
+            <Link className="primary-button" href="/website-planning">
+              Open the checklist
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="section-shell">
         <div className="site-container">
           <p className="kicker">What I build</p>
