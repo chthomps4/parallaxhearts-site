@@ -193,13 +193,13 @@ const subscriberPerks = [
 
 export default function WebsitesPage() {
   return (
-    <main>
+    <main className="websites-page">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchemas) }}
       />
 
-      <section className="section-shell hero-section">
+      <section className="section-shell hero-section websites-hero">
         <div className="site-container two-column">
           <div>
             <p className="kicker">Website Design / Landing Pages / Site Updates</p>
@@ -211,7 +211,7 @@ export default function WebsitesPage() {
               This is for people who need more than a social profile, a generic template, or a link page that sends visitors away confused.
             </p>
 
-            <div className="button-row">
+            <div className="button-row websites-cta-row">
               <Link className="primary-button" href="/contact">
                 Start a website request
               </Link>
@@ -220,16 +220,16 @@ export default function WebsitesPage() {
               </Link>
             </div>
 
-            <div className="button-row" style={{ marginTop: "18px" }}>
+            <div className="button-row websites-badge-row" style={{ marginTop: "18px" }}>
               {heroBadges.map((badge) => (
-                <span className="ghost-button" key={badge} style={{ cursor: "default" }}>
+                <span className="ghost-button websites-badge" key={badge} style={{ cursor: "default" }}>
                   {badge}
                 </span>
               ))}
             </div>
           </div>
 
-          <aside className="feature-card">
+          <aside className="feature-card websites-hero-card">
             <p className="kicker">Good fit if</p>
             <h2>You need the site to make the project easier to understand.</h2>
             <ul className="clean-list">
@@ -322,7 +322,7 @@ export default function WebsitesPage() {
             <p className="soft-copy">
               That same thinking can be used for simpler projects too: a local business site, a creator page, a music project, a service page, or a focused landing page for an ad.
             </p>
-            <div className="button-row">
+            <div className="button-row websites-cta-row">
               <Link className="primary-button" href="/">
                 View Parallax Hearts
               </Link>
@@ -432,6 +432,95 @@ export default function WebsitesPage() {
           </div>
         </div>
       </section>
+
+      <style>{`
+        @media (max-width: 760px) {
+          .websites-page .site-container {
+            width: min(100% - 22px, 1180px);
+          }
+
+          .websites-page .section-shell {
+            padding-top: 42px;
+            padding-bottom: 42px;
+          }
+
+          .websites-page .websites-hero {
+            padding-top: 34px;
+          }
+
+          .websites-page .page-title {
+            font-size: clamp(40px, 13vw, 58px);
+            line-height: 0.96;
+            letter-spacing: -0.058em;
+          }
+
+          .websites-page .lead-copy {
+            font-size: 18px;
+            line-height: 1.58;
+          }
+
+          .websites-page .section-title {
+            font-size: clamp(32px, 10vw, 46px);
+            line-height: 1.02;
+          }
+
+          .websites-page .feature-card {
+            border-radius: 22px;
+            padding: 22px;
+          }
+
+          .websites-page .websites-hero-card {
+            margin-top: 4px;
+          }
+
+          .websites-page .websites-cta-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+          }
+
+          .websites-page .websites-cta-row a,
+          .websites-page .feature-card .primary-button {
+            width: 100%;
+            min-height: 52px;
+            text-align: center;
+          }
+
+          .websites-page .websites-badge-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+          }
+
+          .websites-page .websites-badge {
+            min-height: 40px;
+            padding: 0 10px;
+            font-size: 10px;
+            letter-spacing: 0.1em;
+            white-space: normal;
+            text-align: center;
+          }
+
+          .websites-page .clean-list {
+            padding-left: 18px;
+          }
+
+          .websites-page .clean-list li {
+            margin-bottom: 8px;
+          }
+        }
+
+        @media (max-width: 420px) {
+          .websites-page .websites-badge-row {
+            grid-template-columns: 1fr;
+          }
+
+          .websites-page .kicker {
+            letter-spacing: 0.16em;
+            font-size: 11px;
+          }
+        }
+      `}</style>
     </main>
   );
 }
