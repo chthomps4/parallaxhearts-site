@@ -122,6 +122,9 @@ export default function WebsitesPage() {
             <p className="lead-copy">
               I build custom websites for artists, creators, small businesses, and local projects that need a clean, professional online home with strong visual direction and practical follow-up support.
             </p>
+            <p className="soft-copy">
+              Now taking website conversations for new builds, landing pages, creator sites, and practical site updates.
+            </p>
             <div className="button-row">
               <Link className="primary-button" href="/contact">
                 Request a website
