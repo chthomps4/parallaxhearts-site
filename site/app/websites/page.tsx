@@ -212,7 +212,7 @@ export default function WebsitesPage() {
             </p>
 
             <div className="button-row websites-cta-row">
-              <Link className="primary-button" href="/contact">
+              <Link className="primary-button" href="/website-intake">
                 Start a website request
               </Link>
               <Link className="ghost-button" href="#intake">
@@ -237,7 +237,7 @@ export default function WebsitesPage() {
                 <li key={point}>{point}</li>
               ))}
             </ul>
-            <Link className="primary-button" href="/contact">
+            <Link className="primary-button" href="/website-intake">
               Send me the rough idea
             </Link>
           </aside>
@@ -347,7 +347,7 @@ export default function WebsitesPage() {
               <Link className="primary-button" href="/">
                 View Parallax Hearts
               </Link>
-              <Link className="ghost-button" href="/contact">
+              <Link className="ghost-button" href="/website-intake">
                 Ask about examples
               </Link>
             </div>
@@ -389,8 +389,8 @@ export default function WebsitesPage() {
             <p className="soft-copy">
               You do not need everything perfectly organized. Send what you have. The first job is turning scattered pieces into a clear site plan.
             </p>
-            <Link className="primary-button" href="/contact">
-              Send me your website idea
+            <Link className="primary-button" href="/website-intake">
+              Open the intake form
             </Link>
           </div>
 
@@ -447,8 +447,8 @@ export default function WebsitesPage() {
             <p>
               The first useful question is simple: what should a visitor understand or do after landing on the site?
             </p>
-            <Link className="primary-button" href="/contact">
-              Start the conversation
+            <Link className="primary-button" href="/website-intake">
+              Open the intake form
             </Link>
           </div>
         </div>
