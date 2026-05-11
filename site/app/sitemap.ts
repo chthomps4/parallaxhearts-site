@@ -11,6 +11,7 @@ const staticRoutes = [
   { path: "/graphic-novel", priority: 0.94, changeFrequency: "weekly" as const },
   { path: "/graphic-novel/chapter-one", priority: 0.93, changeFrequency: "weekly" as const },
   { path: "/websites", priority: 0.88, changeFrequency: "weekly" as const },
+  { path: "/website-planning", priority: 0.82, changeFrequency: "monthly" as const },
   { path: "/field-notes", priority: 0.95, changeFrequency: "weekly" as const },
   { path: "/forbidden-knowledge", priority: 0.98, changeFrequency: "weekly" as const },
   { path: "/support", priority: 0.85, changeFrequency: "monthly" as const },
