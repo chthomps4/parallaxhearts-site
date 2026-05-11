@@ -72,7 +72,7 @@ function TopNav() {
     ["Music", "/music"],
     ["Story", "/project"],
     ["Graphic Novel", "/graphic-novel"],
-    ["Websites", "/websites"],
+    ["Website Services", "/websites"],
     ["Field Notes", "/field-notes"],
     ["Support", "/support"],
     ["Contact", "/contact"],
@@ -459,8 +459,8 @@ export default function HomePage() {
                 href: "/field-notes",
               },
               {
-                title: "Websites",
-                text: "Custom websites are available separately for artists, creators, and small businesses.",
+                title: "Website Services",
+                text: "Custom websites for artists, creators, small businesses, landing pages, and site update work.",
                 href: "/websites",
               },
               {
