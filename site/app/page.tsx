@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import ArchiveNote from "./components/ArchiveNote";
+import SiteHeader from "./components/SiteHeader";
 
 export const metadata: Metadata = {
   title: "Parallax Hearts | What the Town Keeps",
@@ -8,102 +9,12 @@ export const metadata: Metadata = {
     "Parallax Hearts is the home of What the Town Keeps — a cinematic album, story world, and graphic novel direction set in Vallen, with Field Notes and the Forbidden Knowledge archive as a separate research lane.",
 };
 
-const siteFont = `Georgia, "Times New Roman", Times, serif`;
-
 const colors = {
   text: "#f3eee7",
   textSoft: "rgba(243, 238, 231, 0.78)",
-  textDim: "rgba(243, 238, 231, 0.58)",
   gold: "#d2b58b",
   border: "rgba(243, 238, 231, 0.14)",
-  blueGray: "#8da0b2",
 };
-
-function Container({ children }: { children: React.ReactNode }) {
-  return (
-    <div style={{ width: "min(1180px, calc(100% - 32px))", margin: "0 auto" }}>
-      {children}
-    </div>
-  );
-}
-
-function TopNav() {
-  const navItems = [
-    ["Home", "/"],
-    ["Music", "/music"],
-    ["What the Town Keeps", "/project"],
-    ["Forbidden Knowledge", "/forbidden-knowledge"],
-    ["Field Notes", "/field-notes"],
-    ["Shop", "/shop"],
-    ["Support", "/support"],
-    ["Contact", "/contact"],
-  ];
-
-  return (
-    <div
-      style={{
-        position: "sticky",
-        top: 0,
-        zIndex: 40,
-        backdropFilter: "blur(12px)",
-        background: "rgba(5,5,7,0.76)",
-        borderBottom: `1px solid ${colors.border}`,
-      }}
-    >
-      <Container>
-        <header
-          style={{
-            minHeight: "72px",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            gap: "20px",
-            flexWrap: "wrap",
-            padding: "16px 0",
-          }}
-        >
-          <Link
-            href="/"
-            style={{
-              color: colors.text,
-              textDecoration: "none",
-              fontSize: "clamp(24px, 4vw, 34px)",
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-              lineHeight: 1,
-            }}
-          >
-            Parallax Hearts
-          </Link>
-
-          <nav
-            style={{
-              display: "flex",
-              gap: "16px",
-              flexWrap: "wrap",
-              alignItems: "center",
-            }}
-          >
-            {navItems.map(([label, href]) => (
-              <Link
-                key={label}
-                href={href}
-                style={{
-                  color:
-                    label === "What the Town Keeps" ? colors.gold : colors.textSoft,
-                  textDecoration: "none",
-                  fontSize: "15px",
-                }}
-              >
-                {label}
-              </Link>
-            ))}
-          </nav>
-        </header>
-      </Container>
-    </div>
-  );
-}
 
 function ProjectPanel({
   eyebrow,
@@ -142,6 +53,7 @@ function ProjectPanel({
       }}
     >
       <div
+        aria-hidden="true"
         style={{
           position: "absolute",
           inset: 0,
@@ -157,6 +69,7 @@ function ProjectPanel({
       />
 
       <div
+        aria-hidden="true"
         style={{
           position: "absolute",
           inset: 0,
@@ -172,17 +85,7 @@ function ProjectPanel({
           padding: "clamp(26px, 5vw, 46px)",
         }}
       >
-        <p
-          style={{
-            margin: "0 0 14px",
-            color: colors.gold,
-            textTransform: "uppercase",
-            letterSpacing: "0.22em",
-            fontSize: "12px",
-          }}
-        >
-          {eyebrow}
-        </p>
+        <p className="kicker">{eyebrow}</p>
 
         <h2
           style={{
@@ -229,35 +132,11 @@ function ProjectPanel({
             flexWrap: "wrap",
           }}
         >
-          <Link
-            href={primaryHref}
-            style={{
-              color: "#08090b",
-              background: colors.text,
-              border: `1px solid ${colors.text}`,
-              borderRadius: "999px",
-              padding: "13px 18px",
-              textDecoration: "none",
-              fontSize: "15px",
-              letterSpacing: "0.04em",
-            }}
-          >
+          <Link href={primaryHref} className="primary-button">
             {primaryLabel}
           </Link>
 
-          <Link
-            href={secondaryHref}
-            style={{
-              color: colors.text,
-              background: "rgba(5,7,10,0.58)",
-              border: `1px solid ${colors.border}`,
-              borderRadius: "999px",
-              padding: "13px 18px",
-              textDecoration: "none",
-              fontSize: "15px",
-              letterSpacing: "0.04em",
-            }}
-          >
+          <Link href={secondaryHref} className="secondary-button">
             {secondaryLabel}
           </Link>
         </div>
@@ -268,19 +147,11 @@ function ProjectPanel({
 
 export default function HomePage() {
   return (
-    <main
-      style={{
-        minHeight: "100vh",
-        background:
-          "radial-gradient(circle at 18% 0%, rgba(91,111,132,0.14), transparent 32%), radial-gradient(circle at 82% 10%, rgba(157,121,82,0.12), transparent 30%), linear-gradient(180deg, #050507 0%, #09090f 42%, #0b090a 100%)",
-        color: colors.text,
-        fontFamily: siteFont,
-      }}
-    >
-      <TopNav />
+    <main className="site-shell">
+      <SiteHeader active="Home" />
 
       <section style={{ padding: "54px 0 28px" }}>
-        <Container>
+        <div className="site-container">
           <div
             style={{
               textAlign: "center",
@@ -288,17 +159,7 @@ export default function HomePage() {
               margin: "0 auto 34px",
             }}
           >
-            <p
-              style={{
-                margin: "0 0 14px",
-                color: colors.gold,
-                textTransform: "uppercase",
-                letterSpacing: "0.22em",
-                fontSize: "12px",
-              }}
-            >
-              Parallax Hearts / album / story world
-            </p>
+            <p className="kicker">Parallax Hearts / album / story world</p>
 
             <h1
               style={{
@@ -358,10 +219,10 @@ export default function HomePage() {
                 </>
               }
               image="/images/hero.jpg"
-              primaryHref="/project"
-              primaryLabel="Enter the town"
+              primaryHref="/graphic-novel/chapter-one/page-001"
+              primaryLabel="Start the Visual Novel"
               secondaryHref="/music"
-              secondaryLabel="Listen / music"
+              secondaryLabel="Listen on SoundCloud"
             />
 
             <ProjectPanel
@@ -388,17 +249,7 @@ export default function HomePage() {
               boxShadow: "0 24px 70px rgba(0,0,0,0.24)",
             }}
           >
-            <p
-              style={{
-                margin: "0 0 12px",
-                color: colors.gold,
-                textTransform: "uppercase",
-                letterSpacing: "0.22em",
-                fontSize: "12px",
-              }}
-            >
-              Start here / free course
-            </p>
+            <p className="kicker">Start here / free course</p>
 
             <h2
               style={{
@@ -435,44 +286,22 @@ export default function HomePage() {
                 flexWrap: "wrap",
               }}
             >
-              <Link
-                href="/forbidden-knowledge"
-                style={{
-                  color: "#08090b",
-                  background: colors.text,
-                  border: `1px solid ${colors.text}`,
-                  borderRadius: "999px",
-                  padding: "13px 18px",
-                  textDecoration: "none",
-                  fontSize: "15px",
-                  letterSpacing: "0.04em",
-                }}
-              >
+              <Link href="/forbidden-knowledge" className="primary-button">
                 Start Free Course
               </Link>
 
-              <Link
-                href="/field-notes"
-                style={{
-                  color: colors.text,
-                  background: "rgba(5,7,10,0.58)",
-                  border: `1px solid ${colors.border}`,
-                  borderRadius: "999px",
-                  padding: "13px 18px",
-                  textDecoration: "none",
-                  fontSize: "15px",
-                  letterSpacing: "0.04em",
-                }}
-              >
+              <Link href="/field-notes" className="secondary-button">
                 Read Field Notes
               </Link>
             </div>
           </div>
-        </Container>
+        </div>
       </section>
 
       <section style={{ padding: "38px 0 86px" }}>
-        <Container>
+        <div className="site-container">
+          <p className="kicker">Choose a door</p>
+
           <div
             style={{
               display: "grid",
@@ -482,39 +311,40 @@ export default function HomePage() {
           >
             {[
               {
-                title: "What the Town Keeps",
-                text: "The album, Vallen story world, and graphic novel direction.",
-                href: "/project",
+                title: "Read",
+                text: "Begin Chapter One — Ballast, the built-in visual novel archive.",
+                href: "/graphic-novel/chapter-one/page-001",
               },
               {
-                title: "Music",
-                text: "Songs, album links, SoundCloud streaming, and project notes.",
+                title: "Listen",
+                text: "Hear the album and follow the music side of Parallax Hearts.",
                 href: "/music",
               },
               {
-                title: "Field Notes",
-                text: "Forbidden Knowledge research, source trails, evidence labels, and the codex method.",
+                title: "Story",
+                text: "Enter the larger world of Vallen and What the Town Keeps.",
+                href: "/project",
+              },
+              {
+                title: "Study",
+                text: "Open Field Notes, the separate source-trail research lane.",
                 href: "/field-notes",
               },
               {
-                title: "Free Course",
-                text: "The Forbidden Knowledge intro course and the 5-Level Rabbit Hole Method.",
-                href: "/forbidden-knowledge",
+                title: "Services",
+                text: "Custom websites for artists, creators, small businesses, and landing pages.",
+                href: "/websites",
               },
               {
                 title: "Support",
-                text: "Support the music, story, visual archive, and ongoing creative work directly through Ko-fi.",
+                text: "Support the music, story, visual archive, and ongoing creative work.",
                 href: "/support",
-              },
-              {
-                title: "PHYLAX Archive",
-                text: "The heavier lore world remains available as a separate archive while Field Notes moves forward first.",
-                href: "/phylax",
               },
             ].map((card) => (
               <Link
                 key={card.title}
                 href={card.href}
+                className="link-card"
                 style={{
                   textDecoration: "none",
                   color: colors.text,
@@ -551,7 +381,7 @@ export default function HomePage() {
               </Link>
             ))}
           </div>
-        </Container>
+        </div>
       </section>
 
       <style>{`
