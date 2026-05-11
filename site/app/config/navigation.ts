@@ -15,6 +15,7 @@ export const footerMainLinks = [
   ["Story", "/project"],
   ["Read", "/graphic-novel/chapter-one/page-001"],
   ["Website Services", "/websites"],
+  ["Website Intake", "/website-intake"],
   ["Shop", "/shop"],
   ["Support", "/support"],
 ] as const;
