@@ -21,12 +21,12 @@ export const footerMainLinks = [
   ["Website Intake", "/website-intake"],
   ["About", "/about"],
   ["Support", "/support"],
+  ["Shop", "/shop"],
 ] as const;
 
 export const footerArchiveLinks = [
   ["Chapter One — Ballast", "/graphic-novel/chapter-one"],
   ["Field Notes", "/field-notes"],
   ["Forbidden Knowledge", "/forbidden-knowledge"],
-  ["Shop", "/shop"],
   ["PHYLAX", "/phylax"],
 ] as const;
