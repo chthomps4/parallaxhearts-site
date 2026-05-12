@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import SiteHeader from "../components/SiteHeader";
 import { absoluteUrl, breadcrumbSchema, defaultKeywords, socialLinks } from "../lib/seo";
 
 const pageTitle = "Custom Websites for Artists, Creators, and Small Businesses | Parallax Hearts";
@@ -193,11 +194,13 @@ const subscriberPerks = [
 
 export default function WebsitesPage() {
   return (
-    <main className="websites-page">
+    <main className="websites-page site-shell">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchemas) }}
       />
+
+      <SiteHeader active="Services" />
 
       <section className="section-shell hero-section websites-hero">
         <div className="site-container two-column">
