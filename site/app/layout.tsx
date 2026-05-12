@@ -5,7 +5,6 @@ import DispatchSignup from "./components/DispatchSignup";
 import SiteHeader from "./components/SiteHeader";
 import { footerArchiveLinks, footerMainLinks } from "./config/navigation";
 import {
-  DEFAULT_OG_IMAGE,
   SITE_NAME,
   SITE_URL,
   defaultKeywords,
@@ -30,33 +29,6 @@ export const metadata: Metadata = {
   creator: SITE_NAME,
   publisher: SITE_NAME,
   keywords: defaultKeywords,
-  alternates: {
-    canonical: SITE_URL,
-  },
-  openGraph: {
-    title: "Parallax Hearts | What the Town Keeps",
-    description:
-      "A cinematic album, story world, and visual novel archive set in Vallen, with a separate Field Notes research lane.",
-    url: SITE_URL,
-    siteName: SITE_NAME,
-    images: [
-      {
-        url: DEFAULT_OG_IMAGE,
-        width: 1200,
-        height: 630,
-        alt: "Parallax Hearts — What the Town Keeps",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Parallax Hearts | What the Town Keeps",
-    description:
-      "A cinematic album, story world, and visual novel archive set in Vallen, with a separate Field Notes research lane.",
-    images: [DEFAULT_OG_IMAGE],
-  },
   robots: {
     index: true,
     follow: true,
