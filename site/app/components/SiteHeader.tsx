@@ -19,6 +19,7 @@ function getActiveLabel(pathname: string) {
     return "Services";
   }
   if (pathname.startsWith("/support") || pathname.startsWith("/shop")) return "Support";
+  if (pathname.startsWith("/about")) return "About";
   if (pathname.startsWith("/contact")) return "Contact";
   return undefined;
 }
