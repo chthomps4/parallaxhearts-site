@@ -129,6 +129,29 @@ const offerTypes = [
   },
 ];
 
+const pricingRanges = [
+  {
+    title: "Focused landing page",
+    range: "Starting around $250–$500",
+    text: "Best for an ad campaign, launch, service offer, music release, Skool class, Ko-fi page, or one clear call to action.",
+  },
+  {
+    title: "Starter site",
+    range: "Starting around $500–$900",
+    text: "A clean one-page or small multi-section site with clear copy, mobile flow, contact path, and basic launch setup.",
+  },
+  {
+    title: "Artist / creator site",
+    range: "Starting around $900–$1,800+",
+    text: "A fuller site for music, story, portfolio, services, support links, pages, visuals, and a stronger project structure.",
+  },
+  {
+    title: "Cleanup / update pass",
+    range: "Quoted by scope",
+    text: "For existing sites that need clearer navigation, copy cleanup, new sections, mobile polish, or practical follow-up updates.",
+  },
+];
+
 const adFitPoints = [
   "You have a real project, but the current online home feels scattered or unfinished.",
   "You need people to understand what you do without sending five separate links.",
@@ -218,8 +241,8 @@ export default function WebsitesPage() {
               <Link className="primary-button" href="/website-intake">
                 Start a website request
               </Link>
-              <Link className="ghost-button" href="#intake">
-                What to send me
+              <Link className="ghost-button" href="/portfolio">
+                View portfolio
               </Link>
             </div>
 
@@ -338,20 +361,20 @@ export default function WebsitesPage() {
       <section className="section-shell">
         <div className="site-container two-column">
           <div>
-            <p className="kicker">Example</p>
-            <h2 className="section-title">The proof is this site.</h2>
+            <p className="kicker">Examples / portfolio</p>
+            <h2 className="section-title">The proof starts with this site.</h2>
             <p className="soft-copy">
               Parallaxhearts.org is not just a band page. It connects music, story, visual pages, support links, SEO structure, contact paths, and project archives into one working site.
             </p>
             <p className="soft-copy">
-              That same thinking can be used for simpler projects too: a local business site, a creator page, a music project, a service page, or a focused landing page for an ad.
+              The portfolio page also includes ecustaland.org as a work-in-progress example, clearly labeled so visitors can see active site development without mistaking it for a finished case study.
             </p>
             <div className="button-row websites-cta-row">
-              <Link className="primary-button" href="/">
-                View Parallax Hearts
+              <Link className="primary-button" href="/portfolio">
+                View portfolio
               </Link>
               <Link className="ghost-button" href="/website-intake">
-                Ask about examples
+                Start a request
               </Link>
             </div>
           </div>
@@ -363,6 +386,27 @@ export default function WebsitesPage() {
                 <li key={point}>{point}</li>
               ))}
             </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-shell muted-section">
+        <div className="site-container two-column">
+          <div>
+            <p className="kicker">What to expect</p>
+            <h2 className="section-title">Simple starting ranges. Final quote after scope.</h2>
+            <p className="soft-copy">
+              These are starting points, not locked packages. The final price depends on page count, content readiness, visual needs, forms, integrations, revision depth, and launch support.
+            </p>
+          </div>
+          <div className="card-grid two-card-grid">
+            {pricingRanges.map((item) => (
+              <article className="feature-card" key={item.title}>
+                <p className="kicker">{item.range}</p>
+                <h2>{item.title}</h2>
+                <p>{item.text}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -411,10 +455,7 @@ export default function WebsitesPage() {
         <div className="site-container two-column">
           <div>
             <p className="kicker">Pricing / Subscribers</p>
-            <h2 className="section-title">Pricing is based on the real scope of the site.</h2>
-            <p className="soft-copy">
-              A small update, a one-page landing page, a new multi-page site, and ongoing support are different jobs. I keep the scope clear before work begins so the time, revision path, and expectations are understood up front.
-            </p>
+            <h2 className="section-title">Subscribers may receive website perks when offers are active.</h2>
             <p className="soft-copy">
               Subscriber perks may be used for website-service discounts, update credits, or deeper process breakdowns when a specific offer is active. They are not a blank promise of unlimited free work.
             </p>
