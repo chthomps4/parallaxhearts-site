@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import SiteHeader from "../components/SiteHeader";
 
 const koFiUrl = "https://ko-fi.com/parallaxhearts";
 
@@ -8,17 +9,6 @@ export const metadata: Metadata = {
   description:
     "Support Parallax Hearts, What the Town Keeps, the Vallen story world, visual novel pages, music, and related creative work through Ko-fi.",
 };
-
-const navItems = [
-  ["Home", "/"],
-  ["Music", "/music"],
-  ["Story", "/project"],
-  ["Graphic Novel", "/graphic-novel"],
-  ["Field Notes", "/field-notes"],
-  ["Shop", "/shop"],
-  ["Support", "/support"],
-  ["Contact", "/contact"],
-];
 
 const tiers = [
   {
@@ -93,62 +83,7 @@ const shopItems = [
 export default function SupportPage() {
   return (
     <main className="site-shell">
-      <section style={{ padding: "34px 0 18px" }}>
-        <div className="site-container">
-          <header
-            style={{
-              minHeight: "72px",
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              gap: "20px",
-              flexWrap: "wrap",
-              padding: "16px 0",
-              borderBottom: "1px solid var(--line)",
-            }}
-          >
-            <Link
-              href="/"
-              style={{
-                color: "var(--paper)",
-                textDecoration: "none",
-                fontSize: "clamp(22px, 4vw, 32px)",
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                lineHeight: 1,
-              }}
-            >
-              Parallax Hearts
-            </Link>
-
-            <nav
-              style={{
-                display: "flex",
-                gap: "16px",
-                flexWrap: "wrap",
-                alignItems: "center",
-              }}
-            >
-              {navItems.map(([label, href]) => (
-                <Link
-                  key={label}
-                  href={href}
-                  style={{
-                    color:
-                      label === "Support"
-                        ? "var(--gold)"
-                        : "var(--paper-soft)",
-                    textDecoration: "none",
-                    fontSize: "15px",
-                  }}
-                >
-                  {label}
-                </Link>
-              ))}
-            </nav>
-          </header>
-        </div>
-      </section>
+      <SiteHeader active="Support" />
 
       <section style={{ padding: "54px 0 34px" }}>
         <div className="site-container">
@@ -161,6 +96,7 @@ export default function SupportPage() {
             }}
           >
             <div
+              aria-hidden="true"
               style={{
                 position: "absolute",
                 inset: 0,
@@ -244,7 +180,7 @@ export default function SupportPage() {
             {supportPaths.map((lane) => (
               <article
                 key={lane.title}
-                className="glass-panel"
+                className="glass-panel link-card"
                 style={{ padding: "26px", borderRadius: "26px" }}
               >
                 <h2
