@@ -1,7 +1,32 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { mainNavigation } from "../config/navigation";
 
+function getActiveLabel(pathname: string) {
+  if (pathname === "/") return "Home";
+  if (pathname.startsWith("/music")) return "Listen";
+  if (pathname.startsWith("/graphic-novel")) return "Read";
+  if (pathname.startsWith("/project") || pathname.startsWith("/story")) return "Story";
+  if (pathname.startsWith("/field-notes") || pathname.startsWith("/forbidden-knowledge")) return "Field Notes";
+  if (
+    pathname.startsWith("/websites") ||
+    pathname.startsWith("/website-intake") ||
+    pathname.startsWith("/website-services") ||
+    pathname.startsWith("/website-planning")
+  ) {
+    return "Services";
+  }
+  if (pathname.startsWith("/support") || pathname.startsWith("/shop")) return "Support";
+  if (pathname.startsWith("/contact")) return "Contact";
+  return undefined;
+}
+
 export default function SiteHeader({ active }: { active?: string }) {
+  const pathname = usePathname();
+  const activeLabel = active ?? getActiveLabel(pathname);
+
   return (
     <header className="site-header" aria-label="Primary site header">
       <div className="site-container site-header-inner">
@@ -15,7 +40,7 @@ export default function SiteHeader({ active }: { active?: string }) {
             <Link
               key={label}
               href={href}
-              className={label === active ? "site-nav-link is-active" : "site-nav-link"}
+              className={label === activeLabel ? "site-nav-link is-active" : "site-nav-link"}
             >
               {label}
             </Link>
@@ -29,7 +54,7 @@ export default function SiteHeader({ active }: { active?: string }) {
               <Link
                 key={label}
                 href={href}
-                className={label === active ? "site-mobile-link is-active" : "site-mobile-link"}
+                className={label === activeLabel ? "site-mobile-link is-active" : "site-mobile-link"}
               >
                 {label}
               </Link>
