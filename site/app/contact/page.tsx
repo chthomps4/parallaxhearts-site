@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import SiteHeader from "../components/SiteHeader";
 
 const koFiUrl = "https://ko-fi.com/parallaxhearts";
 const facebookUrl = "https://www.facebook.com/share/1C7BVWq3f2/?mibextid=wwXIfr";
@@ -42,18 +43,6 @@ export const metadata: Metadata = {
     images: ["/images/world.jpg"],
   },
 };
-
-const navItems = [
-  ["Home", "/"],
-  ["Music", "/music"],
-  ["Story", "/project"],
-  ["Graphic Novel", "/graphic-novel"],
-  ["Websites", "/websites"],
-  ["Field Notes", "/field-notes"],
-  ["Shop", "/shop"],
-  ["Support", "/support"],
-  ["Contact", "/contact"],
-];
 
 const contactLinks = [
   {
@@ -132,62 +121,7 @@ const websiteIntake = [
 export default function ContactPage() {
   return (
     <main className="site-shell">
-      <section style={{ padding: "34px 0 18px" }}>
-        <div className="site-container">
-          <header
-            style={{
-              minHeight: "72px",
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              gap: "20px",
-              flexWrap: "wrap",
-              padding: "16px 0",
-              borderBottom: "1px solid var(--line)",
-            }}
-          >
-            <Link
-              href="/"
-              style={{
-                color: "var(--paper)",
-                textDecoration: "none",
-                fontSize: "clamp(22px, 4vw, 32px)",
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                lineHeight: 1,
-              }}
-            >
-              Parallax Hearts
-            </Link>
-
-            <nav
-              style={{
-                display: "flex",
-                gap: "16px",
-                flexWrap: "wrap",
-                alignItems: "center",
-              }}
-            >
-              {navItems.map(([label, href]) => (
-                <Link
-                  key={label}
-                  href={href}
-                  style={{
-                    color:
-                      label === "Contact"
-                        ? "var(--gold)"
-                        : "var(--paper-soft)",
-                    textDecoration: "none",
-                    fontSize: "15px",
-                  }}
-                >
-                  {label}
-                </Link>
-              ))}
-            </nav>
-          </header>
-        </div>
-      </section>
+      <SiteHeader active="Contact" />
 
       <section style={{ padding: "54px 0 88px" }}>
         <div className="site-container">
@@ -208,6 +142,7 @@ export default function ContactPage() {
               }}
             >
               <div
+                aria-hidden="true"
                 style={{
                   position: "absolute",
                   inset: 0,
@@ -259,6 +194,7 @@ export default function ContactPage() {
                   {contactLinks.map((item) => (
                     <div
                       key={item.label}
+                      className="link-card"
                       style={{
                         border: "1px solid var(--line)",
                         borderRadius: "20px",
@@ -432,7 +368,7 @@ export default function ContactPage() {
                     href={path.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="glass-panel"
+                    className="glass-panel link-card"
                     style={{
                       padding: "24px",
                       borderRadius: "24px",
@@ -449,7 +385,7 @@ export default function ContactPage() {
                 <Link
                   key={path.title}
                   href={path.href}
-                  className="glass-panel"
+                  className="glass-panel link-card"
                   style={{
                     padding: "24px",
                     borderRadius: "24px",
