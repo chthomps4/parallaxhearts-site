@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
+import DispatchSignup from "./components/DispatchSignup";
 import SiteHeader from "./components/SiteHeader";
 import { footerArchiveLinks, footerMainLinks } from "./config/navigation";
 import {
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: "Parallax Hearts | What the Town Keeps",
-    template: `%s | ${SITE_NAME}`,
+    template: "%s",
   },
   description: siteDescription,
   applicationName: SITE_NAME,
@@ -264,6 +265,7 @@ export default function RootLayout({
         </span>
         <SiteHeader />
         {children}
+        <DispatchSignup />
         <SiteFooter />
       </body>
     </html>
