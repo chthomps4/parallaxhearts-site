@@ -17,6 +17,7 @@ export const footerMainLinks = [
   ["Graphic Novel Hub", "/graphic-novel"],
   ["Story World", "/project"],
   ["Website Services", "/websites"],
+  ["Website Portfolio", "/portfolio"],
   ["Website Intake", "/website-intake"],
   ["About", "/about"],
   ["Support", "/support"],
