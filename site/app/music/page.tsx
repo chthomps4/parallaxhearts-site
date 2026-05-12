@@ -1,8 +1,11 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import ArchiveNote from "../components/ArchiveNote";
+import SiteHeader from "../components/SiteHeader";
 
 const soundCloudUrl = "https://soundcloud.com/parallax-hearts";
+const soundCloudEmbedUrl =
+  "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/parallax-hearts&color=%23d2b58b&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true";
 const koFiUrl = "https://ko-fi.com/parallaxhearts";
 
 export const metadata: Metadata = {
@@ -11,28 +14,21 @@ export const metadata: Metadata = {
     "Listen to What the Town Keeps by Parallax Hearts — a cinematic acoustic alternative album tied to Vallen and the wider story world.",
 };
 
-const navItems = [
-  ["Home", "/"],
-  ["Music", "/music"],
-  ["Story", "/project"],
-  ["Graphic Novel", "/graphic-novel"],
-  ["Field Notes", "/field-notes"],
-  ["Support", "/support"],
-  ["Contact", "/contact"],
-];
-
 const tracks = [
+  "Ballast",
   "Boundary Weather",
   "Measured Motion",
-  "Convergent Error",
   "Red Signal",
-  "Ballast",
-  "Switch Point",
-  "Seasons",
+  "Convergent Error",
   "Emerge the Silence",
-  "Patterns",
   "What Remains",
-  "Clarity Through Incompatibility",
+  "Patterns",
+  "Second Frame",
+  "Cosmic Intervals",
+  "The Kindest Thing",
+  "Resonance",
+  "Rush",
+  "Held in the Room",
 ];
 
 const musicPaths = [
@@ -59,60 +55,7 @@ const musicPaths = [
 export default function MusicPage() {
   return (
     <main className="site-shell">
-      <section style={{ padding: "34px 0 18px" }}>
-        <div className="site-container">
-          <header
-            style={{
-              minHeight: "72px",
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              gap: "20px",
-              flexWrap: "wrap",
-              padding: "16px 0",
-              borderBottom: "1px solid var(--line)",
-            }}
-          >
-            <Link
-              href="/"
-              style={{
-                color: "var(--paper)",
-                textDecoration: "none",
-                fontSize: "clamp(22px, 4vw, 32px)",
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                lineHeight: 1,
-              }}
-            >
-              Parallax Hearts
-            </Link>
-
-            <nav
-              style={{
-                display: "flex",
-                gap: "16px",
-                flexWrap: "wrap",
-                alignItems: "center",
-              }}
-            >
-              {navItems.map(([label, href]) => (
-                <Link
-                  key={label}
-                  href={href}
-                  style={{
-                    color:
-                      label === "Music" ? "var(--gold)" : "var(--paper-soft)",
-                    textDecoration: "none",
-                    fontSize: "15px",
-                  }}
-                >
-                  {label}
-                </Link>
-              ))}
-            </nav>
-          </header>
-        </div>
-      </section>
+      <SiteHeader active="Listen" />
 
       <section style={{ padding: "54px 0 34px" }}>
         <div className="site-container">
@@ -128,6 +71,7 @@ export default function MusicPage() {
             }}
           >
             <div
+              aria-hidden="true"
               style={{
                 position: "absolute",
                 inset: 0,
@@ -143,6 +87,7 @@ export default function MusicPage() {
             />
 
             <div
+              aria-hidden="true"
               style={{
                 position: "absolute",
                 inset: 0,
@@ -235,6 +180,41 @@ export default function MusicPage() {
 
       <section style={{ padding: "34px 0" }}>
         <div className="site-container">
+          <div
+            className="glass-panel"
+            style={{
+              padding: "clamp(24px, 4vw, 34px)",
+              borderRadius: "26px",
+            }}
+          >
+            <p className="kicker">Listen without leaving</p>
+            <h2 className="section-title">SoundCloud player</h2>
+            <p className="soft-copy" style={{ marginTop: "12px", maxWidth: "760px" }}>
+              Play the SoundCloud archive here, then use the track list below to
+              follow how the songs connect to Vallen and the visual novel.
+            </p>
+
+            <iframe
+              title="Parallax Hearts on SoundCloud"
+              width="100%"
+              height="360"
+              scrolling="no"
+              frameBorder="no"
+              allow="autoplay"
+              src={soundCloudEmbedUrl}
+              style={{
+                marginTop: "24px",
+                border: "1px solid var(--line)",
+                borderRadius: "22px",
+                background: "rgba(0,0,0,0.35)",
+              }}
+            />
+          </div>
+        </div>
+      </section>
+
+      <section style={{ padding: "34px 0" }}>
+        <div className="site-container">
           <p className="kicker">Album paths</p>
 
           <div
@@ -273,7 +253,7 @@ export default function MusicPage() {
                     href={item.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="glass-panel"
+                    className="glass-panel link-card"
                     style={{
                       padding: "26px",
                       borderRadius: "26px",
@@ -290,7 +270,7 @@ export default function MusicPage() {
                 <Link
                   key={item.title}
                   href={item.href}
-                  className="glass-panel"
+                  className="glass-panel link-card"
                   style={{
                     padding: "26px",
                     borderRadius: "26px",

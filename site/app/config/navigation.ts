@@ -1,10 +1,10 @@
 export const mainNavigation = [
   ["Home", "/"],
-  ["Music", "/music"],
+  ["Listen", "/music"],
+  ["Read", "/graphic-novel"],
   ["Story", "/project"],
-  ["Graphic Novel", "/graphic-novel"],
-  ["Website Services", "/websites"],
   ["Field Notes", "/field-notes"],
+  ["Services", "/websites"],
   ["Support", "/support"],
   ["Contact", "/contact"],
 ] as const;
@@ -12,18 +12,18 @@ export const mainNavigation = [
 export const footerMainLinks = [
   ["Home", "/"],
   ["Listen", "/music"],
-  ["Story", "/project"],
-  ["Read", "/graphic-novel/chapter-one/page-001"],
+  ["Read the Visual Novel", "/graphic-novel/chapter-one/page-001"],
+  ["Graphic Novel Hub", "/graphic-novel"],
+  ["Story World", "/project"],
   ["Website Services", "/websites"],
   ["Website Intake", "/website-intake"],
-  ["Shop", "/shop"],
   ["Support", "/support"],
 ] as const;
 
 export const footerArchiveLinks = [
-  ["Graphic Novel Hub", "/graphic-novel"],
-  ["Chapter One", "/graphic-novel/chapter-one"],
+  ["Chapter One — Ballast", "/graphic-novel/chapter-one"],
   ["Field Notes", "/field-notes"],
   ["Forbidden Knowledge", "/forbidden-knowledge"],
+  ["Shop", "/shop"],
   ["PHYLAX", "/phylax"],
 ] as const;

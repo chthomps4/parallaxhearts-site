@@ -2,22 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import ArchiveNote from "../components/ArchiveNote";
+import SiteHeader from "../components/SiteHeader";
 
 export const metadata: Metadata = {
   title: "What the Town Keeps | Parallax Hearts",
   description:
     "Enter What the Town Keeps by Parallax Hearts — the album, story world, visual novel archive, and rainy small-town world of Vallen.",
 };
-
-const navItems = [
-  ["Home", "/"],
-  ["Music", "/music"],
-  ["Story", "/project"],
-  ["Graphic Novel", "/graphic-novel"],
-  ["Field Notes", "/field-notes"],
-  ["Support", "/support"],
-  ["Contact", "/contact"],
-];
 
 const worldDetails = [
   "Rainy small-town America",
@@ -54,61 +45,11 @@ export default function ProjectPage() {
         background:
           "radial-gradient(circle at top, rgba(91,111,132,0.18), transparent 35%), radial-gradient(circle at 88% 8%, rgba(157,121,82,0.12), transparent 30%), linear-gradient(180deg, #08080d 0%, #0b0b12 45%, #11111b 100%)",
         color: "#f3eee7",
-        fontFamily: "Georgia, serif",
       }}
     >
+      <SiteHeader active="Story" />
+
       <div className="site-container">
-        <header
-          style={{
-            minHeight: "72px",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            gap: "20px",
-            flexWrap: "wrap",
-            padding: "16px 0",
-            borderBottom: "1px solid var(--line)",
-          }}
-        >
-          <Link
-            href="/"
-            style={{
-              color: "var(--paper)",
-              textDecoration: "none",
-              fontSize: "clamp(22px, 4vw, 32px)",
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-              lineHeight: 1,
-            }}
-          >
-            Parallax Hearts
-          </Link>
-
-          <nav
-            style={{
-              display: "flex",
-              gap: "16px",
-              flexWrap: "wrap",
-              alignItems: "center",
-            }}
-          >
-            {navItems.map(([label, href]) => (
-              <Link
-                key={label}
-                href={href}
-                style={{
-                  color:
-                    label === "Story" ? "var(--gold)" : "var(--paper-soft)",
-                  textDecoration: "none",
-                  fontSize: "15px",
-                }}
-              >
-                {label}
-              </Link>
-            ))}
-          </nav>
-        </header>
-
         <section style={{ padding: "60px 0 34px" }}>
           <div
             className="glass-panel"
@@ -119,6 +60,7 @@ export default function ProjectPage() {
             }}
           >
             <div
+              aria-hidden="true"
               style={{
                 position: "absolute",
                 inset: 0,
@@ -175,7 +117,7 @@ export default function ProjectPage() {
                   fontSize: "18px",
                 }}
               >
-                This page holds the world. The graphic novel is where you read
+                This page holds the world. The visual novel is where you read
                 it. The music page is where you hear it. Field Notes is the
                 separate research lane.
               </p>
@@ -341,7 +283,7 @@ export default function ProjectPage() {
               <Link
                 key={door.title}
                 href={door.href}
-                className="glass-panel"
+                className="glass-panel link-card"
                 style={{
                   padding: "26px",
                   borderRadius: "26px",

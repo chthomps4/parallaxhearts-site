@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import SiteHeader from "../components/SiteHeader";
 
 export const metadata: Metadata = {
   title: "Graphic Novel | What the Town Keeps",
@@ -17,16 +18,6 @@ export const metadata: Metadata = {
     "small town graphic novel",
   ],
 };
-
-const navItems = [
-  ["Home", "/"],
-  ["Music", "/music"],
-  ["Story", "/project"],
-  ["Graphic Novel", "/graphic-novel"],
-  ["Field Notes", "/field-notes"],
-  ["Support", "/support"],
-  ["Contact", "/contact"],
-];
 
 const accessCards = [
   {
@@ -60,62 +51,7 @@ const visualRules = [
 export default function GraphicNovelPage() {
   return (
     <main className="site-shell">
-      <section style={{ padding: "34px 0 18px" }}>
-        <div className="site-container">
-          <header
-            style={{
-              minHeight: "72px",
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              gap: "20px",
-              flexWrap: "wrap",
-              padding: "16px 0",
-              borderBottom: "1px solid var(--line)",
-            }}
-          >
-            <Link
-              href="/"
-              style={{
-                color: "var(--paper)",
-                textDecoration: "none",
-                fontSize: "clamp(22px, 4vw, 32px)",
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                lineHeight: 1,
-              }}
-            >
-              Parallax Hearts
-            </Link>
-
-            <nav
-              style={{
-                display: "flex",
-                gap: "16px",
-                flexWrap: "wrap",
-                alignItems: "center",
-              }}
-            >
-              {navItems.map(([label, href]) => (
-                <Link
-                  key={label}
-                  href={href}
-                  style={{
-                    color:
-                      label === "Graphic Novel"
-                        ? "var(--gold)"
-                        : "var(--paper-soft)",
-                    textDecoration: "none",
-                    fontSize: "15px",
-                  }}
-                >
-                  {label}
-                </Link>
-              ))}
-            </nav>
-          </header>
-        </div>
-      </section>
+      <SiteHeader active="Read" />
 
       <section style={{ padding: "54px 0 34px" }}>
         <div className="site-container">
@@ -136,6 +72,7 @@ export default function GraphicNovelPage() {
               }}
             >
               <div
+                aria-hidden="true"
                 style={{
                   position: "absolute",
                   inset: 0,
@@ -146,7 +83,7 @@ export default function GraphicNovelPage() {
               />
 
               <div style={{ position: "relative", zIndex: 2 }}>
-                <p className="kicker">What the Town Keeps / Graphic Novel</p>
+                <p className="kicker">What the Town Keeps / Visual Novel</p>
 
                 <h1
                   style={{
@@ -169,7 +106,7 @@ export default function GraphicNovelPage() {
                     fontSize: "19px",
                   }}
                 >
-                  The graphic novel begins with Chapter One, <em>Ballast</em>:
+                  The visual novel begins with Chapter One, <em>Ballast</em>:
                   Elias Vale entering Vallen for a house inspection that slowly
                   becomes something heavier than work.
                 </p>
@@ -207,9 +144,10 @@ export default function GraphicNovelPage() {
             >
               <Image
                 src="/images/project.jpg"
-                alt="What the Town Keeps graphic novel preview"
+                alt="What the Town Keeps visual novel preview"
                 width={1200}
                 height={1400}
+                priority
                 style={{
                   width: "100%",
                   height: "100%",
@@ -238,7 +176,7 @@ export default function GraphicNovelPage() {
               <Link
                 key={card.title}
                 href={card.href}
-                className="glass-panel"
+                className="glass-panel link-card"
                 style={{
                   padding: "26px",
                   borderRadius: "26px",
