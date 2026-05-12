@@ -14,7 +14,8 @@ function getActiveLabel(pathname: string) {
     pathname.startsWith("/websites") ||
     pathname.startsWith("/website-intake") ||
     pathname.startsWith("/website-services") ||
-    pathname.startsWith("/website-planning")
+    pathname.startsWith("/website-planning") ||
+    pathname.startsWith("/portfolio")
   ) {
     return "Services";
   }
