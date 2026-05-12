@@ -15,20 +15,90 @@ export const metadata: Metadata = {
 };
 
 const tracks = [
-  "Ballast",
-  "Boundary Weather",
-  "Measured Motion",
-  "Red Signal",
-  "Convergent Error",
-  "Emerge the Silence",
-  "What Remains",
-  "Patterns",
-  "Second Frame",
-  "Cosmic Intervals",
-  "The Kindest Thing",
-  "Resonance",
-  "Rush",
-  "Held in the Room",
+  {
+    title: "Ballast",
+    chapter: "Chapter One — Ballast",
+    connection: "Elias Vale enters Vallen and the first weight of the town settles in.",
+    href: "/graphic-novel/chapter-one/page-001",
+  },
+  {
+    title: "Boundary Weather",
+    chapter: "Chapter Two — Boundary Weather",
+    connection: "Weather, restraint, and the first pressure line between people.",
+    href: "/project",
+  },
+  {
+    title: "Measured Motion",
+    chapter: "Vallen thread",
+    connection: "A song about controlled movement, distance, and the cost of staying composed.",
+    href: "/project",
+  },
+  {
+    title: "Red Signal",
+    chapter: "Vallen thread",
+    connection: "Warning, attraction, and the moment a boundary becomes difficult to obey.",
+    href: "/project",
+  },
+  {
+    title: "Convergent Error",
+    chapter: "Vallen thread",
+    connection: "Two paths appearing to meet while carrying incompatible histories.",
+    href: "/project",
+  },
+  {
+    title: "Emerge the Silence",
+    chapter: "Vallen thread",
+    connection: "Silence as atmosphere, message, and pressure system.",
+    href: "/project",
+  },
+  {
+    title: "What Remains",
+    chapter: "Closing thread",
+    connection: "After departure, something in the town still keeps its shape.",
+    href: "/project",
+  },
+  {
+    title: "Patterns",
+    chapter: "Vallen thread",
+    connection: "The repeated habits, rooms, and signals people mistake for safety.",
+    href: "/project",
+  },
+  {
+    title: "Second Frame",
+    chapter: "Vallen thread",
+    connection: "The second look that changes what the first one seemed to mean.",
+    href: "/project",
+  },
+  {
+    title: "Cosmic Intervals",
+    chapter: "Field edge",
+    connection: "Distance measured emotionally more than physically.",
+    href: "/field-notes",
+  },
+  {
+    title: "The Kindest Thing",
+    chapter: "Vallen thread",
+    connection: "Tenderness without sentimentality, and mercy without simple answers.",
+    href: "/project",
+  },
+  {
+    title: "Resonance",
+    chapter: "Vallen thread",
+    connection: "What keeps vibrating after the room goes quiet.",
+    href: "/project",
+  },
+  {
+    title: "Rush",
+    chapter: "Vallen thread",
+    connection: "The force of feeling arriving faster than language can hold it.",
+    href: "/project",
+  },
+  {
+    title: "Held in the Room",
+    chapter: "Vallen thread",
+    connection: "Presence, memory, and the kind of room that does not let go quickly.",
+    href: "/project",
+  },
 ];
 
 const musicPaths = [
@@ -300,15 +370,16 @@ export default function MusicPage() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+                gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
                 gap: "12px",
               }}
             >
               {tracks.map((track, index) => (
-                <div
-                  key={track}
+                <article
+                  key={track.title}
+                  className="link-card"
                   style={{
-                    padding: "16px",
+                    padding: "18px",
                     border: "1px solid var(--line)",
                     borderRadius: "18px",
                     background: "rgba(255,255,255,0.025)",
@@ -323,7 +394,7 @@ export default function MusicPage() {
                       textTransform: "uppercase",
                     }}
                   >
-                    {String(index + 1).padStart(2, "0")}
+                    {String(index + 1).padStart(2, "0")} / {track.chapter}
                   </p>
 
                   <h3
@@ -334,8 +405,8 @@ export default function MusicPage() {
                       fontWeight: 400,
                     }}
                   >
-                    {track}
-                    {track === "Red Signal" ? (
+                    {track.title}
+                    {track.title === "Red Signal" ? (
                       <ArchiveNote
                         title="Archive Note: Signal"
                         evidence="Well-supported general concept / creative use"
@@ -346,7 +417,7 @@ export default function MusicPage() {
                         through weather, distance, and silence.
                       </ArchiveNote>
                     ) : null}
-                    {track === "Ballast" ? (
+                    {track.title === "Ballast" ? (
                       <ArchiveNote
                         title="Archive Note: Ballast"
                         evidence="Well-supported word history / creative use"
@@ -359,36 +430,37 @@ export default function MusicPage() {
                       </ArchiveNote>
                     ) : null}
                   </h3>
-                </div>
+
+                  <p className="soft-copy" style={{ margin: "12px 0 18px" }}>
+                    {track.connection}
+                  </p>
+
+                  <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+                    <a
+                      href={soundCloudUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="secondary-button"
+                      style={{ minHeight: "42px" }}
+                    >
+                      Listen
+                    </a>
+                    <Link
+                      href={track.href}
+                      className="secondary-button"
+                      style={{ minHeight: "42px" }}
+                    >
+                      Story thread
+                    </Link>
+                  </div>
+                </article>
               ))}
             </div>
 
-            <div
-              style={{
-                marginTop: "28px",
-                display: "flex",
-                justifyContent: "center",
-                gap: "12px",
-                flexWrap: "wrap",
-              }}
-            >
-              <a
-                href={soundCloudUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="primary-button"
-              >
-                Hear the Songs on SoundCloud
-              </a>
-
-              <Link href="/project" className="secondary-button">
-                Explore the Story World
-              </Link>
-
-              <Link href="/support" className="secondary-button">
-                Support the Project
-              </Link>
-            </div>
+            <p className="soft-copy" style={{ margin: "22px 0 0" }}>
+              Individual SoundCloud track links can replace the general listen
+              buttons as soon as the final per-song URLs are confirmed.
+            </p>
           </div>
         </div>
       </section>
