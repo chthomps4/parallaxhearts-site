@@ -130,11 +130,12 @@ function ProjectPanel({
           style={{
             margin: 0,
             color: colors.text,
-            fontSize: "clamp(42px, 7vw, 78px)",
-            lineHeight: 0.92,
-            letterSpacing: "-0.06em",
+            fontSize: "clamp(46px, 8vw, 94px)",
+            lineHeight: 0.9,
+            letterSpacing: "-0.07em",
             fontWeight: 400,
             textShadow: "0 14px 44px rgba(0,0,0,0.58)",
+            maxWidth: "980px",
           }}
         >
           {title}
@@ -154,7 +155,7 @@ function ProjectPanel({
         <p
           style={{
             margin: "18px 0 0",
-            maxWidth: "650px",
+            maxWidth: "720px",
             color: colors.textSoft,
             fontSize: "17px",
             lineHeight: 1.85,
@@ -228,57 +229,36 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div
-            className="home-split-hero"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1.08fr 0.92fr",
-              gap: "22px",
-            }}
-          >
-            <ProjectPanel
-              eyebrow="Main world"
-              title="What the Town Keeps"
-              subtitle="Rain. Rails. Memory. Silence."
-              body={
-                <>
-                  The album and story world built around Vallen
-                  <ArchiveNote
-                    title="Archive Note: Vallen"
-                    evidence="Creative name / interpretive resonance"
-                  >
-                    Vallen is the fictional town at the center of What the Town
-                    Keeps. The name suggests valley, falling, low ground, and a
-                    place where weather and memory collect. This is a
-                    project-specific name, not a historical place claim.
-                  </ArchiveNote>
-                  , a small town where the music, prose, and visual novel all
-                  move through the same weather.
-                </>
-              }
-              image="/images/hero.jpg"
-              primaryHref="/graphic-novel/chapter-one/page-001"
-              primaryLabel="Start the Visual Novel"
-              secondaryHref="/music"
-              secondaryLabel="Listen on SoundCloud"
-            />
-
-            <ProjectPanel
-              eyebrow="Research lane"
-              title="Field Notes"
-              subtitle="Wonder deserves structure."
-              body="A separate source-trail lane for the Forbidden Knowledge work: ancient knowledge, lost etymology, evidence labels, and the long-form Handbook method."
-              image="/images/world.jpg"
-              primaryHref="/field-notes"
-              primaryLabel="Open Field Notes"
-              secondaryHref="/forbidden-knowledge"
-              secondaryLabel="Free Intro Course"
-            />
-          </div>
+          <ProjectPanel
+            eyebrow="Main world"
+            title="What the Town Keeps"
+            subtitle="Rain. Rails. Memory. Silence."
+            body={
+              <>
+                The album and story world built around Vallen
+                <ArchiveNote
+                  title="Archive Note: Vallen"
+                  evidence="Creative name / interpretive resonance"
+                >
+                  Vallen is the fictional town at the center of What the Town
+                  Keeps. The name suggests valley, falling, low ground, and a
+                  place where weather and memory collect. This is a
+                  project-specific name, not a historical place claim.
+                </ArchiveNote>
+                , a small town where the music, prose, and visual novel all
+                move through the same weather.
+              </>
+            }
+            image="/images/hero.jpg"
+            primaryHref="/graphic-novel/chapter-one/page-001"
+            primaryLabel="Start the Visual Novel"
+            secondaryHref="/music"
+            secondaryLabel="Listen on SoundCloud"
+          />
         </div>
       </section>
 
-      <section style={{ padding: "38px 0 86px" }}>
+      <section style={{ padding: "38px 0 42px" }}>
         <div className="site-container">
           <p className="kicker">Choose a door</p>
 
@@ -304,11 +284,6 @@ export default function HomePage() {
                 title: "Story",
                 text: "Enter the larger story world of Vallen and What the Town Keeps.",
                 href: "/project",
-              },
-              {
-                title: "Study",
-                text: "Open Field Notes, the separate source-trail research lane.",
-                href: "/field-notes",
               },
               {
                 title: "Services",
@@ -364,14 +339,51 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section style={{ padding: "0 0 86px" }}>
+        <div className="site-container">
+          <div
+            className="glass-panel"
+            style={{
+              padding: "clamp(24px, 4vw, 34px)",
+              display: "grid",
+              gridTemplateColumns: "minmax(0, 1fr) minmax(220px, 0.42fr)",
+              gap: "24px",
+              alignItems: "center",
+            }}
+          >
+            <div>
+              <p className="kicker">Secondary research lane</p>
+              <h2 className="section-title">Field Notes</h2>
+              <p className="soft-copy" style={{ margin: "14px 0 0", maxWidth: "720px" }}>
+                Field Notes is the separate source-trail lane for ancient knowledge,
+                lost etymology, evidence labels, and the long-form Handbook method.
+                It belongs on the site, but the main entrance remains the album,
+                story, and visual novel world of Vallen.
+              </p>
+            </div>
+
+            <div style={{ display: "grid", gap: "12px" }}>
+              <Link href="/field-notes" className="secondary-button">
+                Open Field Notes
+              </Link>
+              <Link href="/forbidden-knowledge" className="secondary-button">
+                Free Intro Course
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <style>{`
         @media (max-width: 980px) {
-          .home-split-hero {
-            grid-template-columns: 1fr !important;
-          }
-
           .home-project-panel {
             min-height: 68vh !important;
+          }
+        }
+
+        @media (max-width: 900px) {
+          section .glass-panel[style*="grid-template-columns"] {
+            grid-template-columns: 1fr !important;
           }
         }
       `}</style>
