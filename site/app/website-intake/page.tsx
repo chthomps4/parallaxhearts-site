@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import SiteHeader from "../components/SiteHeader";
 import { absoluteUrl, breadcrumbSchema, defaultKeywords } from "../lib/seo";
 import WebsiteIntakeForm from "./WebsiteIntakeForm";
 
@@ -70,11 +71,13 @@ const reminders = [
 
 export default function WebsiteIntakePage() {
   return (
-    <main className="websites-page">
+    <main className="websites-page site-shell">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchemas) }}
       />
+
+      <SiteHeader active="Services" />
 
       <section className="section-shell hero-section websites-hero">
         <div className="site-container two-column">
