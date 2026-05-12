@@ -4,6 +4,8 @@ import ArchiveNote from "../components/ArchiveNote";
 import SiteHeader from "../components/SiteHeader";
 
 const soundCloudUrl = "https://soundcloud.com/parallax-hearts";
+const soundCloudEmbedUrl =
+  "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/parallax-hearts&color=%23d2b58b&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true";
 const koFiUrl = "https://ko-fi.com/parallaxhearts";
 
 export const metadata: Metadata = {
@@ -13,17 +15,20 @@ export const metadata: Metadata = {
 };
 
 const tracks = [
+  "Ballast",
   "Boundary Weather",
   "Measured Motion",
-  "Convergent Error",
   "Red Signal",
-  "Ballast",
-  "Switch Point",
-  "Seasons",
+  "Convergent Error",
   "Emerge the Silence",
-  "Patterns",
   "What Remains",
-  "Clarity Through Incompatibility",
+  "Patterns",
+  "Second Frame",
+  "Cosmic Intervals",
+  "The Kindest Thing",
+  "Resonance",
+  "Rush",
+  "Held in the Room",
 ];
 
 const musicPaths = [
@@ -169,6 +174,41 @@ export default function MusicPage() {
                 </Link>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ padding: "34px 0" }}>
+        <div className="site-container">
+          <div
+            className="glass-panel"
+            style={{
+              padding: "clamp(24px, 4vw, 34px)",
+              borderRadius: "26px",
+            }}
+          >
+            <p className="kicker">Listen without leaving</p>
+            <h2 className="section-title">SoundCloud player</h2>
+            <p className="soft-copy" style={{ marginTop: "12px", maxWidth: "760px" }}>
+              Play the SoundCloud archive here, then use the track list below to
+              follow how the songs connect to Vallen and the visual novel.
+            </p>
+
+            <iframe
+              title="Parallax Hearts on SoundCloud"
+              width="100%"
+              height="360"
+              scrolling="no"
+              frameBorder="no"
+              allow="autoplay"
+              src={soundCloudEmbedUrl}
+              style={{
+                marginTop: "24px",
+                border: "1px solid var(--line)",
+                borderRadius: "22px",
+                background: "rgba(0,0,0,0.35)",
+              }}
+            />
           </div>
         </div>
       </section>
