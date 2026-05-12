@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import ArchiveNote from "../components/ArchiveNote";
@@ -178,19 +179,26 @@ export default function MusicPage() {
               borderRadius: "38px",
             }}
           >
+            <Image
+              src="/images/hero.jpg"
+              alt="What the Town Keeps album atmosphere, a rainy Vallen scene with cinematic small-town light"
+              fill
+              priority
+              sizes="(max-width: 980px) 100vw, 1180px"
+              style={{
+                objectFit: "cover",
+                objectPosition: "center",
+                filter: "saturate(0.82) contrast(1.05)",
+              }}
+            />
+
             <div
               aria-hidden="true"
               style={{
                 position: "absolute",
                 inset: 0,
-                backgroundImage: `
-                  linear-gradient(180deg, rgba(4,5,6,0.04), rgba(4,5,6,0.38) 44%, rgba(4,5,6,0.96) 100%),
-                  linear-gradient(90deg, rgba(4,5,6,0.84), rgba(4,5,6,0.32), rgba(4,5,6,0.70)),
-                  url('/images/hero.jpg')
-                `,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                filter: "saturate(0.82) contrast(1.05)",
+                background:
+                  "linear-gradient(180deg, rgba(4,5,6,0.04), rgba(4,5,6,0.38) 44%, rgba(4,5,6,0.96) 100%), linear-gradient(90deg, rgba(4,5,6,0.84), rgba(4,5,6,0.32), rgba(4,5,6,0.70))",
               }}
             />
 

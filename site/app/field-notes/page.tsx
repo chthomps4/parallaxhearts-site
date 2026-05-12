@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -104,20 +105,26 @@ export default function FieldNotesPage() {
               alignItems: "flex-end",
             }}
           >
+            <Image
+              src="/images/world.jpg"
+              alt="Field Notes research atmosphere with dark archival imagery and muted cinematic light"
+              fill
+              priority
+              sizes="(max-width: 980px) 100vw, 1180px"
+              style={{
+                objectFit: "cover",
+                objectPosition: "center",
+                filter: "saturate(0.72) contrast(1.08)",
+              }}
+            />
+
             <div
               aria-hidden="true"
               style={{
                 position: "absolute",
                 inset: 0,
-                backgroundImage: `
-                  linear-gradient(180deg, rgba(4,5,6,0.08), rgba(4,5,6,0.52) 48%, rgba(4,5,6,0.98) 100%),
-                  radial-gradient(circle at 24% 24%, rgba(210,181,139,0.22), transparent 30%),
-                  radial-gradient(circle at 82% 20%, rgba(127,141,155,0.18), transparent 32%),
-                  url('/images/world.jpg')
-                `,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                filter: "saturate(0.72) contrast(1.08)",
+                background:
+                  "linear-gradient(180deg, rgba(4,5,6,0.08), rgba(4,5,6,0.52) 48%, rgba(4,5,6,0.98) 100%), radial-gradient(circle at 24% 24%, rgba(210,181,139,0.22), transparent 30%), radial-gradient(circle at 82% 20%, rgba(127,141,155,0.18), transparent 32%)",
               }}
             />
 
