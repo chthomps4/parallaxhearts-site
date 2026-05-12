@@ -16,10 +16,10 @@ const tiers = [
     price: "$3 / month",
     purpose: "A quiet way to support Parallax Hearts and What the Town Keeps.",
     includes: [
-      "Early fragments",
+      "Credits and supporter thanks when appropriate",
+      "Regular project updates from Vallen",
       "Behind-the-song notes",
       "Small visual previews",
-      "Short updates from Vallen",
     ],
   },
   {
@@ -28,9 +28,9 @@ const tiers = [
     purpose: "The main support tier for music, story, and visual material.",
     includes: [
       "Everything in Porch Light",
+      "Early access to selected pages, posts, or previews",
       "Lyrics and song notes",
-      "Early video previews",
-      "Story fragments",
+      "Downloadable extras when available",
       "Concept art and album-art previews",
     ],
   },
@@ -151,6 +151,10 @@ export default function SupportPage() {
                 >
                   Support on Ko-fi
                 </a>
+
+                <Link href="/shop" className="secondary-button">
+                  View Shop
+                </Link>
 
                 <Link href="/music" className="secondary-button">
                   Listen First
@@ -319,13 +323,14 @@ export default function SupportPage() {
             }}
           >
             <div>
-              <p className="kicker">One-time support</p>
+              <p className="kicker">One-time support / shop</p>
 
               <h2 className="section-title">Digital items and bundles.</h2>
 
               <p className="body-copy" style={{ margin: "20px 0 0" }}>
                 The Ko-fi shop can also hold one-time items for people who want
-                to support without a monthly membership.
+                to support without a monthly membership. The site shop keeps the
+                purchase path visible from inside parallaxhearts.org.
               </p>
 
               <div
@@ -419,6 +424,10 @@ export default function SupportPage() {
               >
                 Support on Ko-fi
               </a>
+
+              <Link href="/shop" className="secondary-button">
+                Shop
+              </Link>
 
               <Link href="/contact" className="secondary-button">
                 Social Links
