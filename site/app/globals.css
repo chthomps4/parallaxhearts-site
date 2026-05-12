@@ -203,6 +203,27 @@ body > .site-header + main.websites-page > .site-header {
   backdrop-filter: blur(10px);
 }
 
+.dispatch-signup {
+  padding: 42px 0;
+}
+
+.dispatch-signup-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.52fr);
+  gap: 28px;
+  align-items: center;
+  padding: clamp(26px, 5vw, 46px);
+}
+
+.dispatch-signup-actions {
+  display: grid;
+  gap: 12px;
+}
+
+.dispatch-signup-note {
+  margin: 4px 0 0;
+}
+
 .kicker {
   margin: 0 0 14px;
   color: var(--gold);
@@ -348,6 +369,10 @@ body > .site-header + main.websites-page > .site-header {
 
   .site-header-inner {
     min-height: 66px;
+  }
+
+  .dispatch-signup-panel {
+    grid-template-columns: 1fr;
   }
 }
 
