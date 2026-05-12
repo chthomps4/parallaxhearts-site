@@ -2,16 +2,54 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import ArchiveNote from "../components/ArchiveNote";
 import SiteHeader from "../components/SiteHeader";
+import { absoluteUrl, defaultKeywords } from "../lib/seo";
 
 const soundCloudUrl = "https://soundcloud.com/parallax-hearts";
 const soundCloudEmbedUrl =
   "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/parallax-hearts&color=%23d2b58b&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true";
 const koFiUrl = "https://ko-fi.com/parallaxhearts";
+const pageTitle = "Music | Parallax Hearts";
+const pageDescription =
+  "Listen to What the Town Keeps by Parallax Hearts — a cinematic acoustic alternative album tied to Vallen and the wider story world.";
+const pageUrl = absoluteUrl("/music");
+const previewImage = absoluteUrl("/images/hero.jpg");
 
 export const metadata: Metadata = {
-  title: "Music | Parallax Hearts",
-  description:
-    "Listen to What the Town Keeps by Parallax Hearts — a cinematic acoustic alternative album tied to Vallen and the wider story world.",
+  title: pageTitle,
+  description: pageDescription,
+  keywords: [
+    ...defaultKeywords,
+    "What the Town Keeps album",
+    "Parallax Hearts music",
+    "cinematic acoustic alternative",
+    "Vallen soundtrack",
+    "SoundCloud Parallax Hearts",
+  ],
+  alternates: {
+    canonical: pageUrl,
+  },
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    url: pageUrl,
+    siteName: "Parallax Hearts",
+    images: [
+      {
+        url: previewImage,
+        width: 1200,
+        height: 630,
+        alt: "Parallax Hearts — What the Town Keeps music page",
+      },
+    ],
+    locale: "en_US",
+    type: "music.album",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: pageTitle,
+    description: pageDescription,
+    images: [previewImage],
+  },
 };
 
 const tracks = [
