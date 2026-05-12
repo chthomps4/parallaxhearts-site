@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
+import SiteHeader from "./components/SiteHeader";
 import { footerArchiveLinks, footerMainLinks } from "./config/navigation";
 import {
   DEFAULT_OG_IMAGE,
@@ -261,6 +262,7 @@ export default function RootLayout({
         >
           GnatP
         </span>
+        <SiteHeader />
         {children}
         <SiteFooter />
       </body>
