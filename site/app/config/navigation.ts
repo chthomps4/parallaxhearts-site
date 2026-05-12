@@ -6,6 +6,7 @@ export const mainNavigation = [
   ["Field Notes", "/field-notes"],
   ["Services", "/websites"],
   ["Support", "/support"],
+  ["About", "/about"],
   ["Contact", "/contact"],
 ] as const;
 
@@ -16,7 +17,9 @@ export const footerMainLinks = [
   ["Graphic Novel Hub", "/graphic-novel"],
   ["Story World", "/project"],
   ["Website Services", "/websites"],
+  ["Website Portfolio", "/portfolio"],
   ["Website Intake", "/website-intake"],
+  ["About", "/about"],
   ["Support", "/support"],
 ] as const;
 

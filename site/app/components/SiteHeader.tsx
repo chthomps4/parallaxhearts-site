@@ -14,11 +14,13 @@ function getActiveLabel(pathname: string) {
     pathname.startsWith("/websites") ||
     pathname.startsWith("/website-intake") ||
     pathname.startsWith("/website-services") ||
-    pathname.startsWith("/website-planning")
+    pathname.startsWith("/website-planning") ||
+    pathname.startsWith("/portfolio")
   ) {
     return "Services";
   }
   if (pathname.startsWith("/support") || pathname.startsWith("/shop")) return "Support";
+  if (pathname.startsWith("/about")) return "About";
   if (pathname.startsWith("/contact")) return "Contact";
   return undefined;
 }
