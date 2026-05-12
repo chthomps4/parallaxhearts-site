@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import ArchiveNote from "./components/ArchiveNote";
@@ -61,6 +62,7 @@ function ProjectPanel({
   subtitle,
   body,
   image,
+  imageAlt,
   primaryHref,
   primaryLabel,
   secondaryHref,
@@ -71,6 +73,7 @@ function ProjectPanel({
   subtitle: string;
   body: React.ReactNode;
   image: string;
+  imageAlt: string;
   primaryHref: string;
   primaryLabel: string;
   secondaryHref: string;
@@ -91,19 +94,26 @@ function ProjectPanel({
         boxShadow: "0 30px 90px rgba(0,0,0,0.38)",
       }}
     >
+      <Image
+        src={image}
+        alt={imageAlt}
+        fill
+        priority
+        sizes="(max-width: 980px) 100vw, 1180px"
+        style={{
+          objectFit: "cover",
+          objectPosition: "center",
+          filter: "saturate(0.78) contrast(1.06)",
+        }}
+      />
+
       <div
         aria-hidden="true"
         style={{
           position: "absolute",
           inset: 0,
-          backgroundImage: `
-            linear-gradient(180deg, rgba(3,5,7,0.02), rgba(3,5,7,0.30) 42%, rgba(3,5,7,0.96) 100%),
-            linear-gradient(90deg, rgba(3,5,7,0.78), rgba(3,5,7,0.28), rgba(3,5,7,0.72)),
-            url('${image}')
-          `,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          filter: "saturate(0.78) contrast(1.06)",
+          background:
+            "linear-gradient(180deg, rgba(3,5,7,0.02), rgba(3,5,7,0.30) 42%, rgba(3,5,7,0.96) 100%), linear-gradient(90deg, rgba(3,5,7,0.78), rgba(3,5,7,0.28), rgba(3,5,7,0.72))",
         }}
       />
 
@@ -250,6 +260,7 @@ export default function HomePage() {
               </>
             }
             image="/images/hero.jpg"
+            imageAlt="Rainy Vallen scene for What the Town Keeps, with old small-town atmosphere and cinematic dusk light"
             primaryHref="/graphic-novel/chapter-one/page-001"
             primaryLabel="Start the Visual Novel"
             secondaryHref="/music"
