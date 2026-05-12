@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import ChapterSoundtrackCta from "../../components/ChapterSoundtrackCta";
 
 export const metadata: Metadata = {
   title: "Chapter One — Ballast | What the Town Keeps",
@@ -207,8 +208,8 @@ export default function ChapterOnePage() {
                     Latest Page
                   </Link>
 
-                  <Link href="/graphic-novel" className="secondary-button">
-                    Graphic Novel Hub
+                  <Link href="/music" className="secondary-button">
+                    Chapter Soundtrack
                   </Link>
                 </div>
               </div>
@@ -296,6 +297,8 @@ export default function ChapterOnePage() {
           </div>
         </div>
       </section>
+
+      <ChapterSoundtrackCta />
 
       <section style={{ padding: "34px 0 88px" }}>
         <div className="site-container">

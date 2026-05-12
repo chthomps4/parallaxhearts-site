@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import ChapterSoundtrackCta from "../components/ChapterSoundtrackCta";
 import SiteHeader from "../components/SiteHeader";
 
 export const metadata: Metadata = {
@@ -216,6 +217,8 @@ export default function GraphicNovelPage() {
           </div>
         </div>
       </section>
+
+      <ChapterSoundtrackCta />
 
       <section style={{ padding: "34px 0 88px" }}>
         <div className="site-container">
