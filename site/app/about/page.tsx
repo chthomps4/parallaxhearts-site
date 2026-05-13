@@ -1,24 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "About | Parallax Hearts",
-  description:
-    "About Parallax Hearts, What the Town Keeps, the Vallen story world, visual novel archive, and Field Notes research lane.",
-};
-
-const navItems = [
-  ["Home", "/"],
-  ["Music", "/music"],
-  ["Story", "/project"],
-  ["Graphic Novel", "/graphic-novel"],
-  ["Field Notes", "/field-notes"],
-  ["Shop", "/shop"],
-  ["Support", "/support"],
-  ["About", "/about"],
-  ["Contact", "/contact"],
-];
 
 const identityCards = [
   {
@@ -30,7 +11,7 @@ const identityCards = [
   {
     title: "What the Town Keeps",
     text: "The album and story world set in Vallen: rain, rail lines, old houses, memory, distance, and what people leave unsaid.",
-    href: "/project",
+    href: "/story",
     label: "Story",
   },
   {
@@ -50,61 +31,6 @@ const identityCards = [
 export default function AboutPage() {
   return (
     <main className="site-shell">
-      <section style={{ padding: "34px 0 18px" }}>
-        <div className="site-container">
-          <header
-            style={{
-              minHeight: "72px",
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              gap: "20px",
-              flexWrap: "wrap",
-              padding: "16px 0",
-              borderBottom: "1px solid var(--line)",
-            }}
-          >
-            <Link
-              href="/"
-              style={{
-                color: "var(--paper)",
-                textDecoration: "none",
-                fontSize: "clamp(22px, 4vw, 32px)",
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                lineHeight: 1,
-              }}
-            >
-              Parallax Hearts
-            </Link>
-
-            <nav
-              style={{
-                display: "flex",
-                gap: "16px",
-                flexWrap: "wrap",
-                alignItems: "center",
-              }}
-            >
-              {navItems.map(([label, href]) => (
-                <Link
-                  key={label}
-                  href={href}
-                  style={{
-                    color:
-                      label === "About" ? "var(--gold)" : "var(--paper-soft)",
-                    textDecoration: "none",
-                    fontSize: "15px",
-                  }}
-                >
-                  {label}
-                </Link>
-              ))}
-            </nav>
-          </header>
-        </div>
-      </section>
-
       <section style={{ padding: "54px 0 44px" }}>
         <div className="site-container">
           <div
@@ -202,7 +128,7 @@ export default function AboutPage() {
                     Read
                   </Link>
 
-                  <Link href="/project" className="secondary-button">
+                  <Link href="/story" className="secondary-button">
                     Story World
                   </Link>
                 </div>
