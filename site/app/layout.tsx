@@ -138,13 +138,7 @@ function SiteFooter() {
         </div>
       </div>
 
-      <style>{`
-        @media (max-width: 900px) {
-          footer div[style*="grid-template-columns"] {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
+      <style>{`\n        @media (max-width: 900px) {\n          footer div[style*="grid-template-columns"] {\n            grid-template-columns: 1fr !important;\n          }\n        }\n      `}</style>
     </footer>
   );
 }
@@ -205,6 +199,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <a className="skip-link" href="#main-content">
+          Skip to content
+        </a>
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4628988881101233"
@@ -236,7 +233,9 @@ export default function RootLayout({
           GnatP
         </span>
         <SiteHeader />
-        {children}
+        <div id="main-content" tabIndex={-1}>
+          {children}
+        </div>
         <DispatchSignup />
         <SiteFooter />
       </body>
