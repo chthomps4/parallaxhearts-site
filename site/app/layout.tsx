@@ -13,6 +13,7 @@ import {
   websiteSchema,
 } from "./lib/seo";
 import "./globals.css";
+import "./audit-fixes.css";
 
 const siteDescription =
   "Parallax Hearts is the music project behind What the Town Keeps — a cinematic album, story world, and visual novel archive set in the rainy small town of Vallen, with Field Notes as a separate research lane.";
