@@ -27,6 +27,11 @@ function getActiveLabel(pathname: string) {
 
 export default function SiteHeader({ active }: { active?: string }) {
   const pathname = usePathname();
+
+  // PHYLAX uses its own intentionally darker sub-world navigation.
+  // Hiding the global header here prevents the double-navbar bug reported in the audit.
+  if (pathname.startsWith("/phylax")) return null;
+
   const activeLabel = active ?? getActiveLabel(pathname);
 
   return (
