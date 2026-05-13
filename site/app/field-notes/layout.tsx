@@ -3,7 +3,7 @@ import { absoluteUrl, defaultKeywords } from "../lib/seo";
 
 const pageTitle = "Field Notes | Forbidden Knowledge";
 const pageDescription =
-  "Field Notes is the deeper research lane on parallaxhearts.org: source trails, evidence labels, lost etymology, ancient knowledge, and The Forbidden Knowledge Bible.";
+  "Source trails, evidence labels, lost etymology, ancient knowledge, and The Forbidden Knowledge Bible research lane.";
 const pageUrl = absoluteUrl("/field-notes");
 const previewImage = absoluteUrl("/images/world.jpg");
 

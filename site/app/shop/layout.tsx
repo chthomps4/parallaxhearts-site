@@ -3,7 +3,7 @@ import { absoluteUrl, breadcrumbSchema, defaultKeywords, socialLinks } from "../
 
 const pageTitle = "Shop | Parallax Hearts";
 const pageDescription =
-  "Digital music, lyric books, concept art, story previews, and support bundles for Parallax Hearts and What the Town Keeps.";
+  "Digital albums, lyric books, concept art, story previews, and support bundles for Parallax Hearts and What the Town Keeps.";
 const pageUrl = absoluteUrl("/shop");
 const previewImage = absoluteUrl("/images/project.jpg");
 
@@ -46,6 +46,15 @@ export const metadata: Metadata = {
   },
 };
 
+const shopProducts = [
+  ["What the Town Keeps — Digital Album", "10", "The Parallax Hearts album as the central listening piece."],
+  ["Lyric Book PDF", "5", "Collected lyrics and song notes for the album world."],
+  ["Vallen Concept Art Pack", "7", "Selected visuals, album art, and atmospheric pieces from the story world."],
+  ["Graphic Novel Preview PDF", "5", "Early page previews and chapter material from the visual novel archive."],
+  ["Story Fragment PDF", "3", "Short prose, page excerpts, and Vallen archive pieces collected for readers."],
+  ["Complete Support Bundle", "20", "A combined package for listeners who want music, lyrics, visuals, and story material together."],
+] as const;
+
 const shopSchema = {
   "@context": "https://schema.org",
   "@type": "Store",
@@ -55,6 +64,24 @@ const shopSchema = {
   image: previewImage,
   description: pageDescription,
   sameAs: [socialLinks.koFi, socialLinks.soundCloud, socialLinks.facebook, socialLinks.instagram],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Parallax Hearts digital items",
+    itemListElement: shopProducts.map(([name, price, description]) => ({
+      "@type": "Offer",
+      name,
+      description,
+      price,
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+      url: socialLinks.koFi,
+      itemOffered: {
+        "@type": "DigitalDocument",
+        name,
+        description,
+      },
+    })),
+  },
 };
 
 const pageBreadcrumbSchema = breadcrumbSchema([

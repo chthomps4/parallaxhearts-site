@@ -6,7 +6,7 @@ const koFiUrl = "https://ko-fi.com/parallaxhearts";
 const navItems = [
   ["Home", "/"],
   ["Music", "/music"],
-  ["Story", "/project"],
+  ["Story", "/story"],
   ["Graphic Novel", "/graphic-novel"],
   ["Field Notes", "/field-notes"],
   ["Shop", "/shop"],
@@ -17,31 +17,37 @@ const navItems = [
 const shopItems = [
   {
     title: "What the Town Keeps — Digital Album",
+    price: "$10",
     text: "The Parallax Hearts album as the central listening piece.",
     lane: "Music",
   },
   {
     title: "Lyric Book PDF",
+    price: "$5",
     text: "Collected lyrics and song notes for the album world.",
     lane: "Lyrics",
   },
   {
     title: "Vallen Concept Art Pack",
+    price: "$7",
     text: "Selected visuals, album art, and atmospheric pieces from the story world.",
     lane: "Visuals",
   },
   {
     title: "Graphic Novel Preview PDF",
+    price: "$5",
     text: "Early page previews and chapter material from the visual novel archive.",
     lane: "Story",
   },
   {
     title: "Story Fragment PDF",
+    price: "$3",
     text: "Short prose, page excerpts, and Vallen archive pieces collected for readers.",
     lane: "Story",
   },
   {
     title: "Complete Support Bundle",
+    price: "$20",
     text: "A combined package for listeners who want music, lyrics, visuals, and story material together.",
     lane: "Bundle",
   },
@@ -150,8 +156,8 @@ export default function ShopPage() {
                 }}
               >
                 The shop is for one-time digital items connected to Parallax
-                Hearts and <em>What the Town Keeps</em>. Ko-fi is the checkout
-                path.
+                Hearts and <em>What the Town Keeps</em>. Prices are shown here so
+                visitors know what to expect before opening Ko-fi.
               </p>
 
               <div
@@ -213,17 +219,37 @@ export default function ShopPage() {
                       background: "rgba(255,255,255,0.035)",
                     }}
                   >
-                    <p
+                    <div
                       style={{
-                        margin: "0 0 10px",
-                        color: "var(--gold)",
-                        fontSize: "12px",
-                        letterSpacing: "0.14em",
-                        textTransform: "uppercase",
+                        display: "flex",
+                        justifyContent: "space-between",
+                        gap: "18px",
+                        alignItems: "baseline",
+                        marginBottom: "10px",
                       }}
                     >
-                      {item.lane}
-                    </p>
+                      <p
+                        style={{
+                          margin: 0,
+                          color: "var(--gold)",
+                          fontSize: "12px",
+                          letterSpacing: "0.14em",
+                          textTransform: "uppercase",
+                        }}
+                      >
+                        {item.lane}
+                      </p>
+                      <p
+                        style={{
+                          margin: 0,
+                          color: "var(--paper)",
+                          fontSize: "20px",
+                          letterSpacing: "-0.02em",
+                        }}
+                      >
+                        {item.price}
+                      </p>
+                    </div>
 
                     <h2
                       style={{
@@ -249,6 +275,10 @@ export default function ShopPage() {
                   </article>
                 ))}
               </div>
+
+              <p className="soft-copy" style={{ margin: "18px 0 0" }}>
+                Prices are simple guide prices for one-time digital items. Ko-fi remains the checkout path and final source for live availability.
+              </p>
 
               <div
                 style={{
