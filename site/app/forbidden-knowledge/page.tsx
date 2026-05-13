@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -52,65 +53,6 @@ const pathItems = [
 export default function ForbiddenKnowledgePage() {
   return (
     <main className="site-shell">
-      <section style={{ padding: "34px 0 18px" }}>
-        <div className="site-container">
-          <header
-            style={{
-              minHeight: "72px",
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              gap: "20px",
-              flexWrap: "wrap",
-              padding: "16px 0",
-              borderBottom: "1px solid var(--line)",
-            }}
-          >
-            <Link
-              href="/"
-              style={{
-                color: "var(--paper)",
-                textDecoration: "none",
-                fontSize: "clamp(22px, 4vw, 32px)",
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                lineHeight: 1,
-              }}
-            >
-              Parallax Hearts
-            </Link>
-
-            <nav
-              style={{
-                display: "flex",
-                gap: "16px",
-                flexWrap: "wrap",
-                alignItems: "center",
-              }}
-            >
-              {[
-                ["Home", "/"],
-                ["Field Notes", "/field-notes"],
-                ["Support", "/support"],
-                ["Contact", "/contact"],
-              ].map(([label, href]) => (
-                <Link
-                  key={label}
-                  href={href}
-                  style={{
-                    color: "var(--paper-soft)",
-                    textDecoration: "none",
-                    fontSize: "15px",
-                  }}
-                >
-                  {label}
-                </Link>
-              ))}
-            </nav>
-          </header>
-        </div>
-      </section>
-
       <section style={{ padding: "58px 0 34px" }}>
         <div className="site-container">
           <div
@@ -125,19 +67,26 @@ export default function ForbiddenKnowledgePage() {
               alignItems: "flex-end",
             }}
           >
+            <Image
+              src="/images/world.jpg"
+              alt="Field Notes and Forbidden Knowledge research archive atmosphere"
+              fill
+              priority
+              sizes="(max-width: 900px) 100vw, 1180px"
+              style={{
+                objectFit: "cover",
+                objectPosition: "center",
+                filter: "saturate(0.68) contrast(1.08)",
+              }}
+            />
+
             <div
+              aria-hidden="true"
               style={{
                 position: "absolute",
                 inset: 0,
-                backgroundImage: `
-                  linear-gradient(180deg, rgba(4,5,6,0.08), rgba(4,5,6,0.48) 46%, rgba(4,5,6,0.98) 100%),
-                  radial-gradient(circle at 20% 20%, rgba(210,181,139,0.22), transparent 30%),
-                  radial-gradient(circle at 82% 24%, rgba(127,141,155,0.18), transparent 32%),
-                  url('/images/world.jpg')
-                `,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                filter: "saturate(0.68) contrast(1.08)",
+                background:
+                  "linear-gradient(180deg, rgba(4,5,6,0.08), rgba(4,5,6,0.48) 46%, rgba(4,5,6,0.98) 100%), radial-gradient(circle at 20% 20%, rgba(210,181,139,0.22), transparent 30%), radial-gradient(circle at 82% 24%, rgba(127,141,155,0.18), transparent 32%)",
               }}
             />
 
