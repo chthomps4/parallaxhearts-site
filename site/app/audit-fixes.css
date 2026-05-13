@@ -1,0 +1,21 @@
+/* Audit repair overrides — May 13, 2026 */
+
+/* The root layout owns the shared navigation. These legacy page-level nav strips
+   remain in a few older pages, so hide them until the pages are fully refactored. */
+#main-content main.site-shell > section:first-child:has(> .site-container > header) {
+  display: none;
+}
+
+/* The accessibility wrapper sits between the layout header and page content, so
+   keep older page-level SiteHeader instances hidden even after adding #main-content. */
+#main-content main.site-shell > .site-header,
+#main-content main.websites-page > .site-header {
+  display: none;
+}
+
+/* Mobile tap target repair for small inline/footer links. */
+footer a,
+.site-mobile-link,
+.site-nav-link {
+  min-height: 44px;
+}

@@ -27,7 +27,16 @@ function getActiveLabel(pathname: string) {
 
 export default function SiteHeader({ active }: { active?: string }) {
   const pathname = usePathname();
-  const activeLabel = active ?? getActiveLabel(pathname);
+
+  // Some older pages still render their own <SiteHeader active="..." /> inside the page.
+  // The root layout now owns the global header, so page-level instances return null.
+  if (active) return null;
+
+  // PHYLAX uses its own intentionally darker sub-world navigation.
+  // Hiding the global header here prevents the double-navbar bug reported in the audit.
+  if (pathname.startsWith("/phylax")) return null;
+
+  const activeLabel = getActiveLabel(pathname);
 
   return (
     <header className="site-header" aria-label="Primary site header">

@@ -1,5 +1,1 @@
-import { redirect } from "next/navigation";
-
-export default function StoryRedirectPage() {
-  redirect("/project");
-}
+export { default } from "../project/page";

@@ -2,7 +2,7 @@ export const mainNavigation = [
   ["Home", "/"],
   ["Listen", "/music"],
   ["Read", "/graphic-novel"],
-  ["Story", "/project"],
+  ["Story", "/story"],
   ["Field Notes", "/field-notes"],
   ["Services", "/websites"],
   ["Support", "/support"],
@@ -15,7 +15,7 @@ export const footerMainLinks = [
   ["Listen", "/music"],
   ["Read the Visual Novel", "/graphic-novel/chapter-one/page-001"],
   ["Graphic Novel Hub", "/graphic-novel"],
-  ["Story World", "/project"],
+  ["Story World", "/story"],
   ["Website Services", "/websites"],
   ["Website Portfolio", "/portfolio"],
   ["Website Intake", "/website-intake"],
@@ -26,6 +26,7 @@ export const footerMainLinks = [
 
 export const footerArchiveLinks = [
   ["Chapter One — Ballast", "/graphic-novel/chapter-one"],
+  ["Visuals", "/visuals"],
   ["Field Notes", "/field-notes"],
   ["Forbidden Knowledge", "/forbidden-knowledge"],
   ["PHYLAX", "/phylax"],
