@@ -7,7 +7,7 @@ const freeIntroCourseUrl =
 export const metadata: Metadata = {
   title: "Forbidden Knowledge | Free Intro Course",
   description:
-    "Start the free Forbidden Knowledge intro course. Learn the 5-Level Rabbit Hole Method, evidence labels, source trails, and how to explore ancient knowledge without losing the map.",
+    "Start the free Forbidden Knowledge intro course: source trails, evidence labels, ancient knowledge, and the 5-Level Rabbit Hole Method.",
   keywords: [
     "Forbidden Knowledge",
     "Forbidden Knowledge free course",
