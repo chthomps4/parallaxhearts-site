@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import SiteHeader from "../components/SiteHeader";
+import { absoluteUrl } from "../lib/seo";
 
 const koFiUrl = "https://ko-fi.com/parallaxhearts";
 const facebookUrl = "https://www.facebook.com/share/1C7BVWq3f2/?mibextid=wwXIfr";
@@ -11,23 +12,27 @@ const youtubeUrl = "https://youtube.com/@parallaxhearts-u7q?si=VZZQD2j6J1MEY-pk"
 const soundCloudUrl = "https://soundcloud.com/parallax-hearts";
 const contactEmail = "chad@parallaxhearts.org";
 const websiteMailto = `mailto:${contactEmail}?subject=Website%20Request%20-%20Project%20Details`;
+const pageTitle = "Contact | Parallax Hearts";
+const pageDescription =
+  "Contact Parallax Hearts for music, What the Town Keeps, the visual novel, listener messages, support links, and custom website service inquiries.";
+const pageUrl = absoluteUrl("/contact");
+const previewImage = absoluteUrl("/images/world.jpg");
 
 export const metadata: Metadata = {
-  title: "Contact | Parallax Hearts",
-  description:
-    "Contact Parallax Hearts for music, What the Town Keeps, the visual novel, listener messages, support links, and custom website service inquiries.",
+  title: pageTitle,
+  description: pageDescription,
   alternates: {
-    canonical: "/contact",
+    canonical: pageUrl,
   },
   openGraph: {
-    title: "Contact | Parallax Hearts",
+    title: pageTitle,
     description:
       "Follow Parallax Hearts, listen on SoundCloud, support on Ko-fi, send a message about What the Town Keeps, or ask about custom website services.",
-    url: "https://www.parallaxhearts.org/contact",
+    url: pageUrl,
     siteName: "Parallax Hearts",
     images: [
       {
-        url: "/images/world.jpg",
+        url: previewImage,
         width: 1200,
         height: 630,
         alt: "Contact Parallax Hearts",
@@ -37,10 +42,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact | Parallax Hearts",
+    title: pageTitle,
     description:
       "Follow Parallax Hearts, listen on SoundCloud, support on Ko-fi, or send a message about music, story work, or website services.",
-    images: ["/images/world.jpg"],
+    images: [previewImage],
   },
 };
 
