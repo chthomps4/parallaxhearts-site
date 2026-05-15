@@ -1,10 +1,26 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { absoluteUrl } from "../lib/seo";
+
+const pageUrl = absoluteUrl("/portfolio");
 
 export const metadata: Metadata = {
   title: "Website Portfolio | Parallax Hearts Website Services",
   description:
     "Selected website examples and work-in-progress builds from Parallax Hearts Website Services.",
+  alternates: {
+    canonical: pageUrl,
+  },
+  openGraph: {
+    title: "Website Portfolio | Parallax Hearts Website Services",
+    description:
+      "Selected website examples and work-in-progress builds from Parallax Hearts Website Services.",
+    url: pageUrl,
+    siteName: "Parallax Hearts",
+    images: [{ url: absoluteUrl("/images/project.jpg"), width: 1200, height: 630, alt: "Parallax Hearts Website Portfolio" }],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 const portfolioItems = [

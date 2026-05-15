@@ -1,14 +1,30 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { absoluteUrl } from "../lib/seo";
 
 const freeIntroCourseUrl =
   "https://www.skool.com/forbidden-knowledge-3060/classroom/64b17ccf?md=20063ee25dcf452f98717008a96ff36f";
+
+const fkPageUrl = absoluteUrl("/forbidden-knowledge");
 
 export const metadata: Metadata = {
   title: "Forbidden Knowledge | Free Intro Course",
   description:
     "Start the free Forbidden Knowledge intro course: source trails, evidence labels, ancient knowledge, and the 5-Level Rabbit Hole Method.",
+  alternates: {
+    canonical: fkPageUrl,
+  },
+  openGraph: {
+    title: "Forbidden Knowledge | Free Intro Course",
+    description:
+      "Start the free Forbidden Knowledge intro course: source trails, evidence labels, ancient knowledge, and the 5-Level Rabbit Hole Method.",
+    url: fkPageUrl,
+    siteName: "Parallax Hearts",
+    images: [{ url: absoluteUrl("/images/world.jpg"), width: 1200, height: 630, alt: "Forbidden Knowledge" }],
+    locale: "en_US",
+    type: "website",
+  },
   keywords: [
     "Forbidden Knowledge",
     "Forbidden Knowledge free course",

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import { absoluteUrl } from "../../../lib/seo";
 import {
   getAdjacentLoreChapters,
   getLoreChapter,
@@ -38,9 +39,22 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
+  const pageUrl = absoluteUrl(`/phylax/lore/${slug}`);
   return {
     title: `${chapter.title} | PHYLAX Lore Archive`,
     description: chapter.summary,
+    alternates: {
+      canonical: pageUrl,
+    },
+    openGraph: {
+      title: `${chapter.title} | PHYLAX Lore Archive`,
+      description: chapter.summary,
+      url: pageUrl,
+      siteName: "Parallax Hearts",
+      images: [{ url: absoluteUrl("/images/phylax/atmosphere/black-mountain.png"), width: 1200, height: 630, alt: chapter.title }],
+      locale: "en_US",
+      type: "website",
+    },
   };
 }
 

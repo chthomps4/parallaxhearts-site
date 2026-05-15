@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { absoluteUrl } from "../../../lib/seo";
 import {
   characters,
   getAdjacentCharacters,
@@ -38,9 +39,22 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
+  const pageUrl = absoluteUrl(`/phylax/characters/${slug}`);
   return {
     title: `${character.name} | PHYLAX Characters`,
     description: character.summary,
+    alternates: {
+      canonical: pageUrl,
+    },
+    openGraph: {
+      title: `${character.name} | PHYLAX Characters`,
+      description: character.summary,
+      url: pageUrl,
+      siteName: "Parallax Hearts",
+      images: [{ url: absoluteUrl("/images/phylax/atmosphere/black-mountain.png"), width: 1200, height: 630, alt: character.name }],
+      locale: "en_US",
+      type: "website",
+    },
   };
 }
 
