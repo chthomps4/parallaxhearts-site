@@ -1,13 +1,43 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import SiteHeader from "../components/SiteHeader";
+import { absoluteUrl } from "../lib/seo";
 
 const koFiUrl = "https://ko-fi.com/parallaxhearts";
+const pageTitle = "Support | Parallax Hearts";
+const pageDescription =
+  "Support Parallax Hearts, What the Town Keeps, the Vallen story world, visual novel pages, music, and related creative work through Ko-fi.";
+const pageUrl = absoluteUrl("/support");
+const previewImage = absoluteUrl("/images/project.jpg");
 
 export const metadata: Metadata = {
-  title: "Support | Parallax Hearts",
-  description:
-    "Support Parallax Hearts, What the Town Keeps, the Vallen story world, visual novel pages, music, and related creative work through Ko-fi.",
+  title: pageTitle,
+  description: pageDescription,
+  alternates: {
+    canonical: pageUrl,
+  },
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    url: pageUrl,
+    siteName: "Parallax Hearts",
+    images: [
+      {
+        url: previewImage,
+        width: 1200,
+        height: 630,
+        alt: "Support Parallax Hearts and What the Town Keeps",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: pageTitle,
+    description: pageDescription,
+    images: [previewImage],
+  },
 };
 
 const tiers = [
