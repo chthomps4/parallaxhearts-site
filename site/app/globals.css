@@ -107,8 +107,9 @@ body > .site-header + main.websites-page > .site-header {
   top: 0;
   z-index: 60;
   border-bottom: 1px solid var(--line);
-  background: rgba(5, 5, 7, 0.78);
-  backdrop-filter: blur(14px);
+  background: rgba(5, 5, 7, 0.97);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .site-header-inner {
