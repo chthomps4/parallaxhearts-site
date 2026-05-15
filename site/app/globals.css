@@ -77,7 +77,7 @@ img {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   box-shadow: var(--shadow);
 }
@@ -137,7 +137,7 @@ body > .site-header + main.websites-page > .site-header {
 
 .site-brand-sub {
   color: var(--paper-dim);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
@@ -159,7 +159,7 @@ body > .site-header + main.websites-page > .site-header {
 }
 
 .site-nav-link {
-  min-height: 42px;
+  min-height: 44px;
   display: inline-flex;
   align-items: center;
   padding: 0 13px;
@@ -194,7 +194,7 @@ body > .site-header + main.websites-page > .site-header {
   list-style: none;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .site-mobile-nav summary::-webkit-details-marker {
@@ -259,8 +259,8 @@ body > .site-header + main.websites-page > .site-header {
   margin: 0 0 14px;
   color: var(--gold);
   text-transform: uppercase;
-  letter-spacing: 0.22em;
-  font-size: 12px;
+  letter-spacing: 0.18em;
+  font-size: 14px;
 }
 
 .primary-button,
@@ -273,8 +273,8 @@ body > .site-header + main.websites-page > .site-header {
   border-radius: var(--radius-pill);
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 12px;
+  letter-spacing: 0.12em;
+  font-size: 14px;
   font-weight: 700;
   transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
 }
@@ -382,15 +382,15 @@ footer a {
   margin-bottom: 7px;
   color: #d2b58b;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 11px;
+  letter-spacing: 0.14em;
+  font-size: 14px;
 }
 
 .archive-note-evidence {
   display: block;
   margin-bottom: 8px;
   color: rgba(243, 238, 231, 0.58);
-  font-size: 12px;
+  font-size: 14px;
   font-style: italic;
 }
 
