@@ -55,6 +55,13 @@ const chapterPages = [
     text: "Inside the boarding house, Elias lets the hallway settle before he gives the room a name.",
     href: "/graphic-novel/chapter-one/page-005",
   },
+  {
+    number: "006",
+    title: "The Waterline",
+    status: "Live",
+    text: "Elias notices a pale seam across the plaster: a memory of water where water should not have stayed.",
+    href: "/graphic-novel/chapter-one/page-006",
+  },
 ];
 
 const chapterRules = [
@@ -121,9 +128,9 @@ export default function ChapterOnePage() {
                     fontSize: "19px",
                   }}
                 >
-                  Elias Vale enters Vallen for a house inspection. Five pages
+                  Elias Vale enters Vallen for a house inspection. Six pages
                   are live now: the crossing, Mercer Street, the boarding house,
-                  the first door, and the hallway.
+                  the first door, the hallway, and the waterline.
                 </p>
 
                 <div
@@ -138,7 +145,7 @@ export default function ChapterOnePage() {
                     Start Reading
                   </Link>
 
-                  <Link href="/graphic-novel/chapter-one/page-005" className="secondary-button">
+                  <Link href="/graphic-novel/chapter-one/page-006" className="secondary-button">
                     Latest Page
                   </Link>
 
@@ -163,8 +170,8 @@ export default function ChapterOnePage() {
               }}
             >
               <Image
-                src="/images/graphic-novel/chapter-one/page-005-hallway.svg"
-                alt="Chapter One Ballast hallway atmosphere"
+                src="/images/graphic-novel/chapter-one/page-006-waterline.svg"
+                alt="Chapter One Ballast waterline atmosphere"
                 fill
                 unoptimized
                 sizes="(max-width: 900px) 100vw, 420px"

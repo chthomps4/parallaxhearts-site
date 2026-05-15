@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useRef } from "react";
 import { mainNavigation } from "../config/navigation";
 
 function getActiveLabel(pathname: string) {
@@ -27,6 +28,7 @@ function getActiveLabel(pathname: string) {
 
 export default function SiteHeader({ active }: { active?: string }) {
   const pathname = usePathname();
+  const mobileMenuRef = useRef<HTMLDetailsElement>(null);
 
   // Some older pages still render their own <SiteHeader active="..." /> inside the page.
   // The root layout now owns the global header, so page-level instances return null.
@@ -37,6 +39,12 @@ export default function SiteHeader({ active }: { active?: string }) {
   if (pathname.startsWith("/phylax")) return null;
 
   const activeLabel = getActiveLabel(pathname);
+
+  function closeMobileMenu() {
+    if (mobileMenuRef.current) {
+      mobileMenuRef.current.open = false;
+    }
+  }
 
   return (
     <header className="site-header" aria-label="Primary site header">
@@ -58,7 +66,7 @@ export default function SiteHeader({ active }: { active?: string }) {
           ))}
         </nav>
 
-        <details className="site-mobile-nav">
+        <details className="site-mobile-nav" ref={mobileMenuRef}>
           <summary aria-label="Open navigation menu">Menu</summary>
           <nav className="site-mobile-nav-panel" aria-label="Mobile navigation">
             {mainNavigation.map(([label, href]) => (
@@ -66,6 +74,7 @@ export default function SiteHeader({ active }: { active?: string }) {
                 key={label}
                 href={href}
                 className={label === activeLabel ? "site-mobile-link is-active" : "site-mobile-link"}
+                onClick={closeMobileMenu}
               >
                 {label}
               </Link>

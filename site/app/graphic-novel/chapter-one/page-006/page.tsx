@@ -1,23 +1,54 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { absoluteUrl } from "../../../../lib/seo";
+
+const pageTitle = "Page 006 — The Waterline | Chapter One — Ballast";
+const pageDescription =
+  "Read page 006, The Waterline, from Chapter One — Ballast in the What the Town Keeps visual novel archive.";
+const pageUrl = absoluteUrl("/graphic-novel/chapter-one/page-006");
+const previewImage = absoluteUrl("/images/graphic-novel/chapter-one/page-006-waterline.svg");
 
 export const metadata: Metadata = {
-  title: "Page 005 — The Hallway | Chapter One — Ballast",
-  description:
-    "Read page 005, The Hallway, from Chapter One — Ballast in the What the Town Keeps visual novel archive.",
+  title: pageTitle,
+  description: pageDescription,
   keywords: [
-    "What the Town Keeps page 005",
+    "What the Town Keeps page 006",
     "Chapter One Ballast",
-    "The Hallway",
+    "The Waterline",
     "Elias Vale",
     "Vallen",
     "Parallax Hearts graphic novel",
     "visual novel archive",
   ],
+  alternates: {
+    canonical: pageUrl,
+  },
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    url: pageUrl,
+    siteName: "Parallax Hearts",
+    images: [
+      {
+        url: previewImage,
+        width: 1000,
+        height: 1414,
+        alt: "Chapter One Page 006 — The Waterline",
+      },
+    ],
+    locale: "en_US",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: pageTitle,
+    description: pageDescription,
+    images: [previewImage],
+  },
 };
 
-export default function ChapterOnePage005() {
+export default function ChapterOnePage006() {
   return (
     <main className="site-shell">
       <section style={{ padding: "42px 0 34px" }}>
@@ -41,7 +72,7 @@ export default function ChapterOnePage005() {
             >
               <div>
                 <p className="kicker" style={{ marginBottom: "10px" }}>
-                  Chapter One — Ballast / Page 005
+                  Chapter One — Ballast / Page 006
                 </p>
 
                 <h1
@@ -53,7 +84,7 @@ export default function ChapterOnePage005() {
                     fontWeight: 400,
                   }}
                 >
-                  The Hallway
+                  The Waterline
                 </h1>
               </div>
 
@@ -64,12 +95,12 @@ export default function ChapterOnePage005() {
                   flexWrap: "wrap",
                 }}
               >
-                <Link href="/graphic-novel/chapter-one/page-004" className="secondary-button">
+                <Link href="/graphic-novel/chapter-one/page-005" className="secondary-button">
                   Previous Page
                 </Link>
 
-                <Link href="/graphic-novel/chapter-one/page-006" className="primary-button">
-                  Next Page
+                <Link href="/graphic-novel/chapter-one" className="primary-button">
+                  Chapter Archive
                 </Link>
               </div>
             </div>
@@ -92,8 +123,8 @@ export default function ChapterOnePage005() {
                 }}
               >
                 <Image
-                  src="/images/graphic-novel/chapter-one/page-005-hallway.svg"
-                  alt="Elias Vale inside the boarding house hallway"
+                  src="/images/graphic-novel/chapter-one/page-006-waterline.svg"
+                  alt="A faint waterline on the boarding house hallway wall"
                   width={1000}
                   height={1414}
                   priority
@@ -131,31 +162,34 @@ export default function ChapterOnePage005() {
                       lineHeight: 1.75,
                     }}
                   >
-                    The hallway held the weather differently.
+                    The waterline was too clean to be old neglect.
                   </p>
 
                   <p className="body-copy" style={{ margin: "18px 0 0" }}>
-                    Outside, rain moved with purpose. In here, it became smell:
-                    damp wool, old paper, radiator heat, and the faint mineral
-                    edge of water that had entered where it was not invited.
+                    Elias found it halfway down the hallway, a pale seam running
+                    across the plaster at waist height. It passed behind the coat
+                    hook, beneath the framed print, and stopped at the door trim
+                    as if someone had drawn the flood with a ruler.
                   </p>
 
                   <p className="body-copy" style={{ margin: "18px 0 0" }}>
-                    Elias stood just inside the door and let his eyes adjust.
-                    A coat hung from a wall hook. A stack of papers leaned on a
-                    narrow table. The floorboards ran inward like a held breath.
+                    He crouched, touched two fingers to the wall, and brought
+                    them back dry. No bloom. No softness. No fresh lift in the
+                    paint. Just the mark of water where water had no business
+                    remembering itself.
                   </p>
 
                   <p className="body-copy" style={{ margin: "18px 0 0" }}>
-                    He did not write anything yet. Some rooms needed a moment
-                    before they could be named.
+                    He wrote moisture history in the margin, then crossed it out.
+                    The phrase felt too certain for a house that had not yet
+                    decided what it wanted to admit.
                   </p>
                 </div>
 
                 <div>
                   <p className="kicker">Excerpt</p>
                   <p className="soft-copy" style={{ margin: "14px 0 0" }}>
-                    Some rooms needed a moment before they could be named.
+                    Just the mark of water where water had no business remembering itself.
                   </p>
                 </div>
               </aside>
@@ -174,12 +208,12 @@ export default function ChapterOnePage005() {
               flexWrap: "wrap",
             }}
           >
-            <Link href="/graphic-novel/chapter-one/page-004" className="secondary-button">
-              ← Page 004
+            <Link href="/graphic-novel/chapter-one/page-005" className="secondary-button">
+              ← Page 005
             </Link>
 
-            <Link href="/graphic-novel/chapter-one/page-006" className="primary-button">
-              Page 006 →
+            <Link href="/graphic-novel/chapter-one" className="primary-button">
+              Chapter Archive →
             </Link>
           </div>
         </div>

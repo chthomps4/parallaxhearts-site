@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1414" role="img" aria-labelledby="title desc">
+  <title id="title">Chapter One Page 006 — The Waterline</title>
+  <desc id="desc">A restrained cinematic visual novel panel of a narrow boarding house hallway with damp plaster, old trim, a low stairwell, and a faint waterline on the wall.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#1b2025"/>
+      <stop offset="0.48" stop-color="#101316"/>
+      <stop offset="1" stop-color="#08090b"/>
+    </linearGradient>
+    <radialGradient id="lamp" cx="42%" cy="18%" r="44%">
+      <stop offset="0" stop-color="#d2b58b" stop-opacity="0.42"/>
+      <stop offset="0.38" stop-color="#b98454" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#050607" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="floor" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#2b2420"/>
+      <stop offset="1" stop-color="#0b0a09"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.16"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1000" height="1414" fill="url(#bg)"/>
+  <rect width="1000" height="1414" fill="url(#lamp)"/>
+  <path d="M92 0h816v1414H92z" fill="#111417" opacity="0.88"/>
+  <path d="M170 0h660v1414H170z" fill="#17191b" opacity="0.55"/>
+  <path d="M0 1020h1000v394H0z" fill="url(#floor)"/>
+  <path d="M170 1020h660l95 394H75z" fill="#191310" opacity="0.7"/>
+  <path d="M206 1030h588" stroke="#4b3528" stroke-width="5" opacity="0.55"/>
+  <path d="M132 332h736" stroke="#9a7a55" stroke-width="4" opacity="0.34"/>
+  <path d="M132 358h736" stroke="#44362a" stroke-width="2" opacity="0.62"/>
+  <path d="M126 621c78 15 145 10 204 0 84-14 163-12 237 4 82 17 178 10 306-6" fill="none" stroke="#6d756f" stroke-width="9" opacity="0.26"/>
+  <path d="M126 642c102 18 210 7 298-3 88-11 183 32 279 20 60-8 116-19 170-22" fill="none" stroke="#b89b74" stroke-width="3" opacity="0.38"/>
+  <rect x="650" y="176" width="128" height="420" rx="4" fill="#090b0d" opacity="0.86"/>
+  <rect x="670" y="198" width="88" height="164" fill="#22272b" opacity="0.82"/>
+  <rect x="670" y="388" width="88" height="174" fill="#181d20" opacity="0.86"/>
+  <path d="M254 322h246v698H254z" fill="#08090b" opacity="0.7"/>
+  <path d="M296 378h164v572H296z" fill="#141618" opacity="0.88"/>
+  <path d="M326 423h104v76H326z" fill="#25211d" opacity="0.72"/>
+  <path d="M326 545h104v224H326z" fill="#0b0c0d" opacity="0.64"/>
+  <circle cx="446" cy="702" r="9" fill="#c7aa7f" opacity="0.6"/>
+  <path d="M500 1017 754 1414" stroke="#69513f" stroke-width="8" opacity="0.35"/>
+  <path d="M254 1017 56 1414" stroke="#69513f" stroke-width="8" opacity="0.26"/>
+  <g opacity="0.7">
+    <path d="M125 0v1414" stroke="#050607" stroke-width="18"/>
+    <path d="M875 0v1414" stroke="#050607" stroke-width="18"/>
+    <path d="M175 0v1414" stroke="#30251e" stroke-width="4" opacity="0.7"/>
+    <path d="M825 0v1414" stroke="#30251e" stroke-width="4" opacity="0.7"/>
+  </g>
+  <path d="M128 740h742" stroke="#d2b58b" stroke-width="2" opacity="0.16" stroke-dasharray="18 18"/>
+  <text x="500" y="1260" text-anchor="middle" fill="#f3eee7" opacity="0.54" font-family="Georgia, 'Times New Roman', serif" font-size="34" letter-spacing="6">THE WATERLINE</text>
+  <rect width="1000" height="1414" filter="url(#grain)" opacity="0.38"/>
+  <rect x="26" y="26" width="948" height="1362" fill="none" stroke="#d2b58b" stroke-opacity="0.16" stroke-width="2"/>
+</svg>
