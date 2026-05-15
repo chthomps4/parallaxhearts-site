@@ -1,11 +1,27 @@
 import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
 import type { Metadata } from "next";
+import { absoluteUrl } from "../../lib/seo";
+
+const pageUrl = absoluteUrl("/phylax/lore");
 
 export const metadata: Metadata = {
   title: "PHYLAX Lore Archive | The First Breach",
   description:
     "The lore archive for PHYLAX: The First Breach — a dark cinematic album world about watching, longing, oath, descent, forbidden knowledge, consequence, and memory.",
+  alternates: {
+    canonical: pageUrl,
+  },
+  openGraph: {
+    title: "PHYLAX Lore Archive | The First Breach",
+    description:
+      "The lore archive for PHYLAX: The First Breach — a dark cinematic album world about watching, longing, oath, descent, forbidden knowledge, consequence, and memory.",
+    url: pageUrl,
+    siteName: "Parallax Hearts",
+    images: [{ url: absoluteUrl("/images/phylax/atmosphere/black-mountain.png"), width: 1200, height: 630, alt: "PHYLAX Lore Archive" }],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 const siteFont = `Georgia, "Times New Roman", Times, serif`;

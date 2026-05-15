@@ -1,11 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { absoluteUrl } from "../../../lib/seo";
+
+const pageUrl = absoluteUrl("/graphic-novel/chapter-one/page-005");
 
 export const metadata: Metadata = {
   title: "Page 005 — The Hallway | Chapter One — Ballast",
   description:
     "Read page 005, The Hallway, from Chapter One — Ballast in the What the Town Keeps visual novel archive.",
+  alternates: {
+    canonical: pageUrl,
+  },
+  openGraph: {
+    title: "Page 005 — The Hallway | Chapter One — Ballast",
+    description:
+      "Read page 005, The Hallway, from Chapter One — Ballast in the What the Town Keeps visual novel archive.",
+    url: pageUrl,
+    siteName: "Parallax Hearts",
+    images: [{ url: absoluteUrl("/images/project.jpg"), width: 1200, height: 630, alt: "Page 005 — The Hallway | Chapter One — Ballast" }],
+    locale: "en_US",
+    type: "website",
+  },
   keywords: [
     "What the Town Keeps page 005",
     "Chapter One Ballast",

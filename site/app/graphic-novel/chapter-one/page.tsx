@@ -1,12 +1,28 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { absoluteUrl } from "../../lib/seo";
 import ChapterSoundtrackCta from "../../components/ChapterSoundtrackCta";
+
+const pageUrl = absoluteUrl("/graphic-novel/chapter-one");
 
 export const metadata: Metadata = {
   title: "Chapter One — Ballast | What the Town Keeps",
   description:
     "Read Chapter One — Ballast from the graphic novel / visual novel adaptation of What the Town Keeps by Parallax Hearts.",
+  alternates: {
+    canonical: pageUrl,
+  },
+  openGraph: {
+    title: "Chapter One — Ballast | What the Town Keeps",
+    description:
+      "Read Chapter One — Ballast from the graphic novel / visual novel adaptation of What the Town Keeps by Parallax Hearts.",
+    url: pageUrl,
+    siteName: "Parallax Hearts",
+    images: [{ url: absoluteUrl("/images/project.jpg"), width: 1200, height: 630, alt: "Chapter One — Ballast" }],
+    locale: "en_US",
+    type: "website",
+  },
   keywords: [
     "Chapter One Ballast",
     "What the Town Keeps Chapter One",

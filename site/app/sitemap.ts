@@ -7,7 +7,7 @@ import { loreChapters } from "./phylax/lore/lore-data";
 const staticRoutes = [
   { path: "/", priority: 1, changeFrequency: "weekly" as const },
   { path: "/music", priority: 0.92, changeFrequency: "weekly" as const },
-  { path: "/project", priority: 0.9, changeFrequency: "weekly" as const },
+  { path: "/story", priority: 0.9, changeFrequency: "weekly" as const },
   { path: "/graphic-novel", priority: 0.94, changeFrequency: "weekly" as const },
   { path: "/graphic-novel/chapter-one", priority: 0.93, changeFrequency: "weekly" as const },
   { path: "/websites", priority: 0.88, changeFrequency: "weekly" as const },
@@ -22,7 +22,7 @@ const staticRoutes = [
   { path: "/contact", priority: 0.7, changeFrequency: "monthly" as const },
   { path: "/phylax", priority: 0.55, changeFrequency: "monthly" as const },
   { path: "/phylax/lore", priority: 0.5, changeFrequency: "monthly" as const },
-  { path: "/phylax/story", priority: 0.45, changeFrequency: "monthly" as const },
+  { path: "/portfolio", priority: 0.55, changeFrequency: "monthly" as const },
   { path: "/phylax/characters", priority: 0.45, changeFrequency: "monthly" as const },
 ];
 
