@@ -3,11 +3,17 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import ChapterSoundtrackCta from "../components/ChapterSoundtrackCta";
 import SiteHeader from "../components/SiteHeader";
+import { absoluteUrl } from "../lib/seo";
+
+const pageTitle = "Graphic Novel | What the Town Keeps";
+const pageDescription =
+  "Read the built-in graphic novel / visual novel adaptation of What the Town Keeps by Parallax Hearts, beginning with Chapter One — Ballast.";
+const pageUrl = absoluteUrl("/graphic-novel");
+const previewImage = absoluteUrl("/images/project.jpg");
 
 export const metadata: Metadata = {
-  title: "Graphic Novel | What the Town Keeps",
-  description:
-    "Read the built-in graphic novel / visual novel adaptation of What the Town Keeps by Parallax Hearts, beginning with Chapter One — Ballast.",
+  title: pageTitle,
+  description: pageDescription,
   keywords: [
     "What the Town Keeps graphic novel",
     "What the Town Keeps visual novel",
@@ -18,6 +24,31 @@ export const metadata: Metadata = {
     "cinematic literary drama",
     "small town graphic novel",
   ],
+  alternates: {
+    canonical: pageUrl,
+  },
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    url: pageUrl,
+    siteName: "Parallax Hearts",
+    images: [
+      {
+        url: previewImage,
+        width: 1200,
+        height: 630,
+        alt: "What the Town Keeps visual novel archive",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: pageTitle,
+    description: pageDescription,
+    images: [previewImage],
+  },
 };
 
 const accessCards = [
@@ -37,7 +68,7 @@ const accessCards = [
     title: "Story World",
     label: "Context",
     text: "Step back into the larger world of Vallen, the album, and What the Town Keeps.",
-    href: "/project",
+    href: "/story",
   },
 ];
 
