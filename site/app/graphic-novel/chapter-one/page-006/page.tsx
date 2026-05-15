@@ -7,7 +7,7 @@ const pageTitle = "Page 006 — The Waterline | Chapter One — Ballast";
 const pageDescription =
   "Read page 006, The Waterline, from Chapter One — Ballast in the What the Town Keeps visual novel archive.";
 const pageUrl = absoluteUrl("/graphic-novel/chapter-one/page-006");
-const previewImage = absoluteUrl("/images/graphic-novel/chapter-one/page-006-waterline.svg");
+const previewImage = absoluteUrl("/images/graphic-novel/chapter-one/vn-page-006.jpg");
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -123,7 +123,7 @@ export default function ChapterOnePage006() {
                 }}
               >
                 <Image
-                  src="/images/graphic-novel/chapter-one/page-006-waterline.svg"
+                  src="/images/graphic-novel/chapter-one/vn-page-006.jpg"
                   alt="A faint waterline on the boarding house hallway wall"
                   width={1000}
                   height={1414}

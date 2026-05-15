@@ -18,7 +18,7 @@ export const metadata: Metadata = {
       "Read page 004, The First Door, from Chapter One — Ballast in the What the Town Keeps visual novel archive.",
     url: pageUrl,
     siteName: "Parallax Hearts",
-    images: [{ url: absoluteUrl("/images/graphic-novel-hub.jpg"), width: 1200, height: 630, alt: "Page 004 — The First Door | Chapter One — Ballast" }],
+    images: [{ url: absoluteUrl("/images/graphic-novel/chapter-one/vn-page-004.jpg"), width: 1200, height: 630, alt: "Page 004 — The First Door | Chapter One — Ballast" }],
     locale: "en_US",
     type: "website",
   },
@@ -174,7 +174,7 @@ export default function ChapterOnePage004() {
                 }}
               >
                 <Image
-                  src="/images/graphic-novel/chapter-one/page-004-first-door.svg"
+                  src="/images/graphic-novel/chapter-one/vn-page-004.jpg"
                   alt="Elias Vale finding the key beside the first door"
                   width={1000}
                   height={1414}

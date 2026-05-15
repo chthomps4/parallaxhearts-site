@@ -18,7 +18,7 @@ export const metadata: Metadata = {
       "Read page 005, The Hallway, from Chapter One — Ballast in the What the Town Keeps visual novel archive.",
     url: pageUrl,
     siteName: "Parallax Hearts",
-    images: [{ url: absoluteUrl("/images/graphic-novel-hub.jpg"), width: 1200, height: 630, alt: "Page 005 — The Hallway | Chapter One — Ballast" }],
+    images: [{ url: absoluteUrl("/images/graphic-novel/chapter-one/vn-page-005.jpg"), width: 1200, height: 630, alt: "Page 005 — The Hallway | Chapter One — Ballast" }],
     locale: "en_US",
     type: "website",
   },
@@ -108,7 +108,7 @@ export default function ChapterOnePage005() {
                 }}
               >
                 <Image
-                  src="/images/graphic-novel/chapter-one/page-005-hallway.svg"
+                  src="/images/graphic-novel/chapter-one/vn-page-005.jpg"
                   alt="Elias Vale inside the boarding house hallway"
                   width={1000}
                   height={1414}

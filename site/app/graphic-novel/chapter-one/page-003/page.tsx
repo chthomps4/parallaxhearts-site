@@ -18,7 +18,7 @@ export const metadata: Metadata = {
       "Read page 003, The Boarding House, from Chapter One — Ballast in the What the Town Keeps graphic novel / visual novel archive.",
     url: pageUrl,
     siteName: "Parallax Hearts",
-    images: [{ url: absoluteUrl("/images/graphic-novel-hub.jpg"), width: 1200, height: 630, alt: "Page 003 — The Boarding House | Chapter One — Ballast" }],
+    images: [{ url: absoluteUrl("/images/graphic-novel/chapter-one/vn-page-003.jpg"), width: 1200, height: 630, alt: "Page 003 — The Boarding House | Chapter One — Ballast" }],
     locale: "en_US",
     type: "website",
   },
@@ -174,7 +174,7 @@ export default function ChapterOnePage003() {
                 }}
               >
                 <Image
-                  src="/images/graphic-novel/chapter-one/page-003-boarding-house.svg"
+                  src="/images/graphic-novel/chapter-one/vn-page-003.jpg"
                   alt="Elias Vale outside the boarding house in Vallen after rain"
                   width={1000}
                   height={1414}

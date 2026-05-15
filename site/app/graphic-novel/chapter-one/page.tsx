@@ -186,7 +186,7 @@ export default function ChapterOnePage() {
               }}
             >
               <Image
-                src="/images/graphic-novel/chapter-one/page-006-waterline.svg"
+                src="/images/graphic-novel/chapter-one/vn-page-006.jpg"
                 alt="Chapter One Ballast waterline atmosphere"
                 fill
                 unoptimized
