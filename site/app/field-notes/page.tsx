@@ -106,7 +106,7 @@ export default function FieldNotesPage() {
             }}
           >
             <Image
-              src="/images/world.jpg"
+              src="/images/field-notes.jpg"
               alt="Field Notes research atmosphere with dark archival imagery and muted cinematic light"
               fill
               priority

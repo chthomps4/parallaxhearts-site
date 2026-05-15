@@ -16,7 +16,7 @@ const pageTitle = "Contact | Parallax Hearts";
 const pageDescription =
   "Contact Parallax Hearts for music, What the Town Keeps, the visual novel, listener messages, support links, and custom website service inquiries.";
 const pageUrl = absoluteUrl("/contact");
-const previewImage = absoluteUrl("/images/world.jpg");
+const previewImage = absoluteUrl("/images/contact-porch.jpg");
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -251,8 +251,8 @@ export default function ContactPage() {
               }}
             >
               <Image
-                src="/images/world.jpg"
-                alt="Parallax Hearts contact page image"
+                src="/images/contact-porch.jpg"
+                alt="House porch at evening with warm light above a weathered door, mailbox, gentle rain"
                 width={1200}
                 height={1400}
                 style={{

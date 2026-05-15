@@ -5,7 +5,7 @@ const pageTitle = "Field Notes | Forbidden Knowledge";
 const pageDescription =
   "Source trails, evidence labels, lost etymology, ancient knowledge, and The Forbidden Knowledge Bible research lane.";
 const pageUrl = absoluteUrl("/field-notes");
-const previewImage = absoluteUrl("/images/world.jpg");
+const previewImage = absoluteUrl("/images/field-notes.jpg");
 
 export const metadata: Metadata = {
   title: pageTitle,

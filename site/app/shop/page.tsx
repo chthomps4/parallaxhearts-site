@@ -246,7 +246,7 @@ export default function ShopPage() {
               }}
             >
               <Image
-                src="/images/project.jpg"
+                src="/images/shop-support.jpg"
                 alt="What the Town Keeps digital catalog"
                 width={1200}
                 height={1400}

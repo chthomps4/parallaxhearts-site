@@ -8,7 +8,7 @@ const pageTitle = "Support | Parallax Hearts";
 const pageDescription =
   "Support Parallax Hearts, What the Town Keeps, the Vallen story world, visual novel pages, music, and related creative work through Ko-fi.";
 const pageUrl = absoluteUrl("/support");
-const previewImage = absoluteUrl("/images/project.jpg");
+const previewImage = absoluteUrl("/images/shop-support.jpg");
 
 export const metadata: Metadata = {
   title: pageTitle,

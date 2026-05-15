@@ -18,7 +18,7 @@ export const metadata: Metadata = {
       "Read page 001, The Crossing, from Chapter One — Ballast in the What the Town Keeps graphic novel / visual novel archive.",
     url: pageUrl,
     siteName: "Parallax Hearts",
-    images: [{ url: absoluteUrl("/images/project.jpg"), width: 1200, height: 630, alt: "Page 001 — The Crossing | Chapter One — Ballast" }],
+    images: [{ url: absoluteUrl("/images/graphic-novel/chapter-one/vn-page-001.jpg"), width: 1200, height: 630, alt: "Page 001 — The Crossing | Chapter One — Ballast" }],
     locale: "en_US",
     type: "website",
   },
@@ -174,7 +174,7 @@ export default function ChapterOnePage001() {
                 }}
               >
                 <Image
-                  src="/images/world.jpg"
+                  src="/images/graphic-novel/chapter-one/vn-page-001.jpg"
                   alt="Elias Vale crossing into Vallen in the rain"
                   width={1400}
                   height={1900}

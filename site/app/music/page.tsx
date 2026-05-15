@@ -13,7 +13,7 @@ const pageTitle = "Music | Parallax Hearts";
 const pageDescription =
   "Listen to What the Town Keeps by Parallax Hearts — a cinematic acoustic alternative album tied to Vallen and the wider story world.";
 const pageUrl = absoluteUrl("/music");
-const previewImage = absoluteUrl("/images/hero.jpg");
+const previewImage = absoluteUrl("/images/music-listen.jpg");
 const storyUrl = "/story";
 
 export const metadata: Metadata = {
@@ -181,8 +181,8 @@ export default function MusicPage() {
             }}
           >
             <Image
-              src="/images/hero.jpg"
-              alt="What the Town Keeps album atmosphere, a rainy Vallen scene with cinematic small-town light"
+              src="/images/music-listen.jpg"
+              alt="Acoustic guitar leaning against an amp in a dim venue, warm amber spotlight, rain streaks on window"
               fill
               priority
               sizes="(max-width: 980px) 100vw, 1180px"

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
       "Start the free Forbidden Knowledge intro course: source trails, evidence labels, ancient knowledge, and the 5-Level Rabbit Hole Method.",
     url: fkPageUrl,
     siteName: "Parallax Hearts",
-    images: [{ url: absoluteUrl("/images/world.jpg"), width: 1200, height: 630, alt: "Forbidden Knowledge" }],
+    images: [{ url: absoluteUrl("/images/forbidden-knowledge.jpg"), width: 1200, height: 630, alt: "Forbidden Knowledge" }],
     locale: "en_US",
     type: "website",
   },
@@ -84,7 +84,7 @@ export default function ForbiddenKnowledgePage() {
             }}
           >
             <Image
-              src="/images/world.jpg"
+              src="/images/forbidden-knowledge.jpg"
               alt="Field Notes and Forbidden Knowledge research archive atmosphere"
               fill
               priority

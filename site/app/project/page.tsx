@@ -162,8 +162,8 @@ export default function ProjectPage() {
               }}
             >
               <Image
-                src="/images/project.jpg"
-                alt="What the Town Keeps project image"
+                src="/images/graphic-novel-hub.jpg"
+                alt="Old boarding house on a quiet Vallen street at dusk, rain, warm porch light"
                 width={1200}
                 height={900}
                 style={{
@@ -183,8 +183,8 @@ export default function ProjectPage() {
               }}
             >
               <Image
-                src="/images/world.jpg"
-                alt="What the Town Keeps visual world image"
+                src="/images/story-world.jpg"
+                alt="Small town rooftops at dusk, church steeple, rail lines, fog, warm window lights"
                 width={1200}
                 height={900}
                 style={{

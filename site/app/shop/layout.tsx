@@ -5,7 +5,7 @@ const pageTitle = "Shop | Parallax Hearts";
 const pageDescription =
   "Digital albums, lyric books, concept art, story previews, and support bundles for Parallax Hearts and What the Town Keeps.";
 const pageUrl = absoluteUrl("/shop");
-const previewImage = absoluteUrl("/images/project.jpg");
+const previewImage = absoluteUrl("/images/shop-support.jpg");
 
 export const metadata: Metadata = {
   title: pageTitle,

@@ -5,7 +5,7 @@ const pageTitle = "What the Town Keeps | Parallax Hearts";
 const pageDescription =
   "Enter What the Town Keeps by Parallax Hearts — the album, story world, visual novel archive, and rainy small-town world of Vallen.";
 const pageUrl = absoluteUrl("/project");
-const previewImage = absoluteUrl("/images/project.jpg");
+const previewImage = absoluteUrl("/images/story-world.jpg");
 
 export const metadata: Metadata = {
   title: pageTitle,

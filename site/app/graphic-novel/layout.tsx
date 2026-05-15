@@ -5,7 +5,7 @@ const pageTitle = "Graphic Novel | What the Town Keeps";
 const pageDescription =
   "Read the built-in graphic novel and visual novel adaptation of What the Town Keeps by Parallax Hearts, beginning with Chapter One — Ballast.";
 const pageUrl = absoluteUrl("/graphic-novel");
-const previewImage = absoluteUrl("/images/project.jpg");
+const previewImage = absoluteUrl("/images/graphic-novel-hub.jpg");
 
 export const metadata: Metadata = {
   title: pageTitle,

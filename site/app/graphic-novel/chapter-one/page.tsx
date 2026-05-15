@@ -19,7 +19,7 @@ export const metadata: Metadata = {
       "Read Chapter One — Ballast from the graphic novel / visual novel adaptation of What the Town Keeps by Parallax Hearts.",
     url: pageUrl,
     siteName: "Parallax Hearts",
-    images: [{ url: absoluteUrl("/images/project.jpg"), width: 1200, height: 630, alt: "Chapter One — Ballast" }],
+    images: [{ url: absoluteUrl("/images/graphic-novel-hub.jpg"), width: 1200, height: 630, alt: "Chapter One — Ballast" }],
     locale: "en_US",
     type: "website",
   },

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "Selected website examples and work-in-progress builds from Parallax Hearts Website Services.",
     url: pageUrl,
     siteName: "Parallax Hearts",
-    images: [{ url: absoluteUrl("/images/project.jpg"), width: 1200, height: 630, alt: "Parallax Hearts Website Portfolio" }],
+    images: [{ url: absoluteUrl("/images/story-world.jpg"), width: 1200, height: 630, alt: "Parallax Hearts Website Portfolio" }],
     locale: "en_US",
     type: "website",
   },

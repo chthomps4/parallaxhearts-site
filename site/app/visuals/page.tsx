@@ -7,7 +7,7 @@ const pageTitle = "Visuals | What the Town Keeps";
 const pageDescription =
   "A visual archive for What the Town Keeps: Vallen imagery, graphic novel atmosphere, album-world stills, and rain-soaked cinematic scenes.";
 const pageUrl = absoluteUrl("/visuals");
-const previewImage = absoluteUrl("/images/project.jpg");
+const previewImage = absoluteUrl("/images/story-world.jpg");
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -59,7 +59,7 @@ const visualCards = [
   {
     title: "Graphic novel panels",
     text: "The visual-novel side of What the Town Keeps, beginning with Chapter One — Ballast.",
-    image: "/images/project.jpg",
+    image: "/images/graphic-novel-hub.jpg",
     alt: "Graphic novel atmosphere for What the Town Keeps",
     href: "/graphic-novel",
     label: "Open the graphic novel",
@@ -67,7 +67,7 @@ const visualCards = [
   {
     title: "Music-world imagery",
     text: "Images connected to the album, lyrics, reels, support posts, and the cinematic language around Parallax Hearts.",
-    image: "/images/world.jpg",
+    image: "/images/story-world.jpg",
     alt: "Parallax Hearts music-world image archive",
     href: "/music",
     label: "Listen to the album",
@@ -91,7 +91,7 @@ export default function VisualsPage() {
             }}
           >
             <Image
-              src="/images/project.jpg"
+              src="/images/story-world.jpg"
               alt="What the Town Keeps visual archive hero"
               fill
               priority

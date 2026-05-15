@@ -8,7 +8,7 @@ const pageTitle = "Custom Websites for Creators & Artists | Parallax Hearts";
 const pageDescription =
   "Custom websites for artists, creators, small businesses, and local projects with clear structure, strong visuals, and follow-up support.";
 const pageUrl = absoluteUrl("/websites");
-const previewImage = absoluteUrl("/images/project.jpg");
+const previewImage = absoluteUrl("/images/story-world.jpg");
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -266,7 +266,7 @@ export default function WebsitesPage() {
           <aside className="feature-card websites-visual-card">
             <div className="websites-visual-frame">
               <Image
-                src="/images/project.jpg"
+                src="/images/story-world.jpg"
                 alt="Moody website planning workspace with cinematic Parallax Hearts visual direction"
                 fill
                 priority
