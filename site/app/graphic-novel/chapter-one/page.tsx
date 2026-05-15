@@ -19,16 +19,6 @@ export const metadata: Metadata = {
   ],
 };
 
-const navItems = [
-  ["Home", "/"],
-  ["Music", "/music"],
-  ["Story", "/project"],
-  ["Graphic Novel", "/graphic-novel"],
-  ["Field Notes", "/field-notes"],
-  ["Support", "/support"],
-  ["Contact", "/contact"],
-];
-
 const chapterPages = [
   {
     number: "001",
@@ -78,82 +68,26 @@ const chapterRules = [
 export default function ChapterOnePage() {
   return (
     <main className="site-shell">
-      <section style={{ padding: "34px 0 18px" }}>
-        <div className="site-container">
-          <header
-            style={{
-              minHeight: "72px",
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              gap: "20px",
-              flexWrap: "wrap",
-              padding: "16px 0",
-              borderBottom: "1px solid var(--line)",
-            }}
-          >
-            <Link
-              href="/"
-              style={{
-                color: "var(--paper)",
-                textDecoration: "none",
-                fontSize: "clamp(22px, 4vw, 32px)",
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                lineHeight: 1,
-              }}
-            >
-              Parallax Hearts
-            </Link>
-
-            <nav
-              style={{
-                display: "flex",
-                gap: "16px",
-                flexWrap: "wrap",
-                alignItems: "center",
-              }}
-            >
-              {navItems.map(([label, href]) => (
-                <Link
-                  key={label}
-                  href={href}
-                  style={{
-                    color:
-                      label === "Graphic Novel"
-                        ? "var(--gold)"
-                        : "var(--paper-soft)",
-                    textDecoration: "none",
-                    fontSize: "15px",
-                  }}
-                >
-                  {label}
-                </Link>
-              ))}
-            </nav>
-          </header>
-        </div>
-      </section>
-
-      <section style={{ padding: "54px 0 34px" }}>
+      <section style={{ padding: "42px 0 24px" }}>
         <div className="site-container">
           <div
             style={{
               display: "grid",
               gridTemplateColumns: "minmax(0, 1fr) minmax(300px, 0.72fr)",
-              gap: "28px",
+              gap: "22px",
               alignItems: "stretch",
             }}
           >
             <div
               className="glass-panel"
               style={{
-                padding: "clamp(28px, 6vw, 58px)",
+                padding: "clamp(26px, 5vw, 48px)",
                 position: "relative",
                 overflow: "hidden",
               }}
             >
               <div
+                aria-hidden="true"
                 style={{
                   position: "absolute",
                   inset: 0,
@@ -182,7 +116,7 @@ export default function ChapterOnePage() {
                 <p
                   className="body-copy"
                   style={{
-                    margin: "24px 0 0",
+                    margin: "22px 0 0",
                     maxWidth: "760px",
                     fontSize: "19px",
                   }}
@@ -194,7 +128,7 @@ export default function ChapterOnePage() {
 
                 <div
                   style={{
-                    marginTop: "30px",
+                    marginTop: "26px",
                     display: "flex",
                     gap: "12px",
                     flexWrap: "wrap",
@@ -211,6 +145,10 @@ export default function ChapterOnePage() {
                   <Link href="/music" className="secondary-button">
                     Chapter Soundtrack
                   </Link>
+
+                  <Link href="/story" className="secondary-button">
+                    Story World
+                  </Link>
                 </div>
               </div>
             </div>
@@ -220,20 +158,19 @@ export default function ChapterOnePage() {
               style={{
                 borderRadius: "28px",
                 overflow: "hidden",
-                minHeight: "420px",
+                minHeight: "360px",
+                position: "relative",
               }}
             >
               <Image
                 src="/images/graphic-novel/chapter-one/page-005-hallway.svg"
                 alt="Chapter One Ballast hallway atmosphere"
-                width={1000}
-                height={1414}
+                fill
                 unoptimized
+                sizes="(max-width: 900px) 100vw, 420px"
                 style={{
-                  width: "100%",
-                  height: "100%",
                   objectFit: "cover",
-                  minHeight: "420px",
+                  objectPosition: "center",
                 }}
               />
             </div>
@@ -241,7 +178,7 @@ export default function ChapterOnePage() {
         </div>
       </section>
 
-      <section style={{ padding: "34px 0" }}>
+      <section style={{ padding: "24px 0 34px" }}>
         <div className="site-container">
           <p className="kicker">Chapter pages</p>
 
@@ -257,7 +194,7 @@ export default function ChapterOnePage() {
               <Link
                 key={page.number}
                 href={page.href}
-                className="glass-panel"
+                className="glass-panel link-card"
                 style={{
                   padding: "26px",
                   borderRadius: "26px",
