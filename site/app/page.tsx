@@ -294,7 +294,7 @@ export default function HomePage() {
               {
                 title: "Story",
                 text: "Enter the larger story world of Vallen and What the Town Keeps.",
-                href: "/project",
+                href: "/story",
               },
               {
                 title: "Services",

@@ -14,6 +14,7 @@ const pageDescription =
   "Listen to What the Town Keeps by Parallax Hearts — a cinematic acoustic alternative album tied to Vallen and the wider story world.";
 const pageUrl = absoluteUrl("/music");
 const previewImage = absoluteUrl("/images/hero.jpg");
+const storyUrl = "/story";
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -64,49 +65,49 @@ const tracks = [
     title: "Boundary Weather",
     chapter: "Chapter Two — Boundary Weather",
     connection: "Weather, restraint, and the first pressure line between people.",
-    href: "/project",
+    href: storyUrl,
   },
   {
     title: "Measured Motion",
     chapter: "Vallen thread",
     connection: "A song about controlled movement, distance, and the cost of staying composed.",
-    href: "/project",
+    href: storyUrl,
   },
   {
     title: "Red Signal",
     chapter: "Vallen thread",
     connection: "Warning, attraction, and the moment a boundary becomes difficult to obey.",
-    href: "/project",
+    href: storyUrl,
   },
   {
     title: "Convergent Error",
     chapter: "Vallen thread",
     connection: "Two paths appearing to meet while carrying incompatible histories.",
-    href: "/project",
+    href: storyUrl,
   },
   {
     title: "Emerge the Silence",
     chapter: "Vallen thread",
     connection: "Silence as atmosphere, message, and pressure system.",
-    href: "/project",
+    href: storyUrl,
   },
   {
     title: "What Remains",
     chapter: "Closing thread",
     connection: "After departure, something in the town still keeps its shape.",
-    href: "/project",
+    href: storyUrl,
   },
   {
     title: "Patterns",
     chapter: "Vallen thread",
     connection: "The repeated habits, rooms, and signals people mistake for safety.",
-    href: "/project",
+    href: storyUrl,
   },
   {
     title: "Second Frame",
     chapter: "Vallen thread",
     connection: "The second look that changes what the first one seemed to mean.",
-    href: "/project",
+    href: storyUrl,
   },
   {
     title: "Cosmic Intervals",
@@ -118,25 +119,25 @@ const tracks = [
     title: "The Kindest Thing",
     chapter: "Vallen thread",
     connection: "Tenderness without sentimentality, and mercy without simple answers.",
-    href: "/project",
+    href: storyUrl,
   },
   {
     title: "Resonance",
     chapter: "Vallen thread",
     connection: "What keeps vibrating after the room goes quiet.",
-    href: "/project",
+    href: storyUrl,
   },
   {
     title: "Rush",
     chapter: "Vallen thread",
     connection: "The force of feeling arriving faster than language can hold it.",
-    href: "/project",
+    href: storyUrl,
   },
   {
     title: "Held in the Room",
     chapter: "Vallen thread",
     connection: "Presence, memory, and the kind of room that does not let go quickly.",
-    href: "/project",
+    href: storyUrl,
   },
 ];
 

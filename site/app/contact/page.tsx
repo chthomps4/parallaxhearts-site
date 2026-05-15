@@ -198,7 +198,7 @@ export default function ContactPage() {
                       style={{
                         border: "1px solid var(--line)",
                         borderRadius: "20px",
-                        padding: "22px",
+                        padding: "18px",
                         background: "rgba(255,255,255,0.035)",
                       }}
                     >
@@ -223,6 +223,10 @@ export default function ContactPage() {
                           textDecoration: "none",
                           fontSize: "18px",
                           lineHeight: 1.35,
+                          minHeight: "48px",
+                          display: "flex",
+                          alignItems: "center",
+                          overflowWrap: "anywhere",
                         }}
                       >
                         {item.value}

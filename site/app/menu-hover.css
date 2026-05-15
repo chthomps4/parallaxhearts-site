@@ -1,0 +1,30 @@
+/* Desktop menu reveal behavior */
+
+@media (min-width: 981px) {
+  .site-header {
+    transition: background 180ms ease, border-color 180ms ease;
+  }
+
+  .site-header .site-desktop-nav {
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transform: translateX(12px);
+    transition: max-width 220ms ease, opacity 180ms ease, transform 220ms ease;
+    white-space: nowrap;
+  }
+
+  .site-header:hover .site-desktop-nav,
+  .site-header:focus-within .site-desktop-nav {
+    max-width: 980px;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+  }
+
+  .site-header:not(:hover):not(:focus-within) {
+    background: rgba(5, 5, 7, 0.58);
+    border-color: rgba(243, 238, 231, 0.08);
+  }
+}
