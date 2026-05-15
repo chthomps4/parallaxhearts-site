@@ -17,76 +17,10 @@ export const metadata: Metadata = {
   ],
 };
 
-const navItems = [
-  ["Home", "/"],
-  ["Music", "/music"],
-  ["Story", "/project"],
-  ["Graphic Novel", "/graphic-novel"],
-  ["Chapter One", "/graphic-novel/chapter-one"],
-  ["Support", "/support"],
-];
-
 export default function ChapterOnePage005() {
   return (
     <main className="site-shell">
-      <section style={{ padding: "34px 0 18px" }}>
-        <div className="site-container">
-          <header
-            style={{
-              minHeight: "72px",
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              gap: "20px",
-              flexWrap: "wrap",
-              padding: "16px 0",
-              borderBottom: "1px solid var(--line)",
-            }}
-          >
-            <Link
-              href="/"
-              style={{
-                color: "var(--paper)",
-                textDecoration: "none",
-                fontSize: "clamp(22px, 4vw, 32px)",
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                lineHeight: 1,
-              }}
-            >
-              Parallax Hearts
-            </Link>
-
-            <nav
-              style={{
-                display: "flex",
-                gap: "16px",
-                flexWrap: "wrap",
-                alignItems: "center",
-              }}
-            >
-              {navItems.map(([label, href]) => (
-                <Link
-                  key={label}
-                  href={href}
-                  style={{
-                    color:
-                      label === "Graphic Novel"
-                        ? "var(--gold)"
-                        : "var(--paper-soft)",
-                    textDecoration: "none",
-                    fontSize: "15px",
-                  }}
-                >
-                  {label}
-                </Link>
-              ))}
-            </nav>
-          </header>
-        </div>
-      </section>
-
-      <section style={{ padding: "54px 0 34px" }}>
+      <section style={{ padding: "42px 0 34px" }}>
         <div className="site-container">
           <div
             className="glass-panel"
@@ -134,8 +68,8 @@ export default function ChapterOnePage005() {
                   Previous Page
                 </Link>
 
-                <Link href="/graphic-novel/chapter-one" className="primary-button">
-                  Chapter Archive
+                <Link href="/graphic-novel/chapter-one/page-006" className="primary-button">
+                  Next Page
                 </Link>
               </div>
             </div>
@@ -244,8 +178,8 @@ export default function ChapterOnePage005() {
               ← Page 004
             </Link>
 
-            <Link href="/graphic-novel/chapter-one" className="primary-button">
-              Chapter Archive →
+            <Link href="/graphic-novel/chapter-one/page-006" className="primary-button">
+              Page 006 →
             </Link>
           </div>
         </div>
