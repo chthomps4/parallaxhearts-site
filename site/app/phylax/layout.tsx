@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { absoluteUrl, breadcrumbSchema, defaultKeywords } from "../lib/seo";
 
 const pageTitle = "PHYLAX: The First Breach | Parallax Hearts";
@@ -75,6 +76,37 @@ export default function PhylaxLayout({ children }: { children: React.ReactNode }
           __html: JSON.stringify([creativeWorkSchema, pageBreadcrumbSchema]),
         }}
       />
+      <div
+        style={{
+          position: "absolute",
+          left: 16,
+          top: 78,
+          zIndex: 60,
+        }}
+      >
+        <Link
+          href="/"
+          aria-label="Back to the main Parallax Hearts site"
+          style={{
+            minHeight: 44,
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: "0 16px",
+            borderRadius: 999,
+            border: "1px solid rgba(210,181,139,0.42)",
+            background: "rgba(3,5,7,0.72)",
+            color: "#f1ede6",
+            textDecoration: "none",
+            fontSize: 12,
+            letterSpacing: "0.12em",
+            textTransform: "uppercase",
+            backdropFilter: "blur(10px)",
+          }}
+        >
+          ← Back to Parallax Hearts
+        </Link>
+      </div>
       {children}
     </>
   );
