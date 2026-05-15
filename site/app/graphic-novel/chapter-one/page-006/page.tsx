@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { absoluteUrl } from "../../../../lib/seo";
+import { absoluteUrl } from "../../../lib/seo";
 
 const pageTitle = "Page 006 — The Waterline | Chapter One — Ballast";
 const pageDescription =
