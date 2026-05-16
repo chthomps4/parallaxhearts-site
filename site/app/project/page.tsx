@@ -30,6 +30,11 @@ const storyDoors = [
     href: "/music",
   },
   {
+    title: "Behind the World",
+    text: "How Vallen became a place — the origin of the town, the music, and the story.",
+    href: "/behind-the-world",
+  },
+  {
     title: "Study",
     text: "Open Field Notes for the separate research and source-trail lane.",
     href: "/field-notes",

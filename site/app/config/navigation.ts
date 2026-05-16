@@ -24,6 +24,7 @@ export const footerMainLinks = [
 
 export const footerArchiveLinks = [
   ["Chapter One — Ballast", "/graphic-novel/chapter-one"],
+  ["Behind the World", "/behind-the-world"],
   ["Visuals", "/visuals"],
   ["Field Notes", "/field-notes"],
   ["Forbidden Knowledge", "/forbidden-knowledge"],
