@@ -129,6 +129,7 @@ function SiteFooter() {
             <FooterLinks
               links={[
                 ["Contact", "/contact"],
+                ["Local Signal Websites", "https://www.localsignalwebsites.studio"],
                 ["Facebook", socialLinks.facebook],
                 ["Instagram", socialLinks.instagram],
                 ["YouTube", socialLinks.youtube],
