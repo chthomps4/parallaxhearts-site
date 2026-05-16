@@ -9,7 +9,7 @@ function getActiveLabel(pathname: string) {
   if (pathname === "/") return "Home";
   if (pathname.startsWith("/music")) return "Listen";
   if (pathname.startsWith("/graphic-novel")) return "Read";
-  if (pathname.startsWith("/project") || pathname.startsWith("/story")) return "Story";
+  if (pathname.startsWith("/project") || pathname.startsWith("/story") || pathname.startsWith("/behind-the-world")) return "Story";
   if (pathname.startsWith("/field-notes") || pathname.startsWith("/forbidden-knowledge")) return "Field Notes";
   if (
     pathname.startsWith("/websites") ||
