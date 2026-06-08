@@ -4,6 +4,7 @@ import SiteHeader from "../components/SiteHeader";
 import { absoluteUrl } from "../lib/seo";
 
 const koFiUrl = "https://ko-fi.com/parallaxhearts";
+const facebookUrl = "https://www.facebook.com/ParallaxHearts/";
 const pageTitle = "Support | Parallax Hearts";
 const pageDescription =
   "Support Parallax Hearts, What the Town Keeps, the Vallen story world, visual novel pages, music, and related creative work through Ko-fi.";
@@ -85,6 +86,13 @@ const supportPaths = [
     text: "Memberships, one-time support, and digital project items live here.",
     href: koFiUrl,
     label: "Open Ko-fi",
+    external: true,
+  },
+  {
+    title: "Send Stars on Facebook",
+    text: "Follow the monetized Parallax Hearts page for Stars-supported lives, recaps, and creative updates.",
+    href: facebookUrl,
+    label: "Open Facebook Page",
     external: true,
   },
   {
@@ -180,6 +188,15 @@ export default function SupportPage() {
                   className="primary-button"
                 >
                   Support on Ko-fi
+                </a>
+
+                <a
+                  href={facebookUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="secondary-button"
+                >
+                  Send Stars on Facebook
                 </a>
 
                 <Link href="/shop" className="secondary-button">
@@ -453,6 +470,15 @@ export default function SupportPage() {
                 className="primary-button"
               >
                 Support on Ko-fi
+              </a>
+
+              <a
+                href={facebookUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="secondary-button"
+              >
+                Facebook Stars
               </a>
 
               <Link href="/shop" className="secondary-button">

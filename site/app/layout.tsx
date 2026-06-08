@@ -17,7 +17,7 @@ import "./audit-fixes.css";
 import "./menu-hover.css";
 
 const siteDescription =
-  "Parallax Hearts is the music project behind What the Town Keeps — a cinematic album, story world, and visual novel archive set in the rainy small town of Vallen, with Field Notes as a separate research lane.";
+  "Parallax Hearts is the music project behind What the Town Keeps - a cinematic album, story world, and visual novel archive set in the rainy small town of Vallen.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -88,8 +88,7 @@ function SiteFooter() {
               }}
             >
               Cinematic music, the rainy story world of Vallen, and the
-              visual-novel archive of <em>What the Town Keeps</em>. Field Notes
-              remains a separate research lane.
+              visual-novel archive of <em>What the Town Keeps</em>.
             </p>
 
             <p
@@ -129,7 +128,6 @@ function SiteFooter() {
             <FooterLinks
               links={[
                 ["Contact", "/contact"],
-                ["Local Signal Websites", "https://www.localsignalwebsites.studio"],
                 ["Facebook", socialLinks.facebook],
                 ["Instagram", socialLinks.instagram],
                 ["YouTube", socialLinks.youtube],

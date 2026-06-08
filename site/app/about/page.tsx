@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 
 const identityCards = [
@@ -16,15 +16,9 @@ const identityCards = [
   },
   {
     title: "Visual Novel",
-    text: "The readable story archive, beginning with Chapter One — Ballast and Elias Vale entering Vallen.",
+    text: "The readable story archive, beginning with Chapter One â€” Ballast and Elias Vale entering Vallen.",
     href: "/graphic-novel/chapter-one/page-001",
     label: "Read",
-  },
-  {
-    title: "Field Notes",
-    text: "The separate research lane for source trails, evidence labels, lost etymology, symbolism, and the Handbook method.",
-    href: "/field-notes",
-    label: "Study",
   },
 ];
 
@@ -98,18 +92,6 @@ export default function AboutPage() {
                   The work stays grounded and human: old houses, rail lines,
                   quiet rooms, weathered streets, intimate songs, and the
                   pressure of what people carry after leaving.
-                </p>
-
-                <p
-                  className="body-copy"
-                  style={{
-                    margin: "18px 0 0",
-                    maxWidth: "800px",
-                  }}
-                >
-                  Field Notes is the separate research lane. It belongs on the
-                  same site, but it has a different job: source trails, evidence
-                  labels, etymology, symbolism, and the long-form Handbook work.
                 </p>
 
                 <div
@@ -224,3 +206,4 @@ export default function AboutPage() {
     </main>
   );
 }
+

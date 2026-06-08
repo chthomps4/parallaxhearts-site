@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { absoluteUrl, breadcrumbSchema, defaultKeywords, socialLinks } from "../lib/seo";
 
 const pageTitle = "About | Parallax Hearts";
 const pageDescription =
-  "About Parallax Hearts, What the Town Keeps, Vallen, the visual novel archive, and the Field Notes research lane.";
+  "About Parallax Hearts, What the Town Keeps, Vallen, the music project, and the visual novel archive.";
 const pageUrl = absoluteUrl("/about");
 const previewImage = absoluteUrl("/images/portrait.jpg");
 
@@ -74,3 +74,4 @@ export default function AboutLayout({ children }: { children: React.ReactNode })
     </>
   );
 }
+

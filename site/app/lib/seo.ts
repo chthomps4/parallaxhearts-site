@@ -5,7 +5,7 @@ export const SITE_NAME = "Parallax Hearts";
 export const DEFAULT_OG_IMAGE = "/images/hero.jpg";
 
 export const socialLinks = {
-  facebook: "https://www.facebook.com/share/1C7BVWq3f2/?mibextid=wwXIfr",
+  facebook: "https://www.facebook.com/ParallaxHearts/",
   instagram:
     "https://www.instagram.com/parallax_hearts?igsh=MW11d2h3c3IxODhzYQ%3D%3D&utm_source=qr",
   youtube: "https://youtube.com/@parallaxhearts-u7q?si=VZZQD2j6J1MEY-pk",
@@ -90,8 +90,6 @@ export const defaultKeywords = [
   "graphic novel",
   "story world",
   "literary music project",
-  "Field Notes",
-  "Forbidden Knowledge",
 ];
 
 export function musicGroupSchema() {

@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 
 const contactSubject = "Dispatches from Vallen";
 const contactBody =
@@ -9,17 +9,17 @@ const signupHref = `mailto:chad@parallaxhearts.org?subject=${encodeURIComponent(
 
 export default function DispatchSignup() {
   return (
-    <section className="dispatch-signup" aria-labelledby="dispatch-signup-title">
+    <section id="dispatches" className="dispatch-signup" aria-labelledby="dispatch-signup-title">
       <div className="site-container">
         <div className="glass-panel dispatch-signup-panel">
           <div>
             <p className="kicker">Dispatches from Vallen</p>
             <h2 id="dispatch-signup-title" className="section-title">
-              Get the next chapter, song note, or field dispatch.
+              Get the next chapter, song note, or Vallen dispatch.
             </h2>
             <p className="body-copy" style={{ margin: "18px 0 0" }}>
               A quiet update list for Parallax Hearts, <em>What the Town Keeps</em>,
-              visual-novel pages, song notes, and occasional Field Notes. No
+              visual-novel pages, song notes, and creative updates. No
               noise. Just the next thing worth sending.
             </p>
           </div>
@@ -41,3 +41,4 @@ export default function DispatchSignup() {
     </section>
   );
 }
+

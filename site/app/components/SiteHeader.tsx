@@ -10,16 +10,6 @@ function getActiveLabel(pathname: string) {
   if (pathname.startsWith("/music")) return "Listen";
   if (pathname.startsWith("/graphic-novel")) return "Read";
   if (pathname.startsWith("/project") || pathname.startsWith("/story")) return "Story";
-  if (pathname.startsWith("/field-notes") || pathname.startsWith("/forbidden-knowledge")) return "Field Notes";
-  if (
-    pathname.startsWith("/websites") ||
-    pathname.startsWith("/website-intake") ||
-    pathname.startsWith("/website-services") ||
-    pathname.startsWith("/website-planning") ||
-    pathname.startsWith("/portfolio")
-  ) {
-    return "Services";
-  }
   if (pathname.startsWith("/support") || pathname.startsWith("/shop")) return "Support";
   if (pathname.startsWith("/about")) return "About";
   if (pathname.startsWith("/contact")) return "Contact";
@@ -33,10 +23,6 @@ export default function SiteHeader({ active }: { active?: string }) {
   // Some older pages still render their own <SiteHeader active="..." /> inside the page.
   // The root layout now owns the global header, so page-level instances return null.
   if (active) return null;
-
-  // PHYLAX uses its own intentionally darker sub-world navigation.
-  // Hiding the global header here prevents the double-navbar bug reported in the audit.
-  if (pathname.startsWith("/phylax")) return null;
 
   const activeLabel = getActiveLabel(pathname);
 

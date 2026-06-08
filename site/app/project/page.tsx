@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import ArchiveNote from "../components/ArchiveNote";
@@ -7,7 +7,7 @@ import SiteHeader from "../components/SiteHeader";
 export const metadata: Metadata = {
   title: "What the Town Keeps | Parallax Hearts",
   description:
-    "Enter What the Town Keeps by Parallax Hearts — the album, story world, visual novel archive, and rainy small-town world of Vallen.",
+    "Enter What the Town Keeps by Parallax Hearts â€” the album, story world, visual novel archive, and rainy small-town world of Vallen.",
 };
 
 const worldDetails = [
@@ -21,18 +21,13 @@ const worldDetails = [
 const storyDoors = [
   {
     title: "Read",
-    text: "Begin the built-in visual novel with Chapter One — Ballast.",
+    text: "Begin the built-in visual novel with Chapter One â€” Ballast.",
     href: "/graphic-novel/chapter-one/page-001",
   },
   {
     title: "Listen",
     text: "Hear the album and follow the music side of the project.",
     href: "/music",
-  },
-  {
-    title: "Study",
-    text: "Open Field Notes for the separate research and source-trail lane.",
-    href: "/field-notes",
   },
 ];
 
@@ -118,8 +113,7 @@ export default function ProjectPage() {
                 }}
               >
                 This page holds the world. The visual novel is where you read
-                it. The music page is where you hear it. Field Notes is the
-                separate research lane.
+                it. The music page is where you hear it.
               </p>
 
               <div
@@ -136,10 +130,6 @@ export default function ProjectPage() {
 
                 <Link href="/music" className="secondary-button">
                   Listen to the Album
-                </Link>
-
-                <Link href="/field-notes" className="secondary-button">
-                  Open Field Notes
                 </Link>
               </div>
             </div>
@@ -319,9 +309,9 @@ export default function ProjectPage() {
               textAlign: "center",
             }}
           >
-            <p className="kicker">Hidden layer</p>
+            <p className="kicker">Story layer</p>
 
-            <h2 className="section-title">Some words open like drawers.</h2>
+            <h2 className="section-title">Some words still open like drawers.</h2>
 
             <p
               className="body-copy"
@@ -330,10 +320,7 @@ export default function ProjectPage() {
                 maxWidth: "760px",
               }}
             >
-              Some pages contain small Archive Notes — fragments of etymology,
-              history, symbolism, and source-conscious research. They are not
-              explanations of the whole story. Field Notes is where that
-              research lane opens fully.
+              Some pages contain small Archive Notes - fragments of word history, symbolism, and story context. They are not explanations of the whole story. They are little drawers inside the Vallen archive.
             </p>
 
             <div
@@ -347,10 +334,6 @@ export default function ProjectPage() {
             >
               <Link href="/graphic-novel/chapter-one/page-001" className="primary-button">
                 Start the Visual Novel
-              </Link>
-
-              <Link href="/field-notes" className="secondary-button">
-                Open Field Notes
               </Link>
 
               <Link href="/support" className="secondary-button">
@@ -371,3 +354,4 @@ export default function ProjectPage() {
     </main>
   );
 }
+

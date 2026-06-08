@@ -20,16 +20,6 @@ const nextConfig: NextConfig = {
         destination: "/story",
         permanent: true,
       },
-      {
-        source: "/website-services",
-        destination: "/websites",
-        permanent: true,
-      },
-      {
-        source: "/services",
-        destination: "/websites",
-        permanent: true,
-      },
     ];
   },
   async headers() {

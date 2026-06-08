@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import ArchiveNote from "../components/ArchiveNote";
@@ -11,7 +11,7 @@ const soundCloudEmbedUrl =
 const koFiUrl = "https://ko-fi.com/parallaxhearts";
 const pageTitle = "Music | Parallax Hearts";
 const pageDescription =
-  "Listen to What the Town Keeps by Parallax Hearts — a cinematic acoustic alternative album tied to Vallen and the wider story world.";
+  "Listen to What the Town Keeps by Parallax Hearts â€” a cinematic acoustic alternative album tied to Vallen and the wider story world.";
 const pageUrl = absoluteUrl("/music");
 const previewImage = absoluteUrl("/images/music-listen.jpg");
 const storyUrl = "/story";
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
         url: previewImage,
         width: 1200,
         height: 630,
-        alt: "Parallax Hearts — What the Town Keeps music page",
+        alt: "Parallax Hearts â€” What the Town Keeps music page",
       },
     ],
     locale: "en_US",
@@ -57,13 +57,13 @@ export const metadata: Metadata = {
 const tracks = [
   {
     title: "Ballast",
-    chapter: "Chapter One — Ballast",
+    chapter: "Chapter One â€” Ballast",
     connection: "Elias Vale enters Vallen and the first weight of the town settles in.",
     href: "/graphic-novel/chapter-one/page-001",
   },
   {
     title: "Boundary Weather",
-    chapter: "Chapter Two — Boundary Weather",
+    chapter: "Chapter Two â€” Boundary Weather",
     connection: "Weather, restraint, and the first pressure line between people.",
     href: storyUrl,
   },
@@ -111,9 +111,9 @@ const tracks = [
   },
   {
     title: "Cosmic Intervals",
-    chapter: "Field edge",
+    chapter: "Vallen thread",
     connection: "Distance measured emotionally more than physically.",
-    href: "/field-notes",
+    href: storyUrl,
   },
   {
     title: "The Kindest Thing",
@@ -156,7 +156,7 @@ const musicPaths = [
   },
   {
     title: "Read",
-    text: "Begin the visual novel with Chapter One — Ballast.",
+    text: "Begin the visual novel with Chapter One â€” Ballast.",
     href: "/graphic-novel/chapter-one/page-001",
     external: false,
   },
@@ -256,7 +256,7 @@ export default function MusicPage() {
                 }}
               >
                 Intimate vocals, textured guitars, restrained dynamics, and the
-                emotional pressure of Vallen — rain, rail lines, old rooms,
+                emotional pressure of Vallen â€” rain, rail lines, old rooms,
                 distance, and memory.
               </p>
 
@@ -460,7 +460,7 @@ export default function MusicPage() {
                       >
                         A signal is a sign, indication, or transmitted message.
                         In the album world, signals often fail, repeat, or
-                        arrive too late — like emotional information moving
+                        arrive too late â€” like emotional information moving
                         through weather, distance, and silence.
                       </ArchiveNote>
                     ) : null}
@@ -471,7 +471,7 @@ export default function MusicPage() {
                       >
                         Ballast is weight used to stabilize a ship, structure,
                         or rail bed. In What the Town Keeps, it becomes
-                        emotional pressure — the unseen force that keeps a life,
+                        emotional pressure â€” the unseen force that keeps a life,
                         house, or town from tipping over. The symbolic meaning
                         belongs to the album world.
                       </ArchiveNote>
@@ -581,3 +581,4 @@ export default function MusicPage() {
     </main>
   );
 }
+

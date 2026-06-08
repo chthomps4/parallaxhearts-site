@@ -7,7 +7,7 @@ import SiteHeader from "./components/SiteHeader";
 export const metadata: Metadata = {
   title: "Parallax Hearts | What the Town Keeps",
   description:
-    "Parallax Hearts is the music project behind What the Town Keeps — a cinematic album, visual novel archive, and rainy small-town story world set in Vallen.",
+    "Parallax Hearts is the music project behind What the Town Keeps - a cinematic album, visual novel archive, and rainy small-town story world set in Vallen.",
   keywords: [
     "Parallax Hearts",
     "What the Town Keeps",
@@ -17,8 +17,6 @@ export const metadata: Metadata = {
     "visual novel archive",
     "graphic novel music project",
     "literary alternative music",
-    "Field Notes",
-    "Forbidden Knowledge",
   ],
   alternates: {
     canonical: "https://www.parallaxhearts.org/",
@@ -26,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Parallax Hearts | What the Town Keeps",
     description:
-      "Songs, story, Field Notes, and the visual novel archive of What the Town Keeps — set in the rainy town of Vallen.",
+      "Songs, story, and the visual novel archive of What the Town Keeps - set in the rainy town of Vallen.",
     url: "https://www.parallaxhearts.org/",
     siteName: "Parallax Hearts",
     images: [
@@ -34,7 +32,7 @@ export const metadata: Metadata = {
         url: "/images/hero.jpg",
         width: 1200,
         height: 630,
-        alt: "Parallax Hearts — What the Town Keeps",
+        alt: "Parallax Hearts - What the Town Keeps",
       },
     ],
     locale: "en_US",
@@ -52,7 +50,6 @@ export const metadata: Metadata = {
 const colors = {
   text: "#f3eee7",
   textSoft: "rgba(243, 238, 231, 0.78)",
-  gold: "#d2b58b",
   border: "rgba(243, 238, 231, 0.14)",
 };
 
@@ -232,7 +229,7 @@ export default function HomePage() {
                 lineHeight: 1.75,
               }}
             >
-              Parallax Hearts is the music project behind <em>What the Town Keeps</em> —
+              Parallax Hearts is the music project behind <em>What the Town Keeps</em> -
               a cinematic album, story world, and visual novel archive set in
               Vallen, a rainy town of rail lines, old rooms, quiet distance, and
               things people learn not to say.
@@ -269,7 +266,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section style={{ padding: "38px 0 42px" }}>
+      <section style={{ padding: "38px 0 86px" }}>
         <div className="site-container">
           <p className="kicker">Choose a door</p>
 
@@ -283,7 +280,7 @@ export default function HomePage() {
             {[
               {
                 title: "Read",
-                text: "Begin Chapter One — Ballast, the built-in visual novel archive.",
+                text: "Begin Chapter One - Ballast, the built-in visual novel archive.",
                 href: "/graphic-novel/chapter-one/page-001",
               },
               {
@@ -292,19 +289,14 @@ export default function HomePage() {
                 href: "/music",
               },
               {
-                title: "Story",
-                text: "Enter the larger story world of Vallen and What the Town Keeps.",
-                href: "/story",
-              },
-              {
-                title: "Services",
-                text: "Custom websites for artists, creators, small businesses, and landing pages.",
-                href: "/websites",
-              },
-              {
                 title: "Support",
-                text: "Support the music, story, visual archive, and ongoing creative work.",
+                text: "Support the songs, story, visual archive, and ongoing creative work.",
                 href: "/support",
+              },
+              {
+                title: "Join Dispatches",
+                text: "Ask to join the quiet update list for chapters, song notes, and creative dispatches.",
+                href: "#dispatches",
               },
             ].map((card) => (
               <Link
@@ -350,51 +342,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section style={{ padding: "0 0 86px" }}>
-        <div className="site-container">
-          <div
-            className="glass-panel"
-            style={{
-              padding: "clamp(24px, 4vw, 34px)",
-              display: "grid",
-              gridTemplateColumns: "minmax(0, 1fr) minmax(220px, 0.42fr)",
-              gap: "24px",
-              alignItems: "center",
-            }}
-          >
-            <div>
-              <p className="kicker">Secondary research lane</p>
-              <h2 className="section-title">Field Notes</h2>
-              <p className="soft-copy" style={{ margin: "14px 0 0", maxWidth: "720px" }}>
-                Field Notes is the separate source-trail lane for ancient knowledge,
-                lost etymology, evidence labels, and the long-form Handbook method.
-                It belongs on the site, but the main entrance remains the album,
-                story, and visual novel world of Vallen.
-              </p>
-            </div>
-
-            <div style={{ display: "grid", gap: "12px" }}>
-              <Link href="/field-notes" className="secondary-button">
-                Open Field Notes
-              </Link>
-              <Link href="/forbidden-knowledge" className="secondary-button">
-                Free Intro Course
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <style>{`
         @media (max-width: 980px) {
           .home-project-panel {
             min-height: 68vh !important;
-          }
-        }
-
-        @media (max-width: 900px) {
-          section .glass-panel[style*="grid-template-columns"] {
-            grid-template-columns: 1fr !important;
           }
         }
       `}</style>

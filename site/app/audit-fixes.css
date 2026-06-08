@@ -2,8 +2,7 @@
 
 /* Older page-level SiteHeader instances return null in the component, but keep
    this as a safe fallback while the last legacy page layouts are refactored. */
-#main-content main.site-shell > .site-header,
-#main-content main.websites-page > .site-header {
+#main-content main.site-shell > .site-header {
   display: none;
 }
 

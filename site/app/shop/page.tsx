@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const koFiUrl = "https://ko-fi.com/parallaxhearts";
+const facebookUrl = "https://www.facebook.com/ParallaxHearts/";
 
 const shopItems = [
   {
@@ -109,6 +110,15 @@ export default function ShopPage() {
                   className="primary-button"
                 >
                   Visit Ko-fi Shop
+                </a>
+
+                <a
+                  href={facebookUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="secondary-button"
+                >
+                  Facebook Stars
                 </a>
 
                 <Link href="/support" className="secondary-button">
@@ -302,6 +312,15 @@ export default function ShopPage() {
                 className="primary-button"
               >
                 Visit Ko-fi
+              </a>
+
+              <a
+                href={facebookUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="secondary-button"
+              >
+                Support with Stars
               </a>
 
               <Link href="/support" className="secondary-button">
