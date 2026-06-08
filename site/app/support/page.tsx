@@ -83,14 +83,14 @@ const tiers = [
 const supportPaths = [
   {
     title: "Support on Ko-fi",
-    text: "Memberships, one-time support, and digital project items live here.",
+    text: "The clearest funding path for memberships, one-time support, and digital project items.",
     href: koFiUrl,
     label: "Open Ko-fi",
     external: true,
   },
   {
     title: "Send Stars on Facebook",
-    text: "Follow the monetized Parallax Hearts page for Stars-supported lives, recaps, and creative updates.",
+    text: "A lighter social support path for Stars-supported lives, recaps, and creative updates.",
     href: facebookUrl,
     label: "Open Facebook Page",
     external: true,
@@ -170,7 +170,8 @@ export default function SupportPage() {
               >
                 Direct support helps keep <em>What the Town Keeps</em> alive as
                 music, story, visual work, and a growing chapter-by-chapter
-                archive. Ko-fi is the main support path.
+                archive. Ko-fi is the main support path; Facebook Stars is the
+                lighter social lane.
               </p>
 
               <div
@@ -218,7 +219,7 @@ export default function SupportPage() {
 
       <section style={{ padding: "34px 0" }}>
         <div className="site-container">
-          <p className="kicker">Support paths</p>
+          <p className="kicker">Support hierarchy</p>
 
           <div
             style={{

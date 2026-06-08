@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
 import DispatchSignup from "./components/DispatchSignup";
+import PersistentMusicPlayer from "./components/PersistentMusicPlayer";
 import SiteHeader from "./components/SiteHeader";
 import { footerArchiveLinks, footerMainLinks } from "./config/navigation";
 import {
@@ -237,6 +238,7 @@ export default function RootLayout({
         <div id="main-content" tabIndex={-1}>
           {children}
         </div>
+        <PersistentMusicPlayer />
         <DispatchSignup />
         <SiteFooter />
       </body>

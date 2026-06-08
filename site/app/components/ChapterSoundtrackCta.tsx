@@ -4,31 +4,42 @@ import { getFeaturedSoundtrackTrack } from "../lib/music/what-the-town-keeps";
 const soundCloudUrl = "https://soundcloud.com/parallax-hearts";
 
 export default function ChapterSoundtrackCta({
-  note = "Read the chapter, then listen to the on-site soundtrack track or open the full Music page.",
+  note = "Press play when you want the soundtrack beside the archive. The player never starts on its own.",
 }: {
   note?: string;
 }) {
   const track = getFeaturedSoundtrackTrack();
 
   return (
-    <section style={{ padding: "34px 0" }}>
+    <section style={{ padding: "22px 0" }}>
       <div className="site-container">
         <div
           className="glass-panel"
           style={{
-            padding: "clamp(24px, 5vw, 40px)",
+            padding: "clamp(20px, 4vw, 30px)",
             display: "grid",
-            gridTemplateColumns: "minmax(0, 1fr) minmax(260px, 0.62fr)",
-            gap: "24px",
+            gridTemplateColumns: "minmax(0, 1fr) minmax(250px, 0.52fr)",
+            gap: "18px",
             alignItems: "center",
+            borderRadius: "24px",
           }}
         >
           <div>
-            <p className="kicker">Chapter soundtrack</p>
-            <h2 className="section-title">{track?.title ?? "Ballast"}</h2>
+            <p className="kicker">Listen while you read</p>
+            <h2
+              style={{
+                margin: 0,
+                fontSize: "clamp(30px, 5vw, 48px)",
+                lineHeight: 0.95,
+                letterSpacing: "-0.055em",
+                fontWeight: 400,
+              }}
+            >
+              {track?.title ?? "Ballast"}
+            </h2>
             <p
               className="soft-copy"
-              style={{ margin: "14px 0 0", maxWidth: "720px" }}
+              style={{ margin: "12px 0 0", maxWidth: "680px" }}
             >
               {track?.chapter ?? "Chapter One - Ballast"} connects directly to
               the album side of <em>What the Town Keeps</em>. {note}
@@ -51,7 +62,7 @@ export default function ChapterSoundtrackCta({
             ) : null}
 
             <Link href="/music" className="primary-button">
-              Open Music Page
+              Open Music
             </Link>
             <a
               href={soundCloudUrl}
@@ -59,7 +70,7 @@ export default function ChapterSoundtrackCta({
               rel="noreferrer"
               className="secondary-button"
             >
-              Listen on SoundCloud
+              SoundCloud
             </a>
           </div>
         </div>

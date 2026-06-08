@@ -16,9 +16,24 @@ const identityCards = [
   },
   {
     title: "Visual Novel",
-    text: "The readable story archive, beginning with Chapter One â€” Ballast and Elias Vale entering Vallen.",
+    text: "The readable story archive, beginning with Chapter One - Ballast and Elias Vale entering Vallen.",
     href: "/graphic-novel/chapter-one/page-001",
     label: "Read",
+  },
+];
+
+const epkCards = [
+  {
+    title: "Short bio",
+    text: "Parallax Hearts is an independent cinematic music project building What the Town Keeps as songs, story pages, and a rain-dark archive from the fictional town of Vallen.",
+  },
+  {
+    title: "Project description",
+    text: "The work blends intimate alternative music, grounded small-town mystery, and a visual novel reading path centered on inspection work, memory, weather, and old houses.",
+  },
+  {
+    title: "Press-safe notes",
+    text: "Public copy should describe the project as music, story world, and visual novel archive. Avoid unapproved claims, private process notes, or unreleased lore.",
   },
 ];
 
@@ -191,6 +206,72 @@ export default function AboutPage() {
                   </Link>
                 </article>
               ))}
+            </div>
+          </div>
+
+          <div
+            className="glass-panel"
+            style={{
+              marginTop: "22px",
+              padding: "clamp(26px, 5vw, 44px)",
+            }}
+          >
+            <p className="kicker">EPK / press-safe quick kit</p>
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))",
+                gap: "14px",
+                marginTop: "18px",
+              }}
+            >
+              {epkCards.map((item) => (
+                <article
+                  key={item.title}
+                  style={{
+                    border: "1px solid var(--line)",
+                    borderRadius: "22px",
+                    padding: "22px",
+                    background: "rgba(255,255,255,0.035)",
+                  }}
+                >
+                  <h2
+                    style={{
+                      margin: 0,
+                      fontSize: "27px",
+                      lineHeight: 1.05,
+                      letterSpacing: "-0.04em",
+                      fontWeight: 400,
+                    }}
+                  >
+                    {item.title}
+                  </h2>
+
+                  <p className="soft-copy" style={{ margin: "12px 0 0" }}>
+                    {item.text}
+                  </p>
+                </article>
+              ))}
+            </div>
+
+            <div
+              style={{
+                marginTop: "24px",
+                display: "flex",
+                gap: "12px",
+                flexWrap: "wrap",
+              }}
+            >
+              <Link href="/music" className="primary-button">
+                Listen
+              </Link>
+              <Link href="/graphic-novel" className="secondary-button">
+                Read the archive
+              </Link>
+              <Link href="/contact" className="secondary-button">
+                Contact
+              </Link>
             </div>
           </div>
         </div>

@@ -69,6 +69,7 @@ export default async function ChapterRoute({ params }: PageProps) {
   }
 
   const latestPage = pages.at(-1);
+  const firstPage = pages[0];
 
   return (
     <main className="min-h-screen bg-[#110c10] text-[#f5eadf]">
@@ -90,6 +91,33 @@ export default async function ChapterRoute({ params }: PageProps) {
             </h1>
             <p className="mt-6 max-w-3xl text-xl leading-9 text-[#d8c7b8]">
               {chapter.description}
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              {firstPage ? (
+                <Link
+                  href={firstPage.path}
+                  className="rounded-full bg-[#e4cba8] px-6 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#170f0f] transition hover:bg-[#fff0c8]"
+                >
+                  Start chapter
+                </Link>
+              ) : null}
+              {latestPage ? (
+                <Link
+                  href={latestPage.path}
+                  className="rounded-full border border-[#5f4639] px-6 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#f5eadf] transition hover:border-[#caa978] hover:text-[#fff7eb]"
+                >
+                  Latest page
+                </Link>
+              ) : null}
+              <Link
+                href="/music"
+                className="rounded-full border border-[#5f4639] px-6 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#f5eadf] transition hover:border-[#caa978] hover:text-[#fff7eb]"
+              >
+                Listen to Ballast
+              </Link>
+            </div>
+            <p className="mt-5 text-sm uppercase tracking-[0.26em] text-[#caa978]">
+              {pages.length} pages in this chapter
             </p>
           </div>
 

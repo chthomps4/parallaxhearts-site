@@ -90,7 +90,8 @@ export default function GraphicNovelLandingPage() {
           <p className="mt-7 max-w-3xl text-xl leading-9 text-[#d8c7b8]">
             Elias Vale comes to Vallen to inspect a house. The work is ordinary:
             moisture, structure, doors, stairs, records. The archive unfolds as
-            cinematic stills and story pages, until the evidence starts looking back.
+            cinematic stills, story pages, and songs, until the evidence starts
+            looking back.
           </p>
 
           <div className="mt-9 flex flex-wrap gap-4">
@@ -105,6 +106,12 @@ export default function GraphicNovelLandingPage() {
               className="rounded-full border border-[#5f4639] px-6 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#f5eadf] transition hover:border-[#caa978] hover:text-[#fff7eb]"
             >
               Open archive
+            </Link>
+            <Link
+              href="/music"
+              className="rounded-full border border-[#5f4639] px-6 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#f5eadf] transition hover:border-[#caa978] hover:text-[#fff7eb]"
+            >
+              Listen to Ballast
             </Link>
           </div>
         </div>
@@ -142,7 +149,7 @@ export default function GraphicNovelLandingPage() {
                 {card.description}
               </p>
               <p className="mt-6 text-sm uppercase tracking-[0.24em] text-[#e4cba8] transition group-hover:text-[#fff7eb]">
-                Enter
+                Open path
               </p>
             </Link>
           ))}
