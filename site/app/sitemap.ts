@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "./lib/seo";
-import { chapterOnePages } from "./lib/novel/chapter-one";
+import { getLiveNovelPages } from "./lib/novel/chapter-one";
 
 const staticRoutes = [
   { path: "/", priority: 1, changeFrequency: "weekly" as const },
@@ -40,7 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     routeEntry({ ...item, lastModified })
   );
 
-  const chapterPages = chapterOnePages.map((page, index) =>
+  const chapterPages = getLiveNovelPages().map((page, index) =>
     routeEntry({
       path: page.path,
       priority: 0.92 - index * 0.01,

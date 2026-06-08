@@ -1,323 +1,157 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import type { Metadata } from "next";
 import ChapterSoundtrackCta from "../components/ChapterSoundtrackCta";
-import SiteHeader from "../components/SiteHeader";
-import { absoluteUrl } from "../lib/seo";
+import { SITE_URL } from "../lib/seo";
+import {
+  getLatestLiveNovelPage,
+  getLiveNovelPages,
+  getNovelChapter,
+} from "../lib/novel/chapter-one";
 
-const pageTitle = "Graphic Novel | What the Town Keeps";
-const pageDescription =
-  "Read the built-in graphic novel / visual novel adaptation of What the Town Keeps by Parallax Hearts, beginning with Chapter One — Ballast.";
-const pageUrl = absoluteUrl("/graphic-novel");
-const previewImage = absoluteUrl("/images/graphic-novel-hub.jpg");
+function siteUrl(path: string) {
+  return new URL(path, SITE_URL).toString();
+}
 
 export const metadata: Metadata = {
-  title: pageTitle,
-  description: pageDescription,
-  keywords: [
-    "What the Town Keeps graphic novel",
-    "What the Town Keeps visual novel",
-    "Parallax Hearts graphic novel",
-    "Vallen",
-    "Elias Vale",
-    "Ballast",
-    "cinematic literary drama",
-    "small town graphic novel",
-  ],
+  title: "What the Town Keeps | Graphic Novel",
+  description:
+    "Read the online graphic novel and visual novel archive for What the Town Keeps, a restrained cinematic story about Elias Vale, Vallen, and the houses that remember.",
   alternates: {
-    canonical: pageUrl,
+    canonical: siteUrl("/graphic-novel"),
   },
   openGraph: {
-    title: pageTitle,
-    description: pageDescription,
-    url: pageUrl,
-    siteName: "Parallax Hearts",
-    images: [
-      {
-        url: previewImage,
-        width: 1200,
-        height: 630,
-        alt: "What the Town Keeps visual novel archive",
-      },
-    ],
-    locale: "en_US",
+    title: "What the Town Keeps | Graphic Novel",
+    description:
+      "A grounded, cinematic online graphic novel about inspection work, old houses, and the quiet wrongness of Vallen.",
+    url: siteUrl("/graphic-novel"),
     type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: pageTitle,
-    description: pageDescription,
-    images: [previewImage],
   },
 };
 
-const accessCards = [
-  {
-    title: "Start Reading",
-    label: "Page 001",
-    text: "Begin Chapter One with Elias Vale at the crossing into Vallen.",
-    href: "/graphic-novel/chapter-one/page-001",
-  },
-  {
-    title: "Chapter One — Ballast",
-    label: "Chapter archive",
-    text: "Open the chapter table of contents and follow the live pages in order.",
-    href: "/graphic-novel/chapter-one",
-  },
-  {
-    title: "Story World",
-    label: "Context",
-    text: "Step back into the larger world of Vallen, the album, and What the Town Keeps.",
-    href: "/story",
-  },
-];
+export default function GraphicNovelLandingPage() {
+  const chapter = getNovelChapter("chapter-one");
+  const livePages = getLiveNovelPages("chapter-one");
+  const firstPage = livePages[0];
+  const latestPage = getLatestLiveNovelPage("chapter-one") ?? firstPage;
 
-const visualRules = [
-  "Warm earthy cinematic realism",
-  "Rainy Vallen streets, rail lines, old houses, and dim windows",
-  "Restrained mature character rendering",
-  "Readable integrated text and strong panel composition",
-  "Emotional realism without horror, fantasy, or cheap thriller staging",
-];
+  if (!chapter || !firstPage || !latestPage) {
+    return (
+      <main className="min-h-screen bg-[#110c10] px-6 py-20 text-[#f5eadf]">
+        <section className="mx-auto max-w-3xl rounded-[2rem] border border-[#4b352f] bg-[#1a1215] p-8">
+          <p className="text-sm uppercase tracking-[0.35em] text-[#caa978]">
+            What the Town Keeps
+          </p>
+          <h1 className="mt-4 font-serif text-5xl text-[#fff7eb]">
+            The archive is being prepared.
+          </h1>
+          <p className="mt-5 text-lg leading-8 text-[#d8c7b8]">
+            Chapter pages will appear here after owner review.
+          </p>
+        </section>
+      </main>
+    );
+  }
 
-export default function GraphicNovelPage() {
+  const accessCards = [
+    {
+      title: "Start Chapter One",
+      description:
+        "Begin at the crossing, where Elias Vale enters Vallen for a routine inspection.",
+      href: firstPage.path,
+      eyebrow: "Read",
+    },
+    {
+      title: "Latest live page",
+      description:
+        "Continue with the newest owner-approved page in the public archive.",
+      href: latestPage.path,
+      eyebrow: `Page ${latestPage.number}`,
+    },
+    {
+      title: "Chapter archive",
+      description:
+        "Browse every live page in Chapter One without exposing draft or review pages.",
+      href: chapter.path,
+      eyebrow: "Index",
+    },
+  ];
+
   return (
-    <main className="site-shell">
-      <SiteHeader active="Read" />
+    <main className="min-h-screen bg-[#110c10] text-[#f5eadf]">
+      <section className="mx-auto grid max-w-7xl gap-12 px-6 py-12 md:grid-cols-[minmax(0,1fr)_420px] md:items-center md:px-10 md:py-20">
+        <div>
+          <p className="text-sm uppercase tracking-[0.42em] text-[#caa978]">
+            What the Town Keeps
+          </p>
+          <h1 className="mt-5 max-w-4xl font-serif text-6xl leading-[0.95] text-[#fff7eb] md:text-8xl">
+            A town keeps better records than people do.
+          </h1>
+          <p className="mt-7 max-w-3xl text-xl leading-9 text-[#d8c7b8]">
+            Elias Vale comes to Vallen to inspect a house. The work is ordinary:
+            moisture, structure, doors, stairs, records. The town is ordinary
+            too, until the evidence starts looking back.
+          </p>
 
-      <section style={{ padding: "54px 0 34px" }}>
-        <div className="site-container">
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "minmax(0, 1fr) minmax(300px, 0.78fr)",
-              gap: "28px",
-              alignItems: "stretch",
-            }}
-          >
-            <div
-              className="glass-panel"
-              style={{
-                padding: "clamp(28px, 6vw, 58px)",
-                position: "relative",
-                overflow: "hidden",
-              }}
+          <div className="mt-9 flex flex-wrap gap-4">
+            <Link
+              href={firstPage.path}
+              className="rounded-full bg-[#e4cba8] px-6 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#170f0f] transition hover:bg-[#fff0c8]"
             >
-              <div
-                aria-hidden="true"
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  background:
-                    "radial-gradient(circle at 18% 10%, rgba(210,181,139,0.16), transparent 30%), radial-gradient(circle at 82% 20%, rgba(127,141,155,0.14), transparent 34%)",
-                  pointerEvents: "none",
-                }}
-              />
-
-              <div style={{ position: "relative", zIndex: 2 }}>
-                <p className="kicker">What the Town Keeps / Visual Novel</p>
-
-                <h1
-                  style={{
-                    margin: 0,
-                    fontSize: "clamp(46px, 8vw, 92px)",
-                    lineHeight: 0.9,
-                    letterSpacing: "-0.07em",
-                    fontWeight: 400,
-                    maxWidth: "920px",
-                  }}
-                >
-                  Read the story as it is being built.
-                </h1>
-
-                <p
-                  className="body-copy"
-                  style={{
-                    margin: "24px 0 0",
-                    maxWidth: "820px",
-                    fontSize: "19px",
-                  }}
-                >
-                  The visual novel begins with Chapter One, <em>Ballast</em>:
-                  Elias Vale entering Vallen for a house inspection that slowly
-                  becomes something heavier than work.
-                </p>
-
-                <div
-                  style={{
-                    marginTop: "30px",
-                    display: "flex",
-                    gap: "12px",
-                    flexWrap: "wrap",
-                  }}
-                >
-                  <Link href="/graphic-novel/chapter-one/page-001" className="primary-button">
-                    Start Page 001
-                  </Link>
-
-                  <Link href="/graphic-novel/chapter-one" className="secondary-button">
-                    Chapter One Archive
-                  </Link>
-
-                  <Link href="/music" className="secondary-button">
-                    Listen to the Album
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            <div
-              className="glass-panel"
-              style={{
-                borderRadius: "28px",
-                overflow: "hidden",
-                minHeight: "460px",
-              }}
+              Read page 001
+            </Link>
+            <Link
+              href={chapter.path}
+              className="rounded-full border border-[#5f4639] px-6 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#f5eadf] transition hover:border-[#caa978] hover:text-[#fff7eb]"
             >
-              <Image
-                src="/images/graphic-novel-hub.jpg"
-                alt="Old boarding house on a quiet Vallen street at dusk, warm porch light glowing, wet sidewalk"
-                width={1200}
-                height={1400}
-                priority
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  minHeight: "460px",
-                }}
-              />
-            </div>
+              Open archive
+            </Link>
           </div>
         </div>
-      </section>
 
-      <section style={{ padding: "34px 0" }}>
-        <div className="site-container">
-          <p className="kicker">Reader paths</p>
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-              gap: "16px",
-              marginTop: "18px",
-            }}
-          >
-            {accessCards.map((card) => (
-              <Link
-                key={card.title}
-                href={card.href}
-                className="glass-panel link-card"
-                style={{
-                  padding: "26px",
-                  borderRadius: "26px",
-                  color: "var(--paper)",
-                  textDecoration: "none",
-                }}
-              >
-                <p
-                  style={{
-                    margin: "0 0 10px",
-                    color: "var(--gold)",
-                    fontSize: "12px",
-                    letterSpacing: "0.14em",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  {card.label}
-                </p>
-
-                <h2
-                  style={{
-                    margin: 0,
-                    fontSize: "31px",
-                    lineHeight: 1.02,
-                    letterSpacing: "-0.045em",
-                    fontWeight: 400,
-                  }}
-                >
-                  {card.title}
-                </h2>
-
-                <p className="soft-copy" style={{ margin: "14px 0 0" }}>
-                  {card.text}
-                </p>
-              </Link>
-            ))}
+        {latestPage.image.src ? (
+          <div className="overflow-hidden rounded-[2rem] border border-[#5f4639] bg-[#1c1417] shadow-2xl shadow-black/40">
+            <Image
+              src={latestPage.image.src}
+              alt={latestPage.image.alt}
+              width={latestPage.image.width ?? 1000}
+              height={latestPage.image.height ?? 1414}
+              unoptimized={latestPage.image.unoptimized}
+              className="h-auto w-full object-cover"
+              priority
+            />
           </div>
-        </div>
+        ) : null}
       </section>
 
-      <ChapterSoundtrackCta />
-
-      <section style={{ padding: "34px 0 88px" }}>
-        <div className="site-container">
-          <div
-            className="glass-panel"
-            style={{
-              padding: "clamp(26px, 5vw, 46px)",
-              display: "grid",
-              gridTemplateColumns: "minmax(0, 1fr) minmax(260px, 0.8fr)",
-              gap: "28px",
-              alignItems: "start",
-            }}
-          >
-            <div>
-              <p className="kicker">Visual language</p>
-              <h2 className="section-title">A page should feel lived in.</h2>
-
-              <p className="body-copy" style={{ margin: "18px 0 0" }}>
-                The adaptation uses quiet panels, grounded faces, old houses,
-                rain on glass, rail lines, and rooms that feel like they
-                remember who has passed through them.
-              </p>
-
-              <p className="body-copy" style={{ margin: "18px 0 0" }}>
-                The goal is emotional realism. The town is a witness and a
-                pressure system, not a horror setting.
-              </p>
-            </div>
-
-            <aside
-              style={{
-                border: "1px solid var(--line)",
-                borderRadius: "24px",
-                padding: "24px",
-                background:
-                  "linear-gradient(180deg, rgba(210,181,139,0.10), rgba(255,255,255,0.025))",
-              }}
+      <section className="mx-auto max-w-7xl px-6 pb-16 md:px-10">
+        <div className="grid gap-4 md:grid-cols-3">
+          {accessCards.map((card) => (
+            <Link
+              key={card.title}
+              href={card.href}
+              className="group rounded-[2rem] border border-[#4b352f] bg-[#1a1215]/90 p-6 shadow-xl shadow-black/20 transition hover:border-[#caa978] hover:bg-[#241917]"
             >
-              <p className="kicker" style={{ marginBottom: "18px" }}>
-                Style rules
+              <p className="text-xs uppercase tracking-[0.32em] text-[#caa978]">
+                {card.eyebrow}
               </p>
+              <h2 className="mt-4 font-serif text-3xl text-[#fff7eb]">
+                {card.title}
+              </h2>
+              <p className="mt-4 text-base leading-7 text-[#d8c7b8]">
+                {card.description}
+              </p>
+              <p className="mt-6 text-sm uppercase tracking-[0.24em] text-[#e4cba8] transition group-hover:text-[#fff7eb]">
+                Enter
+              </p>
+            </Link>
+          ))}
+        </div>
 
-              {visualRules.map((item) => (
-                <div
-                  key={item}
-                  style={{
-                    padding: "14px 0",
-                    borderTop: "1px solid var(--line)",
-                    color: "var(--paper-soft)",
-                    fontSize: "15px",
-                    lineHeight: 1.55,
-                  }}
-                >
-                  {item}
-                </div>
-              ))}
-            </aside>
-          </div>
+        <div className="mt-12">
+          <ChapterSoundtrackCta />
         </div>
       </section>
-
-      <style>{`
-        @media (max-width: 900px) {
-          section div[style*="grid-template-columns"] {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
     </main>
   );
 }
