@@ -57,8 +57,8 @@ export const metadata: Metadata = {
 const musicPaths = [
   {
     title: "Listen here",
-    text: "Play the final-edit MP3 previews directly on this page.",
-    href: "#final-edits",
+    text: "Play the album tracks directly on this page.",
+    href: "#album-tracks",
     external: false,
   },
   {
@@ -161,7 +161,7 @@ export default function MusicPage() {
                   maxWidth: "720px",
                 }}
               >
-                The final-edit MP3 previews now live on-site, so readers can
+                The album tracks now live on-site, so readers can
                 move between the chapter pages and the songs without leaving
                 the world of the story.
               </p>
@@ -174,8 +174,8 @@ export default function MusicPage() {
                   flexWrap: "wrap",
                 }}
               >
-                <a href="#final-edits" className="primary-button">
-                  Play Final Edits
+                <a href="#album-tracks" className="primary-button">
+                  Play Album Tracks
                 </a>
 
                 <Link
@@ -272,9 +272,9 @@ export default function MusicPage() {
         </div>
       </section>
 
-      <section id="final-edits" style={{ padding: "34px 0" }}>
+      <section id="album-tracks" style={{ padding: "34px 0" }}>
         <div className="site-container">
-          <p className="kicker">Final edit previews</p>
+          <p className="kicker">Album tracks</p>
 
           <div
             className="glass-panel"
@@ -288,10 +288,9 @@ export default function MusicPage() {
               className="soft-copy"
               style={{ marginTop: "12px", maxWidth: "820px" }}
             >
-              These are web-ready MP3 previews from the final edits folder. The
-              high-resolution FLAC masters stay off the public site, and any
-              track still marked for vocal revision stays out of the player
-              until owner approval.
+              These tracks are here for reading and listening in one place.
+              Start a song, open a chapter page, and move through Vallen with
+              the album beside the story.
             </p>
 
             <div
@@ -424,8 +423,8 @@ export default function MusicPage() {
               className="soft-copy"
               style={{ marginTop: "12px", maxWidth: "760px" }}
             >
-              SoundCloud remains the broader public listening path. The local
-              final-edit players above are the story-tied listening layer for
+              SoundCloud remains the broader public listening path. The on-site
+              album players above are the story-tied listening layer for
               ParallaxHearts.org.
             </p>
 

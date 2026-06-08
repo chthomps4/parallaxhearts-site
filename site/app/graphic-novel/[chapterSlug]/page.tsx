@@ -8,6 +8,7 @@ import {
   getNovelChapter,
   getNovelChaptersForCurrentEnvironment,
   getVisibleNovelPages,
+  shouldShowReviewNovelPages,
 } from "../../lib/novel/chapter-one";
 
 type PageParams = {
@@ -61,6 +62,7 @@ export default async function ChapterRoute({ params }: PageProps) {
   const { chapterSlug } = await params;
   const chapter = getNovelChapter(chapterSlug);
   const pages = getVisibleNovelPages(chapterSlug);
+  const showReviewDetails = shouldShowReviewNovelPages();
 
   if (!chapter || pages.length === 0) {
     notFound();
@@ -114,7 +116,7 @@ export default async function ChapterRoute({ params }: PageProps) {
             >
               <div className="flex items-center justify-between gap-4 text-xs uppercase tracking-[0.3em] text-[#caa978]">
                 <span>Page {page.number}</span>
-                {page.status !== "live" ? (
+                {page.status !== "live" && showReviewDetails ? (
                   <span className="rounded-full border border-[#caa978]/40 px-3 py-1 tracking-[0.16em]">
                     Review
                   </span>

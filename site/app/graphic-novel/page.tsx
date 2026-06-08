@@ -62,7 +62,7 @@ export default function GraphicNovelLandingPage() {
       eyebrow: "Read",
     },
     {
-      title: "Latest live page",
+      title: "Latest page",
       description:
         "Continue with the newest owner-approved page in the public archive.",
       href: latestPage.path,
@@ -71,7 +71,7 @@ export default function GraphicNovelLandingPage() {
     {
       title: "Chapter archive",
       description:
-        "Browse every live page in Chapter One without exposing draft or review pages.",
+        "Browse the Chapter One pages in order and follow Elias deeper into Vallen.",
       href: chapter.path,
       eyebrow: "Index",
     },

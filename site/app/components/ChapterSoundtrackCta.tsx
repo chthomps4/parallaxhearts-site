@@ -4,7 +4,7 @@ import { getFeaturedSoundtrackTrack } from "../lib/music/what-the-town-keeps";
 const soundCloudUrl = "https://soundcloud.com/parallax-hearts";
 
 export default function ChapterSoundtrackCta({
-  note = "Read the chapter, then listen to the local final-edit preview or open the full Music page.",
+  note = "Read the chapter, then listen to the on-site soundtrack track or open the full Music page.",
 }: {
   note?: string;
 }) {

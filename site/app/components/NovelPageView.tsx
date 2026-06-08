@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   getNovelStatusLabel,
+  shouldShowReviewNovelPages,
   type NovelChapter,
   type NovelPage,
 } from "../lib/novel/chapter-one";
@@ -21,6 +22,7 @@ export default function NovelPageView({
   nextPage,
 }: NovelPageViewProps) {
   const isReviewOnly = page.status !== "live";
+  const showReviewDetails = shouldShowReviewNovelPages();
   const soundtrackTrack = getFeaturedSoundtrackTrack();
 
   return (
@@ -48,21 +50,28 @@ export default function NovelPageView({
             ) : (
               <div className="flex min-h-[620px] flex-col justify-end gap-4 bg-[radial-gradient(circle_at_top,#45322d,#140f12_60%)] p-8">
                 <p className="text-xs uppercase tracking-[0.35em] text-[#caa978]">
-                  Prompt-first visual
+                  Artwork in review
                 </p>
                 <p className="text-lg leading-7 text-[#f5eadf]">
-                  {page.image.prompt}
+                  The next visual is being prepared for this page.
                 </p>
+                {showReviewDetails ? (
+                  <p className="text-sm leading-6 text-[#d8c7b8]">
+                    {page.image.prompt}
+                  </p>
+                ) : null}
               </div>
             )}
           </div>
 
-          <div className="rounded-3xl border border-[#4d3932] bg-[#1a1215]/80 p-5 text-sm leading-6 text-[#d8c7b8]">
-            <p className="mb-2 text-xs uppercase tracking-[0.3em] text-[#caa978]">
-              Image prompt
-            </p>
-            <p>{page.image.prompt}</p>
-          </div>
+          {showReviewDetails ? (
+            <div className="rounded-3xl border border-[#4d3932] bg-[#1a1215]/80 p-5 text-sm leading-6 text-[#d8c7b8]">
+              <p className="mb-2 text-xs uppercase tracking-[0.3em] text-[#caa978]">
+                Image prompt
+              </p>
+              <p>{page.image.prompt}</p>
+            </div>
+          ) : null}
         </aside>
 
         <article className="rounded-[2rem] border border-[#4b352f] bg-[#1a1215]/90 p-6 shadow-2xl shadow-black/30 md:p-10">
@@ -70,7 +79,7 @@ export default function NovelPageView({
             <span>{chapter.title}</span>
             <span className="text-[#76584c]">/</span>
             <span>Page {page.number}</span>
-            {isReviewOnly ? (
+            {isReviewOnly && showReviewDetails ? (
               <span className="rounded-full border border-[#caa978]/40 bg-[#3a281e] px-3 py-1 tracking-[0.18em] text-[#f2d7a0]">
                 {getNovelStatusLabel(page.status)}
               </span>
@@ -174,7 +183,7 @@ export default function NovelPageView({
             )}
           </nav>
 
-          {isReviewOnly ? (
+          {isReviewOnly && showReviewDetails ? (
             <div className="mt-8 rounded-3xl border border-[#caa978]/40 bg-[#2b2119] p-5 text-sm leading-6 text-[#f2d7a0]">
               Review-only page. This can render in local or preview builds for
               owner review, but it is hidden from the production sitemap and
