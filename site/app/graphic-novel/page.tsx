@@ -46,7 +46,7 @@ export default function GraphicNovelLandingPage() {
             The archive is being prepared.
           </h1>
           <p className="mt-5 text-lg leading-8 text-[#d8c7b8]">
-            Chapter pages will appear here after owner review.
+            Chapter pages will appear here soon.
           </p>
         </section>
       </main>
