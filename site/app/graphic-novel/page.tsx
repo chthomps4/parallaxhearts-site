@@ -37,15 +37,15 @@ export default function GraphicNovelLandingPage() {
 
   if (!chapter || !firstPage || !latestPage) {
     return (
-      <main className="min-h-screen bg-[#110c10] px-6 py-20 text-[#f5eadf]">
-        <section className="mx-auto max-w-3xl rounded-[2rem] border border-[#4b352f] bg-[#1a1215] p-8">
-          <p className="text-sm uppercase tracking-[0.35em] text-[#caa978]">
+      <main className="novel-shell">
+        <section className="novel-container novel-empty">
+          <p className="novel-kicker">
             What the Town Keeps
           </p>
-          <h1 className="mt-4 font-serif text-5xl text-[#fff7eb]">
+          <h1 className="novel-title">
             The archive is being prepared.
           </h1>
-          <p className="mt-5 text-lg leading-8 text-[#d8c7b8]">
+          <p className="novel-lede">
             Chapter pages will appear here soon.
           </p>
         </section>
@@ -78,38 +78,38 @@ export default function GraphicNovelLandingPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#110c10] text-[#f5eadf]">
-      <section className="mx-auto grid max-w-7xl gap-12 px-6 py-12 md:grid-cols-[minmax(0,1fr)_420px] md:items-center md:px-10 md:py-20">
-        <div>
-          <p className="text-sm uppercase tracking-[0.42em] text-[#caa978]">
+    <main className="novel-shell">
+      <section className="novel-container novel-hero">
+        <div className="novel-hero-copy">
+          <p className="novel-kicker">
             What the Town Keeps
           </p>
-          <h1 className="mt-5 max-w-4xl font-serif text-6xl leading-[0.95] text-[#fff7eb] md:text-8xl">
+          <h1 className="novel-title novel-title-xl">
             A town keeps better records than people do.
           </h1>
-          <p className="mt-7 max-w-3xl text-xl leading-9 text-[#d8c7b8]">
+          <p className="novel-lede">
             Elias Vale comes to Vallen to inspect a house. The work is ordinary:
             moisture, structure, doors, stairs, records. The archive unfolds as
             cinematic stills, story pages, and songs, until the evidence starts
             looking back.
           </p>
 
-          <div className="mt-9 flex flex-wrap gap-4">
+          <div className="novel-actions">
             <Link
               href={firstPage.path}
-              className="rounded-full bg-[#e4cba8] px-6 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#170f0f] transition hover:bg-[#fff0c8]"
+              className="novel-button novel-button-primary"
             >
               Read page 001
             </Link>
             <Link
               href={chapter.path}
-              className="rounded-full border border-[#5f4639] px-6 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#f5eadf] transition hover:border-[#caa978] hover:text-[#fff7eb]"
+              className="novel-button novel-button-secondary"
             >
               Open archive
             </Link>
             <Link
               href="/music"
-              className="rounded-full border border-[#5f4639] px-6 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#f5eadf] transition hover:border-[#caa978] hover:text-[#fff7eb]"
+              className="novel-button novel-button-secondary"
             >
               Listen to Ballast
             </Link>
@@ -117,45 +117,45 @@ export default function GraphicNovelLandingPage() {
         </div>
 
         {latestPage.image.src ? (
-          <div className="overflow-hidden rounded-[2rem] border border-[#5f4639] bg-[#1c1417] shadow-2xl shadow-black/40">
+          <div className="novel-image-card">
             <Image
               src={latestPage.image.src}
               alt={latestPage.image.alt}
               width={latestPage.image.width ?? 1000}
               height={latestPage.image.height ?? 1414}
               unoptimized={latestPage.image.unoptimized}
-              className="h-auto w-full object-cover"
+              className="novel-cover-image"
               priority
             />
           </div>
         ) : null}
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 pb-16 md:px-10">
-        <div className="grid gap-4 md:grid-cols-3">
+      <section className="novel-container novel-section">
+        <div className="novel-card-grid">
           {accessCards.map((card) => (
             <Link
               key={card.title}
               href={card.href}
-              className="group rounded-[2rem] border border-[#4b352f] bg-[#1a1215]/90 p-6 shadow-xl shadow-black/20 transition hover:border-[#caa978] hover:bg-[#241917]"
+              className="novel-card"
             >
-              <p className="text-xs uppercase tracking-[0.32em] text-[#caa978]">
+              <p className="novel-card-eyebrow">
                 {card.eyebrow}
               </p>
-              <h2 className="mt-4 font-serif text-3xl text-[#fff7eb]">
+              <h2 className="novel-card-title">
                 {card.title}
               </h2>
-              <p className="mt-4 text-base leading-7 text-[#d8c7b8]">
+              <p className="novel-card-copy">
                 {card.description}
               </p>
-              <p className="mt-6 text-sm uppercase tracking-[0.24em] text-[#e4cba8] transition group-hover:text-[#fff7eb]">
+              <p className="novel-card-link">
                 Open path
               </p>
             </Link>
           ))}
         </div>
 
-        <div className="mt-12">
+        <div className="novel-soundtrack-block">
           <ChapterSoundtrackCta />
         </div>
       </section>

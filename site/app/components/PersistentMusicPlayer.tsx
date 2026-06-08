@@ -96,42 +96,42 @@ export default function PersistentMusicPlayer() {
   return (
     <aside
       aria-label="Parallax Hearts soundtrack player"
-      className="fixed inset-x-3 bottom-3 z-40 mx-auto max-w-3xl rounded-[1.5rem] border border-[#5f4639] bg-[#100b0d]/95 p-3 text-[#f5eadf] shadow-2xl shadow-black/45 backdrop-blur md:bottom-5"
+      className="music-dock"
     >
       <audio ref={audioRef} preload="metadata" src={track.audioSrc} />
 
-      <div className="grid gap-3 md:grid-cols-[auto_minmax(0,1fr)_auto] md:items-center">
+      <div className="music-dock-grid">
         <button
           type="button"
           onClick={togglePlayback}
-          className="rounded-full bg-[#e4cba8] px-5 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#170f0f] transition hover:bg-[#fff0c8] focus:outline-none focus:ring-2 focus:ring-[#fff0c8] focus:ring-offset-2 focus:ring-offset-[#100b0d]"
+          className="music-dock-play"
           aria-label={isPlaying ? "Pause soundtrack" : "Play soundtrack"}
         >
           {isPlaying ? "Pause" : "Play"}
         </button>
 
-        <div className="min-w-0">
-          <div className="flex flex-wrap items-center gap-2 text-xs uppercase tracking-[0.22em] text-[#caa978]">
+        <div className="music-dock-main">
+          <div className="music-dock-eyebrow">
             <span>Listen while you read</span>
-            <span className="text-[#76584c]">/</span>
+            <span aria-hidden="true">/</span>
             <span>No autoplay</span>
           </div>
-          <p className="mt-1 truncate font-serif text-xl leading-tight text-[#fff7eb]">
+          <p className="music-dock-title">
             {track.title}
           </p>
-          <p className="mt-1 text-sm leading-5 text-[#d8c7b8]">
+          <p className="music-dock-message">
             {isExpanded ? track.connection : playbackMessage}
           </p>
 
           {isExpanded ? (
-            <div className="mt-3" aria-label="Soundtrack progress">
-              <div className="h-2 overflow-hidden rounded-full bg-[#352621]">
+            <div className="music-dock-progress" aria-label="Soundtrack progress">
+              <div className="music-dock-progress-track">
                 <div
-                  className="h-full rounded-full bg-[#e4cba8]"
+                  className="music-dock-progress-fill"
                   style={{ width: `${progress}%` }}
                 />
               </div>
-              <div className="mt-2 flex justify-between text-xs text-[#caa978]">
+              <div className="music-dock-times">
                 <span>{formatTime(currentTime)}</span>
                 <span>{formatTime(duration)}</span>
               </div>
@@ -139,17 +139,17 @@ export default function PersistentMusicPlayer() {
           ) : null}
         </div>
 
-        <div className="flex flex-wrap gap-2 md:justify-end">
+        <div className="music-dock-actions">
           <button
             type="button"
             onClick={() => setIsExpanded((value) => !value)}
-            className="rounded-full border border-[#5f4639] px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#f5eadf] transition hover:border-[#caa978] focus:outline-none focus:ring-2 focus:ring-[#caa978] focus:ring-offset-2 focus:ring-offset-[#100b0d]"
+            className="music-dock-secondary"
           >
             {isExpanded ? "Collapse" : "Details"}
           </button>
           <Link
             href="/music"
-            className="rounded-full border border-[#5f4639] px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#f5eadf] transition hover:border-[#caa978] focus:outline-none focus:ring-2 focus:ring-[#caa978] focus:ring-offset-2 focus:ring-offset-[#100b0d]"
+            className="music-dock-secondary"
           >
             Music
           </Link>

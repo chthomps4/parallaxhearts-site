@@ -100,7 +100,7 @@ function SiteFooter() {
                 lineHeight: 1.6,
               }}
             >
-              © {new Date().getFullYear()} Parallax Hearts. All rights
+              &copy; {new Date().getFullYear()} Parallax Hearts. All rights
               reserved.
             </p>
           </div>
@@ -216,24 +216,6 @@ export default function RootLayout({
             __html: JSON.stringify(structuredData),
           }}
         />
-        <span
-          aria-hidden="true"
-          title="GnatP"
-          data-muse="GnatP"
-          style={{
-            position: "fixed",
-            right: "7px",
-            bottom: "7px",
-            width: "1px",
-            height: "1px",
-            overflow: "hidden",
-            opacity: 0.01,
-            pointerEvents: "none",
-            userSelect: "none",
-          }}
-        >
-          GnatP
-        </span>
         <SiteHeader />
         <div id="main-content" tabIndex={-1}>
           {children}

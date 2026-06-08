@@ -72,31 +72,31 @@ export default async function ChapterRoute({ params }: PageProps) {
   const firstPage = pages[0];
 
   return (
-    <main className="min-h-screen bg-[#110c10] text-[#f5eadf]">
-      <section className="mx-auto max-w-6xl px-6 py-12 md:px-10 md:py-16">
+    <main className="novel-shell">
+      <section className="novel-container novel-chapter">
         <Link
           href="/graphic-novel"
-          className="text-sm uppercase tracking-[0.35em] text-[#caa978] transition hover:text-[#f2d7a0]"
+          className="novel-inline-link"
         >
           Back to graphic novel
         </Link>
 
-        <div className="mt-10 grid gap-8 md:grid-cols-[minmax(0,1fr)_360px] md:items-end">
-          <div>
-            <p className="text-sm uppercase tracking-[0.4em] text-[#caa978]">
+        <div className="novel-chapter-hero">
+          <div className="novel-hero-copy">
+            <p className="novel-kicker">
               What the Town Keeps
             </p>
-            <h1 className="mt-4 font-serif text-5xl leading-tight text-[#fff7eb] md:text-7xl">
+            <h1 className="novel-title">
               {chapter.title}
             </h1>
-            <p className="mt-6 max-w-3xl text-xl leading-9 text-[#d8c7b8]">
+            <p className="novel-lede">
               {chapter.description}
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="novel-actions">
               {firstPage ? (
                 <Link
                   href={firstPage.path}
-                  className="rounded-full bg-[#e4cba8] px-6 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#170f0f] transition hover:bg-[#fff0c8]"
+                  className="novel-button novel-button-primary"
                 >
                   Start chapter
                 </Link>
@@ -104,66 +104,66 @@ export default async function ChapterRoute({ params }: PageProps) {
               {latestPage ? (
                 <Link
                   href={latestPage.path}
-                  className="rounded-full border border-[#5f4639] px-6 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#f5eadf] transition hover:border-[#caa978] hover:text-[#fff7eb]"
+                  className="novel-button novel-button-secondary"
                 >
                   Latest page
                 </Link>
               ) : null}
               <Link
                 href="/music"
-                className="rounded-full border border-[#5f4639] px-6 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#f5eadf] transition hover:border-[#caa978] hover:text-[#fff7eb]"
+                className="novel-button novel-button-secondary"
               >
                 Listen to Ballast
               </Link>
             </div>
-            <p className="mt-5 text-sm uppercase tracking-[0.26em] text-[#caa978]">
+            <p className="novel-page-total">
               {pages.length} pages in this chapter
             </p>
           </div>
 
           {latestPage?.image.src ? (
-            <div className="overflow-hidden rounded-[2rem] border border-[#5f4639] bg-[#1c1417] shadow-2xl shadow-black/40">
+            <div className="novel-image-card novel-image-card-compact">
               <Image
                 src={latestPage.image.src}
                 alt={latestPage.image.alt}
                 width={latestPage.image.width ?? 1000}
                 height={latestPage.image.height ?? 1414}
                 unoptimized={latestPage.image.unoptimized}
-                className="h-auto w-full object-cover"
+                className="novel-cover-image"
               />
             </div>
           ) : null}
         </div>
 
-        <div className="mt-12 grid gap-4 md:grid-cols-2">
+        <div className="novel-page-grid">
           {pages.map((page) => (
             <Link
               key={page.slug}
               href={page.path}
-              className="group rounded-[2rem] border border-[#4b352f] bg-[#1a1215]/90 p-6 shadow-xl shadow-black/20 transition hover:border-[#caa978] hover:bg-[#241917]"
+              className="novel-card novel-page-card"
             >
-              <div className="flex items-center justify-between gap-4 text-xs uppercase tracking-[0.3em] text-[#caa978]">
+              <div className="novel-page-card-meta">
                 <span>Page {page.number}</span>
                 {page.status !== "live" && showReviewDetails ? (
-                  <span className="rounded-full border border-[#caa978]/40 px-3 py-1 tracking-[0.16em]">
+                  <span className="novel-review-pill">
                     Review
                   </span>
                 ) : null}
               </div>
-              <h2 className="mt-4 font-serif text-3xl text-[#fff7eb]">
+              <h2 className="novel-card-title">
                 {page.title}
               </h2>
-              <p className="mt-4 text-base leading-7 text-[#d8c7b8]">
+              <p className="novel-card-copy">
                 {page.description}
               </p>
-              <p className="mt-5 text-sm uppercase tracking-[0.24em] text-[#e4cba8] transition group-hover:text-[#fff7eb]">
+              <p className="novel-card-link">
                 Read page
               </p>
             </Link>
           ))}
         </div>
 
-        <div className="mt-12">
+        <div className="novel-soundtrack-block">
           <ChapterSoundtrackCta />
         </div>
       </section>

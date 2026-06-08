@@ -47,9 +47,9 @@ export const chapterOneRules = {
     "No lore dumps. Let the town reveal itself through physical evidence.",
   ],
   visualDirection:
-    "Cinematic illustrated-story realism, rain-dark Pennsylvania town, restrained supernatural unease, grounded inspection details, warm shadows, no glossy superhero styling.",
+    "Cinematic illustrated-story realism, rain-dark Pennsylvania town, restrained atmospheric unease, grounded inspection details, warm shadows, no glossy superhero styling.",
   forbidden:
-    "No Skool, Forbidden Knowledge, Phylax, website-services funnel, paid image generation, auto-publishing, auto-deploying, or auto-merging.",
+    "No Skool, Forbidden Knowledge, Phylax, website-services funnel, auto-publishing, auto-deploying, or auto-merging.",
 };
 
 const chapterOneSlug = "chapter-one";
@@ -80,7 +80,7 @@ export const chapterOnePages: NovelPage[] = [
       width: 1536,
       height: 1024,
       prompt:
-        "A restrained cinematic visual novel still of Elias Vale crossing wet railroad tracks into the old town of Vallen under a low gray sky, rain-dark pavement, practical clothing, grounded realism, quiet dread.",
+        "A restrained cinematic visual novel still of Elias Vale crossing wet railroad tracks into the old town of Vallen under a low gray sky, rain-dark pavement, practical clothing, grounded realism, quiet pressure.",
     },
     narration: [
       "The first thing Vallen gave Elias Vale was the crossing.",
@@ -138,7 +138,7 @@ export const chapterOnePages: NovelPage[] = [
       height: 1024,
       unoptimized: true,
       prompt:
-        "A practical home inspector pauses outside an aging boarding house in Vallen after rain, loose gutter, peeling paint, winter grass, second-floor windows, cinematic visual novel realism, subdued supernatural tension.",
+        "A practical home inspector pauses outside an aging boarding house in Vallen after rain, loose gutter, peeling paint, winter grass, second-floor windows, cinematic visual novel realism, subdued atmospheric tension.",
     },
     narration: [
       "The boarding house stood three lots down from the corner, set back behind a narrow strip of winter grass.",
@@ -167,7 +167,7 @@ export const chapterOnePages: NovelPage[] = [
       height: 1024,
       unoptimized: true,
       prompt:
-        "A close cinematic visual novel scene of Elias Vale finding a key under a chipped clay pot beside an old boarding house door, swollen frame, rain damage, inspection realism, quiet dread.",
+        "A close cinematic visual novel scene of Elias Vale finding a key under a chipped clay pot beside an old boarding house door, swollen frame, rain damage, inspection realism, quiet pressure.",
     },
     narration: [
       "The key was where the message said it would be, under the chipped clay pot beside the door.",
