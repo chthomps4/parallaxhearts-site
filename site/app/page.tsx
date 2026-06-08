@@ -7,7 +7,7 @@ import SiteHeader from "./components/SiteHeader";
 export const metadata: Metadata = {
   title: "Parallax Hearts | What the Town Keeps",
   description:
-    "Parallax Hearts is the music project behind What the Town Keeps - a cinematic album, visual novel archive, and rainy small-town story world set in Vallen.",
+    "Begin What the Town Keeps - a cinematic visual novel, soundtrack, and rainy small-town story world set in Vallen.",
   keywords: [
     "Parallax Hearts",
     "What the Town Keeps",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Parallax Hearts | What the Town Keeps",
     description:
-      "Songs, story, and the visual novel archive of What the Town Keeps - set in the rainy town of Vallen.",
+      "Start the visual novel, hear the soundtrack, and support the ongoing Parallax Hearts story world.",
     url: "https://www.parallaxhearts.org/",
     siteName: "Parallax Hearts",
     images: [
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Parallax Hearts | What the Town Keeps",
     description:
-      "A cinematic music and story-world archive set in the rainy town of Vallen.",
+      "A cinematic visual novel and soundtrack archive set in the rainy town of Vallen.",
     images: ["/images/hero.jpg"],
   },
 };
@@ -217,7 +217,7 @@ export default function HomePage() {
                 fontWeight: 400,
               }}
             >
-              Songs, story, and the town that holds them.
+              A haunted little town, told one page and one song at a time.
             </h1>
 
             <p
@@ -229,20 +229,19 @@ export default function HomePage() {
                 lineHeight: 1.75,
               }}
             >
-              Parallax Hearts is the music project behind <em>What the Town Keeps</em> -
-              a cinematic album, story world, and visual novel archive set in
-              Vallen, a rainy town of rail lines, old rooms, quiet distance, and
-              things people learn not to say.
+              Start with <em>What the Town Keeps</em>, the visual novel archive
+              at the center of Parallax Hearts. Read the story, hear the songs,
+              and support the next pieces of Vallen as the town opens up.
             </p>
           </div>
 
           <ProjectPanel
-            eyebrow="Main world"
+            eyebrow="Start here"
             title="What the Town Keeps"
-            subtitle="Rain. Rails. Memory. Silence."
+            subtitle="Page one is the door."
             body={
               <>
-                The album and story world built around Vallen
+                Begin in Vallen
                 <ArchiveNote
                   title="Archive Note: Vallen"
                   evidence="Creative name / interpretive resonance"
@@ -252,23 +251,57 @@ export default function HomePage() {
                   place where weather and memory collect. This is a
                   project-specific name, not a historical place claim.
                 </ArchiveNote>
-                , a small town where the music, prose, and visual novel all
-                move through the same weather.
+                , a small town where the visual novel, songs, and fragments all
+                move through the same weather. The best next step is to read
+                from the beginning.
               </>
             }
             image="/images/hero.jpg"
             imageAlt="Rainy Vallen scene for What the Town Keeps, with old small-town atmosphere and cinematic dusk light"
             primaryHref="/graphic-novel/chapter-one/page-001"
-            primaryLabel="Start the Visual Novel"
-            secondaryHref="/music"
-            secondaryLabel="Listen on SoundCloud"
+            primaryLabel="Start the visual novel"
+            secondaryHref="/support"
+            secondaryLabel="Support the project"
           />
+
+          <div
+            aria-label="What happens next"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(190px, 1fr))",
+              gap: "12px",
+              marginTop: "18px",
+            }}
+          >
+            {[
+              "Read from page one.",
+              "Use the soundtrack as a companion, not a detour.",
+              "Support is optional and helps fund new pages.",
+              "New public story work is reviewed before it goes live.",
+            ].map((item) => (
+              <p
+                key={item}
+                style={{
+                  margin: 0,
+                  border: `1px solid ${colors.border}`,
+                  borderRadius: "18px",
+                  padding: "14px 16px",
+                  background: "rgba(255,255,255,0.035)",
+                  color: colors.textSoft,
+                  fontSize: "14px",
+                  lineHeight: 1.55,
+                }}
+              >
+                {item}
+              </p>
+            ))}
+          </div>
         </div>
       </section>
 
       <section style={{ padding: "38px 0 86px" }}>
         <div className="site-container">
-          <p className="kicker">Choose a door</p>
+          <p className="kicker">Keep exploring</p>
 
           <div
             style={{
@@ -280,23 +313,18 @@ export default function HomePage() {
             {[
               {
                 title: "Read",
-                text: "Begin Chapter One - Ballast, the built-in visual novel archive.",
+                text: "Begin Chapter One - Ballast, the main path through the visual novel archive.",
                 href: "/graphic-novel/chapter-one/page-001",
               },
               {
                 title: "Listen",
-                text: "Hear the album and follow the music side of Parallax Hearts.",
+                text: "Hear the soundtrack after you start the story, or keep it open while you read.",
                 href: "/music",
               },
               {
                 title: "Support",
-                text: "Support the songs, story, visual archive, and ongoing creative work.",
+                text: "Help fund new pages, songs, and story-world work through the support path.",
                 href: "/support",
-              },
-              {
-                title: "Join Dispatches",
-                text: "Ask to join the quiet update list for chapters, song notes, and creative dispatches.",
-                href: "#dispatches",
               },
             ].map((card) => (
               <Link
