@@ -14,16 +14,16 @@ function siteUrl(path: string) {
 }
 
 export const metadata: Metadata = {
-  title: "What the Town Keeps | Graphic Novel",
+  title: "What the Town Keeps | Visual Novel",
   description:
-    "Read the online graphic novel and visual novel archive for What the Town Keeps, a restrained cinematic story about Elias Vale, Vallen, and the houses that remember.",
+    "Read the cinematic visual novel and illustrated story archive for What the Town Keeps, a restrained story about Elias Vale, Vallen, and the houses that remember.",
   alternates: {
     canonical: siteUrl("/graphic-novel"),
   },
   openGraph: {
-    title: "What the Town Keeps | Graphic Novel",
+    title: "What the Town Keeps | Visual Novel",
     description:
-      "A grounded, cinematic online graphic novel about inspection work, old houses, and the quiet wrongness of Vallen.",
+      "A grounded, cinematic visual novel about inspection work, old houses, and the quiet wrongness of Vallen.",
     url: siteUrl("/graphic-novel"),
     type: "website",
   },
@@ -89,8 +89,8 @@ export default function GraphicNovelLandingPage() {
           </h1>
           <p className="mt-7 max-w-3xl text-xl leading-9 text-[#d8c7b8]">
             Elias Vale comes to Vallen to inspect a house. The work is ordinary:
-            moisture, structure, doors, stairs, records. The town is ordinary
-            too, until the evidence starts looking back.
+            moisture, structure, doors, stairs, records. The archive unfolds as
+            cinematic stills and story pages, until the evidence starts looking back.
           </p>
 
           <div className="mt-9 flex flex-wrap gap-4">
@@ -155,3 +155,4 @@ export default function GraphicNovelLandingPage() {
     </main>
   );
 }
+

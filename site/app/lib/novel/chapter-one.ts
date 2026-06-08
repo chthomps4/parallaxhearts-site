@@ -47,7 +47,7 @@ export const chapterOneRules = {
     "No lore dumps. Let the town reveal itself through physical evidence.",
   ],
   visualDirection:
-    "Cinematic graphic novel realism, rain-dark Pennsylvania town, restrained supernatural unease, grounded inspection details, warm shadows, no glossy superhero styling.",
+    "Cinematic illustrated-story realism, rain-dark Pennsylvania town, restrained supernatural unease, grounded inspection details, warm shadows, no glossy superhero styling.",
   forbidden:
     "No Skool, Forbidden Knowledge, Phylax, website-services funnel, paid image generation, auto-publishing, auto-deploying, or auto-merging.",
 };
@@ -72,15 +72,15 @@ export const chapterOnePages: NovelPage[] = [
     description:
       "Elias reaches the edge of Vallen, where the rails turn arrival into a threshold.",
     seoDescription:
-      "Read page 001, The Crossing, from Chapter One - Ballast in the What the Town Keeps graphic novel / visual novel archive.",
+      "Read page 001, The Crossing, from Chapter One - Ballast in the What the Town Keeps cinematic visual novel archive.",
     excerpt: "The first thing Vallen gave Elias Vale was the crossing.",
     image: {
       src: "/images/graphic-novel/chapter-one/vn-page-001.jpg",
       alt: "Elias Vale crossing into Vallen in the rain",
-      width: 1400,
-      height: 1900,
+      width: 1536,
+      height: 1024,
       prompt:
-        "A restrained cinematic graphic novel panel of Elias Vale crossing wet railroad tracks into the old town of Vallen under a low gray sky, rain-dark pavement, practical clothing, grounded realism, quiet dread.",
+        "A restrained cinematic visual novel still of Elias Vale crossing wet railroad tracks into the old town of Vallen under a low gray sky, rain-dark pavement, practical clothing, grounded realism, quiet dread.",
     },
     narration: [
       "The first thing Vallen gave Elias Vale was the crossing.",
@@ -100,16 +100,16 @@ export const chapterOnePages: NovelPage[] = [
     description:
       "The road into town narrows through old houses, wet pavement, dim windows, and careful silence.",
     seoDescription:
-      "Read page 002, Mercer Street, from Chapter One - Ballast in the What the Town Keeps graphic novel / visual novel archive.",
+      "Read page 002, Mercer Street, from Chapter One - Ballast in the What the Town Keeps cinematic visual novel archive.",
     excerpt:
       "The town looked ordinary in the way old places do when they have learned to keep their mouths shut.",
     image: {
       src: "/images/graphic-novel/chapter-one/vn-page-002.jpg",
       alt: "Mercer Street in Vallen after rain",
-      width: 1400,
-      height: 1900,
+      width: 1536,
+      height: 1024,
       prompt:
-        "A cinematic graphic novel view down Mercer Street in Vallen after rain, old houses, porch lights, wet pavement, bare maple branches, a blue truck, ordinary Pennsylvania town with restrained unease.",
+        "A cinematic visual novel view down Mercer Street in Vallen after rain, old houses, porch lights, wet pavement, bare maple branches, a blue truck, ordinary Pennsylvania town with restrained unease.",
     },
     narration: [
       "Mercer Street did not announce itself.",
@@ -129,16 +129,16 @@ export const chapterOnePages: NovelPage[] = [
     description:
       "The first inspection site waits under rainwater, old paint, loose gutters, and second-floor windows.",
     seoDescription:
-      "Read page 003, The Boarding House, from Chapter One - Ballast in the What the Town Keeps graphic novel / visual novel archive.",
+      "Read page 003, The Boarding House, from Chapter One - Ballast in the What the Town Keeps cinematic visual novel archive.",
     excerpt: "Some houses made a man pause before he gave them a number.",
     image: {
       src: "/images/graphic-novel/chapter-one/vn-page-003.jpg",
       alt: "Elias Vale outside the boarding house in Vallen after rain",
-      width: 1000,
-      height: 1414,
+      width: 1536,
+      height: 1024,
       unoptimized: true,
       prompt:
-        "A practical home inspector pauses outside an aging boarding house in Vallen after rain, loose gutter, peeling paint, winter grass, second-floor windows, cinematic graphic novel realism, subdued supernatural tension.",
+        "A practical home inspector pauses outside an aging boarding house in Vallen after rain, loose gutter, peeling paint, winter grass, second-floor windows, cinematic visual novel realism, subdued supernatural tension.",
     },
     narration: [
       "The boarding house stood three lots down from the corner, set back behind a narrow strip of winter grass.",
@@ -163,11 +163,11 @@ export const chapterOnePages: NovelPage[] = [
     image: {
       src: "/images/graphic-novel/chapter-one/vn-page-004.jpg",
       alt: "Elias Vale finding the key beside the first door",
-      width: 1000,
-      height: 1414,
+      width: 1536,
+      height: 1024,
       unoptimized: true,
       prompt:
-        "A close cinematic graphic novel scene of Elias Vale finding a key under a chipped clay pot beside an old boarding house door, swollen frame, rain damage, inspection realism, quiet dread.",
+        "A close cinematic visual novel scene of Elias Vale finding a key under a chipped clay pot beside an old boarding house door, swollen frame, rain damage, inspection realism, quiet dread.",
     },
     narration: [
       "The key was where the message said it would be, under the chipped clay pot beside the door.",
@@ -192,11 +192,11 @@ export const chapterOnePages: NovelPage[] = [
     image: {
       src: "/images/graphic-novel/chapter-one/vn-page-005.jpg",
       alt: "Elias Vale inside the boarding house hallway",
-      width: 1000,
-      height: 1414,
+      width: 1536,
+      height: 1024,
       unoptimized: true,
       prompt:
-        "A restrained cinematic graphic novel interior of an old boarding house hallway, damp wool and old paper atmosphere, radiator heat, coat on hook, stacked papers, wet gloom, Elias Vale pausing with clipboard.",
+        "A restrained cinematic visual novel interior of an old boarding house hallway, damp wool and old paper atmosphere, radiator heat, coat on hook, stacked papers, wet gloom, Elias Vale pausing with clipboard.",
     },
     narration: [
       "The hallway held the weather differently.",
@@ -222,11 +222,11 @@ export const chapterOnePages: NovelPage[] = [
     image: {
       src: "/images/graphic-novel/chapter-one/vn-page-006.jpg",
       alt: "A faint waterline on the boarding house hallway wall",
-      width: 1000,
-      height: 1414,
+      width: 1536,
+      height: 1024,
       unoptimized: true,
       prompt:
-        "A close restrained graphic novel panel of a faint pale waterline across plaster in an old boarding house hallway, inspection detail, Elias Vale crouching with two fingers near the wall, cinematic realism, eerie but grounded.",
+        "A close restrained cinematic visual novel still of a faint pale waterline across plaster in an old boarding house hallway, inspection detail, Elias Vale crouching with two fingers near the wall, cinematic realism, eerie but grounded.",
     },
     narration: [
       "The waterline was too clean to be old neglect.",
@@ -335,3 +335,4 @@ export function getNovelStatusLabel(status: NovelPageStatus) {
       return status satisfies never;
   }
 }
+

@@ -1,4 +1,7 @@
-﻿import Link from "next/link";
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const contactSubject = "Dispatches from Vallen";
 const contactBody =
@@ -8,6 +11,14 @@ const signupHref = `mailto:chad@parallaxhearts.org?subject=${encodeURIComponent(
 )}&body=${encodeURIComponent(contactBody)}`;
 
 export default function DispatchSignup() {
+  const pathname = usePathname();
+  const isIndividualNovelPage =
+    /^\/graphic-novel\/[^/]+\/page-\d+\/?$/.test(pathname);
+
+  if (isIndividualNovelPage) {
+    return null;
+  }
+
   return (
     <section id="dispatches" className="dispatch-signup" aria-labelledby="dispatch-signup-title">
       <div className="site-container">
@@ -41,4 +52,3 @@ export default function DispatchSignup() {
     </section>
   );
 }
-

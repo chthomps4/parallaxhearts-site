@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { absoluteUrl, defaultKeywords } from "../lib/seo";
 
-const pageTitle = "Graphic Novel | What the Town Keeps";
+const pageTitle = "Visual Novel | What the Town Keeps";
 const pageDescription =
-  "Read the built-in graphic novel and visual novel adaptation of What the Town Keeps by Parallax Hearts, beginning with Chapter One — Ballast.";
+  "Read the cinematic visual novel and illustrated story archive for What the Town Keeps by Parallax Hearts, beginning with Chapter One - Ballast.";
 const pageUrl = absoluteUrl("/graphic-novel");
 const previewImage = absoluteUrl("/images/graphic-novel-hub.jpg");
 
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: pageDescription,
   keywords: [
     ...defaultKeywords,
-    "What the Town Keeps graphic novel",
+    "What the Town Keeps visual novel",
     "What the Town Keeps visual novel",
     "Parallax Hearts graphic novel",
     "Vallen",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
         url: previewImage,
         width: 1200,
         height: 630,
-        alt: "What the Town Keeps graphic novel preview",
+        alt: "What the Town Keeps visual novel preview",
       },
     ],
     locale: "en_US",
@@ -49,3 +49,4 @@ export const metadata: Metadata = {
 export default function GraphicNovelLayout({ children }: { children: React.ReactNode }) {
   return children;
 }
+
