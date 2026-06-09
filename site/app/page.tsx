@@ -3,6 +3,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import ArchiveNote from "./components/ArchiveNote";
 import SiteHeader from "./components/SiteHeader";
+import { getStoryAsset } from "./lib/story-assets";
+
+const homeHeroAsset = getStoryAsset("hero-vallen-arrival");
 
 export const metadata: Metadata = {
   title: "Parallax Hearts | What the Town Keeps",
@@ -29,9 +32,9 @@ export const metadata: Metadata = {
     siteName: "Parallax Hearts",
     images: [
       {
-        url: "/images/hero.jpg",
-        width: 1200,
-        height: 630,
+        url: homeHeroAsset.src,
+        width: homeHeroAsset.width,
+        height: homeHeroAsset.height,
         alt: "Parallax Hearts - What the Town Keeps",
       },
     ],
@@ -43,7 +46,7 @@ export const metadata: Metadata = {
     title: "Parallax Hearts | What the Town Keeps",
     description:
       "A cinematic visual novel and soundtrack archive set in the rainy town of Vallen.",
-    images: ["/images/hero.jpg"],
+    images: [homeHeroAsset.src],
   },
 };
 
@@ -256,8 +259,8 @@ export default function HomePage() {
                 from the beginning.
               </>
             }
-            image="/images/hero.jpg"
-            imageAlt="Rainy Vallen scene for What the Town Keeps, with old small-town atmosphere and cinematic dusk light"
+            image={homeHeroAsset.src}
+            imageAlt={homeHeroAsset.alt}
             primaryHref="/graphic-novel/chapter-one/page-001"
             primaryLabel="Start the visual novel"
             secondaryHref="/support"

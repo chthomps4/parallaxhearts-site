@@ -2,8 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import ArchiveNote from "../components/ArchiveNote";
+import {
+  RegisteredNativeAudio,
+  SoundCloudExclusiveEmbed,
+} from "../components/AudioCoordinator";
 import SiteHeader from "../components/SiteHeader";
 import { absoluteUrl, defaultKeywords } from "../lib/seo";
+import { getStoryAsset } from "../lib/story-assets";
 import { getPublicSoundtrackTracks } from "../lib/music/what-the-town-keeps";
 
 const soundCloudUrl = "https://soundcloud.com/parallax-hearts";
@@ -14,7 +19,8 @@ const pageTitle = "Music | Parallax Hearts";
 const pageDescription =
   "Listen to What the Town Keeps by Parallax Hearts, a cinematic acoustic alternative album tied to Vallen and the online graphic novel.";
 const pageUrl = absoluteUrl("/music");
-const previewImage = absoluteUrl("/images/music-listen.jpg");
+const musicHeroAsset = getStoryAsset("music-listen");
+const previewImage = absoluteUrl(musicHeroAsset.src);
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -38,8 +44,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: previewImage,
-        width: 1200,
-        height: 630,
+        width: musicHeroAsset.width,
+        height: musicHeroAsset.height,
         alt: "Parallax Hearts - What the Town Keeps music page",
       },
     ],
@@ -96,8 +102,8 @@ export default function MusicPage() {
             }}
           >
             <Image
-              src="/images/music-listen.jpg"
-              alt="Acoustic guitar leaning against an amp in a dim venue, warm amber spotlight, rain streaks on window"
+              src={musicHeroAsset.src}
+              alt={musicHeroAsset.alt}
               fill
               priority
               sizes="(max-width: 980px) 100vw, 1180px"
@@ -363,17 +369,15 @@ export default function MusicPage() {
                   </p>
 
                   {track.audioSrc ? (
-                    <audio
-                      controls
-                      preload="none"
+                    <RegisteredNativeAudio
+                      id={`music-track-${track.slug}`}
+                      sourceLabel={`Play ${track.title}`}
+                      src={track.audioSrc}
                       style={{
                         width: "100%",
                         accentColor: "#d2b58b",
                       }}
-                    >
-                      <source src={track.audioSrc} type="audio/mpeg" />
-                      Your browser does not support the audio element.
-                    </audio>
+                    />
                   ) : null}
 
                   <div
@@ -428,7 +432,8 @@ export default function MusicPage() {
               ParallaxHearts.org.
             </p>
 
-            <iframe
+            <SoundCloudExclusiveEmbed
+              id="soundcloud-archive"
               title="Parallax Hearts on SoundCloud"
               width="100%"
               height="360"

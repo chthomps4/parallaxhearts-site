@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { RegisteredNativeAudio } from "./AudioCoordinator";
 import { getFeaturedSoundtrackTrack } from "../lib/music/what-the-town-keeps";
 
 const soundCloudUrl = "https://soundcloud.com/parallax-hearts";
@@ -48,17 +49,15 @@ export default function ChapterSoundtrackCta({
 
           <div style={{ display: "grid", gap: "12px" }}>
             {track?.audioSrc ? (
-              <audio
-                controls
-                preload="none"
+              <RegisteredNativeAudio
+                id={`chapter-soundtrack-${track.slug}`}
+                sourceLabel={`Play ${track.title}`}
+                src={track.audioSrc}
                 style={{
                   width: "100%",
                   accentColor: "#d2b58b",
                 }}
-              >
-                <source src={track.audioSrc} type="audio/mpeg" />
-                Your browser does not support the audio element.
-              </audio>
+              />
             ) : null}
 
             <Link href="/music" className="primary-button">

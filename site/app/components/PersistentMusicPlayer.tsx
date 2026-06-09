@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { useRegisteredNativeAudio } from "./AudioCoordinator";
 import { getFeaturedSoundtrackTrack } from "../lib/music/what-the-town-keeps";
 
 function formatTime(seconds: number) {
@@ -28,6 +29,8 @@ export default function PersistentMusicPlayer() {
     "Press play when you want the soundtrack."
   );
 
+  useRegisteredNativeAudio("persistent-music-dock", audioRef);
+
   useEffect(() => {
     const audio = audioRef.current;
 
@@ -45,6 +48,17 @@ export default function PersistentMusicPlayer() {
       setDuration(audioElement.duration);
     }
 
+    function handlePlay() {
+      setIsPlaying(true);
+      setIsExpanded(true);
+      setPlaybackMessage("Now playing. Playback stays under your control.");
+    }
+
+    function handlePause() {
+      setIsPlaying(false);
+      setPlaybackMessage("Paused.");
+    }
+
     function handleEnded() {
       setIsPlaying(false);
       setCurrentTime(0);
@@ -53,11 +67,15 @@ export default function PersistentMusicPlayer() {
 
     audioElement.addEventListener("timeupdate", handleTimeUpdate);
     audioElement.addEventListener("loadedmetadata", handleLoadedMetadata);
+    audioElement.addEventListener("play", handlePlay);
+    audioElement.addEventListener("pause", handlePause);
     audioElement.addEventListener("ended", handleEnded);
 
     return () => {
       audioElement.removeEventListener("timeupdate", handleTimeUpdate);
       audioElement.removeEventListener("loadedmetadata", handleLoadedMetadata);
+      audioElement.removeEventListener("play", handlePlay);
+      audioElement.removeEventListener("pause", handlePause);
       audioElement.removeEventListener("ended", handleEnded);
     };
   }, []);
@@ -78,9 +96,6 @@ export default function PersistentMusicPlayer() {
     if (audio.paused) {
       try {
         await audio.play();
-        setIsPlaying(true);
-        setIsExpanded(true);
-        setPlaybackMessage("Now playing. Playback stays under your control.");
       } catch {
         setIsPlaying(false);
         setPlaybackMessage("Playback was blocked. Press play again to start.");
@@ -89,8 +104,6 @@ export default function PersistentMusicPlayer() {
     }
 
     audio.pause();
-    setIsPlaying(false);
-    setPlaybackMessage("Paused.");
   }
 
   return (
