@@ -235,6 +235,38 @@ export const chapterOnePages: NovelPage[] = [
       "He wrote moisture history in the margin, then crossed it out. The phrase felt too certain for a house that had not yet decided what it wanted to admit.",
     ],
   },
+  {
+    chapterSlug: chapterOneSlug,
+    chapterTitle: chapterOneTitle,
+    number: "007",
+    slug: "page-007",
+    title: "Out of Level",
+    path: pagePath("007"),
+    status: "ready_for_review",
+    description:
+      "A closer measurement turns the hallway mark from old water damage into something that refuses the ordinary rules of a house.",
+    seoDescription:
+      "Read page 007, Out of Level, from Chapter One - Ballast in the What the Town Keeps visual novel archive.",
+    excerpt:
+      "The line was not level. It only wanted to look that way from the front door.",
+    image: {
+      alt: "Elias Vale holding a small level against the boarding house hallway wall beneath the pale waterline",
+      prompt:
+        "A prompt-first cinematic graphic novel still of Elias Vale in an old boarding house hallway, holding a small brass level against plaster beneath a pale waterline, coat hook and framed print nearby, radiator heat haze, rain-muted light, grounded inspection realism, restrained supernatural unease, no fantasy styling.",
+    },
+    narration: [
+      "He took the small level from his bag almost to prove the house could still be handled with tools.",
+      "Set against the plaster, the bubble should have settled the question. Instead it drifted a fraction as he moved along the wall, not enough to show structural failure, only enough to make the mark strange in a way numbers could not cleanly hold.",
+      "The line was not level. It only wanted to look that way from the front door. Near the narrow table it climbed. At the coat hook it dipped. By the trim it recovered itself, as if the water had changed its mind room by room.",
+      "Elias wrote inconsistent flood line, then stood listening to the radiator knock once in the back room. He looked down the hallway again and had the uneasy sense that the house had not preserved a past event at all. It had revised one.",
+    ],
+    facebookCaptionDraft:
+      "Page 007, Out of Level, pushes Elias one step deeper into the boarding house. A water mark should answer to gravity. This one answers to the room. Review draft only.",
+    reelsCaptionDraft:
+      "Page 007: Out of Level. Elias checks the line. The house changes the measurement. Review-only draft from What the Town Keeps.",
+    supportCtaDraft:
+      "If you want the next page, song, and Vallen still to keep moving, support helps me fund the work without rushing it.",
+  },
 ];
 
 export const novelChapters: NovelChapter[] = [
@@ -335,4 +367,3 @@ export function getNovelStatusLabel(status: NovelPageStatus) {
       return status satisfies never;
   }
 }
-
