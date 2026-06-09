@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
+import { AudioProvider } from "./components/AudioCoordinator";
 import DispatchSignup from "./components/DispatchSignup";
 import PersistentMusicPlayer from "./components/PersistentMusicPlayer";
 import SiteHeader from "./components/SiteHeader";
@@ -216,11 +217,13 @@ export default function RootLayout({
             __html: JSON.stringify(structuredData),
           }}
         />
-        <SiteHeader />
-        <div id="main-content" tabIndex={-1}>
-          {children}
-        </div>
-        <PersistentMusicPlayer />
+        <AudioProvider>
+          <SiteHeader />
+          <div id="main-content" tabIndex={-1}>
+            {children}
+          </div>
+          <PersistentMusicPlayer />
+        </AudioProvider>
         <DispatchSignup />
         <SiteFooter />
       </body>
