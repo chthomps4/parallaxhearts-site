@@ -2,12 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { absoluteUrl, defaultKeywords } from "../lib/seo";
+import { getStoryAsset } from "../lib/story-assets";
 
 const pageTitle = "Visuals | What the Town Keeps";
 const pageDescription =
   "A visual archive for What the Town Keeps: Vallen imagery, graphic novel atmosphere, album-world stills, and rain-soaked cinematic scenes.";
 const pageUrl = absoluteUrl("/visuals");
-const previewImage = absoluteUrl("/images/story-world.jpg");
+const visualsHeroAsset = getStoryAsset("story-world");
+const previewImage = absoluteUrl(visualsHeroAsset.src);
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -31,8 +33,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: previewImage,
-        width: 1200,
-        height: 630,
+        width: visualsHeroAsset.width,
+        height: visualsHeroAsset.height,
         alt: "What the Town Keeps visual archive",
       },
     ],
@@ -51,7 +53,7 @@ const visualCards = [
   {
     title: "Vallen atmosphere",
     text: "Rain, rail lines, warm windows, old rooms, dusk streets, and the weathered surfaces that carry the story world.",
-    image: "/images/hero.jpg",
+    asset: getStoryAsset("hero-vallen-arrival"),
     alt: "Rainy Vallen atmosphere from What the Town Keeps",
     href: "/story",
     label: "Enter the story world",
@@ -59,7 +61,7 @@ const visualCards = [
   {
     title: "Graphic novel panels",
     text: "The visual-novel side of What the Town Keeps, beginning with Chapter One — Ballast.",
-    image: "/images/graphic-novel-hub.jpg",
+    asset: getStoryAsset("graphic-novel-hub"),
     alt: "Graphic novel atmosphere for What the Town Keeps",
     href: "/graphic-novel",
     label: "Open the graphic novel",
@@ -67,7 +69,7 @@ const visualCards = [
   {
     title: "Music-world imagery",
     text: "Images connected to the album, lyrics, reels, support posts, and the cinematic language around Parallax Hearts.",
-    image: "/images/story-world.jpg",
+    asset: getStoryAsset("story-world"),
     alt: "Parallax Hearts music-world image archive",
     href: "/music",
     label: "Listen to the album",
@@ -91,8 +93,8 @@ export default function VisualsPage() {
             }}
           >
             <Image
-              src="/images/story-world.jpg"
-              alt="What the Town Keeps visual archive hero"
+              src={visualsHeroAsset.src}
+              alt={visualsHeroAsset.alt}
               fill
               priority
               sizes="(max-width: 980px) 100vw, 1180px"
@@ -174,7 +176,7 @@ export default function VisualsPage() {
               >
                 <div style={{ position: "relative", minHeight: "260px" }}>
                   <Image
-                    src={card.image}
+                    src={card.asset.src}
                     alt={card.alt}
                     fill
                     sizes="(max-width: 900px) 100vw, 33vw"
