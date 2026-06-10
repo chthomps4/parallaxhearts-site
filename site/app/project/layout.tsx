@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { absoluteUrl, defaultKeywords } from "../lib/seo";
+import JsonLd from "../components/JsonLd";
+import { absoluteUrl, breadcrumbSchema, defaultKeywords } from "../lib/seo";
 
 const pageTitle = "What the Town Keeps | Parallax Hearts";
 const pageDescription =
@@ -45,6 +46,31 @@ export const metadata: Metadata = {
   },
 };
 
+const projectSchema = {
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "@id": `${pageUrl}#story`,
+  name: "What the Town Keeps",
+  url: pageUrl,
+  image: previewImage,
+  description: pageDescription,
+  creator: {
+    "@type": "MusicGroup",
+    name: "Parallax Hearts",
+    url: absoluteUrl("/"),
+  },
+};
+
+const pageBreadcrumbSchema = breadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "What the Town Keeps", path: "/project" },
+]);
+
 export default function ProjectLayout({ children }: { children: React.ReactNode }) {
-  return children;
+  return (
+    <>
+      <JsonLd data={[projectSchema, pageBreadcrumbSchema]} />
+      {children}
+    </>
+  );
 }

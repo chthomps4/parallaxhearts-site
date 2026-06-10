@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import JsonLd from "../../../components/JsonLd";
 import NovelPageView from "../../../components/NovelPageView";
-import { SITE_URL } from "../../../lib/seo";
+import { breadcrumbSchema, creativeWorkSchema, SITE_URL } from "../../../lib/seo";
 import {
   getNovelChapter,
   getNovelPage,
@@ -85,6 +86,25 @@ export default async function GraphicNovelPageRoute({ params }: PageProps) {
   }
 
   const neighbors = getNovelPageNeighbors(chapterSlug, pageSlug);
+  const pageJsonLd = [
+    breadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Graphic Novel", path: "/graphic-novel" },
+      { name: chapter.title, path: chapter.path },
+      { name: page.title, path: page.path },
+    ]),
+    creativeWorkSchema({
+      name: page.title,
+      description: page.seoDescription,
+      path: page.path,
+      image: page.image.src,
+    }),
+  ];
 
-  return <NovelPageView chapter={chapter} page={page} {...neighbors} />;
+  return (
+    <>
+      <JsonLd data={pageJsonLd} />
+      <NovelPageView chapter={chapter} page={page} {...neighbors} />
+    </>
+  );
 }

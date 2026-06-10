@@ -165,7 +165,7 @@ export const storyAssets = {
     height: 1024,
     alt: "What the Town Keeps visual archive hero",
     caption: "Story-world image for Vallen, project context, and visual archive routes.",
-    routeTargets: ["/story", "/project", "/visuals"],
+    routeTargets: ["/project", "/visuals"],
     chapterCue: "Town-wide Vallen archive",
     isDecorative: false,
     priority: "primary",

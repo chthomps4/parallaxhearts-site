@@ -55,7 +55,7 @@ const visualCards = [
     text: "Rain, rail lines, warm windows, old rooms, dusk streets, and the weathered surfaces that carry the story world.",
     asset: getStoryAsset("hero-vallen-arrival"),
     alt: "Rainy Vallen atmosphere from What the Town Keeps",
-    href: "/story",
+    href: "/project",
     label: "Enter the story world",
   },
   {

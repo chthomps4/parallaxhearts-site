@@ -6,8 +6,14 @@ import {
   RegisteredNativeAudio,
   SoundCloudExclusiveEmbed,
 } from "../components/AudioCoordinator";
+import JsonLd from "../components/JsonLd";
 import SiteHeader from "../components/SiteHeader";
-import { absoluteUrl, defaultKeywords } from "../lib/seo";
+import {
+  absoluteUrl,
+  breadcrumbSchema,
+  defaultKeywords,
+  musicAlbumSchema,
+} from "../lib/seo";
 import { getStoryAsset } from "../lib/story-assets";
 import { getPublicSoundtrackTracks } from "../lib/music/what-the-town-keeps";
 
@@ -83,9 +89,17 @@ const musicPaths = [
 
 export default function MusicPage() {
   const tracks = getPublicSoundtrackTracks();
+  const musicJsonLd = [
+    breadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Music", path: "/music" },
+    ]),
+    musicAlbumSchema(tracks),
+  ];
 
   return (
     <main className="site-shell">
+      <JsonLd data={musicJsonLd} />
       <SiteHeader active="Listen" />
 
       <section style={{ padding: "54px 0 34px" }}>

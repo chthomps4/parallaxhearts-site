@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import ChapterSoundtrackCta from "../components/ChapterSoundtrackCta";
-import { SITE_URL } from "../lib/seo";
+import JsonLd from "../components/JsonLd";
+import { breadcrumbSchema, creativeWorkSchema, SITE_URL } from "../lib/seo";
 import {
   getLatestLiveNovelPage,
   getLiveNovelPages,
@@ -76,9 +77,23 @@ export default function GraphicNovelLandingPage() {
       eyebrow: "Index",
     },
   ];
+  const graphicNovelJsonLd = [
+    breadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Graphic Novel", path: "/graphic-novel" },
+    ]),
+    creativeWorkSchema({
+      name: "What the Town Keeps",
+      description:
+        "A cinematic visual novel and illustrated story archive about Elias Vale, Vallen, and the houses that remember.",
+      path: "/graphic-novel",
+      image: latestPage.image.src,
+    }),
+  ];
 
   return (
     <main className="novel-shell">
+      <JsonLd data={graphicNovelJsonLd} />
       <section className="novel-container novel-hero">
         <div className="novel-hero-copy">
           <p className="novel-kicker">

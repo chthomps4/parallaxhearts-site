@@ -57,7 +57,7 @@ export const whatTheTownKeepsTracks: SoundtrackTrack[] = [
     chapter: "Vallen thread",
     connection:
       "Distance measured in rooms, roads, silences, and what someone cannot say yet.",
-    href: "/story",
+    href: "/project",
     audioSrc: `${audioBase}/measured-distance.mp3`,
     sourceNote: "Final edits MP3 master.",
     status: "published",
@@ -93,7 +93,7 @@ export const whatTheTownKeepsTracks: SoundtrackTrack[] = [
     chapter: "Vallen thread",
     connection:
       "Two paths appearing to meet while carrying incompatible histories.",
-    href: "/story",
+    href: "/project",
     audioSrc: `${audioBase}/convergent-error.mp3`,
     sourceNote: "Final edits MP3 master.",
     status: "published",
@@ -105,7 +105,7 @@ export const whatTheTownKeepsTracks: SoundtrackTrack[] = [
     chapter: "Warning thread",
     connection:
       "Warning, attraction, and the moment a boundary becomes difficult to obey.",
-    href: "/story",
+    href: "/project",
     audioSrc: `${audioBase}/red-signals.mp3`,
     sourceNote: "Final edits MP3 master.",
     status: "published",
@@ -129,7 +129,7 @@ export const whatTheTownKeepsTracks: SoundtrackTrack[] = [
     chapter: "Closing thread",
     connection:
       "After departure, something in the town still keeps its shape.",
-    href: "/story",
+    href: "/project",
     audioSrc: `${audioBase}/what-remains.mp3`,
     sourceNote: "Final edits MP3 master.",
     status: "published",
