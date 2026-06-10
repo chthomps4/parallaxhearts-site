@@ -11,7 +11,7 @@ const identityCards = [
   {
     title: "What the Town Keeps",
     text: "The album and story world set in Vallen: rain, rail lines, old houses, memory, distance, and what people leave unsaid.",
-    href: "/story",
+    href: "/project",
     label: "Story",
   },
   {
@@ -125,7 +125,7 @@ export default function AboutPage() {
                     Read
                   </Link>
 
-                  <Link href="/story" className="secondary-button">
+                  <Link href="/project" className="secondary-button">
                     Story World
                   </Link>
                 </div>

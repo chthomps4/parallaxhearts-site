@@ -4,7 +4,7 @@ import { absoluteUrl, breadcrumbSchema, defaultKeywords } from "../lib/seo";
 const pageTitle = "What the Town Keeps | Parallax Hearts";
 const pageDescription =
   "Enter What the Town Keeps by Parallax Hearts — the album, story world, visual novel archive, and rainy small-town world of Vallen.";
-const pageUrl = absoluteUrl("/story");
+const pageUrl = absoluteUrl("/project");
 const previewImage = absoluteUrl("/images/story-world.jpg");
 
 export const metadata: Metadata = {
@@ -62,7 +62,7 @@ const storySchema = {
 
 const pageBreadcrumbSchema = breadcrumbSchema([
   { name: "Home", path: "/" },
-  { name: "What the Town Keeps", path: "/story" },
+  { name: "What the Town Keeps", path: "/project" },
 ]);
 
 export default function StoryLayout({ children }: { children: React.ReactNode }) {

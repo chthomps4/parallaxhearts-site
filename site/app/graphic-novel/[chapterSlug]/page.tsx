@@ -3,7 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ChapterSoundtrackCta from "../../components/ChapterSoundtrackCta";
-import { SITE_URL } from "../../lib/seo";
+import JsonLd from "../../components/JsonLd";
+import { breadcrumbSchema, creativeWorkSchema, SITE_URL } from "../../lib/seo";
 import {
   getNovelChapter,
   getNovelChaptersForCurrentEnvironment,
@@ -70,9 +71,23 @@ export default async function ChapterRoute({ params }: PageProps) {
 
   const latestPage = pages.at(-1);
   const firstPage = pages[0];
+  const chapterJsonLd = [
+    breadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "Graphic Novel", path: "/graphic-novel" },
+      { name: chapter.title, path: chapter.path },
+    ]),
+    creativeWorkSchema({
+      name: chapter.title,
+      description: chapter.description,
+      path: chapter.path,
+      image: latestPage?.image.src,
+    }),
+  ];
 
   return (
     <main className="novel-shell">
+      <JsonLd data={chapterJsonLd} />
       <section className="novel-container novel-chapter">
         <Link
           href="/graphic-novel"

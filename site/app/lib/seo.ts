@@ -139,3 +139,73 @@ export function breadcrumbSchema(items: { name: string; path: string }[]) {
     })),
   };
 }
+
+export function creativeWorkSchema({
+  name,
+  description,
+  path,
+  image,
+}: {
+  name: string;
+  description: string;
+  path: string;
+  image?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name,
+    description,
+    url: absoluteUrl(path),
+    isPartOf: {
+      "@type": "CreativeWork",
+      name: "What the Town Keeps",
+      url: absoluteUrl("/graphic-novel"),
+    },
+    creator: {
+      "@type": "MusicGroup",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    ...(image ? { image: absoluteUrl(image) } : {}),
+  };
+}
+
+export function musicAlbumSchema(
+  tracks: {
+    title: string;
+    href: string;
+    connection: string;
+    audioSrc?: string;
+  }[]
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "MusicAlbum",
+    name: "What the Town Keeps",
+    url: absoluteUrl("/music"),
+    image: absoluteUrl("/images/music-listen.jpg"),
+    byArtist: {
+      "@type": "MusicGroup",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    track: tracks.map((track, index) => ({
+      "@type": "MusicRecording",
+      position: index + 1,
+      name: track.title,
+      description: track.connection,
+      url: absoluteUrl(track.href),
+      byArtist: {
+        "@type": "MusicGroup",
+        name: SITE_NAME,
+        url: SITE_URL,
+      },
+      inAlbum: {
+        "@type": "MusicAlbum",
+        name: "What the Town Keeps",
+      },
+      ...(track.audioSrc ? { audio: absoluteUrl(track.audioSrc) } : {}),
+    })),
+  };
+}

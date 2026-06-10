@@ -5,7 +5,8 @@ import { getLiveNovelPages } from "./lib/novel/chapter-one";
 const staticRoutes = [
   { path: "/", priority: 1, changeFrequency: "weekly" as const },
   { path: "/music", priority: 0.92, changeFrequency: "weekly" as const },
-  { path: "/story", priority: 0.9, changeFrequency: "weekly" as const },
+  { path: "/project", priority: 0.9, changeFrequency: "weekly" as const },
+  { path: "/visuals", priority: 0.82, changeFrequency: "monthly" as const },
   { path: "/graphic-novel", priority: 0.94, changeFrequency: "weekly" as const },
   { path: "/graphic-novel/chapter-one", priority: 0.93, changeFrequency: "weekly" as const },
   { path: "/support", priority: 0.85, changeFrequency: "monthly" as const },
