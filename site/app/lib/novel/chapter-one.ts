@@ -268,6 +268,39 @@ export const chapterOnePages: NovelPage[] = [
     supportCtaDraft:
       "If this page lands, support helps fund the next illustrated page, the Ballast soundtrack work, and more time in Vallen.",
   },
+  {
+    chapterSlug: chapterOneSlug,
+    chapterTitle: chapterOneTitle,
+    number: "008",
+    slug: "page-008",
+    title: "The Level",
+    path: pagePath("008"),
+    status: "ready_for_review",
+    description:
+      "Elias checks the marks against the slope of the house and finds the record holding truer than the floor beneath it.",
+    seoDescription:
+      "Read page 008, The Level, from Chapter One - Ballast in the What the Town Keeps visual novel archive.",
+    excerpt:
+      "The floor was falling toward the street. The mark was not.",
+    image: {
+      alt: "Elias Vale holding a torpedo level against penciled marks on the boarding house door jamb",
+      prompt:
+        "A restrained cinematic graphic novel realism still of Elias Vale in a dim boarding house doorway pressing a yellow torpedo level against faint pencil marks on an old painted door jamb, warped floorboards sloping toward the street, pale hallway waterline meeting the trim, clipboard tucked under one arm, rain-muted kitchen light, grounded inspection detail, quiet supernatural unease, no fantasy styling.",
+    },
+    narration: [
+      "Elias took the torpedo level from his bag and set it across the highest pencil mark.",
+      "The bubble settled dead center. He checked again lower on the trim, then on the threshold itself. The old floorboards tipped toward the street by nearly half an inch over four feet, a kind of settlement he had seen in a hundred tired houses. The jamb marks, though, kept their line without yielding to the drift around them.",
+      "He stepped back into the hall and sighted the pale seam in the plaster against the brass edge of the level. Same height. Same stubborn truth. Whatever had been recorded here had not followed the house as it moved.",
+      "A radiator knocked once in the next room. Then once more, softer, like an answer arriving after thought.",
+      "He wrote floor out of level; reference line remains true and stared at the words until they felt less like notes than testimony.",
+    ],
+    facebookCaptionDraft:
+      "Page 008 of What the Town Keeps is in review: The Level. Elias checks the jamb marks with a torpedo level and learns the old floor is drifting while the record in the trim stays true. Review-only page, prompt-first artwork still pending.",
+    reelsCaptionDraft:
+      "Page 008 draft. The floor slopes. The line does not. Elias finally puts a level on what the house has been keeping. #WhatTheTownKeeps #GraphicNovel #ParallaxHearts",
+    supportCtaDraft:
+      "If this page holds, support helps fund the next reviewed illustration, the Ballast score, and more time following the evidence through Vallen.",
+  },
 ];
 
 export const novelChapters: NovelChapter[] = [
