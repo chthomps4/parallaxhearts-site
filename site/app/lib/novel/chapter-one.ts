@@ -235,6 +235,39 @@ export const chapterOnePages: NovelPage[] = [
       "He wrote moisture history in the margin, then crossed it out. The phrase felt too certain for a house that had not yet decided what it wanted to admit.",
     ],
   },
+  {
+    chapterSlug: chapterOneSlug,
+    chapterTitle: chapterOneTitle,
+    number: "007",
+    slug: "page-007",
+    title: "The Bend in It",
+    path: pagePath("007"),
+    status: "ready_for_review",
+    description:
+      "The waterline reaches the stair hall and lifts where no flood should have climbed.",
+    seoDescription:
+      "Read page 007, The Bend in It, from Chapter One - Ballast in the What the Town Keeps visual novel archive.",
+    excerpt:
+      "At the foot of the stairs, the mark stopped behaving like a mark.",
+    image: {
+      alt: "Elias Vale studying a waterline that bends upward beside the boarding house stairs",
+      prompt:
+        "A restrained cinematic graphic novel interior at the foot of an old boarding house staircase, Elias Vale crouched with clipboard and flashlight studying a pale waterline in plaster that runs level through the hall then bends upward beside the stair trim, radiator shadows, rain-muted light through distant glass, grounded inspection realism, quiet supernatural unease, no stylization excess.",
+    },
+    narration: [
+      "The line kept its height until the stair hall.",
+      "There it crossed the plaster cleanly, reached the newel post, and turned upward beside the trim in a slow pale rise, as if the water had changed its mind and chosen to climb instead of settle.",
+      "Elias stood, moved closer, and put the flashlight across it at an angle. No blistering. No chalking. No soft edge where the paint had lifted. The wall was dry, sound, and wrong in a way his report did not have a box for.",
+      "He set two fingers against the mark near the baseboard, then higher where it bent toward the first stair tread. Same texture. Same temperature. Not a stain spreading from damage, but a record keeping to its own shape.",
+      "At the foot of the stairs, the house stopped looking merely neglected. It looked organized.",
+    ],
+    facebookCaptionDraft:
+      "Page 007 of What the Town Keeps is in review: The Bend in It. Elias follows a clean waterline to the stairs and finds it turning upward where no flood should have climbed. Review-only draft, prompt-first artwork still pending.",
+    reelsCaptionDraft:
+      "Page 007 draft. A waterline runs level through the hall, then lifts beside the stairs. Vallen keeps records in plaster. #WhatTheTownKeeps #GraphicNovel #ParallaxHearts",
+    supportCtaDraft:
+      "If this page lands, support helps fund the reviewed artwork, soundtrack, and the next inspection deeper into Vallen.",
+  },
 ];
 
 export const novelChapters: NovelChapter[] = [
