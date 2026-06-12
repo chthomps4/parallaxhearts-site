@@ -301,6 +301,39 @@ export const chapterOnePages: NovelPage[] = [
     supportCtaDraft:
       "If this page holds, support helps fund the next reviewed illustration, the Ballast score, and more time following the evidence through Vallen.",
   },
+  {
+    chapterSlug: chapterOneSlug,
+    chapterTitle: chapterOneTitle,
+    number: "009",
+    slug: "page-009",
+    title: "Past the Threshold",
+    path: pagePath("009"),
+    status: "ready_for_review",
+    description:
+      "Elias opens the kitchen door and finds the same pale line continuing into the next room as if the house has been keeping one level record all along.",
+    seoDescription:
+      "Read page 009, Past the Threshold, from Chapter One - Ballast in the What the Town Keeps visual novel archive.",
+    excerpt: "It had crossed the threshold before he did.",
+    image: {
+      alt: "Elias Vale opening the kitchen door to reveal a pale line continuing across the boarding house kitchen wall",
+      prompt:
+        "A restrained cinematic graphic novel realism still of Elias Vale opening an old kitchen door inside a dim boarding house, pale waterline continuing across the kitchen wall at a fixed height, enamel sink under a rain-muted window, built-in shelf, warped threshold, clipboard in hand, warm radiator shadows, grounded inspection detail, quiet supernatural unease, no fantasy styling.",
+    },
+    narration: [
+      "He thumbed the latch and pushed at the kitchen door.",
+      "It dragged once across the threshold, then gave inward with a slow swing. The floor's slope explained part of that. The rest was the old-house reluctance he knew too well, wood swollen by years, hinges carrying more memory than grease.",
+      "Beyond it, the kitchen was narrow and clean in the exhausted way of places still being used after they should have been let alone. Enamel cabinets. A sink under gray window light. Two cups turned upside down on a dish towel beside the drainboard.",
+      "The pale seam continued on the far wall at the same height. It passed beneath the window casing, behind a calendar curled at one corner, and across the edge of a built-in shelf without climbing or falling to match the room around it.",
+      "Elias crossed to the sink and touched the paint again. Dry. Flat. No bloom in the plaster. No softened paper border above the basin. Only the line, keeping level through a house that had failed to keep anything else square.",
+      "He wrote reference line continues through kitchen, then underlined continues once before setting the pencil down. A continuation implied a first event. So far, the house had offered only records.",
+    ],
+    facebookCaptionDraft:
+      "Page 009 of What the Town Keeps is drafted for review: Past the Threshold. Elias opens the kitchen door and realizes the line in the hall has already crossed into the next room. Review-only page, prompt-first art still pending.",
+    reelsCaptionDraft:
+      "Page 009 draft. He opens the kitchen door and the line is already waiting on the other side. #WhatTheTownKeeps #GraphicNovel #ParallaxHearts",
+    supportCtaDraft:
+      "If this page lands, support helps fund the next reviewed illustration, more Ballast soundtrack work, and the next careful pass through Vallen.",
+  },
 ];
 
 export const novelChapters: NovelChapter[] = [
