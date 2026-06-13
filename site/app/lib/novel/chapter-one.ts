@@ -235,6 +235,38 @@ export const chapterOnePages: NovelPage[] = [
       "He wrote moisture history in the margin, then crossed it out. The phrase felt too certain for a house that had not yet decided what it wanted to admit.",
     ],
   },
+  {
+    chapterSlug: chapterOneSlug,
+    chapterTitle: chapterOneTitle,
+    number: "007",
+    slug: "page-007",
+    title: "Level",
+    path: pagePath("007"),
+    status: "ready_for_review",
+    description:
+      "Elias puts a level to the hallway seam and finds the line keeps truer than the house around it.",
+    seoDescription:
+      "Read page 007, Level, from Chapter One - Ballast in the What the Town Keeps visual novel archive.",
+    excerpt:
+      "The mark held straight where the house itself had long since given up the effort.",
+    image: {
+      alt: "Elias Vale holding a small spirit level against the hallway waterline in the boarding house",
+      prompt:
+        "A restrained cinematic graphic novel realism scene inside an old boarding house hallway, Elias Vale pressing a small brass spirit level against a pale waterline on cracked plaster, uneven floorboards, warm radiator light, damp shadows, grounded inspection detail, quiet supernatural unease, no fantasy styling.",
+    },
+    narration: [
+      "Elias set his bag down and took out the small spirit level he used for door frames and sinking landings.",
+      "He held it against the pale seam in the plaster. The bubble settled almost perfectly between the lines. He moved six inches to the left, then a foot to the right. Each time, the mark held straight where the house itself had long since given up the effort.",
+      "The floor dipped toward the porch. He had felt it when he came in. The trim at the far door had opened at the miters. Even the coat hook leaned a little from years of plaster drift. But the line remained level, patient and exact, as if it had chosen its own horizon.",
+      "He wrote hallway wall line reads level across settled structure, then stood looking at the sentence. It was the kind of note that made sense on paper and nowhere else.",
+    ],
+    facebookCaptionDraft:
+      "Page 007 of What the Town Keeps is in review: Elias checks the hallway mark with a level and gets the kind of answer a house should not give. Quiet, practical, and wrong in exactly the right way.",
+    reelsCaptionDraft:
+      "Page 007 draft. A warped hallway. A level line. Elias keeps measuring anyway. #WhattheTownKeeps #GraphicNovel #ParallaxHearts",
+    supportCtaDraft:
+      "If you want to support more pages of What the Town Keeps, follow the chapter and keep an eye on the next review drop.",
+  },
 ];
 
 export const novelChapters: NovelChapter[] = [
