@@ -334,6 +334,39 @@ export const chapterOnePages: NovelPage[] = [
     supportCtaDraft:
       "If this page lands, support helps fund the next reviewed illustration, more Ballast soundtrack work, and the next careful pass through Vallen.",
   },
+  {
+    chapterSlug: chapterOneSlug,
+    chapterTitle: chapterOneTitle,
+    number: "010",
+    slug: "page-010",
+    title: "Behind the Calendar",
+    path: pagePath("010"),
+    status: "ready_for_review",
+    description:
+      "Elias lifts the curled kitchen calendar and finds the pale line continuing behind the paper, older than the month that was supposed to cover it.",
+    seoDescription:
+      "Read page 010, Behind the Calendar, from Chapter One - Ballast in the What the Town Keeps visual novel archive.",
+    excerpt:
+      "The paper had been hung to mark time. The wall behind it had kept a different record.",
+    image: {
+      alt: "Elias Vale lifting a curled kitchen calendar to reveal a pale line continuing across the wall behind it",
+      prompt:
+        "A restrained cinematic graphic novel realism still of Elias Vale in a dim boarding house kitchen lifting the curled corner of an old wall calendar, revealing a pale level line continuing across older paint behind the paper, enamel sink under gray rain-muted window light, built-in shelf, clipboard on drainboard, warm radiator shadows, grounded inspection detail, quiet supernatural unease, no fantasy styling.",
+    },
+    narration: [
+      "He set the clipboard beside the sink and reached for the calendar.",
+      "It was fixed to the wall with a brass tack and one strip of yellowed tape that had given up along the bottom edge. June showed at the front, but beneath it he could see the corners of older pages left in place, months stacked thin against the plaster instead of torn away clean.",
+      "Elias lifted the curl carefully and held it back with two fingers. The pale seam continued underneath without interruption, crossing older paint and the faint square of a picture that must have hung there before the calendar. It did not deepen in the protected patch. It did not fade. It simply kept going.",
+      "He touched the wall where the paper had covered it longest. Dry again. Cool, but no cooler than the rest of the room. A line preserved was still a line, which ought to have made this easier.",
+      "He wrote reference line predates calendar placement, then added older than visible room condition beneath it. The second sentence felt closer to the truth, though truth was becoming an awkward measurement inside this house.",
+    ],
+    facebookCaptionDraft:
+      "Page 010 of What the Town Keeps is drafted for review: Behind the Calendar. Elias lifts a curled kitchen calendar and finds the line continuing behind the paper, older than the room's latest attempt to cover it. Review-only page, prompt-first art still pending.",
+    reelsCaptionDraft:
+      "Page 010 draft. He peels back the calendar and the line is still there, older than the month on the wall. #WhatTheTownKeeps #GraphicNovel #ParallaxHearts",
+    supportCtaDraft:
+      "If this page lands, support helps fund the next reviewed illustration, more of the Ballast score, and the slow work of following Vallen room by room.",
+  },
 ];
 
 export const novelChapters: NovelChapter[] = [
