@@ -367,6 +367,39 @@ export const chapterOnePages: NovelPage[] = [
     supportCtaDraft:
       "If this page lands, support helps fund the next reviewed illustration, more of the Ballast score, and the slow work of following Vallen room by room.",
   },
+  {
+    chapterSlug: chapterOneSlug,
+    chapterTitle: chapterOneTitle,
+    number: "011",
+    slug: "page-011",
+    title: "The Backboard",
+    path: pagePath("011"),
+    status: "ready_for_review",
+    description:
+      "Elias opens the built-in shelf and finds the pale line continuing across the backboard behind stacked dishes, untouched by the years in front of it.",
+    seoDescription:
+      "Read page 011, The Backboard, from Chapter One - Ballast in the What the Town Keeps visual novel archive.",
+    excerpt:
+      "Even where the plates had rested for years, the line refused to break.",
+    image: {
+      alt: "Elias Vale opening a built-in kitchen shelf to reveal a pale level line continuing across the backboard behind stacked dishes",
+      prompt:
+        "A restrained cinematic graphic novel realism still of Elias Vale in a dim old boarding house kitchen opening a built-in shelf beside an enamel sink, revealing a pale level line continuing across the cupboard backboard behind stacked white dishes and chipped cups, gray rain-muted window light, clipboard on the drainboard, warm radiator shadows, grounded inspection detail, quiet supernatural unease, no fantasy styling.",
+    },
+    narration: [
+      "The built-in shelf stood to the right of the sink, its painted door hanging half a degree off square.",
+      "Elias set two fingers under the latch and pulled. The hinge complained softly. Inside sat three stacks of white plates, two chipped cups, and a jar of loose tea gone dull behind the glass. The kitchen smell changed when the door opened: dust, old wood, and the shut-in dryness of things left in place too long.",
+      "The pale seam crossed the backboard behind the dishes at the same height it had held on the plaster. It ran through a clean stripe where the upper plates had shielded the paint from light, then passed into the darker exposed surface without brightening or fading. Even where the room had arranged objects in front of it for years, the line refused to break.",
+      "He lifted one plate stack carefully and checked the wall behind it. Dry. Flat. No residue on his thumb. The backboard was thin pine paneling, fixed with cut nails and bowed slightly at the center, but the mark ignored the bow the way it had ignored the settling floor.",
+      "He wrote line continues behind stored dishes, then added protected surfaces unchanged. The second note looked clinical enough until he read it back and understood it meant the house had been keeping record in places no one had been watching.",
+    ],
+    facebookCaptionDraft:
+      "Page 011 of What the Town Keeps is drafted for review: The Backboard. Elias opens the built-in kitchen shelf and finds the pale line still running behind stacked dishes, unchanged by the years in front of it. Review-only page, prompt-first art still pending.",
+    reelsCaptionDraft:
+      "Page 011 draft. He opens the shelf and the line is waiting behind the dishes. #WhatTheTownKeeps #GraphicNovel #ParallaxHearts",
+    supportCtaDraft:
+      "If this page lands, support helps fund the next reviewed illustration, more of the Ballast score, and the patient work of following the record deeper into Vallen.",
+  },
 ];
 
 export const novelChapters: NovelChapter[] = [
