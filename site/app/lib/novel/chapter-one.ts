@@ -400,6 +400,39 @@ export const chapterOnePages: NovelPage[] = [
     supportCtaDraft:
       "If this page lands, support helps fund the next reviewed illustration, more of the Ballast score, and the patient work of following the record deeper into Vallen.",
   },
+  {
+    chapterSlug: chapterOneSlug,
+    chapterTitle: chapterOneTitle,
+    number: "012",
+    slug: "page-012",
+    title: "Under the Sink",
+    path: pagePath("012"),
+    status: "ready_for_review",
+    description:
+      "Elias opens the sink cabinet and finds the pale line continuing across the back panel, passing behind newer supply pipes without losing its level.",
+    seoDescription:
+      "Read page 012, Under the Sink, from Chapter One - Ballast in the What the Town Keeps visual novel archive.",
+    excerpt:
+      "The pipes were newer than the cabinet. The line behaved as if they had arrived late.",
+    image: {
+      alt: "Elias Vale kneeling at the boarding house sink cabinet while a pale line continues across the back panel behind copper supply pipes",
+      prompt:
+        "A restrained cinematic graphic novel realism still of Elias Vale kneeling in a dim old boarding house kitchen with the cabinet doors open beneath an enamel sink, revealing a pale level line across the back panel passing behind copper supply pipes and shutoff valves, gray rain-muted window light, clipboard on worn linoleum, warm radiator shadows, grounded inspection detail, quiet supernatural unease, no fantasy styling.",
+    },
+    narration: [
+      "He set the plates back exactly as he had found them and crouched to open the cabinet beneath the sink.",
+      "The hinges were looser here. One door sagged before it cleared the frame, then knocked softly against his knee. Inside, the cabinet smelled of old soap, iron, and wood that had spent years expecting a leak. A galvanized trap curved down from the basin. Two copper supply lines rose through the floor, each fitted with a shutoff valve newer than the paint around it.",
+      "The pale seam crossed the cabinet back at the same height as the shelf above, then disappeared behind the copper risers and returned on the other side without shift or blur. It did not bend around the fittings. It did not break where the pipes interrupted the panel. It simply held its place, as if the plumbing had been installed afterward and the line had declined to notice.",
+      "Elias pressed his thumb to the wood below the seam. Dry. He checked the cabinet floor for bloom, the valve bodies for fresh corrosion, the trap for active drip. Nothing. The usual evidence had failed to report for duty.",
+      "He wrote line passes behind newer supply hardware, then added no associated moisture failure. The second note steadied him for half a breath. After that it only made the cabinet look like one more place where the house had preserved an event without preserving its cause.",
+    ],
+    facebookCaptionDraft:
+      "Page 012 of What the Town Keeps is drafted for review: Under the Sink. Elias checks the cabinet below the basin and finds the pale line continuing behind newer supply pipes without losing its level. Review-only page, prompt-first art still pending.",
+    reelsCaptionDraft:
+      "Page 012 draft. He opens the sink cabinet and the line keeps going behind the pipes. #WhatTheTownKeeps #GraphicNovel #ParallaxHearts",
+    supportCtaDraft:
+      "If this page lands, support helps fund the next reviewed illustration, more of the Ballast score, and the careful work of following the record through the rest of the house.",
+  },
 ];
 
 export const novelChapters: NovelChapter[] = [
