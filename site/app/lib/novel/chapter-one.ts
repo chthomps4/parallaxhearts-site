@@ -433,6 +433,39 @@ export const chapterOnePages: NovelPage[] = [
     supportCtaDraft:
       "If this page lands, support helps fund the next reviewed illustration, more of the Ballast score, and the careful work of following the record through the rest of the house.",
   },
+  {
+    chapterSlug: chapterOneSlug,
+    chapterTitle: chapterOneTitle,
+    number: "013",
+    slug: "page-013",
+    title: "The Patch",
+    path: pagePath("013"),
+    status: "ready_for_review",
+    description:
+      "Behind the sink plumbing, Elias finds a cut patch set back into the cabinet wall, and the pale line crosses old board and newer repair as if both belonged to the same record.",
+    seoDescription:
+      "Read page 013, The Patch, from Chapter One - Ballast in the What the Town Keeps visual novel archive.",
+    excerpt:
+      "A repair was supposed to break the story the wall was telling. It did not.",
+    image: {
+      alt: "Elias Vale studying a patched cutout in the sink cabinet back panel while a pale line runs level across old wood and newer repair",
+      prompt:
+        "A restrained cinematic graphic novel realism still of Elias Vale kneeling beneath an enamel sink in a dim old boarding house kitchen, studying a neatly patched rectangular cutout in the cabinet back panel around copper supply pipes, a pale level line crossing both the older wood and the newer repair without shifting, gray rain-muted window light, worn linoleum, clipboard nearby, warm radiator shadows, grounded inspection detail, quiet supernatural unease, no fantasy styling.",
+    },
+    narration: [
+      "He leaned closer until the cabinet back filled his vision.",
+      "The panel had been cut once and repaired. He could see it now: a narrow rectangle let back around the newer plumbing, its edges scored by a finer blade than the rougher original opening beside the trap. Four bright screws held the patch in place where older cut nails fixed the rest of the cabinet. Somebody had opened the wall for access, then closed it carefully enough to pass in poor light.",
+      "The pale seam crossed the repair without hesitation. It ran over the older board, through the hairline joint at the patch edge, and across the newer piece at exactly the same height, never thickening, never fading, as if the cabinet had accepted both surfaces into one account.",
+      "Elias touched the screw heads, then the seam of the patch, then the wood below it. Dry every time. No staining around the penetrations. No spread from the supply lines. The repair belonged to plumbing work. The line belonged to something that had ignored the repair completely.",
+      "He wrote access patch installed after original cabinet; reference line remains continuous and sat back on his heels. In most houses, a repair interrupted the record. Here it only proved the record had outlasted another attempt to get behind the wall.",
+    ],
+    facebookCaptionDraft:
+      "Page 013 of What the Town Keeps is drafted for review: The Patch. Elias studies a sink-cabinet access repair and finds the pale line crossing old board and newer patch as if both were entered in the same record. Review-only page, prompt-first art still pending.",
+    reelsCaptionDraft:
+      "Page 013 draft. Even the repair patch can't interrupt the line. #WhatTheTownKeeps #GraphicNovel #ParallaxHearts",
+    supportCtaDraft:
+      "If this page lands, support helps fund the next reviewed illustration, more of the Ballast score, and the slow work of following Vallen's record wherever the house tries to hide it.",
+  },
 ];
 
 export const novelChapters: NovelChapter[] = [
