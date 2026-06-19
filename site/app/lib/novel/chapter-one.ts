@@ -466,6 +466,39 @@ export const chapterOnePages: NovelPage[] = [
     supportCtaDraft:
       "If this page lands, support helps fund the next reviewed illustration, more of the Ballast score, and the slow work of following Vallen's record wherever the house tries to hide it.",
   },
+  {
+    chapterSlug: chapterOneSlug,
+    chapterTitle: chapterOneTitle,
+    number: "014",
+    slug: "page-014",
+    title: "The Shutoff Tag",
+    path: pagePath("014"),
+    status: "ready_for_review",
+    description:
+      "Elias finds a paper service tag wired to the cold-water shutoff, and its dated ink makes the cabinet repair feel less like an answer than another entry.",
+    seoDescription:
+      "Read page 014, The Shutoff Tag, from Chapter One - Ballast in the What the Town Keeps visual novel archive.",
+    excerpt:
+      "A service tag was supposed to name work that had been done. This one only narrowed the silence around it.",
+    image: {
+      alt: "Elias Vale examining a paper service tag wired to a cold-water shutoff beneath the boarding house sink",
+      prompt:
+        "A restrained cinematic graphic novel realism still of Elias Vale kneeling under an enamel sink in a dim old boarding house kitchen, holding a small yellowed paper service tag wired to a cold-water shutoff valve, the patched cabinet back and pale level line visible behind copper pipes, gray rain-muted window light, worn linoleum, clipboard nearby, warm radiator shadows, grounded inspection detail, quiet supernatural unease, no fantasy styling, no text.",
+    },
+    narration: [
+      "The cold-water valve had a paper tag wired through its stem.",
+      "Elias had missed it at first because it hung flat against the copper, the same dull color as old masking tape. He eased it forward with the pencil tip. The wire was thin and dark with age, twisted twice by someone who expected the tag to stay where it was put.",
+      "There was a date on one side, written in blue ink gone gray at the edges. Under it, a short note: shutoff holds. No company name. No invoice number. Only the kind of field notation a plumber might leave for himself before closing the cabinet again.",
+      "The date was six years newer than the wallpaper shadow behind the calendar and newer than the bright screws in the access patch. The repair had not made the line. It had only passed through a room where the line was already waiting.",
+      "He let the tag fall back against the pipe. It tapped once against the valve body, small and dry. Elias wrote service confirms no active leak at repair, then stopped before adding the sentence that wanted to follow: somebody had checked the water and left the wrong problem alone.",
+    ],
+    facebookCaptionDraft:
+      "Page 014 of What the Town Keeps is drafted for review: The Shutoff Tag. Beneath the sink, Elias finds a dated service tag that confirms the plumbing held, which makes the pale line feel less like damage and more like a record. Review-only page, prompt-first art still pending.",
+    reelsCaptionDraft:
+      "Page 014 draft. The valve tag says the shutoff held. The line says the house kept something else. #WhatTheTownKeeps #GraphicNovel #ParallaxHearts",
+    supportCtaDraft:
+      "If this page lands, support helps fund the next reviewed illustration, more of the Ballast score, and the careful work of keeping What the Town Keeps moving one page at a time.",
+  },
 ];
 
 export const novelChapters: NovelChapter[] = [
