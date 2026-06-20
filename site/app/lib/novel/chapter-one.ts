@@ -499,6 +499,39 @@ export const chapterOnePages: NovelPage[] = [
     supportCtaDraft:
       "If this page lands, support helps fund the next reviewed illustration, more of the Ballast score, and the careful work of keeping What the Town Keeps moving one page at a time.",
   },
+  {
+    chapterSlug: chapterOneSlug,
+    chapterTitle: chapterOneTitle,
+    number: "015",
+    slug: "page-015",
+    title: "The Cabinet Floor",
+    path: pagePath("015"),
+    status: "ready_for_review",
+    description:
+      "Elias checks the sink cabinet floor and finds a dry depression shaped by years of weight, not by the water the house keeps implying.",
+    seoDescription:
+      "Read page 015, The Cabinet Floor, from Chapter One - Ballast in the What the Town Keeps visual novel archive.",
+    excerpt:
+      "The cabinet floor held the shape of a missing thing, but none of the stain that should have proved it.",
+    image: {
+      alt: "Elias Vale inspecting a dry worn depression in the sink cabinet floor beneath the boarding house kitchen sink",
+      prompt:
+        "A restrained cinematic graphic novel realism still of Elias Vale kneeling beneath an enamel sink in a dim old boarding house kitchen, shining a flashlight across a dry worn depression in the cabinet floor where something heavy once sat, copper pipes and a yellowed shutoff tag above, patched cabinet back with a pale level line behind him, gray rain-muted window light, worn linoleum, clipboard nearby, warm radiator shadows, grounded inspection detail, quiet supernatural unease, no fantasy styling, no text.",
+    },
+    narration: [
+      "Elias stayed under the sink a moment longer.",
+      "The cabinet floor had bowed in a shallow oval between the pipes and the side wall. At first glance it looked like ordinary neglect, the kind made by a bottle of cleaner left leaking for a season or a pan set down wet every time somebody finished with the basin.",
+      "But the wood was dry. Not recently dry. Dry all the way through, its grain raised by age rather than swelling. His flashlight found no dark ring, no mineral crust, no soft edge where water would have announced itself and stayed.",
+      "He set two fingers into the depression. It fit the weight of something that had rested there for years and then been removed carefully enough not to leave a trace behind. Above it, the service tag turned slightly on its wire, and the pale line held steady across the back panel.",
+      "He wrote cabinet floor displaced by long-term stored object, no leak pattern present. The note sounded reasonable until he read it beside the others. A dry mark. A level line. A repair that explained access but not cause. The house was not offering damage anymore. It was offering absences with measurements attached.",
+    ],
+    facebookCaptionDraft:
+      "Page 015 of What the Town Keeps is drafted for review: The Cabinet Floor. Elias keeps looking beneath the sink and finds a dry depression shaped by something missing, while the pale line keeps its level behind him. Review-only page, prompt-first art still pending.",
+    reelsCaptionDraft:
+      "Page 015 draft. No leak. No stain. Just the shape of something that used to be under the sink. #WhatTheTownKeeps #GraphicNovel #ParallaxHearts",
+    supportCtaDraft:
+      "If this page lands, support helps fund the next reviewed illustration, more Ballast soundtrack work, and the slow page-by-page record of what Vallen keeps.",
+  },
 ];
 
 export const novelChapters: NovelChapter[] = [
