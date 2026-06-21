@@ -235,6 +235,39 @@ export const chapterOnePages: NovelPage[] = [
       "He wrote moisture history in the margin, then crossed it out. The phrase felt too certain for a house that had not yet decided what it wanted to admit.",
     ],
   },
+  {
+    chapterSlug: chapterOneSlug,
+    chapterTitle: chapterOneTitle,
+    number: "007",
+    slug: "page-007",
+    title: "The Meter",
+    path: pagePath("007"),
+    status: "ready_for_review",
+    description:
+      "Elias tests the hallway wall and finds the meter answering with numbers the plaster will not explain.",
+    seoDescription:
+      "Read page 007, The Meter, from Chapter One - Ballast in the What the Town Keeps visual novel archive.",
+    excerpt: "The meter gave him a number that belonged to weather.",
+    image: {
+      alt: "Elias Vale holding a moisture meter against dry hallway plaster",
+      prompt:
+        "Prompt-first cinematic graphic novel realism: Elias Vale kneeling in an old boarding house hallway, holding a moisture meter against dry plaster beneath a faint waterline, clipboard on the floor, radiator shadows, rain-dim window light, grounded home inspection detail, restrained supernatural unease, no superhero styling, no fantasy armor, no neon sci-fi.",
+    },
+    narration: [
+      "Elias took the moisture meter from his bag and pressed the pins into the plaster below the mark.",
+      "The wall resisted like any dry wall would. Old paint. Hard skim coat. A little give where the previous repair had been feathered into the original plaster.",
+      "Then the display climbed.",
+      "Not a flicker. Not a bad battery. A steady number, high enough to belong to a soaked sill or a roof leak after three days of rain. He moved the pins six inches lower. The number held.",
+      "Above the line, the meter dropped to normal.",
+      "Elias looked down the hallway toward the closed rooms and wrote meter inconsistent with visible condition. It was the kind of sentence that sounded calm because the person writing it had decided to be calm first.",
+    ],
+    facebookCaptionDraft:
+      "Page 007 of What the Town Keeps is drafted for review. Elias tests the boarding house wall and finds the first number that refuses to match the room.",
+    reelsCaptionDraft:
+      "A dry wall. A high reading. Vallen keeps its own records. Page 007 is ready for review.",
+    supportCtaDraft:
+      "Support the next pages of What the Town Keeps and help keep the story moving one review draft at a time.",
+  },
 ];
 
 export const novelChapters: NovelChapter[] = [
