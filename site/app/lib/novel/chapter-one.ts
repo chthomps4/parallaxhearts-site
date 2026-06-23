@@ -268,6 +268,40 @@ export const chapterOnePages: NovelPage[] = [
     supportCtaDraft:
       "Support What the Town Keeps if you want more quiet, cinematic pages from Vallen as Chapter One unfolds.",
   },
+  {
+    chapterSlug: chapterOneSlug,
+    chapterTitle: chapterOneTitle,
+    number: "008",
+    slug: "page-008",
+    title: "The Room Beyond",
+    path: pagePath("008"),
+    status: "ready_for_review",
+    description:
+      "Elias follows the trim line into an empty room, where ordinary inspection notes start arranging themselves into a record of occupancy.",
+    seoDescription:
+      "Read page 008, The Room Beyond, from Chapter One - Ballast in the What the Town Keeps visual novel archive.",
+    excerpt:
+      "The room beyond the trim had been emptied, but not cleared.",
+    image: {
+      alt: "Elias Vale standing in an empty boarding house room where a dry waterline crosses the baseboard and wall",
+      prompt:
+        "Prompt-first cinematic graphic novel realism: Elias Vale, a practical home inspector, stands in the doorway of an emptied room inside a rain-dark old Pennsylvania boarding house; a precise dry waterline turns from door trim across scuffed baseboard and faded plaster, dust outlines where furniture once stood, clipboard and flashlight visible, warm radiator shadows, old pine floorboards, restrained supernatural unease through grounded inspection details, no glossy superhero styling, no fantasy armor, no neon sci-fi, no anime parody.",
+    },
+    narration: [
+      "The room beyond the trim had been emptied, but not cleared.",
+      "A bed had stood against the far wall. Elias could see its absence in the floor finish, a dull rectangle where years of weight had kept the boards from ambering with the rest of the room.",
+      "The waterline crossed the baseboard without climbing or falling. It passed through nail holes, over old paint drips, and beneath the radiator valve as if the room had been measured from a level no one living had used.",
+      "He checked the ceiling first. No staining. He checked the exterior wall. Cold, but dry. The window sash was tight enough for a house this age, the sill soft only at the outside corner.",
+      "On the report, he wrote former occupancy visible in floor finish. It was the kind of note a buyer could understand.",
+      "Then his flashlight caught a second rectangle on the wall above the missing bed, pale as breath on glass, exactly the size of a framed photograph that was no longer there.",
+    ],
+    facebookCaptionDraft:
+      "Page 008 is drafted for review. Elias steps into the room beyond the trim line and finds the house keeping track of what used to be there.",
+    reelsCaptionDraft:
+      "An empty room can still show occupancy. In Vallen, it shows something sharper.",
+    supportCtaDraft:
+      "Support What the Town Keeps to help keep Chapter One moving through Vallen one quiet, uncanny page at a time.",
+  },
 ];
 
 export const novelChapters: NovelChapter[] = [
