@@ -532,6 +532,39 @@ export const chapterOnePages: NovelPage[] = [
     supportCtaDraft:
       "If this page lands, support helps fund the next reviewed illustration, more Ballast soundtrack work, and the slow page-by-page record of what Vallen keeps.",
   },
+  {
+    chapterSlug: chapterOneSlug,
+    chapterTitle: chapterOneTitle,
+    number: "016",
+    slug: "page-016",
+    title: "The Footprint",
+    path: pagePath("016"),
+    status: "ready_for_review",
+    description:
+      "Elias measures the dry cabinet-floor depression and finds a missing object with a cleaner outline than any leak would leave.",
+    seoDescription:
+      "Read page 016, The Footprint, from Chapter One - Ballast in the What the Town Keeps visual novel archive.",
+    excerpt:
+      "Whatever had sat there had been removed. The shape of it had stayed behind.",
+    image: {
+      alt: "Elias Vale measuring a dry oval footprint in the sink cabinet floor beneath the boarding house kitchen sink",
+      prompt:
+        "A restrained cinematic graphic novel realism still of Elias Vale kneeling beneath an enamel sink in a dim old boarding house kitchen, holding a small tape measure across a dry oval footprint worn into the cabinet floor where a missing object once sat, copper pipes and a yellowed shutoff tag above, patched cabinet back with a pale level line behind him, gray rain-muted window light, worn linoleum, clipboard nearby, warm radiator shadows, grounded inspection detail, quiet supernatural unease, no fantasy styling, no text.",
+    },
+    narration: [
+      "Elias reached for the small tape clipped inside his tool bag.",
+      "The depression measured just under thirteen inches across at its widest point and nine front to back. Not a pan. Not a standard bottle caddy. The edges were too even for slosh damage and too patient for something dropped there by accident.",
+      "He angled the flashlight low until the cabinet floor showed its grain. The worn oval had a cleaner border than the rest of the wood, as if weight, not water, had taught the boards where to give. Whatever had sat there had been removed. The shape of it had stayed behind.",
+      "Above the footprint, the pale line crossed the patched back panel without comment. The service tag hung still. For the first time since entering the kitchen, the quiet under the sink felt arranged instead of merely old.",
+      "He wrote missing stored object, approximately 13 x 9 inches, long-term placement. Then he paused, added no residue, no fastener marks, no active moisture, and felt the sentence close around everything it failed to explain.",
+    ],
+    facebookCaptionDraft:
+      "Page 016 of What the Town Keeps is drafted for review: The Footprint. Elias measures the dry depression beneath the sink and finds the outline of something missing, while the pale line keeps holding level behind him. Review-only page, prompt-first art still pending.",
+    reelsCaptionDraft:
+      "Page 016 draft. Elias measures the dry footprint under the sink. Something sat there for years, then left nothing but its shape. #WhatTheTownKeeps #GraphicNovel #ParallaxHearts",
+    supportCtaDraft:
+      "If this page lands, support helps fund the next reviewed illustration, more Ballast soundtrack work, and the careful record of what Vallen keeps.",
+  },
 ];
 
 export const novelChapters: NovelChapter[] = [
