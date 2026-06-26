@@ -267,6 +267,39 @@ export const chapterOnePages: NovelPage[] = [
     supportCtaDraft:
       "If you want the next page and the next Ballast track to arrive sooner, support the work keeping Vallen on the page.",
   },
+  {
+    chapterSlug: chapterOneSlug,
+    chapterTitle: chapterOneTitle,
+    number: "008",
+    slug: "page-008",
+    title: "The Front Parlor",
+    path: pagePath("008"),
+    status: "ready_for_review",
+    description:
+      "The measured nail line leads Elias into the front parlor, where the room keeps a cleaner outline than dust should allow.",
+    seoDescription:
+      "Read page 008, The Front Parlor, from Chapter One - Ballast in the What the Town Keeps cinematic visual novel archive.",
+    excerpt:
+      "The empty place on the wall was cleaner than the wall around it.",
+    image: {
+      alt: "Elias Vale entering the boarding house front parlor with a clean rectangular mark on the wall",
+      prompt:
+        "Prompt-first cinematic graphic novel realism, old Pennsylvania boarding house front parlor after rain, Elias Vale standing in the doorway with clipboard and flashlight, straight row of exposed nail heads continuing into the room, a clean long rectangular outline on aged plaster where something was removed, dusty floorboards, covered radiator, muted daylight through lace curtains, warm brown shadows, grounded home inspection detail, quiet supernatural unease, no fantasy styling, no text.",
+    },
+    narration: [
+      "The nail heads led him into the front parlor.",
+      "Elias stopped at the threshold and let the flashlight rest low. The room held its furniture in the careful arrangement of a place waiting for someone older to return: two chairs angled toward a cold radiator, a narrow table under the window, lace curtains stiff with dust.",
+      "On the far wall, above the waterline, the nails ended around a long rectangular absence. The empty place on the wall was cleaner than the wall around it.",
+      "Not recently cleaned. Not freshly painted. Clean in the way a covered floor stays pale under a rug while the room ages around it.",
+      "He measured the outline, then checked the adjacent studs with his knuckles. The plaster answered dull, solid, ordinary. The silence after each tap did not.",
+    ],
+    facebookCaptionDraft:
+      "Page 008 is drafted for review: Elias follows the measured nail line into the front parlor, where a clean shape on the wall makes absence feel like evidence.",
+    reelsCaptionDraft:
+      "Page 008 draft: the nails lead into the parlor, and the cleanest mark in the room is where something is missing.",
+    supportCtaDraft:
+      "Support What the Town Keeps to help keep new pages, soundtrack work, and visual prompts moving through review.",
+  },
 ];
 
 export const novelChapters: NovelChapter[] = [
