@@ -235,6 +235,39 @@ export const chapterOnePages: NovelPage[] = [
       "He wrote moisture history in the margin, then crossed it out. The phrase felt too certain for a house that had not yet decided what it wanted to admit.",
     ],
   },
+  {
+    chapterSlug: chapterOneSlug,
+    chapterTitle: chapterOneTitle,
+    number: "007",
+    slug: "page-007",
+    title: "The Door That Swelled",
+    path: pagePath("007"),
+    status: "ready_for_review",
+    description:
+      "A closed interior door gives Elias a measurement that should belong to weather, not memory.",
+    seoDescription:
+      "Read page 007, The Door That Swelled, from Chapter One - Ballast in the What the Town Keeps visual novel archive.",
+    excerpt:
+      "The door had swollen inward, not from the hall, but from the room beyond it.",
+    image: {
+      alt: "Elias Vale measuring a swollen interior door in the boarding house hallway",
+      prompt:
+        "A restrained cinematic graphic novel realism panel inside an old Pennsylvania boarding house hallway after rain, Elias Vale kneeling with a flashlight and tape measure at a swollen interior door, pale waterline continuing across plaster, worn brass knob, radiator shadows, damp paper texture, warm low light, quiet supernatural unease, grounded home inspection detail, no glossy superhero styling, no fantasy armor, no neon sci-fi.",
+    },
+    narration: [
+      "At the end of the hall, one door sat proud of its frame.",
+      "Elias saw it before he touched it: the slight bind along the latch side, the paint pressed into a lip where the wood had moved. Ordinary enough. Old houses shifted. Doors complained. Damp found the soft places and asked to stay.",
+      "He set the flashlight on the floor and measured the reveal. The gap narrowed from three sixteenths at the top to nothing near the strike plate, as if the room had breathed once and held it.",
+      "The door had swollen inward, not from the hall, but from the room beyond it.",
+      "Elias wrote door movement, probable moisture load. Then he stopped with the pen still touching paper, listening to the other side remain exactly silent.",
+    ],
+    facebookCaptionDraft:
+      "Page 007 is drafted for review: Elias follows the waterline to a swollen door, and the inspection starts measuring something stranger than damp wood.",
+    reelsCaptionDraft:
+      "A stuck door. A clean waterline. A measurement that points the wrong way. Page 007 is ready for review.",
+    supportCtaDraft:
+      "Support What the Town Keeps to help keep new review pages, music, and visual development moving.",
+  },
 ];
 
 export const novelChapters: NovelChapter[] = [
