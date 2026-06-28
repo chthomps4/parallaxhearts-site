@@ -300,6 +300,39 @@ export const chapterOnePages: NovelPage[] = [
     supportCtaDraft:
       "Support What the Town Keeps to help keep new pages, soundtrack work, and visual prompts moving through review.",
   },
+  {
+    chapterSlug: chapterOneSlug,
+    chapterTitle: chapterOneTitle,
+    number: "009",
+    slug: "page-009",
+    title: "The Register",
+    path: pagePath("009"),
+    status: "ready_for_review",
+    description:
+      "A cold floor register in the front parlor gives Elias a measurement the house should not have been able to keep.",
+    seoDescription:
+      "Read page 009, The Register, from Chapter One - Ballast in the What the Town Keeps cinematic visual novel archive.",
+    excerpt:
+      "The register exhaled cold air from a room that should have been closed and still.",
+    image: {
+      alt: "Elias Vale kneeling beside a cold floor register in the boarding house front parlor",
+      prompt:
+        "Prompt-first cinematic graphic novel realism, old Pennsylvania boarding house front parlor, Elias Vale kneeling beside an iron floor register with flashlight and clipboard, dust disturbed in a narrow line across worn floorboards, clean rectangular absence on plaster wall in background, radiator shadows, rain-muted daylight through lace curtains, grounded home inspection detail, restrained supernatural unease, warm shadows, no fantasy styling, no text.",
+    },
+    narration: [
+      "The parlor floor gave him the next answer.",
+      "A narrow line of dust had been pulled toward the iron register beneath the window, as if the room had taken one careful breath and not released it. Elias crouched and held the back of his hand above the grate.",
+      "Cold air moved against his skin.",
+      "The radiator was off. The windows were latched. The basement door in the hall had been locked when he passed it, and the furnace had not yet announced itself with any honest noise.",
+      "He lifted the register cover and shone the flashlight down. In the duct below, caught on a screw head, was a strip of brittle paper marked with the same measurement he had just written in his report.",
+    ],
+    facebookCaptionDraft:
+      "Page 009 is drafted for review: Elias checks a cold floor register in the parlor and finds the house returning one of his own measurements before the inspection is finished.",
+    reelsCaptionDraft:
+      "Page 009 draft: cold air from a quiet register, dust pulled into a line, and a measurement already waiting below the floor.",
+    supportCtaDraft:
+      "Support What the Town Keeps to help keep the next review pages, music, and visual development moving.",
+  },
 ];
 
 export const novelChapters: NovelChapter[] = [
