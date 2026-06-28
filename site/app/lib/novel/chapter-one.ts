@@ -235,6 +235,38 @@ export const chapterOnePages: NovelPage[] = [
       "He wrote moisture history in the margin, then crossed it out. The phrase felt too certain for a house that had not yet decided what it wanted to admit.",
     ],
   },
+  {
+    chapterSlug: chapterOneSlug,
+    chapterTitle: chapterOneTitle,
+    number: "007",
+    slug: "page-007",
+    title: "The Level",
+    path: pagePath("007"),
+    status: "ready_for_review",
+    description:
+      "Elias checks the hallway floor and finds the house settling toward something no report can name yet.",
+    seoDescription:
+      "Read page 007, The Level, from Chapter One - Ballast in the What the Town Keeps review-only visual novel archive.",
+    excerpt: "The bubble should have drifted toward the street.",
+    image: {
+      alt: "Elias Vale checking a hallway floor with a torpedo level",
+      prompt:
+        "Prompt-first cinematic graphic novel realism: Elias Vale kneeling in an old boarding house hallway with a torpedo level on cupped floorboards, faint waterline on plaster behind him, rain-muted window light, worn threshold, inspection clipboard nearby, restrained supernatural unease, grounded Pennsylvania town atmosphere, warm shadows, no glossy superhero style.",
+    },
+    narration: [
+      "The floor fell the wrong way.",
+      "Elias set the torpedo level across the boards beneath the waterline and waited for the bubble to settle. Old houses leaned. Porches sagged. Joists moved by fractions until a room learned a new posture.",
+      "But the bubble should have drifted toward the street. Instead, it held toward the center of the house, toward the dark seam under the closed parlor door.",
+      "He moved the level six inches and tried again. Same answer. Another six. Same answer. The hallway was not sloping from age or weather. It was gathering itself around something.",
+      "Elias wrote floor out of level, then stopped before adding direction. The word inward came to him and stayed there, too plain to ignore.",
+    ],
+    facebookCaptionDraft:
+      "Page 007 is drafted for review. Elias checks the hallway floor and finds the boarding house settling inward instead of down. What the Town Keeps continues with inspection details doing the unsettling work.",
+    reelsCaptionDraft:
+      "A level, a hallway, and one measurement that should not point inward. Page 007 of What the Town Keeps is ready for review.",
+    supportCtaDraft:
+      "If this slow-burn mystery is finding you, support Parallax Hearts and help keep the next pages coming.",
+  },
 ];
 
 export const novelChapters: NovelChapter[] = [
