@@ -565,6 +565,39 @@ export const chapterOnePages: NovelPage[] = [
     supportCtaDraft:
       "If this page lands, support helps fund the next reviewed illustration, more Ballast soundtrack work, and the careful record of what Vallen keeps.",
   },
+  {
+    chapterSlug: chapterOneSlug,
+    chapterTitle: chapterOneTitle,
+    number: "017",
+    slug: "page-017",
+    title: "The Missing Weight",
+    path: pagePath("017"),
+    status: "ready_for_review",
+    description:
+      "Elias tests the empty cabinet floor and finds the missing object's weight recorded more clearly than its name.",
+    seoDescription:
+      "Read page 017, The Missing Weight, from Chapter One - Ballast in the What the Town Keeps visual novel archive.",
+    excerpt:
+      "The floor gave him the weight of the thing without giving him the thing.",
+    image: {
+      alt: "Elias Vale pressing a gloved hand into a dry oval footprint beneath the boarding house kitchen sink",
+      prompt:
+        "A restrained cinematic graphic novel realism still of Elias Vale kneeling beneath an enamel sink in a dim old boarding house kitchen, one gloved hand pressing into a dry oval footprint in the cabinet floor while a compact flashlight rakes across raised wood grain, copper pipes and a yellowed shutoff tag above, patched cabinet back with a pale level line behind him, gray rain-muted window light, worn linoleum, clipboard nearby, warm radiator shadows, grounded inspection detail, quiet supernatural unease, no fantasy styling, no text.",
+    },
+    narration: [
+      "Elias did not move right away.",
+      "He kept the tape extended across the cabinet floor and pressed two fingers into the shallow oval. The wood answered with the faintest give, not softness, not rot, just a tired deflection learned over years. Something had sat there long enough to teach the shelf how to carry it.",
+      "He shifted his hand to the undisturbed wood beside the mark. That section stayed firm. Same grain. Same age. Same dry air under the sink. Only the footprint yielded, as if absence had kept its own pressure.",
+      "The measurement bothered him less than the patience of it. A leak spread. A jar stained. A tool scraped. This had held still until the cabinet remembered the weight better than the room remembered what belonged there.",
+      "He wrote localized compression, object removed, probable long duration. Then he drew a small box around weight and, after a moment, added unknown. The floor gave him the weight of the thing without giving him the thing.",
+    ],
+    facebookCaptionDraft:
+      "Page 017 of What the Town Keeps is drafted for review: The Missing Weight. Elias tests the dry footprint under the sink and finds the cabinet floor still carrying the pressure of something no longer there. Review-only page, prompt-first art still pending.",
+    reelsCaptionDraft:
+      "Page 017 draft. The object is gone, but the cabinet still remembers its weight. #WhatTheTownKeeps #GraphicNovel #ParallaxHearts",
+    supportCtaDraft:
+      "If this page lands, support helps fund the next reviewed illustration, more Ballast soundtrack work, and the slow record of what Vallen keeps.",
+  },
 ];
 
 export const novelChapters: NovelChapter[] = [
