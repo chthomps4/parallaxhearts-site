@@ -157,6 +157,7 @@ export default function NovelPageView({
                 </div>
                 <div
                   role="progressbar"
+                  aria-label={`Reading progress: page ${pagePosition} of ${pageTotal}`}
                   aria-valuenow={progressPercent}
                   aria-valuemin={0}
                   aria-valuemax={100}

@@ -44,7 +44,9 @@ export default function DispatchSignup() {
             </Link>
             <p className="soft-copy dispatch-signup-note">
               This opens your email app for now. A dedicated email-list provider
-              can be connected later without changing the site structure.
+              can be connected later without changing the site structure. Please
+              do not include passwords, payment details, or other sensitive
+              private material.
             </p>
           </div>
         </div>

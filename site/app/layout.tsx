@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Script from "next/script";
-import { AudioProvider } from "./components/AudioCoordinator";
 import DispatchSignup from "./components/DispatchSignup";
-import PersistentMusicPlayer from "./components/PersistentMusicPlayer";
 import SiteHeader from "./components/SiteHeader";
 import { footerArchiveLinks, footerMainLinks } from "./config/navigation";
 import {
@@ -205,25 +202,16 @@ export default function RootLayout({
         <a className="skip-link" href="#main-content">
           Skip to content
         </a>
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4628988881101233"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(structuredData),
           }}
         />
-        <AudioProvider>
-          <SiteHeader />
-          <div id="main-content" tabIndex={-1}>
-            {children}
-          </div>
-          <PersistentMusicPlayer />
-        </AudioProvider>
+        <SiteHeader />
+        <div id="main-content" tabIndex={-1}>
+          {children}
+        </div>
         <DispatchSignup />
         <SiteFooter />
       </body>

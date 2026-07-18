@@ -170,6 +170,13 @@ export default function ContactPage() {
                   music, and support for <em>What the Town Keeps</em>.
                 </p>
 
+                <p className="contact-safety-note">
+                  <strong>Email safety:</strong> this page opens your email app;
+                  it does not submit information through the website. Please do
+                  not send passwords, payment details, health information, or
+                  other sensitive private material.
+                </p>
+
                 <div
                   style={{
                     display: "grid",

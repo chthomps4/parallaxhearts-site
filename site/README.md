@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Parallax Hearts
 
-## Getting Started
+The Next.js site for Parallax Hearts and *What the Town Keeps*.
 
-First, run the development server:
+## Local development
 
-```bash
+```powershell
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Release audit
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The release gate installs from the lockfile, checks dependencies, lints and
+builds the production app, crawls every public route, verifies redirects and
+security headers, and enforces Lighthouse budgets across the core journeys.
 
-## Learn More
+```powershell
+npm ci
+npm run audit
+```
 
-To learn more about Next.js, take a look at the following resources:
+Individual checks are also available:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```powershell
+npm run audit:deps
+npm run lint
+npm run build
+npm run audit:links
+npm run audit:headers
+npm run audit:lighthouse
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Lighthouse JSON reports are written to `.lighthouseci/` and uploaded by the
+GitHub Actions workflow for every pull request and push to `main`.

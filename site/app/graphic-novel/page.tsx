@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import ChapterSoundtrackCta from "../components/ChapterSoundtrackCta";
 import JsonLd from "../components/JsonLd";
 import { breadcrumbSchema, creativeWorkSchema, SITE_URL } from "../lib/seo";
 import {
@@ -171,7 +170,6 @@ export default function GraphicNovelLandingPage() {
         </div>
 
         <div className="novel-soundtrack-block">
-          <ChapterSoundtrackCta />
         </div>
       </section>
     </main>
