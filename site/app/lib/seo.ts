@@ -176,7 +176,6 @@ export function musicAlbumSchema(
     title: string;
     href: string;
     connection: string;
-    audioSrc?: string;
   }[]
 ) {
   return {
@@ -205,7 +204,6 @@ export function musicAlbumSchema(
         "@type": "MusicAlbum",
         name: "What the Town Keeps",
       },
-      ...(track.audioSrc ? { audio: absoluteUrl(track.audioSrc) } : {}),
     })),
   };
 }

@@ -141,9 +141,6 @@ comparisons for the changed states. Production captures are numbered 18-24.
 
 ### Minor
 
-- The ten legacy MP3 files remain under `public/audio` even though the current UI
-  no longer references them. They add roughly 95 MB to the repository and should
-  be handled as a separate content-retention decision.
 - External social destinations are manually smoke-tested but intentionally not
   hard-failed in CI because several platforms rate-limit or block audit clients.
 
@@ -158,5 +155,7 @@ comparisons for the changed states. Production captures are numbered 18-24.
 4. A post-merge CI-only first-trace variance was reproduced twice. The follow-up
    keeps the 85 performance budget, adds a disposable Lighthouse warm-up, and
    ensures hidden Lighthouse reports are uploaded for future diagnosis.
-5. If a release regression appears, reassign the production aliases to deployment
+5. Post-release cleanup removed ten unreferenced MP3 files totaling 95,192,729
+   bytes and stopped publishing their retired local URLs in album metadata.
+6. If a release regression appears, reassign the production aliases to deployment
    `dpl_BMFwoFbDAhrauoqgxa9wMX8CiQps`, then revert the release merge in Git.
