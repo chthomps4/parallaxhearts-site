@@ -34,10 +34,10 @@ The site is a creative support surface first. It is not a Skool funnel, Forbidde
 
 ## Soundtrack Rules
 
-- Web playback uses MP3 files from `public/audio/what-the-town-keeps`.
-- FLAC masters stay off the public site.
+- Public listening stays on Spotify; audio masters are not hosted by the site.
+- MP3 and FLAC masters stay outside the public repository and deployment.
 - Track metadata lives in `app/lib/music/what-the-town-keeps.ts`.
-- Any source file marked as needing revision stays off the public player until owner approval.
+- Any source file marked as needing revision stays off the public listening path until owner approval.
 - Chapter One is tied to `Ballast` by default.
 
 ## Page Data Rules
