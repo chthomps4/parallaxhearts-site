@@ -30,35 +30,47 @@ const lighthouseCli = resolve("node_modules/lighthouse/cli/index.js");
 const server = await startNextServer();
 const failures = [];
 
+function runLighthouse(url, reportPath) {
+  return new Promise((resolveExit, reject) => {
+    const child = spawn(
+      process.execPath,
+      [
+        lighthouseCli,
+        url,
+        "--quiet",
+        "--output=json",
+        `--output-path=${reportPath}`,
+        "--only-categories=performance,accessibility,best-practices,seo",
+        "--chrome-flags=--headless --no-sandbox",
+      ],
+      { stdio: ["ignore", "pipe", "pipe"] },
+    );
+
+    let output = "";
+    child.stdout.on("data", (chunk) => {
+      output += chunk;
+    });
+    child.stderr.on("data", (chunk) => {
+      output += chunk;
+    });
+
+    child.once("error", reject);
+    child.once("exit", (code) => resolveExit({ exitCode: code ?? 1, cliOutput: output }));
+  });
+}
+
 try {
+  // The first Chrome trace on a fresh shared runner is unusually noisy. Warm it once
+  // without relaxing the measured budgets or retaining the disposable report.
+  const warmupReportPath = resolve(outputDir, "warmup.report.json");
+  console.log("Warming Lighthouse runner...");
+  await runLighthouse(`${server.url}${lighthouseRoutes[0][1]}`, warmupReportPath);
+  JSON.parse(await readFile(warmupReportPath, "utf8"));
+  await rm(warmupReportPath, { force: true });
+
   for (const [name, pathname] of lighthouseRoutes) {
     const reportPath = resolve(outputDir, `${name}.report.json`);
-    const { exitCode, cliOutput } = await new Promise((resolveExit, reject) => {
-      const child = spawn(
-        process.execPath,
-        [
-          lighthouseCli,
-          `${server.url}${pathname}`,
-          "--quiet",
-          "--output=json",
-          `--output-path=${reportPath}`,
-          "--only-categories=performance,accessibility,best-practices,seo",
-          "--chrome-flags=--headless --no-sandbox",
-        ],
-        { stdio: ["ignore", "pipe", "pipe"] },
-      );
-
-      let output = "";
-      child.stdout.on("data", (chunk) => {
-        output += chunk;
-      });
-      child.stderr.on("data", (chunk) => {
-        output += chunk;
-      });
-
-      child.once("error", reject);
-      child.once("exit", (code) => resolveExit({ exitCode: code ?? 1, cliOutput: output }));
-    });
+    const { exitCode, cliOutput } = await runLighthouse(`${server.url}${pathname}`, reportPath);
 
     let report;
     try {
