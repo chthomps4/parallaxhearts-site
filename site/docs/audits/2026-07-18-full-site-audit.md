@@ -12,12 +12,18 @@
 
 **Live deployment at audit start:** `dpl_BMFwoFbDAhrauoqgxa9wMX8CiQps`
 
+**Release candidate SHA:** `c5b678bbab6b3a42dea5cb0c91f6107d49c2850a`
+
+**Production merge SHA:** `983bcade9a45af7527c23d47b8007dfcc1645a33`
+
+**Initial production release deployment:** `dpl_9mfGYZLfECftAS6dGKcV7ATZzfNa`
+
 ## Release status
 
-The release candidate is **ready for review**. All local release gates pass, the
-core desktop and mobile journeys pass interactive smoke testing, and no Critical
-code blocker remains. Production has not been changed: repository policy requires
-explicit owner approval before merge or production deployment.
+The release is **deployed and verified**. PR #57 was approved and merged to
+`main`, Vercel promoted the resulting build to both production aliases, and the
+post-release HTTP and interactive browser smoke passed. No Critical or Major
+release blocker remains.
 
 ## Executive findings
 
@@ -103,6 +109,13 @@ The live homepage baseline was performance 78, accessibility 100, best practices
 the recurring console error and improves the measured homepage performance by 20
 points in the same local Lighthouse gate.
 
+Post-release checks confirmed 200 responses for the home, contact, music,
+project, support, and reader routes; the branded unknown route returns 404. The
+production reader advanced from page 1 to page 2, the mobile menu moved focus on
+open and restored it after Escape, all inspected images loaded, and the audited
+browser console contained no warnings or errors. Security headers and the absence
+of the retired AdSense script were also confirmed against the public aliases.
+
 ## Evidence
 
 - Live and release-candidate captures:
@@ -113,7 +126,7 @@ points in the same local Lighthouse gate.
 
 The screenshot set includes desktop/mobile home, mobile menu, graphic-novel hub,
 reader pages 1 and 2, project, music, support, contact, 404, and paired before/after
-comparisons for the changed states.
+comparisons for the changed states. Production captures are numbered 18-24.
 
 ## Blocker list
 
@@ -123,9 +136,8 @@ comparisons for the changed states.
 
 ### Major
 
-- **Production remains on the audited baseline until owner approval.** The live
-  site still has the AdSense console failure, default 404, older menu semantics,
-  and unreconciled source history until this PR is merged and deployed.
+- None. The source-drift, console-error, 404, navigation, and dependency findings
+  were remediated and verified in production.
 
 ### Minor
 
@@ -137,12 +149,14 @@ comparisons for the changed states.
 
 ## Release and rollback
 
-1. Review the draft PR and its GitHub Actions/Vercel preview checks.
-2. Smoke the preview at desktop and mobile widths, especially menu, reader,
-   contact, music, support, and unknown-route recovery.
-3. After explicit owner approval, merge to `main` and allow the connected Vercel
-   project `parallaxhearts-site-zxm3` to deploy.
-4. Confirm aliases `parallaxhearts.org` and `www.parallaxhearts.org`, rerun the
-   live smoke, and compare the production deployment SHA with the merged commit.
-5. If a release regression appears, immediately reassign the production aliases
-   to deployment `dpl_BMFwoFbDAhrauoqgxa9wMX8CiQps`, then revert the merge in Git.
+1. PR #57 was merged to `main` at
+   `983bcade9a45af7527c23d47b8007dfcc1645a33`.
+2. Vercel deployment `dpl_9mfGYZLfECftAS6dGKcV7ATZzfNa` was the initial
+   production release on `parallaxhearts.org` and `www.parallaxhearts.org`.
+3. The public aliases passed desktop/mobile, menu, reader, contact, 404, header,
+   and route smoke checks after promotion.
+4. A post-merge CI-only first-trace variance was reproduced twice. The follow-up
+   keeps the 85 performance budget, adds a disposable Lighthouse warm-up, and
+   ensures hidden Lighthouse reports are uploaded for future diagnosis.
+5. If a release regression appears, reassign the production aliases to deployment
+   `dpl_BMFwoFbDAhrauoqgxa9wMX8CiQps`, then revert the release merge in Git.
