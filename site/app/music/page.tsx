@@ -2,10 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import ArchiveNote from "../components/ArchiveNote";
-import {
-  RegisteredNativeAudio,
-  SoundCloudExclusiveEmbed,
-} from "../components/AudioCoordinator";
 import JsonLd from "../components/JsonLd";
 import SiteHeader from "../components/SiteHeader";
 import {
@@ -17,9 +13,8 @@ import {
 import { getStoryAsset } from "../lib/story-assets";
 import { getPublicSoundtrackTracks } from "../lib/music/what-the-town-keeps";
 
-const soundCloudUrl = "https://soundcloud.com/parallax-hearts";
-const soundCloudEmbedUrl =
-  "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/parallax-hearts&color=%23d2b58b&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true";
+const spotifyPlaylistUrl =
+  "https://open.spotify.com/playlist/6jB3kXIOJFWXxEoun1UAVi?si=cd4ce5ae26bf4b00";
 const koFiUrl = "https://ko-fi.com/parallaxhearts";
 const pageTitle = "Music | Parallax Hearts";
 const pageDescription =
@@ -68,10 +63,10 @@ export const metadata: Metadata = {
 
 const musicPaths = [
   {
-    title: "Listen here",
-    text: "Play the album tracks directly on this page.",
-    href: "#album-tracks",
-    external: false,
+    title: "Spotify playlist",
+    text: "Open the curated Parallax Hearts listening path on Spotify.",
+    href: spotifyPlaylistUrl,
+    external: true,
   },
   {
     title: "Read with the album",
@@ -181,9 +176,9 @@ export default function MusicPage() {
                   maxWidth: "720px",
                 }}
               >
-                The album tracks now live on-site, so readers can
-                move between the chapter pages and the songs without leaving
-                the world of the story.
+                The playlist now stays on Spotify, keeping this page calm while
+                readers move between the chapter pages, the songs, and the
+                world of the story.
               </p>
 
               <div
@@ -194,8 +189,13 @@ export default function MusicPage() {
                   flexWrap: "wrap",
                 }}
               >
-                <a href="#album-tracks" className="primary-button">
-                  Play Album Tracks
+                <a
+                  href={spotifyPlaylistUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="primary-button"
+                >
+                  Open Spotify Playlist
                 </a>
 
                 <Link
@@ -292,9 +292,9 @@ export default function MusicPage() {
         </div>
       </section>
 
-      <section id="album-tracks" style={{ padding: "34px 0" }}>
+      <section id="track-guide" style={{ padding: "34px 0" }}>
         <div className="site-container">
-          <p className="kicker">Album tracks</p>
+          <p className="kicker">Album guide</p>
 
           <div
             className="glass-panel"
@@ -303,15 +303,27 @@ export default function MusicPage() {
               borderRadius: "26px",
             }}
           >
-            <h2 className="section-title">Read Vallen with the album running.</h2>
+            <h2 className="section-title">Read Vallen with the playlist open.</h2>
             <p
               className="soft-copy"
               style={{ marginTop: "12px", maxWidth: "820px" }}
             >
-              These tracks are here for reading and listening in one place.
-              Start a song, open a chapter page, and move through Vallen with
-              the album beside the story.
+              The site no longer carries its own audio controls. Open the
+              playlist in Spotify, then use this guide to move between the
+              songs and their story threads without adding extra players to the
+              page.
             </p>
+
+            <div style={{ marginTop: "22px" }}>
+              <a
+                href={spotifyPlaylistUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="primary-button"
+              >
+                Open Spotify Playlist
+              </a>
+            </div>
 
             <div
               style={{
@@ -382,18 +394,6 @@ export default function MusicPage() {
                     {track.connection}
                   </p>
 
-                  {track.audioSrc ? (
-                    <RegisteredNativeAudio
-                      id={`music-track-${track.slug}`}
-                      sourceLabel={`Play ${track.title}`}
-                      src={track.audioSrc}
-                      style={{
-                        width: "100%",
-                        accentColor: "#d2b58b",
-                      }}
-                    />
-                  ) : null}
-
                   <div
                     style={{
                       display: "flex",
@@ -422,46 +422,6 @@ export default function MusicPage() {
                 </article>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section style={{ padding: "34px 0" }}>
-        <div className="site-container">
-          <div
-            className="glass-panel"
-            style={{
-              padding: "clamp(24px, 4vw, 34px)",
-              borderRadius: "26px",
-            }}
-          >
-            <p className="kicker">SoundCloud archive</p>
-            <h2 className="section-title">External listening path</h2>
-            <p
-              className="soft-copy"
-              style={{ marginTop: "12px", maxWidth: "760px" }}
-            >
-              SoundCloud remains the broader public listening path. The on-site
-              album players above are the story-tied listening layer for
-              ParallaxHearts.org.
-            </p>
-
-            <SoundCloudExclusiveEmbed
-              id="soundcloud-archive"
-              title="Parallax Hearts on SoundCloud"
-              width="100%"
-              height="360"
-              scrolling="no"
-              frameBorder="no"
-              allow="autoplay"
-              src={soundCloudEmbedUrl}
-              style={{
-                marginTop: "24px",
-                border: "1px solid var(--line)",
-                borderRadius: "22px",
-                background: "rgba(0,0,0,0.35)",
-              }}
-            />
           </div>
         </div>
       </section>
@@ -516,12 +476,12 @@ export default function MusicPage() {
               </a>
 
               <a
-                href={soundCloudUrl}
+                href={spotifyPlaylistUrl}
                 target="_blank"
                 rel="noreferrer"
                 className="secondary-button"
               >
-                Open SoundCloud
+                Open Spotify
               </a>
             </div>
           </div>

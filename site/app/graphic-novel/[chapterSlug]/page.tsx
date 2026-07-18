@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import ChapterSoundtrackCta from "../../components/ChapterSoundtrackCta";
 import JsonLd from "../../components/JsonLd";
 import { breadcrumbSchema, creativeWorkSchema, SITE_URL } from "../../lib/seo";
 import {
@@ -179,7 +178,6 @@ export default async function ChapterRoute({ params }: PageProps) {
         </div>
 
         <div className="novel-soundtrack-block">
-          <ChapterSoundtrackCta />
         </div>
       </section>
     </main>
