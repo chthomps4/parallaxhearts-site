@@ -235,6 +235,40 @@ export const chapterOnePages: NovelPage[] = [
       "He wrote moisture history in the margin, then crossed it out. The phrase felt too certain for a house that had not yet decided what it wanted to admit.",
     ],
   },
+  {
+    chapterSlug: chapterOneSlug,
+    chapterTitle: chapterOneTitle,
+    number: "007",
+    slug: "page-007",
+    title: "The Register",
+    path: pagePath("007"),
+    status: "ready_for_review",
+    description:
+      "Elias follows the waterline to a floor register where the dust has settled into an impossible pattern.",
+    seoDescription:
+      "Read page 007, The Register, from Chapter One - Ballast in the What the Town Keeps visual novel archive.",
+    excerpt:
+      "The dust inside the register had not gathered like dust. It had arranged itself.",
+    image: {
+      alt: "Elias Vale inspecting a floor register beneath the waterline",
+      prompt:
+        "Prompt-first review image for a restrained cinematic graphic novel page: Elias Vale kneeling in an old Vallen boarding house hallway, flashlight angled into a dark iron floor register below a pale waterline on plaster, clipboard nearby, damp old paper atmosphere, radiator warmth, rain-dark window light, grounded home inspection realism, quiet supernatural unease, warm shadows, no glossy superhero styling, no fantasy armor, no neon sci-fi, no anime parody.",
+    },
+    narration: [
+      "The line ended above a floor register.",
+      "Elias lowered himself carefully, keeping one knee off the soft board beside it. The grate was iron, painted black long enough ago that the corners had gone silver where shoes had worried them clean.",
+      "He set the flashlight flat against the floor and looked through the slats. No standing water. No wet ductwork smell. Just dust, rust, and the stale breath of a closed house.",
+      "Then the beam caught the bottom of the register box, and he stopped moving.",
+      "The dust inside the register had not gathered like dust. It had arranged itself, thin and deliberate, leaving a pale rectangle the size of an index card.",
+      "Elias took one from his bag and held it over the mark without touching the grate. The corners matched. So did the slight bend along the top edge, as if the house had kept the absence of a record after the record was gone.",
+    ],
+    facebookCaptionDraft:
+      "Page 007 of What the Town Keeps is ready for review. Elias follows the waterline to a floor register and finds the house has kept the shape of something missing.",
+    reelsCaptionDraft:
+      "A home inspection detail turns into a record the house should not have kept. Page 007, The Register, is ready for review.",
+    supportCtaDraft:
+      "Support What the Town Keeps to help keep new pages, music, and field notes moving through review.",
+  },
 ];
 
 export const novelChapters: NovelChapter[] = [
