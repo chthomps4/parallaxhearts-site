@@ -1,6 +1,7 @@
 export const mainNavigation = [
   ["Home", "/"],
   ["Listen", "/music"],
+  ["Book", "/book"],
   ["Read", "/graphic-novel"],
   ["Story", "/project"],
   ["Support", "/support"],
@@ -11,6 +12,7 @@ export const mainNavigation = [
 export const footerMainLinks = [
   ["Home", "/"],
   ["Listen", "/music"],
+  ["Companion Book", "/book"],
   ["Read the Visual Novel", "/graphic-novel/chapter-one/page-001"],
   ["Graphic Novel Hub", "/graphic-novel"],
   ["Story World", "/project"],

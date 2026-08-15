@@ -2,15 +2,18 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import ArchiveNote from "./components/ArchiveNote";
+import EditorialFeature from "./components/EditorialFeature";
 import SiteHeader from "./components/SiteHeader";
+import { companionBook } from "./lib/book";
 import { getStoryAsset } from "./lib/story-assets";
 
 const homeHeroAsset = getStoryAsset("hero-vallen-arrival");
+const bookFeatureAsset = getStoryAsset("field-notes");
 
 export const metadata: Metadata = {
   title: "Parallax Hearts | What the Town Keeps",
   description:
-    "Begin What the Town Keeps - a cinematic visual novel, soundtrack, and rainy small-town story world set in Vallen.",
+    "Enter What the Town Keeps - a cinematic album, forthcoming companion book, visual novel, and rainy small-town story world set in Vallen.",
   keywords: [
     "Parallax Hearts",
     "What the Town Keeps",
@@ -19,6 +22,7 @@ export const metadata: Metadata = {
     "independent music",
     "visual novel archive",
     "graphic novel music project",
+    "album companion book",
     "literary alternative music",
   ],
   alternates: {
@@ -27,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Parallax Hearts | What the Town Keeps",
     description:
-      "Start the visual novel, hear the soundtrack, and support the ongoing Parallax Hearts story world.",
+      "Hear the album, follow the forthcoming companion book, and enter the visual-novel archive of Vallen.",
     url: "https://www.parallaxhearts.org/",
     siteName: "Parallax Hearts",
     images: [
@@ -45,7 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Parallax Hearts | What the Town Keeps",
     description:
-      "A cinematic visual novel and soundtrack archive set in the rainy town of Vallen.",
+      "A cinematic album, forthcoming companion book, and visual-novel archive set in the rainy town of Vallen.",
     images: [homeHeroAsset.src],
   },
 };
@@ -232,9 +236,10 @@ export default function HomePage() {
                 lineHeight: 1.75,
               }}
             >
-              Start with <em>What the Town Keeps</em>, the visual novel archive
-              at the center of Parallax Hearts. Read the story, hear the songs,
-              and support the next pieces of Vallen as the town opens up.
+              <em>What the Town Keeps</em> moves through an album, a visual
+              novel, and a forthcoming companion book. Enter through the story,
+              hear the songs, and follow the next pieces of Vallen as the town
+              opens up.
             </p>
           </div>
 
@@ -302,6 +307,26 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="editorial-section" aria-labelledby="home-book-heading">
+        <div className="site-container">
+          <div id="home-book-heading">
+            <EditorialFeature
+              eyebrow={companionBook.eyebrow}
+              title={companionBook.headline}
+              description={companionBook.description}
+              detail={companionBook.relationship}
+              image={bookFeatureAsset.src}
+              imageAlt={bookFeatureAsset.alt}
+              primaryHref={companionBook.route}
+              primaryLabel="Enter the book archive"
+              secondaryHref="/music"
+              secondaryLabel="Hear the album"
+              folio="New volume / in development"
+            />
+          </div>
+        </div>
+      </section>
+
       <section style={{ padding: "38px 0 86px" }}>
         <div className="site-container">
           <p className="kicker">Keep exploring</p>
@@ -323,6 +348,11 @@ export default function HomePage() {
                 title: "Listen",
                 text: "Hear the soundtrack after you start the story, or keep it open while you read.",
                 href: "/music",
+              },
+              {
+                title: "Book",
+                text: "Follow the companion volume as the longer written path through Vallen takes shape.",
+                href: "/book",
               },
               {
                 title: "Support",

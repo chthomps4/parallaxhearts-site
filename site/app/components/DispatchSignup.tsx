@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 const contactSubject = "Dispatches from Vallen";
 const contactBody =
-  "Add me to Dispatches from Vallen for Parallax Hearts, What the Town Keeps, chapter updates, song notes, and project news.";
+  "Add me to Dispatches from Vallen for Parallax Hearts, What the Town Keeps, companion-book updates, chapter updates, song notes, and project news.";
 const signupHref = `mailto:chad@parallaxhearts.org?subject=${encodeURIComponent(
   contactSubject,
 )}&body=${encodeURIComponent(contactBody)}`;
@@ -26,12 +26,13 @@ export default function DispatchSignup() {
           <div>
             <p className="kicker">Dispatches from Vallen</p>
             <h2 id="dispatch-signup-title" className="section-title">
-              Get the next chapter, song note, or Vallen dispatch.
+              Get the next book note, chapter, song note, or Vallen dispatch.
             </h2>
             <p className="body-copy" style={{ margin: "18px 0 0" }}>
               A quiet update list for Parallax Hearts, <em>What the Town Keeps</em>,
-              visual-novel pages, song notes, and creative updates. No
-              noise. Just the next thing worth sending.
+              the forthcoming companion book, visual-novel pages, song notes,
+              and creative updates. No noise. Just the next thing worth
+              sending.
             </p>
           </div>
 

@@ -8,6 +8,7 @@ import { mainNavigation } from "../config/navigation";
 function getActiveLabel(pathname: string) {
   if (pathname === "/") return "Home";
   if (pathname.startsWith("/music")) return "Listen";
+  if (pathname.startsWith("/book")) return "Book";
   if (pathname.startsWith("/graphic-novel")) return "Read";
   if (pathname.startsWith("/project") || pathname.startsWith("/story")) return "Story";
   if (pathname.startsWith("/support") || pathname.startsWith("/shop")) return "Support";
