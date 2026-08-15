@@ -14,23 +14,23 @@
     "audit": "npm run audit:deps && npm run lint && npm run build && npm run audit:links && npm run audit:headers && npm run audit:lighthouse"
   },
   "dependencies": {
-    "next": "^16.2.10",
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7"
+    "next": "^16.3.1",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^20.19.43",
-    "@types/react": "^19.2.17",
-    "@types/react-dom": "^19.2.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
     "eslint": "^9.39.5",
-    "eslint-config-next": "^16.2.10",
-    "lighthouse": "^12.6.1",
+    "eslint-config-next": "^16.3.1",
+    "lighthouse": "^13.4.1",
     "linkinator": "^7.6.1",
     "tailwindcss": "^4.3.3",
     "typescript": "^5"
   },
   "overrides": {
-    "postcss": "8.5.10"
+    "postcss": "8.5.26"
   }
 }
