@@ -235,6 +235,38 @@ export const chapterOnePages: NovelPage[] = [
       "He wrote moisture history in the margin, then crossed it out. The phrase felt too certain for a house that had not yet decided what it wanted to admit.",
     ],
   },
+  {
+    chapterSlug: chapterOneSlug,
+    chapterTitle: chapterOneTitle,
+    number: "007",
+    slug: "page-007",
+    title: "The Ledger Door",
+    path: pagePath("007"),
+    status: "ready_for_review",
+    description:
+      "Elias follows the waterline to a locked room where the trim remembers hands better than the records do.",
+    seoDescription:
+      "Read page 007, The Ledger Door, from Chapter One - Ballast in the What the Town Keeps visual novel archive.",
+    excerpt:
+      "The waterline did not end at the trim. It waited there, exact as a held breath.",
+    image: {
+      alt: "Elias Vale inspecting worn door trim beside a locked ledger room",
+      prompt:
+        "Prompt-first cinematic graphic novel realism, Elias Vale in an old Vallen boarding house hallway inspecting worn door trim beside a locked interior door, faint pale waterline stopping at the casing, rain-dark window light, clipboard and moisture meter, old brass keyhole, restrained supernatural unease, grounded home inspection detail, warm shadows, no glossy superhero styling, no fantasy armor, no neon sci-fi.",
+    },
+    narration: [
+      "The waterline did not end at the trim. It waited there, exact as a held breath.",
+      "Elias stood and followed it to the next door. The casing was older than the rest of the hall, oak under three coats of tired paint, its inside edge darkened where fingers had worried the same place for years.",
+      "He tried the knob. Locked. The latch held cleanly, no drag in the strike plate, no swelling at the jamb. Whatever had shifted in this house had left this door alone.",
+      "On the clipboard, beneath the crossed-out note, he wrote locked room, interior, west hall. Then the house ticked once behind the door, and the line of pale plaster seemed to settle a fraction lower.",
+    ],
+    facebookCaptionDraft:
+      "Page 007 draft: Elias follows the waterline to a locked room in the boarding house. The house is still ordinary enough to inspect, which is what makes the evidence worse.",
+    reelsCaptionDraft:
+      "A locked door. A dry waterline. A house that keeps better records than people do. Page 007 draft for What the Town Keeps.",
+    supportCtaDraft:
+      "If this page lands for you, support What the Town Keeps and help keep the next Vallen pages moving.",
+  },
 ];
 
 export const novelChapters: NovelChapter[] = [
