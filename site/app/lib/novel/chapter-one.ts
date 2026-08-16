@@ -235,6 +235,38 @@ export const chapterOnePages: NovelPage[] = [
       "He wrote moisture history in the margin, then crossed it out. The phrase felt too certain for a house that had not yet decided what it wanted to admit.",
     ],
   },
+  {
+    chapterSlug: chapterOneSlug,
+    chapterTitle: chapterOneTitle,
+    number: "007",
+    slug: "page-007",
+    title: "The Parlor Door",
+    path: pagePath("007"),
+    status: "ready_for_review",
+    description:
+      "Following the waterline to a shut parlor door, Elias finds damage that looks less like flooding than deliberate restraint.",
+    seoDescription:
+      "Read page 007, The Parlor Door, from Chapter One - Ballast in the What the Town Keeps visual novel archive.",
+    excerpt:
+      "At the parlor door, the waterline ended cleanly, as if the house had kept one room back for itself.",
+    image: {
+      alt: "Elias Vale studying the closed parlor door where the hallway waterline stops",
+      prompt:
+        "A restrained cinematic graphic novel still of Elias Vale in an old boarding house hallway, studying a closed parlor door where a pale waterline across the plaster stops at the trim, scuffed lower panels, tarnished brass knob, rain-muted light, grounded inspection realism, quiet supernatural unease, warm shadows, no text.",
+    },
+    narration: [
+      "The line stopped at the parlor door.",
+      "Not faded. Not broken. Stopped. Elias followed it with his eyes until it met the painted trim and ended in a clean edge that made no sense for water and too much sense for a decision.",
+      "He set two fingers against the lower panel. The wood was cold, harder than the hallway air had any right to make it. Scuffs marked the paint near the threshold, layered over one another at the same shallow angle, as if furniture had been dragged out in a hurry and then dragged back again.",
+      "Elias crouched to check the jamb. No swelling. No bloom in the grain. The brass knob wore a half-moon of clean metal where many hands had missed the same spot. He wrote door intact, movement likely, and for the first time the notes felt like they were describing the house after it had decided what to remember.",
+    ],
+    facebookCaptionDraft:
+      "Page 007 of What the Town Keeps is in review: The Parlor Door. Elias follows the hallway waterline to a room the house seems to have held back. Quiet evidence. No answers yet.",
+    reelsCaptionDraft:
+      "Page 007 draft: the waterline stops at the parlor door, and Elias starts realizing the damage may be keeping its own record. #WhatTheTownKeeps #GraphicNovel #StoryDraft",
+    supportCtaDraft:
+      "If you want to help me keep building What the Town Keeps one page at a time, you can support the project and help fund the next reviewed artwork pass.",
+  },
 ];
 
 export const novelChapters: NovelChapter[] = [
