@@ -235,6 +235,38 @@ export const chapterOnePages: NovelPage[] = [
       "He wrote moisture history in the margin, then crossed it out. The phrase felt too certain for a house that had not yet decided what it wanted to admit.",
     ],
   },
+  {
+    chapterSlug: chapterOneSlug,
+    chapterTitle: chapterOneTitle,
+    number: "007",
+    slug: "page-007",
+    title: "The Nail Heads",
+    path: pagePath("007"),
+    status: "ready_for_review",
+    description:
+      "Above the waterline, Elias finds a row of exposed nail heads that suggest the hallway once held a missing measure.",
+    seoDescription:
+      "Read page 007, The Nail Heads, from Chapter One - Ballast in the What the Town Keeps cinematic visual novel archive.",
+    excerpt:
+      "The wall had kept the shape of something that was gone.",
+    image: {
+      alt: "Elias Vale studying a row of exposed nail heads above a pale waterline in the boarding house hallway",
+      prompt:
+        "Prompt-first cinematic graphic novel realism, interior of an old Pennsylvania boarding house hallway after rain, Elias Vale crouched beside a plaster wall with a pale waist-high waterline and a straight row of exposed nail heads above it, flashlight in hand, clipboard nearby, warm radiator shadows, damp paper atmosphere, grounded inspection detail, quiet supernatural unease, no fantasy styling, no text.",
+    },
+    narration: [
+      "He looked above the line next.",
+      "A row of nail heads sat exposed in the plaster, each one dark with age, each one set at the same height with a surveyor's patience. Something had been fixed there once, long and narrow. A picture rail, maybe. A board. Some practical strip of wood removed so cleanly the wall had never stopped accounting for it.",
+      "Elias stood and traced the spacing with his eyes. The nails ran farther than the water mark, turned the corner, and continued toward the front parlor. Not flood damage. Not decoration. More like the ghost of a measurement repeated from room to room.",
+      "He wrote previous wall fixture in the report, then added: consistent elevation throughout visible hall. When he clicked off the pen, the silence in the house felt organized, as if he had finally used the right term for something that was still listening.",
+    ],
+    facebookCaptionDraft:
+      "Page 007 of What the Town Keeps is in review: The Nail Heads. Elias follows a pale waterline and finds a row of exposed nails that feels less like damage and more like a record. Review notes and image prompt are ready; final art stays pending approval.",
+    reelsCaptionDraft:
+      "Page 007 draft: The Nail Heads. A waterline. A measured row of nails. A hallway keeping records after the wood is gone. #WhattheTownKeeps #GraphicNovel #ParallaxHearts",
+    supportCtaDraft:
+      "If you want the next page and the next Ballast track to arrive sooner, support the work keeping Vallen on the page.",
+  },
 ];
 
 export const novelChapters: NovelChapter[] = [
