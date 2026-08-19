@@ -235,6 +235,39 @@ export const chapterOnePages: NovelPage[] = [
       "He wrote moisture history in the margin, then crossed it out. The phrase felt too certain for a house that had not yet decided what it wanted to admit.",
     ],
   },
+  {
+    chapterSlug: chapterOneSlug,
+    chapterTitle: chapterOneTitle,
+    number: "007",
+    slug: "page-007",
+    title: "The Trim Line",
+    path: pagePath("007"),
+    status: "ready_for_review",
+    description:
+      "Elias follows the dry waterline to the door trim, where the house has kept a sharper record than plaster should hold.",
+    seoDescription:
+      "Read page 007, The Trim Line, from Chapter One - Ballast in the What the Town Keeps visual novel archive.",
+    excerpt:
+      "The trim had taken the mark differently, as if wood remembered with more discipline than plaster.",
+    image: {
+      alt: "Elias Vale inspecting a thin line cut across old door trim in the boarding house hallway",
+      prompt:
+        "Prompt-first cinematic graphic novel realism: Elias Vale, a practical home inspector in a rain-dark old Pennsylvania boarding house hallway, kneels beside worn door trim where a faint dry waterline crosses from plaster into wood like a precise record mark; moisture meter, clipboard, warm radiator shadows, peeling paint, restrained supernatural unease, grounded inspection detail, no glossy superhero styling, no fantasy armor, no neon sci-fi.",
+    },
+    narration: [
+      "At the door trim, the line changed character.",
+      "On plaster it had been pale and patient. On wood it became narrow, dark, and exact, sitting in the grain like ink pulled under a thumbnail.",
+      "Elias angled his flashlight across it. The casing was old pine, painted too many times, the inside corner split where the house had settled. No dampness. No swelling. No stain spreading down from above.",
+      "The trim had taken the mark differently, as if wood remembered with more discipline than plaster.",
+      "He wrote trim discoloration and stopped with the pen still touching paper. In the thin beam of light, the line did not end at the jamb. It turned cleanly around the corner and continued into the room beyond.",
+    ],
+    facebookCaptionDraft:
+      "Page 007 is drafted for review. Elias follows a dry waterline into the door trim, where the house starts keeping a sharper record than the report can hold.",
+    reelsCaptionDraft:
+      "A routine inspection turns on one impossible detail: a dry waterline that keeps going.",
+    supportCtaDraft:
+      "Support What the Town Keeps if you want more quiet, cinematic pages from Vallen as Chapter One unfolds.",
+  },
 ];
 
 export const novelChapters: NovelChapter[] = [
