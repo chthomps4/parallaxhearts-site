@@ -235,6 +235,39 @@ export const chapterOnePages: NovelPage[] = [
       "He wrote moisture history in the margin, then crossed it out. The phrase felt too certain for a house that had not yet decided what it wanted to admit.",
     ],
   },
+  {
+    chapterSlug: chapterOneSlug,
+    chapterTitle: chapterOneTitle,
+    number: "007",
+    slug: "page-007",
+    title: "The Jamb Record",
+    path: pagePath("007"),
+    status: "ready_for_review",
+    description:
+      "At the end of the hallway, Elias finds old pencil marks on a door jamb lined up with the waterline like a record nobody meant to leave behind.",
+    seoDescription:
+      "Read page 007, The Jamb Record, from Chapter One - Ballast in the What the Town Keeps visual novel archive.",
+    excerpt:
+      "Someone had used the trim as a ledger, and every entry agreed with the wall.",
+    image: {
+      alt: "Elias Vale studying pencil marks on an old hallway door jamb in the boarding house",
+      prompt:
+        "A restrained cinematic graphic novel realism still of Elias Vale in an old boarding house hallway studying a painted door jamb marked with faint pencil notches at waist height, pale plaster waterline crossing beside the trim, clipboard and flashlight in hand, warm radiator shadows, rain-muted light, grounded inspection detail, quiet supernatural unease, no fantasy styling.",
+    },
+    narration: [
+      "The line ended at the kitchen door as neatly as it had begun.",
+      "Elias leaned closer to the trim. The paint had cracked along the grain, opening fine dark seams in the jamb. Inside them sat a set of pencil marks, almost lost under two old coats of cream. Short horizontal strokes. Dates beside some of them. Initials beside others.",
+      "He set the edge of his flashlight across the wood and counted seven marks. Every one landed at the same height as the pale seam on the plaster, as if whoever kept the record had trusted the wall more than memory.",
+      "A child might have been measured there once. Then another. But the notches did not climb. They held steady, one year to the next, patient and level.",
+      "He wrote repeated reference mark in the margin and stood listening to the radiator knock somewhere deeper in the house. The sound came back through the hallway with the flat certainty of a second pencil tap.",
+    ],
+    facebookCaptionDraft:
+      "Page 007 of What the Town Keeps is drafted for review: The Jamb Record. Elias follows the hallway waterline to a door trim where old pencil marks keep agreeing with the wall. Review-only page, no final art yet.",
+    reelsCaptionDraft:
+      "Page 007 draft. A waterline stops at the kitchen door. The jamb has been keeping count. #WhattheTownKeeps #GraphicNovel #ParallaxHearts",
+    supportCtaDraft:
+      "If this page lands, support helps fund the next illustrated page, the Ballast soundtrack work, and more time in Vallen.",
+  },
 ];
 
 export const novelChapters: NovelChapter[] = [
