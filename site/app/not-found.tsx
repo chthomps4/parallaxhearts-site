@@ -19,9 +19,12 @@ export default function NotFound() {
           <h1 className="not-found-title">
             This page slipped out of the archive.
           </h1>
-          <p className="body-copy" style={{ margin: "22px 0 0", maxWidth: "680px" }}>
-            The address may be old, mistyped, or no longer part of Vallen&apos;s
-            public record. The main story paths are still open.
+          <p
+            className="body-copy"
+            style={{ margin: "22px 0 0", maxWidth: "680px" }}
+          >
+            The address may be old, mistyped, or not part of the public site.
+            The main creative paths are still open.
           </p>
           <div className="not-found-actions">
             <Link className="primary-button" href="/">

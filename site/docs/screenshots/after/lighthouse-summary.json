@@ -1,0 +1,161 @@
+{
+  "method": "Local Lighthouse mobile simulation; music and geometry remeasured after targeted corrections. Other ten reports retained from the full run. Not field Core Web Vitals.",
+  "reports": [
+    {
+      "name": "anchor-poem",
+      "route": "/poetry/the-golden-section",
+      "scores": {
+        "performance": 96,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpMs": 2647,
+      "cls": 0.0,
+      "bytes": 271871
+    },
+    {
+      "name": "contact",
+      "route": "/contact",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpMs": 1879,
+      "cls": 0.046,
+      "bytes": 265963
+    },
+    {
+      "name": "crown",
+      "route": "/crown-of-phases",
+      "scores": {
+        "performance": 97,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpMs": 2558,
+      "cls": 0.001,
+      "bytes": 286346
+    },
+    {
+      "name": "energy",
+      "route": "/energy-healing",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpMs": 1955,
+      "cls": 0.001,
+      "bytes": 238215
+    },
+    {
+      "name": "geometry",
+      "route": "/sacred-geometry",
+      "scores": {
+        "performance": 96,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpMs": 2648,
+      "cls": 0.001,
+      "bytes": 240076
+    },
+    {
+      "name": "graphic-novel",
+      "route": "/graphic-novel",
+      "scores": {
+        "performance": 97,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpMs": 2490,
+      "cls": 0,
+      "bytes": 424597
+    },
+    {
+      "name": "home",
+      "route": "/",
+      "scores": {
+        "performance": 96,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpMs": 2755,
+      "cls": 0.001,
+      "bytes": 288621
+    },
+    {
+      "name": "music",
+      "route": "/music",
+      "scores": {
+        "performance": 93,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpMs": 2786,
+      "cls": 0,
+      "bytes": 256541
+    },
+    {
+      "name": "poetry",
+      "route": "/poetry",
+      "scores": {
+        "performance": 98,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpMs": 2265,
+      "cls": 0.001,
+      "bytes": 271278
+    },
+    {
+      "name": "project",
+      "route": "/project",
+      "scores": {
+        "performance": 96,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpMs": 2705,
+      "cls": 0,
+      "bytes": 463910
+    },
+    {
+      "name": "reader",
+      "route": "/graphic-novel/chapter-one/page-001",
+      "scores": {
+        "performance": 95,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpMs": 2847,
+      "cls": 0,
+      "bytes": 303641
+    },
+    {
+      "name": "support",
+      "route": "/support",
+      "scores": {
+        "performance": 97,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpMs": 2493,
+      "cls": 0.001,
+      "bytes": 248668
+    }
+  ]
+}

@@ -11,10 +11,18 @@
     "audit:links": "node tools/link-audit.mjs",
     "audit:headers": "node tools/header-audit.mjs",
     "audit:lighthouse": "node tools/lighthouse-audit.mjs",
-    "audit": "npm run audit:deps && npm run lint && npm run build && npm run audit:links && npm run audit:headers && npm run audit:lighthouse"
+    "audit": "npm run audit:deps && npm run poetry:validate && npm test && npm run lint && npm run build && npm run typecheck && npm run audit:links && npm run audit:headers && npm run audit:lighthouse",
+    "typecheck": "tsc --noEmit",
+    "test": "node tools/poetry.test.mjs",
+    "poetry:validate": "node tools/validate-poetry.mjs",
+    "new-poem": "node tools/new-poem.mjs",
+    "preview:poetry": "node tools/poetry-preview.mjs",
+    "poetry:art": "node tools/poetry-art.mjs"
   },
   "dependencies": {
-    "next": "^16.3.1",
+    "@fontsource/cormorant-garamond": "^5.3.0",
+    "@fontsource/dm-mono": "^5.3.0",
+    "next": "^16.4.5",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
@@ -24,13 +32,16 @@
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
     "eslint": "^9.39.5",
-    "eslint-config-next": "^16.3.1",
+    "eslint-config-next": "^16.4.5",
     "lighthouse": "^13.4.1",
-    "linkinator": "^7.6.1",
+    "linkinator": "^8.1.0",
+    "sharp": "^0.35.5",
     "tailwindcss": "^4.3.3",
     "typescript": "^5"
   },
   "overrides": {
-    "postcss": "8.5.26"
+    "postcss": "8.5.26",
+    "glob": "14.0.3",
+    "minimatch": "11.0.4"
   }
 }

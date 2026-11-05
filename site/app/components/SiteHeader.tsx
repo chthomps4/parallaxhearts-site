@@ -5,85 +5,74 @@ import { usePathname } from "next/navigation";
 import { type KeyboardEvent, useEffect, useRef, useState } from "react";
 import { mainNavigation } from "../config/navigation";
 
-function getActiveLabel(pathname: string) {
-  if (pathname === "/") return "Home";
-  if (pathname.startsWith("/music")) return "Listen";
-  if (pathname.startsWith("/book")) return "Book";
-  if (pathname.startsWith("/graphic-novel")) return "Read";
-  if (pathname.startsWith("/project") || pathname.startsWith("/story")) return "Story";
-  if (pathname.startsWith("/support") || pathname.startsWith("/shop")) return "Support";
-  if (pathname.startsWith("/about")) return "About";
-  if (pathname.startsWith("/contact")) return "Contact";
-  return undefined;
-}
-
-export default function SiteHeader({ active }: { active?: string }) {
-  const pathname = usePathname();
-  const menuButtonRef = useRef<HTMLButtonElement>(null);
-  const firstMobileLinkRef = useRef<HTMLAnchorElement>(null);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const activeLabel = getActiveLabel(pathname);
-
+function HeaderNavigation({ pathname }: { pathname: string }) {
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const firstLinkRef = useRef<HTMLAnchorElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const [open, setOpen] = useState(false);
+  const activePath = /^(\/graphic-novel|\/book|\/story)/.test(pathname)
+    ? "/project"
+    : pathname;
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      firstMobileLinkRef.current?.focus();
+    if (open) firstLinkRef.current?.focus();
+  }, [open]);
+  useEffect(() => {
+    if (!open) return;
+    const closeOutside = (event: PointerEvent) => {
+      if (!panelRef.current?.contains(event.target as Node)) setOpen(false);
+    };
+    const desktop = window.matchMedia("(min-width: 1101px)");
+    const closeAtDesktop = () => {
+      if (desktop.matches) setOpen(false);
+    };
+    document.addEventListener("pointerdown", closeOutside);
+    desktop.addEventListener("change", closeAtDesktop);
+    return () => {
+      document.removeEventListener("pointerdown", closeOutside);
+      desktop.removeEventListener("change", closeAtDesktop);
+    };
+  }, [open]);
+  function escape(event: KeyboardEvent<HTMLDivElement>) {
+    if (event.key === "Escape" && open) {
+      event.preventDefault();
+      setOpen(false);
+      buttonRef.current?.focus();
     }
-  }, [isMobileMenuOpen]);
-
-  // Some older pages still render their own <SiteHeader active="..." /> inside the page.
-  // The root layout now owns the global header, so page-level instances return null.
-  if (active) return null;
-
-  function closeMobileMenu() {
-    setIsMobileMenuOpen(false);
   }
-
-  function handleMobileMenuKeyDown(event: KeyboardEvent<HTMLDivElement>) {
-    if (event.key !== "Escape" || !isMobileMenuOpen) {
-      return;
-    }
-
-    event.preventDefault();
-    closeMobileMenu();
-    menuButtonRef.current?.focus();
-  }
-
+  const current = (href: string) =>
+    activePath === href || activePath.startsWith(`${href}/`);
   return (
     <header className="site-header" aria-label="Primary site header">
-      <div className="site-container site-header-inner">
+      <div className="editorial-container site-header-inner">
         <Link href="/" className="site-brand" aria-label="Parallax Hearts home">
+          <span className="brand-orbit" aria-hidden="true" />
           <span className="site-brand-main">Parallax Hearts</span>
-          <span className="site-brand-sub">What the Town Keeps</span>
         </Link>
-
         <nav className="site-desktop-nav" aria-label="Primary navigation">
           {mainNavigation.map(([label, href]) => (
             <Link
-              key={label}
               href={href}
-              className={label === activeLabel ? "site-nav-link is-active" : "site-nav-link"}
-              aria-current={label === activeLabel ? "page" : undefined}
+              key={href}
+              className={`site-nav-link${current(href) ? " is-active" : ""}`}
+              aria-current={current(href) ? "page" : undefined}
             >
               {label}
             </Link>
           ))}
         </nav>
-
-        <div className="site-mobile-nav" onKeyDown={handleMobileMenuKeyDown}>
+        <div ref={panelRef} className="site-mobile-nav" onKeyDown={escape}>
           <button
-            ref={menuButtonRef}
+            ref={buttonRef}
             type="button"
             className="site-mobile-menu-button"
             aria-controls="mobile-site-navigation"
-            aria-expanded={isMobileMenuOpen}
-            aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-            onClick={() => setIsMobileMenuOpen((isOpen) => !isOpen)}
+            aria-expanded={open}
+            aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+            onClick={() => setOpen(!open)}
           >
-            {isMobileMenuOpen ? "Close" : "Menu"}
+            {open ? "Close" : "Menu"}
           </button>
-
-          {isMobileMenuOpen ? (
+          {open && (
             <nav
               id="mobile-site-navigation"
               className="site-mobile-nav-panel"
@@ -91,20 +80,26 @@ export default function SiteHeader({ active }: { active?: string }) {
             >
               {mainNavigation.map(([label, href], index) => (
                 <Link
-                  ref={index === 0 ? firstMobileLinkRef : undefined}
-                  key={label}
+                  ref={index === 0 ? firstLinkRef : undefined}
+                  key={href}
                   href={href}
-                  className={label === activeLabel ? "site-mobile-link is-active" : "site-mobile-link"}
-                  aria-current={label === activeLabel ? "page" : undefined}
-                  onClick={closeMobileMenu}
+                  className={`site-mobile-link${current(href) ? " is-active" : ""}`}
+                  aria-current={current(href) ? "page" : undefined}
+                  onClick={() => setOpen(false)}
                 >
                   {label}
                 </Link>
               ))}
             </nav>
-          ) : null}
+          )}
         </div>
       </div>
     </header>
   );
+}
+export default function SiteHeader({ active }: { active?: string }) {
+  const pathname = usePathname();
+  // Root layout owns the sole header. Older archive pages retain inert instances.
+  if (active) return null;
+  return <HeaderNavigation key={pathname} pathname={pathname} />;
 }

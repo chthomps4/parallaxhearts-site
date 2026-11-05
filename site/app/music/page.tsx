@@ -114,12 +114,12 @@ export default function MusicPage() {
               src={musicHeroAsset.src}
               alt={musicHeroAsset.alt}
               fill
-              priority
+              loading="eager"
+              fetchPriority="high"
               sizes="(max-width: 980px) 100vw, 1180px"
               style={{
                 objectFit: "cover",
                 objectPosition: "center",
-                filter: "saturate(0.82) contrast(1.05)",
               }}
             />
 

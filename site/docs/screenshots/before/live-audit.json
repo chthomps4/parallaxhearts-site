@@ -1,0 +1,209 @@
+[
+  {
+    "route": "/",
+    "status": "200",
+    "canonical": "https://www.parallaxhearts.org",
+    "h1": 1,
+    "error": null,
+    "location": null
+  },
+  {
+    "route": "/about",
+    "status": "200",
+    "canonical": "https://www.parallaxhearts.org/about",
+    "h1": 1,
+    "error": null,
+    "location": null
+  },
+  {
+    "route": "/music",
+    "status": "200",
+    "canonical": "https://www.parallaxhearts.org/music",
+    "h1": 1,
+    "error": null,
+    "location": null
+  },
+  {
+    "route": "/book",
+    "status": "200",
+    "canonical": "https://www.parallaxhearts.org/book",
+    "h1": 1,
+    "error": null,
+    "location": null
+  },
+  {
+    "route": "/project",
+    "status": "200",
+    "canonical": "https://www.parallaxhearts.org/project",
+    "h1": 1,
+    "error": null,
+    "location": null
+  },
+  {
+    "route": "/graphic-novel",
+    "status": "200",
+    "canonical": "https://www.parallaxhearts.org/graphic-novel",
+    "h1": 1,
+    "error": null,
+    "location": null
+  },
+  {
+    "route": "/graphic-novel/chapter-one",
+    "status": "200",
+    "canonical": "https://www.parallaxhearts.org/graphic-novel/chapter-one",
+    "h1": 1,
+    "error": null,
+    "location": null
+  },
+  {
+    "route": "/graphic-novel/chapter-one/page-001",
+    "status": "200",
+    "canonical": "https://www.parallaxhearts.org/graphic-novel/chapter-one/page-001",
+    "h1": 1,
+    "error": null,
+    "location": null
+  },
+  {
+    "route": "/graphic-novel/chapter-one/page-002",
+    "status": "200",
+    "canonical": "https://www.parallaxhearts.org/graphic-novel/chapter-one/page-002",
+    "h1": 1,
+    "error": null,
+    "location": null
+  },
+  {
+    "route": "/graphic-novel/chapter-one/page-003",
+    "status": "200",
+    "canonical": "https://www.parallaxhearts.org/graphic-novel/chapter-one/page-003",
+    "h1": 1,
+    "error": null,
+    "location": null
+  },
+  {
+    "route": "/graphic-novel/chapter-one/page-004",
+    "status": "200",
+    "canonical": "https://www.parallaxhearts.org/graphic-novel/chapter-one/page-004",
+    "h1": 1,
+    "error": null,
+    "location": null
+  },
+  {
+    "route": "/graphic-novel/chapter-one/page-005",
+    "status": "200",
+    "canonical": "https://www.parallaxhearts.org/graphic-novel/chapter-one/page-005",
+    "h1": 1,
+    "error": null,
+    "location": null
+  },
+  {
+    "route": "/graphic-novel/chapter-one/page-006",
+    "status": "200",
+    "canonical": "https://www.parallaxhearts.org/graphic-novel/chapter-one/page-006",
+    "h1": 1,
+    "error": null,
+    "location": null
+  },
+  {
+    "route": "/shop",
+    "status": "200",
+    "canonical": "https://www.parallaxhearts.org/shop",
+    "h1": 1,
+    "error": null,
+    "location": null
+  },
+  {
+    "route": "/support",
+    "status": "200",
+    "canonical": "https://www.parallaxhearts.org/support",
+    "h1": 1,
+    "error": null,
+    "location": null
+  },
+  {
+    "route": "/contact",
+    "status": "200",
+    "canonical": "https://www.parallaxhearts.org/contact",
+    "h1": 1,
+    "error": null,
+    "location": null
+  },
+  {
+    "route": "/visuals",
+    "status": "200",
+    "canonical": "https://www.parallaxhearts.org/visuals",
+    "h1": 1,
+    "error": null,
+    "location": null
+  },
+  {
+    "route": "/story",
+    "status": "308",
+    "canonical": null,
+    "h1": 0,
+    "error": null,
+    "location": "/project"
+  },
+  {
+    "route": "/robots.txt",
+    "status": "200",
+    "canonical": null,
+    "h1": 0,
+    "error": null,
+    "location": null
+  },
+  {
+    "route": "/sitemap.xml",
+    "status": "200",
+    "canonical": null,
+    "h1": 0,
+    "error": null,
+    "location": null
+  },
+  {
+    "route": "/field-notes",
+    "status": "404",
+    "canonical": null,
+    "h1": 1,
+    "error": null,
+    "location": null
+  },
+  {
+    "route": "/services",
+    "status": "404",
+    "canonical": null,
+    "h1": 1,
+    "error": null,
+    "location": null
+  },
+  {
+    "route": "/forbidden-knowledge",
+    "status": "404",
+    "canonical": null,
+    "h1": 1,
+    "error": null,
+    "location": null
+  },
+  {
+    "route": "/phylax",
+    "status": "404",
+    "canonical": null,
+    "h1": 1,
+    "error": null,
+    "location": null
+  },
+  {
+    "hostCheck": "https://parallaxhearts.org/",
+    "headers": "HTTP/1.1 200 OK\ndate: Thu, 05 Nov 2026 19:07:10 GMT\nserver: envoy\n\nHTTP/2 307 \ncache-control: public, max-age=0, must-revalidate\ncontent-type: text/plain\ndate: Thu, 05 Nov 2026 19:07:11 GMT\nlocation: https://www.parallaxhearts.org/\nserver: envoy\nstrict-transport-security: max-age=63072000\nx-vercel-id: sfo1::j5jsn-1793905631505-f4b40d9ab266\nx-envoy-upstream-service-time: 626\n\n",
+    "error": null
+  },
+  {
+    "hostCheck": "http://parallaxhearts.org/",
+    "headers": "HTTP/1.1 308 Permanent Redirect\ncontent-type: text/plain\nlocation: https://parallaxhearts.org/\nrefresh: 0;url=https://parallaxhearts.org/\nserver: envoy\nx-envoy-upstream-service-time: 479\ndate: Thu, 05 Nov 2026 19:07:11 GMT\ntransfer-encoding: chunked\n\n",
+    "error": null
+  },
+  {
+    "hostCheck": "http://www.parallaxhearts.org/",
+    "headers": "HTTP/1.1 308 Permanent Redirect\ncontent-type: text/plain\nlocation: https://www.parallaxhearts.org/\nrefresh: 0;url=https://www.parallaxhearts.org/\nserver: envoy\nx-envoy-upstream-service-time: 419\ndate: Thu, 05 Nov 2026 19:07:12 GMT\ntransfer-encoding: chunked\n\n",
+    "error": null
+  }
+]

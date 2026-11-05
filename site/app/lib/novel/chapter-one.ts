@@ -252,9 +252,10 @@ export const novelChapters: NovelChapter[] = [
 
 export function shouldShowReviewNovelPages() {
   return (
-    process.env.PARALLAX_SHOW_REVIEW_PAGES === "true" ||
-    process.env.VERCEL_ENV === "preview" ||
-    process.env.NODE_ENV === "development"
+    process.env.PARALLAX_SHOW_REVIEW_PAGES === "true" &&
+    process.env.NODE_ENV === "development" &&
+    !process.env.VERCEL &&
+    !process.env.VERCEL_ENV
   );
 }
 
@@ -284,7 +285,9 @@ export function getVisibleNovelPages(chapterSlug?: string) {
     ? novelChapters.filter((chapter) => chapter.slug === chapterSlug)
     : novelChapters;
 
-  return chapters.flatMap((chapter) => chapter.pages.filter(isNovelPageVisible));
+  return chapters.flatMap((chapter) =>
+    chapter.pages.filter(isNovelPageVisible),
+  );
 }
 
 export function getLiveNovelPages(chapterSlug?: string) {
@@ -335,4 +338,3 @@ export function getNovelStatusLabel(status: NovelPageStatus) {
       return status satisfies never;
   }
 }
-

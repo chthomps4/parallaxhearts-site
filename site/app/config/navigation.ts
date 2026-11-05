@@ -1,27 +1,16 @@
 export const mainNavigation = [
-  ["Home", "/"],
-  ["Listen", "/music"],
-  ["Book", "/book"],
-  ["Read", "/graphic-novel"],
-  ["Story", "/project"],
-  ["Support", "/support"],
+  ["Crown of Phases", "/crown-of-phases"],
+  ["Poetry", "/poetry"],
+  ["Music", "/music"],
+  ["Stories", "/project"],
   ["About", "/about"],
   ["Contact", "/contact"],
 ] as const;
-
-export const footerMainLinks = [
-  ["Home", "/"],
-  ["Listen", "/music"],
-  ["Companion Book", "/book"],
-  ["Read the Visual Novel", "/graphic-novel/chapter-one/page-001"],
-  ["Graphic Novel Hub", "/graphic-novel"],
-  ["Story World", "/project"],
-  ["Support", "/support"],
-  ["About", "/about"],
-  ["Shop", "/shop"],
-] as const;
-
+export const footerMainLinks = mainNavigation.slice(0, 4);
 export const footerArchiveLinks = [
-  ["Chapter One - Ballast", "/graphic-novel/chapter-one"],
+  ["Sacred geometry", "/sacred-geometry"],
+  ["Energy & healing", "/energy-healing"],
   ["Visuals", "/visuals"],
+  ["Book archive", "/book"],
+  ["Visual novel", "/graphic-novel"],
 ] as const;

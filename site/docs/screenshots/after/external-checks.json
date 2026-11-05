@@ -1,0 +1,72 @@
+[
+  {
+    "url": "https://www.facebook.com/ParallaxHearts/",
+    "exit": 56,
+    "proxyDenied": true,
+    "responseHeaders": "HTTP/1.1 403 Forbidden",
+    "error": "curl: (56) CONNECT tunnel failed, response 403\n"
+  },
+  {
+    "url": "https://www.instagram.com/parallax_hearts",
+    "exit": 56,
+    "proxyDenied": true,
+    "responseHeaders": "HTTP/1.1 403 Forbidden",
+    "error": "curl: (56) CONNECT tunnel failed, response 403\n"
+  },
+  {
+    "url": "https://youtube.com/@parallaxhearts-u7q",
+    "exit": 56,
+    "proxyDenied": true,
+    "responseHeaders": "HTTP/1.1 403 Forbidden",
+    "error": "curl: (56) CONNECT tunnel failed, response 403\n"
+  },
+  {
+    "url": "https://soundcloud.com/parallax-hearts",
+    "exit": 56,
+    "proxyDenied": true,
+    "responseHeaders": "HTTP/1.1 403 Forbidden",
+    "error": "curl: (56) CONNECT tunnel failed, response 403\n"
+  },
+  {
+    "url": "https://ko-fi.com/parallaxhearts",
+    "exit": 56,
+    "proxyDenied": true,
+    "responseHeaders": "HTTP/1.1 403 Forbidden",
+    "error": "curl: (56) CONNECT tunnel failed, response 403\n"
+  },
+  {
+    "url": "https://open.spotify.com/playlist/6jB3kXIOJFWXxEoun1UAVi",
+    "exit": 56,
+    "proxyDenied": true,
+    "responseHeaders": "HTTP/1.1 403 Forbidden",
+    "error": "curl: (56) CONNECT tunnel failed, response 403\n"
+  },
+  {
+    "url": "https://www.nccih.nih.gov/health/reiki",
+    "exit": 56,
+    "proxyDenied": true,
+    "responseHeaders": "HTTP/1.1 403 Forbidden",
+    "error": "curl: (56) CONNECT tunnel failed, response 403\n"
+  },
+  {
+    "url": "https://www.nccih.nih.gov/health/meditation-and-mindfulness-effectiveness-and-safety",
+    "exit": 56,
+    "proxyDenied": true,
+    "responseHeaders": "HTTP/1.1 403 Forbidden",
+    "error": "curl: (56) CONNECT tunnel failed, response 403\n"
+  },
+  {
+    "url": "https://mathcs.clarku.edu/~djoyce/java/elements/bookI/propI1.html",
+    "exit": 56,
+    "proxyDenied": true,
+    "responseHeaders": "HTTP/1.1 403 Forbidden",
+    "error": "curl: (56) CONNECT tunnel failed, response 403\n"
+  },
+  {
+    "url": "https://mathcs.clarku.edu/~djoyce/java/elements/bookVI/propVI30.html",
+    "exit": 56,
+    "proxyDenied": true,
+    "responseHeaders": "HTTP/1.1 403 Forbidden",
+    "error": "curl: (56) CONNECT tunnel failed, response 403\n"
+  }
+]

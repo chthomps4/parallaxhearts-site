@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 
 export const SITE_URL = "https://www.parallaxhearts.org";
 export const SITE_NAME = "Parallax Hearts";
-export const DEFAULT_OG_IMAGE = "/images/hero.jpg";
+export const DEFAULT_OG_IMAGE = "/opengraph-image";
+export const contactEmail = "chad@parallaxhearts.org";
 
 export const socialLinks = {
   facebook: "https://www.facebook.com/ParallaxHearts/",
@@ -82,6 +83,10 @@ export function buildMetadata({
 
 export const defaultKeywords = [
   "Parallax Hearts",
+  "Crown of Phases",
+  "poetry",
+  "writing and visual storytelling",
+  "sacred geometry",
   "What the Town Keeps",
   "Vallen",
   "cinematic acoustic alternative",
@@ -98,7 +103,7 @@ export function musicGroupSchema() {
     "@type": "MusicGroup",
     name: SITE_NAME,
     url: SITE_URL,
-    image: absoluteUrl(DEFAULT_OG_IMAGE),
+    image: absoluteUrl("/images/music-listen.jpg"),
     sameAs: [
       socialLinks.facebook,
       socialLinks.instagram,
@@ -176,7 +181,7 @@ export function musicAlbumSchema(
     title: string;
     href: string;
     connection: string;
-  }[]
+  }[],
 ) {
   return {
     "@context": "https://schema.org",

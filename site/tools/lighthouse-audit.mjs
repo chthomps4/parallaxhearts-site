@@ -4,6 +4,11 @@ import { resolve, sep } from "node:path";
 import { lighthouseRoutes } from "./audit-config.mjs";
 import { startNextServer } from "./next-server.mjs";
 
+const selectedRoutes = process.env.LIGHTHOUSE_ROUTE
+  ? lighthouseRoutes.filter(([name]) => name === process.env.LIGHTHOUSE_ROUTE)
+  : lighthouseRoutes;
+if (!selectedRoutes.length) throw new Error("LIGHTHOUSE_ROUTE did not match a configured route.");
+
 const categoryBudgets = {
   performance: 0.85,
   accessibility: 1,
@@ -23,7 +28,7 @@ if (!outputDir.startsWith(`${projectRoot}${sep}`)) {
   throw new Error("Lighthouse output must stay inside the project root.");
 }
 
-await rm(outputDir, { recursive: true, force: true });
+if (!process.env.LIGHTHOUSE_ROUTE) await rm(outputDir, { recursive: true, force: true });
 await mkdir(outputDir, { recursive: true });
 
 const lighthouseCli = resolve("node_modules/lighthouse/cli/index.js");
@@ -64,11 +69,11 @@ try {
   // without relaxing the measured budgets or retaining the disposable report.
   const warmupReportPath = resolve(outputDir, "warmup.report.json");
   console.log("Warming Lighthouse runner...");
-  await runLighthouse(`${server.url}${lighthouseRoutes[0][1]}`, warmupReportPath);
+  await runLighthouse(`${server.url}${selectedRoutes[0][1]}`, warmupReportPath);
   JSON.parse(await readFile(warmupReportPath, "utf8"));
   await rm(warmupReportPath, { force: true });
 
-  for (const [name, pathname] of lighthouseRoutes) {
+  for (const [name, pathname] of selectedRoutes) {
     const reportPath = resolve(outputDir, `${name}.report.json`);
     const { exitCode, cliOutput } = await runLighthouse(`${server.url}${pathname}`, reportPath);
 

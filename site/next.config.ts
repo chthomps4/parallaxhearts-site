@@ -15,7 +15,8 @@ const securityHeaders = [
   },
   {
     key: "Permissions-Policy",
-    value: "browsing-topics=(), camera=(), geolocation=(), microphone=(), payment=(), usb=()",
+    value:
+      "browsing-topics=(), camera=(), geolocation=(), microphone=(), payment=(), usb=()",
   },
   {
     key: "Strict-Transport-Security",
@@ -23,12 +24,13 @@ const securityHeaders = [
   },
   {
     key: "Content-Security-Policy",
-    value:
-      "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; connect-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests",
+    value: `default-src 'self'; script-src 'self' 'unsafe-inline'${process.env.NODE_ENV === "development" ? " 'unsafe-eval'" : ""}; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; connect-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; upgrade-insecure-requests`,
   },
 ];
 
 const nextConfig: NextConfig = {
+  poweredByHeader: false,
+  images: { formats: ["image/webp"] },
   async redirects() {
     return [
       {

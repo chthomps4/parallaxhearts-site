@@ -24,6 +24,19 @@ try {
   }
 
   const linkinatorCli = resolve("node_modules/linkinator/build/src/cli.js");
+  // This crawler excludes ALL external URLs. A managed outbound proxy cannot
+  // reach the local test server. Remove proxy selectors only for this child;
+  // do not change the parent environment or any external-request tooling.
+  const localEnvironment = { ...process.env };
+  for (const name of [
+    "HTTP_PROXY",
+    "HTTPS_PROXY",
+    "http_proxy",
+    "https_proxy",
+    "ALL_PROXY",
+    "all_proxy",
+  ])
+    delete localEnvironment[name];
   const exitCode = await new Promise((resolveExit, reject) => {
     const child = spawn(
       process.execPath,
@@ -34,7 +47,7 @@ try {
         "--skip",
         "^(?:mailto:|https?://(?!127\\.0\\.0\\.1(?::\\d+)?/))",
       ],
-      { stdio: "inherit" },
+      { stdio: "inherit", env: localEnvironment },
     );
 
     child.once("error", reject);
@@ -51,5 +64,7 @@ if (failures.length) {
   failures.forEach((failure) => console.error(`- ${failure}`));
   process.exitCode = 1;
 } else {
-  console.log(`${auditRoutes.length} routes and all reachable internal links passed.`);
+  console.log(
+    `${auditRoutes.length} routes and all reachable internal links passed.`,
+  );
 }

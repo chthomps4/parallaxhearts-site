@@ -1,0 +1,38 @@
+{
+  "routes": [
+    "/",
+    "/crown-of-phases",
+    "/poetry",
+    "/poetry/a-minor-correction",
+    "/poetry/the-unscheduled-coronation",
+    "/poetry/the-golden-section",
+    "/music",
+    "/project",
+    "/about",
+    "/contact",
+    "/shop",
+    "/support",
+    "/sacred-geometry",
+    "/energy-healing",
+    "/book",
+    "/visuals",
+    "/graphic-novel",
+    "/graphic-novel/chapter-one",
+    "/graphic-novel/chapter-one/page-001"
+  ],
+  "widths": [
+    375,
+    430,
+    768,
+    1024,
+    1440
+  ],
+  "checksPassed": 95,
+  "runLog": [
+    "Responsive screenshots/checks: 375px PASS",
+    "Responsive screenshots/checks: 430px PASS",
+    "Responsive screenshots/checks: 768px PASS",
+    "Responsive screenshots/checks: 1024px PASS",
+    "Responsive screenshots/checks: 1440px PASS"
+  ]
+}

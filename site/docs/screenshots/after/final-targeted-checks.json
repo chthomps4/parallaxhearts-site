@@ -1,0 +1,28 @@
+{
+  "musicAfterOptimization": [
+    {
+      "width": 375,
+      "passed": true
+    },
+    {
+      "width": 430,
+      "passed": true
+    },
+    {
+      "width": 768,
+      "passed": true
+    },
+    {
+      "width": 1024,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "passed": true
+    }
+  ],
+  "geometryCorrectedExplanation": true,
+  "brandedIcon": true,
+  "productionCSPWithoutEval": true,
+  "noPageErrors": true
+}

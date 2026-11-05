@@ -1,347 +1,51 @@
-import Image from "next/image";
 import Link from "next/link";
-
-const koFiUrl = "https://ko-fi.com/parallaxhearts";
-const facebookUrl = "https://www.facebook.com/ParallaxHearts/";
-
-const shopItems = [
-  {
-    title: "What the Town Keeps — Digital Album",
-    price: "$10",
-    text: "The Parallax Hearts album as the central listening piece.",
-    lane: "Music",
-  },
-  {
-    title: "Lyric Book PDF",
-    price: "$5",
-    text: "Collected lyrics and song notes for the album world.",
-    lane: "Lyrics",
-  },
-  {
-    title: "Vallen Concept Art Pack",
-    price: "$7",
-    text: "Selected visuals, album art, and atmospheric pieces from the story world.",
-    lane: "Visuals",
-  },
-  {
-    title: "Graphic Novel Preview PDF",
-    price: "$5",
-    text: "Early page previews and chapter material from the visual novel archive.",
-    lane: "Story",
-  },
-  {
-    title: "Story Fragment PDF",
-    price: "$3",
-    text: "Short prose, page excerpts, and Vallen archive pieces collected for readers.",
-    lane: "Story",
-  },
-  {
-    title: "Complete Support Bundle",
-    price: "$20",
-    text: "A combined package for listeners who want music, lyrics, visuals, and story material together.",
-    lane: "Bundle",
-  },
-];
-
+import { socialLinks } from "../lib/seo";
+import Arrow from "../components/Arrow";
 export default function ShopPage() {
   return (
-    <main className="site-shell">
-      <section style={{ padding: "54px 0 34px" }}>
-        <div className="site-container">
-          <div
-            className="glass-panel"
-            style={{
-              padding: "clamp(28px, 6vw, 58px)",
-              position: "relative",
-              overflow: "hidden",
-            }}
+    <main className="publication-page">
+      <header className="editorial-container archive-intro">
+        <p className="editorial-label">Shop</p>
+        <h1>
+          Take a little
+          <br />
+          <em>of the work with you.</em>
+        </h1>
+        <p className="hero-deck">
+          The existing Parallax Hearts Ko-fi page is the place to check current
+          offerings.
+        </p>
+      </header>
+      <section className="editorial-container reading-intro">
+        <div className="commerce-note">
+          <h2>Check the current listing.</h2>
+          <p>
+            Availability, prices, delivery details, and purchase terms are shown
+            on Ko-fi. This website does not take payments. Previous guide prices
+            and bundles are not listed here while their current availability is
+            being confirmed.
+          </p>
+          <a
+            className="copper-button"
+            href={socialLinks.koFi}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <div
-              style={{
-                position: "absolute",
-                inset: 0,
-                background:
-                  "radial-gradient(circle at 18% 10%, rgba(210,181,139,0.16), transparent 30%), radial-gradient(circle at 82% 20%, rgba(127,141,155,0.14), transparent 34%)",
-                pointerEvents: "none",
-              }}
-            />
-
-            <div style={{ position: "relative", zIndex: 2 }}>
-              <p className="kicker">Shop / one-time digital items</p>
-
-              <h1
-                style={{
-                  margin: 0,
-                  fontSize: "clamp(46px, 8vw, 92px)",
-                  lineHeight: 0.9,
-                  letterSpacing: "-0.07em",
-                  fontWeight: 400,
-                  maxWidth: "960px",
-                }}
-              >
-                Music, lyrics, art, and story pieces.
-              </h1>
-
-              <p
-                className="body-copy"
-                style={{
-                  margin: "24px 0 0",
-                  maxWidth: "760px",
-                  fontSize: "19px",
-                }}
-              >
-                The shop is for one-time digital items connected to Parallax
-                Hearts and <em>What the Town Keeps</em>. Prices are shown here so
-                visitors know what to expect before opening Ko-fi.
-              </p>
-
-              <div
-                style={{
-                  marginTop: "30px",
-                  display: "flex",
-                  gap: "12px",
-                  flexWrap: "wrap",
-                }}
-              >
-                <a
-                  href={koFiUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="primary-button"
-                >
-                  Visit Ko-fi Shop
-                </a>
-
-                <a
-                  href={facebookUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="secondary-button"
-                >
-                  Facebook Stars
-                </a>
-
-                <Link href="/support" className="secondary-button">
-                  Monthly Support
-                </Link>
-
-                <Link href="/music" className="secondary-button">
-                  Listen First
-                </Link>
-              </div>
-            </div>
-          </div>
+            Visit Parallax Hearts on Ko-fi <Arrow />
+          </a>
+        </div>
+        <div className="editorial-actions">
+          <Link className="text-link" href="/music">
+            Listen first <Arrow />
+          </Link>
+          <Link className="text-link" href="/support">
+            Other ways to support <Arrow />
+          </Link>
+          <Link className="text-link" href="/contact">
+            Ask about an item <Arrow />
+          </Link>
         </div>
       </section>
-
-      <section style={{ padding: "34px 0" }}>
-        <div className="site-container">
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "minmax(0, 1fr) minmax(300px, 0.8fr)",
-              gap: "28px",
-              alignItems: "stretch",
-            }}
-          >
-            <div
-              className="glass-panel"
-              style={{
-                padding: "clamp(26px, 5vw, 44px)",
-              }}
-            >
-              <p className="kicker">Catalog</p>
-
-              <div style={{ display: "grid", gap: "16px" }}>
-                {shopItems.map((item) => (
-                  <article
-                    key={item.title}
-                    style={{
-                      border: "1px solid var(--line)",
-                      borderRadius: "22px",
-                      padding: "22px",
-                      background: "rgba(255,255,255,0.035)",
-                    }}
-                  >
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        gap: "18px",
-                        alignItems: "baseline",
-                        marginBottom: "10px",
-                      }}
-                    >
-                      <p
-                        style={{
-                          margin: 0,
-                          color: "var(--gold)",
-                          fontSize: "12px",
-                          letterSpacing: "0.14em",
-                          textTransform: "uppercase",
-                        }}
-                      >
-                        {item.lane}
-                      </p>
-                      <p
-                        style={{
-                          margin: 0,
-                          color: "var(--paper)",
-                          fontSize: "20px",
-                          letterSpacing: "-0.02em",
-                        }}
-                      >
-                        {item.price}
-                      </p>
-                    </div>
-
-                    <h2
-                      style={{
-                        margin: 0,
-                        fontSize: "28px",
-                        lineHeight: 1.05,
-                        letterSpacing: "-0.04em",
-                        fontWeight: 400,
-                      }}
-                    >
-                      {item.title}
-                    </h2>
-
-                    <p
-                      className="soft-copy"
-                      style={{
-                        margin: "12px 0 0",
-                        color: "var(--paper-soft)",
-                      }}
-                    >
-                      {item.text}
-                    </p>
-                  </article>
-                ))}
-              </div>
-
-              <p className="soft-copy" style={{ margin: "18px 0 0" }}>
-                Prices are simple guide prices for one-time digital items. Ko-fi remains the checkout path and final source for live availability.
-              </p>
-
-              <div
-                style={{
-                  marginTop: "28px",
-                  display: "flex",
-                  gap: "12px",
-                  flexWrap: "wrap",
-                }}
-              >
-                <a
-                  href={koFiUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="primary-button"
-                >
-                  Open Ko-fi Shop
-                </a>
-
-                <Link href="/graphic-novel/chapter-one/page-001" className="secondary-button">
-                  Start Reading
-                </Link>
-              </div>
-            </div>
-
-            <div
-              className="glass-panel"
-              style={{
-                borderRadius: "28px",
-                overflow: "hidden",
-                minHeight: "460px",
-              }}
-            >
-              <Image
-                src="/images/shop-support.jpg"
-                alt="What the Town Keeps digital catalog"
-                width={1200}
-                height={1400}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  minHeight: "460px",
-                }}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section style={{ padding: "34px 0 88px" }}>
-        <div className="site-container">
-          <div
-            className="glass-panel"
-            style={{
-              padding: "clamp(26px, 5vw, 44px)",
-              textAlign: "center",
-            }}
-          >
-            <p className="kicker">Shop or support</p>
-
-            <h2 className="section-title">One-time purchase or monthly support.</h2>
-
-            <p
-              className="body-copy"
-              style={{
-                margin: "20px auto 0",
-                maxWidth: "700px",
-              }}
-            >
-              Use the shop for individual digital items. Use the support page
-              for memberships, early looks, and ongoing archive access.
-            </p>
-
-            <div
-              style={{
-                marginTop: "28px",
-                display: "flex",
-                justifyContent: "center",
-                gap: "12px",
-                flexWrap: "wrap",
-              }}
-            >
-              <a
-                href={koFiUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="primary-button"
-              >
-                Visit Ko-fi
-              </a>
-
-              <a
-                href={facebookUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="secondary-button"
-              >
-                Support with Stars
-              </a>
-
-              <Link href="/support" className="secondary-button">
-                Support Page
-              </Link>
-
-              <Link href="/contact" className="secondary-button">
-                Social Links
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <style>{`
-        @media (max-width: 900px) {
-          section div[style*="grid-template-columns"] {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
     </main>
   );
 }

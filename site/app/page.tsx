@@ -1,415 +1,141 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import ArchiveNote from "./components/ArchiveNote";
-import EditorialFeature from "./components/EditorialFeature";
-import SiteHeader from "./components/SiteHeader";
-import { companionBook } from "./lib/book";
-import { getStoryAsset } from "./lib/story-assets";
+import { buildMetadata } from "./lib/seo";
+import { getVisiblePoems, isLocalReview } from "./lib/poetry";
+import LunarArt from "./components/LunarArt";
+import PoetryShelf from "./components/PoetryShelf";
+import ReviewNote from "./components/ReviewNote";
+import Explorations from "./components/Explorations";
+import Arrow from "./components/Arrow";
+import FeaturedPoem from "./components/FeaturedPoem";
 
-const homeHeroAsset = getStoryAsset("hero-vallen-arrival");
-const bookFeatureAsset = getStoryAsset("field-notes");
-
-export const metadata: Metadata = {
-  title: "Parallax Hearts | What the Town Keeps",
-  description:
-    "Enter What the Town Keeps - a cinematic album, forthcoming companion book, visual novel, and rainy small-town story world set in Vallen.",
-  keywords: [
-    "Parallax Hearts",
-    "What the Town Keeps",
-    "Vallen",
-    "cinematic music project",
-    "independent music",
-    "visual novel archive",
-    "graphic novel music project",
-    "album companion book",
-    "literary alternative music",
-  ],
-  alternates: {
-    canonical: "https://www.parallaxhearts.org/",
-  },
-  openGraph: {
-    title: "Parallax Hearts | What the Town Keeps",
-    description:
-      "Hear the album, follow the forthcoming companion book, and enter the visual-novel archive of Vallen.",
-    url: "https://www.parallaxhearts.org/",
-    siteName: "Parallax Hearts",
-    images: [
-      {
-        url: homeHeroAsset.src,
-        width: homeHeroAsset.width,
-        height: homeHeroAsset.height,
-        alt: "Parallax Hearts - What the Town Keeps",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Parallax Hearts | What the Town Keeps",
-    description:
-      "A cinematic album, forthcoming companion book, and visual-novel archive set in the rainy town of Vallen.",
-    images: [homeHeroAsset.src],
-  },
-};
-
-const colors = {
-  text: "#f3eee7",
-  textSoft: "rgba(243, 238, 231, 0.78)",
-  border: "rgba(243, 238, 231, 0.14)",
-};
-
-function ProjectPanel({
-  eyebrow,
-  title,
-  subtitle,
-  body,
-  image,
-  imageAlt,
-  primaryHref,
-  primaryLabel,
-  secondaryHref,
-  secondaryLabel,
-}: {
-  eyebrow: string;
-  title: string;
-  subtitle: string;
-  body: React.ReactNode;
-  image: string;
-  imageAlt: string;
-  primaryHref: string;
-  primaryLabel: string;
-  secondaryHref: string;
-  secondaryLabel: string;
-}) {
-  return (
-    <section
-      className="home-project-panel"
-      style={{
-        position: "relative",
-        minHeight: "74vh",
-        overflow: "hidden",
-        display: "flex",
-        alignItems: "flex-end",
-        border: `1px solid ${colors.border}`,
-        borderRadius: "34px",
-        background: "#050607",
-        boxShadow: "0 30px 90px rgba(0,0,0,0.38)",
-      }}
-    >
-      <Image
-        src={image}
-        alt={imageAlt}
-        fill
-        priority
-        sizes="(max-width: 980px) 100vw, 1180px"
-        style={{
-          objectFit: "cover",
-          objectPosition: "center",
-          filter: "saturate(0.78) contrast(1.06)",
-        }}
-      />
-
-      <div
-        aria-hidden="true"
-        style={{
-          position: "absolute",
-          inset: 0,
-          background:
-            "linear-gradient(180deg, rgba(3,5,7,0.02), rgba(3,5,7,0.30) 42%, rgba(3,5,7,0.96) 100%), linear-gradient(90deg, rgba(3,5,7,0.78), rgba(3,5,7,0.28), rgba(3,5,7,0.72))",
-        }}
-      />
-
-      <div
-        aria-hidden="true"
-        style={{
-          position: "absolute",
-          inset: 0,
-          background:
-            "radial-gradient(circle at 28% 20%, rgba(210,181,139,0.18), transparent 30%), radial-gradient(circle at 82% 80%, rgba(83,94,116,0.16), transparent 32%)",
-        }}
-      />
-
-      <div
-        style={{
-          position: "relative",
-          zIndex: 2,
-          padding: "clamp(26px, 5vw, 46px)",
-        }}
-      >
-        <p className="kicker">{eyebrow}</p>
-
-        <h2
-          style={{
-            margin: 0,
-            color: colors.text,
-            fontSize: "clamp(46px, 8vw, 94px)",
-            lineHeight: 0.9,
-            letterSpacing: "-0.07em",
-            fontWeight: 400,
-            textShadow: "0 14px 44px rgba(0,0,0,0.58)",
-            maxWidth: "980px",
-          }}
-        >
-          {title}
-        </h2>
-
-        <p
-          style={{
-            margin: "20px 0 0",
-            color: colors.text,
-            fontSize: "23px",
-            lineHeight: 1.35,
-          }}
-        >
-          {subtitle}
-        </p>
-
-        <p
-          style={{
-            margin: "18px 0 0",
-            maxWidth: "720px",
-            color: colors.textSoft,
-            fontSize: "17px",
-            lineHeight: 1.85,
-          }}
-        >
-          {body}
-        </p>
-
-        <div
-          style={{
-            marginTop: "28px",
-            display: "flex",
-            gap: "12px",
-            flexWrap: "wrap",
-          }}
-        >
-          <Link href={primaryHref} className="primary-button">
-            {primaryLabel}
-          </Link>
-
-          <Link href={secondaryHref} className="secondary-button">
-            {secondaryLabel}
-          </Link>
-        </div>
-      </div>
-    </section>
-  );
+export const dynamic = "force-dynamic";
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    ...buildMetadata({
+      title: "Parallax Hearts | Crown of Phases",
+      description:
+        "Original poetry, music, stories and visual work by Chad Thompson. Explore Crown of Phases, the featured Parallax Hearts collection.",
+      path: "/",
+      image: "/opengraph-image",
+    }),
+    ...((await isLocalReview()) && { robots: { index: false, follow: false } }),
+  };
 }
-
-export default function HomePage() {
+export default async function HomePage() {
+  const poems = await getVisiblePoems();
+  const anchor = poems.find((poem) => poem.slug === "the-golden-section");
   return (
-    <main className="site-shell">
-      <SiteHeader active="Home" />
-
-      <section style={{ padding: "54px 0 28px" }}>
-        <div className="site-container">
-          <div
-            style={{
-              textAlign: "center",
-              maxWidth: "940px",
-              margin: "0 auto 34px",
-            }}
-          >
-            <p className="kicker">Parallax Hearts / What the Town Keeps</p>
-
-            <h1
-              style={{
-                margin: 0,
-                fontSize: "clamp(46px, 8vw, 92px)",
-                lineHeight: 0.92,
-                letterSpacing: "-0.06em",
-                fontWeight: 400,
-              }}
+    <main className="publication-page">
+      <ReviewNote />
+      <section className="home-hero editorial-container">
+        <div className="hero-copy">
+          <p className="editorial-label">
+            Parallax Hearts · Featured collection
+          </p>
+          <h1>
+            Crown
+            <br />
+            <em>of Phases</em>
+          </h1>
+          <p className="hero-deck">
+            Original poetry and artwork drawn toward the moon, sacred geometry,
+            inner sovereignty, and the strangely beautiful work of being human.
+          </p>
+          <div className="editorial-actions">
+            <Link
+              className="copper-button"
+              href={anchor ? `/poetry/${anchor.slug}` : "/crown-of-phases"}
             >
-              A haunted little town, told one page and one song at a time.
-            </h1>
-
-            <p
-              style={{
-                margin: "22px auto 0",
-                maxWidth: "780px",
-                color: colors.textSoft,
-                fontSize: "20px",
-                lineHeight: 1.75,
-              }}
-            >
-              <em>What the Town Keeps</em> moves through an album, a visual
-              novel, and a forthcoming companion book. Enter through the story,
-              hear the songs, and follow the next pieces of Vallen as the town
-              opens up.
+              {anchor ? "Read The Golden Section" : "Explore Crown of Phases"}{" "}
+              <Arrow />
+            </Link>
+            <Link className="text-link" href="/poetry">
+              Read the poems
+            </Link>
+          </div>
+        </div>
+        <LunarArt priority />
+        <div className="hero-folio">
+          <span>Poetry · Music · Stories · Art</span>
+          <em>A different way of seeing.</em>
+        </div>
+      </section>
+      {anchor && <FeaturedPoem poem={anchor} />}
+      <PoetryShelf poems={poems.filter((poem) => poem.slug !== anchor?.slug)} />
+      {!poems.length && (
+        <section className="parchment-band">
+          <div className="editorial-container collection-statement">
+            <h2>Small moments. Wider worlds.</h2>
+            <p>
+              Poems for the sovereign, the curious, and the beautifully
+              unfinished.
             </p>
+            <span>
+              Lunar imagery, ordinary moments, and the patterns we notice in
+              ourselves.
+            </span>
+            <Link className="text-link" href="/crown-of-phases">
+              About the collection <Arrow />
+            </Link>
           </div>
-
-          <ProjectPanel
-            eyebrow="Start here"
-            title="What the Town Keeps"
-            subtitle="Page one is the door."
-            body={
-              <>
-                Begin in Vallen
-                <ArchiveNote
-                  title="Archive Note: Vallen"
-                  evidence="Creative name / interpretive resonance"
-                >
-                  Vallen is the fictional town at the center of What the Town
-                  Keeps. The name suggests valley, falling, low ground, and a
-                  place where weather and memory collect. This is a
-                  project-specific name, not a historical place claim.
-                </ArchiveNote>
-                , a small town where the visual novel, songs, and fragments all
-                move through the same weather. The best next step is to read
-                from the beginning.
-              </>
-            }
-            image={homeHeroAsset.src}
-            imageAlt={homeHeroAsset.alt}
-            primaryHref="/graphic-novel/chapter-one/page-001"
-            primaryLabel="Start the visual novel"
-            secondaryHref="/support"
-            secondaryLabel="Support the project"
+        </section>
+      )}
+      <Explorations />
+      <section className="vallen-feature">
+        <div className="editorial-container vallen-feature-layout">
+          <Image
+            src="/images/story-world.jpg"
+            alt="Rain-dark streets and warm windows in the fictional town of Vallen."
+            width={1536}
+            height={1024}
+            sizes="(max-width: 800px) 90vw, 45vw"
           />
-
-          <div
-            aria-label="What happens next"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(190px, 1fr))",
-              gap: "12px",
-              marginTop: "18px",
-            }}
-          >
-            {[
-              "Read from page one.",
-              "Use the soundtrack as a companion, not a detour.",
-              "Support is optional and helps fund new pages.",
-              "New public story work is reviewed before it goes live.",
-            ].map((item) => (
-              <p
-                key={item}
-                style={{
-                  margin: 0,
-                  border: `1px solid ${colors.border}`,
-                  borderRadius: "18px",
-                  padding: "14px 16px",
-                  background: "rgba(255,255,255,0.035)",
-                  color: colors.textSoft,
-                  fontSize: "14px",
-                  lineHeight: 1.55,
-                }}
-              >
-                {item}
-              </p>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="editorial-section" aria-labelledby="home-book-heading">
-        <div className="site-container">
-          <div id="home-book-heading">
-            <EditorialFeature
-              eyebrow={companionBook.eyebrow}
-              title={companionBook.headline}
-              description={companionBook.description}
-              detail={companionBook.relationship}
-              image={bookFeatureAsset.src}
-              imageAlt={bookFeatureAsset.alt}
-              primaryHref={companionBook.route}
-              primaryLabel="Enter the book archive"
-              secondaryHref="/music"
-              secondaryLabel="Hear the album"
-              folio="New volume / in development"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section style={{ padding: "38px 0 86px" }}>
-        <div className="site-container">
-          <p className="kicker">Keep exploring</p>
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-              gap: "16px",
-            }}
-          >
-            {[
-              {
-                title: "Read",
-                text: "Begin Chapter One - Ballast, the main path through the visual novel archive.",
-                href: "/graphic-novel/chapter-one/page-001",
-              },
-              {
-                title: "Listen",
-                text: "Hear the soundtrack after you start the story, or keep it open while you read.",
-                href: "/music",
-              },
-              {
-                title: "Book",
-                text: "Follow the companion volume as the longer written path through Vallen takes shape.",
-                href: "/book",
-              },
-              {
-                title: "Support",
-                text: "Help fund new pages, songs, and story-world work through the support path.",
-                href: "/support",
-              },
-            ].map((card) => (
-              <Link
-                key={card.title}
-                href={card.href}
-                className="link-card"
-                style={{
-                  textDecoration: "none",
-                  color: colors.text,
-                  border: `1px solid ${colors.border}`,
-                  borderRadius: "24px",
-                  padding: "24px",
-                  background:
-                    "linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.018))",
-                  boxShadow: "0 20px 60px rgba(0,0,0,0.24)",
-                }}
-              >
-                <h3
-                  style={{
-                    margin: 0,
-                    fontSize: "30px",
-                    lineHeight: 1,
-                    fontWeight: 400,
-                    letterSpacing: "-0.035em",
-                  }}
-                >
-                  {card.title}
-                </h3>
-
-                <p
-                  style={{
-                    margin: "12px 0 0",
-                    color: colors.textSoft,
-                    fontSize: "15px",
-                    lineHeight: 1.75,
-                  }}
-                >
-                  {card.text}
-                </p>
+          <div>
+            <p className="editorial-label">Music &amp; story</p>
+            <h2>What the Town Keeps</h2>
+            <p>An album. A story world. A town that keeps its secrets.</p>
+            <div className="editorial-actions">
+              <Link className="outline-button" href="/music">
+                Hear the music <Arrow />
               </Link>
-            ))}
+              <Link className="outline-button" href="/project">
+                Enter Vallen <Arrow />
+              </Link>
+            </div>
+            <Link
+              className="text-link quiet-link"
+              href="/graphic-novel/chapter-one/page-001"
+            >
+              Start the visual novel <Arrow />
+            </Link>
           </div>
         </div>
       </section>
-
-      <style>{`
-        @media (max-width: 980px) {
-          .home-project-panel {
-            min-height: 68vh !important;
-          }
-        }
-      `}</style>
+      <section className="editorial-container identity-section">
+        <p className="editorial-label">The wider Parallax Hearts</p>
+        <h2>
+          The work has never belonged
+          <br />
+          <em>to one medium.</em>
+        </h2>
+        <p>
+          Poems, music, stories and images follow the places where logic meets
+          feeling—and where ordinary life gets unexpectedly strange.
+        </p>
+        <div className="editorial-actions">
+          <Link className="text-link" href="/about">
+            About Parallax Hearts <Arrow />
+          </Link>
+          <Link className="text-link" href="/visuals">
+            Visual works <Arrow />
+          </Link>
+          <Link className="text-link" href="/book">
+            The book archive <Arrow />
+          </Link>
+        </div>
+      </section>
     </main>
   );
 }
