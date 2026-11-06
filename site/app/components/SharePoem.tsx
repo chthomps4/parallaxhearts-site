@@ -6,21 +6,31 @@ export default function SharePoem({
   title,
   url,
   localReview = false,
+  reviewPath,
+  kind = "poem",
+  compact = false,
 }: {
   title: string;
   url: string;
   localReview?: boolean;
+  reviewPath?: string;
+  kind?: "poem" | "fragment";
+  compact?: boolean;
 }) {
   const [message, setMessage] = useState("");
-  const [showLink, setShowLink] = useState(false);
+  const [manualLink, setManualLink] = useState("");
   async function copy() {
-    const link = localReview ? window.location.href : url;
+    const link = localReview
+      ? reviewPath
+        ? new URL(reviewPath, window.location.href).href
+        : window.location.href
+      : url;
     try {
       if (!navigator.clipboard) throw new Error("Clipboard unavailable");
       await navigator.clipboard.writeText(link);
       setMessage("Link copied.");
     } catch {
-      setShowLink(true);
+      setManualLink(link);
       setMessage("Copy this link manually.");
     }
   }
@@ -39,26 +49,26 @@ export default function SharePoem({
       <div className="share-actions">
         {!localReview && (
           <button type="button" onClick={share}>
-            Share poem
+            Share {kind}
           </button>
         )}
         <button type="button" onClick={copy}>
           {localReview ? "Copy local review link" : "Copy link"}
         </button>
       </div>
-      {localReview && (
+      {localReview && !compact && (
         <p className="contact-note">
           Review links work only on this machine. Public sharing is available
           after publication approval.
         </p>
       )}
       <p role="status">{message}</p>
-      {showLink && (
+      {manualLink && (
         <label className="manual-link">
-          Poem link
+          {kind === "poem" ? "Poem link" : "Fragment link"}
           <input
             readOnly
-            value={localReview ? window.location.href : url}
+            value={manualLink}
             onFocus={(event) => event.target.select()}
           />
         </label>

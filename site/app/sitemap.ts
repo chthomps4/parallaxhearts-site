@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { SITE_URL } from "./lib/seo";
 import { getLiveNovelPages } from "./lib/novel/chapter-one";
 import { getPublishedPoems } from "./lib/poetry";
+import { getPublishedQuotes } from "./lib/quotes";
 
 const staticRoutes = [
   {
@@ -144,5 +145,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(`${poem.publishedAt}T00:00:00Z`),
     }),
   );
-  return [...corePages, ...chapterPages, ...poetryPages];
+  const quotes = getPublishedQuotes();
+  const quotePages = quotes.length
+    ? [
+        routeEntry({
+          path: "/quotes",
+          priority: 0.8,
+          changeFrequency: "monthly",
+          lastModified: new Date(
+            `${quotes
+              .map((quote) => quote.publishedAt!)
+              .sort()
+              .at(-1)}T00:00:00Z`,
+          ),
+        }),
+      ]
+    : [];
+  return [...corePages, ...chapterPages, ...poetryPages, ...quotePages];
 }

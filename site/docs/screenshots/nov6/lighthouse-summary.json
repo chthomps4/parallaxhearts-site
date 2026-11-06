@@ -1,0 +1,47 @@
+{
+  "scope": "Three changed public routes, local mobile lab simulation; no scores claimed for draft quote pages. Existing budgets unchanged.",
+  "reports": [
+    {
+      "name": "home",
+      "route": "/",
+      "fetchTime": "2026-11-06T13:12:36.438Z",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpMs": 2085,
+      "cls": 0.001,
+      "bytes": 290408
+    },
+    {
+      "name": "music",
+      "route": "/music",
+      "fetchTime": "2026-11-06T13:13:04.936Z",
+      "scores": {
+        "performance": 97,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpMs": 2489,
+      "cls": 0.0,
+      "bytes": 266451
+    },
+    {
+      "name": "project",
+      "route": "/project",
+      "fetchTime": "2026-11-06T13:13:32.860Z",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lcpMs": 2098,
+      "cls": 0.001,
+      "bytes": 301404
+    }
+  ]
+}

@@ -33,7 +33,7 @@ export default function SiteFooter() {
             ))}
           </div>
           <div>
-            <h2>Further</h2>
+            <h2>Other work</h2>
             {footerArchiveLinks.map(([label, href]) => (
               <Link href={href} key={href}>
                 {label}

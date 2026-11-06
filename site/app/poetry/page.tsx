@@ -5,6 +5,7 @@ import { getVisiblePoems, isLocalReview } from "../lib/poetry";
 import PoetryIndex from "../components/PoetryIndex";
 import ReviewNote from "../components/ReviewNote";
 import Arrow from "../components/Arrow";
+import LiteraryNavigation from "../components/LiteraryNavigation";
 
 export const dynamic = "force-dynamic";
 export async function generateMetadata(): Promise<Metadata> {
@@ -34,6 +35,7 @@ export default async function PoetryPage() {
         <p className="hero-deck">
           Original poems from Parallax Hearts. Take your time.
         </p>
+        <LiteraryNavigation active="poetry" />
       </header>
       <section className="parchment-band">
         <div className="editorial-container">

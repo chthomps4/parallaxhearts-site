@@ -1,0 +1,678 @@
+{
+  "responsiveSummary": null,
+  "responsive": [
+    {
+      "route": "/",
+      "width": 375,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Parallax Hearts | Crown of Phases"
+    },
+    {
+      "route": "/crown-of-phases",
+      "width": 375,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Crown of Phases | Parallax Hearts"
+    },
+    {
+      "route": "/poetry",
+      "width": 375,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Poetry | Parallax Hearts"
+    },
+    {
+      "route": "/poetry/a-minor-correction",
+      "width": 375,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "A Minor Correction | Crown of Phases"
+    },
+    {
+      "route": "/poetry/the-unscheduled-coronation",
+      "width": 375,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "The Unscheduled Coronation | Crown of Phases"
+    },
+    {
+      "route": "/poetry/the-golden-section",
+      "width": 375,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "The Golden Section | Crown of Phases"
+    },
+    {
+      "route": "/music",
+      "width": 375,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Music | Parallax Hearts"
+    },
+    {
+      "route": "/project",
+      "width": 375,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "What the Town Keeps | Parallax Hearts"
+    },
+    {
+      "route": "/about",
+      "width": 375,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "About | Parallax Hearts"
+    },
+    {
+      "route": "/contact",
+      "width": 375,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Contact | Parallax Hearts"
+    },
+    {
+      "route": "/shop",
+      "width": 375,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Shop | Parallax Hearts"
+    },
+    {
+      "route": "/support",
+      "width": 375,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Support | Parallax Hearts"
+    },
+    {
+      "route": "/sacred-geometry",
+      "width": 375,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Sacred Geometry: Pattern & Meaning | Parallax Hearts"
+    },
+    {
+      "route": "/energy-healing",
+      "width": 375,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Energy & Healing: Practice, Meaning & Evidence | Parallax Hearts"
+    },
+    {
+      "route": "/book",
+      "width": 375,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Book | Parallax Hearts"
+    },
+    {
+      "route": "/visuals",
+      "width": 375,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Visuals | What the Town Keeps"
+    },
+    {
+      "route": "/graphic-novel",
+      "width": 375,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "What the Town Keeps | Visual Novel"
+    },
+    {
+      "route": "/graphic-novel/chapter-one",
+      "width": 375,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Chapter One - Ballast | What the Town Keeps"
+    },
+    {
+      "route": "/graphic-novel/chapter-one/page-001",
+      "width": 375,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "The Crossing | Chapter One - Ballast | What the Town Keeps"
+    },
+    {
+      "route": "/quotes",
+      "width": 375,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Quotes & Fragments | Crown of Phases"
+    },
+    {
+      "route": "/poetry/the-good-scissors",
+      "width": 375,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "The Good Scissors | Crown of Phases"
+    },
+    {
+      "route": "/poetry/the-wrong-word",
+      "width": 375,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "The Wrong Word | Crown of Phases"
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Parallax Hearts | Crown of Phases"
+    },
+    {
+      "route": "/crown-of-phases",
+      "width": 768,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Crown of Phases | Parallax Hearts"
+    },
+    {
+      "route": "/poetry",
+      "width": 768,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Poetry | Parallax Hearts"
+    },
+    {
+      "route": "/poetry/a-minor-correction",
+      "width": 768,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "A Minor Correction | Crown of Phases"
+    },
+    {
+      "route": "/poetry/the-unscheduled-coronation",
+      "width": 768,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "The Unscheduled Coronation | Crown of Phases"
+    },
+    {
+      "route": "/poetry/the-golden-section",
+      "width": 768,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "The Golden Section | Crown of Phases"
+    },
+    {
+      "route": "/music",
+      "width": 768,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Music | Parallax Hearts"
+    },
+    {
+      "route": "/project",
+      "width": 768,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "What the Town Keeps | Parallax Hearts"
+    },
+    {
+      "route": "/about",
+      "width": 768,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "About | Parallax Hearts"
+    },
+    {
+      "route": "/contact",
+      "width": 768,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Contact | Parallax Hearts"
+    },
+    {
+      "route": "/shop",
+      "width": 768,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Shop | Parallax Hearts"
+    },
+    {
+      "route": "/support",
+      "width": 768,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Support | Parallax Hearts"
+    },
+    {
+      "route": "/sacred-geometry",
+      "width": 768,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Sacred Geometry: Pattern & Meaning | Parallax Hearts"
+    },
+    {
+      "route": "/energy-healing",
+      "width": 768,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Energy & Healing: Practice, Meaning & Evidence | Parallax Hearts"
+    },
+    {
+      "route": "/book",
+      "width": 768,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Book | Parallax Hearts"
+    },
+    {
+      "route": "/visuals",
+      "width": 768,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Visuals | What the Town Keeps"
+    },
+    {
+      "route": "/graphic-novel",
+      "width": 768,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "What the Town Keeps | Visual Novel"
+    },
+    {
+      "route": "/graphic-novel/chapter-one",
+      "width": 768,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Chapter One - Ballast | What the Town Keeps"
+    },
+    {
+      "route": "/graphic-novel/chapter-one/page-001",
+      "width": 768,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "The Crossing | Chapter One - Ballast | What the Town Keeps"
+    },
+    {
+      "route": "/quotes",
+      "width": 768,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Quotes & Fragments | Crown of Phases"
+    },
+    {
+      "route": "/poetry/the-good-scissors",
+      "width": 768,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "The Good Scissors | Crown of Phases"
+    },
+    {
+      "route": "/poetry/the-wrong-word",
+      "width": 768,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "The Wrong Word | Crown of Phases"
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Parallax Hearts | Crown of Phases"
+    },
+    {
+      "route": "/crown-of-phases",
+      "width": 1440,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Crown of Phases | Parallax Hearts"
+    },
+    {
+      "route": "/poetry",
+      "width": 1440,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Poetry | Parallax Hearts"
+    },
+    {
+      "route": "/poetry/a-minor-correction",
+      "width": 1440,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "A Minor Correction | Crown of Phases"
+    },
+    {
+      "route": "/poetry/the-unscheduled-coronation",
+      "width": 1440,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "The Unscheduled Coronation | Crown of Phases"
+    },
+    {
+      "route": "/poetry/the-golden-section",
+      "width": 1440,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "The Golden Section | Crown of Phases"
+    },
+    {
+      "route": "/music",
+      "width": 1440,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Music | Parallax Hearts"
+    },
+    {
+      "route": "/project",
+      "width": 1440,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "What the Town Keeps | Parallax Hearts"
+    },
+    {
+      "route": "/about",
+      "width": 1440,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "About | Parallax Hearts"
+    },
+    {
+      "route": "/contact",
+      "width": 1440,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Contact | Parallax Hearts"
+    },
+    {
+      "route": "/shop",
+      "width": 1440,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Shop | Parallax Hearts"
+    },
+    {
+      "route": "/support",
+      "width": 1440,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Support | Parallax Hearts"
+    },
+    {
+      "route": "/sacred-geometry",
+      "width": 1440,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Sacred Geometry: Pattern & Meaning | Parallax Hearts"
+    },
+    {
+      "route": "/energy-healing",
+      "width": 1440,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Energy & Healing: Practice, Meaning & Evidence | Parallax Hearts"
+    },
+    {
+      "route": "/book",
+      "width": 1440,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Book | Parallax Hearts"
+    },
+    {
+      "route": "/visuals",
+      "width": 1440,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Visuals | What the Town Keeps"
+    },
+    {
+      "route": "/graphic-novel",
+      "width": 1440,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "What the Town Keeps | Visual Novel"
+    },
+    {
+      "route": "/graphic-novel/chapter-one",
+      "width": 1440,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Chapter One - Ballast | What the Town Keeps"
+    },
+    {
+      "route": "/graphic-novel/chapter-one/page-001",
+      "width": 1440,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "The Crossing | Chapter One - Ballast | What the Town Keeps"
+    },
+    {
+      "route": "/quotes",
+      "width": 1440,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "Quotes & Fragments | Crown of Phases"
+    },
+    {
+      "route": "/poetry/the-good-scissors",
+      "width": 1440,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "The Good Scissors | Crown of Phases"
+    },
+    {
+      "route": "/poetry/the-wrong-word",
+      "width": 1440,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "errors": [],
+      "title": "The Wrong Word | Crown of Phases"
+    }
+  ],
+  "interactions": [
+    "Every poem matches stored text; canonical/social metadata, public release gating and held-card 404s PASS",
+    "Approved sitemap entries present; internal files and unknown poem remain inaccessible",
+    "Homepage anchor, canonical-link copy, stubbed native-share payload, and keyboard skip link PASS",
+    "Search, empty state, reset, theme/collection/form filters PASS",
+    "Review link clipboard and denied-clipboard manual fallback PASS",
+    "Four-link primary navigation, preserved ten-track guide and expandable Vallen archive PASS",
+    "Twenty exact fragments, search/theme/reset, stable local deep links, manual fallback and public exclusion PASS",
+    "Geometry construction steps/diagram/announced explanation PASS",
+    "Pixel 5 emulation/reduced motion: menu focus, Escape, focus return, navigation reset PASS"
+  ],
+  "axeViolations": [],
+  "browser": "Playwright/system Chromium; Browser plugin unavailable"
+}

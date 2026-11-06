@@ -10,6 +10,7 @@ import "@fontsource/dm-mono/latin-400.css";
 import "./globals.css";
 import "./audit-fixes.css";
 import "./publication.css";
+import "./reading-extensions.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

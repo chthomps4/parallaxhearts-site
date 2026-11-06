@@ -1,15 +1,17 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import ArchiveNote from "../components/ArchiveNote";
-import SiteHeader from "../components/SiteHeader";
+import Arrow from "../components/Arrow";
+import { buildMetadata } from "../lib/seo";
+import { getLiveNovelPages } from "../lib/novel/chapter-one";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "What the Town Keeps | Parallax Hearts",
   description:
-    "Enter What the Town Keeps by Parallax Hearts â€” the album, story world, visual novel archive, and rainy small-town world of Vallen.",
-};
-
+    "The Vallen story archive: read What the Town Keeps, explore the visual novel, or listen to its companion album.",
+  path: "/project",
+});
 const worldDetails = [
   "Rainy small-town America",
   "Old houses and dim windows",
@@ -18,340 +20,115 @@ const worldDetails = [
   "Emotional realism without horror, fantasy, or spectacle",
 ];
 
-const storyDoors = [
-  {
-    title: "Read",
-    text: "Begin the built-in visual novel with Chapter One â€” Ballast.",
-    href: "/graphic-novel/chapter-one/page-001",
-  },
-  {
-    title: "Listen",
-    text: "Hear the album and follow the music side of the project.",
-    href: "/music",
-  },
-];
-
 export default function ProjectPage() {
+  const pages = getLiveNovelPages();
   return (
-    <main
-      className="site-shell"
-      style={{
-        minHeight: "100vh",
-        background:
-          "radial-gradient(circle at top, rgba(91,111,132,0.18), transparent 35%), radial-gradient(circle at 88% 8%, rgba(157,121,82,0.12), transparent 30%), linear-gradient(180deg, #08080d 0%, #0b0b12 45%, #11111b 100%)",
-        color: "#f3eee7",
-      }}
-    >
-      <SiteHeader active="Story" />
-
-      <div className="site-container">
-        <section style={{ padding: "60px 0 34px" }}>
-          <div
-            className="glass-panel"
-            style={{
-              padding: "clamp(28px, 6vw, 58px)",
-              position: "relative",
-              overflow: "hidden",
-            }}
+    <main className="publication-page archive-page">
+      <section className="editorial-container archive-hero">
+        <div>
+          <p className="editorial-label">Other work · Stories</p>
+          <h1>
+            What the
+            <br />
+            <em>Town Keeps.</em>
+          </h1>
+          <p className="hero-deck">
+            The story world of Vallen: a rainy small town of rail lines, old
+            houses, quiet rooms, and records that do not always stay on paper.
+          </p>
+          <Link
+            className="copper-button"
+            href="/graphic-novel/chapter-one/page-001"
           >
-            <div
-              aria-hidden="true"
-              style={{
-                position: "absolute",
-                inset: 0,
-                background:
-                  "radial-gradient(circle at 18% 12%, rgba(210,181,139,0.14), transparent 30%), radial-gradient(circle at 82% 16%, rgba(127,141,155,0.12), transparent 34%)",
-                pointerEvents: "none",
-              }}
-            />
-
-            <div style={{ position: "relative", zIndex: 2 }}>
-              <p className="kicker">What the Town Keeps</p>
-
-              <h1
-                style={{
-                  margin: 0,
-                  fontSize: "clamp(44px, 8vw, 86px)",
-                  lineHeight: 0.92,
-                  letterSpacing: "-0.07em",
-                  fontWeight: 400,
-                  maxWidth: "940px",
-                }}
+            Start the visual novel <Arrow />
+          </Link>
+        </div>
+        <Image
+          src="/images/story-world.jpg"
+          alt="Small town rooftops at dusk, church steeple, rail lines, fog, and warm window lights."
+          width={1536}
+          height={1024}
+          sizes="(max-width: 800px) 90vw, 38vw"
+          priority
+        />
+      </section>
+      <section
+        className="editorial-container quiet-archive-section"
+        aria-labelledby="archive-paths-title"
+      >
+        <h2 id="archive-paths-title">Find your place.</h2>
+        <nav className="archive-directory" aria-label="Vallen archive">
+          <Link href="/graphic-novel/chapter-one">
+            <span>Chapter One · Ballast</span>
+            <span>
+              Browse the {pages.length} published pages <Arrow />
+            </span>
+          </Link>
+          <Link href="/music">
+            <span>The album</span>
+            <span>
+              Listen and explore the track guide <Arrow />
+            </span>
+          </Link>
+          <Link href="/book">
+            <span>The book archive</span>
+            <span>
+              Read about the companion book <Arrow />
+            </span>
+          </Link>
+        </nav>
+        <details className="archive-details">
+          <summary>About Vallen and the archive</summary>
+          <div className="archive-prose">
+            <h2>The town as archive.</h2>
+            <p>
+              <em>What the Town Keeps</em> is the story world surrounding the
+              Parallax Hearts album. It is set in Vallen
+              <ArchiveNote
+                title="Archive Note: Vallen"
+                evidence="Creative name / interpretive resonance"
               >
-                A town built from memory, weather, and what no one says out loud.
-              </h1>
-
-              <p
-                className="body-copy"
-                style={{
-                  margin: "24px 0 0",
-                  maxWidth: "860px",
-                  fontSize: "19px",
-                }}
-              >
-                <em>What the Town Keeps</em> is the story world surrounding the
-                Parallax Hearts album. It is set in Vallen
-                <ArchiveNote
-                  title="Archive Note: Vallen"
-                  evidence="Creative name / interpretive resonance"
-                >
-                  Vallen is the fictional town at the center of What the Town
-                  Keeps. The name suggests valley, falling, low ground, and a
-                  place where weather and memory collect. This is a
-                  project-specific name, not a historical place claim.
-                </ArchiveNote>
-                , a rainy small town of rail lines, old houses, quiet rooms,
-                dim windows, and records that do not always stay on paper.
-              </p>
-
-              <p
-                className="body-copy"
-                style={{
-                  margin: "18px 0 0",
-                  maxWidth: "860px",
-                  fontSize: "18px",
-                }}
-              >
-                This page holds the world. The visual novel is where you read
-                it. The music page is where you hear it.
-              </p>
-
-              <div
-                style={{
-                  marginTop: "28px",
-                  display: "flex",
-                  gap: "12px",
-                  flexWrap: "wrap",
-                }}
-              >
-                <Link href="/graphic-novel/chapter-one/page-001" className="primary-button">
-                  Start the Visual Novel
-                </Link>
-
-                <Link href="/music" className="secondary-button">
-                  Listen to the Album
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section style={{ padding: "34px 0" }}>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "22px",
-            }}
-          >
-            <div
-              className="glass-panel"
-              style={{
-                overflow: "hidden",
-                borderRadius: "28px",
-              }}
-            >
-              <Image
-                src="/images/graphic-novel-hub.jpg"
-                alt="Old boarding house on a quiet Vallen street at dusk, rain, warm porch light"
-                width={1200}
-                height={900}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  minHeight: "320px",
-                }}
-              />
-            </div>
-
-            <div
-              className="glass-panel"
-              style={{
-                overflow: "hidden",
-                borderRadius: "28px",
-              }}
-            >
-              <Image
-                src="/images/story-world.jpg"
-                alt="Small town rooftops at dusk, church steeple, rail lines, fog, warm window lights"
-                width={1200}
-                height={900}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  minHeight: "320px",
-                }}
-              />
-            </div>
-          </div>
-        </section>
-
-        <section style={{ padding: "34px 0" }}>
-          <div
-            className="glass-panel"
-            style={{
-              padding: "clamp(26px, 5vw, 44px)",
-              display: "grid",
-              gridTemplateColumns: "minmax(0, 1fr) minmax(260px, 0.8fr)",
-              gap: "30px",
-              alignItems: "start",
-            }}
-          >
-            <div>
-              <p className="kicker">Story world</p>
-
-              <h2 className="section-title">The town as archive.</h2>
-
-              <p className="body-copy" style={{ margin: "20px 0 0" }}>
-                In Vallen, an archive
-                <ArchiveNote
-                  title="Archive Note: Archive"
-                  evidence="Well-supported word history / creative use"
-                >
-                  An archive is a place where records are preserved. In What the
-                  Town Keeps, the town itself behaves like an archive: houses,
-                  roads, rail lines, rooms, and habits preserve traces of what
-                  people leave behind.
-                </ArchiveNote>{" "}
-                is not only a box of documents. It can be a house, a window, a
-                street after rain, a rail line, or a room still arranged around
-                someone who is gone.
-              </p>
-
-              <p className="body-copy" style={{ margin: "18px 0 0" }}>
-                The story follows the pressure between what people remember,
-                what they deny, what they inherit, and what the town quietly
-                keeps in place.
-              </p>
-            </div>
-
-            <aside
-              style={{
-                border: "1px solid var(--line)",
-                borderRadius: "24px",
-                padding: "24px",
-                background:
-                  "linear-gradient(180deg, rgba(210,181,139,0.10), rgba(255,255,255,0.025))",
-              }}
-            >
-              <p className="kicker" style={{ marginBottom: "18px" }}>
-                Visual language
-              </p>
-
-              {worldDetails.map((item) => (
-                <div
-                  key={item}
-                  style={{
-                    padding: "14px 0",
-                    borderTop: "1px solid var(--line)",
-                    color: "var(--paper-soft)",
-                    fontSize: "15px",
-                    lineHeight: 1.55,
-                  }}
-                >
-                  {item}
-                </div>
-              ))}
-            </aside>
-          </div>
-        </section>
-
-        <section style={{ padding: "34px 0" }}>
-          <p className="kicker">Choose a path</p>
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-              gap: "16px",
-              marginTop: "18px",
-            }}
-          >
-            {storyDoors.map((door) => (
-              <Link
-                key={door.title}
-                href={door.href}
-                className="glass-panel link-card"
-                style={{
-                  padding: "26px",
-                  borderRadius: "26px",
-                  color: "var(--paper)",
-                  textDecoration: "none",
-                }}
-              >
-                <h2
-                  style={{
-                    margin: 0,
-                    fontSize: "31px",
-                    lineHeight: 1.02,
-                    letterSpacing: "-0.045em",
-                    fontWeight: 400,
-                  }}
-                >
-                  {door.title}
-                </h2>
-
-                <p className="soft-copy" style={{ margin: "14px 0 0" }}>
-                  {door.text}
-                </p>
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        <section style={{ padding: "34px 0 88px" }}>
-          <div
-            className="glass-panel"
-            style={{
-              padding: "clamp(26px, 5vw, 44px)",
-              textAlign: "center",
-            }}
-          >
-            <p className="kicker">Story layer</p>
-
-            <h2 className="section-title">Some words still open like drawers.</h2>
-
-            <p
-              className="body-copy"
-              style={{
-                margin: "20px auto 0",
-                maxWidth: "760px",
-              }}
-            >
-              Some pages contain small Archive Notes - fragments of word history, symbolism, and story context. They are not explanations of the whole story. They are little drawers inside the Vallen archive.
+                Vallen is the fictional town at the center of What the Town
+                Keeps. The name suggests valley, falling, low ground, and a
+                place where weather and memory collect. This is a
+                project-specific name, not a historical place claim.
+              </ArchiveNote>
+              .
             </p>
-
-            <div
-              style={{
-                marginTop: "28px",
-                display: "flex",
-                justifyContent: "center",
-                gap: "12px",
-                flexWrap: "wrap",
-              }}
-            >
-              <Link href="/graphic-novel/chapter-one/page-001" className="primary-button">
-                Start the Visual Novel
-              </Link>
-
-              <Link href="/support" className="secondary-button">
-                Support the Project
-              </Link>
-            </div>
+            <p>
+              In Vallen, an archive
+              <ArchiveNote
+                title="Archive Note: Archive"
+                evidence="Well-supported word history / creative use"
+              >
+                An archive is a place where records are preserved. In What the
+                Town Keeps, the town itself behaves like an archive: houses,
+                roads, rail lines, rooms, and habits preserve traces of what
+                people leave behind.
+              </ArchiveNote>{" "}
+              is not only a box of documents. It can be a house, a window, a
+              street after rain, a rail line, or a room still arranged around
+              someone who is gone.
+            </p>
+            <p>
+              The story follows the pressure between what people remember, what
+              they deny, what they inherit, and what the town quietly keeps in
+              place.
+            </p>
+            <h3>Visual language</h3>
+            <ul>
+              {worldDetails.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <p>
+              Some pages contain small Archive Notes—fragments of word history,
+              symbolism, and story context. They are not explanations of the
+              whole story. They are little drawers inside the Vallen archive.
+            </p>
           </div>
-        </section>
-
-        <style>{`
-          @media (max-width: 900px) {
-            section div[style*="grid-template-columns"] {
-              grid-template-columns: 1fr !important;
-            }
-          }
-        `}</style>
-      </div>
+        </details>
+      </section>
     </main>
   );
 }
-

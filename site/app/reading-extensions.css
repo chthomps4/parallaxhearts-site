@@ -1,0 +1,248 @@
+/* Native additions to the existing literary system; original poem typography stays intact. */
+.reading-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 28px;
+  margin: 28px 0 34px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--amber);
+}
+.reading-navigation a {
+  padding: 7px 0;
+  color: var(--paper-soft);
+  text-underline-offset: 7px;
+}
+.reading-navigation [aria-current="page"] {
+  color: var(--paper);
+  text-decoration: underline;
+  text-decoration-color: var(--amber);
+}
+.other-work,
+.fragment-feature {
+  padding-block: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  border-top: 1px solid var(--amber);
+}
+.other-work p {
+  color: var(--paper-soft);
+  margin: 0;
+  font-size: 18px;
+}
+.publication-page .other-work h2.editorial-label,
+.publication-page .fragment-feature h2.editorial-label {
+  font: 11px/1.7 var(--poem-font);
+  letter-spacing: 0.2em;
+  margin-bottom: 14px;
+}
+.fragment-feature blockquote {
+  margin: 0;
+  max-width: 780px;
+}
+.fragment-feature blockquote p {
+  font: italic clamp(26px, 3vw, 38px) / 1.45 var(--display-font);
+  margin: 0;
+}
+.fragment-feature > .text-link {
+  flex-shrink: 0;
+}
+.fragment-filters {
+  grid-template-columns: minmax(0, 2fr) minmax(180px, 1fr) auto;
+}
+.fragment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 64px;
+}
+.fragment-entry {
+  border-top: 1px solid #a88962;
+  padding: 36px 0 20px;
+  scroll-margin-top: 100px;
+}
+.publication-page .fragment-entry h2 {
+  font-size: 34px;
+  margin: 0 0 24px;
+}
+.fragment-entry h2 a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 7px;
+}
+.fragment-entry blockquote {
+  margin: 0;
+}
+.fragment-entry blockquote p {
+  font-size: 22px;
+  line-height: 1.7;
+  margin: 0;
+}
+.fragment-entry .share-poem {
+  margin-top: 24px;
+}
+.fragment-entry .share-actions {
+  flex-wrap: wrap;
+}
+.related-fragment {
+  padding-top: 30px;
+  border-top: 1px solid var(--amber);
+  margin-top: 30px;
+}
+.related-fragment blockquote {
+  margin-inline: 0;
+  font-size: 20px;
+  line-height: 1.7;
+}
+.archive-hero {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 64px;
+  align-items: center;
+  padding-block: 70px 58px;
+}
+.archive-hero > img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+.archive-page .archive-hero h1 {
+  font-size: clamp(64px, 7.5vw, 108px);
+  line-height: 0.95;
+}
+.archive-page .archive-hero h2 {
+  font-size: clamp(30px, 3.5vw, 44px);
+}
+.archive-page .hero-deck {
+  font-size: 20px;
+}
+.quiet-archive-section {
+  padding-bottom: 75px;
+}
+.quiet-archive-section > h2,
+.quiet-archive-section .section-heading-row h2 {
+  font-size: 42px;
+}
+.track-list {
+  list-style: none;
+  margin: 28px 0;
+  padding: 0;
+}
+.track-list li {
+  border-top: 1px solid var(--line);
+}
+.track-list summary {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 20px;
+  padding: 22px 0;
+  cursor: pointer;
+}
+.track-list summary:hover .track-title,
+.track-list details[open] .track-title {
+  text-decoration: underline;
+  text-decoration-color: var(--amber);
+  text-underline-offset: 7px;
+}
+.track-number,
+.expand-label {
+  font: 11px/1.7 var(--poem-font);
+  color: var(--paper-dim);
+}
+.track-title {
+  font: 30px/1.2 var(--display-font);
+}
+.track-note {
+  margin: 0 0 30px 52px;
+  max-width: 750px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--paper-soft);
+}
+.track-note .editorial-label {
+  margin-bottom: 10px;
+}
+.archive-details {
+  border-top: 1px solid var(--amber);
+  padding-block: 24px;
+}
+.archive-details > summary {
+  cursor: pointer;
+  font: 30px/1.3 var(--display-font);
+}
+.archive-prose {
+  margin-top: 28px;
+  max-width: 800px;
+  font-size: 18px;
+  line-height: 1.85;
+  color: var(--paper-soft);
+}
+.archive-page .archive-prose h2 {
+  font-size: 36px;
+}
+.archive-page .archive-prose h3 {
+  font-size: 28px;
+  margin-top: 28px;
+}
+.archive-crosslinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  padding-top: 24px;
+}
+.archive-directory {
+  margin: 28px 0 36px;
+}
+.archive-directory > a {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px 32px;
+  border-top: 1px solid var(--line);
+  padding: 24px 0;
+}
+.archive-directory > a > span:first-child {
+  font: 32px/1.2 var(--display-font);
+}
+.archive-directory > a > span:last-child {
+  font-size: 17px;
+  color: var(--paper-soft);
+}
+@media (max-width: 800px) {
+  .archive-hero {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding-block: 48px;
+  }
+  .archive-hero > img {
+    max-width: 600px;
+  }
+  .other-work,
+  .fragment-feature {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .fragment-grid {
+    grid-template-columns: 1fr;
+  }
+  .fragment-filters {
+    grid-template-columns: 1fr;
+  }
+  .track-list summary {
+    gap: 12px;
+    grid-template-columns: 24px minmax(0, 1fr) auto;
+  }
+  .track-title {
+    font-size: 27px;
+  }
+  .track-note {
+    margin-left: 36px;
+  }
+  .archive-directory > a {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

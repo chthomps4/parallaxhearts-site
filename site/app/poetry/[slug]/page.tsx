@@ -12,6 +12,7 @@ import JsonLd from "../../components/JsonLd";
 import SharePoem from "../../components/SharePoem";
 import ReviewNote from "../../components/ReviewNote";
 import Arrow from "../../components/Arrow";
+import { getVisibleQuotes } from "../../lib/quotes";
 
 export const dynamic = "force-dynamic";
 type Props = { params: Promise<{ slug: string }> };
@@ -38,6 +39,11 @@ export default async function PoemPage({ params }: Props) {
   const poem = await getVisiblePoem((await params).slug);
   if (!poem) notFound();
   const review = await isLocalReview();
+  const relatedQuotes = (await getVisibleQuotes())
+    .filter((quote) =>
+      quote.themes.some((theme) => poem.themes.includes(theme)),
+    )
+    .slice(0, 1);
   const others = (await getVisiblePoems())
     .filter((item) => item.slug !== poem.slug)
     .slice(0, 2);
@@ -140,6 +146,17 @@ export default async function PoemPage({ params }: Props) {
             ))}
           </nav>
         )}
+        {relatedQuotes.map((quote) => (
+          <aside className="related-fragment" key={quote.id}>
+            <h2>A related fragment.</h2>
+            <blockquote>
+              <p>{quote.text}</p>
+            </blockquote>
+            <Link className="text-link" href={`/quotes#${quote.slug}`}>
+              {quote.title} <Arrow />
+            </Link>
+          </aside>
+        ))}
       </div>
     </main>
   );

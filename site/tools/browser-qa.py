@@ -6,17 +6,25 @@ Start the public production app at 127.0.0.1:3001 and `npm run preview:poetry
 import json
 import os
 import sys
+from datetime import datetime
+from zoneinfo import ZoneInfo
 from pathlib import Path
 from playwright.sync_api import sync_playwright, expect
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "docs/screenshots/after"
+OUT = Path(os.environ.get("PARALLAX_QA_OUTPUT", str(ROOT / "docs/screenshots/after")))
 OUT.mkdir(parents=True, exist_ok=True)
 PUBLIC = "http://127.0.0.1:3001"
 REVIEW = "http://127.0.0.1:3002"
 POEMS = json.loads((ROOT / "content/poems.json").read_text())
+QUOTES = json.loads((ROOT / "content/quotes.json").read_text())
+TODAY = datetime.now(ZoneInfo("America/New_York")).date().isoformat()
+def is_published(item):
+    return item["status"] == "published" and item["textVerified"] and item["publishedAt"] and item["publishedAt"] <= TODAY
 ROUTES = ["/", "/crown-of-phases", "/poetry", "/poetry/a-minor-correction", "/poetry/the-unscheduled-coronation", "/poetry/the-golden-section", "/music", "/project", "/about", "/contact", "/shop", "/support", "/sacred-geometry", "/energy-healing", "/book", "/visuals", "/graphic-novel", "/graphic-novel/chapter-one", "/graphic-novel/chapter-one/page-001"]
 rows = []
+if QUOTES:
+    ROUTES += ["/quotes", "/poetry/the-good-scissors", "/poetry/the-wrong-word"]
 interactions = []
 violations = []
 
@@ -31,7 +39,7 @@ def load_images(page):
 
 with sync_playwright() as p:
     browser = p.chromium.launch(executable_path=os.environ.get("CHROME_PATH", "/usr/bin/chromium"), args=["--no-sandbox"])
-    for width in ([] if "--interactions-only" in sys.argv else [375, 430, 768, 1024, 1440]):
+    for width in ([] if "--interactions-only" in sys.argv else [int(value) for value in os.environ.get("PARALLAX_QA_WIDTHS", "375,430,768,1024,1440").split(",")]):
         context = browser.new_context(viewport={"width": width, "height": 960}, device_scale_factor=1)
         page = context.new_page()
         for route in ROUTES:
@@ -51,7 +59,7 @@ with sync_playwright() as p:
 
     context = browser.new_context(viewport={"width": 1440, "height": 960}, permissions=["clipboard-read", "clipboard-write"])
     page = context.new_page()
-    # All owner-approved poems: exact semantic text, metadata, and public cards.
+    # Every staged poem uses the native template; only approved releases are public.
     for poem in POEMS:
         if not poem["poemLines"]:
             continue
@@ -68,18 +76,20 @@ with sync_playwright() as p:
         image = context.request.get(REVIEW + route + "/opengraph-image")
         assert image.status == 200 and "image/png" in image.headers.get("content-type", ""), route
         public = context.request.get(PUBLIC + route)
-        assert public.status == 200, route
-        assert context.request.get(PUBLIC + route + "/opengraph-image").status == 200, route
+        expected_status = 200 if is_published(poem) else 404
+        assert public.status == expected_status, route
+        assert context.request.get(PUBLIC + route + "/opengraph-image").status == expected_status, route
         assert "sourceNotes" not in public.text(), route
-    interactions.append("All 14 owner-approved poem texts, public pages, canonical URLs and social images PASS")
+    interactions.append("Every poem matches stored text; canonical/social metadata, public release gating and held-card 404s PASS")
 
     for route in ["/", "/crown-of-phases", "/poetry", "/sitemap.xml"]:
         response = context.request.get(PUBLIC + route)
         assert response.status == 200, route
     sitemap = context.request.get(PUBLIC + "/sitemap.xml").text()
     for poem in POEMS:
-        assert "/poetry/" + poem["slug"] in sitemap
-    for route in ["/content/poems.json", "/content/sources/collection-ii.md", "/docs/site-audit-2026-11.md", "/poetry/not-an-approved-poem"]:
+        assert (("/poetry/" + poem["slug"]) in sitemap) == bool(is_published(poem))
+    assert ("/quotes" in sitemap) == any(is_published(quote) for quote in QUOTES)
+    for route in ["/content/poems.json", "/content/quotes.json", "/content/sources/new-poems-review.md", "/content/sources/new-quotes-review.md", "/content/sources/collection-ii.md", "/docs/site-audit-2026-11.md", "/poetry/not-an-approved-poem"]:
         assert context.request.get(PUBLIC + route).status == 404
     interactions.append("Approved sitemap entries present; internal files and unknown poem remain inaccessible")
     page.goto(PUBLIC, wait_until="networkidle")
@@ -110,7 +120,7 @@ with sync_playwright() as p:
     page.get_by_role("button", name="Clear filters").click()
     assert page.locator(".poem-card").count() == len(POEMS)
     page.get_by_label("Theme", exact=True).select_option("Sacred Geometry")
-    assert page.locator(".poem-card").count() == 5
+    assert page.locator(".poem-card").count() == sum("Sacred Geometry" in poem["themes"] for poem in POEMS)
     page.get_by_label("Collection", exact=True).select_option("Crown of Phases — Collection II")
     assert page.locator(".poem-card").count() == 4
     page.get_by_label("Form", exact=True).select_option("Free verse")
@@ -126,6 +136,41 @@ with sync_playwright() as p:
     expect(page.get_by_label("Poem link", exact=True)).to_have_value(REVIEW + "/poetry/the-rings")
     interactions.append("Review link clipboard and denied-clipboard manual fallback PASS")
 
+    assert page.locator("body > header").get_by_role("link", name="Music", exact=True).count() == 0
+    assert page.locator("body > header").get_by_role("link", name="Stories", exact=True).count() == 0
+    page.goto(PUBLIC + "/music", wait_until="networkidle")
+    assert page.locator(".track-list details").count() == 10
+    page.locator("#ballast summary").click()
+    expect(page.locator("#ballast .track-note")).to_be_visible()
+    expect(page.locator("#ballast").get_by_role("link", name="Story thread")).to_have_attribute("href", "/graphic-novel/chapter-one/page-001")
+    page.goto(PUBLIC + "/project", wait_until="networkidle")
+    page.locator(".archive-details summary").click()
+    expect(page.get_by_role("heading", name="The town as archive.")).to_be_visible()
+    interactions.append("Four-link primary navigation, preserved ten-track guide and expandable Vallen archive PASS")
+
+    if QUOTES:
+        assert context.request.get(PUBLIC + "/quotes").status == (200 if any(is_published(quote) for quote in QUOTES) else 404)
+        page.goto(REVIEW + "/quotes", wait_until="networkidle")
+        assert "noindex" in page.locator('meta[name="robots"]').get_attribute("content")
+        for quote in QUOTES:
+            expect(page.locator("#" + quote["slug"] + " blockquote p")).to_have_text(quote["text"])
+        assert "socialCaption" not in page.content() and "sourceNotes" not in page.content()
+        page.get_by_role("searchbox", name="Find a fragment").fill("tomatoes")
+        expect(page.locator(".fragment-entry")).to_have_count(1)
+        expect(page.locator(".fragment-entry h2")).to_have_text("The Earrings")
+        page.get_by_role("button", name="Clear filters").click()
+        page.get_by_label("Theme", exact=True).select_option("Sacred Geometry")
+        expect(page.locator(".fragment-entry")).to_have_count(3)
+        page.get_by_role("button", name="Clear filters").click()
+        entry = page.locator("#the-first-point")
+        entry.get_by_role("button", name="Copy local review link").click()
+        expect(entry.get_by_role("status")).to_have_text("Link copied.")
+        assert page.evaluate("navigator.clipboard.readText()") == REVIEW + "/quotes#the-first-point"
+        page.evaluate("Object.defineProperty(navigator, 'clipboard', {configurable: true, value: undefined})")
+        entry.get_by_role("button", name="Copy local review link").click()
+        expect(entry.get_by_label("Fragment link", exact=True)).to_have_value(REVIEW + "/quotes#the-first-point")
+        interactions.append("Twenty exact fragments, search/theme/reset, stable local deep links, manual fallback and public exclusion PASS")
+
     page.goto(REVIEW + "/sacred-geometry", wait_until="networkidle")
     page.get_by_role("button", name="2. Shared space", exact=True).click()
     assert "vesica piscis" in page.locator(".geometry-construction figcaption").inner_text()
@@ -138,7 +183,7 @@ with sync_playwright() as p:
 
     # WCAG automated scan on changed primary journeys and preserved reader.
     axe = ROOT / "node_modules/axe-core/axe.min.js"
-    for route in ["/", "/crown-of-phases", "/poetry", "/poetry/the-rings", "/sacred-geometry", "/energy-healing", "/about", "/contact", "/shop", "/support", "/music", "/graphic-novel/chapter-one/page-001"]:
+    for route in ["/", "/crown-of-phases", "/poetry", "/poetry/the-rings", "/sacred-geometry", "/energy-healing", "/about", "/contact", "/shop", "/support", "/music", "/project", "/quotes", "/poetry/the-good-scissors", "/graphic-novel/chapter-one/page-001"]:
         page.goto(REVIEW + route, wait_until="networkidle")
         load_images(page)
         page.add_script_tag(path=str(axe))

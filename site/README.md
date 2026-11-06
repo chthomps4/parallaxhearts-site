@@ -40,6 +40,8 @@ Additional cloud rendered QA uses the environment's Python Playwright and system
 
 ## Review and release
 
+The November 6 navigation cleanup and next Crown batch are documented in [the review record](docs/2026-11-06-navigation-and-crown-batch.md). The 18 new poems and 20 fragments remain held. See [publishing this batch](docs/publish-next-crown-batch.md) before enabling them.
+
 - [Audit and test results](docs/site-audit-2026-11.md)
 - [Before/after evidence](docs/review-evidence.md)
 - [Full change log](docs/CHANGELOG_REBUILD.md)

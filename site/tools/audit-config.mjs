@@ -1,5 +1,6 @@
 import { readFileSync } from "node:fs";
 import { isPublished, validatePoems } from "../content/poetry.mjs";
+import { validateQuotes } from "../content/quotes.mjs";
 const poems = validatePoems(
   JSON.parse(
     readFileSync(new URL("../content/poems.json", import.meta.url), "utf8"),
@@ -31,6 +32,13 @@ export const auditRoutes = [
   ...poems
     .filter((poem) => isPublished(poem))
     .map((poem) => [poem.slug, `/poetry/${poem.slug}`]),
+  ...(validateQuotes(
+    JSON.parse(
+      readFileSync(new URL("../content/quotes.json", import.meta.url), "utf8"),
+    ),
+  ).some((quote) => isPublished(quote))
+    ? [["quotes", "/quotes"]]
+    : []),
 ];
 
 export const lighthouseRoutes = [

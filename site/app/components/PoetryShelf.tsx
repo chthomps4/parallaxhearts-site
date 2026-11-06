@@ -5,6 +5,11 @@ import PoemCard from "./PoemCard";
 
 export default function PoetryShelf({ poems }: { poems: PublicPoem[] }) {
   if (!poems.length) return null;
+  const recent = [...poems].sort((a, b) =>
+    (b.publishedAt || "9999-12-31").localeCompare(
+      a.publishedAt || "9999-12-31",
+    ),
+  );
   return (
     <section className="parchment-band" aria-labelledby="latest-poetry-title">
       <div className="editorial-container">
@@ -19,8 +24,8 @@ export default function PoetryShelf({ poems }: { poems: PublicPoem[] }) {
         </div>
         <div className="poem-grid">
           {[
-            ...poems.filter((poem) => poem.featured),
-            ...poems.filter((poem) => !poem.featured),
+            ...recent.filter((poem) => poem.featured),
+            ...recent.filter((poem) => !poem.featured),
           ]
             .slice(0, 4)
             .map((poem) => (

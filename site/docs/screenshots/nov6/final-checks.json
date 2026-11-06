@@ -1,0 +1,86 @@
+[
+  {
+    "mode": "public",
+    "route": "/",
+    "width": 375,
+    "status": 200,
+    "errors": []
+  },
+  {
+    "mode": "public",
+    "route": "/music",
+    "width": 375,
+    "status": 200,
+    "errors": []
+  },
+  {
+    "mode": "public",
+    "route": "/project",
+    "width": 375,
+    "status": 200,
+    "errors": []
+  },
+  {
+    "mode": "public",
+    "route": "/poetry/the-golden-section",
+    "width": 375,
+    "status": 200,
+    "errors": []
+  },
+  {
+    "mode": "review",
+    "route": "/quotes",
+    "width": 375,
+    "status": 200,
+    "errors": []
+  },
+  {
+    "mode": "review",
+    "route": "/poetry/the-good-scissors",
+    "width": 375,
+    "status": 200,
+    "errors": []
+  },
+  {
+    "mode": "public",
+    "route": "/",
+    "width": 1440,
+    "status": 200,
+    "errors": []
+  },
+  {
+    "mode": "public",
+    "route": "/music",
+    "width": 1440,
+    "status": 200,
+    "errors": []
+  },
+  {
+    "mode": "public",
+    "route": "/project",
+    "width": 1440,
+    "status": 200,
+    "errors": []
+  },
+  {
+    "mode": "public",
+    "route": "/poetry/the-golden-section",
+    "width": 1440,
+    "status": 200,
+    "errors": []
+  },
+  {
+    "mode": "review",
+    "route": "/quotes",
+    "width": 1440,
+    "status": 200,
+    "errors": []
+  },
+  {
+    "mode": "review",
+    "route": "/poetry/the-good-scissors",
+    "width": 1440,
+    "status": 200,
+    "errors": []
+  }
+]

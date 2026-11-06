@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { buildMetadata } from "./lib/seo";
@@ -9,6 +8,7 @@ import ReviewNote from "./components/ReviewNote";
 import Explorations from "./components/Explorations";
 import Arrow from "./components/Arrow";
 import FeaturedPoem from "./components/FeaturedPoem";
+import QuoteFeature from "./components/QuoteFeature";
 
 export const dynamic = "force-dynamic";
 export async function generateMetadata(): Promise<Metadata> {
@@ -82,37 +82,8 @@ export default async function HomePage() {
           </div>
         </section>
       )}
+      <QuoteFeature />
       <Explorations />
-      <section className="vallen-feature">
-        <div className="editorial-container vallen-feature-layout">
-          <Image
-            src="/images/story-world.jpg"
-            alt="Rain-dark streets and warm windows in the fictional town of Vallen."
-            width={1536}
-            height={1024}
-            sizes="(max-width: 800px) 90vw, 45vw"
-          />
-          <div>
-            <p className="editorial-label">Music &amp; story</p>
-            <h2>What the Town Keeps</h2>
-            <p>An album. A story world. A town that keeps its secrets.</p>
-            <div className="editorial-actions">
-              <Link className="outline-button" href="/music">
-                Hear the music <Arrow />
-              </Link>
-              <Link className="outline-button" href="/project">
-                Enter Vallen <Arrow />
-              </Link>
-            </div>
-            <Link
-              className="text-link quiet-link"
-              href="/graphic-novel/chapter-one/page-001"
-            >
-              Start the visual novel <Arrow />
-            </Link>
-          </div>
-        </div>
-      </section>
       <section className="editorial-container identity-section">
         <p className="editorial-label">The wider Parallax Hearts</p>
         <h2>
@@ -133,6 +104,25 @@ export default async function HomePage() {
           </Link>
           <Link className="text-link" href="/book">
             The book archive <Arrow />
+          </Link>
+        </div>
+      </section>
+      <section
+        className="editorial-container other-work"
+        aria-labelledby="other-work-title"
+      >
+        <div>
+          <h2 className="editorial-label" id="other-work-title">
+            Other work
+          </h2>
+          <p>Music and stories from the wider Parallax Hearts.</p>
+        </div>
+        <div className="editorial-actions">
+          <Link className="text-link" href="/music">
+            Music <Arrow />
+          </Link>
+          <Link className="text-link" href="/project">
+            Stories · Vallen <Arrow />
           </Link>
         </div>
       </section>

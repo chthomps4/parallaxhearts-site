@@ -1,5 +1,7 @@
 # Rebuild change log
 
+The original rebuild below was released November 5. The subsequent local review branch is documented in [November 6 navigation cleanup and Crown expansion](2026-11-06-navigation-and-crown-batch.md); its new batch is still held.
+
 Branch: `feat/crown-of-phases-rebuild`. Baseline: `8d4191df1957d7b75d918ca69b5bc4b5278f6d1a`.
 
 ## Visitor-facing changes

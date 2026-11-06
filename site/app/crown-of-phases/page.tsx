@@ -7,6 +7,8 @@ import PoetryShelf from "../components/PoetryShelf";
 import ReviewNote from "../components/ReviewNote";
 import Arrow from "../components/Arrow";
 import FeaturedPoem from "../components/FeaturedPoem";
+import LiteraryNavigation from "../components/LiteraryNavigation";
+import QuoteFeature from "../components/QuoteFeature";
 
 export const dynamic = "force-dynamic";
 export async function generateMetadata(): Promise<Metadata> {
@@ -55,12 +57,16 @@ export default async function CrownOfPhases() {
         </div>
         <LunarArt priority />
       </section>
+      <div className="editorial-container">
+        <LiteraryNavigation active="collection" />
+      </div>
       <div id="collection-poems">
         {anchor && <FeaturedPoem poem={anchor} collectionPage />}
         <PoetryShelf
           poems={poems.filter((poem) => poem.slug !== anchor?.slug)}
         />
       </div>
+      <QuoteFeature />
       <section
         id="collection-note"
         className="editorial-container reading-intro"
