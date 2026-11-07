@@ -1,5 +1,7 @@
 # November 6 — quieter navigation and the next Crown batch
 
+**November 7 update:** Chad explicitly approved all 18 poems and 20 fragments and authorized production publication. The [release record](releases/2026-11-07-crown-batch.md) supersedes the held/unpublished status in this historical review snapshot. Writing is unchanged.
+
 Production baseline: `d50857053e0a4768f5e5b57d718d7c27f12e1303`, released November 5. Work is isolated on `feat/quiet-navigation-crown-batch-iii`. This follow-up has not been pushed or deployed. All 18 new poems and 20 fragments remain undated, unverified-for-publication drafts. The original 14 approved poem records are unchanged.
 
 ## Request and source boundaries

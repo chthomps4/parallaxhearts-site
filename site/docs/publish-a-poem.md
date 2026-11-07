@@ -1,5 +1,7 @@
 # Publish a poem
 
+**November 7 release update:** The owner approved the next eighteen poems and twenty fragments, bringing the enabled library to 32 poems and 20 fragments. See the [release record](releases/2026-11-07-crown-batch.md). The fourteen-poem batch described below is the original November 5 approval.
+
 Work in `site/` with Node 24. Adding a poem changes content, not page layouts. The site uses `content/poems.json`; there is no new CMS, subscription service, or account to configure.
 
 ## Current approved batch

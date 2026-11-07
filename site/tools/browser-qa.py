@@ -80,7 +80,7 @@ with sync_playwright() as p:
         assert public.status == expected_status, route
         assert context.request.get(PUBLIC + route + "/opengraph-image").status == expected_status, route
         assert "sourceNotes" not in public.text(), route
-    interactions.append("Every poem matches stored text; canonical/social metadata, public release gating and held-card 404s PASS")
+    interactions.append("Every poem matches stored text; canonical/social metadata and public visibility match its approval state")
 
     for route in ["/", "/crown-of-phases", "/poetry", "/sitemap.xml"]:
         response = context.request.get(PUBLIC + route)
@@ -169,7 +169,19 @@ with sync_playwright() as p:
         page.evaluate("Object.defineProperty(navigator, 'clipboard', {configurable: true, value: undefined})")
         entry.get_by_role("button", name="Copy local review link").click()
         expect(entry.get_by_label("Fragment link", exact=True)).to_have_value(REVIEW + "/quotes#the-first-point")
-        interactions.append("Twenty exact fragments, search/theme/reset, stable local deep links, manual fallback and public exclusion PASS")
+        interactions.append("Twenty exact fragments, search/theme/reset, stable local deep links, manual fallback and approved public visibility PASS")
+        published_quotes = [quote for quote in QUOTES if is_published(quote)]
+        if published_quotes:
+            quote = published_quotes[0]
+            page.goto(PUBLIC + "/quotes", wait_until="networkidle")
+            entry = page.locator("#" + quote["slug"])
+            entry.get_by_role("button", name="Copy link", exact=True).click()
+            expect(entry.get_by_role("status")).to_have_text("Link copied.")
+            assert page.evaluate("navigator.clipboard.readText()") == "https://www.parallaxhearts.org/quotes#" + quote["slug"]
+            page.evaluate("Object.defineProperty(navigator, 'share', {configurable: true, value: async (data) => {window.__shared = data}})")
+            entry.get_by_role("button", name="Share fragment", exact=True).click()
+            assert page.evaluate("window.__shared.url") == "https://www.parallaxhearts.org/quotes#" + quote["slug"]
+            interactions.append("Public fragment canonical-link copy and native-share payload PASS; no message transmitted")
 
     page.goto(REVIEW + "/sacred-geometry", wait_until="networkidle")
     page.get_by_role("button", name="2. Shared space", exact=True).click()

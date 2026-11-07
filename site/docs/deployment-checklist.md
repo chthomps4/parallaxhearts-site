@@ -1,5 +1,7 @@
 # Deployment checklist — approval required
 
+**November 7 status:** The owner explicitly authorized this release and approved all eighteen new poems and twenty fragments. See the [release record](releases/2026-11-07-crown-batch.md). The original pre-deployment snapshot below does not negate that subsequent approval; separate authorization is still required for future unapproved content or external-service changes.
+
 The rebuild lives on `feat/crown-of-phases-rebuild` in the actual existing repository. No production deployment, GitHub push, DNS change, payment change, or social-account update has been performed. The cloud environment was published by Chad; that did not publish the website.
 
 ## Before requesting production deployment

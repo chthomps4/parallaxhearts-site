@@ -6,6 +6,7 @@ const poems = validatePoems(
     readFileSync(new URL("../content/poems.json", import.meta.url), "utf8"),
   ),
 );
+const quotes = validateQuotes(JSON.parse(readFileSync(new URL("../content/quotes.json", import.meta.url), "utf8")));
 
 export const auditRoutes = [
   ["home", "/"],
@@ -32,11 +33,7 @@ export const auditRoutes = [
   ...poems
     .filter((poem) => isPublished(poem))
     .map((poem) => [poem.slug, `/poetry/${poem.slug}`]),
-  ...(validateQuotes(
-    JSON.parse(
-      readFileSync(new URL("../content/quotes.json", import.meta.url), "utf8"),
-    ),
-  ).some((quote) => isPublished(quote))
+  ...(quotes.some((quote) => isPublished(quote))
     ? [["quotes", "/quotes"]]
     : []),
 ];
@@ -54,4 +51,5 @@ export const lighthouseRoutes = [
   ["project", "/project"],
   ["support", "/support"],
   ["contact", "/contact"],
+  ...(quotes.some((quote) => isPublished(quote)) ? [["quotes", "/quotes"]] : []),
 ];

@@ -1,5 +1,7 @@
 # Publish the next Crown batch after approval
 
+**Status update, November 7:** The owner has approved all 38 entries for publication. They are enabled with the actual November 7 release date. See the [release record](releases/2026-11-07-crown-batch.md); the remaining instructions describe the review-to-publication workflow for this and subsequent batches.
+
 The November 6 material is not publication-approved. `content/poems.json` contains fourteen published originals and eighteen held additions; `content/quotes.json` contains twenty held fragments. No publication date is assigned to the additions.
 
 Use `npm run crown:import` to repeat the original import safely. It reads the two retained Markdown files, preserves existing entries and their later approval/artwork fields, and fails on conflicting text. Do not replace the whole poetry registry with the handoff's differently named JSON schema.

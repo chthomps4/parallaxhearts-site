@@ -1,6 +1,6 @@
 # Parallax Hearts
 
-Next.js App Router site, using Node 24 and npm. Crown of Phases is the featured collection; **The Golden Section** is its owner-selected anchor. The approved release branch contains fourteen poem pages, while preserving music, Vallen, the visual novel and the book archive.
+Next.js App Router site, using Node 24 and npm. Crown of Phases is the featured collection; **The Golden Section** is its owner-selected anchor. The approved release contains 32 poem pages and 20 fragments, while preserving music, Vallen, the visual novel and the book archive.
 
 ## Develop
 
@@ -40,7 +40,7 @@ Additional cloud rendered QA uses the environment's Python Playwright and system
 
 ## Review and release
 
-The November 6 navigation cleanup and next Crown batch are documented in [the review record](docs/2026-11-06-navigation-and-crown-batch.md). The 18 new poems and 20 fragments remain held. See [publishing this batch](docs/publish-next-crown-batch.md) before enabling them.
+The November 6 navigation cleanup and next Crown batch were approved for release on November 7, including all 18 new poems and 20 fragments. See the [release record](docs/releases/2026-11-07-crown-batch.md). The earlier [review record](docs/2026-11-06-navigation-and-crown-batch.md) documents their original held state.
 
 - [Audit and test results](docs/site-audit-2026-11.md)
 - [Before/after evidence](docs/review-evidence.md)
